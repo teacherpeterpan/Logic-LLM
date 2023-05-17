@@ -19,9 +19,9 @@ To replicate the **Standard-LM (Direct)** and the **Chain-of-Thought (CoT)** bas
 cd ./baselines
 python gpt3_baseline.py \
     --api_key "Your OpenAI API Key" \
-    --model_name <Model Name [text-davinci-003 | gpt-4]> \
-    --dataset_name <Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction]> \
+    --model_name "Model Name [text-davinci-003 | gpt-4]" \
+    --dataset_name "Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction]" \
     --split dev \
-    --mode <Baseline [Direct | CoT]> \
-    --max_new_tokens <16 for Direct; 1024 for CoT> \
+    --mode "Baseline [Direct | CoT]" \
+    --max_new_tokens "16 for Direct; 1024 for CoT" \
 ```
