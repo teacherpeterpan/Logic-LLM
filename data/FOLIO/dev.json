@@ -1,0 +1,2246 @@
+[
+  {
+    "id": "FOLIO_dev_0",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_1",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_2",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_3",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has lunch in the company.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_4",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have lunch in the company.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_5",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If James is either a manager or in other countries,  then James either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_6",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is an animal.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_7",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one gets flu.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_8",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Symptons of Monkeypox include coughing.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_9",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s wild turkey, Merriam’s wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Ocellated wild turkey.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_10",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s wild turkey, Merriam’s wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Eastern wild turkey.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_11",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s wild turkey, Merriam’s wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Joey is a wild turkey.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_12",
+    "context": "A Japanese game company created the game the Legend of Zelda. All games in the Top 10 list are made by Japanese game companies. [BG] If a game sells more than one million copies, then it will be selected into the Top 10 list. The Legend of Zelda sold more than one million copies.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is in the Top 10 list.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_13",
+    "context": "A Japanese game company created the game the Legend of Zelda. All games in the Top 10 list are made by Japanese game companies. [BG] If a game sells more than one million copies, then it will be selected into the Top 10 list. The Legend of Zelda sold more than one million copies.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? FIFA 22 is made by a Japanese video game company.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_14",
+    "context": "A Japanese game company created the game the Legend of Zelda. All games in the Top 10 list are made by Japanese game companies. [BG] If a game sells more than one million copies, then it will be selected into the Top 10 list. The Legend of Zelda sold more than one million copies.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is not in the Top 10 list.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_15",
+    "context": "All squares have four sides. All four-sided things are shapes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All squares are shapes.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_16",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a turtle.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_17",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is not a turtle.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_18",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a turtle or cute.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_19",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is not both a turtle and a squirrel, then Rock is either cute or skittish.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_20",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is cute and still, then Rock is a turtle and skittish.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_21",
+    "context": "\"Stranger Things\" is a popular Netflix show. If a Netflix show is popular, Karen will binge-watch it. If and only if Karen binge-watches a Netflix show, she will download it. Karen does not download \"Black Mirror\". \"Black Mirror\" is a Netflix show. If Karen binge-watches a Netflix show, she will share it to Lisa.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Karen will share \"Stranger Things\" to Lisa.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_22",
+    "context": "\"Stranger Things\" is a popular Netflix show. If a Netflix show is popular, Karen will binge-watch it. If and only if Karen binge-watches a Netflix show, she will download it. Karen does not download \"Black Mirror\". \"Black Mirror\" is a Netflix show. If Karen binge-watches a Netflix show, she will share it to Lisa.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? \"Black Mirror\" is popular.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_23",
+    "context": "\"Stranger Things\" is a popular Netflix show. If a Netflix show is popular, Karen will binge-watch it. If and only if Karen binge-watches a Netflix show, she will download it. Karen does not download \"Black Mirror\". \"Black Mirror\" is a Netflix show. If Karen binge-watches a Netflix show, she will share it to Lisa.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Karen will share \"Black Mirror\" to Lisa.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_24",
+    "context": "Beijing is the capital of the People's Republic of China. Beijing is the world's most populous national capital city. Beijing is located in Northern China. Beijing hosted the 2008 Summer Olympics and 2008 Summer Paralympics Games. Beijing has hosted both the Summer and Winter Olympics, along with the Summer and Winter Paralympics Many of Beijing's 91 universities consistently rank among the best in the Asia-Pacific and the world.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing has hosted both the 2008 Summer Olympics and a winter olympics.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_25",
+    "context": "Beijing is the capital of the People's Republic of China. Beijing is the world's most populous national capital city. Beijing is located in Northern China. Beijing hosted the 2008 Summer Olympics and 2008 Summer Paralympics Games. Beijing has hosted both the Summer and Winter Olympics, along with the Summer and Winter Paralympics Many of Beijing's 91 universities consistently rank among the best in the Asia-Pacific and the world.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing is located in southern China.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_26",
+    "context": "Beijing is the capital of the People's Republic of China. Beijing is the world's most populous national capital city. Beijing is located in Northern China. Beijing hosted the 2008 Summer Olympics and 2008 Summer Paralympics Games. Beijing has hosted both the Summer and Winter Olympics, along with the Summer and Winter Paralympics Many of Beijing's 91 universities consistently rank among the best in the Asia-Pacific and the world.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing is the second largest Chinese city by urban population.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_27",
+    "context": "All aliens are extraterrestrial. If someone is from Mars, then they are aliens. No extraterrestrial is human. Everyone from Earth is a human. Marvin cannot be from Earth and from Mars. If Marvin is not from Earth, then Marvin is an extraterrestrial.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Marvin is an alien.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_28",
+    "context": "All aliens are extraterrestrial. If someone is from Mars, then they are aliens. No extraterrestrial is human. Everyone from Earth is a human. Marvin cannot be from Earth and from Mars. If Marvin is not from Earth, then Marvin is an extraterrestrial.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Marvin is neither a human nor from Mars.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_29",
+    "context": "All aliens are extraterrestrial. If someone is from Mars, then they are aliens. No extraterrestrial is human. Everyone from Earth is a human. Marvin cannot be from Earth and from Mars. If Marvin is not from Earth, then Marvin is an extraterrestrial.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Marvin is not from Mars, then Marvin is a human.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_30",
+    "context": "A person is either a Grand Slam champion or an Oscar-nominated actor. All people who are Grand Slam champions are professional tennis players. All Oscar-nominated actors are celebrities. All professional tennis players are athletes. If a person is a celebrity then they are well paid. If a person is an athlete then they are famous. All well-paid people live in tax havens. If Djokovic is famous and is an athlete, then Djokovic lives in well paid.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic is a Grand Slam champion.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_31",
+    "context": "A person is either a Grand Slam champion or an Oscar-nominated actor. All people who are Grand Slam champions are professional tennis players. All Oscar-nominated actors are celebrities. All professional tennis players are athletes. If a person is a celebrity then they are well paid. If a person is an athlete then they are famous. All well-paid people live in tax havens. If Djokovic is famous and is an athlete, then Djokovic lives in well paid.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic lives in a tax haven.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_32",
+    "context": "A person is either a Grand Slam champion or an Oscar-nominated actor. All people who are Grand Slam champions are professional tennis players. All Oscar-nominated actors are celebrities. All professional tennis players are athletes. If a person is a celebrity then they are well paid. If a person is an athlete then they are famous. All well-paid people live in tax havens. If Djokovic is famous and is an athlete, then Djokovic lives in well paid.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic does not live in a tax haven.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_33",
+    "context": "Diamond Mine is a professional wrestling stable, formed in WWE. Roderick Strong leads Diamond Mine. Diamond Mine includes the Creed Brothers, and Ivy Nile. Imperium has a feud with Diamond Mine.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Roderick strong leads a professional wrestling stable.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_34",
+    "context": "Diamond Mine is a professional wrestling stable, formed in WWE. Roderick Strong leads Diamond Mine. Diamond Mine includes the Creed Brothers, and Ivy Nile. Imperium has a feud with Diamond Mine.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Roderick strong leads the Creed Brothers.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_35",
+    "context": "Diamond Mine is a professional wrestling stable, formed in WWE. Roderick Strong leads Diamond Mine. Diamond Mine includes the Creed Brothers, and Ivy Nile. Imperium has a feud with Diamond Mine.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Imperium doesn't have a feud with a professional wrestling stable that includes Ivy Nile.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_36",
+    "context": "Symphony No. 9 is a music piece. Composers write music pieces. Beethoven wrote Symphony No. 9. Vienna Music Society premiered Symphony No. 9. Vienna Music Society is an orchestra. Beethoven leads the Vienna Music Society. Orchestras are led by conductors.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beethoven is a composer.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_37",
+    "context": "Symphony No. 9 is a music piece. Composers write music pieces. Beethoven wrote Symphony No. 9. Vienna Music Society premiered Symphony No. 9. Vienna Music Society is an orchestra. Beethoven leads the Vienna Music Society. Orchestras are led by conductors.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some orchestras premiered music pieces.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_38",
+    "context": "Symphony No. 9 is a music piece. Composers write music pieces. Beethoven wrote Symphony No. 9. Vienna Music Society premiered Symphony No. 9. Vienna Music Society is an orchestra. Beethoven leads the Vienna Music Society. Orchestras are led by conductors.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beethoven is not a conductor.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_39",
+    "context": "All of Zaha Hadid's design styles are timeless. No mass product design is timeless. Either Zaha Hadid's design style or Kelly Wearstler's design style. All of Kelly Wearstler's design styles are evocative. All of Kelly Wearstler's design styles are dreamy. If a design by Max is timeless, then a design by Max is a mass product design and evocative.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A design by Max is a mass product design.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_40",
+    "context": "All of Zaha Hadid's design styles are timeless. No mass product design is timeless. Either Zaha Hadid's design style or Kelly Wearstler's design style. All of Kelly Wearstler's design styles are evocative. All of Kelly Wearstler's design styles are dreamy. If a design by Max is timeless, then a design by Max is a mass product design and evocative.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A design by Max is evocative and dreamy.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_41",
+    "context": "All of Zaha Hadid's design styles are timeless. No mass product design is timeless. Either Zaha Hadid's design style or Kelly Wearstler's design style. All of Kelly Wearstler's design styles are evocative. All of Kelly Wearstler's design styles are dreamy. If a design by Max is timeless, then a design by Max is a mass product design and evocative.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A design by Max is either evocative or dreamy.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_42",
+    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is among the most active players in major tennis.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_43",
+    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff has lost to Rafael Nadal.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_44",
+    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is not a player who lost to Iga Świątek or one of the most active players in major tennis.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_45",
+    "context": "All cats are mammals. Some pets are not mammals.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No pets are cats.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_46",
+    "context": "[BG] There are four seasons in a year: Spring, Summer, Fall, and Winter. All students who want to have a long vacation love summer the most. Emma's favorite season is summer. Mia's favorite season is not the same as Emma's. James wants to have a long vacation.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James's favorite season is summer.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_47",
+    "context": "[BG] There are four seasons in a year: Spring, Summer, Fall, and Winter. All students who want to have a long vacation love summer the most. Emma's favorite season is summer. Mia's favorite season is not the same as Emma's. James wants to have a long vacation.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James's favorite season is fall.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_48",
+    "context": "[BG] There are four seasons in a year: Spring, Summer, Fall, and Winter. All students who want to have a long vacation love summer the most. Emma's favorite season is summer. Mia's favorite season is not the same as Emma's. James wants to have a long vacation.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mia's favorite season is spring.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_49",
+    "context": "No digital media are analog. Every printed text is analog. All streaming services are digital. If an object is a hardcover book then it is printed text. If 1984 is a streaming service, then 1984 is a hardcover book.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is printed text.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_50",
+    "context": "No digital media are analog. Every printed text is analog. All streaming services are digital. If an object is a hardcover book then it is printed text. If 1984 is a streaming service, then 1984 is a hardcover book.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is a streaming service.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_51",
+    "context": "No digital media are analog. Every printed text is analog. All streaming services are digital. If an object is a hardcover book then it is printed text. If 1984 is a streaming service, then 1984 is a hardcover book.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is not a streaming service.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_52",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Basque is a Romance language.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_53",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? German is a Romance language.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_54",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? French is an Indo-European language.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_55",
+    "context": "Robert Lewandowski is a striker. [BG] Strikers are soccer players. Robert Lewandowski left Bayern Munchen. [BG] If a player left a team they no longer play for that team.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski is a soccer player.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_56",
+    "context": "Robert Lewandowski is a striker. [BG] Strikers are soccer players. Robert Lewandowski left Bayern Munchen. [BG] If a player left a team they no longer play for that team.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski plays for Bayern Munchen.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_57",
+    "context": "Robert Lewandowski is a striker. [BG] Strikers are soccer players. Robert Lewandowski left Bayern Munchen. [BG] If a player left a team they no longer play for that team.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski is a star.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_58",
+    "context": "Billings is a city in Montana. Montana includes the cities of Butte, Helena, and Missoula. White Sulphur Springs and Butte are cities in the same state. The city of Pierre is not in Montana. Any city in Butte is not in Pierre.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Butte and Pierre are in the same state.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_59",
+    "context": "Billings is a city in Montana. Montana includes the cities of Butte, Helena, and Missoula. White Sulphur Springs and Butte are cities in the same state. The city of Pierre is not in Montana. Any city in Butte is not in Pierre.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Pierre and Bismarck are in the same state.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_60",
+    "context": "Billings is a city in Montana. Montana includes the cities of Butte, Helena, and Missoula. White Sulphur Springs and Butte are cities in the same state. The city of Pierre is not in Montana. Any city in Butte is not in Pierre.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Montana is home to the city of Missoula.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_61",
+    "context": "International students in US have either an F1 visa or a J1 visa. An international student in US with an F1 visa needs to apply for CPT or OPT if the student wants to work in the US. Mike is an international student. Mike needs to apply for CPT if he wants to work in the US.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mike has an F1 visa.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_62",
+    "context": "International students in US have either an F1 visa or a J1 visa. An international student in US with an F1 visa needs to apply for CPT or OPT if the student wants to work in the US. Mike is an international student. Mike needs to apply for CPT if he wants to work in the US.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mike has a J1 visa.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_63",
+    "context": "All cows are bovines. Some pets are cows. If something is a bovine, then it is domesticated. No domesticated animals are alligators. Ted is an aligator.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ted is a pet.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_64",
+    "context": "All cows are bovines. Some pets are cows. If something is a bovine, then it is domesticated. No domesticated animals are alligators. Ted is an aligator.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ted is a pet and a cow.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_65",
+    "context": "All cows are bovines. Some pets are cows. If something is a bovine, then it is domesticated. No domesticated animals are alligators. Ted is an aligator.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Ted is a cow, then Ted is not a pet.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_66",
+    "context": "Yale University is a private Ivy League research university. Yale University moved to New Haven in 1716. Yale university's endowment was valued at $42.3 billion. Yale University has been organized into 27 constituent colleges and schools: the residential colleges, the Yale Graduate School of Arts and Sciences, and twelve professional schools. A list of residential colleges at Yale: Benjamin Franklin College, Berkeley College, Branford College, Davenport College, Ezra Stiles College, Grace Hopper College, Jonathan Edwards College, Morse College, Pauli Murray College, Pierson College, Saybrook College, Silliman College, Timothy Dwight College, and Trumbull College.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A private Ivy League research university moved to New Haven.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_67",
+    "context": "Yale University is a private Ivy League research university. Yale University moved to New Haven in 1716. Yale university's endowment was valued at $42.3 billion. Yale University has been organized into 27 constituent colleges and schools: the residential colleges, the Yale Graduate School of Arts and Sciences, and twelve professional schools. A list of residential colleges at Yale: Benjamin Franklin College, Berkeley College, Branford College, Davenport College, Ezra Stiles College, Grace Hopper College, Jonathan Edwards College, Morse College, Pauli Murray College, Pierson College, Saybrook College, Silliman College, Timothy Dwight College, and Trumbull College.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yale University has the largest university endowment of any educational institution.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_68",
+    "context": "Yale University is a private Ivy League research university. Yale University moved to New Haven in 1716. Yale university's endowment was valued at $42.3 billion. Yale University has been organized into 27 constituent colleges and schools: the residential colleges, the Yale Graduate School of Arts and Sciences, and twelve professional schools. A list of residential colleges at Yale: Benjamin Franklin College, Berkeley College, Branford College, Davenport College, Ezra Stiles College, Grace Hopper College, Jonathan Edwards College, Morse College, Pauli Murray College, Pierson College, Saybrook College, Silliman College, Timothy Dwight College, and Trumbull College.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Pierson College is a residential college at Yale.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_69",
+    "context": "Badults is a British Sitcom series, starring members of Pappy's. Badults piloted in July 2013 on BBC Three. The Working title \"The Secret Dude Society\" was used for Badults. Andrew Collins was the script editor for Badults",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Andrew Collins was the script editor for a series with the working title \"The Secret Dude Society\".",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_70",
+    "context": "Badults is a British Sitcom series, starring members of Pappy's. Badults piloted in July 2013 on BBC Three. The Working title \"The Secret Dude Society\" was used for Badults. Andrew Collins was the script editor for Badults",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No members of Pappy's have starred for a show piloting on BBC Two or BBC Three.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_71",
+    "context": "All growth companies’ stocks are volatile. If the stock price is volatile, then it is not suitable for a retirement fund. Some companies’ stocks are growth companies’ stocks. All mature companies’ stocks are suitable for a retirement fund. KO is a mature company’s stock.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KO is a company stock.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_72",
+    "context": "All growth companies’ stocks are volatile. If the stock price is volatile, then it is not suitable for a retirement fund. Some companies’ stocks are growth companies’ stocks. All mature companies’ stocks are suitable for a retirement fund. KO is a mature company’s stock.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KO is a company stock and a growth company’s stock.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_73",
+    "context": "All growth companies’ stocks are volatile. If the stock price is volatile, then it is not suitable for a retirement fund. Some companies’ stocks are growth companies’ stocks. All mature companies’ stocks are suitable for a retirement fund. KO is a mature company’s stock.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If KO is a growth company’s stock or if its price is volatile, then KO is neither a company’s stock nor is its price volatile.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_74",
+    "context": "All vehicle registration plates in Istanbul begin with the number 34. Plates that do not begin with the number 34 are not from Istanbul. Joe's vehicle registration plate is from Istanbul. Tom's license plate begins with the number 35. [BG] If a license plate begins with the number 35, then it does not begin with the number 34.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Joe's license plate begins with the number 34.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_75",
+    "context": "All vehicle registration plates in Istanbul begin with the number 34. Plates that do not begin with the number 34 are not from Istanbul. Joe's vehicle registration plate is from Istanbul. Tom's license plate begins with the number 35. [BG] If a license plate begins with the number 35, then it does not begin with the number 34.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom's license plate is from Istanbul.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_76",
+    "context": "If people work in student jobs on campus, then they need to earn money to help pay for their college tuition. If people order takeout frequently in college, then they work in student jobs on campus. People either order takeout frequently in college or enjoy the dining hall meals and recipes. If people enjoy the dining hall meals and recipes, then they are not picky eaters. If people enjoy the dining hall meals and recipes, then they spend a lot of their time eating and catching up with friends in the campus dining halls. If Mary works in student jobs on campus and needs to earn money to help pay for her college tuition, then Mary is neither picky nor needs to earn money to help pay for her college tuition.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mary needs to earn money to help pay for her college tuition.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_77",
+    "context": "If people work in student jobs on campus, then they need to earn money to help pay for their college tuition. If people order takeout frequently in college, then they work in student jobs on campus. People either order takeout frequently in college or enjoy the dining hall meals and recipes. If people enjoy the dining hall meals and recipes, then they are not picky eaters. If people enjoy the dining hall meals and recipes, then they spend a lot of their time eating and catching up with friends in the campus dining halls. If Mary works in student jobs on campus and needs to earn money to help pay for her college tuition, then Mary is neither picky nor needs to earn money to help pay for her college tuition.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mary is not a picky eater and spends a lot of her time eating and catching up with friends in the campus dining halls.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_78",
+    "context": "If people work in student jobs on campus, then they need to earn money to help pay for their college tuition. If people order takeout frequently in college, then they work in student jobs on campus. People either order takeout frequently in college or enjoy the dining hall meals and recipes. If people enjoy the dining hall meals and recipes, then they are not picky eaters. If people enjoy the dining hall meals and recipes, then they spend a lot of their time eating and catching up with friends in the campus dining halls. If Mary works in student jobs on campus and needs to earn money to help pay for her college tuition, then Mary is neither picky nor needs to earn money to help pay for her college tuition.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mary either is not a picky eater or, if she is, then she spends a lot of her time eating and catching up with friends in the campus dining halls.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_79",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are a product of Baked by Melissa.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_80",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are not a product of Baked by Melissa.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_81",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are a hotpot.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_82",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are neither a product of Baked by Melissa nor a bakery.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_83",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are cupcakes and a product of Baked by Melissa.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_84",
+    "context": "If the restaurant is listed in Yelp’s recommendations, then the restaurant does not receive many negative reviews. All restaurants with a rating greater than 9 are listed in Yelp’s recommendations. Some restaurants that do not provide take-out service receive many negative reviews. All restaurants that are popular among local residents have ratings greater than 9. Subway has a rating greater than 9 or is popular among local residents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Subway provides take-out service and receives many negative reviews, then its rating is greater than 9 and it does not provide take-out service.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_85",
+    "context": "If the restaurant is listed in Yelp’s recommendations, then the restaurant does not receive many negative reviews. All restaurants with a rating greater than 9 are listed in Yelp’s recommendations. Some restaurants that do not provide take-out service receive many negative reviews. All restaurants that are popular among local residents have ratings greater than 9. Subway has a rating greater than 9 or is popular among local residents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Subway provides take-out service and does not receive many negative reviews.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_86",
+    "context": "If the restaurant is listed in Yelp’s recommendations, then the restaurant does not receive many negative reviews. All restaurants with a rating greater than 9 are listed in Yelp’s recommendations. Some restaurants that do not provide take-out service receive many negative reviews. All restaurants that are popular among local residents have ratings greater than 9. Subway has a rating greater than 9 or is popular among local residents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Subway does not provide take-out service.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_87",
+    "context": "In superhero movies, the good guys always win. The Surprising Adventures of Sir Digby Chicken Caesar is a superhero movie. Good guys fight bad guys and vice versa. Sir Digby fights his nemesis. If a superhero movie is named after a character, that character is a good guy. The Surprising Adventures of Sir Digby Chicken Caesar is named after Sir Digby. If somebody wins a fight, the person they are fighting loses. If a superhero movie is named after a character, that character appears in the movie.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Sir Digby’s nemesis loses.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_88",
+    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Walden contains knowledge.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_89",
+    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is smarter than before.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_90",
+    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A person who is smarter has gained knowledge.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_91",
+    "context": "Natural language processing tasks can be categorized as either language generation task or language understanding task. If the output of a natural language processing task is a text sequence, then it is a language generation task. Machine translation is a natural language processing task. The output of machine translation is a text sequence.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Machine translation is a language generation task.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_92",
+    "context": "Natural language processing tasks can be categorized as either language generation task or language understanding task. If the output of a natural language processing task is a text sequence, then it is a language generation task. Machine translation is a natural language processing task. The output of machine translation is a text sequence.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Machine translation is a language understanding task.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_93",
+    "context": "Pets are allowed in some managed buildings. [BG] A deposit is required to rent an apartment in a managed building. The security deposit can be either equal to one month's rent or more. Fluffy is Tom's cat. Cats are pets. The Olive Garden is a managed building. The monthly rent at the Olive Garden is $2000. Tom will rent an apartment in a managed building if and only if he is allowed to move in with Fluffy, and the security deposit is no more than $1500. 2000$ is more than $1500.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom will rent an apartment in The Olive Garden.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_94",
+    "context": "Pets are allowed in some managed buildings. [BG] A deposit is required to rent an apartment in a managed building. The security deposit can be either equal to one month's rent or more. Fluffy is Tom's cat. Cats are pets. The Olive Garden is a managed building. The monthly rent at the Olive Garden is $2000. Tom will rent an apartment in a managed building if and only if he is allowed to move in with Fluffy, and the security deposit is no more than $1500. 2000$ is more than $1500.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is allowed to move in an apartment in The Olive Garden with Fluffy.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_95",
+    "context": "Pets are allowed in some managed buildings. [BG] A deposit is required to rent an apartment in a managed building. The security deposit can be either equal to one month's rent or more. Fluffy is Tom's cat. Cats are pets. The Olive Garden is a managed building. The monthly rent at the Olive Garden is $2000. Tom will rent an apartment in a managed building if and only if he is allowed to move in with Fluffy, and the security deposit is no more than $1500. 2000$ is more than $1500.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The security deposit at the Olive Garden is either $2000 or more.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_96",
+    "context": "If animals are loved by tourists, then they are Max's favorite animals. All animals from Australia are loved by tourists. All quokka are animals from Australia. All of Max's favorite animals are very fluffy. All of Max's favorite animals love to sleep. If a koala is very fluffy, then the koala is not a quokka.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Koalas love to sleep.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_97",
+    "context": "If animals are loved by tourists, then they are Max's favorite animals. All animals from Australia are loved by tourists. All quokka are animals from Australia. All of Max's favorite animals are very fluffy. All of Max's favorite animals love to sleep. If a koala is very fluffy, then the koala is not a quokka.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Koalas love to sleep and are quokka.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_98",
+    "context": "If animals are loved by tourists, then they are Max's favorite animals. All animals from Australia are loved by tourists. All quokka are animals from Australia. All of Max's favorite animals are very fluffy. All of Max's favorite animals love to sleep. If a koala is very fluffy, then the koala is not a quokka.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If a koala is a quokka, then the koala either loves to sleep or is very fluffy.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_99",
+    "context": "A man is either kind or evil. No ugly person is handsome. All evil people are ugly. All gentlemen are handsome. All CEOs are gentlemen. Harry is a gentleman.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is a CEO.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_100",
+    "context": "A man is either kind or evil. No ugly person is handsome. All evil people are ugly. All gentlemen are handsome. All CEOs are gentlemen. Harry is a gentleman.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is kind or a CEO.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_101",
+    "context": "A man is either kind or evil. No ugly person is handsome. All evil people are ugly. All gentlemen are handsome. All CEOs are gentlemen. Harry is a gentleman.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Harry is either both evil and ugly, or neither evil nor ugly, then Harry is neither kind nor a CEO.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_102",
+    "context": "If people are twins or triplets, then they spend a lot of time hanging out with and playing with their siblings. If people have siblings who are the same age, then they are twins or triplets. If people complain often about annoying siblings, then they have siblings who are the same age. If people do not live at home regularly, then they do not develop strong bonds with their family members. If people spend a lot of time hanging out with and playing with their siblings, then they often did not live at home regularly. Luke is either both a twin or triplet and develops strong bonds with his family members, or he neither is a twin or triplet nor develops strong bonds with his family members.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke spends a lot of time hanging out and playing with his siblings.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_103",
+    "context": "If people are twins or triplets, then they spend a lot of time hanging out with and playing with their siblings. If people have siblings who are the same age, then they are twins or triplets. If people complain often about annoying siblings, then they have siblings who are the same age. If people do not live at home regularly, then they do not develop strong bonds with their family members. If people spend a lot of time hanging out with and playing with their siblings, then they often did not live at home regularly. Luke is either both a twin or triplet and develops strong bonds with his family members, or he neither is a twin or triplet nor develops strong bonds with his family members.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke complains often about annoying siblings.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_104",
+    "context": "If people are twins or triplets, then they spend a lot of time hanging out with and playing with their siblings. If people have siblings who are the same age, then they are twins or triplets. If people complain often about annoying siblings, then they have siblings who are the same age. If people do not live at home regularly, then they do not develop strong bonds with their family members. If people spend a lot of time hanging out with and playing with their siblings, then they often did not live at home regularly. Luke is either both a twin or triplet and develops strong bonds with his family members, or he neither is a twin or triplet nor develops strong bonds with his family members.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke is neither a twin nor triplet nor complains often about annoying siblings.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_105",
+    "context": "It costs US $205 to take the GRE test. ETS provides financial aid to those GRE applicants who prove economic hardship. Economic hardship refers to difficulty caused by having too little money or too few resources. Tom lives in a single-parent family. His dad has been out of work for more than a year.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom can apply for financial aid from ETS to take the GRE test.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_106",
+    "context": "It costs US $205 to take the GRE test. ETS provides financial aid to those GRE applicants who prove economic hardship. Economic hardship refers to difficulty caused by having too little money or too few resources. Tom lives in a single-parent family. His dad has been out of work for more than a year.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? It cost below US $300 to take the GRE test.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_107",
+    "context": "It costs US $205 to take the GRE test. ETS provides financial aid to those GRE applicants who prove economic hardship. Economic hardship refers to difficulty caused by having too little money or too few resources. Tom lives in a single-parent family. His dad has been out of work for more than a year.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is no financial aid available for the GRE test.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_108",
+    "context": "If people spill a lot of food on their clothing, then they do not tidy their spaces consistently and enjoy the process of cleaning. All foodies who go out frequently to find new food restaurants to try are people who spill a lot of food on their clothing. If people grew up as only children with no siblings, then they tidy their spaces consistently and enjoy the process of cleaning. If people have parents who are very busy with their regular jobs, then they grew up as only children with no siblings. All households with a high net income have people who have parents who are very busy with their regular jobs. Peter is either both a person who spills a lot of food on his clothing and grew up as an only child with no siblings, or he is neither a person who spills a lot of food on his clothing nor grew up as an only child with no siblings.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter tidies his space consistently and enjoys the process of cleaning.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_109",
+    "context": "If people spill a lot of food on their clothing, then they do not tidy their spaces consistently and enjoy the process of cleaning. All foodies who go out frequently to find new food restaurants to try are people who spill a lot of food on their clothing. If people grew up as only children with no siblings, then they tidy their spaces consistently and enjoy the process of cleaning. If people have parents who are very busy with their regular jobs, then they grew up as only children with no siblings. All households with a high net income have people who have parents who are very busy with their regular jobs. Peter is either both a person who spills a lot of food on his clothing and grew up as an only child with no siblings, or he is neither a person who spills a lot of food on his clothing nor grew up as an only child with no siblings.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter is either a foodie who goes out frequently to find new food restaurants to try or belongs to a household with a high net income.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_110",
+    "context": "If people spill a lot of food on their clothing, then they do not tidy their spaces consistently and enjoy the process of cleaning. All foodies who go out frequently to find new food restaurants to try are people who spill a lot of food on their clothing. If people grew up as only children with no siblings, then they tidy their spaces consistently and enjoy the process of cleaning. If people have parents who are very busy with their regular jobs, then they grew up as only children with no siblings. All households with a high net income have people who have parents who are very busy with their regular jobs. Peter is either both a person who spills a lot of food on his clothing and grew up as an only child with no siblings, or he is neither a person who spills a lot of food on his clothing nor grew up as an only child with no siblings.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter is either a foodie who goes out frequently to find new food restaurants to try and belong to a household with a high net income or he is a foodie who goes out frequently to find new food restaurants to try nor belongs to a household with a high net income.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_111",
+    "context": "All fir trees are evergreens. Some objects of worship are fir trees.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some evergreens are not objects of worship.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_112",
+    "context": "The Picuris Mountains are a mountain range in New Mexico or Texas. Juan de Onate visited the Picuris Mountains. The Harding Pegmatite Mine, located in the Picuris Mountains, was donated. There are no mountain ranges in texas that have mines which have been donated.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Juan de Onate visited a mountain range in New Mexico.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_113",
+    "context": "The Picuris Mountains are a mountain range in New Mexico or Texas. Juan de Onate visited the Picuris Mountains. The Harding Pegmatite Mine, located in the Picuris Mountains, was donated. There are no mountain ranges in texas that have mines which have been donated.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Juan de Onate visited a mountain range in Texas.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_114",
+    "context": "The Picuris Mountains are a mountain range in New Mexico or Texas. Juan de Onate visited the Picuris Mountains. The Harding Pegmatite Mine, located in the Picuris Mountains, was donated. There are no mountain ranges in texas that have mines which have been donated.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Harding Pegmatite Mine is not located in a mountain range in New Mexico.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_115",
+    "context": "If a man is taller than another man, the taller one can block the other's shooting. Michael is a man who is taller than everyone else in his class. If person x is taller than person y, and person y is taller than person z, than x is taller than z Peter is a man who is taller than Michael. Michael can block any shooting from a person as long as the person does not jump when shooting. Michael cannot block Windy's shooting. Every shooter who can jump when shooting is a great shooter.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter is shorter than a man in Michael's class.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_116",
+    "context": "If a man is taller than another man, the taller one can block the other's shooting. Michael is a man who is taller than everyone else in his class. If person x is taller than person y, and person y is taller than person z, than x is taller than z Peter is a man who is taller than Michael. Michael can block any shooting from a person as long as the person does not jump when shooting. Michael cannot block Windy's shooting. Every shooter who can jump when shooting is a great shooter.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Windy is a great shooter.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_117",
+    "context": "If a man is taller than another man, the taller one can block the other's shooting. Michael is a man who is taller than everyone else in his class. If person x is taller than person y, and person y is taller than person z, than x is taller than z Peter is a man who is taller than Michael. Michael can block any shooting from a person as long as the person does not jump when shooting. Michael cannot block Windy's shooting. Every shooter who can jump when shooting is a great shooter.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter can block Windy's shooting.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_118",
+    "context": "Barutin Cove is named after the Bulgarian settlement of Barutin. Barutin Cove is on the southwest coast of Snow Island. The South Shetland Islands include Snow Island, Greenwich Island, and Deception Island. The South Shetland Islands are considered part of Antarctica. If A is located in B and B is located in C, then A is located in C.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Barutin is named after all islands in Antarctica.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_119",
+    "context": "Barutin Cove is named after the Bulgarian settlement of Barutin. Barutin Cove is on the southwest coast of Snow Island. The South Shetland Islands include Snow Island, Greenwich Island, and Deception Island. The South Shetland Islands are considered part of Antarctica. If A is located in B and B is located in C, then A is located in C.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is at least one cove in Antarctica named after a place in Bulgaria.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_120",
+    "context": "Barutin Cove is named after the Bulgarian settlement of Barutin. Barutin Cove is on the southwest coast of Snow Island. The South Shetland Islands include Snow Island, Greenwich Island, and Deception Island. The South Shetland Islands are considered part of Antarctica. If A is located in B and B is located in C, then A is located in C.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Barutin is not located in Antarctica.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_121",
+    "context": "Some affection is love. Some love is positive.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some affection is positive.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_122",
+    "context": "If something can transport multiple passengers, then they are not empty. All airlines can transport multiple passengers. All planes are empty. All Boeing 707s are planes. If Greyhound is not an airline, then there are no Greyhound planes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Greyhound is an airline.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_123",
+    "context": "If something can transport multiple passengers, then they are not empty. All airlines can transport multiple passengers. All planes are empty. All Boeing 707s are planes. If Greyhound is not an airline, then there are no Greyhound planes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A Greyhound is a Boeing 707.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_124",
+    "context": "If something can transport multiple passengers, then they are not empty. All airlines can transport multiple passengers. All planes are empty. All Boeing 707s are planes. If Greyhound is not an airline, then there are no Greyhound planes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A Greyhound is not a Boeing 707.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_125",
+    "context": "All mammals are animals. All monkeys are mammals. An animal is either a monkey or a bird. All birds fly. All animals breathe. If something can fly, then it has wings. If Rock is neither a fly nor a bird, then Rock neither flies nor breathes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a monkey.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_126",
+    "context": "All mammals are animals. All monkeys are mammals. An animal is either a monkey or a bird. All birds fly. All animals breathe. If something can fly, then it has wings. If Rock is neither a fly nor a bird, then Rock neither flies nor breathes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock has wings.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_127",
+    "context": "All mammals are animals. All monkeys are mammals. An animal is either a monkey or a bird. All birds fly. All animals breathe. If something can fly, then it has wings. If Rock is neither a fly nor a bird, then Rock neither flies nor breathes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock does not have wings.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_128",
+    "context": "All people who have a wedding are people who have at least one child. All people who travel to Paris for their honeymoon are people who have a wedding. All weddings that occur in July belong to people who travel to Paris for their honeymoon. Some weddings in July are well-attended. If John has at least one child, then John does not travel to Paris for his honeymoon and does not have a wedding. If John has a wedding that is well-attended, then John has a wedding in July or, if not, then John travels to Paris for their honeymoon.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John has a wedding that is well-attended.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_129",
+    "context": "All people who have a wedding are people who have at least one child. All people who travel to Paris for their honeymoon are people who have a wedding. All weddings that occur in July belong to people who travel to Paris for their honeymoon. Some weddings in July are well-attended. If John has at least one child, then John does not travel to Paris for his honeymoon and does not have a wedding. If John has a wedding that is well-attended, then John has a wedding in July or, if not, then John travels to Paris for their honeymoon.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John does not have a wedding that is well-attended.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_130",
+    "context": "All people who have a wedding are people who have at least one child. All people who travel to Paris for their honeymoon are people who have a wedding. All weddings that occur in July belong to people who travel to Paris for their honeymoon. Some weddings in July are well-attended. If John has at least one child, then John does not travel to Paris for his honeymoon and does not have a wedding. If John has a wedding that is well-attended, then John has a wedding in July or, if not, then John travels to Paris for their honeymoon.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John has at least one child.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_131",
+    "context": "All people who have a wedding are people who have at least one child. All people who travel to Paris for their honeymoon are people who have a wedding. All weddings that occur in July belong to people who travel to Paris for their honeymoon. Some weddings in July are well-attended. If John has at least one child, then John does not travel to Paris for his honeymoon and does not have a wedding. If John has a wedding that is well-attended, then John has a wedding in July or, if not, then John travels to Paris for their honeymoon.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John has neither a wedding that is well-attended nor does he travel to Paris for his honeymoon.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_132",
+    "context": "[BG] Some mammals have teeth. Platypus have no teeth. Platypus are mammals. Humans have teeth.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Platypus are mammals with no teeth.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_133",
+    "context": "[BG] Some mammals have teeth. Platypus have no teeth. Platypus are mammals. Humans have teeth.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Platypus are reptiles.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_134",
+    "context": "[BG] Some mammals have teeth. Platypus have no teeth. Platypus are mammals. Humans have teeth.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Humans are mammals.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_135",
+    "context": "Plungers suck. Vacuums suck. Vampires suck. Space is a vacuum. A duster is a household appliance that doesn't suck.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Space sucks.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_136",
+    "context": "Plungers suck. Vacuums suck. Vampires suck. Space is a vacuum. A duster is a household appliance that doesn't suck.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Space is a vampire.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_137",
+    "context": "Plungers suck. Vacuums suck. Vampires suck. Space is a vacuum. A duster is a household appliance that doesn't suck.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If something is a household appliance, it sucks.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_138",
+    "context": "Machine Learning algorithms can be categorized as supervised learning, unsupervised learning, and reinforcement learning. Unsupervised learning doesn't require labelled data. The state-of-the-art text summarization model is trained with machine learning algorithms. Reinforcement learning is not used to train the state-of-the-art text summarization model. The Machine Learning algorithm for training text summarization model requires labelled data.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Supervised learning is used to train the state-of-the-art text summarization model.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_139",
+    "context": "Machine Learning algorithms can be categorized as supervised learning, unsupervised learning, and reinforcement learning. Unsupervised learning doesn't require labelled data. The state-of-the-art text summarization model is trained with machine learning algorithms. Reinforcement learning is not used to train the state-of-the-art text summarization model. The Machine Learning algorithm for training text summarization model requires labelled data.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Unsupervised learning is used to train the state-of-the-art text summarization model.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_140",
+    "context": "If a cartoon character is funny, then it is popular. If a cartoon character is ugly, then it is not popular. If a cartoon character is loved by children, then it is funny. If a cartoon character is from The Simpsons, then it is loved by children. If a cartoon character is yellow, then it is from The Simpsons. Ben is either from The Simpsons or funny.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is loved by children.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_141",
+    "context": "If a cartoon character is funny, then it is popular. If a cartoon character is ugly, then it is not popular. If a cartoon character is loved by children, then it is funny. If a cartoon character is from The Simpsons, then it is loved by children. If a cartoon character is yellow, then it is from The Simpsons. Ben is either from The Simpsons or funny.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is ugly or yellow.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_142",
+    "context": "If a cartoon character is funny, then it is popular. If a cartoon character is ugly, then it is not popular. If a cartoon character is loved by children, then it is funny. If a cartoon character is from The Simpsons, then it is loved by children. If a cartoon character is yellow, then it is from The Simpsons. Ben is either from The Simpsons or funny.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is either yellow and ugly or neither yellow nor ugly.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_143",
+    "context": "Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals. Heck cattle were bred-back in the 1920s to resemble the aurochs. [BG] Heck cattle are animals. [BG] Aurochs are animals. Some animals to be bred-back resemble animals that are extinct.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Heck cattle are artificially selected.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_144",
+    "context": "Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals. Heck cattle were bred-back in the 1920s to resemble the aurochs. [BG] Heck cattle are animals. [BG] Aurochs are animals. Some animals to be bred-back resemble animals that are extinct.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Aurochs are extinct.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_145",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jerry is young.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_146",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jerry is not young.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_147",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rose is a human or a manager.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_148",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rose is a human or Jerry is a manager.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_149",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? It is not true that Rose is a student and Jerry is a human.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_150",
+    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Neapolitan Chronicles is an English book.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_151",
+    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry Potter was published by New Vessel Press.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_152",
+    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Palace of Flies was translated from Italian.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_153",
+    "context": "If people own a large desktop monitor at their home, then they work regularly and often at home. All people who have a fully stocked and impressive home office are people who own a large desktop monitor at their home. All people who work regularly and often at home spend their free time tidying and organizing the spaces in their homes. All people who work regularly and often at home visit the office supply store regularly. If people spend their free time tidying and organizing the spaces in their home, then they do not go to bed late and wake up every day after noon. Remy either both goes to bed late and wakes up every day after noon and spends their free time tidying and organizing the spaces in their home, or they do not go to bed late and wake up every day after noon nor spend their free time tidying and organizing the spaces in their home.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Remy visits the office supply store regularly.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_154",
+    "context": "If people own a large desktop monitor at their home, then they work regularly and often at home. All people who have a fully stocked and impressive home office are people who own a large desktop monitor at their home. All people who work regularly and often at home spend their free time tidying and organizing the spaces in their homes. All people who work regularly and often at home visit the office supply store regularly. If people spend their free time tidying and organizing the spaces in their home, then they do not go to bed late and wake up every day after noon. Remy either both goes to bed late and wakes up every day after noon and spends their free time tidying and organizing the spaces in their home, or they do not go to bed late and wake up every day after noon nor spend their free time tidying and organizing the spaces in their home.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Remy has a fully stocked and impressive home office and also visits the office supply store regularly.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_155",
+    "context": "If people own a large desktop monitor at their home, then they work regularly and often at home. All people who have a fully stocked and impressive home office are people who own a large desktop monitor at their home. All people who work regularly and often at home spend their free time tidying and organizing the spaces in their homes. All people who work regularly and often at home visit the office supply store regularly. If people spend their free time tidying and organizing the spaces in their home, then they do not go to bed late and wake up every day after noon. Remy either both goes to bed late and wakes up every day after noon and spends their free time tidying and organizing the spaces in their home, or they do not go to bed late and wake up every day after noon nor spend their free time tidying and organizing the spaces in their home.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Remy either goes to bed late and wakes up every day after noon or visits the office supply store regularly, then Remy neither spends their free time tidying and organizing the spaces in their home nor has a fully stocked and impressive home office.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_156",
+    "context": "All humans are mortal. All Greeks are humans.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Greeks are mortal.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_157",
+    "context": "No students who work in the library are from the computer science department. All students who have part-time jobs offered by the university are students who work in the library. All students who take the database course are from the computer science department. All students instructed by professor David are taking the database course. All students working in the lab are instructed by professor David. James is a student working in the lab. Jack neither has a part-time job offered by the university nor works in the lab.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has a part-time job offered by the university.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_158",
+    "context": "No students who work in the library are from the computer science department. All students who have part-time jobs offered by the university are students who work in the library. All students who take the database course are from the computer science department. All students instructed by professor David are taking the database course. All students working in the lab are instructed by professor David. James is a student working in the lab. Jack neither has a part-time job offered by the university nor works in the lab.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have a part-time job offered by the university.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_159",
+    "context": "No students who work in the library are from the computer science department. All students who have part-time jobs offered by the university are students who work in the library. All students who take the database course are from the computer science department. All students instructed by professor David are taking the database course. All students working in the lab are instructed by professor David. James is a student working in the lab. Jack neither has a part-time job offered by the university nor works in the lab.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James either takes the database course or has a part-time job offered by the university.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_160",
+    "context": "No students who work in the library are from the computer science department. All students who have part-time jobs offered by the university are students who work in the library. All students who take the database course are from the computer science department. All students instructed by professor David are taking the database course. All students working in the lab are instructed by professor David. James is a student working in the lab. Jack neither has a part-time job offered by the university nor works in the lab.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jack takes the database course.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_161",
+    "context": "If George likes music, he wants to compose. If George has access to a program, he can compose. If George can compose and wants to compose, he will compose.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If George likes music and has access to a program, he will compose.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_162",
+    "context": "If George likes music, he wants to compose. If George has access to a program, he can compose. If George can compose and wants to compose, he will compose.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If George will not compose, George can not compose.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_163",
+    "context": "A hawk never lands. Some birds are hawks.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All birds land",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_164",
+    "context": "On some Mondays at 8 pm, roses are given out on TV. Every rose given out on TV is on the Bachelor. Everything on the Bachelor portrays the lives of real people. All shows portraying the lives of real people are reality TV shows. Breaking Bad is not a reality TV show.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Breaking Bad is on Monday at 8 pm.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_165",
+    "context": "On some Mondays at 8 pm, roses are given out on TV. Every rose given out on TV is on the Bachelor. Everything on the Bachelor portrays the lives of real people. All shows portraying the lives of real people are reality TV shows. Breaking Bad is not a reality TV show.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Breaking Bad is a TV show in which roses are given out on Monday at 8 pm.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_166",
+    "context": "On some Mondays at 8 pm, roses are given out on TV. Every rose given out on TV is on the Bachelor. Everything on the Bachelor portrays the lives of real people. All shows portraying the lives of real people are reality TV shows. Breaking Bad is not a reality TV show.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If roses are given out during Breaking Bad, then it is on Monday at 8 pm.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_167",
+    "context": "Heinrich Scmidt was a Nazi German politician. Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Heinrich Schmidt was either German or Russian.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_168",
+    "context": "Heinrich Scmidt was a Nazi German politician. Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Nazi German politician was part of both the Prussian State Parliament and the Nazi Reichstag.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_169",
+    "context": "Heinrich Scmidt was a Nazi German politician. Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No politicans are part of the Nazi Reichstag.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_170",
+    "context": "If something is a deadly disease, then its survival rate is low. All severe cancers are deadly diseases. Bile duct cancer is a severe cancer. All Cholangiocarcinoma is bile duct cancer. No one with mild flu has a low survival rate. If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Colorectal cancer is a severe cancer",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_171",
+    "context": "If something is a deadly disease, then its survival rate is low. All severe cancers are deadly diseases. Bile duct cancer is a severe cancer. All Cholangiocarcinoma is bile duct cancer. No one with mild flu has a low survival rate. If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If colorectal cancer is a bile duct cancer or a Cholangiocarcinoma, then colorectal cancer is a bile duct cancer and a mild flu.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_172",
+    "context": "If something is a deadly disease, then its survival rate is low. All severe cancers are deadly diseases. Bile duct cancer is a severe cancer. All Cholangiocarcinoma is bile duct cancer. No one with mild flu has a low survival rate. If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If colorectal cancer is not a mild flu and a Cholangiocarcinoma, then colorectal cancer is a bile duct cancer or a Cholangiocarcinoma.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_173",
+    "context": "All people who eat salads regularly are very conscious about their health and eating habits. All people who grew up in health-conscious childhood homes eat salads regularly. All people who fulfill their nutritional daily intakes grew up in health-conscious childhood homes. If people have good relationships with their parents, then they fulfill their nutritional daily intakes. If people have good relationships with their parents, then they do not eat salads regularly. If people visit the gym at least once a day, then they always fulfill their daily nutritional intakes. It is either both true that Taylor grew up in a health-conscious childhood home and she has a good relationship with her parents, or it is true that Taylor neither grew up in a health-conscious childhood home nor has a good relationship with her parents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor eats salads regularly.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_174",
+    "context": "All people who eat salads regularly are very conscious about their health and eating habits. All people who grew up in health-conscious childhood homes eat salads regularly. All people who fulfill their nutritional daily intakes grew up in health-conscious childhood homes. If people have good relationships with their parents, then they fulfill their nutritional daily intakes. If people have good relationships with their parents, then they do not eat salads regularly. If people visit the gym at least once a day, then they always fulfill their daily nutritional intakes. It is either both true that Taylor grew up in a health-conscious childhood home and she has a good relationship with her parents, or it is true that Taylor neither grew up in a health-conscious childhood home nor has a good relationship with her parents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor visits the gym at least once a day.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_175",
+    "context": "All people who eat salads regularly are very conscious about their health and eating habits. All people who grew up in health-conscious childhood homes eat salads regularly. All people who fulfill their nutritional daily intakes grew up in health-conscious childhood homes. If people have good relationships with their parents, then they fulfill their nutritional daily intakes. If people have good relationships with their parents, then they do not eat salads regularly. If people visit the gym at least once a day, then they always fulfill their daily nutritional intakes. It is either both true that Taylor grew up in a health-conscious childhood home and she has a good relationship with her parents, or it is true that Taylor neither grew up in a health-conscious childhood home nor has a good relationship with her parents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor neither grew up in a health-conscious childhood home nor does she visit the gym at least once a day.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_176",
+    "context": "[BG] The Olympic games is a sporting event. The last Olympic games was in Tokyo. The United States won the most medals in Tokyo.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The world championships is a sporting event.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_177",
+    "context": "[BG] The Olympic games is a sporting event. The last Olympic games was in Tokyo. The United States won the most medals in Tokyo.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The last Olympic games were not in Tokyo.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_178",
+    "context": "[BG] The Olympic games is a sporting event. The last Olympic games was in Tokyo. The United States won the most medals in Tokyo.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The United States won the most medals in the last Olympic games.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_179",
+    "context": "All horses have hooves. No humans have hooves.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some humans are horses.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_180",
+    "context": "Susan flies to LGA airport. The departure and arrival can not be the same airport. John flies from LGA airport.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Susan flies from LGA airport.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_181",
+    "context": "Susan flies to LGA airport. The departure and arrival can not be the same airport. John flies from LGA airport.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John flies to LGA airport.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_182",
+    "context": "No one nice to animals is mean to animals. Some grumpy people are mean to animals. All animal lovers are nice to animals. If someone owns a pet, then they love animals. Tom is a pet owner.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is a grumpy person.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_183",
+    "context": "No one nice to animals is mean to animals. Some grumpy people are mean to animals. All animal lovers are nice to animals. If someone owns a pet, then they love animals. Tom is a pet owner.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is not a grumpy person and mean to animals.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_184",
+    "context": "No one nice to animals is mean to animals. Some grumpy people are mean to animals. All animal lovers are nice to animals. If someone owns a pet, then they love animals. Tom is a pet owner.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Tom is not a grumpy person and mean to animals, then Tom is neither a grumpy person nor an Animal Lover.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_185",
+    "context": "A podcast is not a novel. [BG] If a person is born in American City, the person is American. [BG] If a book is novel and it is written by a person, then the person is a novel writer. Dani Shapiro is an American writer. Family History is written by Dani Shapiro. Family History is a novel written in 2003. Dani Shapiro created a podcast called Family Secrets. [BG] Boston is an American city.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dani Shapiro is a novel writer.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_186",
+    "context": "A podcast is not a novel. [BG] If a person is born in American City, the person is American. [BG] If a book is novel and it is written by a person, then the person is a novel writer. Dani Shapiro is an American writer. Family History is written by Dani Shapiro. Family History is a novel written in 2003. Dani Shapiro created a podcast called Family Secrets. [BG] Boston is an American city.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Family Secrets is a novel.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_187",
+    "context": "A podcast is not a novel. [BG] If a person is born in American City, the person is American. [BG] If a book is novel and it is written by a person, then the person is a novel writer. Dani Shapiro is an American writer. Family History is written by Dani Shapiro. Family History is a novel written in 2003. Dani Shapiro created a podcast called Family Secrets. [BG] Boston is an American city.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dani Shapiro was born in Boston.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_188",
+    "context": "Some basketball players are not American. All basketball players are tall. If someone is tall, they wear large shoes. If someone wears large shoes, they wear large-sized clothes. Yuri does not wear large-size clothes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yuri is an American.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_189",
+    "context": "Some basketball players are not American. All basketball players are tall. If someone is tall, they wear large shoes. If someone wears large shoes, they wear large-sized clothes. Yuri does not wear large-size clothes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yuri is not an American basketball player.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_190",
+    "context": "Some basketball players are not American. All basketball players are tall. If someone is tall, they wear large shoes. If someone wears large shoes, they wear large-sized clothes. Yuri does not wear large-size clothes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yuri is an American basketball player.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_191",
+    "context": "Some basketball players are not American. All basketball players are tall. If someone is tall, they wear large shoes. If someone wears large shoes, they wear large-sized clothes. Yuri does not wear large-size clothes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Yuri does not wear large shoes, then Yuri is an American basketball player.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_192",
+    "context": "Some basketball players are not American. All basketball players are tall. If someone is tall, they wear large shoes. If someone wears large shoes, they wear large-sized clothes. Yuri does not wear large-size clothes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Yuri is not an American basketball player, then Yuri is a basketball player.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_193",
+    "context": "Events are either happy or sad. At least one event is happy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All events are sad.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_194",
+    "context": "The winner of the 1992 du Maurier Classic was Steinhauer. Steinhauer participated in the 1992 du Maurier Classic. There was one six-way tie on the leaderboard and one person in the six-way tie was from Belgium. Descampe is from Belgium and is on the leaderboard of the 1992 du Maurier Classic. All people on the leaderboard of the 1992 du Maurier Classic participated in the 1992 du Maurier Classic.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Steinhauer was not the winner of the 1992 du Maurier Classic.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_195",
+    "context": "The winner of the 1992 du Maurier Classic was Steinhauer. Steinhauer participated in the 1992 du Maurier Classic. There was one six-way tie on the leaderboard and one person in the six-way tie was from Belgium. Descampe is from Belgium and is on the leaderboard of the 1992 du Maurier Classic. All people on the leaderboard of the 1992 du Maurier Classic participated in the 1992 du Maurier Classic.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Descampe is in the six-way tie in the leaderboard of the 1992 du Maurier Classic.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_196",
+    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi is terricolous.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_197",
+    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi barks and is a dog.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_198",
+    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi neither barks nor is a dog.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_199",
+    "context": "Ailton Silva, born in 1995, is commonly known as Ailton. Ailton is a football player who was loaned out to Braga. Ailton Silva is a Brazillian footballer who plays for Nautico. Nautico is a football club along with Braga. Fluminense is a football club.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one playing for Nautico is Brazilian.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_200",
+    "context": "Ailton Silva, born in 1995, is commonly known as Ailton. Ailton is a football player who was loaned out to Braga. Ailton Silva is a Brazillian footballer who plays for Nautico. Nautico is a football club along with Braga. Fluminense is a football club.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton Silva foes not play for a football club.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_201",
+    "context": "Ailton Silva, born in 1995, is commonly known as Ailton. Ailton is a football player who was loaned out to Braga. Ailton Silva is a Brazillian footballer who plays for Nautico. Nautico is a football club along with Braga. Fluminense is a football club.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton was not loaned out to a football club.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_202",
+    "context": "Ailton Silva, born in 1995, is commonly known as Ailton. Ailton is a football player who was loaned out to Braga. Ailton Silva is a Brazillian footballer who plays for Nautico. Nautico is a football club along with Braga. Fluminense is a football club.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton Silva played for Fluminense.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_203",
+    "context": "Ailton Silva, born in 1995, is commonly known as Ailton. Ailton is a football player who was loaned out to Braga. Ailton Silva is a Brazillian footballer who plays for Nautico. Nautico is a football club along with Braga. Fluminense is a football club.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton Silva was loaned out to a football club.",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "answer": "C"
+  }
+]

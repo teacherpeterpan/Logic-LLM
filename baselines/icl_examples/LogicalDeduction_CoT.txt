@@ -1,0 +1,47 @@
+Given a problem statement as contexts, the task is to answer a logical reasoning question. 
+------
+Context:
+The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a branch, there are five birds: a quail, an owl, a raven, a falcon, and a robin. The owl is the leftmost. The robin is to the left of the raven. The quail is the rightmost. The raven is the third from the left.
+
+Question: Which of the following is true?
+
+Options:
+A) The quail is the rightmost.
+B) The owl is the rightmost.
+C) The raven is the rightmost.
+D) The falcon is the rightmost.
+E) The robin is the rightmost.
+
+Reasoning:
+The owl is the leftmost. This means owl is not the rightmost. The robin is to the left of the raven. This means neither robin nor raven is the rightmost. The quail is the rightmost. This directly answers the question, so option A) The quail is the rightmost is true. The raven is the third from the left. This means raven is also not the rightmost. So, the answer is: A) The quail is the rightmost.
+
+The correct option is: A
+------
+Context:
+The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn an antique car show, there are seven vehicles: a bus, a motorcyle, a hatchback, a station wagon, a minivan, a truck, and a limousine. The station wagon is the fourth-newest. The motorcyle is newer than the truck. The station wagon is older than the hatchback. The minivan is newer than the hatchback. The bus is newer than the minivan. The truck is newer than the limousine.
+
+Question: Which of the following is true?
+
+Options:
+A) The bus is the third-oldest.
+B) The motorcyle is the third-oldest.
+C) The hatchback is the third-oldest.
+D) The station wagon is the third-oldest.
+E) The minivan is the third-oldest.
+F) The truck is the third-oldest.
+G) The limousine is the third-oldest.
+
+Reasoning:
+The station wagon is the fourth-newest. This means it is the fourth-oldest, so option D is incorrect. The station wagon is older than the hatchback. Since the station wagon is the fourth-oldest, the hatchback must be among the three newest cars, so it cannot be the third-oldest, and option C is incorrect. The minivan is newer than the hatchback. Given the previous point, the minivan must also be among the three newest cars and cannot be the third-oldest. So, option E is incorrect. The bus is newer than the minivan. From the previous point, the bus must be among the two newest cars, and it cannot be the third-oldest. So, option A is incorrect. The truck is newer than the limousine. The limousine is older than the truck, so the limousine cannot be the third-oldest. So, option G is incorrect. Therefore, the answer is: B) The motorcyle is the third-oldest.
+
+The correct option is: B
+------
+Context:
+[[CONTEXT]]
+
+Question: [[QUESTION]]
+
+Options:
+[[OPTIONS]]
+
+Reasoning:
