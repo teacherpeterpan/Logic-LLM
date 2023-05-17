@@ -25,3 +25,13 @@ python gpt3_baseline.py \
     --mode "Baseline [Direct | CoT]" \
     --max_new_tokens "16 for Direct; 1024 for CoT" \
 ```
+
+The results will be saved in `./baselines/results`. To evaluate the results, please run the following commands:
+
+```bash
+python evaluate.py \
+    --dataset_name "Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction]" \
+    --model_name "Model Name [text-davinci-003 | gpt-4]" \
+    --split dev \
+    --mode "Baseline [Direct | CoT]" \
+```

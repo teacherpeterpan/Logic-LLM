@@ -3,8 +3,7 @@ import json
 from tqdm import tqdm
 import random
 import os
-# from num2words import num2words
-# from word2number import w2n
+import argparse
 
 def extract_number(string):
     # Remove all characters except digits, decimal point and negative sign
@@ -81,8 +80,6 @@ def get_choice(answer_str):
             return c.replace(')', '')
     return None
 
-# error_examples = ['FOLIO_dev_0', 'FOLIO_dev_1', 'FOLIO_dev_2', 'FOLIO_dev_24', 'FOLIO_dev_25', 'FOLIO_dev_26', 'FOLIO_dev_33', 'FOLIO_dev_39', 'FOLIO_dev_41', 'FOLIO_dev_42', 'FOLIO_dev_43', 'FOLIO_dev_44', 'FOLIO_dev_49', 'FOLIO_dev_50', 'FOLIO_dev_51', 'FOLIO_dev_61', 'FOLIO_dev_62', 'FOLIO_dev_66', 'FOLIO_dev_67', 'FOLIO_dev_68', 'FOLIO_dev_71', 'FOLIO_dev_72', 'FOLIO_dev_73', 'FOLIO_dev_76', 'FOLIO_dev_77', 'FOLIO_dev_78', 'FOLIO_dev_84', 'FOLIO_dev_85', 'FOLIO_dev_86', 'FOLIO_dev_93', 'FOLIO_dev_94', 'FOLIO_dev_95', 'FOLIO_dev_96', 'FOLIO_dev_97', 'FOLIO_dev_98', 'FOLIO_dev_102', 'FOLIO_dev_103', 'FOLIO_dev_104', 'FOLIO_dev_105', 'FOLIO_dev_106', 'FOLIO_dev_108', 'FOLIO_dev_109', 'FOLIO_dev_110', 'FOLIO_dev_112', 'FOLIO_dev_113', 'FOLIO_dev_115', 'FOLIO_dev_116', 'FOLIO_dev_117', 'FOLIO_dev_118', 'FOLIO_dev_119', 'FOLIO_dev_120', 'FOLIO_dev_122', 'FOLIO_dev_124', 'FOLIO_dev_137', 'FOLIO_dev_140', 'FOLIO_dev_141', 'FOLIO_dev_142', 'FOLIO_dev_143', 'FOLIO_dev_153', 'FOLIO_dev_154', 'FOLIO_dev_155', 'FOLIO_dev_180', 'FOLIO_dev_181', 'FOLIO_dev_196', 'FOLIO_dev_197', 'FOLIO_dev_198', 'FOLIO_dev_200']
-
 def evaluate_QA(result_file):
     with open(result_file, 'r') as f:
         QA_results = json.load(f)
@@ -91,14 +88,6 @@ def evaluate_QA(result_file):
     total_f1 = 0.0
     count = 0
     for sample in QA_results:
-        # for GSM8K
-        #gold_answer = float(sample['answer'])
-        #prediction = extract_number(sample['predicted_answer'])
-
-        # if sample['id'] in error_examples:
-        #     continue
-
-        # for ARC (multiple choice)
         gold_answer = sample['answer'].replace('(', '').replace(')', '').strip()
         answer_str = sample['predicted_answer'].strip()
         prediction = get_choice(answer_str)
@@ -118,24 +107,24 @@ def evaluate_QA(result_file):
 
         print(f"prediction: {prediction} \t gold_answers: {gold_answer} \t match: {prediction == gold_answer}")
         
-        # em_score, f1_score = evaluate_sample(prediction, gold_answers)
         em_score = 1.0 if prediction == gold_answer else 0.0
         total_em += em_score
-        # total_f1 += f1_score
         count += 1
     
     avg_em = total_em / count
-    # avg_f1 = 100 * total_f1 / count
-    # print(f"EM: {avg_em} \t F1: {avg_f1}")
     print(f"EM: {avg_em}")
 
-if __name__ == "__main__":
-    dataset_name = 'ProofWriter'
-    # model_name = 'text-davinci-003'
-    model_name = 'gpt-4'
-    mode = 'CoT'
-    split = 'dev'
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dataset_name', type=str)
+    parser.add_argument('--model_name', type=str)
+    parser.add_argument('--mode', type=str)
+    parser.add_argument('--split', type=str, default='dev')
+    parser.add_argument('--result_path', type=str, default='./results')
+    args = parser.parse_args()
+    return args
 
-    result_path = f'./results'
-    result_file = os.path.join(result_path, f'{mode}_{dataset_name}_{split}_{model_name}.json')
+if __name__ == "__main__":
+    args = parse_args()
+    result_file = os.path.join(args.result_path, f'{args.mode}_{args.dataset_name}_{args.split}_{args.model_name}.json')
     evaluate_QA(result_file)
