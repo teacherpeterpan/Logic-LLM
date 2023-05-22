@@ -3,11 +3,11 @@ Codes for ["LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for
 
 Authors: **Liangming Pan, Alon Albalak, Xinyi Wang, William Yang Wang**. 
 
-NLP Group, University of California, Santa Barbara
+[NLP Group](http://nlp.cs.ucsb.edu/), University of California, Santa Barbara
 
 ## Introduction
 
-This repository contains the code and data for the paper [LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning](). 
+This repository contains the code and data for the paper [LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning](). We introduce a novel framework, **LOGIC-LM**, which integrates LLMs with symbolic reasoning to improve logical problem-solving. Our method first utilizes LLMs to translate a natural language problem into a symbolic formulation. Afterward, a deterministic symbolic solver performs inference on the formulated problem. We also introduce a self-refinement stage, which utilizes the symbolic solver’s error messages to revise symbolic formalizations. We demonstrate LOGIC-LM’s effectiveness on four logical reasoning datasets: ProofWriter, PrOntoQA, FOLIO, and LogicalDeduction. Our results show significant improvement compared to LLMs alone, with an average performance boost of 62.6% over standard prompting and 23.5% over chain-of-thought prompting. 
 
 ![The general framework of Logic-LM](./framework.png)
 
