@@ -145,3 +145,11 @@ python evaluation.py \
     --backup "The basic mode (random) or LLM-Symbolic collabration mode (LLM)" \
     --self_debug # Optional, only for self-refinement
 ```
+
+## Reference
+Please cite the paper in the following format if you use this dataset during your research.
+
+TBD
+
+## Q&A
+If you encounter any problem, please either directly contact the [Liangming Pan](liangmingpan@ucsb.edu) or leave an issue in the github repo.
