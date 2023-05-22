@@ -1,5 +1,9 @@
 # Logic-LM
-The project page for ["LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning"]. Authors: **Liangming Pan, Alon Albalak, Xinyi Wang, William Yang Wang**. University of California, Santa Barbara. 
+Codes for ["LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning"](). 
+
+Authors: **Liangming Pan, Alon Albalak, Xinyi Wang, William Yang Wang**. 
+
+NLP Group, University of California, Santa Barbara
 
 ## Introduction
 
