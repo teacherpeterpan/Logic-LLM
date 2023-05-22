@@ -7,7 +7,7 @@ Authors: **Liangming Pan, Alon Albalak, Xinyi Wang, William Yang Wang**.
 
 ## Introduction
 
-This repository contains the code and data for the paper [LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning](). We introduce a novel framework, **LOGIC-LM**, which integrates LLMs with symbolic reasoning to improve logical problem-solving. Our method first utilizes LLMs to translate a natural language problem into a symbolic formulation. Afterward, a deterministic symbolic solver performs inference on the formulated problem. We also introduce a self-refinement stage, which utilizes the symbolic solver’s error messages to revise symbolic formalizations. We demonstrate LOGIC-LM’s effectiveness on four logical reasoning datasets: ProofWriter, PrOntoQA, FOLIO, and LogicalDeduction. Our results show significant improvement compared to LLMs alone, with an average performance boost of 62.6% over standard prompting and 23.5% over chain-of-thought prompting. 
+We introduce a novel framework, **LOGIC-LM**, which integrates LLMs with symbolic reasoning to improve logical problem-solving. Our method first utilizes LLMs to translate a natural language problem into a symbolic formulation. Afterward, a deterministic symbolic solver performs inference on the formulated problem. We also introduce a self-refinement stage, which utilizes the symbolic solver’s error messages to revise symbolic formalizations. We demonstrate LOGIC-LM’s effectiveness on four logical reasoning datasets: ProofWriter, PrOntoQA, FOLIO, and LogicalDeduction. Our results show significant improvement compared to LLMs alone, with an average performance boost of 62.6% over standard prompting and 23.5% over chain-of-thought prompting. 
 
 ![The general framework of Logic-LM](./framework.png)
 
@@ -53,4 +53,21 @@ python evaluate.py \
 
 ## Logic Program Generation
 
-To generate logic programs 
+To generate logic programs for logical reasoning problems in each dataset, please run the following commands:
+
+```bash
+cd ./models
+python logic_program.py \
+    --api_key "Your OpenAI API Key" \
+    --interpreter "The type of symbolic solver [pyke | fol | csp]" \
+    --dataset_name "Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction]" \
+    --split dev \
+    --model_name "Model Name [text-davinci-003 | gpt-4]"
+```
+
+Note: use the right symbolic grammar (`--interpreter`) for each dataset: 
+- `pyke`: Logic programming grammar; used for ProntoQA and ProofWriter.
+- `fol`: First-Order Logic grammar; used for FOLIO.
+- `csp`: Constraint Satisfaction Problem grammar; used for LogicalDeduction.
+
+The generated logic programs will be saved in `./models/logic_programs`. 
