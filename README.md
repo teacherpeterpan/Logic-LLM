@@ -5,6 +5,8 @@ The project page for "LOGIC-LM: Empowering Large Language Models with Symbolic S
 
 This repository contains the code and data for the paper [LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning](). 
 
+![The general framework of Logic-LM](./framework.png)
+
 First, install all the required packages:
 
 ```bash
