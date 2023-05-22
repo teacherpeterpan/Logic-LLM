@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+models/logic_programs/
+models/pyke_programs/
+models/results/
+models/__pycache__/
+baselines/results/
+
 # Distribution / packaging
 .Python
 build/

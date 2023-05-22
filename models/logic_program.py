@@ -132,17 +132,20 @@ class LogicProgramGenerator:
         outputs = list({output['id']: output for output in outputs}.values())
         print(f"Generated {len(outputs)} examples.")
         
-        # save outputs        
+        # save outputs
+        if not os.path.exists(os.path.join(self.save_path, self.interpreter)):
+            os.makedirs(os.path.join(self.save_path, self.interpreter))
+        
         with open(os.path.join(self.save_path, self.interpreter, f'{self.dataset_name}_{self.split}_{self.model_name}.json'), 'w') as f:
             json.dump(outputs, f, indent=2, ensure_ascii=False)
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', type=str, default='../data')
-    parser.add_argument('--dataset_name', type=str, default= 'ProntoQA')
+    parser.add_argument('--dataset_name', type=str)
     parser.add_argument('--split', type=str, default='dev')
     parser.add_argument('--save_path', type=str, default='./logic_programs')
-    parser.add_argument('--interpreter', type=str, default='pyke', help= 'pyke or fol')
+    parser.add_argument('--interpreter', type=str)
     parser.add_argument('--api_key', type=str)
     parser.add_argument('--model_name', type=str, default='text-davinci-003')
     parser.add_argument('--stop_words', type=str, default='------')
