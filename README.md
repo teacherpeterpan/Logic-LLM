@@ -1,5 +1,5 @@
 # Logic-LM
-Codes for ["LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning"](). 
+Codes for ["LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning"](https://arxiv.org/abs/2305.12295). 
 
 Authors: **Liangming Pan, Alon Albalak, Xinyi Wang, William Yang Wang**. 
 
@@ -149,7 +149,19 @@ python evaluation.py \
 ## Reference
 Please cite the paper in the following format if you use this dataset during your research.
 
-TBD
+```
+@article{PanLogicLM23,
+  author       = {Liangming Pan and
+                  Alon Albalak and
+                  Xinyi Wang and
+                  William Yang Wang},
+  title        = {{Logic-LM:} Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning},
+  journal      = {CoRR},
+  volume       = {abs/2305.12295},
+  year         = {2023},
+  url          = {https://arxiv.org/abs/2305.12295}
+}
+```
 
 ## Q&A
 If you encounter any problem, please either directly contact the [Liangming Pan](liangmingpan@ucsb.edu) or leave an issue in the github repo.
