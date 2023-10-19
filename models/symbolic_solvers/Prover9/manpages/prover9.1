@@ -1,0 +1,52 @@
+.TH PROVER9 1 "August 12, 2007"
+.SH NAME
+prover9 \- resolution/paramodulation theorem prover
+.SH SYNOPSIS
+.B prover9
+.RI [ options ]
+<
+.I input-file
+>
+.I output-file
+.br
+.B prover9
+.RI [ options ]
+-f
+.I input-file
+>
+.I output-file
+.SH DESCRIPTION
+This manual page documents briefly the
+.B prover9
+command.
+.PP
+\fBprover9\fP is an automated theorem prover for first-order and equational logic. It is a successor of the
+.BR otter (1)
+prover.  \fBprover9\fP uses the inference techniques of ordered resolution and paramodulation with literal selection.
+.SH OPTIONS
+A summary of options is included below.
+.TP
+.B \-h
+View a list of command-line options.
+.TP
+.B \-x
+Enables an experimental enhanced auto-mode.  For more information consult the \fBprover9\fP manual.
+.TP
+.B \-p
+Fully parenthesize output.
+.TP
+.B \-t \fIn
+Constrain the search to last about \fIn\fP seconds.  For UNIX-like systems, the `user CPU' time is used.
+.TP
+.B \-f \fIfiles
+Take input from \fIfiles\fP instead of from standard input.
+.SH SEE ALSO
+.BR mace4 (1),
+.BR otter (1).
+.br
+On Debian systems, the manual is found in the \fIprover9-doc\fP package, at \fI/usr/share/doc/prover9-doc/manual/index.html\fP.
+.SH AUTHOR
+\fBprover9\fP ws written by William McCune <mccune@cs.unm.edu>
+.PP
+This manual page was written by Peter Collingbourne <pcc03@doc.ic.ac.uk>,
+for the Debian project (but may be used by others).

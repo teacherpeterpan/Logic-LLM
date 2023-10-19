@@ -1,0 +1,53 @@
+
+ORIENTING EQUALITIES
+
+orient_equalities() (parautil.c) possibly flips equalities and maybe sets
+a flag in each equality atom:
+
+  mark_oriented_eq(atom);     /* if the "METHOD" says left side is greater */
+  mark_renamable_flip(atom);  /* e.g., commutativity, x(yz)=y(xz) */
+
+
+The methods are (see symbols.h, assign_order_method in termorder.c):
+
+typedef enum { LPO_METHOD,
+	       RPO_METHOD,
+	       KBO_METHOD
+             } Order_method;
+
+----------------------------------------------------------------------
+
+DECIDING DEDMOULATORS
+
+demod.h:
+
+ enum { NOT_DEMODULATOR, ORIENTED, LEX_DEP_LR, LEX_DEP_RL, LEX_DEP_BOTH };
+
+demod.c:
+
+ int demodulator_type(Clause c, int lex_dep_demod_lim) returns one of preceding
+
+If marked as "oriented", it becomes an ORIENTED demodulator; otherwise,
+various checks are done.
+
+DEMODULATION
+
+When a potential demodulator is found, if it is marked as "oriented",
+it is used (always left-to-right).  Otherwise the instance is checked
+by the "METHOD".
+
+PARAMODULATION
+
+Oriented equalities:       are used left-to-right only (from).
+Non-oriented equalities:
+   if flag(ordered_instance), then don't use if instance is backward
+                              else used both ways (except for renamable flips)
+  
+
+
+
+
+   
+
+
+  

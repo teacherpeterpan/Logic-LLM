@@ -1,0 +1,9 @@
+flag breadth_first_hints goes away?
+
+max_weight, etc. changed by action: must update black_rules.
+
+weight_part, etc. changed: must update giv_select.
+
+max_weight, etc. ignored when list(keep).
+
+

@@ -1,0 +1,32 @@
+op(400, infix, ^).
+op(400, infix, v).
+
+set(print_models_portable).
+assign(max_models, -1).     % This means there is no limit.
+
+clauses(theory).
+
+x v y = y v x.
+(x v y) v z = x v (y v z).
+x v (x ^ y) = x.
+
+x ^ y = y ^ x.
+(x ^ y) ^ z = x ^ (y ^ z).
+x ^ (x v y) = x.
+
+% Add the following pair for complemented lattice
+
+x v c(x) = 1.
+x ^ c(x) = 0.
+
+% Add the following for ortholattice
+
+c(x ^ y) = c(x) v c(y).
+c(x v y) = c(x) ^ c(y).
+c(c(x)) = x.
+
+% definition of Sheffer Stroke
+
+f(x,y) = c(x) v c(y).
+
+end_of_list.

@@ -1,0 +1,22 @@
+LADR Changelog.
+
+Most recent changes are at the top.
+
+June 3, 2004.  Update FPA/Path indexing with chunked fpa lists.
+
+May 27, 2004.  Submit mace4-2004-D to CASC for testing.
+
+May 26, 2004.  In formula.c, update the CNF transformation,
+making it more efficient.  Prompted by the May 18, 2004 bug.
+
+May 18, 2004.  Release ladr-2004-C.
+
+May 18, 2004.  Soundness bug from Geoff Sutcliffe.
+CNF transformation.  This affects non-clausal input
+only (formulas(...) in the input).  Since this is a
+serious bug, a new release will be made today.
+
+November 17, 2004.  Some changes to fastparse.  These
+affect ladr-apps.
+
+--- Further changes are listed in the LADR Changelog file (../Changelog).

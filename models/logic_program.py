@@ -7,8 +7,6 @@ from collections import OrderedDict
 from typing import Dict, List, Tuple
 from utils import OpenAIModel
 import argparse
-from prompt_library import few_shot_protoqa_prompt, few_shot_proofwriter_prompt
-from prompt_library import few_shot_folio_prompt_fol, few_shot_logical_deduction_prompt
 
 class LogicProgramGenerator:
     def __init__(self, args):
@@ -18,38 +16,54 @@ class LogicProgramGenerator:
         self.split = args.split
         self.model_name = args.model_name
         self.save_path = args.save_path
-        self.interpreter = args.interpreter
 
         self.openai_api = OpenAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens)
-        self.prompt_creator = {'ProntoQA': self.prompt_prontoqa, 
+        self.prompt_creator = {'FOLIO': self.prompt_folio,
+                               'ProntoQA': self.prompt_prontoqa,
                                'ProofWriter': self.prompt_proofwriter,
-                               'FOLIO': self.prompt_folio,
-                               'LogicalDeduction': self.prompt_logicaldeduction}
+                               'LogicalDeduction': self.prompt_logicaldeduction, 
+                               'AR-LSAT': self.prompt_arlsat}
+        self.load_prompt_templates()
     
-    def prompt_logicaldeduction(self, test_data):
+    def load_prompt_templates(self):
+        prompt_file = f'./models/prompts/{self.dataset_name}.txt'
+        if self.dataset_name == 'AR-LSAT' and self.model_name == 'gpt-4':
+            prompt_file = f'./models/prompts/{self.dataset_name}-long.txt'
+        with open(prompt_file, 'r') as f:
+            self.prompt_template = f.read()
+
+    def prompt_folio(self, test_data):
         problem = test_data['context']
         question = test_data['question'].strip()
-        options = '\n'.join(test_data['options']).strip()
-        full_prompt = few_shot_logical_deduction_prompt % (problem, question, options)
+        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
         return full_prompt
 
+    def prompt_arlsat(self, test_data):
+        problem = test_data['context']
+        question = test_data['question'].strip()
+        choices_str = '\n'.join([f'({choice.strip()}' for choice in test_data['options']]).strip()
+        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+        full_prompt = full_prompt.replace('[[CHOICES]]', choices_str)
+        return full_prompt
+    
     def prompt_prontoqa(self, test_data):
         problem = test_data['context']
-        question = test_data['question'].replace('Is the following statement true or false?', '').strip()
-        question = f'True or false: {question}'
-        full_prompt = few_shot_protoqa_prompt % (problem, question)
+        question = test_data['question'].strip()
+        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
         return full_prompt
     
     def prompt_proofwriter(self, test_data):
         problem = test_data['context']
         question = test_data['question'].strip()
-        full_prompt = few_shot_proofwriter_prompt % (problem, question)
+        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
         return full_prompt
     
-    def prompt_folio(self, test_data):
+    def prompt_logicaldeduction(self, test_data):
         problem = test_data['context']
         question = test_data['question'].strip()
-        full_prompt = few_shot_folio_prompt_fol % (problem, question)
+        choices_str = '\n'.join([f'({choice.strip()}' for choice in test_data['options']]).strip()
+        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+        full_prompt = full_prompt.replace('[[CHOICES]]', choices_str)
         return full_prompt
 
     def load_raw_dataset(self, split):
@@ -83,7 +97,7 @@ class LogicProgramGenerator:
                 print('Error in generating logic programs for example: ', example['id'])
 
         # save outputs        
-        with open(os.path.join(self.save_path, self.interpreter, f'{self.dataset_name}_{self.split}_{self.model_name}.json'), 'w') as f:
+        with open(os.path.join(self.save_path, f'{self.dataset_name}_{self.split}_{self.model_name}.json'), 'w') as f:
             json.dump(outputs, f, indent=2, ensure_ascii=False)
 
     '''
@@ -133,19 +147,18 @@ class LogicProgramGenerator:
         print(f"Generated {len(outputs)} examples.")
         
         # save outputs
-        if not os.path.exists(os.path.join(self.save_path, self.interpreter)):
-            os.makedirs(os.path.join(self.save_path, self.interpreter))
+        if not os.path.exists(self.save_path):
+            os.makedirs(self.save_path)
         
-        with open(os.path.join(self.save_path, self.interpreter, f'{self.dataset_name}_{self.split}_{self.model_name}.json'), 'w') as f:
+        with open(os.path.join(self.save_path, f'{self.dataset_name}_{self.split}_{self.model_name}.json'), 'w') as f:
             json.dump(outputs, f, indent=2, ensure_ascii=False)
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', type=str, default='../data')
+    parser.add_argument('--data_path', type=str, default='./data')
     parser.add_argument('--dataset_name', type=str)
     parser.add_argument('--split', type=str, default='dev')
-    parser.add_argument('--save_path', type=str, default='./logic_programs')
-    parser.add_argument('--interpreter', type=str)
+    parser.add_argument('--save_path', type=str, default='./outputs/logic_programs')
     parser.add_argument('--api_key', type=str)
     parser.add_argument('--model_name', type=str, default='text-davinci-003')
     parser.add_argument('--stop_words', type=str, default='------')

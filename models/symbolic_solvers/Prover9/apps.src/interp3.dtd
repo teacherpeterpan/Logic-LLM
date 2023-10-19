@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!ELEMENT interps (source?,heading?,input?,interp*)>
+
+  <!ATTLIST interps  number_of_interps CDATA #IMPLIED>
+
+  <!ELEMENT interp (op0|op1|op2|opn)*>
+
+    <!ATTLIST interp  size CDATA #REQUIRED
+                      number CDATA #IMPLIED
+                      seconds CDATA #IMPLIED>
+
+      <!ELEMENT sym (#PCDATA)>         <!-- symbol -->
+      <!ELEMENT i (#PCDATA)>           <!-- index -->
+      <!ELEMENT v (#PCDATA)>           <!-- value -->
+      <!ELEMENT head (i+)>
+      <!ELEMENT row (i?,e+)>
+      <!ELEMENT tupval (tup,v)>        <!-- tuple-value -->
+      <!ELEMENT tup    (i*)>           <!-- tuple -->
+
+      <!ELEMENT op0 (sym,v)>                          <!-- arity 0 -->
+        <!ATTLIST op0 type   CDATA #REQUIRED>
+                           
+      <!ELEMENT op1 (sym,head,row)>                   <!-- arity 1 -->
+        <!ATTLIST op1 type   CDATA #REQUIRED>
+  
+      <!ELEMENT op2 (sym,head,row+)>                  <!-- arity 2 -->
+        <!ATTLIST op2 type   CDATA #REQUIRED>
+  
+      <!ELEMENT opn (sym,tupval+)>                    <!-- arity >2 -->
+        <!ATTLIST opn type   CDATA #REQUIRED
+                      arity  CDATA #REQUIRED>
+  

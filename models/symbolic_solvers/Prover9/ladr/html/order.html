@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>order.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "order.h"</H1>
+
+This page has information from files
+<A HREF="../order.h">order.h</A> and <A HREF="../order.c">order.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File order.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#compare_vecs">compare_vecs</A></TD><TD><A HREF="#copy_vec">copy_vec</A></TD><TD><A HREF="#merge_sort">merge_sort</A></TD><TD><A HREF="#merge_sort_recurse">merge_sort_recurse</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="compare_vecs"></A><HR><PRE><B>Ordertype compare_vecs(int *a, int *b, int n);
+</B></PRE><A NAME="copy_vec"></A><HR><PRE><B>void copy_vec(int *a, int *b, int n);
+</B></PRE><A NAME="merge_sort"></A><HR><PRE><B>void merge_sort(void *a[],   /* array to sort */
+		int n,       /* size of array */
+		Ordertype (*comp_proc) (void *, void *));
+</B></PRE>This is a general-purpose sorting routine.  You give it an
+array of pointers to sort, the size of the array, and a
+comparison function.
+<P>
+Here is an example of how to use it.
+<PRE>
+  {
+    <A HREF="term.html">Term</A> args[MAX_ACM_ARGS];
+    int n;
+
+    < set n and put the n terms you wish to sort into args[] >
+
+    <A HREF="#merge_sort">merge_sort</A>((void **) args, n, (Ordertype (*)(void*,void*)) term_compare_ncv);
+
+    < args[] is now ordered by term_compare_ncv() >
+  }
+</PRE>
+<A NAME="merge_sort_recurse"></A><HR><PRE><B>void merge_sort_recurse(void *a[],    /* array to sort */
+			void *w[],    /* work array */
+			int start,    /* index of first element */
+			int end,      /* index of last element */
+			Ordertype (*comp_proc) (void *, void *));
+</B></PRE>This is the recursive part of a general-purpose merge sort.
+You won't ordinarily call this (use merge_sort instead).
+Use this only if you manage allocation of the work array.
+<P>
+Here is an example of how to use it.
+<PRE>
+  {
+    <A HREF="term.html">Term</A> args[MAX_ACM_ARGS], work[MAX_ACM_ARGS];
+    int n;
+
+    < put the n terms you wish to sort into args[] >
+
+    <A HREF="#merge_sort_recurse">merge_sort_recurse</A>((void **) args, (void **) work, 0, n-1,
+               (Ordertype (*)(void*,void*)) term_compare_ncv);
+
+    < args[] is now ordered by term_compare_ncv() >
+  }
+</PRE>
+<HR><A NAME=defns></A><H2>Public Definitions in File order.h</H2>
+<PRE>
+/* basic order relations */
+
+typedef enum { NOT_COMPARABLE,
+	       SAME_AS,
+	       LESS_THAN,
+	       GREATER_THAN,
+	       LESS_THAN_OR_SAME_AS,
+	       GREATER_THAN_OR_SAME_AS,
+	       NOT_LESS_THAN,
+	       NOT_GREATER_THAN
+             } Ordertype;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package defines Ordertype and has a generic sorting 
+routine merge_sort() that can be used to sort any kind of data.
+
+<HR>
+</BODY>
+</HTML>

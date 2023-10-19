@@ -1,0 +1,21 @@
+When releaseing a new version, update the files
+
+  Changelog        (last entry should be release note)
+  VERSION_DATE.h
+
+-----------------
+
+Run examples
+
+Update manual
+
+-----------------
+
+Rename this directory, e.g., LADR-January-2007
+
+  % trash; trashr
+  % make realclean
+  % packup
+  
+
+

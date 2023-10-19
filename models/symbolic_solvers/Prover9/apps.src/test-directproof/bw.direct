@@ -1,0 +1,38 @@
+============================== directproof ===========================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 9270 was started by mccune on cleo,
+Tue Jan 22 11:28:26 2008
+The command was "prover9 -f bw.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 5.51 (+ 0.02) seconds: fixed_point_combinator.
+% Length of proof is 13.
+% Level of proof is 6.
+% Maximum clause weight is 60.
+% Given clauses 117.
+
+1 (exists Q all x a(Q,x) = a(x,a(Q,x))) # label(fixed_point_combinator) # label(non_clause) # label(goal).  [goal].
+2 a(a(a(B,x),y),z) = a(x,a(y,z)) # label(B).  [assumption].
+3 a(a(W,x),y) = a(a(x,y),y) # label(W).  [assumption].
+4 a(x,f1(x)) != a(f1(x),a(x,f1(x))) # label(fixed_point_combinator) # answer(fixed_point_combinator).  [deny(1)].
+6 a(a(W,a(B,x)),y) = a(x,a(y,y)).  [para(3(a,2),2(a,1))].
+7 a(a(W,W),x) = a(a(x,x),x).  [para(3(a,1),3(a,2))].
+12 a(a(a(W,a(B,a(B,x))),y),z) = a(x,a(a(y,y),z)).  [para(6(a,2),2(a,1,1))].
+15 a(a(W,W),a(W,a(B,a(B,x)))) = a(x,a(a(a(W,a(B,a(B,x))),a(W,a(B,a(B,x)))),a(W,a(B,a(B,x))))).  [para(12(a,1),7(a,2))].
+16 a(a(W,W),a(W,a(B,a(B,x)))) = a(x,a(a(W,W),a(W,a(B,a(B,x))))).  [para(7(a,2),15(a,2,2))].
+17 a(x,a(a(W,W),a(W,a(B,a(B,x))))) = a(a(W,W),a(W,a(B,a(B,x)))).  [copy(16),flip(a)].
+19 a(x,a(a(W,W),a(W,a(B,a(B,x))))) = a(a(a(B,a(W,W)),W),a(B,a(B,x))).  [para(2(a,2),17(a,2))].
+21 a(x,a(a(a(B,a(W,W)),W),a(B,a(B,x)))) = a(a(a(B,a(W,W)),W),a(B,a(B,x))).  [para(2(a,2),19(a,1,2))].
+23 a(x,a(a(a(B,a(W,W)),W),a(B,a(B,x)))) = a(a(a(B,a(W,W)),W),a(a(a(B,B),B),x)).  [para(2(a,2),21(a,2,2))].
+25 a(x,a(a(a(B,a(W,W)),W),a(a(a(B,B),B),x))) = a(a(a(B,a(W,W)),W),a(a(a(B,B),B),x)).  [para(2(a,2),23(a,1,2,2))].
+27 a(x,a(a(a(B,a(W,W)),W),a(a(a(B,B),B),x))) = a(a(a(B,a(a(B,a(W,W)),W)),a(a(B,B),B)),x).  [para(2(a,2),25(a,2))].
+29 a(x,a(a(a(B,a(a(B,a(W,W)),W)),a(a(B,B),B)),x)) = a(a(a(B,a(a(B,a(W,W)),W)),a(a(B,B),B)),x).  [para(2(a,2),27(a,1,2))].
+31 a(a(a(B,a(a(B,a(W,W)),W)),a(a(B,B),B)),x) = a(x,a(a(a(B,a(a(B,a(W,W)),W)),a(a(B,B),B)),x)).  [copy(29),flip(a)].
+32 $F # answer(fixed_point_combinator).  [resolve(31,a,4,a)].
+
+============================== end of proof ==========================

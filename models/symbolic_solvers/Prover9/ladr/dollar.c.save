@@ -1,0 +1,350 @@
+/*  Copyright (C) 2006, 2007 William McCune
+
+    This file is part of the LADR Deduction Library.
+
+    The LADR Deduction Library is free software; you can redistribute it
+    and/or modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2 of the
+    License, or (at your option) any later version.
+
+    The LADR Deduction Library is distributed in the hope that it will be
+    useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with the LADR Deduction Library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+
+#include "dollar.h"
+
+/* Private definitions and types */
+
+static int Sum_sn, Prod_sn, Div_sn, Mod_sn;
+static int Neg_sn;
+static int EQ_sn, NE_sn, LT_sn, LE_sn, GT_sn, GE_sn;
+static int And_sn, Or_sn;
+static int If_sn;
+static int ID_sn;
+static int Var_sn;
+
+/*
+ * memory management
+ */
+
+/*************
+ *
+ *   init_dollar_eval()
+ *
+ *************/
+
+/* DOCUMENTATION
+*/
+
+/* PUBLIC */
+void init_dollar_eval(void)
+{
+  Sum_sn = str_to_sn("+", 2);
+  Prod_sn = str_to_sn("*", 2);
+  Div_sn = str_to_sn("/", 2);
+  Mod_sn = str_to_sn("mod", 2);
+  Neg_sn = str_to_sn("-", 1);
+
+  EQ_sn = str_to_sn("=", 2);
+  NE_sn = str_to_sn("!=", 2);
+  LT_sn = str_to_sn("<", 2);
+  LE_sn = str_to_sn("<=", 2);
+  GT_sn = str_to_sn(">", 2);
+  GE_sn = str_to_sn(">=", 2);
+
+  And_sn = str_to_sn("&&", 2);
+  Or_sn = str_to_sn("||", 2);
+
+  If_sn  = str_to_sn("if", 3);
+  ID_sn  = str_to_sn("==", 2);
+
+  Var_sn  = str_to_sn("variable", 1);
+}  /* init_dollar_eval */
+
+/*************
+ *
+ *   dollar_eval()
+ *
+ *************/
+
+/* DOCUMENTATION
+*/
+
+/* PUBLIC */
+Term dollar_eval(Term t)
+{
+  int operation = SYMNUM(t);
+  int i0, i1;
+  BOOL b0, b1;
+  Term result = NULL;
+
+  /* INT x INT -> INT */
+
+  if (operation == Sum_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = int_to_term(i0 + i1);
+  }
+  else if (operation == Prod_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = int_to_term(i0 * i1);
+  }
+  else if (operation == Div_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = int_to_term(i0 / i1);
+  }
+  else if (operation == Mod_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = int_to_term(i0 % i1);
+  }
+
+  /* INT -> INT, BOOL->BOOL */
+
+  else if (operation == Neg_sn) {
+    if (term_to_int(ARG(t,0), &i0))
+      result = int_to_term(-i0);
+    else if (term_to_bool(ARG(t,0), &b0))
+      result = bool_to_term(!b0);
+  }
+
+  /* INT x INT -> BOOL */
+
+  else if (operation == EQ_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = bool_to_term(i0 == i1);
+  }
+  else if (operation == NE_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = bool_to_term(i0 != i1);
+  }
+  else if (operation == LT_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = bool_to_term(i0 < i1);
+  }
+  else if (operation == LE_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = bool_to_term(i0 <= i1);
+  }
+  else if (operation == GT_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = bool_to_term(i0 > i1);
+  }
+  else if (operation == GE_sn) {
+    if (term_to_int(ARG(t,0), &i0) && term_to_int(ARG(t,1), &i1))
+      result = bool_to_term(i0 >= i1);
+  }
+
+  /* BOOL x BOOL -> BOOL */
+
+  /* We allow for one of the args to be non-Bool, e.g., ($T & junk) = junk */
+
+  else if (operation == And_sn) {
+    if (term_to_bool(ARG(t,0), &b0)) {
+      if (b0)
+	result = copy_term(ARG(t,1));
+      else
+	result = bool_to_term(FALSE);
+    }
+    else if (term_to_bool(ARG(t,1), &b1)) {
+      if (b1)
+	result = copy_term(ARG(t,0));
+      else
+	result = bool_to_term(FALSE);
+    }
+  }
+
+  else if (operation == Or_sn) {
+    if (term_to_bool(ARG(t,0), &b0)) {
+      if (b0)
+	result = bool_to_term(TRUE);
+      else
+	result = copy_term(ARG(t,1));
+    }
+    else if (term_to_bool(ARG(t,1), &b1)) {
+      if (b1)
+	result = bool_to_term(TRUE);
+      else
+	result = copy_term(ARG(t,0));
+    }
+  }
+
+  /* Term x Term -> BOOL */
+
+  else if (operation == ID_sn)
+    result = bool_to_term(term_ident(ARG(t,0), ARG(t,1)));
+
+  /* Term -> BOOL */
+
+  else if (operation == Var_sn)
+    result = bool_to_term(VARIABLE(ARG(t,0)));
+
+  return result;
+}  /* dollar_eval */
+
+/*************
+ *
+ *   rewrite_top()
+ *
+ *************/
+
+/* DOCUMENTATION
+*/
+
+/* PUBLIC */
+Term rewrite_top(Term t, Clist rules, int flag)
+{
+  Term t1 = dollar_eval(t);
+  if (t1 != NULL) {
+    zap_term(t);
+    return t1;
+  }
+  else {
+    Clist_pos p;
+    Context c = get_context();
+    Trail tr;
+    for (p = rules->first; p; p = p->next) {
+      Term rule = p->c->literals->atom;
+      Term condition, eq, alpha, beta;
+      if (is_term(rule, "->", 2)) {
+	condition = ARG(rule,0);
+	eq = ARG(rule,1);
+      }
+      else {
+	condition = NULL;
+	eq = rule;
+      }
+      alpha = ARG(eq,0);
+      beta  = ARG(eq,1);
+      tr = NULL;
+      if (match(alpha, c, t, &tr)) {
+	BOOL ok;
+	if (condition == NULL)
+	  ok = TRUE;
+	else {
+	  Term condition_rewritten = rewrite(apply(condition, c), rules, flag);
+	  ok = true_term(condition_rewritten);
+	  zap_term(condition_rewritten);
+	  }
+	if (ok) {
+	  Term contractum = apply_demod(beta, c, flag);
+	  undo_subst(tr);
+	  free_context(c);
+	  zap_term(t);
+	  return(rewrite(contractum, rules, flag));
+	}
+	else
+	  undo_subst(tr);
+      }
+    }
+    free_context(c);
+    return t;  /* not rewritten */
+  }
+}  /* rewrite_top */
+
+/*************
+ *
+ *   rewrite()
+ *
+ *************/
+
+/* DOCUMENTATION
+*/
+
+/* PUBLIC */
+Term rewrite(Term t, Clist rules, int flag)
+{
+  if (term_flag(t, flag) || VARIABLE(t))
+    return t;
+  else {
+    int i;
+
+    /* There are a few cases where we don't evaluate all args first. */
+
+    /* a & b */
+
+    if (SYMNUM(t) == And_sn) {
+      ARG(t,0) = rewrite(ARG(t,0), rules, flag);
+      if (true_term(ARG(t,0))) {
+	Term tmp = ARG(t,1);
+	zap_term(ARG(t,0));
+	free_term(t);
+	return rewrite(tmp, rules, flag);
+      }
+      else if (false_term(ARG(t,0))) {
+	zap_term(t);
+	return bool_to_term(FALSE);
+      }
+    }
+
+    /* a | b */
+
+    else if (SYMNUM(t) == Or_sn) {
+      ARG(t,0) = rewrite(ARG(t,0), rules, flag);
+      if (false_term(ARG(t,0))) {
+	Term tmp = ARG(t,1);
+	zap_term(ARG(t,0));
+	free_term(t);
+	return rewrite(tmp, rules, flag);
+      }
+      else if (true_term(ARG(t,0))) {
+	zap_term(t);
+	return bool_to_term(TRUE);
+      }
+    }
+
+    /* if(cond, then_part, else_part) */
+
+    else if (SYMNUM(t) == If_sn) {
+      ARG(t,0) = rewrite(ARG(t,0), rules, flag);
+      if (true_term(ARG(t,0))) {
+	Term tmp = ARG(t,1);
+	zap_term(ARG(t,0));
+	zap_term(ARG(t,2));
+	free_term(t);
+	return rewrite(tmp, rules, flag);
+      }
+      else if (false_term(ARG(t,0))) {
+	Term tmp = ARG(t,2);
+	zap_term(ARG(t,0));
+	zap_term(ARG(t,1));
+	free_term(t);
+	return rewrite(tmp, rules, flag);
+      }
+    }
+
+    /* rewrite subterms */
+
+    for (i = 0; i < ARITY(t); i++)
+      ARG(t,i) = rewrite(ARG(t,i), rules, flag);
+
+    /* rewrite top */
+
+    t = rewrite_top(t, rules, flag);
+
+    return t;
+  }
+}  /* rewrite */
+
+/*************
+ *
+ *   production_rewrite()
+ *
+ *************/
+
+/* DOCUMENTATION
+*/
+
+/* PUBLIC */
+Term production_rewrite(Term t, Clist rules)
+{
+  int flag = claim_term_flag();
+  Term result = rewrite(t, rules, flag);
+  term_flag_clear_recursively(result, flag);
+  release_term_flag(flag);
+  return result;
+}  /* production_rewrite */

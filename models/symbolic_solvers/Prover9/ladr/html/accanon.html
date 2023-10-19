@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>accanon.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "accanon.h"</H1>
+
+This page has information from files
+<A HREF="../accanon.h">accanon.h</A> and <A HREF="../accanon.c">accanon.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File accanon.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#ac_canonical">ac_canonical</A></TD><TD><A HREF="#check_ac_canonical">check_ac_canonical</A></TD><TD><A HREF="#flatten">flatten</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="ac_canonical"></A><HR><PRE><B>void ac_canonical(<A HREF="term.html">Term</A> t, int bit);
+</B></PRE>This routine transforms a term into AC canonical form, which means
+that all AC subterms are right associated and sorted.  The routine
+term_compare_ncv() is used to compare AC arguments, and the order
+is CONSTANT < COMPLEX < VARIABLE; within type, the order is by VARNUM
+and lexigocgaphic by SYMNUM.
+<P>
+Terms can be marked as fully reduced (which implies AC canonical).
+The argument "bit" tells which term bit is used for the mark (bit=-1
+means to ignore marks).  If such a term is found, it is skipped.
+Also, we make sure that any transformed terms are not marked (they
+will be AC canonical, but they might not be reduced).
+<P>
+<A NAME="check_ac_canonical"></A><HR><PRE><B>int check_ac_canonical(<A HREF="term.html">Term</A> t);
+</B></PRE>This Boolean routine simply checks if a term is AC canonical.  It should
+only be used if you suspect something is wrong, because it is inefficient
+(it copies the term, calls <A HREF="#ac_canonical">ac_canonical</A>() on the copy, then does term_ident()
+with the original term).
+<A NAME="flatten"></A><HR><PRE><B>void flatten(<A HREF="term.html">Term</A> t, <A HREF="term.html">Term</A> *a, int *ip);
+</B></PRE>This routine
+<HR><A NAME=defns></A><H2>Public Definitions in File accanon.h</H2>
+<PRE>
+/* If you get an error message "flatten, too many arguments", increase
+ * the following symbol (2500 is enough for the dem_alu problem.)
+ */
+
+#define MAX_ACM_ARGS 2500
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

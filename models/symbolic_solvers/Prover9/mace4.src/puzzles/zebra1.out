@@ -1,0 +1,273 @@
+============================== Mace4 =================================
+Mace4 (32) version 2008-10A+, October 2008.
+Process 15832 was started by mccune on cleo,
+Mon Nov 17 21:34:40 2008
+The command was "../mace4 -f zebra1.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file zebra1.in
+
+set(arithmetic).
+    % set(arithmetic) -> clear(lnh).
+    % set(arithmetic) -> assign(selection_order, 0).
+
+    % Declaring Mace4 arithmetic parse types.
+assign(domain_size,5).
+    % assign(domain_size, 5) -> assign(start_size, 5).
+    % assign(domain_size, 5) -> assign(end_size, 5).
+
+formulas(assumptions).
+England(x) <-> Red(x).
+Spain(x) <-> Dog(x).
+Norway(0).
+Kool(x) <-> Yellow(x).
+Chesterfield(x) & Fox(y) -> adjacent(x,y).
+Norway(x) & Blue(y) -> adjacent(x,y).
+Winston(x) <-> Snail(x).
+Lucky(x) <-> Juice(x).
+Ukraine(x) <-> Tea(x).
+Japan(x) <-> Parlaiment(x).
+Kool(x) & Horse(y) -> adjacent(x,y).
+Coffee(x) <-> Green(x).
+Green(x) & Ivory(y) -> successor(y,x).
+Milk(2).
+successor(x,y) <-> x + 1 = y.
+adjacent(x,y) <-> successor(x,y) | successor(y,x).
+England(x) | Spain(x) | Ukraine(x) | Japan(x) | Norway(x).
+Dog(x) | Snail(x) | Horse(x) | Zebra(x) | Fox(x).
+Water(x) | Milk(x) | Juice(x) | Tea(x) | Coffee(x).
+Red(x) | Blue(x) | Yellow(x) | Ivory(x) | Green(x).
+Lucky(x) | Winston(x) | Kool(x) | Chesterfield(x) | Parlaiment(x).
+England(x) & England(y) -> x = y.
+Spain(x) & Spain(y) -> x = y.
+Ukraine(x) & Ukraine(y) -> x = y.
+Japan(x) & Japan(y) -> x = y.
+Norway(x) & Norway(y) -> x = y.
+Dog(x) & Dog(y) -> x = y.
+Snail(x) & Snail(y) -> x = y.
+Horse(x) & Horse(y) -> x = y.
+Zebra(x) & Zebra(y) -> x = y.
+Fox(x) & Fox(y) -> x = y.
+Water(x) & Water(y) -> x = y.
+Milk(x) & Milk(y) -> x = y.
+Juice(x) & Juice(y) -> x = y.
+Tea(x) & Tea(y) -> x = y.
+Coffee(x) & Coffee(y) -> x = y.
+Red(x) & Red(y) -> x = y.
+Blue(x) & Blue(y) -> x = y.
+Yellow(x) & Yellow(y) -> x = y.
+Ivory(x) & Ivory(y) -> x = y.
+Green(x) & Green(y) -> x = y.
+Lucky(x) & Lucky(y) -> x = y.
+Winston(x) & Winston(y) -> x = y.
+Kool(x) & Kool(y) -> x = y.
+Chesterfield(x) & Chesterfield(y) -> x = y.
+Parlaiment(x) & Parlaiment(y) -> x = y.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 England(x) <-> Red(x) # label(non_clause).  [assumption].
+2 Spain(x) <-> Dog(x) # label(non_clause).  [assumption].
+3 Kool(x) <-> Yellow(x) # label(non_clause).  [assumption].
+4 Chesterfield(x) & Fox(y) -> adjacent(x,y) # label(non_clause).  [assumption].
+5 Norway(x) & Blue(y) -> adjacent(x,y) # label(non_clause).  [assumption].
+6 Winston(x) <-> Snail(x) # label(non_clause).  [assumption].
+7 Lucky(x) <-> Juice(x) # label(non_clause).  [assumption].
+8 Ukraine(x) <-> Tea(x) # label(non_clause).  [assumption].
+9 Japan(x) <-> Parlaiment(x) # label(non_clause).  [assumption].
+10 Kool(x) & Horse(y) -> adjacent(x,y) # label(non_clause).  [assumption].
+11 Coffee(x) <-> Green(x) # label(non_clause).  [assumption].
+12 Green(x) & Ivory(y) -> successor(y,x) # label(non_clause).  [assumption].
+13 successor(x,y) <-> x + 1 = y # label(non_clause).  [assumption].
+14 adjacent(x,y) <-> successor(x,y) | successor(y,x) # label(non_clause).  [assumption].
+15 England(x) & England(y) -> x = y # label(non_clause).  [assumption].
+16 Spain(x) & Spain(y) -> x = y # label(non_clause).  [assumption].
+17 Ukraine(x) & Ukraine(y) -> x = y # label(non_clause).  [assumption].
+18 Japan(x) & Japan(y) -> x = y # label(non_clause).  [assumption].
+19 Norway(x) & Norway(y) -> x = y # label(non_clause).  [assumption].
+20 Dog(x) & Dog(y) -> x = y # label(non_clause).  [assumption].
+21 Snail(x) & Snail(y) -> x = y # label(non_clause).  [assumption].
+22 Horse(x) & Horse(y) -> x = y # label(non_clause).  [assumption].
+23 Zebra(x) & Zebra(y) -> x = y # label(non_clause).  [assumption].
+24 Fox(x) & Fox(y) -> x = y # label(non_clause).  [assumption].
+25 Water(x) & Water(y) -> x = y # label(non_clause).  [assumption].
+26 Milk(x) & Milk(y) -> x = y # label(non_clause).  [assumption].
+27 Juice(x) & Juice(y) -> x = y # label(non_clause).  [assumption].
+28 Tea(x) & Tea(y) -> x = y # label(non_clause).  [assumption].
+29 Coffee(x) & Coffee(y) -> x = y # label(non_clause).  [assumption].
+30 Red(x) & Red(y) -> x = y # label(non_clause).  [assumption].
+31 Blue(x) & Blue(y) -> x = y # label(non_clause).  [assumption].
+32 Yellow(x) & Yellow(y) -> x = y # label(non_clause).  [assumption].
+33 Ivory(x) & Ivory(y) -> x = y # label(non_clause).  [assumption].
+34 Green(x) & Green(y) -> x = y # label(non_clause).  [assumption].
+35 Lucky(x) & Lucky(y) -> x = y # label(non_clause).  [assumption].
+36 Winston(x) & Winston(y) -> x = y # label(non_clause).  [assumption].
+37 Kool(x) & Kool(y) -> x = y # label(non_clause).  [assumption].
+38 Chesterfield(x) & Chesterfield(y) -> x = y # label(non_clause).  [assumption].
+39 Parlaiment(x) & Parlaiment(y) -> x = y # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+-England(x) | Red(x).
+England(x) | -Red(x).
+-Spain(x) | Dog(x).
+Spain(x) | -Dog(x).
+Norway(0).
+-Kool(x) | Yellow(x).
+Kool(x) | -Yellow(x).
+-Chesterfield(x) | -Fox(y) | adjacent(x,y).
+-Norway(x) | -Blue(y) | adjacent(x,y).
+-Winston(x) | Snail(x).
+Winston(x) | -Snail(x).
+-Lucky(x) | Juice(x).
+Lucky(x) | -Juice(x).
+-Ukraine(x) | Tea(x).
+Ukraine(x) | -Tea(x).
+-Japan(x) | Parlaiment(x).
+Japan(x) | -Parlaiment(x).
+-Kool(x) | -Horse(y) | adjacent(x,y).
+-Coffee(x) | Green(x).
+Coffee(x) | -Green(x).
+-Green(x) | -Ivory(y) | successor(y,x).
+Milk(2).
+-successor(x,y) | x + 1 = y.
+successor(x,y) | x + 1 != y.
+-adjacent(x,y) | successor(x,y) | successor(y,x).
+adjacent(x,y) | -successor(x,y).
+adjacent(x,y) | -successor(y,x).
+England(x) | Spain(x) | Ukraine(x) | Japan(x) | Norway(x).
+Dog(x) | Snail(x) | Horse(x) | Zebra(x) | Fox(x).
+Water(x) | Milk(x) | Juice(x) | Tea(x) | Coffee(x).
+Red(x) | Blue(x) | Yellow(x) | Ivory(x) | Green(x).
+Lucky(x) | Winston(x) | Kool(x) | Chesterfield(x) | Parlaiment(x).
+-England(x) | -England(y) | y = x.
+-Spain(x) | -Spain(y) | y = x.
+-Ukraine(x) | -Ukraine(y) | y = x.
+-Japan(x) | -Japan(y) | y = x.
+-Norway(x) | -Norway(y) | y = x.
+-Dog(x) | -Dog(y) | y = x.
+-Snail(x) | -Snail(y) | y = x.
+-Horse(x) | -Horse(y) | y = x.
+-Zebra(x) | -Zebra(y) | y = x.
+-Fox(x) | -Fox(y) | y = x.
+-Water(x) | -Water(y) | y = x.
+-Milk(x) | -Milk(y) | y = x.
+-Juice(x) | -Juice(y) | y = x.
+-Tea(x) | -Tea(y) | y = x.
+-Coffee(x) | -Coffee(y) | y = x.
+-Red(x) | -Red(y) | y = x.
+-Blue(x) | -Blue(y) | y = x.
+-Yellow(x) | -Yellow(y) | y = x.
+-Ivory(x) | -Ivory(y) | y = x.
+-Green(x) | -Green(y) | y = x.
+-Lucky(x) | -Lucky(y) | y = x.
+-Winston(x) | -Winston(y) | y = x.
+-Kool(x) | -Kool(y) | y = x.
+-Chesterfield(x) | -Chesterfield(y) | y = x.
+-Parlaiment(x) | -Parlaiment(y) | y = x.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 2.
+
+============================== DOMAIN SIZE 5 =========================
+
+============================== MODEL =================================
+
+interpretation( 5, [number=1, seconds=0], [
+
+        relation(Blue(_), [ 0, 1, 0, 0, 0 ]),
+
+        relation(Chesterfield(_), [ 0, 1, 0, 0, 0 ]),
+
+        relation(Coffee(_), [ 0, 0, 0, 0, 1 ]),
+
+        relation(Dog(_), [ 0, 0, 0, 1, 0 ]),
+
+        relation(England(_), [ 0, 0, 1, 0, 0 ]),
+
+        relation(Fox(_), [ 1, 0, 0, 0, 0 ]),
+
+        relation(Green(_), [ 0, 0, 0, 0, 1 ]),
+
+        relation(Horse(_), [ 0, 1, 0, 0, 0 ]),
+
+        relation(Ivory(_), [ 0, 0, 0, 1, 0 ]),
+
+        relation(Japan(_), [ 0, 0, 0, 0, 1 ]),
+
+        relation(Juice(_), [ 0, 0, 0, 1, 0 ]),
+
+        relation(Kool(_), [ 1, 0, 0, 0, 0 ]),
+
+        relation(Lucky(_), [ 0, 0, 0, 1, 0 ]),
+
+        relation(Milk(_), [ 0, 0, 1, 0, 0 ]),
+
+        relation(Norway(_), [ 1, 0, 0, 0, 0 ]),
+
+        relation(Parlaiment(_), [ 0, 0, 0, 0, 1 ]),
+
+        relation(Red(_), [ 0, 0, 1, 0, 0 ]),
+
+        relation(Snail(_), [ 0, 0, 1, 0, 0 ]),
+
+        relation(Spain(_), [ 0, 0, 0, 1, 0 ]),
+
+        relation(Tea(_), [ 0, 1, 0, 0, 0 ]),
+
+        relation(Ukraine(_), [ 0, 1, 0, 0, 0 ]),
+
+        relation(Water(_), [ 1, 0, 0, 0, 0 ]),
+
+        relation(Winston(_), [ 0, 0, 1, 0, 0 ]),
+
+        relation(Yellow(_), [ 1, 0, 0, 0, 0 ]),
+
+        relation(Zebra(_), [ 0, 0, 0, 0, 1 ]),
+
+        relation(adjacent(_,_), [
+			   0, 1, 0, 0, 0,
+			   1, 0, 1, 0, 0,
+			   0, 1, 0, 1, 0,
+			   0, 0, 1, 0, 1,
+			   0, 0, 0, 1, 0 ]),
+
+        relation(successor(_,_), [
+			   0, 1, 0, 0, 0,
+			   0, 0, 1, 0, 0,
+			   0, 0, 0, 1, 0,
+			   0, 0, 0, 0, 1,
+			   0, 0, 0, 0, 0 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 5.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.34 seconds).
+Ground clauses: seen=957, kept=704.
+Selections=12995, assignments=25978, propagations=233365, current_models=1.
+Rewrite_terms=0, rewrite_bools=1430401, indexes=0.
+Rules_from_neg_clauses=0, cross_offs=0.
+
+============================== end of statistics =====================
+
+User_CPU=0.34, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 15832 exit (max_models) Mon Nov 17 21:34:40 2008
+The process finished Mon Nov 17 21:34:40 2008

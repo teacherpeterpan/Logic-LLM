@@ -1,0 +1,41 @@
+Nov 11, 2004.
+
+Flag ac_redundancy (default set).
+
+This is related to AC unification, but it does not use the
+AC unification code.
+
+If this flag is set, usable and sos are scanned for AC axioms.
+For example, say there are A and C axioms for ^ and v.
+
+Then, when a generated clause is processed, if it contains
+an equality atom alpha=beta, in which alpha is AC-equal to beta,
+it is reduced to TRUE.
+
+For example, if x ^ (y ^ c) = c ^ (x ^ y) will be treated as
+if it is an instance of x=x, and it will be deleted.
+
+Annoying clauses like the following will not be kept.
+
+  x ^ (y ^ (z ^ u)) = z ^ (y ^ (x ^ u))
+
+Otter does something similar if you set lex_order_vars and
+have the appropriate lex-dep demoulators.  In that example,
+both sides will be demodulated to the same term, so it will
+be deleted.
+
+However, LADR's demoulation does not allow lex_order_vars
+(because it doesn't obey LRPO's rules).
+
+The main difference between LADR's ac_redundancy and Otter's
+lex_order_vars is that LADR does not actually rewrite AC
+expressions with A and C (unless LRPO says it can).  For example,
+LADR can keep both of the following
+
+   x ^ (y ^ x) = x ^ y
+   x ^ (x ^ y) = x ^ y
+
+and Otter with lex_order_vars will canonicalize and keep only one.
+The tradeoff is simple: Otter's is more restrictive, but it can
+block all proofs.
+

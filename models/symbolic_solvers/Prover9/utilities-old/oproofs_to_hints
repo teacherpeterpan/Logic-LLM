@@ -1,0 +1,91 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+
+sub member {
+    local ($object, @list) = @_;
+    local ($element);
+
+    foreach $element (@list) {
+        return 1 if ($element eq $object);
+    }
+    return 0;
+}  # member
+
+$arguments = join(" ", @ARGV);
+
+%options=();
+
+# getopts("xrajn:", \%options);  # this removes args it recognizes
+# 
+# if (@ARGV != 1) {
+#     print "proofs_to_hints otter_output_file\n";
+#     print "    -x  : use expanded proofs\n";
+#     print "    -r  : use renumbered proofs\n";
+#     print "    -a  : copy attributes\n";
+#     print "    -j  : include justifications as comments\n";
+#     print "    -n 3: use only the third proof (for example)\n";
+#     exit;
+# }
+# 
+# $output_attr  = (defined $options{a} ? 1 : 0);
+# $output_just  = (defined $options{j} ? 1 : 0);
+# $expanded     = (defined $options{x} ? 1 : 0);
+# $renumbered   = (defined $options{r} ? 1 : 0);
+# $proof_to_get = (defined $options{n} ? "$options{n}" : "\\d*");
+
+$filename = $ARGV[0];
+open(FH, $filename) || die "Cannot open file $filename.\n";
+
+$collect = 0;
+
+while ($line = <FH>) {
+    if ($line =~ /PROOF/) {
+	$collect = 1;
+    }
+    elsif ($line =~ /end of proof/) {
+	$collect = 0;
+    }
+    elsif ($collect) {
+	if ($line ne "\n") {
+	    # Now it is a clause in the proof.
+	    chop $line;
+	    $id = $line;
+	    $id =~ s/ .*//;
+	    $id =~ s/,/_/;  # in double IDs, replace , with _.
+
+	    if (! &member($id, @ids)) {
+
+		$clause = $line;
+		$clause =~ s/^.*\] //;
+		$clause =~ s/\.$//;
+		$clause =~ s/\|\$[Aa][Nn][Ss].*//;
+		$clause =~ s/^\$[Aa][Nn][Ss].*/\$F/;
+
+		#print "\nid:        $id\n";
+		#print "clause:    $clause\n";
+
+		push(@ids,        $id);
+		push(@clauses,    $clause);
+	      }	 
+	}
+    }
+}
+
+$num = @ids;
+
+#############################################################
+
+print "clauses(hints).\n";
+
+print "% Arguments: $arguments\n";
+print "% $num hints were constructed.\n";
+print @lengths;
+
+for ($i = 0; $i < @ids; $i++) {
+    $clause = $clauses[$i];
+    $label = " # label($ids[$i])";
+    print "$clause$label.\n";
+}
+
+print "end_of_list.\n";

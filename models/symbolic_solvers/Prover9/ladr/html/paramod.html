@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<TITLE>paramod.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "paramod.h"</H1>
+
+This page has information from files
+<A HREF="../paramod.h">paramod.h</A> and <A HREF="../paramod.c">paramod.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File paramod.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#"></A></TD><TD><A HREF="#para_from_into">para_from_into</A></TD><TD><A HREF="#para_pos">para_pos</A></TD><TD><A HREF="#paramodulate">paramodulate</A></TD>
+</TR>
+<TR><TD><A HREF="#basic_paramodulation_prunes">basic_paramodulation_prunes</A></TD><TD><A HREF="#para_instance_prunes">para_instance_prunes</A></TD><TD><A HREF="#para_pos2">para_pos2</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME=""></A><HR><PRE><B>
+void paramodulation_options(BOOL ordered_inference,
+			    BOOL check_instances,
+			    BOOL positive_inference,
+			    BOOL basic_paramodulation,
+			    BOOL para_from_vars,
+			    BOOL para_into_vars,
+			    BOOL para_from_small);
+</B></PRE><A NAME="basic_paramodulation_prunes"></A><HR><PRE><B>int basic_paramodulation_prunes(void);
+</B></PRE>How many paramodulants were killed because they failed the "basic" test.
+<A NAME="para_from_into"></A><HR><PRE><B>void para_from_into(Topform from, <A HREF="unify.html">Context</A> cf,
+		    Topform into, <A HREF="unify.html">Context</A> ci,
+		    BOOL check_top,
+		    void (*proc_proc) (Topform));
+</B></PRE>Paramodulate from one clause into another (non-backtrack unification version).
+<P>
+For oriented equality atoms, we go from left sides only
+and into both sides.
+For nonoriented equality atoms, we go from and into both sides.
+<A NAME="para_instance_prunes"></A><HR><PRE><B>int para_instance_prunes();
+</B></PRE><A NAME="para_pos"></A><HR><PRE><B>Topform para_pos(Topform from_clause, Ilist from_pos,
+		 Topform into_clause, Ilist into_pos);
+</B></PRE>Construct a paramodulant from the given data.  A fatal error
+occurs if it does not exist.  In building the justification,
+the position vectors are copied.
+<A NAME="para_pos2"></A><HR><PRE><B>Topform para_pos2(Topform from, Ilist from_pos, Topform into, Ilist into_pos);
+</B></PRE>Construct a paramodulant from the given data.  A fatal error
+occurs if it does not exist.  In building the justification,
+the position vectors are copied.
+
+This is similar to para_pos<A HREF="#"></A>(), except that it allows the
+into_term to be a variable.
+<A NAME="paramodulate"></A><HR><PRE><B>Topform paramodulate(Literals from_lit, int from_side, <A HREF="unify.html">Context</A> from_subst,
+		     Topform into_clause, Ilist into_pos, <A HREF="unify.html">Context</A> into_subst);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File paramod.h</H2>
+<PRE>
+/* where to paramodulate into */
+
+typedef enum { PARA_ALL,
+	       PARA_ALL_EXCEPT_TOP,
+	       PARA_TOP_ONLY } Para_loc;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package has a paramodulation inference rule.
+
+<HR>
+</BODY>
+</HTML>

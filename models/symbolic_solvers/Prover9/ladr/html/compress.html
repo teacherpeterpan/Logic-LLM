@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<TITLE>compress.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "compress.h"</H1>
+
+This page has information from files
+<A HREF="../compress.h">compress.h</A> and <A HREF="../compress.c">compress.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File compress.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#compress_clause">compress_clause</A></TD><TD><A HREF="#uncompress_clause">uncompress_clause</A></TD><TD><A HREF="#uncompress_term">uncompress_term</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#compress_term">compress_term</A></TD><TD><A HREF="#uncompress_clauses">uncompress_clauses</A></TD><TD></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="compress_clause"></A><HR><PRE><B>void compress_clause(Topform c);
+</B></PRE>When clasues are compressed, they lose any orientation marks
+on atoms.  Marks are restored by a call to orient_equalities
+during uncompression.
+<A NAME="compress_term"></A><HR><PRE><B>char *compress_term(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="uncompress_clause"></A><HR><PRE><B>void uncompress_clause(Topform c);
+</B></PRE><A NAME="uncompress_clauses"></A><HR><PRE><B>void uncompress_clauses(Plist p);
+</B></PRE>Given a Plist of clauses, uncompress the compressed ones.
+<A NAME="uncompress_term"></A><HR><PRE><B><A HREF="term.html">Term</A> uncompress_term(char *s, int *ip);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File compress.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

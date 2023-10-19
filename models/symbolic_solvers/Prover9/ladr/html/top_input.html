@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>top_input.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "top_input.h"</H1>
+
+This page has information from files
+<A HREF="../top_input.h">top_input.h</A> and <A HREF="../top_input.c">top_input.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File top_input.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#accept_list">accept_list</A></TD><TD><A HREF="#init_standard_ladr">init_standard_ladr</A></TD><TD><A HREF="#process_input_formulas">process_input_formulas</A></TD><TD><A HREF="#read_commands">read_commands</A></TD>
+</TR>
+<TR><TD><A HREF="#embed_formulas_in_topforms">embed_formulas_in_topforms</A></TD><TD><A HREF="#p_top_input_mem">p_top_input_mem</A></TD><TD><A HREF="#process_op">process_op</A></TD><TD><A HREF="#read_from_file">read_from_file</A></TD>
+</TR>
+<TR><TD><A HREF="#flag_handler">flag_handler</A></TD><TD><A HREF="#parm_handler">parm_handler</A></TD><TD><A HREF="#process_redeclare">process_redeclare</A></TD><TD><A HREF="#set_program_name">set_program_name</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_top_input_mem">fprint_top_input_mem</A></TD><TD><A HREF="#process_goal_formulas">process_goal_formulas</A></TD><TD><A HREF="#read_all_input">read_all_input</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="accept_list"></A><HR><PRE><B>void accept_list(char *name, int type, Plist *l);
+</B></PRE><A NAME="embed_formulas_in_topforms"></A><HR><PRE><B>Plist embed_formulas_in_topforms(Plist formulas, BOOL assumption);
+</B></PRE>The formulas are not copied.
+Any attributes on the top of the formula are moved to the Topform.
+An ID is not assigned.
+Topforms get the justifiction "input".
+<A NAME="flag_handler"></A><HR><PRE><B>void flag_handler(FILE *fout, <A HREF="term.html">Term</A> t, BOOL echo, int unknown_action);
+</B></PRE><A NAME="fprint_top_input_mem"></A><HR><PRE><B>void fprint_top_input_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the top_input package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="init_standard_ladr"></A><HR><PRE><B>void init_standard_ladr(void);
+</B></PRE>This routine initializes various LADR packaages.
+<A NAME="p_top_input_mem"></A><HR><PRE><B>void p_top_input_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the top_input package.
+<A NAME="parm_handler"></A><HR><PRE><B>void parm_handler(FILE *fout, <A HREF="term.html">Term</A> t, BOOL echo, int unknown_action);
+</B></PRE><A NAME="process_goal_formulas"></A><HR><PRE><B>Plist process_goal_formulas(Plist formulas, BOOL echo);
+</B></PRE><A NAME="process_input_formulas"></A><HR><PRE><B>Plist process_input_formulas(Plist formulas, BOOL echo);
+</B></PRE>Input is Plist of Topforms containing formulas.
+<A NAME="process_op"></A><HR><PRE><B>void process_op(<A HREF="term.html">Term</A> t, BOOL echo, FILE *fout);
+</B></PRE><A NAME="process_redeclare"></A><HR><PRE><B>void process_redeclare(<A HREF="term.html">Term</A> t, BOOL echo, FILE *fout);
+</B></PRE><A NAME="read_all_input"></A><HR><PRE><B>void read_all_input(int argc, char **argv, FILE *fout,
+		    BOOL echo, int unknown_action);
+</B></PRE><A NAME="read_commands"></A><HR><PRE><B><A HREF="term.html">Term</A> read_commands(FILE *fin, FILE *fout, BOOL echo, int unknown_action);
+</B></PRE>This is a legacy routine.
+<A NAME="read_from_file"></A><HR><PRE><B>void read_from_file(FILE *fin, FILE *fout, BOOL echo, int unknown_action);
+</B></PRE><A NAME="set_program_name"></A><HR><PRE><B>void set_program_name(char *name);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File top_input.h</H2>
+<PRE>
+/* Types of object that can be input */
+
+enum { TERMS, FORMULAS };
+
+/* What shall we do if we read an unknown flag or parameter? */
+
+enum {
+  IGNORE_UNKNOWN,
+  NOTE_UNKNOWN,
+  WARN_UNKNOWN,
+  KILL_UNKNOWN
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

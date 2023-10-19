@@ -1,0 +1,75 @@
+
+assign(order,kbo).
+set(lex_order_vars).
+assign(lex_dep_demod_lim,0).
+
+assign(max_megs,750).
+assign(sos_limit, 20000).
+assign(demod_step_limit,200).
+assign(demod_increase_limit,100000).
+
+clear(print_kept).
+clear(print_given).
+
+formulas(sos).
+
+   % candidate single axioms
+
+   f(f(x, f(f(y, x), x)), f(y, f(z, x))) = y # label("Sh1/A10").
+%  f(f(f(y, f(x, y)), y), f(x, f(z, y))) = x # label("Sh2/A14_m").
+
+%  f(f(y, f(y, f(y, x))), f(x, f(y, z))) = x # label("C1").
+%  f(f(y, f(y, f(x, y))), f(x, f(z, y))) = x # label("C2").
+%  f(f(y, f(y, f(x, x))), f(x, f(z, y))) = x # label("C3").
+%  f(f(y, f(y, f(x, z))), f(x, f(z, y))) = x # label("C4").
+%  f(f(y, f(y, f(z, x))), f(x, f(y, z))) = x # label("C5").
+%  f(f(y, f(f(x, y), y)), f(x, f(y, z))) = x # label("C6").
+%  f(f(y, f(y, f(y, x))), f(x, f(z, y))) = x # label("C7").
+%  f(f(f(f(y, x), y), y), f(x, f(z, y))) = x # label("C8").
+%  f(f(f(f(y, x), z), z), f(x, f(y, z))) = x # label("C9").
+%  f(f(f(y, f(y, x)), y), f(x, f(z, y))) = x # label("C10").
+%  f(f(f(y, f(x, x)), y), f(x, f(z, y))) = x # label("C11").
+%  f(f(f(f(y, x), z), z), f(x, f(z, y))) = x # label("C12").
+%  f(f(f(f(y, x), y), y), f(x, f(y, z))) = x # label("C13").
+%  f(f(f(y, f(x, z)), y), f(x, f(y, z))) = x # label("C14").
+%  f(f(f(y, f(z, x)), y), f(x, f(y, z))) = x # label("C15").
+%  f(f(f(y, f(y, x)), y), f(x, f(y, z))) = x # label("C16").
+
+end_of_list.
+
+formulas(goals).
+
+   % already known for several that this suffices
+                                                                                
+   f(x, y) = f(y, x) # label("Commutativity").
+                                                                                
+end_of_list.
+
+formulas(extra_assumptions).
+
+  % Sh1 and Sh2 are the two single axioms presented in our JAR paper.
+
+% f(f(x, f(f(y, x), x)), f(y, f(z, x))) = y # label("Sh1/A10").
+  f(f(f(y, f(x, y)), y), f(x, f(z, y))) = x # label("Sh2/A14_m").
+
+  % C1..C16 are the other (i.e., not including Sh1 and Sh2)
+  % 16 candidates from the paper.
+
+  f(f(y, f(y, f(y, x))), f(x, f(y, z))) = x # label("C1/A1").
+  f(f(y, f(y, f(x, y))), f(x, f(z, y))) = x # label("C2/A4 (Wald 1)").
+  f(f(y, f(y, f(x, x))), f(x, f(z, y))) = x # label("C3/A6").
+  f(f(y, f(y, f(x, z))), f(x, f(z, y))) = x # label("C4/A7").
+  f(f(y, f(y, f(z, x))), f(x, f(y, z))) = x # label("C5/A8 (Wald 2))").
+  f(f(y, f(f(x, y), y)), f(x, f(y, z))) = x # label("C6/A9").
+  f(f(y, f(y, f(y, x))), f(x, f(z, y))) = x # label("C7/A2").
+  f(f(f(f(y, x), y), y), f(x, f(z, y))) = x # label("C8/A12_m").
+  f(f(f(f(y, x), z), z), f(x, f(y, z))) = x # label("C9/A13_m").
+  f(f(f(y, f(y, x)), y), f(x, f(z, y))) = x # label("C10/A16_m").
+  f(f(f(y, f(x, x)), y), f(x, f(z, y))) = x # label("C11/A18_m").
+  f(f(f(f(y, x), z), z), f(x, f(z, y))) = x # label("C12/A19_m").
+  f(f(f(f(y, x), y), y), f(x, f(y, z))) = x # label("C13/A20_m").
+  f(f(f(y, f(x, z)), y), f(x, f(y, z))) = x # label("C14/A21_m").
+  f(f(f(y, f(z, x)), y), f(x, f(y, z))) = x # label("C15/A23_m").
+  f(f(f(y, f(y, x)), y), f(x, f(y, z))) = x # label("C16/A24_m").
+
+end_of_list.

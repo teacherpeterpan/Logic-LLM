@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<TITLE>dioph.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "dioph.h"</H1>
+
+This page has information from files
+<A HREF="../dioph.h">dioph.h</A> and <A HREF="../dioph.c">dioph.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File dioph.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#dio">dio</A></TD><TD><A HREF="#next_combo_b">next_combo_b</A></TD><TD><A HREF="#next_combo_ss">next_combo_ss</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#next_combo_a">next_combo_a</A></TD><TD><A HREF="#next_combo_c">next_combo_c</A></TD><TD><A HREF="#p_ac_basis">p_ac_basis</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="dio"></A><HR><PRE><B>int dio(int ab[MAX_COEF],
+	int m, int n,
+	int constraints[MAX_COEF],
+	int basis[MAX_BASIS][MAX_COEF],
+	int *num_basis);
+</B></PRE>This routine generates the basis of solutions to the homogeneous linear 
+diophantine equation given by ab, m, n.  It uses Huet's algorithm
+(Information Processing Letters 7(3) 1978).
+<P>
+The equation has the form a1x1 + ... + amxm  =  b1y1 + ... + bnyn.
+<UL>
+<LI> ab[] - the vector of coefficients.  1..m is a1..am,  m+1..m+n is b1..bn.
+<LI> m, n - the number of a and b coefficients.
+<LI> constraints[] - rigid symbol (constant/function)restrictions.
+<LI> basis[][] (output) - vector of minimal solutions.
+<LI> num_basis (output) - number of minimal solutions.
+</UL>
+Return value:
+<UL>
+<LI>    0  - no solution within constraints
+<LI>    1  - ok, solutions returned
+<LI>   -1  - too many (> MAX_BASIS) base solutions exist
+</UL>
+<A NAME="next_combo_a"></A><HR><PRE><B>int next_combo_a(int length, int basis[MAX_BASIS][MAX_COEF],
+		 int num_basis, int constraints[MAX_COEF],
+		 int combo[MAX_BASIS], int sum[MAX_COEF],
+		 int start_flag);
+</B></PRE>This routine gets the first or next appropriate subset of the
+basis of solutions.  "Appropriate" means that each variable gets
+instantiated to something, and there are no top-level rigid
+symbol clashes.  I think of this as a potential unifier, because
+he caller still has to worry about recursive unification of subterms.
+<UL>
+<LI> length -- total number of coefficients (m+n).
+<LI> basis[][] -- basis of solutions.
+<LI> num_basis -- number of basis solutions.
+<LI> constraints[] -- rigid symbol constraints.
+<LI> combo[] (input and output) -- current subset of the basis.
+<LI> sum[]   (intput and output) -- sum corresponding to combo[].
+<LI> start_flag -- 1 for first call, 0 for subsequent calls.
+</UL>
+We have several algorithms to do this.  This implements algorithm A.
+(For most practical work, the differences in performance are small.)
+<A NAME="next_combo_b"></A><HR><PRE><B>int next_combo_b(int length, int basis[MAX_BASIS][MAX_COEF],
+		 int num_basis, int constraints[MAX_COEF],
+		 int combo[MAX_BASIS], int sum[MAX_COEF],
+		 int start_flag);
+</B></PRE>This routine gets the first or next appropriate subset of the
+basis of solutions.  This implements algorithm B.
+See <A HREF="#next_combo_a">next_combo_a</A>() for a description.
+<A NAME="next_combo_c"></A><HR><PRE><B>int next_combo_c(int length, int basis[MAX_BASIS][MAX_COEF],
+		 int num_basis, int constraints[MAX_COEF],
+		 int combo[MAX_BASIS], int sum[MAX_COEF],
+		 int start_flag);
+</B></PRE>This routine gets the first or next appropriate subset of the
+basis of solutions.  This implements algorithm C.
+See <A HREF="#next_combo_a">next_combo_a</A>() for a description.
+<A NAME="next_combo_ss"></A><HR><PRE><B>int next_combo_ss(int length, int basis[MAX_BASIS][MAX_COEF],
+		  int num_basis, int constraints[MAX_COEF],
+		  int combo[MAX_BASIS], int sum[MAX_COEF],
+		  int start_flag,
+		  int combos[MAX_COMBOS][MAX_BASIS],
+		  int *np,
+		  int ss_parm);
+</B></PRE>This routine gets the first or next appropriate subset of the
+basis of solutions, subject to the "supserset restriction".
+It appears to work like the other next_combo routines,
+but it is not really incremental.  To implement the superset
+restriction, we collect, in combos[] during the first call,
+up to MAX_COMBOS subsets satisfying the restriction, then
+give them out in the subsequent calls.  The first bunch of
+parameters are the same as for the other next_combo routines.
+<UL>
+<LI> length -- total number of coefficients (m+n).
+<LI> basis[][] -- basis of solutions.
+<LI> num_basis -- number of basis solutions.
+<LI> constraints[] -- rigid symbol constraints.
+<LI> combo[] (input and output) -- current subset of the basis.
+<LI> sum[]   (intput and output) -- sum corresponding to combo[].
+<LI> start_flag -- 1 for first call, 0 for subsequent calls.
+</UL>
+The rest of the parameters are added for the supserset restriction.
+<UL>
+<LI> combos[][] (input and output) -- this is really just temp storage.
+<LI> *np (input and output) -- temp storage (# of combos remaining).
+<LI> ss_parm (input) -- supserset parameter [0...]
+</UL>
+<A NAME="p_ac_basis"></A><HR><PRE><B>void p_ac_basis(int basis[MAX_BASIS][MAX_COEF],
+		int num_basis, int m, int n);
+</B></PRE>This routine prints (to stdout) a basis of solutions.
+<HR><A NAME=defns></A><H2>Public Definitions in File dioph.h</H2>
+<PRE>
+#define MAX_COEF   250  /* total # of coef. from both sides */
+#define MAX_BASIS  100  /* must be <= MAX_VARS, because rows are indexed */
+#define MAX_COMBOS 200  /* for superset-restricted AC unif. */
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package solves linear homogeneous Diophantine equations, which
+can be used to compute the set of associative-commutative unifiers
+for a pair of first-order terms.  The way this usually works is
+that you first call dio() to get a basis of solutions, then
+call one of the the next_combo routines to (incrementally)
+get the relevant solutions.
+<P>
+The file dioph.c has a main() program, and it can be compiled and linked
+by itself for testing.  The command for doing so is "gcc -DSOLO dioph.c".
+
+<HR>
+</BODY>
+</HTML>

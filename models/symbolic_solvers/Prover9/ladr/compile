@@ -1,0 +1,10 @@
+cd /home/mccune/LADR/ladr/
+make ladr
+make libladr.a
+make[1]: Entering directory `/home/mccune/LADR/ladr'
+gcc  -O -Wall   -c -o literals.o literals.c
+gcc  -O -Wall   -c -o parautil.o parautil.c
+ar rs libladr.a fatal.o string.o memory.o clock.o strbuf.o hash.o order.o glist.o symbols.o options.o nonport.o ibuffer.o term.o termflag.o listterm.o tlist.o termorder.o parse.o accanon.o attrib.o flatterm.o unify.o fpalist.o fpa.o discrim.o discrimb.o discrimw.o dioph.o btu.o btm.o mindex.o flatdemod.o literals.o tformula.o clist.o formula.o cnf.o clausify.o pindex.o ioutil.o clauseid.o subsume.o lindex.o clause2.o fastparse.o sos.o weight.o symbolcheck.o maximal.o just.o random.o features.o di_tree.o compress.o int_code.o clause3.o ivy.o demod.o clash.o resolve.o parautil.o paramod.o backdemod.o hints.o basic.o ac_redun.o xproofs.o interp.o std_options.o top_input.o banner.o
+make[1]: Leaving directory `/home/mccune/LADR/ladr'
+
+Compilation finished at Thu Jul 27 21:03:40

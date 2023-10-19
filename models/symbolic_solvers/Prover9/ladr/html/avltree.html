@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<TITLE>avltree.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "avltree.h"</H1>
+
+This page has information from files
+<A HREF="../avltree.h">avltree.h</A> and <A HREF="../avltree.c">avltree.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File avltree.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#avl_check">avl_check</A></TD><TD><A HREF="#avl_insert">avl_insert</A></TD><TD><A HREF="#avl_place">avl_place</A></TD><TD><A HREF="#avl_zap">avl_zap</A></TD>
+</TR>
+<TR><TD><A HREF="#avl_delete">avl_delete</A></TD><TD><A HREF="#avl_item_at_position">avl_item_at_position</A></TD><TD><A HREF="#avl_position">avl_position</A></TD><TD><A HREF="#fprint_avltree_mem">fprint_avltree_mem</A></TD>
+</TR>
+<TR><TD><A HREF="#avl_find">avl_find</A></TD><TD><A HREF="#avl_largest">avl_largest</A></TD><TD><A HREF="#avl_size">avl_size</A></TD><TD><A HREF="#p_avl">p_avl</A></TD>
+</TR>
+<TR><TD><A HREF="#avl_height">avl_height</A></TD><TD><A HREF="#avl_nth_item">avl_nth_item</A></TD><TD><A HREF="#avl_smallest">avl_smallest</A></TD><TD><A HREF="#p_avltree_mem">p_avltree_mem</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="avl_check"></A><HR><PRE><B>void avl_check(Avl_node p,
+	       Ordertype (*compare) (void *, void *));
+</B></PRE>Check that each node of an AVL tree has the following properties:
+(1) "size" and "height" fields are correct; 
+(2) heights of the two children differ by at most 1.
+In addition, check that the inorder traversal of the whole
+tree really is in order.
+<A NAME="avl_delete"></A><HR><PRE><B>Avl_node avl_delete(Avl_node p, void *item,
+		    Ordertype (*compare) (void *, void *));
+</B></PRE>Delete an item from an AVL tree and return the updated tree.
+If the item is not in the tree (that is, if the comparison
+function does not return SAME_AS for any item in the tree),
+a fatal error occurs.
+<A NAME="avl_find"></A><HR><PRE><B>void *avl_find(Avl_node p, void *item,
+	       Ordertype (*compare) (void *, void *));
+</B></PRE>Look for an item in an AVL tree.  That is, look for an item
+for which the comparison function returns SAME_AS.  If it
+is found, return the item in the tree; otherwise return NULL;
+<A NAME="avl_height"></A><HR><PRE><B>int avl_height(Avl_node p);
+</B></PRE>Return the height of an AVL tree.  Leaves have height 1.
+<A NAME="avl_insert"></A><HR><PRE><B>Avl_node avl_insert(Avl_node p, void *item,
+		    Ordertype (*compare) (void *, void *));
+</B></PRE>Insert an item into an AVL tree, and return the updated tree.
+The item is an arbitrary pointer, and the caller gives a
+function that takes two pointers and compares two items.
+The comparison function must return LESS_THAN, SAME_AS, or
+GREATER_THAN.
+<p>
+If the item is already in the tree (that is, if the comparison
+function return SAME_AS for any item already in the tree),
+a fatal error occurs.
+<A NAME="avl_item_at_position"></A><HR><PRE><B>void *avl_item_at_position(Avl_node p, double pos);
+</B></PRE>Given an AVL tree and a position pos, 0.0 < pos <= 1.0,
+return the item at that position.  If the tree is empty,
+or if pos is out of range, NULL is returned.  The index
+(counting from 1) of the returned item is
+ceiling(pos * p->size).
+<A NAME="avl_largest"></A><HR><PRE><B>void *avl_largest(Avl_node p);
+</B></PRE>Return the largest (rightmost) item in an AVL tree.
+<A NAME="avl_nth_item"></A><HR><PRE><B>void *avl_nth_item(Avl_node p, int n);
+</B></PRE>Return the n-th item (counting from 1) in an AVL tree.
+If n is out of range, NULL is returned.
+<A NAME="avl_place"></A><HR><PRE><B>int avl_place(Avl_node p, void *item,
+	      Ordertype (*compare) (void *, void *));
+</B></PRE>How far (counting from 1) from the beginning of the tree is the item.
+If the item is not already in the tree, this function says how
+far it would be if it were inserted first.
+<A NAME="avl_position"></A><HR><PRE><B>double avl_position(Avl_node p, void *item,
+		    Ordertype (*compare) (void *, void *));
+</B></PRE>Return x, 0 < x <= 1, telling the position of the item in the tree.
+The last item always has position 1.0.  The first item in a tree of
+size 10 has position 0.1.
+<p>
+<A NAME="avl_size"></A><HR><PRE><B>int avl_size(Avl_node p);
+</B></PRE>Return the number of nodes in an AVL tree.
+<A NAME="avl_smallest"></A><HR><PRE><B>void *avl_smallest(Avl_node p);
+</B></PRE>Return the smallest (leftmost) item in an AVL tree.
+<A NAME="avl_zap"></A><HR><PRE><B>void avl_zap(Avl_node p);
+</B></PRE>Free an entire AVL tree.
+This does not affect any of the data to which the tree refers.
+<A NAME="fprint_avltree_mem"></A><HR><PRE><B>void fprint_avltree_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the avltree package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="p_avl"></A><HR><PRE><B>void p_avl(Avl_node p, int level);
+</B></PRE>Print an AVL tree to stdout.  The pointers to the items
+are printed as integers.
+<A NAME="p_avltree_mem"></A><HR><PRE><B>void p_avltree_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the avltree package.
+<HR><A NAME=defns></A><H2>Public Definitions in File avltree.h</H2>
+<PRE>
+typedef struct avl_node * Avl_node;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This is a simple implementation of AVL trees.  These are binary search trees
+with the property that for each node, the difference in height of the two
+subtrees is at most one.
+<p>
+The items that are stored in the tree are simply pointers, which
+are assumed to contain the keys and data.
+<p>
+The caller supplies a comparison function, for example
+<pre>
+    Ordertype compare(void *v1, void *v2)
+or
+    Ordertype compare(struct my_data *p1, struct my_data *p2)
+</pre>
+that is assumed to return LESS_THAN, GREATER_THAN, or SAME_AS.
+<p>
+Aside from the ordinary "insert", "find", and "delete" operations,
+there is a "position" operation that tells where an item is
+in w.r.t. the inorder traversal of the tree, and an operation
+that finds the item at a given position.
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,117 @@
+/*************
+ *
+ *   function_symbols_in_clist()
+ *
+ *************/
+
+/* DOCUMENTATION
+Collect the multiset of function symbols (including constants) in a Clist.
+An Ilist of SYMNUMs is returned.
+*/
+
+/* PUBLIC */
+Ilist function_symbols_in_clist(Clist lst, Ilist syms)
+{
+  Clist_pos p;
+  for (p = lst->first; p; p = p->next)
+    syms = function_symbols_in_clause(p->c, syms);
+  return syms;
+}  /* function_symbols_in_clist */
+
+/*************
+ *
+ *   function_symbols_in_clists()
+ *
+ *************/
+
+/* DOCUMENTATION
+Collect the multiset of function symbols (including constants)
+in a Plist of Clists.
+An Ilist of SYMNUMs is returned.
+*/
+
+/* PUBLIC */
+Ilist function_symbols_in_clists(Plist clists, Ilist syms)
+{
+  Plist p;
+  for (p = clists; p; p = p->next)
+    syms = function_symbols_in_clist(p->v, syms);
+  return syms;
+}  /* function_symbols_in_clists */
+
+/*************
+ *
+ *   relation_symbols_in_clist()
+ *
+ *************/
+
+/* DOCUMENTATION
+Collect the multiset of relation symbols in a Clist.
+An Ilist of SYMNUMs is returned.
+*/
+
+/* PUBLIC */
+Ilist relation_symbols_in_clist(Clist lst, Ilist syms)
+{
+  Clist_pos p;
+  for (p = lst->first; p; p = p->next)
+    syms = relation_symbols_in_clause(p->c, syms);
+  return syms;
+}  /* relation_symbols_in_clist */
+
+/*************
+ *
+ *   relation_symbols_in_clists()
+ *
+ *************/
+
+/* DOCUMENTATION
+Collect the multiset of relation symbols in a Plist of Clists.
+An Ilist of SYMNUMs is returned.
+*/
+
+/* PUBLIC */
+Ilist relation_symbols_in_clists(Plist clists, Ilist syms)
+{
+  Plist p;
+  for (p = clists; p; p = p->next)
+    syms = relation_symbols_in_clist(p->v, syms);
+  return syms;
+}  /* relation_symbols_in_clists */
+
+/*************
+ *
+ *   function_lex_check()
+ *
+ *************/
+
+/* DOCUMENTATION
+Given a Plist of Clists, check that each function symbol has a lex_val.
+If the check fails, argument "fatal" says whether it should be a fatal
+error or just a WARNING.
+*/
+
+/* PUBLIC */
+void function_lex_check(Plist clists, BOOL fatal)
+{
+  Ilist function_syms = function_symbols_in_clists(clists, NULL);
+  Ilist lex_syms = syms_with_lex_val();
+  Ilist diff_syms = ilist_subtract(function_syms, lex_syms);
+  if (diff_syms) {
+    Ilist g;
+    bell(stderr);
+    fprintf(stderr,
+	    "\nWARNING: function symbols without lex_val"
+	    " (see stdout).\n\n ");
+    printf("\nWARNING: function symbols without lex_val:");
+    for (g = diff_syms; g; g = g->next)
+      printf(" %s/%d", sn_to_str(g->i), sn_to_arity(g->i));
+    printf(".\n");
+    zap_ilist(diff_syms);
+    if (fatal)
+      fatal_error("function symbols without lex_val");
+  }
+  zap_ilist(function_syms);
+  zap_ilist(lex_syms);
+}  /* function_lex_check */
+

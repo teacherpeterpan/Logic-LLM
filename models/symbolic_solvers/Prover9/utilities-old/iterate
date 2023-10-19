@@ -1,0 +1,90 @@
+#!/usr/bin/perl
+
+$prover = "$ENV{HOME}/LADR/bin/prover7";
+$tmpfile = "/tmp/prover7_$$";
+
+sub position {
+    # return index of first line that matches a reg expression (or -1)
+    my ($re, @lines) = @_;
+    my $i = 0;
+
+    foreach $line (@lines) {
+        return $i if ($line =~ /$re/);
+	$i++
+    }
+    return -1;
+}  # position
+
+# prover exit codes
+
+$max_proofs = 0;
+$fatal_error = 1;
+$sos_empty = 2;
+$max_megs = 3;
+$max_seconds = 4;
+$max_given = 5;
+$max_kept = 6;
+$sigint = 101;
+$sigsegv = 102;
+
+die "$prover binary not found or not executable" if (! -x $prover);
+
+if (@ARGV != 2) {
+    print "iterate initial_max_wt increment\n";
+    exit;
+}
+
+$initial_max_wt = $ARGV[0];
+$increment = $ARGV[1];
+
+@input = <STDIN>;  # read all of stdin
+
+# find position at which to insert max_wt line (just before first list)
+
+$pos1 = &position('clauses\(|formulas\(|terms\(', @input);
+
+# find position of max_seconds line (if it exists)
+
+$pos2 = &position('assign\(max_seconds', @input);
+
+if ($pos2 != -1) {
+    $max_sec = $input[$pos2];
+    $max_sec =~ s/^.*max_seconds.*, *//;
+    $max_sec =~ s/\).*//;
+}
+
+# insert new max_wt line (even if one already exists)
+
+splice(@input, $pos1, 0, "assign(max_weight, $initial_max_wt).\n");
+$max_wt = $initial_max_wt;
+
+$go = 1;
+
+while ($go) {
+
+    open(FH, ">$tmpfile") || die "cannot open $tmpfile";
+    print FH @input;
+    close(FH);
+
+    $rc = system("$prover < $tmpfile");
+    $rc = $rc / 256;    # get the actual exit code
+
+    if ($rc == $sos_empty) {
+	# increase max_wt
+	$max_wt += $increment;
+	$input[$pos1] =~ s/,.*/, $max_wt)./;
+        if ($pos2 != -1) {
+	    # decrease max_sec by time used so far
+	    ($user, $system, $cuser, $csystem) = times;
+	    my $remaining_sec = $max_sec - int($cuser);
+	    $input[$pos2] =~ s/,.*/, $remaining_sec)./;
+	}
+        print "Restarting with max_weight=$max_wt\n";
+        print STDERR "Restarting with max_weight=$max_wt\n";
+    }
+    else {
+	$go = 0;
+    }
+}
+
+`/bin/rm $tmpfile`;

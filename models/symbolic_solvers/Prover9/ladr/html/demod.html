@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<TITLE>demod.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "demod.h"</H1>
+
+This page has information from files
+<A HREF="../demod.h">demod.h</A> and <A HREF="../demod.c">demod.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File demod.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#demod1">demod1</A></TD><TD><A HREF="#demod_rewrites">demod_rewrites</A></TD><TD><A HREF="#demodulator_type">demodulator_type</A></TD><TD><A HREF="#particular_demod">particular_demod</A></TD>
+</TR>
+<TR><TD><A HREF="#demod_attempts">demod_attempts</A></TD><TD><A HREF="#demodulate">demodulate</A></TD><TD><A HREF="#idx_demodulator">idx_demodulator</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="demod1"></A><HR><PRE><B>void demod1(Topform c, Topform demodulator, int direction,
+	    Ilist *fpos, Ilist *ipos,
+	    BOOL lex_order_vars);
+</B></PRE>Special purpose demodulation routine.
+<P>
+Given a clause and a demodulator that rewrites the clause,
+rewrite the innermost leftmost subterm to which
+the demodulator applies.  Return the rewritten term
+and the position vectors of the from and into terms.
+<A NAME="demod_attempts"></A><HR><PRE><B>int demod_attempts();
+</B></PRE>Return the number of rewrite attempts so far (for the whole process).
+<A NAME="demod_rewrites"></A><HR><PRE><B>int demod_rewrites();
+</B></PRE>Return the number of successful rewrites so far (for the whole process).
+<A NAME="demodulate"></A><HR><PRE><B><A HREF="term.html">Term</A> demodulate(<A HREF="term.html">Term</A> t, <A HREF="mindex.html">Mindex</A> demods, Ilist *just_head, BOOL lex_order_vars);
+</B></PRE>This routine demodulates a term.  ID numbers of demodulators
+are put on the front of just_head, so you'll probably want
+to reverse the list before putting it into the clause justification.
+<A NAME="demodulator_type"></A><HR><PRE><B>int demodulator_type(Topform c, int lex_dep_demod_lim, BOOL sane);
+</B></PRE>Return NOT_DEMODULATOR, ORIENTED, LEX_DEP_LR, LEX_DEP_RL, or LEX_DEP_BOTH.
+<A NAME="idx_demodulator"></A><HR><PRE><B>void idx_demodulator(Topform c, int type, Indexop operation, <A HREF="mindex.html">Mindex</A> idx);
+</B></PRE><A NAME="particular_demod"></A><HR><PRE><B>void particular_demod(Topform c, Topform demodulator, int target, int direction,
+		      Ilist *fpos, Ilist *ipos);
+</B></PRE>Special purpose demodulation routine.
+<P>
+Given a clause and <demodulator,positition,direction> which applies to the
+clause, return the rewritten clause and the position vectors of the from
+and into terms.
+<HR><A NAME=defns></A><H2>Public Definitions in File demod.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,267 @@
+============================== Prover9 ===============================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 15714 was started by mccune on cleo,
+Thu Dec 13 11:02:47 2007
+The command was "/home/mccune/bin/prover9 -f RBA-2.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file RBA-2.in
+
+assign(max_seconds,30).
+
+formulas(sos).
+x + y = y + x.
+(x + y) + z = x + (y + z).
+((x + y)' + (x + y')')' = x # label(Robbins).
+(exists c c + c = c).
+end_of_list.
+
+formulas(goals).
+(x + y')' + (x' + y')' = y # answer(Huntington).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (exists c c + c = c) # label(non_clause).  [assumption].
+2 (x + y')' + (x' + y')' = y # answer(Huntington) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+x + y = y + x.  [assumption].
+(x + y) + z = x + (y + z).  [assumption].
+((x + y)' + (x + y')')' = x # label(Robbins).  [assumption].
+c1 + c1 = c1.  [clausify(1)].
+(c2 + c3')' + (c2' + c3')' != c3 # answer(Huntington).  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ c1, c2, c3, +, ' ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+
+Auto_process settings:  (no changes).
+
+% Operation + is commutative; C redundancy checks enabled.
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+3 x + y = y + x.  [assumption].
+4 (x + y) + z = x + (y + z).  [assumption].
+5 ((x + y)' + (x + y')')' = x # label(Robbins).  [assumption].
+6 c1 + c1 = c1.  [clausify(1)].
+7 (c2 + c3')' + (c2' + c3')' != c3 # answer(Huntington).  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+3 x + y = y + x.  [assumption].
+        % (lex-dep)
+4 (x + y) + z = x + (y + z).  [assumption].
+5 ((x + y)' + (x + y')')' = x # label(Robbins).  [assumption].
+6 c1 + c1 = c1.  [clausify(1)].
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (I,wt=7): 3 x + y = y + x.  [assumption].
+
+given #2 (I,wt=11): 4 (x + y) + z = x + (y + z).  [assumption].
+
+% Operation + is associative-commutative; CAC redundancy checks enabled.
+% back CAC tautology: 8 x + (y + z) = z + (x + y).  [para(4(a,1),3(a,1))].
+
+given #3 (I,wt=13): 5 ((x + y)' + (x + y')')' = x # label(Robbins).  [assumption].
+
+given #4 (I,wt=5): 6 c1 + c1 = c1.  [clausify(1)].
+
+given #5 (I,wt=14): 7 (c2 + c3')' + (c2' + c3')' != c3 # answer(Huntington).  [deny(2)].
+
+given #6 (A,wt=11): 9 x + (y + z) = y + (x + z).  [para(3(a,1),4(a,1,1)),rewrite([4(2)])].
+
+given #7 (T,wt=9): 16 c1 + (c1 + x) = c1 + x.  [para(6(a,1),4(a,1,1)),flip(a)].
+
+given #8 (T,wt=9): 17 c1 + (x + c1) = x + c1.  [para(6(a,1),4(a,2,2)),rewrite([3(4)])].
+
+given #9 (T,wt=11): 18 (c1' + (c1 + c1')')' = c1.  [para(6(a,1),5(a,1,1,1,1))].
+
+given #10 (T,wt=13): 10 ((x + y)' + (y + x')')' = y.  [para(3(a,1),5(a,1,1,1,1))].
+
+given #11 (A,wt=13): 11 ((x + y)' + (y' + x)')' = x.  [para(3(a,1),5(a,1,1,2,1))].
+
+given #12 (T,wt=13): 20 c1 + (x + (c1 + y)) = x + (c1 + y).  [para(16(a,1),4(a,2,2)),rewrite([9(5),4(4)])].
+
+given #13 (T,wt=13): 22 c1 + (x + (y + c1)) = c1 + (x + y).  [para(4(a,1),17(a,1,2)),rewrite([3(8)])].
+
+given #14 (T,wt=13): 27 ((x + y)' + (x' + y)')' = y.  [para(3(a,1),10(a,1,1,2,1))].
+
+given #15 (T,wt=13): 28 ((x + y')' + (y + x)')' = x.  [para(3(a,1),10(a,1,1))].
+
+given #16 (A,wt=19): 12 ((x + (y + z))' + (x + (y + z'))')' = x + y.  [para(4(a,1),5(a,1,1,1,1)),rewrite([4(6)])].
+
+given #17 (T,wt=13): 43 ((x' + y)' + (y + x)')' = y.  [para(3(a,1),11(a,1,1))].
+
+given #18 (T,wt=14): 26 (c1 + (c1 + (c1' + c1'))')' = c1'.  [para(18(a,1),5(a,1,1,2)),rewrite([9(7),3(10)])].
+
+given #19 (T,wt=11): 156 (c1 + (c1 + c1')')' = c1'.  [back_rewrite(26),rewrite([147(9)])].
+
+given #20 (T,wt=14): 147 (c1 + (c1' + c1'))' = (c1 + c1')'.  [para(26(a,1),10(a,1,1,1)),rewrite([3(13),146(14),3(4)]),flip(a)].
+
+given #21 (A,wt=20): 13 (x + ((x + y)' + (x + y')'')')' = (x + y)'.  [para(5(a,1),5(a,1,1,1))].
+
+given #22 (T,wt=15): 21 ((c1 + x)' + (c1 + (c1 + x)')')' = c1.  [para(16(a,1),5(a,1,1,1,1))].
+
+given #23 (T,wt=15): 23 ((x + c1)' + (c1 + (x + c1)')')' = c1.  [para(17(a,1),5(a,1,1,1,1))].
+
+given #24 (T,wt=15): 149 (c1' + (c1 + (c1 + c1')'')')' = c1.  [para(26(a,1),11(a,1,1,1)),rewrite([147(10),3(10)])].
+
+given #25 (T,wt=15): 213 ((x + c1)' + (c1 + (c1 + x)')')' = c1.  [para(3(a,1),21(a,1,1,1,1))].
+
+given #26 (A,wt=21): 14 ((x + y)' + (x + ((y + z)' + (y + z')'))')' = x.  [para(5(a,1),5(a,1,1,2,1,2)),rewrite([3(11)])].
+
+given #27 (T,wt=15): 214 ((c1 + x)' + (c1 + (x + c1)')')' = c1.  [para(3(a,1),21(a,1,1,2,1,2,1))].
+
+given #28 (T,wt=16): 24 (c1 + (c1' + (c1 + c1')'')')' = c1'.  [para(18(a,1),5(a,1,1,1))].
+
+given #29 (T,wt=17): 19 ((x + (y + z))' + (y + (x + z)')')' = y.  [para(9(a,1),5(a,1,1,1,1))].
+
+given #30 (T,wt=17): 29 ((x + (y + z))' + (z + (x + y)')')' = z.  [para(4(a,1),10(a,1,1,1,1))].
+
+given #31 (A,wt=18): 15 (x + (x + (y' + (x + y)'))')' = (x + y)'.  [para(5(a,1),5(a,1,1,2)),rewrite([3(5),4(5),3(7)])].
+
+given #32 (T,wt=17): 37 ((c1 + x)' + (c1 + (x + c1'))')' = c1 + x.  [para(16(a,1),10(a,1,1,1,1)),rewrite([4(8)])].
+
+given #33 (T,wt=17): 38 ((x + c1)' + (x + (c1 + c1'))')' = x + c1.  [para(17(a,1),10(a,1,1,1,1)),rewrite([4(8)])].
+
+given #34 (T,wt=17): 50 ((x + (y + z))' + ((x + z)' + y)')' = y.  [para(9(a,1),11(a,1,1,1,1))].
+
+given #35 (T,wt=17): 60 c1 + (x + (y + (c1 + z))) = c1 + (x + (y + z)).  [para(4(a,1),20(a,1,2)),rewrite([9(10),4(9)])].
+
+given #36 (A,wt=19): 25 ((x + c1)' + (x + (c1' + (c1 + c1')'))')' = x.  [para(18(a,1),5(a,1,1,2,1,2)),rewrite([3(14)])].
+
+given #37 (T,wt=9): 648 c1 + (c1 + c1')' = c1.  [para(6(a,1),25(a,1,1,1,1)),rewrite([535(15)])].
+
+given #38 (T,wt=13): 669 c1 + ((c1 + c1')' + x) = c1 + x.  [para(648(a,1),4(a,1,1)),flip(a)].
+
+given #39 (T,wt=9): 678 (c1 + c1')' + x = x.  [para(669(a,1),10(a,1,1,1,1)),rewrite([3(12),75(15)]),flip(a)].
+
+given #40 (T,wt=5): 703 c1'' = c1.  [para(678(a,1),28(a,1,1)),rewrite([6(3)])].
+
+given #41 (A,wt=19): 30 ((x + (y + z))' + (y + (z + x'))')' = y + z.  [para(4(a,1),10(a,1,1,2,1))].
+
+given #42 (T,wt=9): 697 x + (c1 + c1')' = x.  [para(678(a,1),3(a,1)),flip(a)].
+
+given #43 (T,wt=10): 708 (x' + x')'' = x'.  [para(678(a,1),15(a,1,1,2,1,2,2,1)),rewrite([678(14),678(10),678(11)])].
+
+given #44 (T,wt=7): 767 (x + x)'' = x.  [para(5(a,1),708(a,1,1,1,1)),rewrite([5(7),5(10)])].
+
+given #45 (T,wt=11): 692 (c1 + c1')'' = c1 + c1'.  [back_rewrite(166),rewrite([678(11)])].
+
+given #46 (A,wt=20): 31 (x + ((y + x)' + (x + y')'')')' = (y + x)'.  [para(10(a,1),5(a,1,1,1))].
+
+given #47 (T,wt=11): 705 (c1 + c1')' = (x + x')'.  [para(678(a,1),14(a,1,1,1,1)),rewrite([678(13),5(8),3(2)]),flip(a)].
+
+given #48 (T,wt=5): 875 x'' = x.  [para(705(a,2),11(a,1,1,2)),rewrite([3(3),3(10),678(10),867(5)]),flip(a)].
+
+============================== PROOF =================================
+
+% Proof 1 at 0.16 (+ 0.00) seconds: Huntington.
+% Length of proof is 30.
+% Level of proof is 15.
+% Maximum clause weight is 23.
+% Given clauses 48.
+
+1 (exists c c + c = c) # label(non_clause).  [assumption].
+2 (x + y')' + (x' + y')' = y # answer(Huntington) # label(non_clause) # label(goal).  [goal].
+3 x + y = y + x.  [assumption].
+4 (x + y) + z = x + (y + z).  [assumption].
+5 ((x + y)' + (x + y')')' = x # label(Robbins).  [assumption].
+6 c1 + c1 = c1.  [clausify(1)].
+7 (c2 + c3')' + (c2' + c3')' != c3 # answer(Huntington).  [deny(2)].
+9 x + (y + z) = y + (x + z).  [para(3(a,1),4(a,1,1)),rewrite([4(2)])].
+10 ((x + y)' + (y + x')')' = y.  [para(3(a,1),5(a,1,1,1,1))].
+11 ((x + y)' + (y' + x)')' = x.  [para(3(a,1),5(a,1,1,2,1))].
+14 ((x + y)' + (x + ((y + z)' + (y + z')'))')' = x.  [para(5(a,1),5(a,1,1,2,1,2)),rewrite([3(11)])].
+16 c1 + (c1 + x) = c1 + x.  [para(6(a,1),4(a,1,1)),flip(a)].
+18 (c1' + (c1 + c1')')' = c1.  [para(6(a,1),5(a,1,1,1,1))].
+25 ((x + c1)' + (x + (c1' + (c1 + c1')'))')' = x.  [para(18(a,1),5(a,1,1,2,1,2)),rewrite([3(14)])].
+26 (c1 + (c1 + (c1' + c1'))')' = c1'.  [para(18(a,1),5(a,1,1,2)),rewrite([9(7),3(10)])].
+27 ((x + y)' + (x' + y)')' = y.  [para(3(a,1),10(a,1,1,2,1))].
+37 ((c1 + x)' + (c1 + (x + c1'))')' = c1 + x.  [para(16(a,1),10(a,1,1,1,1)),rewrite([4(8)])].
+75 ((c1 + x)' + (c1' + ((c1 + c1')' + x))')' = x.  [para(18(a,1),27(a,1,1,2,1,1)),rewrite([4(9),3(14)])].
+146 (c1' + (c1 + (c1' + c1'))')' = c1.  [para(26(a,1),5(a,1,1,2)),rewrite([16(9),3(11)])].
+147 (c1 + (c1' + c1'))' = (c1 + c1')'.  [para(26(a,1),10(a,1,1,1)),rewrite([3(13),146(14),3(4)]),flip(a)].
+156 (c1 + (c1 + c1')')' = c1'.  [back_rewrite(26),rewrite([147(9)])].
+535 (c1' + (c1 + (c1' + (c1 + c1')'))')' = c1 + (c1 + c1')'.  [para(156(a,1),37(a,1,1,1)),rewrite([3(11)])].
+648 c1 + (c1 + c1')' = c1.  [para(6(a,1),25(a,1,1,1,1)),rewrite([535(15)])].
+669 c1 + ((c1 + c1')' + x) = c1 + x.  [para(648(a,1),4(a,1,1)),flip(a)].
+678 (c1 + c1')' + x = x.  [para(669(a,1),10(a,1,1,1,1)),rewrite([3(12),75(15)]),flip(a)].
+705 (c1 + c1')' = (x + x')'.  [para(678(a,1),14(a,1,1,1,1)),rewrite([678(13),5(8),3(2)]),flip(a)].
+867 (x + x'')'' = x.  [para(705(a,2),5(a,1,1,1)),rewrite([678(10)])].
+875 x'' = x.  [para(705(a,2),11(a,1,1,2)),rewrite([3(3),3(10),678(10),867(5)]),flip(a)].
+1014 (x + y)' + (x' + y)' = y'.  [para(27(a,1),875(a,1,1)),flip(a)].
+1029 $F # answer(Huntington).  [back_rewrite(7),rewrite([1014(12),875(3)]),xx(a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=48. Generated=2951. Kept=1026. proofs=1.
+Usable=23. Sos=476. Demods=513. Limbo=15, Disabled=517. Hints=0.
+Weight_deleted=0. Literals_deleted=0.
+Forward_subsumed=1924. Back_subsumed=34.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=1024 (5 lex), Back_demodulated=477. Back_unit_deleted=0.
+Demod_attempts=62346. Demod_rewrites=6642.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=1.48.
+User_CPU=0.16, System_CPU=0.00, Wall_clock=1.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+Process 15714 exit (max_proofs) Thu Dec 13 11:02:48 2007

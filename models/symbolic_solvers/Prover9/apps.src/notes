@@ -1,0 +1,119 @@
+Directproof.
+
+This applies to Horn sets in which the only relation
+is equality, and the denial is a unit.
+
+It starts with a Prover9 proof.  If there are nonunit
+clauses in the proof, they must be used with hyperresolution,
+or positive resolution (e.g, no UR or paramodulation).
+
+Def bidirectional(proof): a proof is bidirectional if a negative
+clause is used for something (including flipping) other than
+unit conflict.
+
+Algorithm:
+
+While the proof is bidirectional:
+	eliminate the last backward step.
+
+Note that if a proof is bidirectional, there is a backward step
+right at the end, so all of the transformations are at the end
+of the proof (involve the empty clause).
+
+Cases handled so far:
+
+Case 1: Flip negative clause then apply unit conflict:
+
+    1. a != b.  [ ... ]
+    2. b != a.  [1,flip]
+    3. b = a.   [ ... ]
+    4. $F       [resolve,2,3]
+
+    Transform this in the obvious way by removing steps 2 and 4,
+    flipping 3, and then applying unit conflict.
+
+Case 2: Para into negative clause to get an instance of x != x.
+
+  Case 2a: Para into top of negative clause
+
+    1. a = b.           [ ... ]
+    2. a != b.          [ ... ]
+    5. b != b.          [para,1,3]
+    6. $F               [3,xx_res]
+
+    (1 and 2 give unit conflict, but the proof can be as shown.)
+    Transform this by simply doing a unit conflict between 1 and 2
+    If para goes from or into the other side, we might have to
+    flip the positive one first.
+
+Case 2b: Para into proper subterm of neg clause.
+
+    1. a = b.                 [ ... ]
+    2. f(g(a)) != f(g(b)).    [ ... ]
+    3. f(g(b)) != f(g(b)).    [para,1(left),2]
+    4. $F                     [3,xx_res]
+
+    Transformation:  We have to derive f(g(a)) = f(g(b)) from a=b.
+    First assume f(g(x)) = f(g(x)), then para the *opposite* side
+    of a=b into the position in f(g(x)) = f(g(x)) that corresponds
+    to the into position of 2, that is the first occurrence of x.
+    Result:
+
+    1. a = b.                 [ ... ]
+    2. f(g(a)) != f(g(b)).    [ ... ]
+    5. f(g(x)) = f(g(x)).     [assumption]
+    6. f(g(a)) = f(g(b)).     [para,1(right),5]
+    7. $F                     [resolve,2,6]
+
+    (Instead we could have an inference rule that takes a=b and
+    derives g(a) = g(b), and then apply it again to get f(g(a))=f(g(b)).
+    I have two objections to this: first, the IVY proof checker
+    cannot handle inferences like that; second: you have to build
+    up the equality you need one step at a time.)
+
+Case 3: Para into a neg clause, then unit conflict with some positive clause.
+
+    1. a = b1.       [ ... ]
+    2. f[a] != c.    [ ... ]
+    3. f[b2] = c.    [ ... ]
+    4. f[b1] != c.   [para,1(left),2]
+    5. $F            [resolve,3,4]   (b1 and b2 unify)
+
+  Case 3a: In clause 3, term b2 exists.
+
+    Transformation: Para opposite side of 1 into position in 3 (b2)
+    corresponding to the into position of 2.  Then unit conflict with 2.
+    Result:
+   
+    1. a = b1.       [ ... ]
+    2. f[a] != c.    [ ... ]
+    3. f[b2] = c.    [ ... ]
+    6. f[a] = c.     [para,1(right),3]
+    7. $F            [resolve 2,6]
+
+  Case 3b: In clause 3, term at position b2 does not exist.
+
+    Transformation: Instantiate clause 3 (minimally) so that the
+    position exists, then proceed as in case 3a.
+
+    An example of case 3b:
+
+    Bidirectional:
+
+    1 a = b.                              [assumption].
+    2 f(c,g(h(g(a),d))) != g(h(g(b),d)).  [assumption].
+    3 f(c,x) = x.                         [assumption].
+    4 f(c,g(h(g(b),d))) != g(h(g(b),d)).  [para(1(a,1),2(a,1,2,1,1,1))].
+    5 $F.                                 [resolve(3,a,4,a)].
+
+    Transformed:
+
+    1 a = b.  [assumption].
+    2 f(c,g(h(g(a),d))) != g(h(g(b),d)).  [assumption].
+    3 f(c,x) = x.                         [assumption].
+    6 f(c,g(h(g(y),z))) = g(h(g(y),z)).   [instantiate(3,[[x:g(h(g(y),z))]])].
+    7 f(c,g(h(g(a),x))) = g(h(g(b),x)).   [para(1(a,2),6(a,1,2,1,1,1))].
+    8 $F.  [resolve(7,a,2,a)].
+
+
+    

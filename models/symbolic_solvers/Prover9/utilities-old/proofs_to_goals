@@ -1,0 +1,159 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+
+$deny = "$ENV{HOME}/LADR/bin/deny";
+$tmpfile = "/tmp/deny$$";
+
+die "$deny binary not found or not executable" if (! -x $deny);
+
+sub member {
+    local ($object, @list) = @_;
+    local ($element);
+
+    foreach $element (@list) {
+        return 1 if ($element eq $object);
+    }
+    return 0;
+}  # member
+
+$arguments = join(" ", @ARGV);
+
+%options=();
+
+getopts("xrajn:", \%options);  # removes args it regocnizes
+
+if (@ARGV != 1) {
+    print "proofs_to_goals [-xaj] output_file\n";
+    print "    -x  : use expanded proofs\n";
+    print "    -r  : use renumbered proofs\n";
+    print "    -a  : copy attributes\n";
+    print "    -j  : include justifications as comments\n";
+    print "    -n 3: use only the third proof (for example)\n";
+    exit;
+}
+
+$output_attr  = (defined $options{a} ? 1 : 0);
+$output_just  = (defined $options{j} ? 1 : 0);
+$expanded     = (defined $options{x} ? 1 : 0);
+$renumbered   = (defined $options{r} ? 1 : 0);
+$proof_to_get = (defined $options{n} ? "$options{n}" : "\\d*");
+
+$filename = $ARGV[0];
+open(FH, $filename) || die "Cannot open file $filename.\n";
+
+$proofs = 0;
+$get_this_one = 0;
+$collect = 0;
+
+while ($line = <FH>) {
+    if ($line =~ /^op\([0-9]*,/ ||
+	$line =~ /set\(prolog_style_variables\)\./) {
+	push(@commands, $line);
+    }
+    elsif ($line =~ /- Proof $proof_to_get -/) {
+	$info = $line;
+	$info =~ s/.* Proof $proof_to_get -*//;
+	$get_this_one = 1;
+    }
+    elsif ($get_this_one &&
+	   (( $expanded &&  $renumbered && $line =~ / (RX|XR)PROOF /) ||
+	    ( $expanded && !$renumbered && $line =~ / XPROOF /) ||
+	    (!$expanded &&  $renumbered && $line =~ / RPROOF /) ||
+	    (!$expanded && !$renumbered && $line =~ / PROOF /))) {
+	$proofs++;
+	$get_this_one = 0;
+	$collect = 1;
+    }
+    elsif ($line =~ /end of .*proof/) {
+	$collect = 0;
+    }
+    elsif ($collect) {
+	if ($line =~ /Length of /) {
+	    chop($line);
+	    push(@lengths, "% $line $info");
+	}
+	elsif ($line =~ /Maximum clause/) {
+	    ;  # skip it
+	}
+	elsif ($line =~ /Level of proof/) {
+	    ;  # skip it
+	}
+	elsif ($line ne "\n" && !($line =~ /(\$F|\||~|!=)/)) {
+	    # Now it is a positive unit clause in the proof.
+	    chop $line;
+	    $id = $line;
+	    $id =~ s/ .*//;
+
+	    $clause = $line;
+	    $clause =~ s/^[0-9A-Z]* *//;
+	    $clause =~ s/\..*//;
+
+	    $literal = $clause;
+	    $literal =~ s/ #.*//;
+
+	    # don't include the clause if we've already seen it
+
+	    if (! &member("$literal.\n", @literals)) {
+	        $attribute = $clause;
+		$attribute =~ s/.*#/#/;
+		$attribute =~ s/\.//;
+		$attribute =~ s/^[^#].*//;  # in case there are none
+
+		$just = $line;
+		$just =~ s/^.*\. *//;
+
+		# print "\nid:        $id\n";
+		# print "clause:    $clause\n";
+		# print "literal:   $literal\n";
+		# print "attribute: $attribute\n";
+		# print "just:      $just\n";
+
+		push(@ids,         $id);
+		push(@literals,    "$literal.\n");
+		push(@attributes,  $attribute);
+		push(@justs,       $just);
+            }
+	}
+    }
+}
+
+open(FH1, "> $tmpfile");
+print FH1 @commands;
+print FH1 "clauses(junk).\n";
+print FH1 @literals;
+close(FH1);
+
+$output = `$deny -c < $tmpfile`;
+system("/bin/rm $tmpfile");
+$output =~ s/\.//g;
+$output =~ s/\$c/c_/g;
+@denials = split('\n', $output);
+
+die("wrong number of denials") if ($#literals != $#denials);
+$num = @denials;
+
+if ($proof_to_get == 0) {
+    $pmess = $proofs . ($proofs == 1 ? " proof" : " proofs");
+}
+    else {
+    $pmess = "proof $proof_to_get";
+}
+
+#############################################################
+
+print "clauses(goals).\n";
+
+print "% Arguments: $arguments\n";
+print "% $num denials were constructed from the units in $pmess.\n";
+print @lengths;
+
+for ($i = 0; $i < @denials; $i++) {
+    $denial = $denials[$i];
+    $attribute = $output_attr ? " $attributes[$i]" : "";
+    $answer = " # answer($ids[$i])";
+    $just = $output_just ? "  % $justs[$i]" : "";
+    print "$denial$attribute$answer.$just\n";
+}
+
+print "end_of_list.\n";

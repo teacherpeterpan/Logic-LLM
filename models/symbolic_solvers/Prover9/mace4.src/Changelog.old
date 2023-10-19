@@ -1,0 +1,50 @@
+Mace4 Changelog.
+
+Most recent changes are at the top.
+
+May 26, 2004.  Change iterate_up_to parameter to
+allow a value of -1, which means to iterate forever.
+
+May 26, 2004.  In ../ladr/formula.c, update the CNF
+transformation, making it more efficient.  Prompted by
+the May 18, 2004 bug.
+
+May 18, 2004.  Release mace4-2004-C.
+
+May 18, 2004.  Soundness bug from Geoff Sutcliffe.
+CNF transformation.  This affects non-clausal input
+only (formulas(...) in the input).  Since this is a
+serious bug, a new release will be made today.
+
+January 7, 2004.  Bug from Guy Erez.  Segfault if a domain
+element is used as a propositional variable, as in the clause
+"0.".  Fixed by checking for that case (and causing a fatal_error)
+in collect_mace_syms.
+
+November 20, 2003.  Fixed minor memory leak that shows up
+when using iterate_up_to.
+
+November 19, 2003.  Added flag iterate_primes.  When using
+assign(iterate_up_to, n), set(iterate_primes) says to skip
+the non-prime domain sizes.  The corresponding command-line
+argument is -q1.
+
+November 19, 2003.  Added parm increment (default 1).
+When using assign(iterate_up_to, n), assign(increment, i)
+does the obvious.  The corresponding command-line argument
+is, for example, -i2.
+
+November 11, 2003.  Added flag integer_ring.  This fixes the
+operations [+,-,*] as the ring of integers mod domain_size.
+The corresponding command-line argument is -R1.
+
+October 17, 2003.  mace4-2003-B released.  This is the first
+formal release of Mace4.
+
+---(probably some unrecorded changes)---
+
+October 28, 2004.  (Many changes to LADR)  Changed negation symbol
+from ~ to -.  (Sorry.)  Changed simp_term in ground.c so that
+- can be used as a function symbol as well as a logic symbol.
+
+--- Further changes are listed in the LADR Changelog file (../Changelog).

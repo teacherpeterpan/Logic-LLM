@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>clausify.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "clausify.h"</H1>
+
+This page has information from files
+<A HREF="../clausify.h">clausify.h</A> and <A HREF="../clausify.c">clausify.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File clausify.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#clause_to_formula">clause_to_formula</A></TD><TD><A HREF="#formula_to_clause">formula_to_clause</A></TD><TD><A HREF="#formula_to_literal">formula_to_literal</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#clausify_formula">clausify_formula</A></TD><TD><A HREF="#formula_to_clauses">formula_to_clauses</A></TD><TD><A HREF="#formula_to_literals">formula_to_literals</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="clause_to_formula"></A><HR><PRE><B><A HREF="formula.html">Formula</A> clause_to_formula(Topform c);
+</B></PRE>Return an entirely new formula.
+<A NAME="clausify_formula"></A><HR><PRE><B>Plist clausify_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine translates a <A HREF="formula.html">Formula</A> f into a Plist of clauses.
+The translation includes Skolemization, so the result should
+be unsatisfiable iff f is unsatisfiable.  The variables in
+each clause are renumbered.  If there are more than MAX_VARS
+variables in a clause, a fatal error occurs.
+<P>
+<A HREF="formula.html">Formula</A> f is not changed.
+<A NAME="formula_to_clause"></A><HR><PRE><B>Topform formula_to_clause(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine takes a <A HREF="formula.html">Formula</A> f and returns a Topform representation.
+If f is not an atom, literal, or disjunction of literals, the
+returned clause will be NULL or not well formed.
+<P>
+The returned clause is an entirely new copy, and the given formula
+is not changed.
+<A NAME="formula_to_clauses"></A><HR><PRE><B>Plist formula_to_clauses(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine takes a <A HREF="formula.html">Formula</A> f and returns a Plist of clauses
+representation.
+If f is not an atom, literal, or disjunction of literals, or a
+conjunction of those things, the clauses in the returned list may be NULL
+or not well formed.
+<P>
+The returned clauses are entirely new copies, and the given formula
+is not changed.
+<A NAME="formula_to_literal"></A><HR><PRE><B>Literals formula_to_literal(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine takes a <A HREF="formula.html">Formula</A> f and returns a Literals representation.
+If the formula is not an ATOM_FORM or the negation of an ATOM_FORM,
+NULL is returned.
+<P>
+The returned literal is an entirely new copy,
+and the given formula is not changed.
+<A NAME="formula_to_literals"></A><HR><PRE><B>Literals formula_to_literals(<A HREF="formula.html">Formula</A> f);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File clausify.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

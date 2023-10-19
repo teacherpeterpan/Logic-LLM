@@ -1,0 +1,55 @@
+#!/usr/bin/perl
+
+$this_file = __FILE__;
+
+if (scalar(@ARGV) != 1) {
+    print "Usage: $this_file type\n";
+    exit 1;
+}
+
+$arg = $ARGV[0];
+$upp = uc $arg;
+$cap = ucfirst $arg;
+$low = lc $arg;
+
+printf "#define PTRS_$upp CEILING(sizeof(struct $low), BYTES_POINTER)\n";
+printf "static unsigned %s_gets, %s_frees;\n", $cap, $cap;
+
+print <<ENDA
+
+/*************
+ *
+ *   $cap get_$low()
+ *
+ *************/
+
+static
+$cap get_$low(void)
+{
+  $cap p = get_mem(PTRS_$upp);
+  $cap xxx_gets++;
+  return(p);
+}  /* get_$low */
+
+/*************
+ *
+ *    free_$low()
+ *
+ *************/
+
+static
+void free_$low($cap p)
+{
+  free_mem(p, PTRS_$upp);
+  $cap xxx_frees++;
+}  /* free_$low */
+ENDA
+    ;
+print <<ENDB
+
+  n = BYTES_$upp;
+  fprintf(fp, "$low (%4d)      %11u%11u%11u%9.1f K\\n",
+          n, $cap xxx_gets, $cap xxx_frees,
+          $cap xxx_gets - $cap xxx_frees,
+          (($cap xxx_gets - $cap xxx_frees) * n) / 1024.);
+ENDB

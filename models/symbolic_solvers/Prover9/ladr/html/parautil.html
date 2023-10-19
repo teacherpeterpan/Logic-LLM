@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<TITLE>parautil.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "parautil.h"</H1>
+
+This page has information from files
+<A HREF="../parautil.h">parautil.h</A> and <A HREF="../parautil.c">parautil.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File parautil.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#build_reflex_eq">build_reflex_eq</A></TD><TD><A HREF="#fold_denial">fold_denial</A></TD><TD><A HREF="#new_constant">new_constant</A></TD><TD><A HREF="#same_term_structure">same_term_structure</A></TD>
+</TR>
+<TR><TD><A HREF="#eq_tautology">eq_tautology</A></TD><TD><A HREF="#init_paramod">init_paramod</A></TD><TD><A HREF="#orient_equalities">orient_equalities</A></TD><TD><A HREF="#top_flip">top_flip</A></TD>
+</TR>
+<TR><TD><A HREF="#equational_def">equational_def</A></TD><TD><A HREF="#literal_flip">literal_flip</A></TD><TD><A HREF="#oriented_eq">oriented_eq</A></TD><TD><A HREF="#unfold_order">unfold_order</A></TD>
+</TR>
+<TR><TD><A HREF="#equational_def_2">equational_def_2</A></TD><TD><A HREF="#mark_oriented_eq">mark_oriented_eq</A></TD><TD><A HREF="#renamable_flip_eq">renamable_flip_eq</A></TD><TD><A HREF="#zap_literal_flip">zap_literal_flip</A></TD>
+</TR>
+<TR><TD><A HREF="#flip_eq">flip_eq</A></TD><TD><A HREF="#mark_renamable_flip">mark_renamable_flip</A></TD><TD><A HREF="#renamable_flip_eq_test">renamable_flip_eq_test</A></TD><TD><A HREF="#zap_top_flip">zap_top_flip</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="build_reflex_eq"></A><HR><PRE><B>Topform build_reflex_eq(void);
+</B></PRE><A NAME="eq_tautology"></A><HR><PRE><B>BOOL eq_tautology(Topform c);
+</B></PRE>This routine returns TRUE if the clause has any literals of the form t=t.
+<A NAME="equational_def"></A><HR><PRE><B>int equational_def(Topform c);
+</B></PRE><A NAME="equational_def_2"></A><HR><PRE><B>BOOL equational_def_2(<A HREF="term.html">Term</A> alpha, <A HREF="term.html">Term</A> beta);
+</B></PRE><A NAME="flip_eq"></A><HR><PRE><B>void flip_eq(<A HREF="term.html">Term</A> atom, int n);
+</B></PRE>Flip an equality and update the justification of the containing clause.
+<A NAME="fold_denial"></A><HR><PRE><B>Topform fold_denial(Topform c, int alpha_max);
+</B></PRE><A NAME="init_paramod"></A><HR><PRE><B>void init_paramod(void);
+</B></PRE><A NAME="literal_flip"></A><HR><PRE><B>Literals literal_flip(Literals a);
+</B></PRE><A NAME="mark_oriented_eq"></A><HR><PRE><B>void mark_oriented_eq(<A HREF="term.html">Term</A> atom);
+</B></PRE>This routine marks an atom as an oriented equality.
+<A NAME="mark_renamable_flip"></A><HR><PRE><B>void mark_renamable_flip(<A HREF="term.html">Term</A> atom);
+</B></PRE>This routine marks an atom as "renamable_flip".
+<A NAME="new_constant"></A><HR><PRE><B>Topform new_constant(Topform c, int new_sn);
+</B></PRE>If the Topform is a positive equality unit a(x) = b(y) with two variables
+in which one variable occurs in each side, infer a clause
+a(x) = c with a new constant c.  We could also infer b(y)=c, but
+that will come by other inference mechanisms.
+<p>
+If new_sn == INT_MAX, a new symbol will be generated; otherwise,
+new_sn will be used as the symbol number of the new symbol.
+<A NAME="orient_equalities"></A><HR><PRE><B>void orient_equalities(Topform c, BOOL allow_flips);
+</B></PRE>For each equality literal (positive or negative) of Topform c,
+compare the arguments; if the left is greater, mark the
+atom as oriented, and if the the right is greater, flip the
+arguments (add an entry to the justification),
+and mark the atom as oriented.
+<A NAME="oriented_eq"></A><HR><PRE><B>BOOL oriented_eq(<A HREF="term.html">Term</A> atom);
+</B></PRE>This function checks if an atom is an oriented equality atom.
+(The terms are not actually compared.  Only the mark is checked.)
+<A NAME="renamable_flip_eq"></A><HR><PRE><B>BOOL renamable_flip_eq(<A HREF="term.html">Term</A> atom);
+</B></PRE>This function checks if an atom is a renamable_flip equality atom.
+(The terms are not actually compared.  Only the mark is checked.)
+<A NAME="renamable_flip_eq_test"></A><HR><PRE><B>BOOL renamable_flip_eq_test(<A HREF="term.html">Term</A> atom);
+</B></PRE>Test if a term is a renamable-flip equality atom.
+This does not check the flag; it does the complete test.
+<A NAME="same_term_structure"></A><HR><PRE><B>BOOL same_term_structure(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE>Do terms t1 and t2 have the same structure?  That is, if
+we rename all variables to x, are t1 and t2 identical?
+<A NAME="top_flip"></A><HR><PRE><B><A HREF="term.html">Term</A> top_flip(<A HREF="term.html">Term</A> a);
+</B></PRE>Given a binary term (or atom), return the flip.
+The two arguments are not copied.
+When done with it, call <A HREF="#zap_top_flip">zap_top_flip</A>(t) instead of
+zap_term so that the arguments are not zapped.
+<A NAME="unfold_order"></A><HR><PRE><B>Ordertype unfold_order(<A HREF="term.html">Term</A> alpha, <A HREF="term.html">Term</A> beta);
+</B></PRE><A NAME="zap_literal_flip"></A><HR><PRE><B>void zap_literal_flip(Literals a);
+</B></PRE>Free a literal created by literal_flip.
+<A NAME="zap_top_flip"></A><HR><PRE><B>void zap_top_flip(<A HREF="term.html">Term</A> a);
+</B></PRE>Free a term created by top_flip.
+<HR><A NAME=defns></A><H2>Public Definitions in File parautil.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package contains a few utilites for paramodulation and demodulation.
+
+<HR>
+</BODY>
+</HTML>

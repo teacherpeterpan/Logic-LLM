@@ -1,0 +1,373 @@
+<HTML>
+<HEAD>
+<TITLE>term.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "term.h"</H1>
+
+This page has information from files
+<A HREF="../term.h">term.h</A> and <A HREF="../term.c">term.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File term.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#all_args_vars">all_args_vars</A></TD><TD><A HREF="#get_rigid_term">get_rigid_term</A></TD><TD><A HREF="#plist_of_subterms">plist_of_subterms</A></TD><TD><A HREF="#term1">term1</A></TD>
+</TR>
+<TR><TD><A HREF="#arg_position">arg_position</A></TD><TD><A HREF="#get_rigid_term_dangerously">get_rigid_term_dangerously</A></TD><TD><A HREF="#position_of_subterm">position_of_subterm</A></TD><TD><A HREF="#term2">term2</A></TD>
+</TR>
+<TR><TD><A HREF="#args_distinct_vars">args_distinct_vars</A></TD><TD><A HREF="#get_rigid_term_like">get_rigid_term_like</A></TD><TD><A HREF="#position_of_term_in_tlist">position_of_term_in_tlist</A></TD><TD><A HREF="#term_at_pos">term_at_pos</A></TD>
+</TR>
+<TR><TD><A HREF="#biggest_variable">biggest_variable</A></TD><TD><A HREF="#get_variable_term">get_variable_term</A></TD><TD><A HREF="#renum_vars_recurse">renum_vars_recurse</A></TD><TD><A HREF="#term_depth">term_depth</A></TD>
+</TR>
+<TR><TD><A HREF="#build_binary_term">build_binary_term</A></TD><TD><A HREF="#greatest_symnum_in_term">greatest_symnum_in_term</A></TD><TD><A HREF="#same_structure">same_structure</A></TD><TD><A HREF="#term_ident">term_ident</A></TD>
+</TR>
+<TR><TD><A HREF="#build_binary_term_safe">build_binary_term_safe</A></TD><TD><A HREF="#greatest_variable">greatest_variable</A></TD><TD><A HREF="#set_of_ivariables">set_of_ivariables</A></TD><TD><A HREF="#term_set_variables">term_set_variables</A></TD>
+</TR>
+<TR><TD><A HREF="#build_unary_term">build_unary_term</A></TD><TD><A HREF="#ground_term">ground_term</A></TD><TD><A HREF="#set_of_ivars">set_of_ivars</A></TD><TD><A HREF="#term_symbol">term_symbol</A></TD>
+</TR>
+<TR><TD><A HREF="#build_unary_term_safe">build_unary_term_safe</A></TD><TD><A HREF="#hash_term">hash_term</A></TD><TD><A HREF="#set_of_variables">set_of_variables</A></TD><TD><A HREF="#term_to_int">term_to_int</A></TD>
+</TR>
+<TR><TD><A HREF="#check_upward_term_links">check_upward_term_links</A></TD><TD><A HREF="#int_to_term">int_to_term</A></TD><TD><A HREF="#set_of_vars">set_of_vars</A></TD><TD><A HREF="#tlist_member">tlist_member</A></TD>
+</TR>
+<TR><TD><A HREF="#contains_skolem_function">contains_skolem_function</A></TD><TD><A HREF="#is_constant">is_constant</A></TD><TD><A HREF="#set_vars_recurse">set_vars_recurse</A></TD><TD><A HREF="#tlist_set">tlist_set</A></TD>
+</TR>
+<TR><TD><A HREF="#contains_skolem_term">contains_skolem_term</A></TD><TD><A HREF="#is_term">is_term</A></TD><TD><A HREF="#skolem_term">skolem_term</A></TD><TD><A HREF="#tlist_subset">tlist_subset</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_plist_of_terms">copy_plist_of_terms</A></TD><TD><A HREF="#multiset_of_vars">multiset_of_vars</A></TD><TD><A HREF="#sprint_term">sprint_term</A></TD><TD><A HREF="#upward_term_links">upward_term_links</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_term">copy_term</A></TD><TD><A HREF="#multiset_vars">multiset_vars</A></TD><TD><A HREF="#subst_term">subst_term</A></TD><TD><A HREF="#variables_multisubset">variables_multisubset</A></TD>
+</TR>
+<TR><TD><A HREF="#eq_term">eq_term</A></TD><TD><A HREF="#nat_to_term">nat_to_term</A></TD><TD><A HREF="#subst_var_term">subst_var_term</A></TD><TD><A HREF="#variables_subset">variables_subset</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_term">fprint_term</A></TD><TD><A HREF="#natural_constant_term">natural_constant_term</A></TD><TD><A HREF="#symbol_count">symbol_count</A></TD><TD><A HREF="#zap_plist_of_terms">zap_plist_of_terms</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_term_mem">fprint_term_mem</A></TD><TD><A HREF="#occurrences">occurrences</A></TD><TD><A HREF="#symbol_in_term">symbol_in_term</A></TD><TD><A HREF="#zap_term">zap_term</A></TD>
+</TR>
+<TR><TD><A HREF="#free_term">free_term</A></TD><TD><A HREF="#occurs_in">occurs_in</A></TD><TD><A HREF="#symbol_occurrences">symbol_occurrences</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#free_vars_term">free_vars_term</A></TD><TD><A HREF="#p_term">p_term</A></TD><TD><A HREF="#symbols_in_term">symbols_in_term</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#fsym_set_in_term">fsym_set_in_term</A></TD><TD><A HREF="#p_term_mem">p_term_mem</A></TD><TD><A HREF="#term0">term0</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="all_args_vars"></A><HR><PRE><B>BOOL all_args_vars(<A HREF="term.html">Term</A> t);
+</B></PRE>This Boolean routine checks if all argumets of <A HREF="term.html">Term</A> t are VARIABLEs.
+(It is true also if t is a VARIABLE.)
+<A NAME="arg_position"></A><HR><PRE><B>int arg_position(<A HREF="term.html">Term</A> parent, <A HREF="term.html">Term</A> child);
+</B></PRE>If the given terms are in a parent-child relatioship,
+return the argument position (index) of the child.
+Otherwise, return -1.
+<A NAME="args_distinct_vars"></A><HR><PRE><B>BOOL args_distinct_vars(<A HREF="term.html">Term</A> t);
+</B></PRE>Is the <A HREF="term.html">Term</A> a nonvariable with distinct variables as arguments?
+(Constants satisfy this.)
+<A NAME="biggest_variable"></A><HR><PRE><B>int biggest_variable(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine returns the greatest variable index of any variable int
+the given term t.  If t is ground, -1 is returned.
+<A NAME="build_binary_term"></A><HR><PRE><B><A HREF="term.html">Term</A> build_binary_term(int sn, <A HREF="term.html">Term</A> a1, <A HREF="term.html">Term</A> a2);
+</B></PRE>Build and return a binary term with SYMNUM sn, first term a1, and
+second term a2.
+<P>
+WARNING: if sn is not a binary symbol, bad things will happen!
+<A NAME="build_binary_term_safe"></A><HR><PRE><B><A HREF="term.html">Term</A> build_binary_term_safe(char *str, <A HREF="term.html">Term</A> a1, <A HREF="term.html">Term</A> a2);
+</B></PRE>Build and return a binary term with root str, first term a1, and
+second term a2.
+<p>
+If you know the symnum, and you're certain it has arity 2, you
+can use the faster routine <A HREF="#build_binary_term">build_binary_term</A>() instead;
+<A NAME="build_unary_term"></A><HR><PRE><B><A HREF="term.html">Term</A> build_unary_term(int sn, <A HREF="term.html">Term</A> a);
+</B></PRE>Build and return a unary term with SYMNUM sn and argument term a.
+<P>
+WARNING: if sn is not a unary symbol, bad things will happen!
+<A NAME="build_unary_term_safe"></A><HR><PRE><B><A HREF="term.html">Term</A> build_unary_term_safe(char *str, <A HREF="term.html">Term</A> a);
+</B></PRE>Build and return a unary term with root str, argument a.
+<p>
+If you know the symnum, and you're certain it has arity 1, you
+can use the faster routine <A HREF="#build_unary_term">build_unary_term</A>() instead;
+<A NAME="check_upward_term_links"></A><HR><PRE><B>BOOL check_upward_term_links(<A HREF="term.html">Term</A> t, void *p);
+</B></PRE>In the given <A HREF="term.html">Term</A> t, check that the "container" field of t and each subterm,
+except variables, point to (void *) p.
+<A NAME="contains_skolem_function"></A><HR><PRE><B>BOOL contains_skolem_function(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="contains_skolem_term"></A><HR><PRE><B>BOOL contains_skolem_term(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="copy_plist_of_terms"></A><HR><PRE><B>Plist copy_plist_of_terms(Plist terms);
+</B></PRE><A NAME="copy_term"></A><HR><PRE><B><A HREF="term.html">Term</A> copy_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine copies a term.  Only the symbols and structure
+are copied---any extra fields such as bits or u are
+NOT copied.
+<A NAME="eq_term"></A><HR><PRE><B>BOOL eq_term(<A HREF="term.html">Term</A> a);
+</B></PRE>This function checks if an atom is an equality atom (positive or negative)
+for the purposes of paramodulation and demodulation.
+<A NAME="fprint_term"></A><HR><PRE><B>void fprint_term(FILE *fp, <A HREF="term.html">Term</A> t);
+</B></PRE>This routine prints (to FILE *fp) a term.  A newline is NOT printed.
+<A NAME="fprint_term_mem"></A><HR><PRE><B>void fprint_term_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for Terms.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="free_term"></A><HR><PRE><B>void free_term(<A HREF="term.html">Term</A> p);
+</B></PRE>This routine frees a term node only.  To recursively
+free all of the subterms as well, call <A HREF="#zap_term">zap_term</A>(t) instead.
+<A NAME="free_vars_term"></A><HR><PRE><B>Plist free_vars_term(<A HREF="term.html">Term</A> t, Plist vars);
+</B></PRE>Return the set of constants that look like variables.
+The terms are newly constructed; if they are not used,
+the list should be deallocated with zap_tlist().
+<A NAME="fsym_set_in_term"></A><HR><PRE><B>Ilist fsym_set_in_term(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="get_rigid_term"></A><HR><PRE><B><A HREF="term.html">Term</A> get_rigid_term(char *sym, int arity);
+</B></PRE>This routine allocates and returns a term node with the given
+symbol and arity.  If you already have a similar term node, say t,
+(containing the symbol and arity you need) call <A HREF="#get_rigid_term_like">get_rigid_term_like</A>(t)
+instead.
+<A NAME="get_rigid_term_dangerously"></A><HR><PRE><B><A HREF="term.html">Term</A> get_rigid_term_dangerously(int symnum, int arity);
+</B></PRE>This routine can be used to allocate a term node if all you have is
+the symbol ID and arity.  <I>If the arity is not correct
+for the symbol ID, terrible things will happen!</I> 
+<P>
+If you have a similar term, use <A HREF="#get_rigid_term_like">get_rigid_term_like</A>() instead.
+If you can afford the time to access the symbol table,
+use sn_to_str() and <A HREF="#get_rigid_term">get_rigid_term</A>() instead.
+<A NAME="get_rigid_term_like"></A><HR><PRE><B><A HREF="term.html">Term</A> get_rigid_term_like(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine allocates and returns a term node with the same
+symbol and arity as the given <A HREF="term.html">Term</A> t.
+<A NAME="get_variable_term"></A><HR><PRE><B><A HREF="term.html">Term</A> get_variable_term(int var_num);
+</B></PRE>This routine returns a term of type VARIABLE.
+The index of the variable is set to var_num, which  should
+be an integer >= 0.
+<A NAME="greatest_symnum_in_term"></A><HR><PRE><B>int greatest_symnum_in_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This function returns the greatest SYMNUM (of a CONSTANT or COMPLEX term)
+in the given <A HREF="term.html">Term</A> t.
+If the term is a VARIABLE, return -1.
+<A NAME="greatest_variable"></A><HR><PRE><B>int greatest_variable(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine returns the greatest variable index in a term.
+If the term is ground, -1 is returned.
+<A NAME="ground_term"></A><HR><PRE><B>BOOL ground_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This function checks if a term is ground, that is, has no variables.
+<A NAME="hash_term"></A><HR><PRE><B>unsigned hash_term(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="int_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> int_to_term(int i);
+</B></PRE>This routine takes an integer and returns the <A HREF="term.html">Term</A>
+representation.
+<A NAME="is_constant"></A><HR><PRE><B>BOOL is_constant(<A HREF="term.html">Term</A> t, char *str);
+</B></PRE>Is term t a specific constant?
+<A NAME="is_term"></A><HR><PRE><B>BOOL is_term(<A HREF="term.html">Term</A> t, char *str, int arity);
+</B></PRE>Does term t have the the given symbol and arity?
+<A NAME="multiset_of_vars"></A><HR><PRE><B>I2list multiset_of_vars(<A HREF="term.html">Term</A> t, I2list vars);
+</B></PRE><A NAME="multiset_vars"></A><HR><PRE><B>I2list multiset_vars(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="nat_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> nat_to_term(int n);
+</B></PRE>This routine takes a nonnegative integer and returns
+a constant <A HREF="term.html">Term</A> with the string representation of the
+integer as the constant symbol.
+<A NAME="natural_constant_term"></A><HR><PRE><B>int natural_constant_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine takes a term, and if the term represents
+an nonnegative integer, that integer is returned;
+otherwise, -1 is returned.
+<A NAME="occurrences"></A><HR><PRE><B>int occurrences(<A HREF="term.html">Term</A> t, <A HREF="term.html">Term</A> target);
+</B></PRE>This function returns the number of occurrences of <A HREF="term.html">Term</A> target in <A HREF="term.html">Term</A> t.
+The checks are made with <A HREF="#term_ident">term_ident</A>().
+<A NAME="occurs_in"></A><HR><PRE><B>BOOL occurs_in(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE>This function checks if <A HREF="term.html">Term</A> t2 is identical to a subterm of <A HREF="term.html">Term</A> t1,
+including the case <A HREF="#term_ident">term_ident</A>(t1,t2).  All identity checks are done
+with <A HREF="#term_ident">term_ident</A>(), so extra fields such as bits or u are not
+checked.
+<A NAME="p_term"></A><HR><PRE><B>void p_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine prints a term, followed by '\n' and fflush, to stdout.
+If you don't want the newline, use <A HREF="#fprint_term">fprint_term</A>() instead.
+If you want the term put into a string, use <A HREF="#sprint_term">sprint_term</A>() instead.
+<A NAME="p_term_mem"></A><HR><PRE><B>void p_term_mem(void);
+</B></PRE>This routine prints memory usage statistics for Terms to stdout.
+<A NAME="plist_of_subterms"></A><HR><PRE><B>Plist plist_of_subterms(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="position_of_subterm"></A><HR><PRE><B>Ilist position_of_subterm(<A HREF="term.html">Term</A> t, <A HREF="term.html">Term</A> subterm);
+</B></PRE><A NAME="position_of_term_in_tlist"></A><HR><PRE><B>int position_of_term_in_tlist(<A HREF="term.html">Term</A> t, Plist lst);
+</B></PRE><A NAME="renum_vars_recurse"></A><HR><PRE><B><A HREF="term.html">Term</A> renum_vars_recurse(<A HREF="term.html">Term</A> t, int vmap[], int max_vars);
+</B></PRE>This routine renumbers the variables of a term.  It is assumed
+that vmap has been filled with -1 on the initial call and that
+the size of vmap is at least max_vars.
+<P>
+This returns a <A HREF="term.html">Term</A> instead of being void, in case the
+given term is itself a variable.  (Recall that variables
+may be shared, so we can't just change a variable's index.
+<A NAME="same_structure"></A><HR><PRE><B>BOOL same_structure(<A HREF="term.html">Term</A> a, <A HREF="term.html">Term</A> b);
+</B></PRE>If variables are ignored, are the terms identical?
+<A NAME="set_of_ivariables"></A><HR><PRE><B>Ilist set_of_ivariables(<A HREF="term.html">Term</A> t);
+</B></PRE>Given a <A HREF="term.html">Term</A>, return the set of integers corresponding to its variables.
+<A NAME="set_of_ivars"></A><HR><PRE><B>Ilist set_of_ivars(<A HREF="term.html">Term</A> t, Ilist ivars);
+</B></PRE>See <A HREF="#set_of_ivariables">set_of_ivariables</A>(t).
+<A NAME="set_of_variables"></A><HR><PRE><B>Plist set_of_variables(<A HREF="term.html">Term</A> t);
+</B></PRE>Given a <A HREF="term.html">Term</A>, return the set of variables.
+<A NAME="set_of_vars"></A><HR><PRE><B>Plist set_of_vars(<A HREF="term.html">Term</A> t, Plist vars);
+</B></PRE>See <A HREF="#set_of_variables">set_of_variables</A>(t).
+<A NAME="set_vars_recurse"></A><HR><PRE><B><A HREF="term.html">Term</A> set_vars_recurse(<A HREF="term.html">Term</A> t, char *vnames[], int max_vars);
+</B></PRE>This routine sets the variables of a term.  It is assumed
+that vnames has been filled with NULL on the initial call and that
+the size of vnames is at least max_vars.
+<P>
+This returns a <A HREF="term.html">Term</A> instead of being void, in case the
+given term is itself becomes a variable.
+<A NAME="skolem_term"></A><HR><PRE><B>BOOL skolem_term(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="sprint_term"></A><HR><PRE><B>void sprint_term(<A HREF="strbuf.html">String_buf</A> sb, <A HREF="term.html">Term</A> t);
+</B></PRE>This (recursive) routine appends the string representation of a term to
+a <A HREF="strbuf.html">String_buf</A>.  A newline is not included.
+<A NAME="subst_term"></A><HR><PRE><B><A HREF="term.html">Term</A> subst_term(<A HREF="term.html">Term</A> t, <A HREF="term.html">Term</A> target, <A HREF="term.html">Term</A> replacement);
+</B></PRE>In term t, replace all occurrences of <A HREF="term.html">Term</A> target with <I>copies of</I>
+<A HREF="term.html">Term</A> replacement.  Free all of the replaced terms;
+<A NAME="subst_var_term"></A><HR><PRE><B><A HREF="term.html">Term</A> subst_var_term(<A HREF="term.html">Term</A> t, int symnum, int varnum);
+</B></PRE>In <A HREF="term.html">Term</A> t, replace all CONSTANT terms containing SYMNUM symnum
+with a variable containing VARNUM varnum.  Free the replaced constants
+and return the result.
+<A NAME="symbol_count"></A><HR><PRE><B>int symbol_count(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine returns the total number of symbols (i.e., the number of
+nodes) in the given term t.
+<A NAME="symbol_in_term"></A><HR><PRE><B>BOOL symbol_in_term(int symnum, <A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="symbol_occurrences"></A><HR><PRE><B>int symbol_occurrences(<A HREF="term.html">Term</A> t, int symnum);
+</B></PRE>Return the number of occurrences of a symbol in a term.
+<A NAME="symbols_in_term"></A><HR><PRE><B>I2list symbols_in_term(<A HREF="term.html">Term</A> t, I2list g);
+</B></PRE>This routine collects the multiset of nonvariable symbols in a term.
+An Ilist of symbol IDs (symnums) is returned
+<A NAME="term0"></A><HR><PRE><B><A HREF="term.html">Term</A> term0(char *sym);
+</B></PRE>Build constant <A HREF="term.html">Term</A>.
+<A NAME="term1"></A><HR><PRE><B><A HREF="term.html">Term</A> term1(char *sym, <A HREF="term.html">Term</A> arg);
+</B></PRE>Build a unary term.  The argument <A HREF="term.html">Term</A> is not copied.
+<A NAME="term2"></A><HR><PRE><B><A HREF="term.html">Term</A> term2(char *sym, <A HREF="term.html">Term</A> arg1, <A HREF="term.html">Term</A> arg2);
+</B></PRE>Build a binary term.  The argument Terms are not copied.
+<A NAME="term_at_pos"></A><HR><PRE><B><A HREF="term.html">Term</A> term_at_pos(<A HREF="term.html">Term</A> t, Ilist pos);
+</B></PRE><A NAME="term_depth"></A><HR><PRE><B>int term_depth(<A HREF="term.html">Term</A> t);
+</B></PRE>Return the depth of a term.  Variables and constants have depth 0.
+<A NAME="term_ident"></A><HR><PRE><B>BOOL term_ident(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE>This function checks if two terms are identical.  Only the 
+structure and symbols are checked---any extra fields such as
+bits or u are NOT checked.
+<A NAME="term_set_variables"></A><HR><PRE><B>void term_set_variables(<A HREF="term.html">Term</A> t, int max_vars);
+</B></PRE>This routine traverses a term and changes the constants
+that should be variables, into variables.  On input, the term
+should have no variables.  The new variables are numbered
+0, 1, 2 ... according the the first occurrence, reading from the
+left.
+<P>
+A fatal error occurs if there are more than max_vars variables.
+<P>
+<I>If you are dealing with clauses, use clause_set_variables()
+instead.</I>
+<A NAME="term_symbol"></A><HR><PRE><B>char *term_symbol(<A HREF="term.html">Term</A> t);
+</B></PRE>Return the print string associated with the given nonvariable term.
+If the term is a variable, return NULL.
+<A NAME="term_to_int"></A><HR><PRE><B>BOOL term_to_int(<A HREF="term.html">Term</A> t, int *result);
+</B></PRE>Given a term, see if it represents an integer.
+If so, set *result to the integer and return TRUE.
+If not, return FALSE.
+<P>
+The term representation of a negative integer is
+the function symbol "-" applied to a nonnegative integer.
+<A NAME="tlist_member"></A><HR><PRE><B>BOOL tlist_member(<A HREF="term.html">Term</A> t, Plist lst);
+</B></PRE>This function checks if a term is a member of a Plist.
+The function <A HREF="#term_ident">term_ident</A>(t1,t2) is used.
+<A NAME="tlist_set"></A><HR><PRE><B>BOOL tlist_set(Plist a);
+</B></PRE><A NAME="tlist_subset"></A><HR><PRE><B>BOOL tlist_subset(Plist a, Plist b);
+</B></PRE><A NAME="upward_term_links"></A><HR><PRE><B>void upward_term_links(<A HREF="term.html">Term</A> t, void *p);
+</B></PRE>In the given <A HREF="term.html">Term</A> t, make the "container" field of t and each subterm,
+except variables, point to (void *) p.
+<A NAME="variables_multisubset"></A><HR><PRE><B>BOOL variables_multisubset(<A HREF="term.html">Term</A> a, <A HREF="term.html">Term</A> b);
+</B></PRE><A NAME="variables_subset"></A><HR><PRE><B>BOOL variables_subset(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE><A NAME="zap_plist_of_terms"></A><HR><PRE><B>void zap_plist_of_terms(Plist lst);
+</B></PRE>Free a Plist of terms.
+<A NAME="zap_term"></A><HR><PRE><B>void zap_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine frees a term t and all of its subterms.  You should not
+refer to t after calling <A HREF="#zap_term">zap_term</A>(t).
+<HR><A NAME=defns></A><H2>Public Definitions in File term.h</H2>
+<PRE>
+#define MAX_VARS  100   /* max number of (distinct) variables per term */
+#define MAX_VNUM  5000  /* maximum variable ID, for array of vars */
+
+#define MAX_VAR   INT_MAX     /* max var ID that fits in sym field of term */
+#define MAX_SYM   INT_MAX     /* max ID of any rigid symbol */
+#define MAX_ARITY UCHAR_MAX   /* max arity of any term (don't make this big) */
+
+#define FLAGS_TYPE unsigned char  /* for private_flags field of <A HREF="term.html">Term</A> */
+
+typedef struct term * <A HREF="term.html">Term</A>;     /* <A HREF="term.html">Term</A> is a pointer to a term struct */
+
+struct term {
+  int            private_symbol; /* const/func/pred/var symbol ID */
+  unsigned char  arity;          /* number of auguments */
+  FLAGS_TYPE     private_flags;  /* for marking terms in various ways */
+  <A HREF="term.html">Term</A>           *args;          /* array (size arity) of pointers to args */
+  void           *container;     /* containing object */
+  union {
+    unsigned     id;             /* unique ID, probably for FPA indexing */
+    void         *vp;            /* auxiliary pointer */
+  } u;
+};
+
+/* to check type of term */
+#define VARIABLE(t) ((t)->private_symbol >= 0)
+#define CONSTANT(t) ((t)->private_symbol < 0 && (t)->arity == 0)
+#define COMPLEX(t)  ((t)->private_symbol < 0 && (t)->arity > 0)
+
+/* to get symbol ID from a CONSTANT or COMPLEX term */
+#define SYMNUM(t)   (-((t)->private_symbol))
+
+/* to get the variable number of a VARIABLE term */
+#define VARNUM(t)   ((t)->private_symbol)
+
+/* to get the arity of a term (VARIABLE terms have arity 0) */
+#define ARITY(t)    ((t)->arity)
+
+/* to get the i-th argument of a term (make sure i is in [0..arity-1]) */
+#define ARG(t,i)    ((t)->args[i])
+
+/* to get the array of arguments */
+#define ARGS(t)    ((t)->args)
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+The Term data structure is designed mainly to represent
+<GL>first-order untyped term</GL>s.
+It is generally used for <GL>atoms</GL> as well,
+because the indexing and unification methods don't care whether
+an object is a term or an atom.
+<P>
+No <GL>term structure sharing</GL> is supported at this level of
+abstraction.  (Higher-level packagers can build terms with shared
+structure if they wish.)  Because we envision applications with tens
+of millions of terms, small size for the individual nodes is
+important.  So we have some overloaded fields, and macros are
+provided to get some of the information from from term nodes.
+<P>
+There are three types of term, and the Boolean macros
+<TT>VARIABLE(t)</TT>, <TT>CONSTANT(t)</TT>, and <TT>COMPLEX(t)</TT>
+should be used to find out what type a term is.  If you have a
+<TT>CONSTANT</TT> or <TT>COMPLEX</TT> term t, you can get its symbol
+id with <TT>SYMNUM(t)</TT> (from which you can get other information
+about the symbol such as the print string and any special properties).
+If you have a variable t, you can get its index with
+<TT>VARNUM(t)</TT>, which is a signed integral type in the range
+[0..<TT>MAX_VAR</TT>].  <I>Warning</I>: <TT>MAX_VAR</TT> is a big
+number---a higher-level unification package will typically have a much
+smaller <TT>MAX_VARS</TT> defined for array sizes, because it does
+array indexing with <TT>VARNUM(t)</TT>.
+<P>
+The macro <TT>ARITY(t)</TT> gets the arity of a term (constants and
+variables have arity 0), and <TT>ARG(t,i)</TT> gets the i-th argument
+<I>(counting from 0)</I> of a term.  When using <TT>ARG(t,i)</TT>,
+make sure that i is in range [0..<TT>ARITY(t)</TT>-1], because
+<TT>ARG</TT> does not check.
+<P>
+Here is an example of recursing through a term.
+<PRE>
+int symbol_count(Term t)
+{
+  int count = 0;
+  int i;
+  for (i = 0; i < ARITY(t); i++)
+    count += symbol_count(ARG(t,i));
+  return count+1;
+}
+</PRE>
+
+<HR>
+</BODY>
+</HTML>

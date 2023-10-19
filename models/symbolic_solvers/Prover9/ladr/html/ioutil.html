@@ -1,0 +1,188 @@
+<HTML>
+<HEAD>
+<TITLE>ioutil.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "ioutil.h"</H1>
+
+This page has information from files
+<A HREF="../ioutil.h">ioutil.h</A> and <A HREF="../ioutil.c">ioutil.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File ioutil.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#clause_reader">clause_reader</A></TD><TD><A HREF="#fwrite_clause">fwrite_clause</A></TD><TD><A HREF="#parse_clause_from_string">parse_clause_from_string</A></TD><TD><A HREF="#read_term_list">read_term_list</A></TD>
+</TR>
+<TR><TD><A HREF="#clause_writer">clause_writer</A></TD><TD><A HREF="#fwrite_clause_clist">fwrite_clause_clist</A></TD><TD><A HREF="#read_clause">read_clause</A></TD><TD><A HREF="#sb_write_clause">sb_write_clause</A></TD>
+</TR>
+<TR><TD><A HREF="#end_of_commands_term">end_of_commands_term</A></TD><TD><A HREF="#fwrite_clause_jmap">fwrite_clause_jmap</A></TD><TD><A HREF="#read_clause_clist">read_clause_clist</A></TD><TD><A HREF="#sb_write_clause_jmap">sb_write_clause_jmap</A></TD>
+</TR>
+<TR><TD><A HREF="#end_of_list_clause">end_of_list_clause</A></TD><TD><A HREF="#fwrite_clause_list">fwrite_clause_list</A></TD><TD><A HREF="#read_clause_list">read_clause_list</A></TD><TD><A HREF="#sb_xml_write_clause_jmap">sb_xml_write_clause_jmap</A></TD>
+</TR>
+<TR><TD><A HREF="#end_of_list_formula">end_of_list_formula</A></TD><TD><A HREF="#fwrite_demod_clist">fwrite_demod_clist</A></TD><TD><A HREF="#read_clause_or_formula">read_clause_or_formula</A></TD><TD><A HREF="#term_reader">term_reader</A></TD>
+</TR>
+<TR><TD><A HREF="#end_of_list_term">end_of_list_term</A></TD><TD><A HREF="#fwrite_formula">fwrite_formula</A></TD><TD><A HREF="#read_clause_or_formula_list">read_clause_or_formula_list</A></TD><TD><A HREF="#term_to_topform2">term_to_topform2</A></TD>
+</TR>
+<TR><TD><A HREF="#f_clause">f_clause</A></TD><TD><A HREF="#fwrite_formula_list">fwrite_formula_list</A></TD><TD><A HREF="#read_formula">read_formula</A></TD><TD><A HREF="#term_writer">term_writer</A></TD>
+</TR>
+<TR><TD><A HREF="#f_clauses">f_clauses</A></TD><TD><A HREF="#fwrite_term_list">fwrite_term_list</A></TD><TD><A HREF="#read_formula_list">read_formula_list</A></TD><TD><A HREF="#zap_formula_list">zap_formula_list</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="clause_reader"></A><HR><PRE><B>Topform clause_reader(BOOL fast);
+</B></PRE>If your program has optional fast parsing/writing, you
+can use this routine to save a few lines of code.
+The flag "fast" says whether or not to use fast parse form.
+A clause is read from stdin (NULL if there are none).  
+Errors are fatal.
+<A NAME="clause_writer"></A><HR><PRE><B>void clause_writer(Topform c, BOOL fast);
+</B></PRE>If your program has optional fast parsing/writing, you
+can use this routine to save a few lines of code.
+The flag "fast" says whether or not to use fast parse form.
+The clause is written to stdout, with a period and newline.
+<A NAME="end_of_commands_term"></A><HR><PRE><B>BOOL end_of_commands_term(<A HREF="term.html">Term</A> t);
+</B></PRE>Check if a term is the constant "end_of_commands".
+<A NAME="end_of_list_clause"></A><HR><PRE><B>BOOL end_of_list_clause(Topform c);
+</B></PRE><A NAME="end_of_list_formula"></A><HR><PRE><B>BOOL end_of_list_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="end_of_list_term"></A><HR><PRE><B>BOOL end_of_list_term(<A HREF="term.html">Term</A> t);
+</B></PRE>Check if a term is the constant "end_of_list".
+<A NAME="f_clause"></A><HR><PRE><B>void f_clause(Topform c);
+</B></PRE>Write a clause to stdout, with id, with justification last.
+<A NAME="f_clauses"></A><HR><PRE><B>void f_clauses(Plist p);
+</B></PRE><A NAME="fwrite_clause"></A><HR><PRE><B>void fwrite_clause(FILE *fp, Topform c, int format);
+</B></PRE>This routine prints (to FILE *fp) a clause in mixfix form,
+followed by ".\n".
+<A NAME="fwrite_clause_clist"></A><HR><PRE><B>void fwrite_clause_clist(FILE *fp, <A HREF="clist.html">Clist</A> lst, int format);
+</B></PRE>This routine prints (to FILE *fp) a <A HREF="clist.html">Clist</A> of clauses in mixfix form.
+Example:
+<PRE>
+list(sos).
+a = b.
+end_of_list.
+</PRE>
+If the name of the list is "", it is written as list(anonymous).
+<A NAME="fwrite_clause_jmap"></A><HR><PRE><B>void fwrite_clause_jmap(FILE *fp, Topform c, int format, I3list map)
+			;
+</B></PRE>This routine prints (to FILE *fp) a clause in mixfix form,
+followed by ".\n".
+<A NAME="fwrite_clause_list"></A><HR><PRE><B>void fwrite_clause_list(FILE *fp, Plist lst, char *name, int format);
+</B></PRE>This routine prints (to FILE *fp) a Plist of clauses in mixfix form.
+Example:
+<PRE>
+list(sos).
+a = b.
+end_of_list.
+</PRE>
+If the name of the list is "", it is written as list(anonymous).
+<A NAME="fwrite_demod_clist"></A><HR><PRE><B>void fwrite_demod_clist(FILE *fp, <A HREF="clist.html">Clist</A> lst, int format);
+</B></PRE>Similar to fwirte_clause_clist, except that lex-dep demodulators are noted.
+<A NAME="fwrite_formula"></A><HR><PRE><B>void fwrite_formula(FILE *fp, <A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine prints a formula, followed by ".\n" to a file.
+This version does not print extra parentheses
+(it first translates the formula to a term, then
+prints the term, then frees the term).
+To print the formula directly, with extra parentheses,
+call fprint_formula() instead.
+<A NAME="fwrite_formula_list"></A><HR><PRE><B>void fwrite_formula_list(FILE *fp, Plist lst, char *name);
+</B></PRE>This routine prints (to FILE *fp) a list of formulas in mixfix form.
+Example:
+<PRE>
+list(sos).
+a = b.
+end_of_list.
+</PRE>
+If the name of the list is "", it is written as list(anonymous).
+<A NAME="fwrite_term_list"></A><HR><PRE><B>void fwrite_term_list(FILE *fp, Plist lst, char *name);
+</B></PRE>This routine prints (to FILE *fp) a list of terms in mixfix form.
+Example:
+<PRE>
+list(sos).
+a = b.
+end_of_list.
+</PRE>
+If the name of the list is "" or NULL, it is written as list(anonymous).
+<A NAME="parse_clause_from_string"></A><HR><PRE><B>Topform parse_clause_from_string(char *s);
+</B></PRE><A NAME="read_clause"></A><HR><PRE><B>Topform read_clause(FILE *fin, FILE *fout);
+</B></PRE>This routine reads a clause from FILE *fin.
+If there are no more clauses in *fin, NULL is returned.
+<P>
+If any error occurs, a message is sent to FILE *fout and a fatal_error occurs.
+<P>
+Variables are "set", and upward links are made from all subterms to the
+clause.
+<A NAME="read_clause_clist"></A><HR><PRE><B><A HREF="clist.html">Clist</A> read_clause_clist(FILE *fin, FILE *fout, char *name, BOOL assign_id);
+</B></PRE>This routine reads a list of clauses from FILE *fin.
+If you wish the list to have a name, send a string;
+othersize send NULL.  (You can name the list later with name_clist().)
+If there are no more clauses in *fin, an empty <A HREF="clist.html">Clist</A> is returned.
+<P>
+If any error occurs, a message is sent to FILE *fout and a fatal_error occurs.
+<A NAME="read_clause_list"></A><HR><PRE><B>Plist read_clause_list(FILE *fin, FILE *fout, BOOL assign_id);
+</B></PRE>Read clauses, up to end_of_list (or EOF), and return them in a Plist.
+<A NAME="read_clause_or_formula"></A><HR><PRE><B>Topform read_clause_or_formula(FILE *fin, FILE *fout);
+</B></PRE><A NAME="read_clause_or_formula_list"></A><HR><PRE><B>Plist read_clause_or_formula_list(FILE *fin, FILE *fout);
+</B></PRE><A NAME="read_formula"></A><HR><PRE><B><A HREF="formula.html">Formula</A> read_formula(FILE *fin, FILE *fout);
+</B></PRE>This routine reads a formula from FILE *fin.
+If there are no more formulas in *fin, NULL is returned.
+<P>
+If any error occurs, a message is sent to FILE *fout and a fatal_error occurs.
+<A NAME="read_formula_list"></A><HR><PRE><B>Plist read_formula_list(FILE *fin, FILE *fout);
+</B></PRE>This routine reads a list of formulas from FILE *fin.
+If there are no more formulas in *fin, NULL is returned.
+<P>
+If any error occurs, a message is sent to FILE *fout and a fatal_error occurs.
+<A NAME="read_term_list"></A><HR><PRE><B>Plist read_term_list(FILE *fin, FILE *fout);
+</B></PRE>This routine reads a list of terms from FILE *fin.
+If there are no more terms in *fin, NULL is returned.
+<P>
+None of the returned terms or their subterms will have type VARIABLE,
+even if it looks like a variable (e.g., x).
+<P>
+If any error occurs, a message is sent to FILE *fout and a fatal_error occurs.
+<A NAME="sb_write_clause"></A><HR><PRE><B>void sb_write_clause(<A HREF="strbuf.html">String_buf</A> sb, Topform c, int format);
+</B></PRE>This routine prints (to FILE *fp) a clause in mixfix form,
+followed by ".\n".
+<A NAME="sb_write_clause_jmap"></A><HR><PRE><B>void sb_write_clause_jmap(<A HREF="strbuf.html">String_buf</A> sb, Topform c,
+			  int format,
+			  I3list map);
+</B></PRE>This routine writes a clause (in mixfix form, with ".\n") to a <A HREF="strbuf.html">String_buf</A>.
+<A NAME="sb_xml_write_clause_jmap"></A><HR><PRE><B>void sb_xml_write_clause_jmap(<A HREF="strbuf.html">String_buf</A> sb, Topform c, I3list map);
+</B></PRE>This routine writes a clause (in mixfix form, with ".\n") to a <A HREF="strbuf.html">String_buf</A>.
+It is written in XML format.
+<A NAME="term_reader"></A><HR><PRE><B><A HREF="term.html">Term</A> term_reader(BOOL fast);
+</B></PRE>If your program has optional fast parsing/writing, you
+can use this routine to save a few lines of code.
+The flag "fast" says whether or not to use fast parse form.
+A term is read from stdin (NULL if there are none).  
+Errors are fatal.
+<A NAME="term_to_topform2"></A><HR><PRE><B>Topform term_to_topform2(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="term_writer"></A><HR><PRE><B>void term_writer(<A HREF="term.html">Term</A> t, BOOL fast);
+</B></PRE>If your program has optional fast parsing/writing, you
+can use this routine to save a few lines of code.
+The flag "fast" says whether or not to use fast parse form.
+The term is written to stdout, with a period and newline.
+<A NAME="zap_formula_list"></A><HR><PRE><B>void zap_formula_list(Plist lst);
+</B></PRE>Free a Plist of formulas.
+<HR><A NAME=defns></A><H2>Public Definitions in File ioutil.h</H2>
+<PRE>
+enum { CL_FORM_STD,
+       CL_FORM_BARE,
+       CL_FORM_PARENTS,
+       CL_FORM_XML,
+       CL_FORM_IVY};  /* clause print format */
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

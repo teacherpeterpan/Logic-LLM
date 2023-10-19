@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>subsume.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "subsume.h"</H1>
+
+This page has information from files
+<A HREF="../subsume.h">subsume.h</A> and <A HREF="../subsume.c">subsume.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File subsume.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#back_subsume">back_subsume</A></TD><TD><A HREF="#forward_subsume">forward_subsume</A></TD><TD><A HREF="#subsumes">subsumes</A></TD><TD><A HREF="#unit_delete">unit_delete</A></TD>
+</TR>
+<TR><TD><A HREF="#back_subsume_one">back_subsume_one</A></TD><TD><A HREF="#nonunit_subsumption_tests">nonunit_subsumption_tests</A></TD><TD><A HREF="#subsumes_bt">subsumes_bt</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#back_unit_del_by_index">back_unit_del_by_index</A></TD><TD><A HREF="#simplify_literals">simplify_literals</A></TD><TD><A HREF="#try_unit_conflict">try_unit_conflict</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#eq_removable_literal">eq_removable_literal</A></TD><TD><A HREF="#simplify_literals2">simplify_literals2</A></TD><TD><A HREF="#unit_conflict_by_index">unit_conflict_by_index</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="back_subsume"></A><HR><PRE><B>Plist back_subsume(Topform c, Lindex idx);
+</B></PRE>Look in the index and return the list of clauses subsumed by c.
+<A NAME="back_subsume_one"></A><HR><PRE><B>Topform back_subsume_one(Topform c, Lindex idx);
+</B></PRE>Look in the index for a clause subsumed by c.
+The first one found is returned.  (It is not
+necessarily the first of the subsumees that
+was inserted into the index.)
+<A NAME="back_unit_del_by_index"></A><HR><PRE><B>Plist back_unit_del_by_index(Topform unit, Lindex idx);
+</B></PRE>Given a unit clause and a literal index, return the Plist of
+clauses containing literals that are instances
+of the negation of the unit clause.
+<P>
+Such clauses can be "back unit deleted".
+<A NAME="eq_removable_literal"></A><HR><PRE><B>BOOL eq_removable_literal(Topform c, Literals lit);
+</B></PRE>Can a literal in a clause be removed by resolution with x=x
+without instantiating any other literal in the clause?
+<p>
+If so, instantiate any inheritable (e.g., answer) attributes
+with the corresponding substitution.
+<A NAME="forward_subsume"></A><HR><PRE><B>Topform forward_subsume(Topform d, Lindex idx);
+</B></PRE><A NAME="nonunit_subsumption_tests"></A><HR><PRE><B>int nonunit_subsumption_tests(void);
+</B></PRE><A NAME="simplify_literals"></A><HR><PRE><B>void simplify_literals(Topform c);
+</B></PRE>Remove any literals t!=t.
+<A NAME="simplify_literals2"></A><HR><PRE><B>void simplify_literals2(Topform c);
+</B></PRE>1. If there are any literals t=t, the clause becomes true_sym().
+2. Remove any literals t!=t.
+3. If there are any literals s!=t, where unify(s,t), without instantiating
+   any other literals, remove the literal.
+<A NAME="subsumes"></A><HR><PRE><B>BOOL subsumes(Topform c, Topform d);
+</B></PRE>This routine checks if Topform c subsumes Topform d.
+Ordinary unification is used; in particular, symmetry of
+equality is not built in.
+<P>
+<A NAME="subsumes_bt"></A><HR><PRE><B>BOOL subsumes_bt(Topform c, Topform d);
+</B></PRE>This routine checks if Topform c subsumes Topform d.
+Backtrack unification is used; in particular, AC and
+commutative/symmetric matching are applied where appropriate.
+<A NAME="try_unit_conflict"></A><HR><PRE><B>Topform try_unit_conflict(Topform a, Topform b);
+</B></PRE><A NAME="unit_conflict_by_index"></A><HR><PRE><B>void unit_conflict_by_index(Topform c, Lindex idx, void (*empty_proc) (Topform));
+</B></PRE>Look in idx for unit conflicts
+<A NAME="unit_delete"></A><HR><PRE><B>void unit_delete(Topform c, Lindex idx);
+</B></PRE>Given a clause and a literal index, remove the literals that
+can be removed by "unit deletion" with units in the index.
+Update the clause's justification for each removed literal.
+<HR><A NAME=defns></A><H2>Public Definitions in File subsume.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

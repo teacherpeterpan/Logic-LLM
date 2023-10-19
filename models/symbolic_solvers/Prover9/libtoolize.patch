@@ -1,0 +1,556 @@
+--- ladr-0.0.200712.orig/apps.src/Makefile
++++ ladr-0.0.200712/apps.src/Makefile
+@@ -16,16 +16,16 @@
+ all: ladr apps install realclean
+ 
+ ladr:
+-	cd ../ladr && $(MAKE) libladr.a
++	cd ../ladr && $(MAKE) libladr.la
+ 
+ clean:
+-	/bin/rm -f *.o
++	libtool --mode=clean /bin/rm -f *.o
+ 
+ realclean:
+-	/bin/rm -f *.o $(PROGRAMS)
++	libtool --mode=clean /bin/rm -f *.o $(PROGRAMS)
+ 
+ install:
+-	/bin/mv $(PROGRAMS) ../bin
++	libtool --mode=install /bin/cp $(PROGRAMS) `pwd`/../bin
+ 
+ tags:
+ 	etags *.c ../ladr/*.c
+@@ -33,67 +33,67 @@
+ apps: $(PROGRAMS)
+ 
+ test: test.o
+-	$(CC) $(CFLAGS) -o test test.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o test test.o ../ladr/libladr.la
+ 
+ interpformat: interpformat.o
+-	$(CC) $(CFLAGS) -o interpformat interpformat.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o interpformat interpformat.o ../ladr/libladr.la
+ 
+ prooftrans: prooftrans.o
+-	$(CC) $(CFLAGS) -o prooftrans prooftrans.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o prooftrans prooftrans.o ../ladr/libladr.la
+ 
+ latfilter: latfilter.o
+-	$(CC) $(CFLAGS) -o latfilter latfilter.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o latfilter latfilter.o ../ladr/libladr.la
+ 
+ olfilter: olfilter.o
+-	$(CC) $(CFLAGS) -o olfilter olfilter.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o olfilter olfilter.o ../ladr/libladr.la
+ 
+ unfast: unfast.o
+-	$(CC) $(CFLAGS) -o unfast unfast.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o unfast unfast.o ../ladr/libladr.la
+ 
+ upper-covers: upper-covers.o
+-	$(CC) $(CFLAGS) -o upper-covers upper-covers.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o upper-covers upper-covers.o ../ladr/libladr.la
+ 
+ miniscope: miniscope.o
+-	$(CC) $(CFLAGS) -o miniscope miniscope.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o miniscope miniscope.o ../ladr/libladr.la
+ 
+ isofilter0: isofilter0.o
+-	$(CC) $(CFLAGS) -o isofilter0 isofilter0.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o isofilter0 isofilter0.o ../ladr/libladr.la
+ 
+ isofilter: isofilter.o
+-	$(CC) $(CFLAGS) -o isofilter isofilter.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o isofilter isofilter.o ../ladr/libladr.la
+ 
+ isofilter2: isofilter2.o
+-	$(CC) $(CFLAGS) -o isofilter2 isofilter2.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o isofilter2 isofilter2.o ../ladr/libladr.la
+ 
+ dprofiles: dprofiles.o
+-	$(CC) $(CFLAGS) -o dprofiles dprofiles.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o dprofiles dprofiles.o ../ladr/libladr.la
+ 
+ renamer: renamer.o
+-	$(CC) $(CFLAGS) -o renamer renamer.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o renamer renamer.o ../ladr/libladr.la
+ 
+ rewriter: rewriter.o
+-	$(CC) $(CFLAGS) -o rewriter rewriter.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o rewriter rewriter.o ../ladr/libladr.la
+ 
+ idfilter: idfilter.o
+-	$(CC) $(CFLAGS) -o idfilter idfilter.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o idfilter idfilter.o ../ladr/libladr.la
+ 
+ clausefilter: clausefilter.o
+-	$(CC) $(CFLAGS) -o clausefilter clausefilter.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o clausefilter clausefilter.o ../ladr/libladr.la
+ 
+ interpfilter: interpfilter.o
+-	$(CC) $(CFLAGS) -o interpfilter interpfilter.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o interpfilter interpfilter.o ../ladr/libladr.la
+ 
+ clausetester: clausetester.o
+-	$(CC) $(CFLAGS) -o clausetester clausetester.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o clausetester clausetester.o ../ladr/libladr.la
+ 
+ mirror-flip: mirror-flip.o
+-	$(CC) $(CFLAGS) -o mirror-flip mirror-flip.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o mirror-flip mirror-flip.o ../ladr/libladr.la
+ 
+ perm3: perm3.o
+-	$(CC) $(CFLAGS) -o perm3 perm3.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o perm3 perm3.o ../ladr/libladr.la
+ 
+ sigtest: sigtest.o
+-	$(CC) $(CFLAGS) -o sigtest sigtest.o ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o sigtest sigtest.o ../ladr/libladr.la
+ 
+ 
+ 
+--- ladr-0.0.200712.orig/ladr/Makefile
++++ ladr-0.0.200712/ladr/Makefile
+@@ -4,53 +4,56 @@
+ 
+ # XFLAGS can be specified on the command line (see XFLAGS below)
+ 
+-CFLAGS = $(XFLAGS) -O -Wall
+-# CFLAGS = $(XFLAGS) -O6 -Wall
+-# CFLAGS = $(XFLAGS) -g  -O -Wall
+-# CFLAGS = $(XFLAGS) -g -O0 -Wall
+-# CFLAGS = $(XFLAGS) -pg -O -Wall
+-# CFLAGS = $(XFLAGS)  -Wall -pedantic
+-
+-BASE_OBJ = order.o clock.o nonport.o\
+-	   fatal.o ibuffer.o memory.o hash.o string.o strbuf.o\
+-           glist.o options.o symbols.o avltree.o
+-TERM_OBJ = term.o termflag.o listterm.o tlist.o flatterm.o multiset.o\
+-	   termorder.o parse.o accanon.o
+-UNIF_OBJ = unify.o fpalist.o fpa.o discrim.o discrimb.o discrimw.o\
+-           dioph.o btu.o btm.o mindex.o basic.o attrib.o
+-CLAS_OBJ = formula.o definitions.o literals.o topform.o clist.o\
+-	   clauseid.o clauses.o\
+-	   just.o cnf.o clausify.o parautil.o\
+-           pindex.o compress.o\
+-           maximal.o lindex.o weight.o\
+-           int_code.o features.o di_tree.o fastparse.o\
+-           random.o subsume.o clause_misc.o
+-INFE_OBJ = flatdemod.o demod.o clash.o resolve.o paramod.o\
+-           backdemod.o\
+-           hints.o ac_redun.o xproofs.o ivy.o
+-MODL_OBJ = interp.o
+-MISC_OBJ = std_options.o banner.o ioutil.o tptp_trans.o top_input.o
++CFLAGS = -O -Wall
++# CFLAGS = -O6 -Wall
++# CFLAGS = -g  -O -Wall
++# CFLAGS = -g -O0 -Wall
++# CFLAGS = -pg -O -Wall
++# CFLAGS =  -Wall -pedantic
++
++BASE_OBJ = order.lo clock.lo nonport.lo\
++	   fatal.lo ibuffer.lo memory.lo hash.lo string.lo strbuf.lo\
++           glist.lo options.lo symbols.lo avltree.lo
++TERM_OBJ = term.lo termflag.lo listterm.lo tlist.lo flatterm.lo multiset.lo\
++	   termorder.lo parse.lo accanon.lo
++UNIF_OBJ = unify.lo fpalist.lo fpa.lo discrim.lo discrimb.lo discrimw.lo\
++           dioph.lo btu.lo btm.lo mindex.lo basic.lo attrib.lo
++CLAS_OBJ = formula.lo definitions.lo literals.lo topform.lo clist.lo\
++	   clauseid.lo clauses.lo\
++	   just.lo cnf.lo clausify.lo parautil.lo\
++           pindex.lo compress.lo\
++           maximal.lo lindex.lo weight.lo\
++           int_code.lo features.lo di_tree.lo fastparse.lo\
++           random.lo subsume.lo clause_misc.lo
++INFE_OBJ = flatdemod.lo demod.lo clash.lo resolve.lo paramod.lo\
++           backdemod.lo\
++           hints.lo ac_redun.lo xproofs.lo ivy.lo
++MODL_OBJ = interp.lo
++MISC_OBJ = std_options.lo banner.lo ioutil.lo tptp_trans.lo top_input.lo
+ 
+ 
+ OBJECTS = $(BASE_OBJ) $(TERM_OBJ) $(UNIF_OBJ) $(CLAS_OBJ)\
+           $(INFE_OBJ) $(MODL_OBJ) $(MISC_OBJ)
+ 
+-libladr.a: $(OBJECTS)
+-	$(AR) rs libladr.a $(OBJECTS)
++libladr.la: $(OBJECTS)
++	libtool --mode=link gcc -shared -rpath /usr/lib -version-info 4:0:0 -o libladr.la $(OBJECTS) -lm
++
++%.lo: %.c
++	libtool --mode=compile gcc -c $(CFLAGS) $(XFLAGS) -o $@ $<
+ 
+ ##############################################################################
+ 
+ lib ladr libladr:
+-	$(MAKE) libladr.a
++	$(MAKE) libladr.la
+ 
+ dep:
+ 	util/make_dep $(OBJECTS)
+ 
+ clean:
+-	/bin/rm -f *.o
++	libtool --mode=clean /bin/rm -f *.lo
+ 
+ realclean:
+-	/bin/rm -f *.o *.a
++	libtool --mode=clean /bin/rm -f *.lo *.la
+ 
+ protos:
+ 	util/make_protos $(OBJECTS)
+@@ -67,148 +70,148 @@
+ 
+ # The rest of the file is generated automatically by util/make_dep
+ 
+-order.o:   	order.h 
++order.lo:   	order.h 
+ 
+-clock.o:   	clock.h string.h memory.h fatal.h header.h
++clock.lo:   	clock.h string.h memory.h fatal.h header.h
+ 
+-nonport.o:   	nonport.h 
++nonport.lo:   	nonport.h 
+ 
+-fatal.o:   	fatal.h header.h
++fatal.lo:   	fatal.h header.h
+ 
+-ibuffer.o:   	ibuffer.h fatal.h header.h
++ibuffer.lo:   	ibuffer.h fatal.h header.h
+ 
+-memory.o:   	memory.h fatal.h header.h
++memory.lo:   	memory.h fatal.h header.h
+ 
+-hash.o:   	hash.h memory.h fatal.h header.h
++hash.lo:   	hash.h memory.h fatal.h header.h
+ 
+-string.o:   	string.h memory.h fatal.h header.h
++string.lo:   	string.h memory.h fatal.h header.h
+ 
+-strbuf.o:   	strbuf.h string.h memory.h fatal.h header.h
++strbuf.lo:   	strbuf.h string.h memory.h fatal.h header.h
+ 
+-glist.o:   	glist.h order.h string.h memory.h fatal.h header.h
++glist.lo:   	glist.h order.h string.h memory.h fatal.h header.h
+ 
+-options.o:   	options.h string.h memory.h fatal.h header.h
++options.lo:   	options.h string.h memory.h fatal.h header.h
+ 
+-symbols.o:   	symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++symbols.lo:   	symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-avltree.o:   	avltree.h memory.h order.h fatal.h header.h
++avltree.lo:   	avltree.h memory.h order.h fatal.h header.h
+ 
+-term.o:   	term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++term.lo:   	term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-termflag.o:   	termflag.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++termflag.lo:   	termflag.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-listterm.o:   	listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++listterm.lo:   	listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-tlist.o:   	tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++tlist.lo:   	tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-flatterm.o:   	flatterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++flatterm.lo:   	flatterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-multiset.o:   	multiset.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++multiset.lo:   	multiset.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-termorder.o:   	termorder.h flatterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++termorder.lo:   	termorder.h flatterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-parse.o:   	parse.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++parse.lo:   	parse.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-accanon.o:   	accanon.h termflag.h termorder.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
++accanon.lo:   	accanon.h termflag.h termorder.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
+ 
+-unify.o:   	unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++unify.lo:   	unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-fpalist.o:   	fpalist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++fpalist.lo:   	fpalist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-fpa.o:   	fpa.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++fpa.lo:   	fpa.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-discrim.o:   	discrim.h unify.h index.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++discrim.lo:   	discrim.h unify.h index.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-discrimb.o:   	discrimb.h discrim.h unify.h index.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++discrimb.lo:   	discrimb.h discrim.h unify.h index.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-discrimw.o:   	discrimw.h discrim.h unify.h index.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++discrimw.lo:   	discrimw.h discrim.h unify.h index.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-dioph.o:   	dioph.h 
++dioph.lo:   	dioph.h 
+ 
+-btu.o:   	btu.h dioph.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++btu.lo:   	btu.h dioph.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-btm.o:   	btm.h unify.h accanon.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h termflag.h termorder.h flatterm.h
++btm.lo:   	btm.h unify.h accanon.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h termflag.h termorder.h flatterm.h
+ 
+-mindex.o:   	mindex.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h
++mindex.lo:   	mindex.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h
+ 
+-basic.o:   	basic.h unify.h termflag.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++basic.lo:   	basic.h unify.h termflag.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-attrib.o:   	attrib.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++attrib.lo:   	attrib.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-formula.o:   	formula.h attrib.h tlist.h termorder.h hash.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
++formula.lo:   	formula.h attrib.h tlist.h termorder.h hash.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
+ 
+-definitions.o:   	definitions.h formula.h topform.h clauseid.h just.h attrib.h tlist.h termorder.h hash.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h literals.h maximal.h termflag.h parse.h
++definitions.lo:   	definitions.h formula.h topform.h clauseid.h just.h attrib.h tlist.h termorder.h hash.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h literals.h maximal.h termflag.h parse.h
+ 
+-literals.o:   	literals.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++literals.lo:   	literals.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-topform.o:   	topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++topform.lo:   	topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-clist.o:   	clist.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++clist.lo:   	clist.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-clauseid.o:   	clauseid.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++clauseid.lo:   	clauseid.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-clauses.o:   	clauses.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++clauses.lo:   	clauses.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-just.o:   	just.h clauseid.h parse.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++just.lo:   	just.h clauseid.h parse.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-cnf.o:   	cnf.h formula.h clock.h attrib.h tlist.h termorder.h hash.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
++cnf.lo:   	cnf.h formula.h clock.h attrib.h tlist.h termorder.h hash.h unify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
+ 
+-clausify.o:   	clausify.h topform.h cnf.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h clock.h
++clausify.lo:   	clausify.h topform.h cnf.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h clock.h
+ 
+-parautil.o:   	parautil.h 
++parautil.lo:   	parautil.h 
+ 
+-pindex.o:   	pindex.h clist.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++pindex.lo:   	pindex.h clist.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-compress.o:   	compress.h parautil.h
++compress.lo:   	compress.h parautil.h
+ 
+-maximal.o:   	maximal.h literals.h termorder.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
++maximal.lo:   	maximal.h literals.h termorder.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
+ 
+-lindex.o:   	lindex.h mindex.h maximal.h topform.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h literals.h tlist.h attrib.h formula.h hash.h
++lindex.lo:   	lindex.h mindex.h maximal.h topform.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h literals.h tlist.h attrib.h formula.h hash.h
+ 
+-weight.o:   	weight.h literals.h unify.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h listterm.h
++weight.lo:   	weight.h literals.h unify.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h listterm.h
+ 
+-int_code.o:   	int_code.h just.h ibuffer.h clauseid.h parse.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++int_code.lo:   	int_code.h just.h ibuffer.h clauseid.h parse.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-features.o:   	features.h literals.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
++features.lo:   	features.h literals.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h
+ 
+-di_tree.o:   	di_tree.h features.h topform.h literals.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h attrib.h formula.h maximal.h unify.h listterm.h termorder.h hash.h flatterm.h
++di_tree.lo:   	di_tree.h features.h topform.h literals.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h attrib.h formula.h maximal.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-fastparse.o:   	fastparse.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++fastparse.lo:   	fastparse.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-random.o:   	random.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
++random.lo:   	random.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h
+ 
+-subsume.o:   	subsume.h parautil.h lindex.h features.h mindex.h maximal.h topform.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h literals.h tlist.h attrib.h formula.h hash.h
++subsume.lo:   	subsume.h parautil.h lindex.h features.h mindex.h maximal.h topform.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h literals.h tlist.h attrib.h formula.h hash.h
+ 
+-clause_misc.o:   	clause_misc.h clist.h mindex.h just.h basic.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h parse.h
++clause_misc.lo:   	clause_misc.h clist.h mindex.h just.h basic.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h parse.h
+ 
+-flatdemod.o:   	flatdemod.h parautil.h mindex.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h
++flatdemod.lo:   	flatdemod.h parautil.h mindex.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h
+ 
+-demod.o:   	demod.h parautil.h mindex.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h
++demod.lo:   	demod.h parautil.h mindex.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h
+ 
+-clash.o:   	clash.h mindex.h parautil.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h
++clash.lo:   	clash.h mindex.h parautil.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h
+ 
+-resolve.o:   	resolve.h clash.h lindex.h mindex.h parautil.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h maximal.h topform.h literals.h tlist.h attrib.h formula.h hash.h
++resolve.lo:   	resolve.h clash.h lindex.h mindex.h parautil.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h maximal.h topform.h literals.h tlist.h attrib.h formula.h hash.h
+ 
+-paramod.o:   	paramod.h resolve.h basic.h clash.h lindex.h mindex.h parautil.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h maximal.h topform.h literals.h tlist.h attrib.h formula.h hash.h
++paramod.lo:   	paramod.h resolve.h basic.h clash.h lindex.h mindex.h parautil.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h maximal.h topform.h literals.h tlist.h attrib.h formula.h hash.h
+ 
+-backdemod.o:   	backdemod.h demod.h clist.h parautil.h mindex.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h topform.h literals.h attrib.h formula.h maximal.h tlist.h hash.h
++backdemod.lo:   	backdemod.h demod.h clist.h parautil.h mindex.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h topform.h literals.h attrib.h formula.h maximal.h tlist.h hash.h
+ 
+-hints.o:   	hints.h subsume.h clist.h backdemod.h resolve.h parautil.h lindex.h features.h mindex.h maximal.h topform.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h literals.h tlist.h attrib.h formula.h hash.h demod.h clash.h
++hints.lo:   	hints.h subsume.h clist.h backdemod.h resolve.h parautil.h lindex.h features.h mindex.h maximal.h topform.h fpa.h discrimb.h discrimw.h btu.h btm.h unify.h index.h fpalist.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h discrim.h dioph.h accanon.h termflag.h termorder.h flatterm.h literals.h tlist.h attrib.h formula.h hash.h demod.h clash.h
+ 
+-ac_redun.o:   	ac_redun.h parautil.h accanon.h termflag.h termorder.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
++ac_redun.lo:   	ac_redun.h parautil.h accanon.h termflag.h termorder.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h flatterm.h
+ 
+-xproofs.o:   	xproofs.h clauses.h clause_misc.h paramod.h subsume.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h parse.h resolve.h clash.h lindex.h parautil.h features.h
++xproofs.lo:   	xproofs.h clauses.h clause_misc.h paramod.h subsume.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h parse.h resolve.h clash.h lindex.h parautil.h features.h
+ 
+-ivy.o:   	ivy.h xproofs.h clauses.h clause_misc.h paramod.h subsume.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h parse.h resolve.h clash.h lindex.h parautil.h features.h
++ivy.lo:   	ivy.h xproofs.h clauses.h clause_misc.h paramod.h subsume.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h unify.h listterm.h termorder.h hash.h flatterm.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h parse.h resolve.h clash.h lindex.h parautil.h features.h
+ 
+-interp.o:   	interp.h parse.h topform.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h unify.h termorder.h hash.h flatterm.h
++interp.lo:   	interp.h parse.h topform.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h unify.h termorder.h hash.h flatterm.h
+ 
+-std_options.o:   	std_options.h options.h symbols.h clock.h string.h memory.h fatal.h header.h strbuf.h glist.h order.h
++std_options.lo:   	std_options.h options.h symbols.h clock.h string.h memory.h fatal.h header.h strbuf.h glist.h order.h
+ 
+-banner.o:   	banner.h nonport.h clock.h string.h memory.h fatal.h header.h
++banner.lo:   	banner.h nonport.h clock.h string.h memory.h fatal.h header.h
+ 
+-ioutil.o:   	ioutil.h parse.h fastparse.h ivy.h clausify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h unify.h termorder.h hash.h flatterm.h xproofs.h clauses.h clause_misc.h paramod.h subsume.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h resolve.h clash.h lindex.h parautil.h features.h cnf.h clock.h
++ioutil.lo:   	ioutil.h parse.h fastparse.h ivy.h clausify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h unify.h termorder.h hash.h flatterm.h xproofs.h clauses.h clause_misc.h paramod.h subsume.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h resolve.h clash.h lindex.h parautil.h features.h cnf.h clock.h
+ 
+-tptp_trans.o:   	tptp_trans.h ioutil.h clausify.h parse.h fastparse.h ivy.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h unify.h termorder.h hash.h flatterm.h xproofs.h clauses.h clause_misc.h paramod.h subsume.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h resolve.h clash.h lindex.h parautil.h features.h cnf.h clock.h
++tptp_trans.lo:   	tptp_trans.h ioutil.h clausify.h parse.h fastparse.h ivy.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h unify.h termorder.h hash.h flatterm.h xproofs.h clauses.h clause_misc.h paramod.h subsume.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h resolve.h clash.h lindex.h parautil.h features.h cnf.h clock.h
+ 
+-top_input.o:   	top_input.h ioutil.h std_options.h tptp_trans.h parse.h fastparse.h ivy.h clausify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h unify.h termorder.h hash.h flatterm.h xproofs.h clauses.h clause_misc.h paramod.h subsume.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h resolve.h clash.h lindex.h parautil.h features.h cnf.h clock.h options.h
++top_input.lo:   	top_input.h ioutil.h std_options.h tptp_trans.h parse.h fastparse.h ivy.h clausify.h listterm.h term.h symbols.h strbuf.h glist.h string.h memory.h fatal.h header.h order.h topform.h literals.h attrib.h formula.h maximal.h termflag.h tlist.h unify.h termorder.h hash.h flatterm.h xproofs.h clauses.h clause_misc.h paramod.h subsume.h clist.h mindex.h just.h basic.h fpa.h discrimb.h discrimw.h btu.h btm.h index.h fpalist.h discrim.h dioph.h accanon.h clauseid.h resolve.h clash.h lindex.h parautil.h features.h cnf.h clock.h options.h
+--- ladr-0.0.200712.orig/mace4.src/Makefile
++++ ladr-0.0.200712/mace4.src/Makefile
+@@ -25,11 +25,11 @@
+ 	$(MAKE) libmace4.a
+ 
+ ladr:
+-	cd ../ladr && $(MAKE) libladr.a
++	cd ../ladr && $(MAKE) libladr.la
+ 	$(MAKE) clean
+ 
+ mace4: libmace4.a mace4.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -o mace4 mace4.o libmace4.a ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o mace4 mace4.o libmace4.a ../ladr/libladr.la
+ 
+ $(OBJECTS): estack.h syms.h ground.h propagate.h mstate.h msearch.h
+ 
+@@ -37,10 +37,10 @@
+ 	etags *.c ../ladr/*.c
+ 
+ clean:
+-	/bin/rm -f *.o
++	libtool --mode=clean /bin/rm -f *.o
+ 
+ realclean:
+-	/bin/rm -f *.o *.a mace4
++	libtool --mode=clean /bin/rm -f *.o *.a mace4
+ 
+ install:
+-	/bin/mv mace4 ../bin
++	libtool --mode=install /bin/cp mace4 `pwd`/../bin
+--- ladr-0.0.200712.orig/Makefile
++++ ladr-0.0.200712/Makefile
+@@ -2,11 +2,12 @@
+ 	@echo See README.make
+ 
+ all:
+-	cd ladr         && $(MAKE) lib
++	cd ladr         && $(MAKE) lib XFLAGS=-D_REENTRANT
+ 	cd mace4.src    && $(MAKE) all
+ 	cd provers.src  && $(MAKE) all
+ 	cd apps.src     && $(MAKE) all
+-	/bin/cp -p utilities/* bin
++	/bin/cp -p utilities/attack utilities/get_givens utilities/get_interps utilities/get_kept utilities/gvizify utilities/looper utilities/prover9-mace4 bin
++	chmod 755 bin/gvizify
+ 	@echo ""
+ 	@echo "**** Now try 'make test1'. ****"
+ 	@echo ""
+--- ladr-0.0.200712.orig/provers.src/Makefile
++++ ladr-0.0.200712/provers.src/Makefile
+@@ -40,13 +40,13 @@
+ 	$(MAKE) clean
+ 
+ install:
+-	/bin/cp -p $(PROGRAMS) ../bin
++	libtool --mode=install /bin/cp -p $(PROGRAMS) `pwd`/../bin
+ 
+ clean:
+ 	/bin/rm -f *.o
+ 
+ realclean:
+-	/bin/rm -f *.o $(PROGRAMS)
++	libtool --mode=clean /bin/rm -f *.o $(PROGRAMS)
+ 
+ protos:
+ 	util/make_protos $(OBJECTS)
+@@ -62,34 +62,34 @@
+ 	$(MAKE) prover9
+ 
+ prover9: prover9.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -lm -o prover9 prover9.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -lm -o prover9 prover9.o $(OBJECTS) ../ladr/libladr.la
+ 
+ fof-prover9: fof-prover9.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -lm -o fof-prover9 fof-prover9.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -lm -o fof-prover9 fof-prover9.o $(OBJECTS) ../ladr/libladr.la
+ 
+ ladr_to_tptp: ladr_to_tptp.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -lm -o ladr_to_tptp ladr_to_tptp.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -lm -o ladr_to_tptp ladr_to_tptp.o $(OBJECTS) ../ladr/libladr.la
+ 
+ tptp_to_ladr: tptp_to_ladr.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -lm -o tptp_to_ladr tptp_to_ladr.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -lm -o tptp_to_ladr tptp_to_ladr.o $(OBJECTS) ../ladr/libladr.la
+ 
+ autosketches4: autosketches4.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -lm -o autosketches4 autosketches4.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -lm -o autosketches4 autosketches4.o $(OBJECTS) ../ladr/libladr.la
+ 
+ newauto: newauto.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -lm -o newauto newauto.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -lm -o newauto newauto.o $(OBJECTS) ../ladr/libladr.la
+ 
+ newsax: newsax.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -lm -o newsax newsax.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -lm -o newsax newsax.o $(OBJECTS) ../ladr/libladr.la
+ 
+ cgrep: cgrep.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -o cgrep cgrep.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o cgrep cgrep.o $(OBJECTS) ../ladr/libladr.la
+ 
+ mprover: mprover.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -o mprover mprover.o $(OBJECTS) ../ladr/libladr.a ../mace4.src/libmace4.a
++	libtool --mode=link $(CC) $(CFLAGS) -o mprover mprover.o $(OBJECTS) ../ladr/libladr.la ../mace4.src/libmace4.a
+ 
+ iterate4: iterate4.o $(OBJECTS)
+-	$(CC) $(CFLAGS) -o iterate4 iterate4.o $(OBJECTS) ../ladr/libladr.a
++	libtool --mode=link $(CC) $(CFLAGS) -o iterate4 iterate4.o $(OBJECTS) ../ladr/libladr.la
+ 
+ prover9.o mprover.o iterate4.o autosketches4.o fof-prover9.o: search.h utilities.h  forward_subsume.h picker.h demodulate.h actions.h index_lits.h pred_elim.h unfold.h provers.h
+ 
+--- ladr-0.0.200712.orig/test.src/Makefile
++++ ladr-0.0.200712/test.src/Makefile
+@@ -17,7 +17,7 @@
+ 
+ ladr:
+ 	make clean
+-	cd ../ladr && $(MAKE) libladr.a
++	cd ../ladr && $(MAKE) libladr.la
+ 
+ clean:
+ 	/bin/rm -f *.o
+@@ -31,8 +31,8 @@
+ apps: $(PROGRAMS)
+ 
+ avltest: avltest.o
+-	$(CC) $(CFLAGS) -o avltest avltest.o ../ladr/libladr.a -lm
++	libtool --mode=link $(CC) $(CFLAGS) -o avltest avltest.o ../ladr/libladr.la -lm
+ 
+ tptp_test: tptp_test.o
+-	$(CC) $(CFLAGS) -o tptp_test tptp_test.o ../ladr/libladr.a -lm
++	libtool --mode=link $(CC) $(CFLAGS) -o tptp_test tptp_test.o ../ladr/libladr.la -lm
+ 

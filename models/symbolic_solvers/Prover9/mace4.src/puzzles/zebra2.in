@@ -1,0 +1,29 @@
+set(arithmetic).
+
+assign(domain_size, 5).  % Assume a domain of size 5: {0,1,2,3,4}
+
+formulas(assumptions). 
+
+    England = Red.                 Lucky = Juice.            
+    Spain = Dog.                   Ukraine = Tea.            
+    Norway = 0.                    Japan = Parlaiment.            
+    Kool = Yellow.                 neighbors(Kool,Horse).  
+    neighbors(Chesterfield,Fox).   Coffee = Green.            
+    neighbors(Norway,Blue).        successor(Green,Ivory). 
+    Winston = Snail.               Milk = 2.               
+
+% Definitions of successor and neighbors.
+
+    successor(x,y) <-> x+1 = y.
+    neighbors(x,y) <-> successor(x,y) | successor(y,x).
+
+end_of_list.
+
+list(distinct).      % Objects in each list are distinct.
+    [England,Spain,Ukraine,Japan,Norway].
+    [Dog,Snail,Horse,Zebra,Fox].
+    [Water,Milk,Juice,Tea,Coffee].
+    [Red,Blue,Yellow,Ivory,Green].
+    [Lucky,Winston,Kool,Chesterfield,Parlaiment].
+end_of_list.
+

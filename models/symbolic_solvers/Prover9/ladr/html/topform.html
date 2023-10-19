@@ -1,0 +1,229 @@
+<HTML>
+<HEAD>
+<TITLE>topform.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "topform.h"</H1>
+
+This page has information from files
+<A HREF="../topform.h">topform.h</A> and <A HREF="../topform.c">topform.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File topform.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#append_label_attribute">append_label_attribute</A></TD><TD><A HREF="#fprint_topform_mem">fprint_topform_mem</A></TD><TD><A HREF="#p_clause">p_clause</A></TD><TD><A HREF="#term_to_topform">term_to_topform</A></TD>
+</TR>
+<TR><TD><A HREF="#check_upward_clause_links">check_upward_clause_links</A></TD><TD><A HREF="#fsym_set_in_topforms">fsym_set_in_topforms</A></TD><TD><A HREF="#p_topform_mem">p_topform_mem</A></TD><TD><A HREF="#topform_properties">topform_properties</A></TD>
+</TR>
+<TR><TD><A HREF="#cl_id_compare">cl_id_compare</A></TD><TD><A HREF="#function_symbols_in_topform">function_symbols_in_topform</A></TD><TD><A HREF="#relation_symbols_in_topform">relation_symbols_in_topform</A></TD><TD><A HREF="#topform_to_term">topform_to_term</A></TD>
+</TR>
+<TR><TD><A HREF="#cl_wt_id_compare">cl_wt_id_compare</A></TD><TD><A HREF="#function_symbols_in_topforms">function_symbols_in_topforms</A></TD><TD><A HREF="#relation_symbols_in_topforms">relation_symbols_in_topforms</A></TD><TD><A HREF="#topform_to_term_without_attributes">topform_to_term_without_attributes</A></TD>
+</TR>
+<TR><TD><A HREF="#clause_set_variables">clause_set_variables</A></TD><TD><A HREF="#get_topform">get_topform</A></TD><TD><A HREF="#renum_vars_map">renum_vars_map</A></TD><TD><A HREF="#upward_clause_links">upward_clause_links</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_clause">copy_clause</A></TD><TD><A HREF="#inherit_attributes">inherit_attributes</A></TD><TD><A HREF="#renumber_variables">renumber_variables</A></TD><TD><A HREF="#zap_topform">zap_topform</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_clause_with_flag">copy_clause_with_flag</A></TD><TD><A HREF="#initial_clause">initial_clause</A></TD><TD><A HREF="#rsym_set_in_topforms">rsym_set_in_topforms</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#copy_clause_with_flags">copy_clause_with_flags</A></TD><TD><A HREF="#min_depth">min_depth</A></TD><TD><A HREF="#term_renumber_variables">term_renumber_variables</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#fprint_clause">fprint_clause</A></TD><TD><A HREF="#negative_clause_possibly_compressed">negative_clause_possibly_compressed</A></TD><TD><A HREF="#term_to_clause">term_to_clause</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="append_label_attribute"></A><HR><PRE><B>void append_label_attribute(Topform tf, char *s);
+</B></PRE><A NAME="check_upward_clause_links"></A><HR><PRE><B>BOOL check_upward_clause_links(Topform c);
+</B></PRE>In the given Topform c, check that the "container" field of each subterm
+point to c.
+<A NAME="cl_id_compare"></A><HR><PRE><B>Ordertype cl_id_compare(Topform c1, Topform c2);
+</B></PRE><A NAME="cl_wt_id_compare"></A><HR><PRE><B>Ordertype cl_wt_id_compare(Topform c1, Topform c2);
+</B></PRE><A NAME="clause_set_variables"></A><HR><PRE><B>void clause_set_variables(Topform c, int max_vars);
+</B></PRE>This routine traverses a clause and changes the constants
+that should be variables, into variables.  On input, the clause
+should have no variables.  The new variables are numbered
+0, 1, 2 ... according the the first occurrence, reading from the
+left.
+<P>
+A fatal error occurs if there are more than max_vars variables.
+<P>
+The intended is use is for input clauses that
+are built without regard to variable/constant distinction.
+<A NAME="copy_clause"></A><HR><PRE><B>Topform copy_clause(Topform c);
+</B></PRE>This routine builds and returns a copy of a clause.
+The container field of each nonvariable subterm points
+to the clause.
+<A NAME="copy_clause_with_flag"></A><HR><PRE><B>Topform copy_clause_with_flag(Topform c, int flag);
+</B></PRE>This routine builds and returns a copy of a clause.
+The given termflag is copied for all subterms (including atoms,
+excluding variables).
+<A NAME="copy_clause_with_flags"></A><HR><PRE><B>Topform copy_clause_with_flags(Topform c);
+</B></PRE>This routine builds and returns a copy of a clause.
+All termflags are copied for all subterms (including atoms,
+excluding variables).
+<A NAME="fprint_clause"></A><HR><PRE><B>void fprint_clause(FILE *fp, Topform c);
+</B></PRE>This routine prints a clause to a file.
+<A NAME="fprint_topform_mem"></A><HR><PRE><B>void fprint_topform_mem(FILE *fp, int heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the clause package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="fsym_set_in_topforms"></A><HR><PRE><B>Ilist fsym_set_in_topforms(Plist lst);
+</B></PRE><A NAME="function_symbols_in_topform"></A><HR><PRE><B>I2list function_symbols_in_topform(Topform c, I2list g);
+</B></PRE>Collect the multiset of function symbols in a clause.
+<A NAME="function_symbols_in_topforms"></A><HR><PRE><B>I2list function_symbols_in_topforms(Plist lst);
+</B></PRE>Collect the multiset of function symbols (including constants) in
+clauses in a Plist.
+An I2list of SYMNUMs is returned.
+<A NAME="get_topform"></A><HR><PRE><B>Topform get_topform(void);
+</B></PRE><A NAME="inherit_attributes"></A><HR><PRE><B>void inherit_attributes(Topform par1, <A HREF="unify.html">Context</A> s1,
+			Topform par2, <A HREF="unify.html">Context</A> s2,
+			Topform child);
+</B></PRE>This takes two parent clauses and their associated
+substitutions, and a child clause.  All inheritable
+attributes on the parents are instantiated and
+appended to the child's attributes.
+<p>
+Either parent can be NULL.
+<A NAME="initial_clause"></A><HR><PRE><B>BOOL initial_clause(Topform c);
+</B></PRE>Is (was) the clause part of the initial sos (after processing input clauses,
+before starting search)/
+<A NAME="min_depth"></A><HR><PRE><B>BOOL min_depth(Literals lit);
+</B></PRE>Does the Literals have minimum depth of all literals the containing clause?
+<A NAME="negative_clause_possibly_compressed"></A><HR><PRE><B>BOOL negative_clause_possibly_compressed(Topform c);
+</B></PRE>Is (was) the clause part of the initial sos (after processing input clauses,
+before starting search)/
+<A NAME="p_clause"></A><HR><PRE><B>void p_clause(Topform c);
+</B></PRE>This routine prints a clause to stdout.
+<A NAME="p_topform_mem"></A><HR><PRE><B>void p_topform_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the clause package.
+<A NAME="relation_symbols_in_topform"></A><HR><PRE><B>I2list relation_symbols_in_topform(Topform c, I2list g);
+</B></PRE>Collect the multiset of relation symbols in a clause.
+<A NAME="relation_symbols_in_topforms"></A><HR><PRE><B>I2list relation_symbols_in_topforms(Plist lst);
+</B></PRE>Collect the multiset of relation symbols (including
+propositional constants) in clauses in a Plist.
+An I2list of SYMNUMs is returned.
+<A NAME="renum_vars_map"></A><HR><PRE><B>Plist renum_vars_map(Topform c);
+</B></PRE><A NAME="renumber_variables"></A><HR><PRE><B>void renumber_variables(Topform c, int max_vars);
+</B></PRE>This routine renumbers the variables of a clause.  The variables are
+renumbered 0, 1, 2 ... according the the first occurrence, reading
+from the left.
+<P>
+If there are more than max_vars distinct variables,
+a fatal error occurs.
+<P>
+The intended is use is for inferred clauses that
+may contain variable indexes greater than max_vars.
+<A NAME="rsym_set_in_topforms"></A><HR><PRE><B>Ilist rsym_set_in_topforms(Plist lst);
+</B></PRE><A NAME="term_renumber_variables"></A><HR><PRE><B>void term_renumber_variables(<A HREF="term.html">Term</A> t, int max_vars);
+</B></PRE>This routine renumbers the variables of a term.  The variables are
+renumbered 0, 1, 2 ... according the the first occurrence, reading
+from the left.
+<P>
+If there are more than max_vars distinct variables,
+a fatal error occurs.
+<P>
+Do not use this to renumber variables of a clause (see renumber_variables).
+<A NAME="term_to_clause"></A><HR><PRE><B>Topform term_to_clause(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine takes a <A HREF="term.html">Term</A> t (presumably a disjunction with binary
+symbol or_sym()), and constructs a Topform.  The Topform is entirely new.
+<P>
+The main use of this routine is intended to be as follows: a
+<A HREF="term.html">Term</A> representing a clause is parsed (using mixfix notation)
+from the input, then here it is copied translated into
+a Topform data structure.
+<A NAME="term_to_topform"></A><HR><PRE><B>Topform term_to_topform(<A HREF="term.html">Term</A> t, BOOL is_formula);
+</B></PRE><A NAME="topform_properties"></A><HR><PRE><B><A HREF="term.html">Term</A> topform_properties(Topform c);
+</B></PRE>Construct a term containing a list of miscellaneous properties of a Topform.
+This is meant to be used as an attribute on Topforms for debugging.
+<A NAME="topform_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> topform_to_term(Topform tf);
+</B></PRE>This routine takes a Topform and returns an entirely new <A HREF="term.html">Term</A>
+which represents the clause.  The disjunction symbol for the
+term is binary or_sym(), and the negation symbols is not_sym().
+The attributes are included, but not the id or justifiction.
+<A NAME="topform_to_term_without_attributes"></A><HR><PRE><B><A HREF="term.html">Term</A> topform_to_term_without_attributes(Topform tf);
+</B></PRE>This routine takes a Topform and returns an entirely new <A HREF="term.html">Term</A>
+which represents the clause.  The disjunction symbol for the
+term is binary or_sym(), and the negation symbols is not_sym().
+The attributes, id, and justifiction are NOT included.
+<A NAME="upward_clause_links"></A><HR><PRE><B>void upward_clause_links(Topform c);
+</B></PRE>In the given Topform c, make the "container" field of each subterm
+point to c.
+<A NAME="zap_topform"></A><HR><PRE><B>void zap_topform(Topform tf);
+</B></PRE>This routine frees a Topform (but not any justification list).
+The caller should make sure that nothing (e.g., indexes)
+refer to the clause or any of its subterms.
+<P>
+If the clause has a justification or an official ID,
+use the higher-level routine delete_clause(c) instead.
+<HR><A NAME=defns></A><H2>Public Definitions in File topform.h</H2>
+<PRE>
+typedef struct topform * Topform;
+
+struct topform {
+
+  /* for both clauses and formulas */
+
+  int              id;
+  struct clist_pos *containers;     /* Clists that contain the Topform */
+  Attribute        attributes;
+  struct just      *justification;
+  int              weight;
+  char             *compressed;     /* if nonNULL, a compressed form */
+
+  /* for clauses only */
+
+  Literals         literals;        /* NULL can mean the empty clause */
+
+  /* for formulas only */
+
+  <A HREF="formula.html">Formula</A>          formula;
+
+  int   semantics;        /* evaluation in interpretations */
+
+  /* The rest of the fields are flags.  These could be bits. */
+
+  char   is_formula;      /* is this really a formula? */
+  char   normal_vars;     /* variables have been renumbered */
+  char   used;            /* used to infer a clause that was kept */
+  char   official_id;     /* Topform is in the ID table */
+  char   initial;         /* existed at the start of the search */
+  char   neg_compressed;  /* negative and compressed */
+  char   matches_hint;    /* does this clause match a hint? */
+  char   subsumer;        /* has this clause back subsumed anything? */
+
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+A Topform can be used to store a formula or a clause.
+The field is_formula says which it is.
+
+<p>
+In earlier versions of LADR, this data structure was called Clause.
+When we decided to put non-clausal formulas in proofs, they
+needed to have IDs, attributes, and justifications, so we elevated
+the data structure to include non-clausal formulas and changed
+the name to Topform (top formula).
+
+<p>
+In many cases, when we say "clause", we mean a list of Literals.
+For example, most of the functions that tell the properties
+of clauses (positive_clause, number_of_literals, etc.) take
+a list of Literals, not a Topform.
+
+<p>
+If C had data structures with inheritance, this would
+be a good place to use it.
+
+<HR>
+</BODY>
+</HTML>

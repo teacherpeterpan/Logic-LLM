@@ -1,0 +1,157 @@
+#!/usr/bin/python
+
+# This script takes a Mace4 input file (the head) and a stream of
+# candidates.  It builds a list of models (M) of the candidates w.r.t.
+# the clauses in the head.
+#
+# For each candidate C, if the C is true in any member of M,
+# it is discarded; otherwise we look for a model of C and the
+# clauses in the head; if a model is found, it is added to M and
+# C is discarded; otherwise C is passed through to the standard output.
+#
+# Call it, for example, like this:
+#
+#    attack head interps < candidates > candidates.out
+#
+# The file interps is created from scratch and must not exist at the start.
+#
+# The candidates must be one per line.  A candidate need not be a single
+# clause, e.g., it can be a pair of clauses.  The important thing
+# is that it makes sense when surrounded by "formulas(cand)." and
+# "end_of_list."  An exception: lines that start with "%" are treated
+# as comment lines and are passed directly through to stdout.
+
+import os
+import sys
+import re
+import time
+import socket
+from subprocess import *
+
+####################################
+
+def runjob4(command_and_args, stdin_string=None):
+
+    if debug:
+        print "Starting job:", command_and_args
+
+    # Must have stdin arg; otherwise, it uses this process's stdin.
+    p1 = Popen(command_and_args, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+    (out, err) = p1.communicate(stdin_string)
+        
+    exit_code = p1.wait()
+    pid = p1.pid
+
+    if debug:
+        sys.stdout.writelines(out)
+        sys.stdout.writelines(err)
+        print "pid=%d, exit_code=%d" % (pid,exit_code)
+
+    return (pid, exit_code, out, err)
+
+####################################
+
+if len(sys.argv) != 3:
+    sys.stderr.write('need 2 args: head interp\n')
+    sys.exit(1)
+
+head_fname = sys.argv[1]
+interp_fname = sys.argv[2]
+cand_fname = 'cand_%d.in' % os.getpid()
+
+if os.path.isfile(interp_fname):
+    sys.stderr.write('file %s already exists\n' % interp_fname)
+    sys.exit(1)
+
+interps = ""
+checked = 0
+passed = 0
+num_interps = 0
+
+debug = False
+
+# assume these programs are in the user's path
+
+mace4        = 'mace4'
+get_interps  = 'get_interps'
+interpfilter = 'interpfilter'
+
+mace4_model_exits = [0, 3, 4, 6]
+mace4_error_exits = [1,102]
+
+####################################
+
+for line in sys.stdin:
+
+    if re.match('\s*%', line):
+        # passs comment line through to stdout
+        sys.stdout.write(line)
+        continue
+
+    cand = line
+    checked += 1
+    if checked % 100 == 0:
+        sys.stderr.write('checked %s\n' % checked)
+        interp_file = open(interp_fname, 'w')
+        interp_file.write('\nINTERMEDIATE RESULTS\n\n')
+        interp_file.writelines(interps)
+        interp_file.write('\nINTERMEDIATE RESULTS\n\n')
+        interp_file.close()
+
+    cand_file = open(cand_fname, 'w')
+    cand_file.write(cand)
+    cand_file.close()
+
+    (pid, rc, out, err) = runjob4([interpfilter, cand_fname, 'all_true'], interps)
+
+    if rc != 0:  # not killed by existing model, so look for one with Mace4
+
+        cand_file = open(cand_fname, 'w')
+        cand_file.write('formulas(candidate).\n')
+        cand_file.write(cand)
+        cand_file.write('end_of_list.\n')
+        cand_file.close()
+        
+        (pid, rc, out, err) = runjob4([mace4, '-f', head_fname, cand_fname])
+
+        if rc in mace4_error_exits:
+            sys.stderr.write('mace4 error %d\n' % rc)
+        elif rc in mace4_model_exits:
+            # candidate just killed; add interp to our aresenal of interps
+            num_interps += 1
+            (pid, rc, out, perr) = runjob4(get_interps, out)
+            line = '\n%% %s %% cand %d killed by\n\n' % (cand[:-1],checked)
+            interps = interps + line + out
+        else:
+            # candidate survives
+            passed += 1
+            line = '%s %% cand %d\n' % (cand[:-1],checked)
+            sys.stdout.write(line)
+            sys.stdout.flush()
+
+os.remove(cand_fname)
+
+date = time.strftime('%A, %b %d, %I:%M %p %Y', time.localtime())
+host = socket.gethostname()
+
+# Write the interp file.
+
+interp_file = open(interp_fname, 'w')
+interp_file.write('%% Started on %s at %s\n' % (host,date))
+interp_file.write('%% Here is the head file %s.\n\n' % head_fname)
+interp_file.write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n')
+head_file = open(head_fname)
+for line in head_file:
+    interp_file.write('%% %s' % line)
+head_file.close()
+interp_file.write('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n')
+
+interp_file.write(interps)
+interp_file.write('\n%% Checked %d, passed %d, num_interps %d.\n' % (checked,passed,num_interps))
+interp_file.write('%% Finished %s.\n' % date);
+interp_file.close()
+
+sys.stdout.write('%% attack4 %s %s (on %s): checked %d, passed %d, num_interps %d.\n' % \
+                 (head_fname, interp_fname, host, checked, passed, num_interps))
+
+sys.exit(0)

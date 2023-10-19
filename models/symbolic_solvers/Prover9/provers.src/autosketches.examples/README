@@ -1,0 +1,9 @@
+Files: 
+
+  newauto.c.from_bob - Veroff's newauto from ADAM-2006.
+
+  newsax.c.from_bob - Veroff's newsax from ADAM-2006.
+
+  go* - script to run a few examples (assumes binaries are in ../../bin)
+
+The updated versions of newauto.c and newsax.c are in the parent directory.

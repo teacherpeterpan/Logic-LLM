@@ -1,0 +1,117 @@
+============================== Mace4 =================================
+Mace4 (32) version 2008-10A+, October 2008.
+Process 15829 was started by mccune on cleo,
+Mon Nov 17 21:34:37 2008
+The command was "../mace4 -f queens2.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file queens2.in
+
+set(arithmetic).
+    % set(arithmetic) -> clear(lnh).
+    % set(arithmetic) -> assign(selection_order, 0).
+
+    % Declaring Mace4 arithmetic parse types.
+
+formulas(assumptions).
+(all x exists y Q(x,y)).
+Q(x,y1) & Q(x,y2) -> y1 = y2.
+Q(x1,y) & Q(x2,y) -> x1 = x2.
+Q(x1,y1) & Q(x2,y2) & x2 -- x1 = y2 -- y1 -> x1 = x2 & y1 = y2.
+Q(x1,y1) & Q(x2,y2) & x1 -- x2 = y2 -- y1 -> x1 = x2 & y1 = y2.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (all x exists y Q(x,y)) # label(non_clause).  [assumption].
+2 Q(x,y1) & Q(x,y2) -> y1 = y2 # label(non_clause).  [assumption].
+3 Q(x1,y) & Q(x2,y) -> x1 = x2 # label(non_clause).  [assumption].
+4 Q(x1,y1) & Q(x2,y2) & x2 -- x1 = y2 -- y1 -> x1 = x2 & y1 = y2 # label(non_clause).  [assumption].
+5 Q(x1,y1) & Q(x2,y2) & x1 -- x2 = y2 -- y1 -> x1 = x2 & y1 = y2 # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+Q(x,f1(x)).
+-Q(x,y) | -Q(x,z) | z = y.
+-Q(x,y) | -Q(z,y) | z = x.
+-Q(x,y) | -Q(z,u) | z -- x != u -- y | z = x.
+-Q(x,y) | -Q(z,u) | z -- x != u -- y | u = y.
+-Q(x,y) | -Q(z,u) | x -- z != u -- y | z = x.
+-Q(x,y) | -Q(z,u) | x -- z != u -- y | u = y.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 2 =========================
+
+============================== STATISTICS ============================
+
+For domain size 2.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=82, kept=18.
+Selections=1, assignments=2, propagations=10, current_models=0.
+Rewrite_terms=4, rewrite_bools=44, indexes=2.
+Rules_from_neg_clauses=2, cross_offs=2.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 3 =========================
+
+============================== STATISTICS ============================
+
+For domain size 3.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=381, kept=79.
+Selections=1, assignments=3, propagations=30, current_models=0.
+Rewrite_terms=8, rewrite_bools=276, indexes=5.
+Rules_from_neg_clauses=5, cross_offs=11.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 4 =========================
+
+============================== MODEL =================================
+
+interpretation( 4, [number=1, seconds=0], [
+
+        function(f1(_), [ 1, 3, 0, 2 ]),
+
+        relation(Q(_,_), [
+			   0, 1, 0, 0,
+			   0, 0, 0, 1,
+			   1, 0, 0, 0,
+			   0, 0, 1, 0 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 4.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.02 seconds).
+Ground clauses: seen=1156, kept=212.
+Selections=2, assignments=6, propagations=45, current_models=1.
+Rewrite_terms=13, rewrite_bools=533, indexes=9.
+Rules_from_neg_clauses=7, cross_offs=19.
+
+============================== end of statistics =====================
+
+User_CPU=0.02, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 15829 exit (max_models) Mon Nov 17 21:34:37 2008
+The process finished Mon Nov 17 21:34:37 2008

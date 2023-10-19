@@ -1,0 +1,27 @@
+1.  Parameter demod_limit (default 1000) limits the number
+of rewrite steps for each generated clause.  There is
+another demodulation limit (wired in), which limits
+the size of terms as they are demodulated.  Terms
+being demodulated are allow to increase in size by
+demod_limit/2 symbols.  See fdemodulate() in flatdemod.c
+
+2.  When deciding whether to keep a clause:
+
+  else if (c->weight > 50 &&
+	   clist_number_of_weight(Glob.limbo, c->weight) >= 3)
+	discard;
+
+This means that if the weight is > 50 and there are already 3
+clauses in the Limbo list of that weight, don't keep the clause.
+This prevents cases where the given clause produces lots
+of very similar clauses, which can decrease the effectiveness
+of the "age" part of the given clause selection ratio.  A safer
+and more general way to address the problem would be to keep
+those clauses and have the given clause selection function take
+that into account.
+	
+
+
+
+
+

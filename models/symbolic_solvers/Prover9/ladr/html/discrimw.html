@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>discrimw.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "discrimw.h"</H1>
+
+This page has information from files
+<A HREF="../discrimw.h">discrimw.h</A> and <A HREF="../discrimw.c">discrimw.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File discrimw.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#discrim_wild_cancel">discrim_wild_cancel</A></TD><TD><A HREF="#discrim_wild_retrieve_next">discrim_wild_retrieve_next</A></TD><TD><A HREF="#fprint_discrim_wild_index">fprint_discrim_wild_index</A></TD><TD><A HREF="#p_discrim_wild_index">p_discrim_wild_index</A></TD>
+</TR>
+<TR><TD><A HREF="#discrim_wild_retrieve_first">discrim_wild_retrieve_first</A></TD><TD><A HREF="#discrim_wild_update">discrim_wild_update</A></TD><TD><A HREF="#fprint_discrimw_mem">fprint_discrimw_mem</A></TD><TD><A HREF="#p_discrimw_mem">p_discrimw_mem</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="discrim_wild_cancel"></A><HR><PRE><B>void discrim_wild_cancel(<A HREF="discrim.html">Discrim_pos</A> pos);
+</B></PRE>This routine should be called if you get some, but not all
+answers to a wild discrimintaion query.
+The memory associated the retrieval state is freed.
+<A NAME="discrim_wild_retrieve_first"></A><HR><PRE><B>void *discrim_wild_retrieve_first(<A HREF="term.html">Term</A> t, <A HREF="discrim.html">Discrim</A> root,
+				  <A HREF="discrim.html">Discrim_pos</A> *ppos);
+</B></PRE>This routine, along with <A HREF="#discrim_wild_retrieve_next">discrim_wild_retrieve_next</A>(), gets answers from
+a wild discrimination index.
+This routine retrieves the first object associated with a term
+more general than <A HREF="term.html">Term</A> t.  (NULL is returned if there is none.)
+<P>
+If an object is returned, <A HREF="discrim.html">Discrim_pos</A> *ppos is set to the retrieval
+state and is used for subsequent discrim_tame_retrieve_next() calls.
+<P>
+If you to get some, but not all answers, you must call
+<A HREF="#discrim_wild_cancel">discrim_wild_cancel</A>() to clear the substitution and free memory
+associated with the <A HREF="discrim.html">Discrim_pos</A>.
+<A NAME="discrim_wild_retrieve_next"></A><HR><PRE><B>void *discrim_wild_retrieve_next(<A HREF="discrim.html">Discrim_pos</A> pos);
+</B></PRE>This routine retrieves the next object in the sequence of answers to
+a query of a wild discrimination tree.
+See <A HREF="#discrim_wild_retrieve_first">discrim_wild_retrieve_first</A>().
+<A NAME="discrim_wild_update"></A><HR><PRE><B>void discrim_wild_update(<A HREF="term.html">Term</A> t, <A HREF="discrim.html">Discrim</A> root, void *object, Indexop op);
+</B></PRE>This routine inserts (op==INSERT) or deletes (op==DELETE)
+an object into/from a wild discrimination index.
+<A HREF="term.html">Term</A> t is the key, root is the root of the discrimination tree,
+and *object is a pointer (in many cases, *object will be t).
+See discrim_tame_retrieve_first().
+<P>
+A fatal error occurs if yout ry to delete an object that was not
+previouly inserted.
+<A NAME="fprint_discrim_wild_index"></A><HR><PRE><B>void fprint_discrim_wild_index(FILE *fp, <A HREF="discrim.html">Discrim</A> d);
+</B></PRE>This routine prints (to FILE *fp) a wild discrimination index.
+<A NAME="fprint_discrimw_mem"></A><HR><PRE><B>void fprint_discrimw_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the discrimw package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="p_discrim_wild_index"></A><HR><PRE><B>void p_discrim_wild_index(<A HREF="discrim.html">Discrim</A> d);
+</B></PRE>This routine prints (to stdout) a wild discrimination index.
+<A NAME="p_discrimw_mem"></A><HR><PRE><B>void p_discrimw_mem(void);
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the discrimw package.
+<HR><A NAME=defns></A><H2>Public Definitions in File discrimw.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+Discrimination tree indexing in which all variables
+variables are represented as wildcards in the index.
+Matching occurs after retrieval of candidates.
+
+<HR>
+</BODY>
+</HTML>

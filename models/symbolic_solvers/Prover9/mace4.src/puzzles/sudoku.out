@@ -1,0 +1,198 @@
+============================== Mace4 =================================
+Mace4 (32) version 2008-10A+, October 2008.
+Process 15831 was started by mccune on cleo,
+Mon Nov 17 21:34:40 2008
+The command was "../mace4 -f sudoku.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file sudoku.in
+
+assign(domain_size,9).
+    % assign(domain_size, 9) -> assign(start_size, 9).
+    % assign(domain_size, 9) -> assign(end_size, 9).
+
+formulas(assumptions).
+S(x,y1) = S(x,y2) -> y1 = y2.
+S(x1,y) = S(x2,y) -> x1 = x2.
+(all x all z exists y S(x,y) = z).
+(all y all z exists x S(x,y) = z).
+same_interval(x,x).
+same_interval(x,y) -> same_interval(y,x).
+same_interval(x,y) & same_interval(y,z) -> same_interval(x,z).
+same_interval(0,1).
+same_interval(1,2).
+same_interval(3,4).
+same_interval(4,5).
+same_interval(6,7).
+same_interval(7,8).
+-same_interval(0,3).
+-same_interval(3,6).
+-same_interval(0,6).
+S(x1,y1) = S(x2,y2) & same_interval(x1,x2) & same_interval(y1,y2) -> x1 = x2 & y1 = y2.
+S(0,0) = 8.
+S(0,5) = 3.
+S(0,7) = 5.
+S(1,0) = 3.
+S(1,1) = 1.
+S(1,3) = 4.
+S(1,6) = 8.
+S(2,2) = 5.
+S(3,1) = 0.
+S(3,3) = 2.
+S(4,1) = 5.
+S(4,5) = 0.
+S(4,6) = 3.
+S(4,7) = 6.
+S(5,0) = 4.
+S(5,5) = 5.
+S(5,7) = 8.
+S(6,6) = 2.
+S(7,2) = 2.
+S(7,5) = 1.
+S(7,7) = 3.
+S(7,8) = 7.
+S(8,1) = 3.
+S(8,5) = 2.
+S(8,8) = 1.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 S(x,y1) = S(x,y2) -> y1 = y2 # label(non_clause).  [assumption].
+2 S(x1,y) = S(x2,y) -> x1 = x2 # label(non_clause).  [assumption].
+3 (all x all z exists y S(x,y) = z) # label(non_clause).  [assumption].
+4 (all y all z exists x S(x,y) = z) # label(non_clause).  [assumption].
+5 same_interval(x,y) -> same_interval(y,x) # label(non_clause).  [assumption].
+6 same_interval(x,y) & same_interval(y,z) -> same_interval(x,z) # label(non_clause).  [assumption].
+7 S(x1,y1) = S(x2,y2) & same_interval(x1,x2) & same_interval(y1,y2) -> x1 = x2 & y1 = y2 # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+S(x,y) != S(x,z) | y = z.
+S(x,y) != S(z,y) | x = z.
+S(x,f1(x,y)) = y.
+S(f2(x,y),x) = y.
+same_interval(x,x).
+-same_interval(x,y) | same_interval(y,x).
+-same_interval(x,y) | -same_interval(y,z) | same_interval(x,z).
+same_interval(0,1).
+same_interval(1,2).
+same_interval(3,4).
+same_interval(4,5).
+same_interval(6,7).
+same_interval(7,8).
+-same_interval(0,3).
+-same_interval(3,6).
+-same_interval(0,6).
+S(x,y) != S(z,u) | -same_interval(z,x) | -same_interval(u,y) | x = z.
+S(x,y) != S(z,u) | -same_interval(z,x) | -same_interval(u,y) | y = u.
+S(0,0) = 8.
+S(0,5) = 3.
+S(0,7) = 5.
+S(1,0) = 3.
+S(1,1) = 1.
+S(1,3) = 4.
+S(1,6) = 8.
+S(2,2) = 5.
+S(3,1) = 0.
+S(3,3) = 2.
+S(4,1) = 5.
+S(4,5) = 0.
+S(4,6) = 3.
+S(4,7) = 6.
+S(5,0) = 4.
+S(5,5) = 5.
+S(5,7) = 8.
+S(6,6) = 2.
+S(7,2) = 2.
+S(7,5) = 1.
+S(7,7) = 3.
+S(7,8) = 7.
+S(8,1) = 3.
+S(8,5) = 2.
+S(8,8) = 1.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 8.
+
+============================== DOMAIN SIZE 9 =========================
+
+============================== MODEL =================================
+
+interpretation( 9, [number=1, seconds=0], [
+
+        function(S(_,_), [
+			   8, 6, 4, 1, 2, 3, 7, 5, 0,
+			   3, 1, 0, 4, 5, 7, 8, 2, 6,
+			   7, 2, 5, 6, 0, 8, 4, 1, 3,
+			   6, 0, 3, 2, 8, 4, 1, 7, 5,
+			   2, 5, 8, 7, 1, 0, 3, 6, 4,
+			   4, 7, 1, 3, 6, 5, 0, 8, 2,
+			   1, 4, 7, 5, 3, 6, 2, 0, 8,
+			   5, 8, 2, 0, 4, 1, 6, 3, 7,
+			   0, 3, 6, 8, 7, 2, 5, 4, 1 ]),
+
+        function(f1(_,_), [
+			   8, 3, 4, 5, 2, 7, 1, 6, 0,
+			   2, 1, 7, 0, 3, 4, 8, 5, 6,
+			   4, 7, 1, 8, 6, 2, 3, 0, 5,
+			   1, 6, 3, 2, 5, 8, 0, 7, 4,
+			   5, 4, 0, 6, 8, 1, 7, 3, 2,
+			   6, 2, 8, 3, 0, 5, 4, 1, 7,
+			   7, 0, 6, 4, 1, 3, 5, 2, 8,
+			   3, 5, 2, 7, 4, 0, 6, 8, 1,
+			   0, 8, 5, 1, 7, 6, 2, 4, 3 ]),
+
+        function(f2(_,_), [
+			   8, 6, 4, 1, 5, 7, 3, 2, 0,
+			   3, 1, 2, 8, 6, 4, 0, 5, 7,
+			   1, 5, 7, 3, 0, 2, 8, 6, 4,
+			   7, 0, 3, 5, 1, 6, 2, 4, 8,
+			   2, 4, 0, 6, 7, 1, 5, 8, 3,
+			   4, 7, 8, 0, 3, 5, 6, 1, 2,
+			   5, 3, 6, 4, 2, 8, 7, 0, 1,
+			   6, 2, 1, 7, 8, 0, 4, 3, 5,
+			   0, 8, 5, 2, 4, 3, 1, 7, 6 ]),
+
+        relation(same_interval(_,_), [
+			   1, 1, 1, 0, 0, 0, 0, 0, 0,
+			   1, 1, 1, 0, 0, 0, 0, 0, 0,
+			   1, 1, 1, 0, 0, 0, 0, 0, 0,
+			   0, 0, 0, 1, 1, 1, 0, 0, 0,
+			   0, 0, 0, 1, 1, 1, 0, 0, 0,
+			   0, 0, 0, 1, 1, 1, 0, 0, 0,
+			   0, 0, 0, 0, 0, 0, 1, 1, 1,
+			   0, 0, 0, 0, 0, 0, 1, 1, 1,
+			   0, 0, 0, 0, 0, 0, 1, 1, 1 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 9.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.05 seconds).
+Ground clauses: seen=15595, kept=3193.
+Selections=7, assignments=45, propagations=422, current_models=1.
+Rewrite_terms=7132, rewrite_bools=4936, indexes=71.
+Rules_from_neg_clauses=245, cross_offs=2038.
+
+============================== end of statistics =====================
+
+User_CPU=0.05, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 15831 exit (max_models) Mon Nov 17 21:34:40 2008
+The process finished Mon Nov 17 21:34:40 2008

@@ -1,0 +1,214 @@
+<HTML>
+<HEAD>
+<TITLE>options.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "options.h"</H1>
+
+This page has information from files
+<A HREF="../options.h">options.h</A> and <A HREF="../options.c">options.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File options.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#"></A></TD><TD><A HREF="#flag_id_to_str">flag_id_to_str</A></TD><TD><A HREF="#option_dependencies_state">option_dependencies_state</A></TD><TD><A HREF="#set_flag">set_flag</A></TD>
+</TR>
+<TR><TD><A HREF="#assign_parm">assign_parm</A></TD><TD><A HREF="#flag_parm_dep_default">flag_parm_dep_default</A></TD><TD><A HREF="#option_updates">option_updates</A></TD><TD><A HREF="#str_to_flag_id">str_to_flag_id</A></TD>
+</TR>
+<TR><TD><A HREF="#assign_stringparm">assign_stringparm</A></TD><TD><A HREF="#flag_parm_dependency">flag_parm_dependency</A></TD><TD><A HREF="#over_parm_limit">over_parm_limit</A></TD><TD><A HREF="#str_to_parm_id">str_to_parm_id</A></TD>
+</TR>
+<TR><TD><A HREF="#at_parm_limit">at_parm_limit</A></TD><TD><A HREF="#flag_stringparm_dep_default">flag_stringparm_dep_default</A></TD><TD><A HREF="#p_options">p_options</A></TD><TD><A HREF="#str_to_stringparm_id">str_to_stringparm_id</A></TD>
+</TR>
+<TR><TD><A HREF="#clear_flag">clear_flag</A></TD><TD><A HREF="#flag_stringparm_dependency">flag_stringparm_dependency</A></TD><TD><A HREF="#p_options_mem">p_options_mem</A></TD><TD><A HREF="#stringparm">stringparm</A></TD>
+</TR>
+<TR><TD><A HREF="#disable_option_dependencies">disable_option_dependencies</A></TD><TD><A HREF="#fprint_options">fprint_options</A></TD><TD><A HREF="#parm">parm</A></TD><TD><A HREF="#stringparm1">stringparm1</A></TD>
+</TR>
+<TR><TD><A HREF="#enable_option_dependencies">enable_option_dependencies</A></TD><TD><A HREF="#fprint_options_mem">fprint_options_mem</A></TD><TD><A HREF="#parm_default">parm_default</A></TD><TD><A HREF="#stringparm1_default">stringparm1_default</A></TD>
+</TR>
+<TR><TD><A HREF="#flag_default">flag_default</A></TD><TD><A HREF="#init_flag">init_flag</A></TD><TD><A HREF="#parm_flag_dependency">parm_flag_dependency</A></TD><TD><A HREF="#stringparm_id_to_str">stringparm_id_to_str</A></TD>
+</TR>
+<TR><TD><A HREF="#flag_flag_dep_default">flag_flag_dep_default</A></TD><TD><A HREF="#init_parm">init_parm</A></TD><TD><A HREF="#parm_id_to_str">parm_id_to_str</A></TD><TD><A HREF="#update_flag">update_flag</A></TD>
+</TR>
+<TR><TD><A HREF="#flag_flag_dependency">flag_flag_dependency</A></TD><TD><A HREF="#init_stringparm">init_stringparm</A></TD><TD><A HREF="#parm_parm_dependency">parm_parm_dependency</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME=""></A><HR><PRE><B>
+int flag(int flag_id);
+</B></PRE>This Boolean routine returns the value of a flag.  If the Flag
+index is out of range, bad things can happen.
+<A NAME="assign_parm"></A><HR><PRE><B>void assign_parm(int id, int val, BOOL echo);
+</B></PRE>This routine assigns a value to a parm.  The parm is identified by
+its integer ID (which is available from str_to_parm_id<A HREF="#"></A>()).
+If the ID is not valid, or if the value is out of range, a
+fatal error occurs.
+<A NAME="assign_stringparm"></A><HR><PRE><B>void assign_stringparm(int id, char *val, BOOL echo);
+</B></PRE>This routine assigns a value to a stringparm.  The stringparm is identified by
+its integer ID (which is available from str_to_stringparm_id<A HREF="#"></A>()).
+If the ID is not valid, or if the value is out of range, a
+fatal error occurs.
+<A NAME="at_parm_limit"></A><HR><PRE><B>BOOL at_parm_limit(int value, int parm_id);
+</B></PRE>This assumes that -1 represents infinity.
+<A NAME="clear_flag"></A><HR><PRE><B>void clear_flag(int id, BOOL echo);
+</B></PRE>This routine clears a flag.  The flag is identified by its
+integer ID (which is available from str_to_flag_id<A HREF="#"></A>()).
+If the ID is not valid, a fatal error occurs.
+<A NAME="disable_option_dependencies"></A><HR><PRE><B>void disable_option_dependencies(void);
+</B></PRE><A NAME="enable_option_dependencies"></A><HR><PRE><B>void enable_option_dependencies(void);
+</B></PRE><A NAME="flag_default"></A><HR><PRE><B>int flag_default(int flag_id);
+</B></PRE><A NAME="flag_flag_dep_default"></A><HR><PRE><B>void flag_flag_dep_default(int id, BOOL val, int dep_id);
+</B></PRE>This routine declares that a flag depends on another flag.
+If flag "id" gets value "val", then flag "dep_id" is automatically
+given its default value.
+<A NAME="flag_flag_dependency"></A><HR><PRE><B>void flag_flag_dependency(int id, BOOL val, int dep_id, BOOL dep_val);
+</B></PRE>This routine declares that a flag depends on another flag.
+If flag "id" gets value "val", then flag "dep_id" is automatically
+given value "dep_val".
+<A NAME="flag_id_to_str"></A><HR><PRE><B>char *flag_id_to_str(int id);
+</B></PRE>Given a flag ID, return the corresponding name of the flag.
+<A NAME="flag_parm_dep_default"></A><HR><PRE><B>void flag_parm_dep_default(int id, BOOL val, int dep_id);
+</B></PRE>This routine declares that a parm depends on a flag.
+If flag "id" gets value "val", then parm "dep_id" is automatically
+given its default value.
+<A NAME="flag_parm_dependency"></A><HR><PRE><B>void flag_parm_dependency(int id, BOOL val, int dep_id, int dep_val);
+</B></PRE>This routine declares that a parm depends on a flag.
+If flag "id" gets value "val", then parm "dep_id" is automatically
+given value "dep_val".
+<A NAME="flag_stringparm_dep_default"></A><HR><PRE><B>void flag_stringparm_dep_default(int id, BOOL val, int dep_id);
+</B></PRE>This routine declares that a stringparm depends on a flag.
+If flag "id" gets value "val", then stringparm "dep_id" is automatically
+given its default value.
+<A NAME="flag_stringparm_dependency"></A><HR><PRE><B>void flag_stringparm_dependency(int id, BOOL val, int dep_id, char *dep_val);
+</B></PRE>This routine declares that a stringparm depends on a flag.
+If flag "id" gets value "val", then stringparm "dep_id" is automatically
+given value "dep_val".
+<A NAME="fprint_options"></A><HR><PRE><B>void fprint_options(FILE *fp);
+</B></PRE>This routine prints (to FILE *fp) the current values of all of the
+the options (flags, parms, and stringparms).
+<A NAME="fprint_options_mem"></A><HR><PRE><B>void fprint_options_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the options package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="init_flag"></A><HR><PRE><B>int init_flag(char *name,
+	      BOOL default_value);
+</B></PRE>Initialize a flag (boolean-valued option).
+You give it a name and a default value, and an integer id is returned.
+Flags are typically changed by user commands
+which are parsed by read_commands<A HREF="#"></A>().  The value of a flag is
+checked with flag<A HREF="#"></A>(ID).
+<A NAME="init_parm"></A><HR><PRE><B>int init_parm(char *name,
+	      int default_value,
+	      int min_value,
+	      int max_value);
+</B></PRE>Initialize a parm (integer-valued option).
+You give it a name, a default value, and  min and max values.
+An integer id is returned.
+Parms are typically
+changed by user commands which are parsed by read_commands<A HREF="#"></A>().
+The value of a parm is checked with parm<A HREF="#"></A>(ID).
+<A NAME="init_stringparm"></A><HR><PRE><B>int init_stringparm(char *name,
+		    int n,
+		    ...);
+</B></PRE>Initialize a stringparm (string-valued option).
+You give it a name, a number n of possible values,
+and n strings which are the possible values.
+An integer id is returned
+The first string given is the default value.
+<P>
+Stringparms are typically changed by user commands which are parsed
+by read_commands<A HREF="#"></A>().
+The value of a stringparm is checked with the Boolean routine
+stringparm<A HREF="#"></A>(ID, string).
+<A NAME="option_dependencies_state"></A><HR><PRE><B>BOOL option_dependencies_state(void);
+</B></PRE><A NAME="option_updates"></A><HR><PRE><B>int option_updates(void);
+</B></PRE>How many times have Flags, Parms, or Stringparms been updated?
+<A NAME="over_parm_limit"></A><HR><PRE><B>BOOL over_parm_limit(int value, int parm_id);
+</B></PRE>This assumes that -1 represents infinity.
+<A NAME="p_options"></A><HR><PRE><B>void p_options(void);
+</B></PRE>This routine prints (to stdout) the current values of the
+the options (flags, parms, and stringparms).
+<A NAME="p_options_mem"></A><HR><PRE><B>void p_options_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the options package.
+<A NAME="parm"></A><HR><PRE><B>int parm(int parm_id);
+</B></PRE>This integer routine returns the value of a parameter.  If the parm
+index is out of range, bad things can happen.
+<A NAME="parm_default"></A><HR><PRE><B>int parm_default(int parm_id);
+</B></PRE><A NAME="parm_flag_dependency"></A><HR><PRE><B>void parm_flag_dependency(int id, int dep_id, int dep_val);
+</B></PRE>This routine declares that a flag depends on a parm.
+If parm "id" gets changed, then flag "dep_id" is automatically
+given value "dep_val".
+<A NAME="parm_id_to_str"></A><HR><PRE><B>char *parm_id_to_str(int id);
+</B></PRE>Given a parm ID, return the corresponding name of the parm.
+<A NAME="parm_parm_dependency"></A><HR><PRE><B>void parm_parm_dependency(int id, int dep_id, int dep_val, BOOL multiply);
+</B></PRE>This routine declares that a parm depends on a parm.
+If (multiply == TRUE), then dep_val is a multiplier instead of a value.
+<A NAME="set_flag"></A><HR><PRE><B>void set_flag(int id, BOOL echo);
+</B></PRE>This routine sets a flag.  The flag is identified by its
+integer ID (which is available from str_to_flag_id<A HREF="#"></A>()).
+If the ID is not valid, a fatal error occurs.
+<A NAME="str_to_flag_id"></A><HR><PRE><B>int str_to_flag_id(char *name);
+</B></PRE>This routine converts the string name of a flag to its integer ID.
+If the string name is not valid, -1 is returned.
+<A NAME="str_to_parm_id"></A><HR><PRE><B>int str_to_parm_id(char *name);
+</B></PRE>This routine converts the string name of a parm to its integer ID.
+If the string name is not valid, -1 is returned.
+<A NAME="str_to_stringparm_id"></A><HR><PRE><B>int str_to_stringparm_id(char *name);
+</B></PRE>This routine converts the string name of a stringparm to its integer ID.
+If the string name is not valid, -1 is returned.
+<A NAME="stringparm"></A><HR><PRE><B>BOOL stringparm(int id, char *s);
+</B></PRE>This routine checks if the current value of a stringparm
+matches the given string.  The ID must be valid.
+<A NAME="stringparm1"></A><HR><PRE><B>char *stringparm1(int id);
+</B></PRE>This routine returns the current value of a stringparm.
+The ID must be valid.
+<A NAME="stringparm1_default"></A><HR><PRE><B>char *stringparm1_default(int id);
+</B></PRE><A NAME="stringparm_id_to_str"></A><HR><PRE><B>char *stringparm_id_to_str(int id);
+</B></PRE>Given a stringparm ID, return the corresponding name of the stringparm.
+<A NAME="update_flag"></A><HR><PRE><B>void update_flag(FILE *fout, int id, BOOL val, BOOL echo);
+</B></PRE>This performs the role of set_flag<A HREF="#"></A>() and clear_flag<A HREF="#"></A>().
+In addition, an output file is given for dependency messages.
+<HR><A NAME=defns></A><H2>Public Definitions in File options.h</H2>
+<PRE>
+#define MAX_FLAGS                100
+#define MAX_PARMS                100
+#define MAX_STRINGPARMS          100
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+There are 3 types of option:
+<UL>
+<LI>Flags: Boolean
+<LI>Parms: Integer
+<LI>Stringparm: String
+</UL>
+<P>
+To introduce a new option, choose an integer ID that is
+unique for the type of option, and call the appropriate
+initialization routine.  Then you can change the value
+of the option and check its value as you like.
+<P>
+The routine read_commands() (in the "commands" package)
+will parse the user's set, clear, and assign commands,
+making the appropriate changes to the values of the options.
+<P>
+In most cases, the applications programmer will be using
+the following routines.
+<UL>
+<LI>Flags: init_flag(), flag().
+<LI>Parms: init_parm(), parm().
+<LI>Stringparm: init_stringparm(), stringparm().
+</UL>
+
+<HR>
+</BODY>
+</HTML>

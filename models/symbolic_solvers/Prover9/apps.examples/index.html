@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>Miscellaneous LADR Applications</TITLE>
+</HEAD>
+<BODY>
+<H3>Miscellaneous LADR Applications</H3>
+<HR>
+Here are examples of running the auxiliary programs described
+in the MACE4 manual.  You can get a synopsis of each program
+by giving it an argument "<TT>help</TT>".
+
+<UL>
+<LI> Remove isomorphic interpretations.
+This example produces the quasigroups of order 3.
+<PRE>
+mace4 -n3 < <A HREF="qg.in">qg.in</A> | <A HREF="../bin/get_interps">get_interps</A> > <A HREF="qg.out3">qg.out3</A> 
+isofilter < <A HREF="qg.out3">qg.out3</A> > <A HREF="qg.iso3">qg.iso3</A> 
+</PRE>
+<LI> Use a set of interpretations to filter a stream of clauses.
+This example removes clauses that are true in any of a set
+of non-modular orthomodular lattices.
+<PRE>
+modfilter <A HREF="non-MOL-OML">non-MOL-OML</A> false_in_all < <A HREF="MOL-cand.296">MOL-cand.296</A> > <A HREF="MOL-cand.238">MOL-cand.238</A> 
+</PRE>
+<LI> Use a set of clauses to filter a stream of interpretations.
+This example removes distributive models from a set of ortholattices.
+<PRE>
+mace4 -n8 < <A HREF="OL.in">OL.in</A> | <A HREF="../bin/get_interps">get_interps</A> | isofilter > <A HREF="OL.8">OL.8</A> 
+interpfilter <A HREF="distributivity">distributivity</A> nonmodels < <A HREF="OL.8">OL.8</A> > <A HREF="OL.8.out">OL.8.out</A> 
+</PRE>
+<LI> Given a set of interpretations and a stream of clauses, show the interpretations that model each clause.
+<PRE>
+mace4 -n6 < <A HREF="OL.in">OL.in</A> | <A HREF="../bin/get_interps">get_interps</A> | isofilter > <A HREF="OL.6">OL.6</A> 
+modtester <A HREF="OL.6">OL.6</A> < <A HREF="BA-sheffer">BA-sheffer</A> > <A HREF="BA-sheffer.out">BA-sheffer.out</A> 
+</PRE>
+<LI> Decision procedure for lattice identities in meet/join.
+<PRE>
+latfilter < <A HREF="meet-join-equations">meet-join-equations</A> > <A HREF="meet-join-equations.out">meet-join-equations.out</A> 
+</PRE>
+<LI> Decision procedure for ortholattice identities in meet/join/complement/0/1/shefferstroke.
+<PRE>
+olfilter < <A HREF="mjc01s-equations">mjc01s-equations</A> > <A HREF="mjc01s-equations.out">mjc01s-equations.out</A> 
+</PRE>
+<LI> Given a set of rewrite rules (demodulators), rewrite a stream of terms or clauses.
+<PRE>
+rewriter <A HREF="lattice.rules">lattice.rules</A> < <A HREF="lattice-sax">lattice-sax</A> > <A HREF="lattice-sax.rewritten">lattice-sax.rewritten</A> 
+</PRE>
+<LI> Print the upper covers of the 5 ortholattices of order 8.  The output is suitable for
+input to Ralph Freese's lattice drawing program.
+<PRE>
+upper-covers < <A HREF="OL.8">OL.8</A> > <A HREF="OL.8.upper-covers">OL.8.upper-covers</A> 
+</PRE>
+</UL><HR>
+<P>
+<I>
+These activities are projects of the
+<A HREF="http://www.mcs.anl.gov/">Mathematics and Computer Science Division</A>
+of
+<A HREF="http://www.anl.gov/">Argonne National Laboratory</A>.
+</I>
+</BODY>
+</HTML>

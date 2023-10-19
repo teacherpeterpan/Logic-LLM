@@ -1,0 +1,57 @@
+ONCE FOR ALL DOMAIN SIZES
+
+ GET
+
+  Sn_to_mace_sn = malloc(Sn_map_size * sizeof(void *));
+
+ FREE
+
+ONCE FOR EACH DOMAIN SIZE:
+
+ GET
+
+  Domain = malloc(Domain_size * sizeof(void *));
+  for (i = 0; i < Domain_size; i++)
+    Domain[i] = get_variable_term(i);
+
+  Cells           = malloc(Number_of_cells * sizeof(struct cell));
+  Ordered_cells   = malloc(Number_of_cells * sizeof(void *));
+
+  for (id = 0; id < Number_of_cells; id++) {
+    c->eterm = decode_eterm_id(id);  /* builds an mterm */
+    c->possible = malloc(n * sizeof(void *));
+    }
+
+  if (flag(Opt->negprop))
+    init_negprop_index();
+
+  (Ground_clauses get constructed)
+
+ FREE
+
+  for (i = 0; i < Domain_size; i++)
+    zap_term(Domain[i]);
+  free(Domain);
+
+  free(Ordered_cells);
+  free(Cells);
+
+  for (i = 0; i < Number_of_cells; i++) {
+    zap_mterm(Cells[i].eterm);
+    free(Cells[i].possible);
+  }
+
+  if (flag(Opt->negprop))
+    free_negprop_index();
+
+  for (g = Ground_clauses; g != NULL; g = g->next)
+    zap_mclause(g->v);
+  zap_plist(Ground_clauses);
+
+  /* Free all of the memory associated with the current domain size. */
+
+  restore_from_stack(initial_state->stack);
+  free_mstate(initial_state);
+
+
+

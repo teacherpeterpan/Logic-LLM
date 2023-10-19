@@ -1,0 +1,2 @@
+s/list(clauses)/clauses(theory)/
+s/list(interpretations)/terms(interpretations)/

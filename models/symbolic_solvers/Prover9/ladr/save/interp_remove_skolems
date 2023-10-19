@@ -1,0 +1,49 @@
+#if 0
+
+/*************
+ *
+ *   interp_remove_skolems_recurse()
+ *
+ *************/
+
+/* DOCUMENTATION
+In a non-compiled interpretation, remove all symbols that start with "$".
+THIS IS OBSOLETE, BECAUSE SKOLEM SYMBOLS NO LONGER START WITH $.
+*/
+
+/* PUBLIC */
+Term interp_remove_skolems_recurse(Term ops)
+{
+  if (nil_term(ops))
+    return ops;
+  else {
+    char *sym = sn_to_str(SYMNUM(ARG(ARG(ops,0),0)));
+    if (*sym == '$') {
+      zap_term(ARG(ops,0));
+      return interp_remove_skolems_recurse(ARG(ops,1));
+    }
+    else {
+      ARG(ops,1) = interp_remove_skolems_recurse(ARG(ops,1));
+      return ops;
+    }
+  }
+}  /* interp_remove_skolems_recurse */
+
+/*************
+ *
+ *   interp_remove_skolems()
+ *
+ *************/
+
+/* DOCUMENTATION
+In a non-compiled interpretation, remove all symbols that start with "$".
+*/
+
+/* PUBLIC */
+void interp_remove_skolems(Term t)
+{
+  ARG(t,2) = interp_remove_skolems_recurse(ARG(t,2));
+}  /* interp_remove_skolems */
+
+#endif
+

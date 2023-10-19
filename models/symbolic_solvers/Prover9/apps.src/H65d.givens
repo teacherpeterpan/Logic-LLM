@@ -1,0 +1,996 @@
+x v y = y v x.
+(x v y) v z = x v (y v z).
+x ^ y = y ^ x.
+(x ^ y) ^ z = x ^ (y ^ z).
+x ^ (x v y) = x.
+x v (x ^ y) = x.
+x v x' = 1.
+x ^ x' = 0.
+x v y != 1 | x ^ y != 0 | x' = y.
+x ^ (y v (x ^ ((x ^ y) v (z ^ u)))) = x ^ (y v (z ^ u)).
+(c1 ^ c2) v (c1 ^ c3) != c1 ^ (c2 v c3) # answer(distributivity).
+x v (y v z) = y v (x v z).
+x ^ x = x.
+x v x = x.
+x ^ 1 = x.
+x v 0 = x.
+x ^ (y ^ z) = y ^ (x ^ z).
+1 ^ x = x.
+1' = 0.
+0 v x = x.
+0' = 1.
+x ^ (y v x) = x.
+1 v x = 1.
+0 ^ x = 0.
+x v 1 = 1.
+x ^ 0 = 0.
+(x v y) ^ (x v (y v z)) = x v y.
+x v (y ^ x) = x.
+1 != x | x' = 0.
+0 != x | x' = 1.
+x v (x' v y) = 1.
+x ^ ((x v y) ^ z) = x ^ z.
+x ^ (x' ^ y) = 0.
+x v (y v x') = 1.
+x ^ (y ^ x') = 0.
+x ^ (x v y)' = 0.
+x ^ (y ^ ((x ^ y) v z)) = x ^ y.
+x ^ (y v x)' = 0.
+x ^ (y v (x v z)) = x.
+x ^ (x ^ y) = x ^ y.
+x ^ (y ^ x) = y ^ x.
+x v ((x ^ y) v z) = x v z.
+x v (x ^ y)' = 1.
+x v (y ^ x)' = 1.
+x v (x v y) = x v y.
+x v (y v x) = y v x.
+x v (y v ((x v y) ^ z)) = x v y.
+x v (y ^ (x ^ z)) = x.
+x ^ (y v (z v x)) = x.
+x v (y ^ (z ^ x)) = x.
+x v (y v (x v y)') = 1.
+(x ^ y) v (x ^ (y ^ z)) = x ^ y.
+x ^ (y ^ (x ^ y)') = 0.
+1 != x | 0 != x | x' = x.
+x v (y v (x' v z)) = 1.
+x ^ (y ^ (x' ^ z)) = 0.
+x v y != 1 | y ^ x != 0 | y' = x.
+x'' = x.
+x' v (y v x) = 1.
+x' ^ (y ^ x) = 0.
+x ^ ((x v y)' ^ z) = 0.
+x v (y v z) != 1 | (x v y) ^ z != 0 | (x v y)' = z.
+x v (y v (z v x')) = 1.
+x ^ (y ^ (z ^ x')) = 0.
+x ^ (y ^ (x v z)') = 0.
+x ^ (y v (x v z))' = 0.
+x ^ (y v (x ^ ((z ^ u) v (x ^ y)))) = x ^ (y v (z ^ u)).
+x ^ (y v (z v x))' = 0.
+x ^ ((y v x)' ^ z) = 0.
+x ^ (y ^ (z v x)') = 0.
+x v ((x ^ y)' v z) = 1.
+x ^ (y v (z v (x ^ ((x ^ (y v z)) v (u ^ w))))) = x ^ (y v (z v (u ^ w))).
+x v (y v (x ^ z)') = 1.
+x v (y ^ (x ^ z))' = 1.
+x v ((y ^ x)' v z) = 1.
+x v (y ^ (z ^ x))' = 1.
+x ^ (y v (x ^ ((y ^ x) v (z ^ u)))) = x ^ (y v (z ^ u)).
+x v (y v (z ^ x)') = 1.
+x v (y v (y v x)') = 1.
+x ^ (y ^ (y ^ x)') = 0.
+x' v (y v (x v z)) = 1.
+x ^ ((y v (x ^ ((x ^ y) v (z ^ u)))) ^ w) = x ^ ((y v (z ^ u)) ^ w).
+x' ^ (y ^ (x ^ z)) = 0.
+x' v (y v (z v x)) = 1.
+x' ^ (y ^ (z ^ x)) = 0.
+(x ^ y)' v (z v x) = 1.
+x ^ (y ^ (z v (x ^ (y ^ ((x ^ (y ^ z)) v (u ^ w)))))) = x ^ (y ^ (z v (u ^ w))).
+(x ^ y)' v (z v y) = 1.
+(x v y)' ^ (z ^ x) = 0.
+(x v y)' ^ (z ^ y) = 0.
+x v (y v (x ^ z)) = y v x.
+x ^ (y v (x ^ ((x ^ y) v z))) = x ^ (y v z).
+x ^ (y ^ (x v z)) = y ^ x.
+x ^ ((y v x) ^ z) = x ^ z.
+x ^ (y ^ (z v x)) = y ^ x.
+x v ((y ^ x) v z) = x v z.
+x v (y v z) != 1 | y ^ (x v z) != 0 | y' = x v z.
+x v (y v (z ^ x)) = y v x.
+x ^ (y v (z v (x v u))) = x.
+(x v y) ^ (z ^ x) = z ^ x.
+(x v y) ^ (y v x) = x v y.
+1 != x | x ^ y != 0 | x' = x ^ y.
+x' != 1 | 0 = x.
+(x v y) ^ (y v x)' = 0.
+(x ^ y) v (z v x) = z v x.
+x v (y ^ (z ^ (x ^ u))) = x.
+x ^ (y ^ (z v (x ^ y))) = x ^ y.
+x ^ (y v (z v (u v x))) = x.
+x v (y ^ (z ^ (u ^ x))) = x.
+(x ^ y) v (y ^ x) = x ^ y.
+(x ^ y) v (y ^ x)' = 1.
+(x v y) ^ (x v (z v y)) = x v y.
+x v y != 1 | (x v y)' = 0.
+x v y != 0 | (x v y)' = 1.
+(x v y) ^ (z ^ y) = z ^ y.
+(x ^ y) v (z v y) = z v y.
+(x v y) ^ (y v (x v z)) = y v x.
+(x v y)' != 1 | x v y = 0.
+x v y != 1 | (y v x)' = 0.
+x ^ y != 1 | (x ^ y)' = 0.
+x v y != 0 | (y v x)' = 1.
+(x v y) ^ (y v (z v x)) = x v y.
+x ^ y != 0 | (x ^ y)' = 1.
+(x v y)' != 1 | y v x = 0.
+(x ^ y)' != 1 | x ^ y = 0.
+x ^ y != 1 | (y ^ x)' = 0.
+(x v (y v z)) ^ (x v (y v (z v u))) = x v (y v z).
+x ^ y != 0 | (y ^ x)' = 1.
+(x ^ y)' != 1 | y ^ x = 0.
+x v (y v ((x v y)' v z)) = 1.
+x ^ (y ^ ((x ^ y)' ^ z)) = 0.
+(x v y) ^ ((x v (y v z)) ^ u) = (x v y) ^ u.
+x v (y v (z v (x v y)')) = 1.
+x ^ (y ^ (z ^ (x ^ y)')) = 0.
+(x v y) ^ (x v (y v z))' = 0.
+x ^ (y ^ ((x ^ y) v z)') = 0.
+(x v (y v z)) ^ (y v (x v (z v u))) = y v (x v z).
+x ^ (y ^ (z v (x ^ y))') = 0.
+(x v y) ^ (x v (z v y))' = 0.
+((x ^ y) v z) ^ (x v z)' = 0.
+x v (y v ((x v y) ^ z)') = 1.
+(x v y) ^ (x v (z v (y v u))) = x v y.
+(x ^ y) v (x ^ (y ^ z))' = 1.
+x v (y v (z ^ (x v y))') = 1.
+(x ^ y) v (x ^ (z ^ y))' = 1.
+((x v y) ^ z) v (x ^ z)' = 1.
+(x v y) ^ (z ^ (x v (y v u))) = z ^ (x v y).
+x v (y v (z v (x v z)')) = 1.
+x v (y v ((x ^ z) v y)') = 1.
+x ^ (y ^ (z ^ (x ^ z)')) = 0.
+x ^ (y ^ ((x v z) ^ y)') = 0.
+x v (y v (z ^ (x v y))) = x v y.
+x v (y v (z v (x' v u))) = 1.
+x v (y v ((x ^ z)' v u)) = 1.
+x ^ (y ^ (z ^ (x' ^ u))) = 0.
+x ^ (y ^ ((x v z)' ^ u)) = 0.
+1 != x | y ^ x != 0 | x' = y ^ x.
+x v ((x v y)' v (z v y)) = 1.
+x ^ ((x ^ y)' ^ (z ^ y)) = 0.
+x ^ ((y v (x v z))' ^ u) = 0.
+x v (y v (z v (u v x'))) = 1.
+(x ^ y) v (x ^ (z ^ y)) = x ^ y.
+x v (y v (z v (x ^ u)')) = 1.
+x ^ (y ^ (z ^ (u ^ x'))) = 0.
+x ^ (y ^ (z ^ (x v u)')) = 0.
+x ^ (y ^ (z v (x v u))') = 0.
+x ^ (x' v y) != 0 | x' v y = x'.
+x ^ (y v (z v (x v u)))' = 0.
+x ^ (y v (z v (u v x)))' = 0.
+x ^ ((y v (z v x))' ^ u) = 0.
+x ^ (y ^ (z v (u v x))') = 0.
+x ^ (y ^ (((x ^ y) v z) ^ u)) = x ^ (y ^ u).
+x ^ (y ^ ((z v x)' ^ u)) = 0.
+x ^ (y ^ (z ^ (u v x)')) = 0.
+x v ((y ^ (x ^ z))' v u) = 1.
+x v (y v (z ^ (x ^ u))') = 1.
+x ^ ((y v (x v z)) ^ u) = x ^ u.
+x v (y ^ (z ^ (x ^ u)))' = 1.
+x v ((y ^ (z ^ x))' v u) = 1.
+x v (y v ((z ^ x)' v u)) = 1.
+x v (y ^ (z ^ (u ^ x)))' = 1.
+x ^ (y ^ ((x v z) ^ u)) = y ^ (x ^ u).
+x v (y v (z ^ (u ^ x))') = 1.
+x v (y v (z v (u ^ x)')) = 1.
+x v (y v ((y v x)' v z)) = 1.
+x v (y v (z v (z v x)')) = 1.
+(x ^ y) v ((x v z) ^ y) = (x v z) ^ y.
+x v (y v (y v (x ^ z))') = 1.
+x ^ (y ^ ((y ^ x)' ^ z)) = 0.
+x ^ (y ^ (z ^ (z ^ x)')) = 0.
+x ^ (y ^ (y ^ (x v z))') = 0.
+x ^ (y v x') != 0 | y v x' = x'.
+x' v (y v (z v (x v u))) = 1.
+x' ^ (y ^ (z ^ (x ^ u))) = 0.
+x' v (y v (z v (u v x))) = 1.
+(x ^ (y ^ z))' v (u v y) = 1.
+x ^ (y ^ ((y ^ x) v z)) = x ^ y.
+(x ^ (y ^ z))' v (u v z) = 1.
+x' ^ (y ^ (z ^ (u ^ x))) = 0.
+(x v (y v z))' ^ (u ^ y) = 0.
+(x v (y v z))' ^ (u ^ z) = 0.
+x ^ (y ^ (z ^ ((x ^ (y ^ z)) v u))) = x ^ (y ^ z).
+(x ^ y)' v (z v (x v u)) = 1.
+(x ^ y)' v (z v (u v x)) = 1.
+(x ^ y)' v (z v (y v u)) = 1.
+(x ^ y)' v (z v (u v y)) = 1.
+x ^ (y ^ (z v ((x ^ y) v u))) = x ^ y.
+(x v y)' ^ (z ^ (x ^ u)) = 0.
+(x v y)' ^ (z ^ (u ^ x)) = 0.
+(x v y)' ^ (z ^ (y ^ u)) = 0.
+(x v y)' ^ (z ^ (u ^ y)) = 0.
+x ^ (y ^ (z ^ ((x ^ z) v u))) = y ^ (x ^ z).
+(x v (y ^ z)) ^ (x v y)' = 0.
+x v (y v (x v (y ^ z))') = 1.
+(x ^ (y v z)) v (x ^ y)' = 1.
+x ^ (y ^ (x ^ (y v z))') = 0.
+x ^ (y ^ (z ^ ((y ^ (x ^ z)) v u))) = x ^ (y ^ z).
+((x v y) ^ z) v (y ^ z)' = 1.
+x ^ (y ^ ((z v x) ^ y)') = 0.
+x ^ (y ^ (y ^ (z v x))') = 0.
+(x ^ (y v z)) v (x ^ z)' = 1.
+(x ^ y) v (y ^ ((x ^ y) v z)) = y ^ ((x ^ y) v z).
+x ^ (y ^ (x ^ (z v y))') = 0.
+((x ^ y) v z) ^ (y v z)' = 0.
+x v (y v ((z ^ x) v y)') = 1.
+x v (y v (y v (z ^ x))') = 1.
+x ^ (y ^ (((x v z) ^ y) v u)) = x ^ y.
+(x v (y ^ z)) ^ (x v z)' = 0.
+x v (y v (x v (z ^ y))') = 1.
+x v (y v (z ^ (y v x))') = 1.
+x v (y v (z v (y v x)')) = 1.
+(x v y) ^ (z v (x v (y v u))) = x v y.
+(x v y)' ^ (z ^ (y v x)) = 0.
+(x v y)' v (z v (y v x)) = 1.
+(x v y) ^ (y v (x v z))' = 0.
+(x v y) ^ (z v (y v x))' = 0.
+x ^ (y ^ (z v (x v u))) = y ^ x.
+(x v y) ^ ((y v x)' ^ z) = 0.
+(x v y) ^ (z ^ (y v x)') = 0.
+x ^ (y ^ (z v (y ^ x))') = 0.
+x ^ (y ^ (z ^ (y ^ x)')) = 0.
+x v (y v (x v z)) = y v (x v z).
+(x ^ y)' v (z v (y ^ x)) = 1.
+(x ^ y) v (y ^ (x ^ z))' = 1.
+(x ^ y) v (z ^ (y ^ x))' = 1.
+(x ^ y)' ^ (z ^ (y ^ x)) = 0.
+x ^ (y ^ (x ^ z)) = y ^ (x ^ z).
+(x ^ y) v ((y ^ x)' v z) = 1.
+(x ^ y) v (z v (y ^ x)') = 1.
+x v ((y v x)' v (z v y)) = 1.
+(x v y) ^ (y v (z v x))' = 0.
+x ^ (y ^ (z ^ x)) = y ^ (z ^ x).
+((x ^ y) v z) ^ (z v x)' = 0.
+((x ^ y) v z) ^ (z v y)' = 0.
+x ^ (y ^ ((y ^ x) v z)') = 0.
+(x v (y ^ z)) ^ (y v x)' = 0.
+x v (y v (((x v y) ^ z) v u)) = x v (y v u).
+(x v y)' ^ ((x ^ z) v y) = 0.
+((x ^ y) v (x ^ z)) ^ x' = 0.
+((x ^ y) v (z ^ x)) ^ x' = 0.
+x v (y v ((y v x) ^ z)') = 1.
+(x ^ y) v ((x ^ (y ^ z)) v u) = (x ^ y) v u.
+(x ^ y) v (y ^ (z ^ x))' = 1.
+((x v y) ^ z) v (z ^ x)' = 1.
+((x v y) ^ z) v (z ^ y)' = 1.
+(x ^ y)' v ((x v z) ^ y) = 1.
+x v y != 1 | x ^ ((x ^ z) v y) != 0 | x' = (x ^ z) v y.
+(x ^ (y v z)) v (y ^ x)' = 1.
+((x v y) ^ (x v z)) v x' = 1.
+((x v y) ^ (z v x)) v x' = 1.
+x v (y v ((y ^ z) v x)') = 1.
+x v (y v ((x ^ z) v u)) = y v (x v u).
+x v ((x ^ y) v (x ^ z))' = 1.
+x v ((x ^ y) v (z ^ x))' = 1.
+x ^ (y ^ ((y v z) ^ x)') = 0.
+x ^ ((x v y) ^ (x v z))' = 0.
+x v ((y ^ (x ^ z)) v u) = x v u.
+x ^ ((x v y) ^ (z v x))' = 0.
+x ^ ((y ^ x)' ^ (z ^ y)) = 0.
+x v (y v ((z ^ y) v x)') = 1.
+x v ((y ^ x) v (x ^ z))' = 1.
+(x v y) ^ ((x ^ z) v y) = (x ^ z) v y.
+x ^ (y ^ ((z v y) ^ x)') = 0.
+x ^ ((y v x) ^ (x v z))' = 0.
+(x v y)' ^ (x v (y ^ z)) = 0.
+(x ^ y)' v (x ^ (y v z)) = 1.
+x ^ (x ^ y)' != 0 | (x ^ y)' = x'.
+x' != 0 | 1 = x.
+(x v y)' != 0 | x v y = 1.
+(x ^ y)' != 0 | x ^ y = 1.
+(x v y)' != 0 | y v x = 1.
+x ^ (y ^ x)' != 0 | (y ^ x)' = x'.
+(x ^ y)' != 0 | y ^ x = 1.
+(x ^ y)' v ((z v x) ^ y) = 1.
+(x ^ (y v z)) v (z ^ x)' = 1.
+((x v y) ^ (y v z)) v y' = 1.
+(x ^ ((y ^ x) v z)) v (y ^ x)' = 1.
+((x v y) ^ (z v y)) v y' = 1.
+x ^ ((y v x) ^ (z v x))' = 0.
+(x ^ y)' v (x ^ (z v y)) = 1.
+(x v (y ^ z)) ^ (z v x)' = 0.
+x v y != 1 | 0 != x | x' = x v y.
+(x v y)' ^ ((z ^ x) v y) = 0.
+((x ^ y) v (y ^ z)) ^ y' = 0.
+((x ^ y) v (z ^ y)) ^ y' = 0.
+x v ((y ^ x) v (z ^ x))' = 1.
+x v (y v (z v x)) = y v (z v x).
+(x v y)' ^ (x v (z ^ y)) = 0.
+(x v y)' ^ ((y ^ z) v x) = 0.
+(x v y)' ^ ((z ^ y) v x) = 0.
+(x v y)' ^ (y v (x ^ z)) = 0.
+x v y != 1 | 0 != y | y' = x v y.
+x' ^ ((x ^ y) v (x ^ z)) = 0.
+x' ^ ((x ^ y) v (z ^ x)) = 0.
+(x ^ y)' v ((y v z) ^ x) = 1.
+(x ^ y)' v ((z v y) ^ x) = 1.
+x v (y v ((y v x) ^ z)) = x v y.
+(x ^ y)' v (y ^ (x v z)) = 1.
+x' v ((x v y) ^ (x v z)) = 1.
+x' v ((x v y) ^ (z v x)) = 1.
+(x ^ y)' v (y ^ (z v x)) = 1.
+x v (y v (z v ((x v (y v z)) ^ u))) = x v (y v z).
+x' v ((y v x) ^ (x v z)) = 1.
+x' v ((y v x) ^ (z v x)) = 1.
+(x v y)' ^ (y v (z ^ x)) = 0.
+x' ^ ((y ^ x) v (x ^ z)) = 0.
+x v y != 1 | x ^ (y v ((x v y) ^ z)) != 0 | x' = y v ((x v y) ^ z).
+x' ^ ((y ^ x) v (z ^ x)) = 0.
+x v (y v (z ^ (x ^ u))) = y v x.
+x ^ ((y v (z v x)) ^ u) = x ^ u.
+x ^ (y ^ (z v (u v x))) = y ^ x.
+x v (y v (z v ((x v z) ^ u))) = y v (x v z).
+x v ((y ^ (z ^ x)) v u) = x v u.
+x v (y v (z ^ (u ^ x))) = y v x.
+(x ^ y) v (y ^ (x ^ z)) = y ^ x.
+(x ^ y) v (y ^ (z ^ x)) = x ^ y.
+x v (y v (z v ((y v (x v z)) ^ u))) = x v (y v z).
+x ^ (x ^ y)' != 0 | x ^ y = x.
+x ^ (y ^ x)' != 0 | y ^ x = x.
+x' ^ (y v x) != 0 | y v x = x.
+x' ^ (x v y) != 0 | x v y = x.
+x v (y v (z ^ ((x v y) ^ u))) = x v y.
+x ^ (y v (z v (u v (x v w)))) = x.
+(x v (y v z)) ^ (u ^ y) = u ^ y.
+x v (y v (z ^ (y v x))) = x v y.
+(x v (y v z)) ^ (y v x) = y v x.
+(x v y) ^ (y v ((x v y) ^ z)) = y v ((x v y) ^ z).
+(x ^ (y ^ z)) v (u v y) = u v y.
+x v (y ^ (z ^ (u ^ (x ^ w)))) = x.
+x ^ (y ^ (z v (y ^ x))) = x ^ y.
+x ^ (y v (z v (u v (w v x)))) = x.
+(x v ((y v x) ^ z)) ^ (y v x)' = 0.
+x v (y ^ (z ^ (u ^ (w ^ x)))) = x.
+(x ^ (y ^ z)) v (y ^ x) = x ^ y.
+(x v y) ^ (z v (y v x)) = x v y.
+(x v (y v z)) ^ (u ^ z) = u ^ z.
+x v (y v (((x ^ z) v y) ^ u)) = x v y.
+(x v (y v z)) ^ (z v y) = z v y.
+(x ^ (y ^ z)) v (u v z) = u v z.
+(x ^ (y ^ z)) v (z ^ y) = z ^ y.
+(x v (y v z)) ^ (z v x) = z v x.
+(x ^ y) v (z ^ (x ^ (y ^ u))) = x ^ y.
+(x ^ y) v (z ^ (y ^ x)) = x ^ y.
+x ^ (((x v y) ^ (x v z)) v u) = x.
+x ^ (((x v y) ^ (z v x)) v u) = x.
+x ^ ((x' ^ y) v (x' ^ z)) = 0.
+1 != x | y ^ (x ^ z) != 0 | x' = y ^ (x ^ z).
+x ^ ((x' ^ y) v (z ^ x')) = 0.
+x v ((x' v y) ^ (x' v z)) = 1.
+x v ((x' v y) ^ (z v x')) = 1.
+x v ((y v x') ^ (x' v z)) = 1.
+x ^ (y ^ (z v (u v (x ^ y)))) = x ^ y.
+x v ((y v x') ^ (z v x')) = 1.
+x v (y v x)' != 1 | y v x = x.
+x ^ ((y ^ x') v (x' ^ z)) = 0.
+x ^ ((y ^ x') v (z ^ x')) = 0.
+(x v y) ^ (z v (x v (u v y))) = x v y.
+x v (x v y)' != 1 | x v y = x.
+x' v (x ^ y) != 1 | x ^ y = x.
+x' v (y ^ x) != 1 | y ^ x = x.
+(x ^ (y ^ z)) v (z ^ x) = z ^ x.
+((x ^ y) v z) ^ (u v (x v z)) = (x ^ y) v z.
+x ^ (y ^ x)' != 0 | x ^ y = x.
+x ^ (x ^ y)' != 0 | y ^ x = x.
+(x v y) ^ x' != 0 | x v y = x.
+(x v y) ^ y' != 0 | x v y = y.
+(x v ((y v x) ^ z)) ^ (u v (y v x)) = x v ((y v x) ^ z).
+x' ^ (x v y) != 0 | y v x = x.
+x' ^ (y v x) != 0 | x v y = x.
+x v (((x ^ y) v (x ^ z)) ^ u) = x.
+x v (((x ^ y) v (z ^ x)) ^ u) = x.
+x v (y v (z ^ (u ^ (x v y)))) = x v y.
+x ^ (((y v x) ^ (x v z)) v u) = x.
+x ^ (y v ((x v z) ^ (x v u))) = x.
+x ^ (((y v x) ^ (z v x)) v u) = x.
+x ^ (y v ((x v z) ^ (u v x))) = x.
+1 != x | y ^ (z ^ x) != 0 | x' = y ^ (z ^ x).
+x v (x v y)' != 1 | y v x = x.
+(x ^ y) v x' != 1 | x ^ y = x.
+(x ^ y) v y' != 1 | x ^ y = y.
+x v (y v x)' != 1 | x v y = x.
+(x ^ y) v (z ^ (x ^ (u ^ y))) = x ^ y.
+x' v (y ^ x) != 1 | x ^ y = x.
+x' v (x ^ y) != 1 | y ^ x = x.
+(x v y) ^ y' != 0 | y v x = y.
+(x v y) ^ x' != 0 | y v x = x.
+x v (y v (z v (u ^ (x v y)))) = x v (y v z).
+x v (((y ^ x) v (x ^ z)) ^ u) = x.
+x v (y ^ ((x ^ z) v (x ^ u))) = x.
+x v (((y ^ x) v (z ^ x)) ^ u) = x.
+x v (y ^ ((x ^ z) v (u ^ x))) = x.
+((x v y) ^ z) v (u ^ (x ^ z)) = (x v y) ^ z.
+x ^ (y v ((z v x) ^ (x v u))) = x.
+x ^ (y v ((z v x) ^ (u v x))) = x.
+(x ^ y) v y' != 1 | y ^ x = y.
+(x ^ y) v x' != 1 | y ^ x = x.
+(x ^ ((y ^ x) v z)) v (u ^ (y ^ x)) = x ^ ((y ^ x) v z).
+x v (y ^ ((z ^ x) v (x ^ u))) = x.
+x v (y ^ ((z ^ x) v (u ^ x))) = x.
+x v (y v (z v (x v (y v z))')) = 1.
+x v (y v (z v (y v (x v z))')) = 1.
+x ^ (y v (x v y)') != 0 | y v (x v y)' = x'.
+x ^ (y ^ (z ^ (x ^ (y ^ z))')) = 0.
+x ^ (y ^ (z ^ (y ^ (x ^ z))')) = 0.
+x v (y v (z v ((x v y)' v u))) = 1.
+x ^ (y ^ (z ^ ((x ^ y)' ^ u))) = 0.
+(x ^ (y ^ z)) v (x ^ (y ^ (z ^ u))) = x ^ (y ^ z).
+1 != x | x ^ y != 0 | (x ^ y)' = x.
+1 != x | y ^ x != 0 | (y ^ x)' = x.
+x v y != 1 | 0 != x | (x v y)' = x.
+x v y != 1 | 0 != y | (x v y)' = y.
+x ^ y != 1 | x ^ (y ^ z) != 0 | (x ^ y)' = x ^ (y ^ z).
+x v (y v (y v ((x v y) ^ z))') = 1.
+x ^ (y ^ (y ^ ((x ^ y) v z))') = 0.
+(x v y) ^ ((x v (y v z))' ^ u) = 0.
+x ^ (y ^ (((x ^ y) v z)' ^ u)) = 0.
+(x ^ y) v (z v (x ^ (y ^ u))) = z v (x ^ y).
+x v y != 1 | 0 != y | (y v x)' = y.
+x v (y v (z v (u v (x v y)'))) = 1.
+x ^ (y ^ (z ^ (u ^ (x ^ y)'))) = 0.
+(x v y) ^ (z ^ (x v (y v u))') = 0.
+(x ^ (y ^ z)) v (y ^ (x ^ (z ^ u))) = y ^ (x ^ z).
+x ^ (y ^ (z ^ ((x ^ y) v u)')) = 0.
+(x v y) ^ (z v (x v (y v u)))' = 0.
+x ^ (y ^ (z v ((x ^ y) v u))') = 0.
+x ^ (y ^ (z v (u v (x ^ y)))') = 0.
+(x ^ y) v (x ^ (z ^ (y ^ u))) = x ^ y.
+(x v y) ^ (z v (x v (u v y)))' = 0.
+((x ^ y) v z) ^ (u v (x v z))' = 0.
+x ^ (y ^ (z ^ (u v (x ^ y))')) = 0.
+x ^ (y ^ ((z v (x ^ y))' ^ u)) = 0.
+x ^ (y ^ (z ^ (u v (x ^ y)))) = x ^ (y ^ z).
+(x v y) ^ ((x v (z v y))' ^ u) = 0.
+((x ^ y) v z) ^ ((x v z)' ^ u) = 0.
+(x v y) ^ (z ^ (x v (u v y))') = 0.
+((x ^ y) v z) ^ (u ^ (x v z)') = 0.
+x ^ (y v (x' v z)) != 0 | y v (x' v z) = x'.
+x v (y v (((x v y) ^ z)' v u)) = 1.
+(x ^ y) v ((x ^ (y ^ z))' v u) = 1.
+x v (y v (z v ((x v y) ^ u)')) = 1.
+(x ^ y) v (z v (x ^ (y ^ u))') = 1.
+x v (y v z) != 1 | z ^ (x v y) != 0 | z' = x v y.
+x v (y v (z ^ ((x v y) ^ u))') = 1.
+(x ^ y) v (z ^ (x ^ (y ^ u)))' = 1.
+x v (y v ((z ^ (x v y))' v u)) = 1.
+(x ^ y) v ((x ^ (z ^ y))' v u) = 1.
+x v (y v z) != 1 | (x v z) ^ y != 0 | (x v z)' = y.
+((x v y) ^ z) v ((x ^ z)' v u) = 1.
+x v (y v (z ^ (u ^ (x v y)))') = 1.
+(x ^ y) v (z ^ (x ^ (u ^ y)))' = 1.
+x v (y v (z v (u ^ (x v y))')) = 1.
+x ^ (x' v y) != 0 | (x' v y)' = x.
+((x v y) ^ z) v (u ^ (x ^ z))' = 1.
+(x ^ y) v (z v (x ^ (u ^ y))') = 1.
+((x v y) ^ z) v (u v (x ^ z)') = 1.
+x v (y v (z v (z v (x v y))')) = 1.
+x ^ (y v x') != 0 | (y v x')' = x.
+x v (y v (z v (y v (z v x))')) = 1.
+x v (y v (z v (x v (z v y))')) = 1.
+x ^ (y ^ (z ^ (z ^ (x ^ y))')) = 0.
+x ^ (y ^ (z ^ (y ^ (z ^ x))')) = 0.
+x v y != 1 | x ^ ((x ^ z) v y) != 0 | ((x ^ z) v y)' = x.
+x ^ (y ^ (z ^ (x ^ (z ^ y))')) = 0.
+(x v y)' v (z v (x v (y v u))) = 1.
+(x ^ y)' ^ (z ^ (x ^ (y ^ u))) = 0.
+(x v y)' v (z v (x v (u v y))) = 1.
+x v y != 1 | x ^ (y v ((x v y) ^ z)) != 0 | (y v ((x v y) ^ z))' = x.
+((x ^ y) v z)' v (u v (x v z)) = 1.
+(x ^ (y ^ z))' v (u v (x ^ y)) = 1.
+(x ^ y)' ^ (z ^ (x ^ (u ^ y))) = 0.
+(x v (y v z))' ^ (u ^ (x v y)) = 0.
+1 != x | y ^ (x ^ z) != 0 | (y ^ (x ^ z))' = x.
+((x v y) ^ z)' ^ (u ^ (x ^ z)) = 0.
+x v (((x v y) ^ z)' v (u v y)) = 1.
+x v (y v (((x ^ z) v y) ^ u)') = 1.
+x v ((y ^ (x v z))' v (u v z)) = 1.
+1 != x | y ^ (z ^ x) != 0 | (y ^ (z ^ x))' = x.
+(x ^ (y ^ z))' v (u v (x ^ z)) = 1.
+(x ^ y)' v (z v ((x v u) ^ y)) = 1.
+x v (y v (z ^ ((x ^ u) v y))') = 1.
+x ^ (((x ^ y) v z)' ^ (u ^ y)) = 0.
+x ^ (y v (x v y)') != 0 | (y v (x v y)')' = x.
+x ^ (y ^ (((x v z) ^ y) v u)') = 0.
+(x v (y v z))' ^ (u ^ (x v z)) = 0.
+x ^ ((y v (x ^ z))' ^ (u ^ z)) = 0.
+x ^ (y ^ (z v ((x v u) ^ y))') = 0.
+x ^ y != 1 | x ^ (y ^ z) != 0 | (x ^ (y ^ z))' = x ^ y.
+(x v y)' ^ (z ^ ((x ^ u) v y)) = 0.
+(x v (y ^ z)) ^ (u v (x v y))' = 0.
+(x v (y ^ z)) ^ ((x v y)' ^ u) = 0.
+(x v (y ^ z)) ^ (u ^ (x v y)') = 0.
+x ^ (y v (x' v z)) != 0 | (y v (x' v z))' = x.
+(x v (y ^ z))' v (u v (x v y)) = 1.
+x v (y v ((x v (y ^ z)) ^ u)') = 1.
+x v (y v (z ^ (x v (y ^ u)))') = 1.
+(x v y)' ^ (z ^ (x v (y ^ u))) = 0.
+(x v y) ^ y' != 0 | (x v y)' = y'.
+(x ^ (y v z)) v ((x ^ y)' v u) = 1.
+(x ^ (y v z)) v (u ^ (x ^ y))' = 1.
+(x ^ (y v z)) v (u v (x ^ y)') = 1.
+(x ^ (y v z))' ^ (u ^ (x ^ y)) = 0.
+x v (y v z) != 1 | (z v x) ^ y != 0 | (z v x)' = y.
+(x ^ y)' v (z v (x ^ (y v u))) = 1.
+x ^ (y ^ ((x ^ (y v z)) v u)') = 0.
+x ^ (y ^ (z v (x ^ (y v u)))') = 0.
+((x v y) ^ z) v ((y ^ z)' v u) = 1.
+x v (y v (z v u)) != 1 | (x v (y v z)) ^ u != 0 | (x v (y v z))' = u.
+((x v y) ^ z) v (u ^ (y ^ z))' = 1.
+((x v y) ^ z) v (u v (y ^ z)') = 1.
+((x v y) ^ z)' ^ (u ^ (y ^ z)) = 0.
+(x ^ y)' v (z v ((u v x) ^ y)) = 1.
+x v y != 1 | y ^ z != 0 | (x v y)' = y ^ z.
+x ^ (y ^ (((z v x) ^ y) v u)') = 0.
+x ^ (y ^ (z v ((u v x) ^ y))') = 0.
+(x ^ (y v z)) v ((x ^ z)' v u) = 1.
+(x ^ (y v z)) v (u ^ (x ^ z))' = 1.
+x v (y v (z v u)) != 1 | (x v z) ^ (y v u) != 0 | (x v z)' = y v u.
+(x ^ (y v z)) v (u v (x ^ z)') = 1.
+(x ^ (y v z))' ^ (u ^ (x ^ z)) = 0.
+(x ^ y)' v (z v (x ^ (u v y))) = 1.
+x ^ (y ^ ((x ^ (z v y)) v u)') = 0.
+x v (y v z) != 1 | (y v x) ^ z != 0 | (y v x)' = z.
+x ^ (y ^ (z v (x ^ (u v y)))') = 0.
+((x ^ y) v z) ^ (u v (y v z))' = 0.
+((x ^ y) v z) ^ ((y v z)' ^ u) = 0.
+((x ^ y) v z) ^ (u ^ (y v z)') = 0.
+(x v y) ^ (y' v z) != 0 | (x v y)' = y' v z.
+((x ^ y) v z)' v (u v (y v z)) = 1.
+x v (y v (((z ^ x) v y) ^ u)') = 1.
+x v (y v (z ^ ((u ^ x) v y))') = 1.
+(x v y)' ^ (z ^ ((u ^ x) v y)) = 0.
+(x v y) ^ (z v y') != 0 | (x v y)' = z v y'.
+(x v (y ^ z)) ^ (u v (x v z))' = 0.
+(x v (y ^ z)) ^ ((x v z)' ^ u) = 0.
+(x v (y ^ z)) ^ (u ^ (x v z)') = 0.
+(x v (y ^ z))' v (u v (x v z)) = 1.
+(x v y) ^ x' != 0 | (x v y)' = x'.
+x v (y v ((x v (z ^ y)) ^ u)') = 1.
+x v (y v (z ^ (x v (u ^ y)))') = 1.
+(x v y)' ^ (z ^ (x v (u ^ y))) = 0.
+(x v (y v (z v u)))' ^ (w ^ z) = 0.
+x v (y v z) != 1 | (x v y) ^ ((y ^ u) v z) != 0 | (x v y)' = (y ^ u) v z.
+x' v (y v (z v (u v (x v w)))) = 1.
+x ^ (y v (z v (u v (x v w))))' = 0.
+1 != x | y ^ x != 0 | x' = x ^ y.
+(x v (y v z)) ^ (z v (x v y))' = 0.
+(x v y) ^ (y ^ z)' != 0 | (x v y)' = (y ^ z)'.
+(x v (y v z)) ^ (y v (z v x))' = 0.
+(x v (y v z)) ^ (x v (z v y))' = 0.
+(x ^ (y ^ (z ^ u)))' v (w v z) = 1.
+x v (y ^ (z ^ (u ^ (x ^ w))))' = 1.
+(x v y) ^ (z ^ y)' != 0 | (x v y)' = (z ^ y)'.
+x' ^ (y ^ (z ^ (u ^ (x ^ w)))) = 0.
+(x ^ (y v (z ^ x))) v (z ^ x)' = 1.
+x ^ (y ^ (y ^ (z v (x ^ y)))') = 0.
+(x v (y v (z v u)))' ^ (w ^ u) = 0.
+x v (y v z) != 1 | (x v y) ^ (y v z) != 0 | (x v y)' = y v z.
+x' v (y v (z v (u v (w v x)))) = 1.
+x ^ (y v (z v (u v (w v x))))' = 0.
+(x ^ (y ^ (z ^ u)))' v (w v u) = 1.
+x v (y ^ (z ^ (u ^ (w ^ x))))' = 1.
+x v (y v z) != 1 | (x v z) ^ (y v z) != 0 | (x v z)' = y v z.
+x' ^ (y ^ (z ^ (u ^ (w ^ x)))) = 0.
+(x ^ (y ^ z)) v (z ^ (x ^ y))' = 1.
+(x ^ (y ^ z)) v (y ^ (z ^ x))' = 1.
+(x ^ (y ^ z)) v (x ^ (z ^ y))' = 1.
+x v (y v z) != 1 | (x v y) ^ (z v ((y v z) ^ u)) != 0 | (x v y)' = z v ((y v z) ^ u).
+x v (y v (z v ((x v z)' v u))) = 1.
+x v (y v (z v (u ^ (x v z))')) = 1.
+x v (y v (z v (u v (x v z)'))) = 1.
+(x v y) ^ (x v (z v (y v u)))' = 0.
+x v y != 1 | (x v y) ^ z != 0 | (x v y)' = (x v y) ^ z.
+x v (y v (z v ((z v x)' v u))) = 1.
+x v (y v (z v (u ^ (z v x))')) = 1.
+x v (y v (z v (u v (z v x)'))) = 1.
+(x v (y v z))' ^ (u ^ (z v x)) = 0.
+(x v y) ^ (z v (y v z)') != 0 | (x v y)' = z v (y v z)'.
+(x v y)' v (z v (y v (u v x))) = 1.
+(x v y) ^ (y v (z v (x v u)))' = 0.
+(x v y) ^ (z v (y v (u v x)))' = 0.
+x v (y v (((x ^ z) v y)' v u)) = 1.
+(x v y) ^ (z v (y' v u)) != 0 | (x v y)' = z v (y' v u).
+x v (y v (((z ^ x) v y)' v u)) = 1.
+x v ((y v x)' v (z v (u v y))) = 1.
+x ^ (y ^ (z ^ ((x ^ z)' ^ u))) = 0.
+x ^ (y ^ (((x v z) ^ y)' ^ u)) = 0.
+(x v y) ^ (x' v z) != 0 | (x v y)' = x' v z.
+x ^ (y ^ (((z v x) ^ y)' ^ u)) = 0.
+x v (y v (z v ((x ^ u) v y)')) = 1.
+x v (y v (z v ((u ^ x) v y)')) = 1.
+x v (y v ((z v x)' v (u v z))) = 1.
+(x v y') ^ (z v y) != 0 | (x v y')' = z v y.
+x ^ (y ^ (z ^ (u ^ (x ^ z)'))) = 0.
+x ^ (y ^ (z ^ ((x v u) ^ y)')) = 0.
+x ^ (y ^ (z ^ ((u v x) ^ y)')) = 0.
+(x v (y ^ z)) ^ (x v (u v y))' = 0.
+x ^ (y v (z v x')) != 0 | y v (z v x') = x'.
+(x v (y ^ z)) ^ (x v (u v z))' = 0.
+x ^ (y ^ (z ^ ((x ^ z) v u)')) = 0.
+x v (y v (z v (u v (x' v w)))) = 1.
+x v (y v (z v ((x ^ u)' v w))) = 1.
+x ^ (y v (z v x')) != 0 | (y v (z v x'))' = x.
+x v y != 0 | y v x = 0.
+x ^ y != 0 | y ^ x = 0.
+x v (y v ((z ^ (x ^ u))' v w)) = 1.
+x v (y v ((z ^ (u ^ x))' v w)) = 1.
+(x v y) ^ (z v (u v y')) != 0 | (x v y)' = z v (u v y').
+x v (y v (z v ((u ^ x)' v w))) = 1.
+(x ^ y)' v (z v (u v (x v w))) = 1.
+(x ^ y)' v (z v (u v (y v w))) = 1.
+(x ^ y) v (z v ((y ^ x)' v u)) = 1.
+(x v y) ^ (z v x') != 0 | (x v y)' = z v x'.
+x v (y v (z v ((y v x)' v u))) = 1.
+x ^ (y ^ (z ^ (u v (x ^ z))')) = 0.
+(x v y) ^ (x v (z v (u v y)))' = 0.
+(x v ((x v y) ^ z)) ^ (x v y)' = 0.
+x ^ (y v (z v (x ^ ((u ^ w) v (x ^ (y v z)))))) = x ^ (y v (z v (u ^ w))).
+(x v (y ^ (z ^ u))) ^ (x v z)' = 0.
+(x v (y ^ (z ^ u))) ^ (x v u)' = 0.
+(x v (y ^ z)) ^ (x v (z ^ y))' = 0.
+((x ^ (y ^ z)) v u) ^ (y v u)' = 0.
+x ^ (y v (x ^ ((z ^ u) v (y ^ x)))) = x ^ (y v (z ^ u)).
+((x ^ y) v (z ^ (x ^ u))) ^ x' = 0.
+((x ^ y) v (z ^ (u ^ x))) ^ x' = 0.
+((x ^ y) v z) ^ (y v (u v z))' = 0.
+(x v (y v z)) ^ (y v (x v z))' = 0.
+x ^ ((y v (x ^ ((z ^ u) v (x ^ y)))) ^ w) = x ^ ((y v (z ^ u)) ^ w).
+((x ^ y) v z) ^ (x v (z v u))' = 0.
+x v (y v (z v ((x v z) ^ u)')) = 1.
+x v (((y v x) ^ z)' v (u v y)) = 1.
+x v (y v (((y v x) ^ z)' v u)) = 1.
+x ^ (y ^ (z v (x ^ (y ^ ((u ^ w) v (x ^ (y ^ z))))))) = x ^ (y ^ (z v (u ^ w))).
+(x ^ y) v (x ^ (z ^ (y ^ u)))' = 1.
+(x ^ (y v z)) v (x ^ (u ^ y))' = 1.
+(x ^ (y v z)) v (x ^ (u ^ z))' = 1.
+(x ^ (y v z)) v (x ^ (z v y))' = 1.
+x ^ (y v (x ^ (z v (x ^ y)))) = x ^ (y v z).
+x ^ ((y ^ z) v (x ^ y)) = x ^ y.
+x ^ ((y ^ z) v (x ^ z)) = x ^ z.
+x ^ ((y ^ z) v (y ^ x)) = x ^ y.
+x ^ ((x ^ y) v (y ^ z)) = x ^ y.
+x ^ (y ^ (z v (x ^ ((u ^ w) v (x ^ z))))) = y ^ (x ^ (z v (u ^ w))).
+x ^ ((x ^ y) v (z ^ y)) = x ^ y.
+x ^ ((y ^ z) v (z ^ x)) = x ^ z.
+x ^ ((y ^ x) v (y ^ z)) = x ^ y.
+x ^ ((y ^ x) v (z ^ y)) = x ^ y.
+x ^ ((y ^ z) v (x ^ ((u ^ w) v (y ^ (x ^ z))))) = x ^ ((y ^ z) v (u ^ w)).
+x v ((y ^ (z v x))' v (u v z)) = 1.
+x v (y v ((z ^ (y v x))' v u)) = 1.
+(x ^ y) v (x ^ (z ^ (u ^ y)))' = 1.
+(x ^ ((x ^ y) v z)) v (x ^ y)' = 1.
+x ^ (y v (x ^ (z v (u v (x ^ y))))) = x ^ (y v (z v u)).
+(x ^ (y v (z v u))) v (x ^ z)' = 1.
+(x ^ (y v (z v u))) v (x ^ u)' = 1.
+(x ^ (y v (x ^ z))) v (x ^ z)' = 1.
+((x v (y v z)) ^ u) v (y ^ u)' = 1.
+x v ((y ^ (x v (z ^ u))) v (y ^ ((z ^ u) v (y ^ x)))) = x v (y ^ ((z ^ u) v (y ^ x))).
+((x v y) ^ (z v (x v u))) v x' = 1.
+((x v y) ^ (z v (u v x))) v x' = 1.
+((x v y) ^ z) v (y ^ (u ^ z))' = 1.
+(x ^ y)' v (((x v z) ^ y) v u) = 1.
+x ^ (y v ((x v z) ^ ((u ^ w) v ((x v z) ^ y)))) = x ^ (y v (u ^ w)).
+x v (y v (z v (u v (x v u)'))) = 1.
+x v (y v (z v ((x ^ u) v z)')) = 1.
+x v (y v (z v ((u ^ x) v z)')) = 1.
+x v (y v ((z ^ (x ^ u)) v y)') = 1.
+x ^ (((x v y) ^ z) v (x ^ ((u ^ w) v (x ^ z)))) = x ^ (((x v y) ^ z) v (u ^ w)).
+x v (((y ^ z) v x)' v (u v y)) = 1.
+x v (y v (((y ^ z) v x)' v u)) = 1.
+x ^ (y ^ (z ^ (u ^ (x ^ u)'))) = 0.
+x ^ (y ^ (z ^ ((x v u) ^ z)')) = 0.
+x ^ ((y ^ ((x ^ y) v z)) v (x ^ ((u ^ w) v (x ^ y)))) = x ^ ((y ^ ((x ^ y) v z)) v (u ^ w)).
+x ^ (y ^ (z ^ ((u v x) ^ z)')) = 0.
+x ^ (y ^ ((z v (x v u)) ^ y)') = 0.
+(x v (y ^ (z v x))) ^ (z v x)' = 0.
+x v (y v (y v (z ^ (x v y)))') = 1.
+x ^ ((y ^ (z ^ u)) v (x ^ (y ^ z))) = x ^ (y ^ z).
+(x v (y ^ (x v z))) ^ (x v z)' = 0.
+x ^ (y ^ (z ^ (u ^ (x' ^ w)))) = 0.
+x ^ (y ^ (z ^ ((x v u)' ^ w))) = 0.
+x ^ (y ^ (z ^ ((u v x)' ^ w))) = 0.
+x v ((y ^ ((z ^ u) v (y ^ x))) v (w ^ (y ^ (x v (z ^ u))))) = x v (y ^ ((z ^ u) v (y ^ x))).
+x ^ (y ^ ((z v (x v u))' ^ w)) = 0.
+1 != x | x ^ y != 0 | x' = y ^ x.
+x v ((x v y)' v (z v (y v u))) = 1.
+x v ((x v y)' v (z v (u v y))) = 1.
+x ^ (y v ((x ^ ((z ^ u) v (x ^ y))) v (x ^ ((w ^ v5) v (x ^ (y v (z ^ u))))))) = x ^ (y v ((x ^ ((z ^ u) v (x ^ y))) v (w ^ v5))).
+x v (y v ((x v z)' v (u v z))) = 1.
+x v (((x ^ y) v z)' v (u v z)) = 1.
+x v (y v (x v (z ^ (y ^ u)))') = 1.
+x v (y v (x v (z ^ (u ^ y)))') = 1.
+(x v ((y v x) ^ z)) ^ (u v (y v x))' = 0.
+x v (((y ^ x) v z)' v (u v z)) = 1.
+x v ((y ^ z) v (x v (z ^ y))') = 1.
+x ^ ((x ^ y)' ^ (z ^ (y ^ u))) = 0.
+x ^ ((x ^ y)' ^ (z ^ (u ^ y))) = 0.
+(x v ((y v x) ^ z)) ^ ((y v x)' ^ u) = 0.
+x ^ (y ^ ((x ^ z)' ^ (u ^ z))) = 0.
+x ^ (((x v y) ^ z)' ^ (u ^ z)) = 0.
+x ^ (y ^ (x ^ (z v (y v u)))') = 0.
+x ^ (y ^ (x ^ (z v (u v y)))') = 0.
+(x v ((y v x) ^ z)) ^ (u ^ (y v x)') = 0.
+x ^ (((y v x) ^ z)' ^ (u ^ z)) = 0.
+x ^ ((y v z) ^ (x ^ (z v y))') = 0.
+x ^ ((y v (z v (x v u)))' ^ w) = 0.
+x ^ (y ^ ((z v (u v x))' ^ w)) = 0.
+x ^ ((x ^ y)' v z) != 0 | (x ^ y)' v z = x'.
+x v (y v (z v (u v (w v x')))) = 1.
+x v (y v (z v (u v (x ^ w)'))) = 1.
+x v (y v (z v (u v (w ^ x)'))) = 1.
+x v (y v (z v (u ^ (x ^ w))')) = 1.
+x ^ ((x ^ y)' v z) != 0 | ((x ^ y)' v z)' = x.
+x v (y v (z v (u v (y v x)'))) = 1.
+x ^ (y ^ (z ^ (u ^ (w ^ x')))) = 0.
+x ^ (y ^ (z ^ (u ^ (x v w)'))) = 0.
+x ^ (y ^ (z ^ (u ^ (w v x)'))) = 0.
+(x v y) ^ ((y ^ z)' v u) != 0 | (x v y)' = (y ^ z)' v u.
+x ^ (y ^ (z ^ (u v (x v w))')) = 0.
+x ^ (y ^ (z v (u v (x v w)))') = 0.
+x ^ (y ^ (z ^ (u v (w v x))')) = 0.
+x ^ (y ^ (z v (u v (w v x)))') = 0.
+x ^ (y v (z v (x ^ ((x ^ (z v y)) v (u ^ w))))) = x ^ (y v (z v (u ^ w))).
+x ^ ((y v (z v (u v x)))' ^ w) = 0.
+x ^ (y ^ (z v (u v (y ^ x)))') = 0.
+x ^ (y ^ ((z v (y ^ x))' ^ u)) = 0.
+x ^ (y ^ (z ^ (u v (y ^ x))')) = 0.
+x ^ (y v (z v (u v (x ^ ((x ^ (y v (z v u))) v (w ^ v5)))))) = x ^ (y v (z v (u v (w ^ v5)))).
+x ^ (y ^ (x ^ ((x ^ y) v z))') = 0.
+x ^ (y ^ (z ^ ((y ^ x)' ^ u))) = 0.
+x ^ (y ^ (z ^ (u ^ (y ^ x)'))) = 0.
+x v ((y ^ (z ^ (x ^ u)))' v w) = 1.
+x ^ (y v (z v (x ^ (((y v z) ^ x) v (u ^ w))))) = x ^ (y v (z v (u ^ w))).
+(x ^ (y ^ z))' v (u v (w v y)) = 1.
+x v (y v (z ^ (u ^ (x ^ w)))') = 1.
+x v (y v (z v (u ^ (w ^ x))')) = 1.
+x v (y v (z v (u ^ (y v x))')) = 1.
+x ^ ((y v (z v (x ^ ((x ^ (y v z)) v (u ^ w))))) ^ v5) = x ^ ((y v (z v (u ^ w))) ^ v5).
+x ^ (y ^ (y ^ (z v (x v u)))') = 0.
+x ^ ((x v y) ^ (z v (x v u)))' = 0.
+x v (y v (z ^ (u ^ (w ^ x)))') = 1.
+x v (y v (z ^ (u ^ (y v x)))') = 1.
+x ^ (y ^ (z v (u v (x ^ (y ^ ((x ^ (y ^ (z v u))) v (w ^ v5))))))) = x ^ (y ^ (z v (u v (w ^ v5)))).
+x v ((y ^ (z ^ (u ^ x)))' v w) = 1.
+(x ^ (y ^ z))' v (u v (w v z)) = 1.
+x ^ (y ^ ((x ^ (y v z))' ^ u)) = 0.
+x ^ (y ^ (z ^ (x ^ (y v u))')) = 0.
+x ^ (y v (z v (x ^ ((x ^ (y v z)) v u)))) = x ^ (y v (z v u)).
+x ^ (y ^ ((x v z) ^ (y v u))') = 0.
+x v (y v ((y v (x ^ z))' v u)) = 1.
+x v (y v ((y v (z ^ x))' v u)) = 1.
+x v (y v (z v (u v (u v x)'))) = 1.
+x ^ (y v (z v (u v (x ^ ((x ^ (z v (y v u))) v (w ^ v5)))))) = x ^ (y v (z v (u v (w ^ v5)))).
+x v (y v (z v (z v (x ^ u))')) = 1.
+x v (y v (z v (z v (u ^ x))')) = 1.
+x v (y v (y v (z ^ (x ^ u)))') = 1.
+x v (y v (z v (z v (y v x))')) = 1.
+x ^ (y ^ (z v (u v (x ^ ((x ^ (z v u)) v (w ^ v5)))))) = y ^ (x ^ (z v (u v (w ^ v5)))).
+x v ((x v (y ^ z))' v (u v y)) = 1.
+x v (y v ((x v (y ^ z))' v u)) = 1.
+x ^ (y ^ (z ^ ((z ^ x)' ^ u))) = 0.
+x ^ (y ^ ((y ^ (x v z))' ^ u)) = 0.
+x v (y v ((z ^ (x v (y v (u ^ w)))) v (z ^ ((z ^ (x v y)) v (u ^ w))))) = x v (y v (z ^ ((z ^ (x v y)) v (u ^ w)))).
+x ^ (y ^ ((y ^ (z v x))' ^ u)) = 0.
+(x v y)' ^ (((x ^ z) v y) ^ u) = 0.
+x ^ (y ^ (((y v z) ^ x)' ^ u)) = 0.
+x ^ (y ^ (z ^ (u ^ (u ^ x)'))) = 0.
+x ^ (y v (z v ((x v u) ^ (((x v u) ^ (y v z)) v (w ^ v5))))) = x ^ (y v (z v (w ^ v5))).
+x ^ (y ^ (z ^ (z ^ (x v u))')) = 0.
+x ^ (y ^ (z ^ (z ^ (u v x))')) = 0.
+x ^ ((y ^ x)' ^ (z ^ (u ^ y))) = 0.
+x ^ (y ^ ((z ^ x)' ^ (u ^ z))) = 0.
+x v (y v ((z ^ ((z ^ (x v y)) v (u ^ w))) v (z ^ (x v (y v (u ^ w))))')) = 1.
+x ^ (((y ^ x) v z)' ^ (u ^ y)) = 0.
+x ^ ((y v (z ^ x))' ^ (u ^ z)) = 0.
+x ^ (((y v z) ^ x)' ^ (u ^ y)) = 0.
+(x ^ y)' ^ (z ^ (y ^ (u ^ x))) = 0.
+x v (y v ((z ^ ((z ^ (x v y)) v (u ^ w))) v (v5 ^ (z ^ (x v (y v (u ^ w))))))) = x v (y v (z ^ ((z ^ (x v y)) v (u ^ w)))).
+(x v (y v z))' ^ (u ^ (w ^ y)) = 0.
+(x v (y v z))' ^ (u ^ (w ^ z)) = 0.
+x ^ (y ^ ((z v (y v u)) ^ x)') = 0.
+x ^ ((y v (x v z)) ^ (x v u))' = 0.
+x ^ ((y v (z v (u ^ w))) ^ (y v (z v (x ^ ((x ^ (y v z)) v (u ^ w)))))') = 0.
+x ^ (y ^ ((y v z) ^ (x v u))') = 0.
+x ^ ((x ^ (y v z))' ^ (u ^ y)) = 0.
+(x ^ y)' v (z v (u v (w v x))) = 1.
+(x ^ y)' v (z v (u v (w v y))) = 1.
+x ^ (y v (z v ((x ^ ((x ^ (y v z)) v (u ^ w))) v (x ^ ((x ^ (y v (z v (u ^ w)))) v (v5 ^ v6)))))) = x ^ (y v (z v ((x ^ ((x ^ (y v z)) v (u ^ w))) v (v5 ^ v6)))).
+(x v y)' ^ (z ^ (u ^ (w ^ x))) = 0.
+(x v y)' ^ (z ^ (u ^ (w ^ y))) = 0.
+(x v y)' ^ (z ^ (u ^ (y v x))) = 0.
+(x v (y v z))' ^ (u ^ (y ^ w)) = 0.
+x ^ (y v (x ^ z)') != 0 | y v (x ^ z)' = x'.
+(x ^ y)' v (z v (u v (y ^ x))) = 1.
+(x ^ (y ^ z))' v (u v (y v w)) = 1.
+(x ^ (y ^ z))' v (u v (z v w)) = 1.
+(x ^ y) v (z ^ (y ^ (x ^ u)))' = 1.
+x ^ (y v (x ^ z)') != 0 | (y v (x ^ z)')' = x.
+(x ^ (y v z))' v (u v (z v y)) = 1.
+(x ^ ((x ^ y) v z)) v (y ^ x)' = 1.
+x ^ (y ^ (y ^ ((y ^ x) v z))') = 0.
+(x ^ ((y ^ x) v z)) v (x ^ y)' = 1.
+(x v y) ^ (z v (y ^ u)') != 0 | (x v y)' = z v (y ^ u)'.
+(x ^ y) v (z v (u ^ (y ^ x))') = 1.
+(x ^ y) v (z v (u v (y ^ x)')) = 1.
+(x ^ y) v (z ^ (u ^ (y ^ x)))' = 1.
+(x ^ y)' v (z v ((y ^ x) v u)) = 1.
+(x v y) ^ (x ^ z)' != 0 | (x v y)' = (x ^ z)'.
+((x ^ y) v z)' ^ (u ^ (y ^ x)) = 0.
+(x v y) ^ (z v (y v (x v u)))' = 0.
+(x v (y v z))' ^ (u ^ (z ^ w)) = 0.
+(x v y)' ^ (z ^ (u ^ (y ^ w))) = 0.
+x ^ (y ^ (x ^ z))' != 0 | (y ^ (x ^ z))' = x'.
+(x v y) ^ (z v (u v (y v x)))' = 0.
+(x v (y ^ z))' ^ (u ^ (z ^ y)) = 0.
+(x v y)' v (z v (y v (x v u))) = 1.
+(x ^ (y ^ z))' v (u v (y ^ x)) = 1.
+x ^ (y ^ (x ^ z))' != 0 | y ^ (x ^ z) = x.
+(x v y)' v (z v (u v (y v x))) = 1.
+(x ^ (y ^ z))' v (u v (z ^ y)) = 1.
+(x v y)' ^ (z ^ (u ^ (x ^ w))) = 0.
+(x v (y v z))' ^ (u ^ (y v x)) = 0.
+(x v y) ^ (z ^ (y ^ u))' != 0 | (x v y)' = (z ^ (y ^ u))'.
+(x ^ y)' ^ (z ^ (y ^ (x ^ u))) = 0.
+(x v (y v z))' ^ (u ^ (z v y)) = 0.
+(x ^ y)' ^ (z ^ (u ^ (y ^ x))) = 0.
+x ^ (y ^ (z v ((y ^ x) v u))') = 0.
+x ^ ((y ^ x)' v z) != 0 | (y ^ x)' v z = x'.
+(x v y) ^ (z ^ ((y v x)' ^ u)) = 0.
+(x v (y ^ z)) ^ (x v (z v u))' = 0.
+(x v y)' ^ ((x v (y ^ z)) ^ u) = 0.
+x v (y v (z v (x v (z ^ u))')) = 1.
+(x ^ ((y ^ x) v z)) v ((y ^ x)' v u) = 1.
+x v (y v ((x ^ z) v (y ^ u))') = 1.
+x v (y v ((z ^ x) v (y ^ u))') = 1.
+x v (y v (z v (x v (u ^ y))')) = 1.
+x v (y v (z v (x v (u ^ z))')) = 1.
+x ^ ((y ^ x)' v z) != 0 | ((y ^ x)' v z)' = x.
+x v ((y v (x ^ z))' v (u v y)) = 1.
+(x ^ (y v z)) v (x ^ (z ^ u))' = 1.
+(x ^ y)' v ((x ^ (y v z)) v u) = 1.
+x ^ (y ^ (z ^ (x ^ (z v u))')) = 0.
+(x v y) ^ ((z ^ y)' v u) != 0 | (x v y)' = (z ^ y)' v u.
+x ^ (y ^ ((z v x) ^ (y v u))') = 0.
+x ^ (y ^ (z ^ (x ^ (u v y))')) = 0.
+x ^ (y ^ (z ^ (x ^ (u v z))')) = 0.
+x ^ ((y ^ (x v z))' ^ (u ^ y)) = 0.
+x ^ (y ^ (z ^ x))' != 0 | (y ^ (z ^ x))' = x'.
+x ^ (y ^ (((y ^ x) v z)' ^ u)) = 0.
+((x v (y v z)) ^ u) v (z ^ u)' = 1.
+((x v y) ^ (z v (y v u))) v y' = 1.
+((x v y) ^ (z v (u v y))) v y' = 1.
+(x ^ ((y ^ x) v z)) v (u ^ (y ^ x))' = 1.
+(x ^ (y ^ z)) v (y ^ (x ^ z))' = 1.
+(x ^ y)' v (((z v x) ^ y) v u) = 1.
+x ^ (y ^ ((z v (u v x)) ^ y)') = 0.
+x ^ ((y v x) ^ (z v (x v u)))' = 0.
+x ^ (y ^ (z ^ x))' != 0 | y ^ (z ^ x) = x.
+x ^ (((y v z) ^ x)' ^ (u ^ z)) = 0.
+x ^ (y ^ (((z v y) ^ x)' ^ u)) = 0.
+x ^ (y ^ (y ^ (z v (u v x)))') = 0.
+x ^ (y ^ (z ^ (z ^ (y ^ x))')) = 0.
+(x v y) ^ (z ^ (u ^ y))' != 0 | (x v y)' = (z ^ (u ^ y))'.
+x ^ ((y v (x v z)) ^ (u v x))' = 0.
+x ^ (y ^ ((y v z) ^ (u v x))') = 0.
+x ^ ((x ^ (y v z))' ^ (u ^ z)) = 0.
+x ^ (y ^ ((x ^ (z v y))' ^ u)) = 0.
+x ^ (y ^ (z v (x ^ (y ^ ((z ^ (x ^ y)) v (u ^ w)))))) = x ^ (y ^ (z v (u ^ w))).
+(x ^ y)' v ((x ^ (z v y)) v u) = 1.
+x ^ (y ^ ((x v z) ^ (u v y))') = 0.
+x ^ (y ^ ((z v x) ^ (u v y))') = 0.
+x ^ ((y ^ (z v x))' ^ (u ^ y)) = 0.
+x ^ ((y ^ z) v (x ^ ((y ^ (z ^ x)) v (u ^ w)))) = x ^ ((y ^ z) v (u ^ w)).
+((x ^ (y ^ z)) v u) ^ (z v u)' = 0.
+((x ^ y) v (z ^ (y ^ u))) ^ y' = 0.
+((x ^ y) v (z ^ (u ^ y))) ^ y' = 0.
+((x ^ y) v z) ^ (y v (z v u))' = 0.
+x ^ (y v (x ^ ((y ^ x) v z))) = x ^ (y v z).
+(x v y)' ^ (((z ^ x) v y) ^ u) = 0.
+x v (y v ((z ^ (u ^ x)) v y)') = 1.
+x v (((y ^ z) v x)' v (u v z)) = 1.
+x v (y v (((z ^ y) v x)' v u)) = 1.
+x ^ (y ^ (z v (x ^ (y ^ ((x ^ (z ^ y)) v (u ^ w)))))) = x ^ (y ^ (z v (u ^ w))).
+x v (y v (y v (z ^ (u ^ x)))') = 1.
+x v ((x v (y ^ z))' v (u v z)) = 1.
+x v (y v ((x v (z ^ y))' v u)) = 1.
+(x v y)' ^ ((x v (z ^ y)) ^ u) = 0.
+(x v y) ^ (z ^ (x v ((x v y) ^ (z ^ ((x ^ z) v (u ^ w)))))) = (x v y) ^ (z ^ (x v (u ^ w))).
+x v (y v ((x ^ z) v (u ^ y))') = 1.
+x v (y v ((z ^ x) v (u ^ y))') = 1.
+x v ((y v (z ^ x))' v (u v y)) = 1.
+x v (y v (z ^ (y v (x ^ u)))') = 1.
+x' ^ (y ^ (x v (x' ^ (y ^ (z ^ u))))) = x' ^ (y ^ (x v (z ^ u))).
+x' ^ (y ^ (x v (y' ^ z))) = 0.
+x' ^ (y ^ (x v y')) = 0.
+x ^ ((y v x') ^ y') = 0.
+x ^ (y' ^ (y v x')) = 0.
+x ^ (y' ^ (y v (x ^ (y' ^ (z ^ u))))) = x ^ (y' ^ (y v (z ^ u))).
+(x v y') ^ (x' ^ y) = 0.
+x' ^ (y ^ (y' v x)) = 0.
+x ^ (x' v y) = x ^ y.
+x ^ (x' ^ y)' = x.
+(x v y)' ^ (x v ((x v y)' ^ (z ^ u))) = (x v y)' ^ (x v (z ^ u)).
+x ^ (y ^ x')' = x.
+x ^ (y v x') = x ^ y.
+x' ^ (x ^ y)' = x'.
+x' ^ (y ^ x)' = x'.
+(x v y)' ^ (y v ((x v y)' ^ (z ^ u))) = (x v y)' ^ (y v (z ^ u)).
+x' ^ ((y v x) ^ y') = 0.
+(x' v y) ^ (y' ^ x) = 0.
+x ^ (y v (x' v y)') = x.
+x' ^ (x v y) = x' ^ y.
+x ^ ((y ^ x)' ^ (y v (x ^ ((y ^ x)' ^ (z ^ u))))) = x ^ ((y ^ x)' ^ (y v (z ^ u))).
+x ^ ((x' ^ y)' v z) = x.
+x ^ (y v (x' ^ z)') = x.
+x ^ (y ^ (x' ^ z))' = x.
+x ^ ((y ^ x')' v z) = x.
+x ^ (y' ^ (z ^ (y v (x ^ (y' ^ (z ^ (u ^ w))))))) = x ^ (y' ^ (z ^ (y v (u ^ w)))).
+x ^ (y ^ (z ^ x'))' = x.
+x ^ (y v (z ^ x')') = x.
+x ^ (y v (y v x')') = x.
+x ^ ((y v x)' ^ z)' = x.
+(x v y)' ^ (z ^ (x v ((x v y)' ^ (z ^ (u ^ w))))) = (x v y)' ^ (z ^ (x v (u ^ w))).
+x ^ (y ^ (x v z)')' = x.
+x ^ (y ^ (z v x)')' = x.
+x' ^ (y v x) = x' ^ y.
+x' ^ y != 0 | x v y = x.
+x v ((y ^ ((x ^ y) v (z ^ u))) v ((y ^ (x v (z ^ u)))' v w)) = 1.
+x v (y v x')' = x.
+x v (x' v y)' = x.
+x' v (y v x)' = x'.
+x' v (x v y)' = x'.
+x v ((y ^ ((x ^ y) v (z ^ u))) v (w ^ (y ^ (x v (z ^ u))))') = 1.
+x' ^ y != 0 | y v x = x.
+(x v y) ^ (x' ^ y') = 0.
+(x v y) ^ (y' ^ x') = 0.
+x' ^ y = (y v x) ^ x'.
+x ^ (y v (z ^ x)') != 0 | y v (z ^ x)' = x'.
+x' ^ y = (x v y) ^ x'.
+x ^ ((x v y)' ^ z)' = x.
+x v (y ^ (y ^ x')') = x.
+x v (y ^ (z v x')') = x.
+(x ^ ((y ^ x) v z)) v (u v (y ^ x)') = 1.
+x v (y ^ (x' ^ y)') = x.
+x ^ y' != 0 | y v x = y.
+x v (y' v x)' = x v y.
+(x' v y) ^ (y v x) = y.
+x ^ ((y v (x ^ ((x ^ y) v z))) ^ u) = x ^ ((y v z) ^ u).
+(x ^ y) v (y' ^ x) = x.
+x v (x' ^ y) = x v y.
+(x v y) ^ (x v y') = x.
+(x v y) ^ (x' v y) = y.
+x ^ (y ^ ((z v (x ^ ((x ^ z) v (u ^ w)))) ^ v5)) = y ^ (x ^ ((z v (u ^ w)) ^ v5)).
+(x v y) ^ (y' v x) = x.
+(x v y') ^ (y v x) = x.
+(x v y) ^ (y v x') = y.
+(x v y)' = y' ^ x'.
+x ^ ((y v ((x v z) ^ (((x v z) ^ y) v (u ^ w)))) ^ v5) = x ^ ((y v (u ^ w)) ^ v5).
+x v (y ^ x') = x v y.
+(x ^ y) v (x ^ y') = x.
+(x ^ y)' = x' v y'.
+x ^ y' != 0 | x v y = y.
+x' ^ (((y ^ x) v (x' ^ (z ^ u))) ^ w) = x' ^ (((y ^ x) v (z ^ u)) ^ w).
+(x v y) ^ y' = x ^ y'.
+(x v y) ^ x' = y ^ x'.
+x v y != 1 | y' v x = x.
+x ^ y != 1 | y ^ x = 1.
+x ^ (y ^ (z v (x ^ (y ^ ((y ^ (z ^ x)) v (u ^ w)))))) = x ^ (y ^ (z v (u ^ w))).
+x v y != 1 | y v x = 1.
+x v y != 1 | x v y' = x.
+x v y' != 1 | x v y = x.
+x v y' != 1 | y v x = x.
+x ^ (y ^ (z v (x ^ (y ^ ((x ^ (y ^ z)) v u))))) = x ^ (y ^ (z v u)).
+x ^ y != 0 | y' ^ x = x.
+0 != x | x v y = x' ^ y.
+x ^ y != 0 | x ^ y' = x.
+(x ^ y) v x' = y v x'.

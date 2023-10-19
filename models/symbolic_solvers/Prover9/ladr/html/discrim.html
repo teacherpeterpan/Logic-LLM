@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<TITLE>discrim.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "discrim.h"</H1>
+
+This page has information from files
+<A HREF="../discrim.h">discrim.h</A> and <A HREF="../discrim.c">discrim.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File discrim.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#destroy_discrim_tree">destroy_discrim_tree</A></TD><TD><A HREF="#discrim_init">discrim_init</A></TD><TD><A HREF="#free_discrim_pos">free_discrim_pos</A></TD><TD><A HREF="#p_discrim_mem">p_discrim_mem</A></TD>
+</TR>
+<TR><TD><A HREF="#discrim_dealloc">discrim_dealloc</A></TD><TD><A HREF="#fprint_discrim_mem">fprint_discrim_mem</A></TD><TD><A HREF="#get_discrim">get_discrim</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#discrim_empty">discrim_empty</A></TD><TD><A HREF="#free_discrim">free_discrim</A></TD><TD><A HREF="#get_discrim_pos">get_discrim_pos</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="destroy_discrim_tree"></A><HR><PRE><B>void destroy_discrim_tree(<A HREF="discrim.html">Discrim</A> d);
+</B></PRE>This routine frees all the memory associated with a discrimination
+index.  It can be used with either wild or tame trees.
+<A NAME="discrim_dealloc"></A><HR><PRE><B>void discrim_dealloc(<A HREF="discrim.html">Discrim</A> d);
+</B></PRE>This routine frees an empty discrimination index (wild or tame).
+<A NAME="discrim_empty"></A><HR><PRE><B>BOOL discrim_empty(<A HREF="discrim.html">Discrim</A> d);
+</B></PRE>This Boolean function checks if a discrimination index is empty.
+It can be used with either wild or tame trees.
+<A NAME="discrim_init"></A><HR><PRE><B><A HREF="discrim.html">Discrim</A> discrim_init(void);
+</B></PRE>This routine allocates and returns an empty discrimination index.
+It can be used for either wild or tame indexing.
+<A NAME="fprint_discrim_mem"></A><HR><PRE><B>void fprint_discrim_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the discrim package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="free_discrim"></A><HR><PRE><B>void free_discrim(<A HREF="discrim.html">Discrim</A> p);
+</B></PRE><A NAME="free_discrim_pos"></A><HR><PRE><B>void free_discrim_pos(<A HREF="discrim.html">Discrim_pos</A> p);
+</B></PRE><A NAME="get_discrim"></A><HR><PRE><B><A HREF="discrim.html">Discrim</A> get_discrim(void);
+</B></PRE><A NAME="get_discrim_pos"></A><HR><PRE><B><A HREF="discrim.html">Discrim_pos</A> get_discrim_pos(void);
+</B></PRE>The structure is not initialized.
+<A NAME="p_discrim_mem"></A><HR><PRE><B>void p_discrim_mem(void);
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the discrim package.
+<HR><A NAME=defns></A><H2>Public Definitions in File discrim.h</H2>
+<PRE>
+typedef struct discrim * <A HREF="discrim.html">Discrim</A>;
+
+struct discrim {       /* node in a discrimination tree */
+  <A HREF="discrim.html">Discrim</A>   next;      /* sibling */
+  union {
+    <A HREF="discrim.html">Discrim</A> kids;      /* for internal nodes */
+    Plist data;        /* for leaves */
+  } u;
+  short symbol;        /* variable number or symbol number */
+  char type;           /* term type and for ac indexing type */
+};
+
+typedef struct discrim_pos * <A HREF="discrim.html">Discrim_pos</A>;
+
+struct discrim_pos {  /* to save position in set of answers */
+  void    *query;
+  <A HREF="unify.html">Context</A> subst;        /* substitution */
+  Plist   data;         /* identical terms from leaf of discrim tree */
+  void    *backtrack;   /* data for backtracking */
+};
+
+/* type of discrimination tree node */
+
+enum { DVARIABLE, DRIGID, AC_ARG_TYPE, AC_NV_ARG_TYPE };
+
+#define DVAR(d)  ((d)->type == DVARIABLE)
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package implements two kinds of discrimination indexing
+for first-order terms.  Both kinds support GENERALIZATION retrieval
+only (e.g., for forward demodulation and forward subsumption).
+<P>
+The "wild" kind is an imperfect filter, and it does not bind variables.
+The caller must also call a routine, say match(), to check if
+the answers are really more general than the query term and to
+construct the substitution.
+Wild indexing supports associative-commutative (AC) and
+commutative (C) symbols.
+Indexing terms with AC symbols works by considering the number
+of arguments and the number of nonvariable arguments of 
+AC terms that do not occur in other AC terms.
+(The term "wild" is used because all variables in the discrimination
+tree are treated as the the wildcard symbol *).
+<P>
+With the "bind" kind, every answer is more general than the query term,
+and the matching substitution is constructed during the retrieval.
+Wild indexing supports commutative (C) symbols,
+but it <I>does not support</I> associative-commutative (AC) symbols.
+Retrieval with C symbols can produce duplicate answers.
+<P>
+There is probably a higher-level package (mindex ?) which
+provides a uniform interface to these and other indexing methods.
+
+<HR>
+</BODY>
+</HTML>

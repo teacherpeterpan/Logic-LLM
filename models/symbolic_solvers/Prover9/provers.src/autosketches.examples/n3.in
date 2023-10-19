@@ -1,0 +1,80 @@
+op(400,infix,"->").
+op(400,infix,"=>").
+op(300,prefix,"~").
+op(300,prefix,"-").
+
+lex([T, F, A, B, C, ->, ^, =>, v, ~, -]).
+
+clear(lex_dep_demod).
+
+formulas(sos).
+x -> (y -> x) = T.
+(x -> (y -> z)) -> ((x -> y) -> (x -> z)) = T.
+T -> x = x.
+x => y = x -> y ^ ~ y -> ~ x.
+(x => y) -> ((y => x) -> y) = (y => x) -> ((x => y) -> x).
+x -> (x v y) = T.
+x -> (y v x) = T.
+(x -> y) -> ((z -> y) -> ((x v z) -> y)) = T.
+(x ^ y) -> x = T.
+(x ^ y) -> y = T.
+(x -> y) -> ((x -> z) -> (x -> (y ^ z))) = T.
+(x -> - y) -> (y -> - x) = T.
+- (x -> x) -> y = T.
+~ x -> (x -> y) = T.
+~ (x -> y) -> (x ^ ~ y) ^ (x ^ ~ y) -> ~ (x -> y) = T.
+~ (x ^ y) = ~ x v ~ y.
+~ (x v y) = ~ x ^ ~ y.
+~ ~ x = x.
+~ - x -> x ^ x -> ~ - x = T.
+x v x = x.
+x v y = y v x.
+x v (y v z) = (x v y) v z.
+x ^ x = x.
+x ^ y = y ^ x.
+x ^ (y ^ z) = (x ^ y) ^ z.
+x ^ F = F.
+x v F = x.
+x ^ T = x.
+x v T = T.
+x ^ (y v z) = (x ^ y) v (x ^ z).
+x v (y ^ z) = (x v y) ^ (x v z).
+x -> x = T.
+(x ^ x -> y) -> y = T.
+x -> (y -> z) = y -> (x -> z).
+x -> (y -> z) = (x ^ y) -> z.
+x -> ((x -> y) -> y) = T.
+x -> - y = y -> - x.
+x -> T = T.
+F -> x = T.
+x -> (y ^ z) = x -> y ^ x -> z.
+x ^ x -> y = x ^ (~ x v y).
+x -> ~ y = x -> ~ (x -> y).
+x -> (y v z) = x -> (x -> y v x -> z).
+~ (x -> y) -> x = T.
+T => x = x # label("N2").
+~ (x -> y) -> z = x -> (~ y -> z).
+x ^ (x => y) => y = x.
+- x = x -> F.
+F = ~ T.
+end_of_list.
+
+formulas(extra_assumptions).
+x -> (x -> y) = x -> y # label("Lemma 1").
+x -> (y -> z) = (x -> y) -> (x -> z) # label("Lemma 2").
+(x v y) -> z = x -> z ^ y -> z # label("Lemma 3").
+x => y = ~ y => ~ x # label("Lemma 4").
+x => y = (x v ~ y) -> (~ x v y) # label("Lemma 5").
+x => ~ T = ~ x # label("Lemma 6").
+x -> y = x => (x => y) # label("Lemma 7").
+x -> y = (x ^ ~ y) => ~ x # label("Lemma 8").
+x => (y ^ z) = x => y ^ x => z # label("Lemma 9").
+x => (x ^ y) = x => y # label("Lemma 10").
+x => x = T # label("Lemma 11").
+x => T = T # label("Lemma 12").
+x -> ~ y = x -> ~ (x -> y) # label("Lemma 13").
+end_of_list.
+
+formulas(goals).
+(y => z) => ((z => x) => (y => x)) = T # answer(N3).
+end_of_list.

@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<TITLE>clause_eval.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "clause_eval.h"</H1>
+
+This page has information from files
+<A HREF="../clause_eval.h">clause_eval.h</A> and <A HREF="../clause_eval.c">clause_eval.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File clause_eval.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#compile_clause_eval_rule">compile_clause_eval_rule</A></TD><TD><A HREF="#eval_clause_in_rule">eval_clause_in_rule</A></TD><TD><A HREF="#rule_contains_semantics">rule_contains_semantics</A></TD><TD><A HREF="#zap_clause_eval_rule">zap_clause_eval_rule</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="compile_clause_eval_rule"></A><HR><PRE><B>Clause_eval compile_clause_eval_rule(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="eval_clause_in_rule"></A><HR><PRE><B>BOOL eval_clause_in_rule(Topform c, Clause_eval p);
+</B></PRE>The following properties have fields in the clause, and if they
+hold, those flags should already be set: matches_hint, weight, semantics.
+<A NAME="rule_contains_semantics"></A><HR><PRE><B>BOOL rule_contains_semantics(Clause_eval p);
+</B></PRE><A NAME="zap_clause_eval_rule"></A><HR><PRE><B>void zap_clause_eval_rule(Clause_eval p);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File clause_eval.h</H2>
+<PRE>
+typedef struct clause_eval *Clause_eval;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

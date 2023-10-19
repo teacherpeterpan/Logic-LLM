@@ -1,0 +1,197 @@
+<HTML>
+<HEAD>
+<TITLE>literals.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "literals.h"</H1>
+
+This page has information from files
+<A HREF="../literals.h">literals.h</A> and <A HREF="../literals.c">literals.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File literals.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#any_clause">any_clause</A></TD><TD><A HREF="#false_term">false_term</A></TD><TD><A HREF="#lits_to_term">lits_to_term</A></TD><TD><A HREF="#positive_literals">positive_literals</A></TD>
+</TR>
+<TR><TD><A HREF="#append_literal">append_literal</A></TD><TD><A HREF="#first_literal_of_sign">first_literal_of_sign</A></TD><TD><A HREF="#mixed_clause">mixed_clause</A></TD><TD><A HREF="#remove_null_literals">remove_null_literals</A></TD>
+</TR>
+<TR><TD><A HREF="#atom_number">atom_number</A></TD><TD><A HREF="#fprint_literals_mem">fprint_literals_mem</A></TD><TD><A HREF="#neg_eq">neg_eq</A></TD><TD><A HREF="#symbol_occurrences_in_clause">symbol_occurrences_in_clause</A></TD>
+</TR>
+<TR><TD><A HREF="#clause_depth">clause_depth</A></TD><TD><A HREF="#free_literals">free_literals</A></TD><TD><A HREF="#neg_eq_unit">neg_eq_unit</A></TD><TD><A HREF="#tautology">tautology</A></TD>
+</TR>
+<TR><TD><A HREF="#clause_ident">clause_ident</A></TD><TD><A HREF="#free_lits_to_term">free_lits_to_term</A></TD><TD><A HREF="#negative_clause">negative_clause</A></TD><TD><A HREF="#term_at_position">term_at_position</A></TD>
+</TR>
+<TR><TD><A HREF="#clause_symbol_count">clause_symbol_count</A></TD><TD><A HREF="#get_literals">get_literals</A></TD><TD><A HREF="#negative_literals">negative_literals</A></TD><TD><A HREF="#term_to_literals">term_to_literals</A></TD>
+</TR>
+<TR><TD><A HREF="#constants_in_clause">constants_in_clause</A></TD><TD><A HREF="#greatest_variable_in_clause">greatest_variable_in_clause</A></TD><TD><A HREF="#new_literal">new_literal</A></TD><TD><A HREF="#true_clause">true_clause</A></TD>
+</TR>
+<TR><TD><A HREF="#contains_eq">contains_eq</A></TD><TD><A HREF="#ground_clause">ground_clause</A></TD><TD><A HREF="#number_of_literals">number_of_literals</A></TD><TD><A HREF="#true_term">true_term</A></TD>
+</TR>
+<TR><TD><A HREF="#contains_pos_eq">contains_pos_eq</A></TD><TD><A HREF="#horn_clause">horn_clause</A></TD><TD><A HREF="#number_of_variables">number_of_variables</A></TD><TD><A HREF="#unit_clause">unit_clause</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_literal">copy_literal</A></TD><TD><A HREF="#ith_literal">ith_literal</A></TD><TD><A HREF="#only_eq">only_eq</A></TD><TD><A HREF="#varnums_in_clause">varnums_in_clause</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_literals">copy_literals</A></TD><TD><A HREF="#literal_number">literal_number</A></TD><TD><A HREF="#p_literals_mem">p_literals_mem</A></TD><TD><A HREF="#vars_in_clause">vars_in_clause</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_literals_with_flag">copy_literals_with_flag</A></TD><TD><A HREF="#literal_to_term">literal_to_term</A></TD><TD><A HREF="#pos_eq">pos_eq</A></TD><TD><A HREF="#zap_literal">zap_literal</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_literals_with_flags">copy_literals_with_flags</A></TD><TD><A HREF="#literals_depth">literals_depth</A></TD><TD><A HREF="#pos_eq_unit">pos_eq_unit</A></TD><TD><A HREF="#zap_literals">zap_literals</A></TD>
+</TR>
+<TR><TD><A HREF="#definite_clause">definite_clause</A></TD><TD><A HREF="#literals_to_term">literals_to_term</A></TD><TD><A HREF="#positive_clause">positive_clause</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="any_clause"></A><HR><PRE><B>BOOL any_clause(Literals lits);
+</B></PRE>This function is always TRUE.  (It it intended to be used as an argument.)
+<A NAME="append_literal"></A><HR><PRE><B>Literals append_literal(Literals lits, Literals lit);
+</B></PRE>This routine appends a literal to a list of literals.
+<A NAME="atom_number"></A><HR><PRE><B>int atom_number(Literals lits, <A HREF="term.html">Term</A> atom);
+</B></PRE>Given a clause and an atom, return the position of the atom
+(counting from 1) in the clause.  The check is by pointer only.
+If the atom does not occur in the clause, 0 is returned.
+<A NAME="clause_depth"></A><HR><PRE><B>int clause_depth(Literals lits);
+</B></PRE>Disjunction and negation signs are not included in the count.
+That is, return the depth of the deepest atomic formula.
+<A NAME="clause_ident"></A><HR><PRE><B>BOOL clause_ident(Literals lits1, Literals lits2);
+</B></PRE>Identical clauses, including order of literals and variable numbering.
+<A NAME="clause_symbol_count"></A><HR><PRE><B>int clause_symbol_count(Literals lits);
+</B></PRE>Disjunction and negation signs are not included in the count.
+<A NAME="constants_in_clause"></A><HR><PRE><B>Ilist constants_in_clause(Literals lits);
+</B></PRE>Given a clause, return the set of symnums for constants therein.
+<A NAME="contains_eq"></A><HR><PRE><B>BOOL contains_eq(Literals lits);
+</B></PRE>This function checks if a clause contains an equality
+literal (positive or negative) for the purposes of
+paramodulation and demodulation.
+<A NAME="contains_pos_eq"></A><HR><PRE><B>BOOL contains_pos_eq(Literals lits);
+</B></PRE>This function checks if a clause contains a positive equality
+literal for the purposes of paramodulation and demodulation.
+<A NAME="copy_literal"></A><HR><PRE><B>Literals copy_literal(Literals lit);
+</B></PRE><A NAME="copy_literals"></A><HR><PRE><B>Literals copy_literals(Literals lits);
+</B></PRE>This routine builds and returns a copy of a clause.
+The container field of each nonvariable subterm points
+to the clause.
+<A NAME="copy_literals_with_flag"></A><HR><PRE><B>Literals copy_literals_with_flag(Literals lits, int flag);
+</B></PRE>This routine builds and returns a copy of a clause.
+The given termflag is copied for all subterms (including atoms,
+excluding variables).
+<A NAME="copy_literals_with_flags"></A><HR><PRE><B>Literals copy_literals_with_flags(Literals lits);
+</B></PRE>This routine builds and returns a copy of a clause.
+All termflags are copied for all subterms (including atoms,
+excluding variables).
+<A NAME="definite_clause"></A><HR><PRE><B>BOOL definite_clause(Literals lits);
+</B></PRE>This Boolean function checks if a clause has exactly one positive literal.   
+<A NAME="false_term"></A><HR><PRE><B>BOOL false_term(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="first_literal_of_sign"></A><HR><PRE><B>Literals first_literal_of_sign(Literals lits, BOOL sign);
+</B></PRE><A NAME="fprint_literals_mem"></A><HR><PRE><B>void fprint_literals_mem(FILE *fp, int heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the clause package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="free_literals"></A><HR><PRE><B>void free_literals(Literals p);
+</B></PRE><A NAME="free_lits_to_term"></A><HR><PRE><B>void free_lits_to_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine is to be used with terms constructed by <A HREF="#lits_to_term">lits_to_term</A>().
+<A NAME="get_literals"></A><HR><PRE><B>Literals get_literals(void);
+</B></PRE><A NAME="greatest_variable_in_clause"></A><HR><PRE><B>int greatest_variable_in_clause(Literals lits);
+</B></PRE>This routine returns the greatest variable index in a clause.
+If the clause is ground, -1 is returned.
+<A NAME="ground_clause"></A><HR><PRE><B>BOOL ground_clause(Literals lits);
+</B></PRE><A NAME="horn_clause"></A><HR><PRE><B>BOOL horn_clause(Literals lits);
+</B></PRE>This function checks if a clause has at most one positive literal.   
+<A NAME="ith_literal"></A><HR><PRE><B>Literals ith_literal(Literals lits, int i);
+</B></PRE>Return the i-th literal of a clause, counting from 1.
+Return NULL if i is out of range.
+<A NAME="literal_number"></A><HR><PRE><B>int literal_number(Literals lits, Literals lit);
+</B></PRE>Given a clause and a literal, return the position of the literal
+(counting from 1) in the clause.  The check is by pointer only.
+If the literal does not occur in the clause, 0 is returned.
+<A NAME="literal_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> literal_to_term(Literals l);
+</B></PRE><A NAME="literals_depth"></A><HR><PRE><B>int literals_depth(Literals lits);
+</B></PRE>This function returns the maximum depth of a list of literals.
+Negation signs are not counted, and P(a) has depth 1.
+<A NAME="literals_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> literals_to_term(Literals l);
+</B></PRE><A NAME="lits_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> lits_to_term(Literals l);
+</B></PRE>This routine converts a nonempty list of literals into a term.
+This version does not copy atoms; it constructs new term
+nodes only for the NOT and OR structure at the top of the clause.
+Use <A HREF="#free_lits_to_term">free_lits_to_term</A>() to free terms constructed with this routine.
+<A NAME="mixed_clause"></A><HR><PRE><B>BOOL mixed_clause(Literals lits);
+</B></PRE>This function checks if a clause has at least one positive and
+at least one negative literal.
+<A NAME="neg_eq"></A><HR><PRE><B>BOOL neg_eq(Literals lit);
+</B></PRE>This function checks if a literal is a positive equality
+for the purposes of paramodulation and demodulation.
+<A NAME="neg_eq_unit"></A><HR><PRE><B>BOOL neg_eq_unit(Literals lits);
+</B></PRE>This function checks if a list of Literals is a negative equality unit.
+<A NAME="negative_clause"></A><HR><PRE><B>BOOL negative_clause(Literals lits);
+</B></PRE>This function checks if all of the literals of a clause are negative.
+<A NAME="negative_literals"></A><HR><PRE><B>int negative_literals(Literals lits);
+</B></PRE>This function returns the number of negative literals in a clause.
+<A NAME="new_literal"></A><HR><PRE><B>Literals new_literal(int sign, <A HREF="term.html">Term</A> atom);
+</B></PRE>This routine takes a sign (Boolean) and a <A HREF="term.html">Term</A> atom, and returns
+a literal.  The atom is not copied.
+<A NAME="number_of_literals"></A><HR><PRE><B>int number_of_literals(Literals lits);
+</B></PRE>This function returns the number of literals in a clause.
+<A NAME="number_of_variables"></A><HR><PRE><B>int number_of_variables(Literals lits);
+</B></PRE>This routine returns number of (distinct) variables in a clause.
+<A NAME="only_eq"></A><HR><PRE><B>BOOL only_eq(Literals lits);
+</B></PRE>This function checks if a clause contains only equality
+literals (positive or negative).
+<A NAME="p_literals_mem"></A><HR><PRE><B>void p_literals_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the clause package.
+<A NAME="pos_eq"></A><HR><PRE><B>BOOL pos_eq(Literals lit);
+</B></PRE>This function checks if a literal is a positive equality
+for the purposes of paramodulation and demodulation.
+<A NAME="pos_eq_unit"></A><HR><PRE><B>BOOL pos_eq_unit(Literals lits);
+</B></PRE>This function checks if a list of Literals is a positive equality unit
+for the purposes of paramodulation and demodulation.
+<A NAME="positive_clause"></A><HR><PRE><B>BOOL positive_clause(Literals lits);
+</B></PRE>This function checks if all of the literals of a clause are positive.
+<A NAME="positive_literals"></A><HR><PRE><B>int positive_literals(Literals lits);
+</B></PRE>This function returns the number of positive literals in a clause.
+<A NAME="remove_null_literals"></A><HR><PRE><B>Literals remove_null_literals(Literals l);
+</B></PRE><A NAME="symbol_occurrences_in_clause"></A><HR><PRE><B>int symbol_occurrences_in_clause(Literals lits, int symnum);
+</B></PRE><A NAME="tautology"></A><HR><PRE><B>BOOL tautology(Literals lits);
+</B></PRE>This routine returns TRUE if the clause has complementary literals
+or if it has any literals of the form $T, -$F.
+This dos not check for x=x.
+<A NAME="term_at_position"></A><HR><PRE><B><A HREF="term.html">Term</A> term_at_position(Literals lits, Ilist pos);
+</B></PRE><A NAME="term_to_literals"></A><HR><PRE><B>Literals term_to_literals(<A HREF="term.html">Term</A> t, Literals lits);
+</B></PRE><A NAME="true_clause"></A><HR><PRE><B>BOOL true_clause(Literals lits);
+</B></PRE>Does the clause contain a literal $T?
+(This does not check for complementary literals, -$F, or x=x.)
+<A NAME="true_term"></A><HR><PRE><B>BOOL true_term(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="unit_clause"></A><HR><PRE><B>BOOL unit_clause(Literals lits);
+</B></PRE>This function checks if a clause has exactly one literal.
+<A NAME="varnums_in_clause"></A><HR><PRE><B>Ilist varnums_in_clause(Literals lits);
+</B></PRE>This routine returns the set of variable indexes (as an Ilist) in a clause.
+<A NAME="vars_in_clause"></A><HR><PRE><B>Plist vars_in_clause(Literals lits);
+</B></PRE>This routine returns the set of variables (as a Plist) in a clause.
+<A NAME="zap_literal"></A><HR><PRE><B>void zap_literal(Literals l);
+</B></PRE>This routine frees a literal.
+<A NAME="zap_literals"></A><HR><PRE><B>void zap_literals(Literals l);
+</B></PRE>This routine frees a list of literals.
+<HR><A NAME=defns></A><H2>Public Definitions in File literals.h</H2>
+<PRE>
+typedef struct literals * Literals;
+
+struct literals {
+  BOOL      sign;
+  <A HREF="term.html">Term</A>      atom;
+  Literals  next;
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

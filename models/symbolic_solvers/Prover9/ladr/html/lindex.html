@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>lindex.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "lindex.h"</H1>
+
+This page has information from files
+<A HREF="../lindex.h">lindex.h</A> and <A HREF="../lindex.c">lindex.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File lindex.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fprint_lindex_mem">fprint_lindex_mem</A></TD><TD><A HREF="#lindex_destroy">lindex_destroy</A></TD><TD><A HREF="#lindex_init">lindex_init</A></TD><TD><A HREF="#lindex_update_first">lindex_update_first</A></TD>
+</TR>
+<TR><TD><A HREF="#lindex_backtrack">lindex_backtrack</A></TD><TD><A HREF="#lindex_empty">lindex_empty</A></TD><TD><A HREF="#lindex_update">lindex_update</A></TD><TD><A HREF="#p_lindex_mem">p_lindex_mem</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fprint_lindex_mem"></A><HR><PRE><B>void fprint_lindex_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the lindex package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="lindex_backtrack"></A><HR><PRE><B>BOOL lindex_backtrack(Lindex idx);
+</B></PRE>This Boolean function checks if either of the <A HREF="mindex.html">Mindex</A> components (pos, neg)
+uses backtrack unification.
+<A NAME="lindex_destroy"></A><HR><PRE><B>void lindex_destroy(Lindex ldx);
+</B></PRE>This frees all the memory associated with a Lindex.  Do not refer
+to the Lindex after calling this routine.
+<A NAME="lindex_empty"></A><HR><PRE><B>BOOL lindex_empty(Lindex idx);
+</B></PRE>This Boolean routine checks if an Lindex is empty, that is, has no
+atoms.  It must exist (be non-NULL).
+<A NAME="lindex_init"></A><HR><PRE><B>Lindex lindex_init(Mindextype pos_mtype, Uniftype pos_utype, int pos_fpa_depth,
+		   Mindextype neg_mtype, Uniftype neg_utype, int neg_fpa_depth);
+</B></PRE>This routine allocates and returns a literal index (Lindex), which is
+a pair of Mindexes, one for positive literals, and one for negative literals.
+The first three parameters are for the positive literal <A HREF="mindex.html">Mindex</A>,
+and the second three are for the negative.
+<P>
+<UL>
+<LI><TT>Mindextype: {LINEAR, FPA, DISCRIM, DISCRIM_BIND}</TT>
+<LI><TT>Uniftype:   {ORDINARY_UNIF, BACKTRACK_UNIF}</TT>
+<LI><TT>fpa_depth: </TT>depth of FPA indexing
+    (ignored for other index types).
+</UL>
+See the routine mindex_init() for further information.
+<A NAME="lindex_update"></A><HR><PRE><B>void lindex_update(Lindex ldx, Topform c, Indexop op);
+</B></PRE>This routine indexes (or unindexes) all literals of a clause.
+<A NAME="lindex_update_first"></A><HR><PRE><B>void lindex_update_first(Lindex ldx, Topform c, Indexop op);
+</B></PRE>This routine indexes (or unindexes) the first literal of a clause.
+<A NAME="p_lindex_mem"></A><HR><PRE><B>void p_lindex_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the lindex package.
+<HR><A NAME=defns></A><H2>Public Definitions in File lindex.h</H2>
+<PRE>
+typedef struct lindex * Lindex;
+
+struct lindex {
+  <A HREF="mindex.html">Mindex</A> pos;   /* index for positive literals */
+  <A HREF="mindex.html">Mindex</A> neg;   /* index for negative literals */
+  Lindex next;  /* for avail list */
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This is a simple package that can be used when you need a pair
+of indexes (Mindexes), one for positive literals, and one for negative
+literals.  The name Lindex means "literal index".
+<P>
+When you allocate the Lindex (lindex_init()), you
+specify the parameters as you would for two separate Mindexes.
+When you insert into or delete from the Lindex, you give a clause,
+and each literal of the clause is indexed: positive literals
+go into the positive component of the Lindex, and negative literals
+go into the negative component.
+<P>
+There are no retrieval operations in this package.  Instead, use
+the retrieval operations from the Mindex package on the appropriate
+member (positive or negative) of the pair.
+<P>
+See the package "mindex" for information on the initialization
+parameters and retrieval operations.
+
+<HR>
+</BODY>
+</HTML>

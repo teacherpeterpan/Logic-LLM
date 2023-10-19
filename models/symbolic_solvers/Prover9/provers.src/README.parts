@@ -1,0 +1,93 @@
+To expand on our discussion of selection-by-parts ...
+
+What about this?
+
+The selection rules:
+
+    list(given_selection).
+    <ordered_list_of_rules>
+    end_of_list.
+
+Each rule looks like one of these
+
+    part(<order>, <boolean_expression>) = loop.
+    part(<order>, <boolean_expression>) = <positive_integer>.
+
+The <order> is "age", "weight", or "random".
+
+The <boolean_expression> is made up of clause properties, e.g.,
+
+ (signs of literals)    positive, negative, nonpositive, nonnegative, mixed
+ (matches a hint)       hint
+ (semantics)            true_in_all, true_in_some, false_in_all, false_in_some,
+                        not_evaluated (e.g., too many variables)
+ (other properties)     has_equality, horn, definite, unit
+ (for positive integer n)
+                        weight = n, weight < n, weight > n,
+                        vars = n, vars < n, vars > n,
+                        depth = n, depth < n, depth > n,
+                        literals = n, literals < n, literals > n,
+                        level = n, level < n, level > n
+
+For example,
+
+  part(weight, horn & -hint & vars = 3 & weight > 10) = 6.
+
+Disjunction and negation are allowed.
+
+If <boolean_expression> is $T (true), the rules can be abbreviated:
+
+    part(<order>) = loop.
+    part(<order>) = <positive_integer>.
+
+Examples for rules we already use
+
+    part(age, hint) = loop.   % loop rules always come first
+    part(weight) = 3.
+    part(weight, false_in_all) = 2.
+    part(random) = 1.
+    part(age) = 1.
+
+The "loop" is used *as soon as any* satisfying the property are available,
+and when the loop is done, it picks up where it left off in the ordinary
+(nonloop) rules.
+
+There can be more than one loop rule, and they are applied in order,
+that is, when selecting a given clause,
+
+  if (some clause satisfies the first loop rule)
+    use it;
+  else if (some clause satisfies the second loop rule)
+    use it;
+  etc., for all of the loop rules;
+  else
+    resume in the ordinary cycle.
+  
+For example
+
+   part(weight, hint & positive) = loop.
+   part(age, hint) = loop.
+   part(age) = 1.
+   part(weight) = 4.
+
+picks positive hint-matchers by weight, when available,
+then picks other hint-matchers by age, when available,
+then cycles through age and weight.
+
+-------------------------------------
+
+This raises the question of whether we should use the same
+kind of <boolean_expression> for keeping generated clauses, e.g.,
+
+  list(rules_for_keeping_generated_clauses).
+
+  keep(weight < 3 & depth < 10).
+  discard(weight = 8 & -horn & has_equality).
+
+  end_of_list.
+
+Disjunctions give us something new:
+
+  keep(weight < 50 | vars < 3).
+
+  Bill

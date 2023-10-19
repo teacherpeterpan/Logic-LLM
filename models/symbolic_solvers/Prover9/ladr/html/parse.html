@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<TITLE>parse.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "parse.h"</H1>
+
+This page has information from files
+<A HREF="../parse.h">parse.h</A> and <A HREF="../parse.c">parse.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File parse.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#declare_parse_type">declare_parse_type</A></TD><TD><A HREF="#get_cons_char">get_cons_char</A></TD><TD><A HREF="#read_term">read_term</A></TD><TD><A HREF="#split_string">split_string</A></TD>
+</TR>
+<TR><TD><A HREF="#declare_quantifier_precedence">declare_quantifier_precedence</A></TD><TD><A HREF="#get_quote_char">get_quote_char</A></TD><TD><A HREF="#redeclare_symbol_and_copy_parsetype">redeclare_symbol_and_copy_parsetype</A></TD><TD><A HREF="#sread_term">sread_term</A></TD>
+</TR>
+<TR><TD><A HREF="#declare_standard_parse_types">declare_standard_parse_types</A></TD><TD><A HREF="#ordinary_constant_string">ordinary_constant_string</A></TD><TD><A HREF="#sb_write_term">sb_write_term</A></TD><TD><A HREF="#translate_neg_equalities">translate_neg_equalities</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_parse_mem">fprint_parse_mem</A></TD><TD><A HREF="#p_parse_mem">p_parse_mem</A></TD><TD><A HREF="#set_cons_char">set_cons_char</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#fwrite_term">fwrite_term</A></TD><TD><A HREF="#parenthesize">parenthesize</A></TD><TD><A HREF="#set_quote_char">set_quote_char</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#fwrite_term_nl">fwrite_term_nl</A></TD><TD><A HREF="#parse_term_from_string">parse_term_from_string</A></TD><TD><A HREF="#skip_to_nl">skip_to_nl</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="declare_parse_type"></A><HR><PRE><B>void declare_parse_type(char *str, int precedence, Parsetype type);
+</B></PRE><A NAME="declare_quantifier_precedence"></A><HR><PRE><B>void declare_quantifier_precedence(int prec);
+</B></PRE><A NAME="declare_standard_parse_types"></A><HR><PRE><B>void declare_standard_parse_types(void);
+</B></PRE><A NAME="fprint_parse_mem"></A><HR><PRE><B>void fprint_parse_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the parse package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="fwrite_term"></A><HR><PRE><B>void fwrite_term(FILE *fp, <A HREF="term.html">Term</A> t);
+</B></PRE>This routine prints a term (to FILE *fp) in readable form,
+that is, infix where appropriate and without extra parentheses.
+A period and newline are <I>not</I> printed.
+<P>
+See the documentation on mixfix terms and the routine set_parse_type().
+<A NAME="fwrite_term_nl"></A><HR><PRE><B>void fwrite_term_nl(FILE *fp, <A HREF="term.html">Term</A> t);
+</B></PRE>This routine prints a term (to FILE *fp) in readable form,
+that is, infix where appropriate and without extra parentheses.
+Also printed is ".\n".
+<P>
+See the documentation on mixfix terms and the routine set_parse_type().
+<A NAME="get_cons_char"></A><HR><PRE><B>char get_cons_char(void);
+</B></PRE><A NAME="get_quote_char"></A><HR><PRE><B>char get_quote_char(void);
+</B></PRE><A NAME="ordinary_constant_string"></A><HR><PRE><B>BOOL ordinary_constant_string(char *s);
+</B></PRE><A NAME="p_parse_mem"></A><HR><PRE><B>void p_parse_mem(void);
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the parse package.
+<A NAME="parenthesize"></A><HR><PRE><B>void parenthesize(BOOL setting);
+</B></PRE><A NAME="parse_term_from_string"></A><HR><PRE><B><A HREF="term.html">Term</A> parse_term_from_string(char *s);
+</B></PRE><A NAME="read_term"></A><HR><PRE><B><A HREF="term.html">Term</A> read_term(FILE *fin, FILE *fout);
+</B></PRE>This routine reads a term (from FILE *fin).  The term may be
+in readable form, that is with infix operations and without
+extra parentheses.
+<P>
+If there is no term to be read, NULL is returned.  If an error
+occurs, a message is sent to FILE *fout, and fatal error occurs.
+<P>
+See the documentation on mixfix terms and the routine set_parse_type().
+<A NAME="redeclare_symbol_and_copy_parsetype"></A><HR><PRE><B>BOOL redeclare_symbol_and_copy_parsetype(char *operation, char *str,
+					 BOOL echo, FILE *fout);
+</B></PRE><A NAME="sb_write_term"></A><HR><PRE><B>void sb_write_term(<A HREF="strbuf.html">String_buf</A> sb, <A HREF="term.html">Term</A> t);
+</B></PRE>This routine prints a term to a <A HREF="strbuf.html">String_buf</A> in readable form,
+that is, infix where appropriate and without extra parentheses.
+A period and newline are <I>not</I> printed.
+<P>
+See the documentation on mixfix terms and the routine set_parse_type().
+<A NAME="set_cons_char"></A><HR><PRE><B>void set_cons_char(char c);
+</B></PRE><A NAME="set_quote_char"></A><HR><PRE><B>void set_quote_char(char c);
+</B></PRE><A NAME="skip_to_nl"></A><HR><PRE><B>void skip_to_nl(FILE *fp);
+</B></PRE>Read characters up to the first newline (or EOF).
+<A NAME="split_string"></A><HR><PRE><B>Plist split_string(char *onlys);
+</B></PRE>This splits a string of symbols, separated by whitespace,
+into a list of strings.  A Plist of (malloced) strings
+is returned.
+<A NAME="sread_term"></A><HR><PRE><B><A HREF="term.html">Term</A> sread_term(<A HREF="strbuf.html">String_buf</A> sb, FILE *fout);
+</B></PRE>This routine reads a term (from <A HREF="strbuf.html">String_buf</A> *sb).  The term may be
+in readable form, that is with infix operations and without
+extra parentheses.
+<P>
+If there is no term to be read, NULL is returned.  If an error
+occurs, a message is sent to FILE *fout, and fatal error occurs.
+<P>
+See the documentation on mixfix terms and the routine set_parse_type().
+<A NAME="translate_neg_equalities"></A><HR><PRE><B>void translate_neg_equalities(BOOL flag);
+</B></PRE>This routine sets or clears the flag which tells the parser
+to automatically translate alpha!=beta to ~(alpha=beta).
+This happens in <A HREF="#read_term">read_term</A>(), which is called by
+read_clause(), read_formula(), and read_term_list().
+<HR><A NAME=defns></A><H2>Public Definitions in File parse.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package has routines for reading and writing terms in
+human-readable form.  Binary function symbols can be declared
+to be infix with a precedence and left or right association,
+so that many parentheses can be omitted.  Unary symbols
+can be declared to be prefix or postfix.
+In addition, prolog-style list-notation and quantified formulas are
+supported.
+<P>
+The symbol declarations and parse rules are similar to the method
+used by many Prolog systems (although we use mnemonic names 
+instead of xfy, yfx, yf, etc.).  The symbol declarations
+are made with set_parse_type().
+<P>
+This package is based on code taked form Otter and EQP, but there
+are some important differences.  Detailed documentation should
+be available elsewhere.
+<P>
+The intension is to use this package for reading
+and writing all types of data (terms, clauses, formulas, control
+information, etc.), with outside routines to translate to/from
+the appropriate internal data structure when necessary.
+
+<HR>
+</BODY>
+</HTML>

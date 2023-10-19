@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>clause_misc.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "clause_misc.h"</H1>
+
+This page has information from files
+<A HREF="../clause_misc.h">clause_misc.h</A> and <A HREF="../clause_misc.c">clause_misc.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File clause_misc.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#clist_copy">clist_copy</A></TD><TD><A HREF="#copy_clauses_to_clist">copy_clauses_to_clist</A></TD><TD><A HREF="#delete_clist">delete_clist</A></TD><TD><A HREF="#move_clauses_to_clist">move_clauses_to_clist</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_clause_ija">copy_clause_ija</A></TD><TD><A HREF="#delete_clause">delete_clause</A></TD><TD><A HREF="#input_clauses">input_clauses</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#copy_clauses_ija">copy_clauses_ija</A></TD><TD><A HREF="#delete_clauses">delete_clauses</A></TD><TD><A HREF="#make_clause_basic">make_clause_basic</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="clist_copy"></A><HR><PRE><B><A HREF="clist.html">Clist</A> clist_copy(<A HREF="clist.html">Clist</A> a, BOOL assign_ids);
+</B></PRE>Copy a clist of clauses.  Justificatons and attributes are
+copied, and the clauses get new IDs.
+<A NAME="copy_clause_ija"></A><HR><PRE><B>Topform copy_clause_ija(Topform c);
+</B></PRE>Copy a clause, including ID, justification, attributes, and
+termflags.
+Clauses constructed with this routine should be deallocated
+with <A HREF="#delete_clause">delete_clause</A>().
+<A NAME="copy_clauses_ija"></A><HR><PRE><B>Plist copy_clauses_ija(Plist p);
+</B></PRE>Copy a Plist of clauses.  Clauses are coped with <A HREF="#copy_clause_ija">copy_clause_ija</A>(),
+which copies ID, justification, attributes, and termflags.
+<A NAME="copy_clauses_to_clist"></A><HR><PRE><B><A HREF="clist.html">Clist</A> copy_clauses_to_clist(Plist clauses, char *name, BOOL assign_ids);
+</B></PRE><A NAME="delete_clause"></A><HR><PRE><B>void delete_clause(Topform c);
+</B></PRE>This routine frees a clause and all of its subterms.
+If the clause has an ID, it is unassigned.
+If the clause has a justification list, it is freed.
+<P>
+This routine is not in the clause package, because
+(at this time) the clause package doesn't know about
+just.h or clauseid.h.
+<A NAME="delete_clauses"></A><HR><PRE><B>void delete_clauses(Plist p);
+</B></PRE>Delete (deep) a Pist of clauses.
+<A NAME="delete_clist"></A><HR><PRE><B>void delete_clist(<A HREF="clist.html">Clist</A> l);
+</B></PRE>For each Topform in the <A HREF="clist.html">Clist</A>, remove it from the <A HREF="clist.html">Clist</A>;
+if it occurs in no other Clists, call <A HREF="#delete_clause">delete_clause</A>().
+Finally, free the <A HREF="clist.html">Clist</A>.
+<P>
+This routine is not in the clist package, because
+(at this time) the clist package doesn't know about
+just.h or clauseid.h.
+<A NAME="input_clauses"></A><HR><PRE><B>Plist input_clauses(Plist a);
+</B></PRE>Given a Plist of clauses, return the Plist of input clauses (in the
+same order).
+<A NAME="make_clause_basic"></A><HR><PRE><B>void make_clause_basic(Topform c);
+</B></PRE>This routine clears all of the "nonbasic" marks in a clause.
+<A NAME="move_clauses_to_clist"></A><HR><PRE><B><A HREF="clist.html">Clist</A> move_clauses_to_clist(Plist clauses, char *name, BOOL assign_ids);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File clause_misc.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

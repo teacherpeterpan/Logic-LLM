@@ -1,0 +1,20 @@
+set(arithmetic).
+
+formulas(assumptions).
+
+% n-Queens Puzzle
+%
+% In this representation, Q(i)=n means that Row i Column n has a queen.
+% The constraint that no queens can be in the same row is always satisfied
+% in this representation, because Q is a function; that is,
+% Q(x) != Q(z) -> x != z  is always satisfied.
+
+% Note that "--" is the binary "minus" operation.
+
+x != z -> Q(x) != Q(z).   % No 2 queens in the same column.
+
+x != z  ->  z -- x != Q(z) -- Q(x).  % No 2 queens in \ diagonal.
+
+x != z  ->  z -- x != Q(x) -- Q(z).  % No 2 queens in / diagonal.
+
+end_of_list.

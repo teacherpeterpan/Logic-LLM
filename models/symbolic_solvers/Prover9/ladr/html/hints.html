@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>hints.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "hints.h"</H1>
+
+This page has information from files
+<A HREF="../hints.h">hints.h</A> and <A HREF="../hints.c">hints.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File hints.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#adjust_weight_with_hints">adjust_weight_with_hints</A></TD><TD><A HREF="#done_with_hints">done_with_hints</A></TD><TD><A HREF="#init_hints">init_hints</A></TD><TD><A HREF="#unindex_hint">unindex_hint</A></TD>
+</TR>
+<TR><TD><A HREF="#back_demod_hints">back_demod_hints</A></TD><TD><A HREF="#index_hint">index_hint</A></TD><TD><A HREF="#redundant_hints">redundant_hints</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="adjust_weight_with_hints"></A><HR><PRE><B>void adjust_weight_with_hints(Topform c,
+			      BOOL degrade,
+			      BOOL breadth_first_hints);
+</B></PRE><A NAME="back_demod_hints"></A><HR><PRE><B>void back_demod_hints(Topform demod, int type, BOOL lex_order_vars);
+</B></PRE><A NAME="done_with_hints"></A><HR><PRE><B>void done_with_hints(void);
+</B></PRE><A NAME="index_hint"></A><HR><PRE><B>void index_hint(Topform c);
+</B></PRE>Index a clause C as a hint (make sure to call init_hints first).
+If the clause is equivalent to a previously indexed hint H, any
+labels on C are copied to H, and C is not indexed.
+<A NAME="init_hints"></A><HR><PRE><B>void init_hints(Uniftype utype,
+		int bsub_wt_attr,
+		BOOL collect_labels,
+		BOOL back_demod_hints,
+		void (*demod_proc) (Topform, int, int, BOOL, BOOL));
+</B></PRE><A NAME="redundant_hints"></A><HR><PRE><B>int redundant_hints(void);
+</B></PRE><A NAME="unindex_hint"></A><HR><PRE><B>void unindex_hint(Topform c);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File hints.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

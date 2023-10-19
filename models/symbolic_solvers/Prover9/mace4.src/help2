@@ -1,0 +1,48 @@
+Division by zero
+
+The new built-in integer arithmetic in Mace4 suppoorts integer division
+and remainder operations (/ and mod).  I want to run by you how it is
+handling division by zero.
+
+First, it can't just fail (fatal error) like programming languages do,
+because Mace4 is going to be plugging in zeros all the time and trying
+to evaluate expressions involving division by zero (including mod).
+
+Second, when evaluating an expression containing division by zero,
+it can't just result in some special value "undefined", with all
+relations that get "undefined" as an argument evaluate to FALSE.
+The reason: 3/0 = 3/0 has to evaluate to TRUE (because it's an
+instance of x=x).
+
+So the problem is that we have a ground atomic formula involving
+integers and operations (+ * - / mod) with one of the relations
+(< <= > >= =) at the root.  We have to evaluate it to TRUE or to
+FALSE.  If it has no division by zero, it's trivial.
+
+Otherwise, we evaluate as much as possible, and then simplify with ring
+identities.  Simplification might get rid of some division by zero
+by applying rules that eliminate terms (e.g., x * 0 = 0 and x-x=0.)
+
+Then, put the result in a canonial form.  Assume some division by
+zero remains (otherwise, we have just TRUE or FALSE).  If it is
+an equality in which the two sides are identical, it evaluates to
+TRUE.  Otherwise, it is FALSE.
+
+But, I don't think there is a unique canonical form for expressions
+like this, such that two terms are equal iff their canonical forms
+are identical.
+
+Also, trichotomy fails for expressions involving division by zero:
+e.g., for 3/0 and 2/0, none of < > = holds.
+
+I suppose, technically, that expressions involving division by zero
+shouldn't evaluate to FALSE, because that can't be proved formally in
+the theory.  But Mace4 has to think of it that way, because it either
+has to go forward (TRUE) or backtrack and try something else (FALSE).
+Maybe we should think of it as "maybe" and solutions can't depend on
+"maybe", so it is essentially the same as FALSE.
+
+I'd like to get this right.  (I've ridiculed Wolfram many times
+for getting division by zero wrong in Mathematica.)
+
+  Bill

@@ -1,0 +1,141 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+
+sub member {
+    local ($object, @list) = @_;
+    local ($element);
+
+    foreach $element (@list) {
+        return 1 if ($element eq $object);
+    }
+    return 0;
+}  # member
+
+$arguments = join(" ", @ARGV);
+
+%options=();
+
+getopts("xrajn:", \%options);  # this removes args it recognizes
+
+if (@ARGV != 1) {
+    print "proofs_to_hints [-xaj] output_file\n";
+    print "    -x  : use expanded proofs\n";
+    print "    -r  : use renumbered proofs\n";
+    print "    -a  : copy attributes\n";
+    print "    -j  : include justifications as comments\n";
+    print "    -n 3: use only the third proof (for example)\n";
+    exit;
+}
+
+$output_attr  = (defined $options{a} ? 1 : 0);
+$output_just  = (defined $options{j} ? 1 : 0);
+$expanded     = (defined $options{x} ? 1 : 0);
+$renumbered   = (defined $options{r} ? 1 : 0);
+$proof_to_get = (defined $options{n} ? "$options{n}" : "\\d*");
+
+$filename = $ARGV[0];
+open(FH, $filename) || die "Cannot open file $filename.\n";
+
+$proofs = 0;
+$get_this_one = 0;
+$collect = 0;
+
+while ($line = <FH>) {
+    if ($line =~ /- Proof $proof_to_get -/) {
+	$info = $line;
+	$info =~ s/.* Proof $proof_to_get -*//;
+	$get_this_one = 1;
+    }
+    elsif ($get_this_one &&
+	   (( $expanded &&  $renumbered && $line =~ / (RX|XR)PROOF /) ||
+	    ( $expanded && !$renumbered && $line =~ / XPROOF /) ||
+	    (!$expanded &&  $renumbered && $line =~ / RPROOF /) ||
+	    (!$expanded && !$renumbered && $line =~ / PROOF /))) {
+	$proofs++;
+	$get_this_one = 0;
+	$collect = 1;
+    }
+    elsif ($line =~ /end of .*proof/) {
+	$collect = 0;
+    }
+    elsif ($collect) {
+	if ($line =~ /Length of /) {
+	    chop($line);
+	    push(@lengths, "% $line $info");
+	}
+	elsif ($line =~ /Maximum clause weight/) {
+	    ;  # skip it
+	}
+	elsif ($line =~ /Level of proof/) {
+	    ;  # skip it
+	}
+	elsif ($line ne "\n") {
+	    # Now it is a clause in the proof.
+	    chop $line;
+
+	    # break clause into (id literals attributes justification)
+
+	    $id = $line;
+	    $id =~ s/ .*//;
+
+	    $clause = $line;
+	    $clause =~ s/^[0-9A-Z]* *//;
+	    $clause =~ s/\..*//;
+
+	    $literal = $clause;   # this is really all literals in the clause
+	    $literal =~ s/ #.*//;
+
+	    # don't include the clause if we've already seen it
+
+	    if (! &member($literal, @literals)) {
+
+		$attribute = $clause;
+		$attribute =~ s/.*#/#/;
+		$attribute =~ s/\.//;
+		$attribute =~ s/^[^#].*//;  # in case there are none
+
+		$just = $line;
+		$just =~ s/^.*\. *//;
+
+		  # print "\nid:        $id\n";
+		  # print "clause:    $clause\n";
+		  # print "literal:   $literal\n";
+		  # print "attribute: $attribute\n";
+		  # print "just:      $just\n";
+
+		push(@ids,         $id);
+		push(@literals,    $literal);
+		push(@attributes,  $attribute);
+		push(@justs,       $just);
+	    }
+	}
+    }
+}
+
+$num = @ids;
+
+if ($proof_to_get == 0) {
+    $pmess = $proofs . ($proofs == 1 ? " proof" : " proofs");
+}
+    else {
+    $pmess = "proof $proof_to_get";
+}
+
+#############################################################
+
+print "clauses(hints).\n";
+
+print "% Arguments: $arguments\n";
+print "% $num hints were constructed from the clauses in $pmess.\n";
+print @lengths;
+
+for ($i = 0; $i < @ids; $i++) {
+    $literal = $literals[$i];
+    $attribute = $output_attr ? " $attributes[$i]" : "";
+    $label = " # label($ids[$i])";
+    $just = $output_just ? "  % $justs[$i]" : "";
+    print "$literal$attribute$label.$just\n";
+}
+
+print "end_of_list.\n";

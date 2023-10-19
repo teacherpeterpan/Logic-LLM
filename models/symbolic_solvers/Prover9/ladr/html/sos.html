@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>sos.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "sos.h"</H1>
+
+This page has information from files
+<A HREF="../sos.h">sos.h</A> and <A HREF="../sos.c">sos.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File sos.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#clauses_of_weight">clauses_of_weight</A></TD><TD><A HREF="#insert_into_sos">insert_into_sos</A></TD><TD><A HREF="#p_sos_tree">p_sos_tree</A></TD><TD><A HREF="#wt_of_clause_at">wt_of_clause_at</A></TD>
+</TR>
+<TR><TD><A HREF="#first_sos_clause">first_sos_clause</A></TD><TD><A HREF="#lightest_sos_clause">lightest_sos_clause</A></TD><TD><A HREF="#remove_from_sos">remove_from_sos</A></TD><TD><A HREF="#zap_sos_index">zap_sos_index</A></TD>
+</TR>
+<TR><TD><A HREF="#index_sos">index_sos</A></TD><TD><A HREF="#p_sos_dist">p_sos_dist</A></TD><TD><A HREF="#worst_sos_clause">worst_sos_clause</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="clauses_of_weight"></A><HR><PRE><B>int clauses_of_weight(int wt, int set);
+</B></PRE><A NAME="first_sos_clause"></A><HR><PRE><B>Topform first_sos_clause(<A HREF="clist.html">Clist</A> lst);
+</B></PRE>Given a nonempty <A HREF="clist.html">Clist</A>, return the first clause.
+This does not remove the clause from any lists.
+(Call <A HREF="#remove_from_sos">remove_from_sos</A>(Topform) to do that.)
+<A NAME="index_sos"></A><HR><PRE><B>void index_sos(Topform c, int set);
+</B></PRE>This routine updates
+the (private) index for extracting sos clauses.
+<A NAME="insert_into_sos"></A><HR><PRE><B>void insert_into_sos(Topform c, <A HREF="clist.html">Clist</A> sos, int set);
+</B></PRE>This routine appends a clause to the sos list and updates
+the (private) index for extracting sos clauses.
+<A NAME="lightest_sos_clause"></A><HR><PRE><B>Topform lightest_sos_clause(int set);
+</B></PRE>Return the first (oldest) of the lightest sos clauses.
+This does not remove the clause from any lists.
+(Call <A HREF="#remove_from_sos">remove_from_sos</A>(Topform, <A HREF="clist.html">Clist</A>) to do that.)
+<A NAME="p_sos_dist"></A><HR><PRE><B>void p_sos_dist(void);
+</B></PRE><A NAME="p_sos_tree"></A><HR><PRE><B>void p_sos_tree(void);
+</B></PRE><A NAME="remove_from_sos"></A><HR><PRE><B>void remove_from_sos(Topform c, <A HREF="clist.html">Clist</A> sos, int set);
+</B></PRE>This routine removes a clause from the sos list and updates
+the index for extracting the lightest and heaviest clauses.
+<A NAME="worst_sos_clause"></A><HR><PRE><B>Topform worst_sos_clause(<A HREF="clist.html">Clist</A> sos, int method);
+</B></PRE><A NAME="wt_of_clause_at"></A><HR><PRE><B>int wt_of_clause_at(int set, double part);
+</B></PRE>Consider sos, ordered by weight.
+Assume 0 <= part <= 1; if not, we make it so.
+Return the weight of the clause at the part.
+If sos is empty, return INT_MAX.
+<A NAME="zap_sos_index"></A><HR><PRE><B>void zap_sos_index(void);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File sos.h</H2>
+<PRE>
+enum { BY_AGE, BY_WEIGHT, BY_RATIO };
+enum { SOS1, SOS2 };
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package has routines for efficiently managing selection
+of the given clause from the Sos list when using the given-clause
+algorithm.
+<P>
+We use a private index to quickly find the first, shortest clause in Sos.
+Here are the routines to use under ordinary circumstances.
+<UL>
+<LI>insert_into_sos_lightest(Topform c, Clist sos);
+<LI>remove_from_sos_lightest(Topform c);
+<LI>extract_lightest_clause(Clist sos);
+<LI>extract_first_clause(Clist lst);
+</UL>
+Here's how it works (you probably don't need to know this).
+<P>
+We use an auxiliary
+Clist "Lightest" so that we don't have to scan Sos each time
+we need a new given clause.
+At any given time, Lightest is either empty or contains
+all of the Sos clauses of minimum weight, in the same order as
+in Sos.
+<P>
+To insert a newly kept clause c into Sos:  If c is the same
+weight as clauses in Lightest, append it to Lightest as well as
+to Sos.  If c is heaaver than Lightest, append it to Sos only.
+If c is lighter than Lightest, remove all clauses from Lightest,
+(leaving Lightest empty), and append c to Sos.
+<P>
+To get the first, lightest clause:  If Lightest is empty, build
+a new Lightest list.  Now just take the first member of Lightest.
+<P>
+Good performance of this scheme depends on the assumption that
+the Lightest list is farily stable; that is, as we go from
+given clause to given clause, the weight of the lightest clauses
+doesn't change often.
+
+<HR>
+</BODY>
+</HTML>

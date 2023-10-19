@@ -1,0 +1,252 @@
+<HTML>
+<HEAD>
+<TITLE>formula.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "formula.h"</H1>
+
+This page has information from files
+<A HREF="../formula.h">formula.h</A> and <A HREF="../formula.c">formula.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File formula.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#and">and</A></TD><TD><A HREF="#formula_ident">formula_ident</A></TD><TD><A HREF="#greatest_qvar">greatest_qvar</A></TD><TD><A HREF="#positive_formula">positive_formula</A></TD>
+</TR>
+<TR><TD><A HREF="#clausal_formula">clausal_formula</A></TD><TD><A HREF="#formula_megs">formula_megs</A></TD><TD><A HREF="#greatest_symnum_in_formula">greatest_symnum_in_formula</A></TD><TD><A HREF="#quant_form">quant_form</A></TD>
+</TR>
+<TR><TD><A HREF="#closed_formula">closed_formula</A></TD><TD><A HREF="#formula_set_variables">formula_set_variables</A></TD><TD><A HREF="#hash_formula">hash_formula</A></TD><TD><A HREF="#relation_in_formula">relation_in_formula</A></TD>
+</TR>
+<TR><TD><A HREF="#constants_in_formula">constants_in_formula</A></TD><TD><A HREF="#formula_size">formula_size</A></TD><TD><A HREF="#imp">imp</A></TD><TD><A HREF="#relation_symbols_in_formula">relation_symbols_in_formula</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_plist_of_formulas">copy_plist_of_formulas</A></TD><TD><A HREF="#formula_to_term">formula_to_term</A></TD><TD><A HREF="#impby">impby</A></TD><TD><A HREF="#relation_symbols_in_formulas">relation_symbols_in_formulas</A></TD>
+</TR>
+<TR><TD><A HREF="#dual">dual</A></TD><TD><A HREF="#formulas_to_conjunction">formulas_to_conjunction</A></TD><TD><A HREF="#literal_formula">literal_formula</A></TD><TD><A HREF="#rename_all_bound_vars">rename_all_bound_vars</A></TD>
+</TR>
+<TR><TD><A HREF="#dual_type">dual_type</A></TD><TD><A HREF="#formulas_to_disjunction">formulas_to_disjunction</A></TD><TD><A HREF="#make_conjunction">make_conjunction</A></TD><TD><A HREF="#rename_these_bound_vars">rename_these_bound_vars</A></TD>
+</TR>
+<TR><TD><A HREF="#eliminate_rebinding">eliminate_rebinding</A></TD><TD><A HREF="#fprint_formula">fprint_formula</A></TD><TD><A HREF="#make_disjunction">make_disjunction</A></TD><TD><A HREF="#subformula_contains_attributes">subformula_contains_attributes</A></TD>
+</TR>
+<TR><TD><A HREF="#flatten_top">flatten_top</A></TD><TD><A HREF="#fprint_formula_mem">fprint_formula_mem</A></TD><TD><A HREF="#negate">negate</A></TD><TD><A HREF="#subst_free_var">subst_free_var</A></TD>
+</TR>
+<TR><TD><A HREF="#formula_canon_eq">formula_canon_eq</A></TD><TD><A HREF="#free_formula">free_formula</A></TD><TD><A HREF="#nnf">nnf</A></TD><TD><A HREF="#term_to_formula">term_to_formula</A></TD>
+</TR>
+<TR><TD><A HREF="#formula_contains_attributes">formula_contains_attributes</A></TD><TD><A HREF="#free_variable">free_variable</A></TD><TD><A HREF="#nnf2">nnf2</A></TD><TD><A HREF="#universal_closure">universal_closure</A></TD>
+</TR>
+<TR><TD><A HREF="#formula_copy">formula_copy</A></TD><TD><A HREF="#function_symbols_in_formula">function_symbols_in_formula</A></TD><TD><A HREF="#or">or</A></TD><TD><A HREF="#zap_formula">zap_formula</A></TD>
+</TR>
+<TR><TD><A HREF="#formula_flatten">formula_flatten</A></TD><TD><A HREF="#function_symbols_in_formulas">function_symbols_in_formulas</A></TD><TD><A HREF="#p_formula">p_formula</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#formula_get">formula_get</A></TD><TD><A HREF="#get_quant_form">get_quant_form</A></TD><TD><A HREF="#p_formula_mem">p_formula_mem</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="and"></A><HR><PRE><B><A HREF="formula.html">Formula</A> and(<A HREF="formula.html">Formula</A> a, <A HREF="formula.html">Formula</A> b);
+</B></PRE><A NAME="clausal_formula"></A><HR><PRE><B>BOOL clausal_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="closed_formula"></A><HR><PRE><B>BOOL closed_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="constants_in_formula"></A><HR><PRE><B>Ilist constants_in_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="copy_plist_of_formulas"></A><HR><PRE><B>Plist copy_plist_of_formulas(Plist formulas);
+</B></PRE><A NAME="dual"></A><HR><PRE><B><A HREF="formula.html">Formula</A> dual(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Change a formula into its dual.  This is destructive.
+<A NAME="dual_type"></A><HR><PRE><B>BOOL dual_type(int op);
+</B></PRE><A NAME="eliminate_rebinding"></A><HR><PRE><B><A HREF="formula.html">Formula</A> eliminate_rebinding(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine renames quantified variables so that
+no quantified variable occurs in the scope of a quantified variable
+with the same name.
+<P>
+If you wish to rename variables so that each
+quantifer has a unique variable,
+you can use the routine unique_quantified_vars() instead.
+<P>
+The argument f is "used up" during the procedure.
+<P>
+(This could be a void routine, because
+none of the formula nodes is changed; I made it return the <A HREF="formula.html">Formula</A>
+so that it is consistent with its friends.)
+<A NAME="flatten_top"></A><HR><PRE><B><A HREF="formula.html">Formula</A> flatten_top(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="formula_canon_eq"></A><HR><PRE><B>void formula_canon_eq(<A HREF="formula.html">Formula</A> f);
+</B></PRE>For each equality in the formula, if the right side greater
+according to "term_compare_ncv", flip the equality.
+<A NAME="formula_contains_attributes"></A><HR><PRE><B>BOOL formula_contains_attributes(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Does the formula or any of its subformulas contain attributes?
+<A NAME="formula_copy"></A><HR><PRE><B><A HREF="formula.html">Formula</A> formula_copy(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This function returns a copy of the given formula.
+All subformulas, including the atoms, are copied.
+<A NAME="formula_flatten"></A><HR><PRE><B><A HREF="formula.html">Formula</A> formula_flatten(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine (recursively) flattens all AND and OR subformulas.
+<A NAME="formula_get"></A><HR><PRE><B><A HREF="formula.html">Formula</A> formula_get(int arity, Ftype type);
+</B></PRE><A NAME="formula_ident"></A><HR><PRE><B>BOOL formula_ident(<A HREF="formula.html">Formula</A> f, <A HREF="formula.html">Formula</A> g);
+</B></PRE>This Boolean function checks if two formulas are identical.
+The routine term_ident() checks identity of atoms.
+<P>
+The test is for strict identity---it does not consider
+renamability of bound variables, permutability of AND or OR,
+or symmetry of IFF or equality.
+<A NAME="formula_megs"></A><HR><PRE><B>unsigned formula_megs(void);
+</B></PRE>Return the approximate number of megabytes in use for storage of formulas.
+<A NAME="formula_set_variables"></A><HR><PRE><B>void formula_set_variables(<A HREF="formula.html">Formula</A> f, int max_vars);
+</B></PRE>This routine traverses a formula and changes the constants
+that should be variables, into variables.  On input, the formula
+should have no variables.  The new variables are numbered
+0, 1, 2 ... according the the first occurrence, reading from the
+left.
+<P>
+A fatal error occurs if there are more than max_vars variables.
+<P>
+The intended is use is for input formulas that
+are built without regard to variable/constant distinction.
+<A NAME="formula_size"></A><HR><PRE><B>int formula_size(<A HREF="formula.html">Formula</A> f);
+</B></PRE>How many nodes are in the formula.  (Atomic formulae count as 1.)
+<A NAME="formula_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> formula_to_term(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="formulas_to_conjunction"></A><HR><PRE><B><A HREF="formula.html">Formula</A> formulas_to_conjunction(Plist formulas);
+</B></PRE>Given a Plist of formulas, form a conjunction of the members.
+The formulas are not copied, and the Plist is not freed, so
+you may wish to call zap_plist after the call to this routine.
+<p>
+Note that the empty conjunction is TRUE.
+<A NAME="formulas_to_disjunction"></A><HR><PRE><B><A HREF="formula.html">Formula</A> formulas_to_disjunction(Plist formulas);
+</B></PRE>Given a Plist of formulas, form a disjunction of the members.
+The formulas are not copied, and the Plist is not freed, so
+you may wish to call zap_plist after the call to this routine.
+<p>
+Note that the empty disjunction is FALSE.
+<A NAME="fprint_formula"></A><HR><PRE><B>void fprint_formula(FILE *fp, <A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine prints a formula to a file.
+If you wish to have a formula printed without extra parentheses,
+you can call fprint_formula_term() instead.
+<A NAME="fprint_formula_mem"></A><HR><PRE><B>void fprint_formula_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the formula package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="free_formula"></A><HR><PRE><B>void free_formula(<A HREF="formula.html">Formula</A> p);
+</B></PRE><A NAME="free_variable"></A><HR><PRE><B>BOOL free_variable(char *svar, <A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="function_symbols_in_formula"></A><HR><PRE><B>I2list function_symbols_in_formula(<A HREF="formula.html">Formula</A> f, I2list g);
+</B></PRE>Collect the multiset of function symbols in a formula.
+<A NAME="function_symbols_in_formulas"></A><HR><PRE><B>I2list function_symbols_in_formulas(Plist lst);
+</B></PRE>Collect the multiset of function symbols (including constants) in
+formulas in a Plist.
+An I2list of SYMNUMs is returned.
+<A NAME="get_quant_form"></A><HR><PRE><B><A HREF="formula.html">Formula</A> get_quant_form(Ftype type, char *qvar, <A HREF="formula.html">Formula</A> subformula);
+</B></PRE><A NAME="greatest_qvar"></A><HR><PRE><B>int greatest_qvar(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Return the greatest SYMNUM of a quantified variable in <A HREF="formula.html">Formula</A> f.
+<P>
+Recall that in Formulas, a quantified variable is represented
+as a constant (which is bound by the quantifier).
+If the formula has no quantified variables, return -1.
+<A NAME="greatest_symnum_in_formula"></A><HR><PRE><B>int greatest_symnum_in_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Return the greatest SYMNUM of a any subterm.  This includes quantifed
+variables that don't occur in any term.
+<P>
+This routine is intended to be used if you need malloc an array
+for indexing by SYMNUM.
+<A NAME="hash_formula"></A><HR><PRE><B>unsigned hash_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This is a simple hash function for formulas.
+It shifts symbols by 3 bits and does exclusive ORs.
+<A NAME="imp"></A><HR><PRE><B><A HREF="formula.html">Formula</A> imp(<A HREF="formula.html">Formula</A> a, <A HREF="formula.html">Formula</A> b);
+</B></PRE><A NAME="impby"></A><HR><PRE><B><A HREF="formula.html">Formula</A> impby(<A HREF="formula.html">Formula</A> a, <A HREF="formula.html">Formula</A> b);
+</B></PRE><A NAME="literal_formula"></A><HR><PRE><B>BOOL literal_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="make_conjunction"></A><HR><PRE><B><A HREF="formula.html">Formula</A> make_conjunction(<A HREF="formula.html">Formula</A> f);
+</B></PRE>If the formula is not a conjunction, make it so.
+<A NAME="make_disjunction"></A><HR><PRE><B><A HREF="formula.html">Formula</A> make_disjunction(<A HREF="formula.html">Formula</A> f);
+</B></PRE>If the formula is not a dismunction, make it so.
+<A NAME="negate"></A><HR><PRE><B><A HREF="formula.html">Formula</A> negate(<A HREF="formula.html">Formula</A> a);
+</B></PRE><A NAME="nnf"></A><HR><PRE><B><A HREF="formula.html">Formula</A> nnf(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Transform a formula into negation normal form (NNF).  (NNF means
+that all propositional connectives have been rewritten in terms of
+AND, OR and NOT, and all negation signs ar up against atomic formulas).
+<P>
+This routine is destructive; a good way to call
+it is <TT>f = <A HREF="#nnf">nnf</A>(f)</TT>.
+<A NAME="nnf2"></A><HR><PRE><B><A HREF="formula.html">Formula</A> nnf2(<A HREF="formula.html">Formula</A> f, Fpref pref);
+</B></PRE>Transform a formula into negation normal form (NNF).  (NNF means
+that all propositional connectives have been rewritten in terms of
+AND, OR and NOT, and all negation signs ar up against atomic formulas).
+<P>
+The argument "pref" should be either CONJUNCTION or DISJUNCTION,
+and it specifies the preferred form to use when translating IFFs.
+<P>
+This rouine is destructive; a good way to call
+it is <TT>f = <A HREF="#nnf2">nnf2</A>(f, CONJUNCTION)</TT>.
+<A NAME="or"></A><HR><PRE><B><A HREF="formula.html">Formula</A> or(<A HREF="formula.html">Formula</A> a, <A HREF="formula.html">Formula</A> b);
+</B></PRE><A NAME="p_formula"></A><HR><PRE><B>void p_formula(<A HREF="formula.html">Formula</A> c);
+</B></PRE>This routine prints a formula, followed by ".\n" and fflush, to stdout.
+If you wish to have a formula printed without extra parentheses,
+you can call p_formula_term() instead.
+If you don't want the newline, use <A HREF="#fprint_formula">fprint_formula</A>() instead.
+<A NAME="p_formula_mem"></A><HR><PRE><B>void p_formula_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the formula package.
+<A NAME="positive_formula"></A><HR><PRE><B>BOOL positive_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Ignoring quantifiers, does the formula consist of an atomic
+formula or the conjunction of atomic formulas?
+<A NAME="quant_form"></A><HR><PRE><B>BOOL quant_form(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="relation_in_formula"></A><HR><PRE><B>BOOL relation_in_formula(<A HREF="formula.html">Formula</A> f, int symnum);
+</B></PRE>Collect the multiset of relation symbols in a formula.
+<A NAME="relation_symbols_in_formula"></A><HR><PRE><B>I2list relation_symbols_in_formula(<A HREF="formula.html">Formula</A> f, I2list g);
+</B></PRE>Collect the multiset of relation symbols in a formula.
+<A NAME="relation_symbols_in_formulas"></A><HR><PRE><B>I2list relation_symbols_in_formulas(Plist lst);
+</B></PRE>Collect the multiset of relation symbols (including constants) in
+formulas in a Plist.
+An I2list of SYMNUMs is returned.
+<A NAME="rename_all_bound_vars"></A><HR><PRE><B>void rename_all_bound_vars(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="rename_these_bound_vars"></A><HR><PRE><B>void rename_these_bound_vars(<A HREF="formula.html">Formula</A> f, Ilist vars);
+</B></PRE><A NAME="subformula_contains_attributes"></A><HR><PRE><B>BOOL subformula_contains_attributes(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Does any proper subformula contain attributes?
+<A NAME="subst_free_var"></A><HR><PRE><B>void subst_free_var(<A HREF="formula.html">Formula</A> f, <A HREF="term.html">Term</A> target, <A HREF="term.html">Term</A> replacement);
+</B></PRE>In formula f, substitute free occurrences of target
+with replacement.  The function term_ident() is used,
+and the target can be any term.
+<A NAME="term_to_formula"></A><HR><PRE><B><A HREF="formula.html">Formula</A> term_to_formula(<A HREF="term.html">Term</A> t);
+</B></PRE>Assume that no subterm (of t) representing a formula is a
+term of type VARIABLE.  The given <A HREF="term.html">Term</A> is not changed.
+<A NAME="universal_closure"></A><HR><PRE><B><A HREF="formula.html">Formula</A> universal_closure(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Construct the universal closure of <A HREF="formula.html">Formula</A> f.  The <A HREF="formula.html">Formula</A>
+is consumed during the construction.
+<A NAME="zap_formula"></A><HR><PRE><B>void zap_formula(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Free a formula, including all of its subformulas, including its atoms.
+If a subformula as excess references, the refcount is decremented instead.
+<HR><A NAME=defns></A><H2>Public Definitions in File formula.h</H2>
+<PRE>
+/* formula types */
+
+typedef enum {
+  ATOM_FORM=0, AND_FORM, OR_FORM, NOT_FORM, IFF_FORM,
+  IMP_FORM, IMPBY_FORM, ALL_FORM, EXISTS_FORM} Ftype;
+
+typedef struct formula * <A HREF="formula.html">Formula</A>;
+struct formula {
+  Ftype       type;
+  int         arity;
+  char        *qvar;         /* quantified variable */
+  <A HREF="formula.html">Formula</A>     *kids;         /* for non-atoms */
+  <A HREF="term.html">Term</A>        atom;          /* for atoms */
+  Attribute   attributes;    /* */
+  int excess_refs;           /* count of extra references */
+};
+
+/* formula preference */
+
+typedef enum { CONJUNCTION,
+	       DISJUNCTION
+             } Fpref;
+
+/* macros */
+
+#define TRUE_FORMULA(f)  ((f)->type == AND_FORM && (f)->arity == 0)
+#define FALSE_FORMULA(f) ((f)->type == OR_FORM  && (f)->arity == 0)
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

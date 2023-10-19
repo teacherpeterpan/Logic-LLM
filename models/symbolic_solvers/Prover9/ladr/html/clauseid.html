@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<TITLE>clauseid.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "clauseid.h"</H1>
+
+This page has information from files
+<A HREF="../clauseid.h">clauseid.h</A> and <A HREF="../clauseid.c">clauseid.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File clauseid.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#assign_clause_id">assign_clause_id</A></TD><TD><A HREF="#clause_plist_member">clause_plist_member</A></TD><TD><A HREF="#fprint_clause_id_tab">fprint_clause_id_tab</A></TD><TD><A HREF="#p_clause_id_tab">p_clause_id_tab</A></TD>
+</TR>
+<TR><TD><A HREF="#clause_ids_assigned">clause_ids_assigned</A></TD><TD><A HREF="#find_clause_by_id">find_clause_by_id</A></TD><TD><A HREF="#insert_clause_into_plist">insert_clause_into_plist</A></TD><TD><A HREF="#unassign_clause_id">unassign_clause_id</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="assign_clause_id"></A><HR><PRE><B>void assign_clause_id(Topform c);
+</B></PRE>This routine assigns a unique identifier to the id field of a clause.
+It also inserts the clause into a hash table so that given an id
+number, the corresponding clause can be retrieved quickly (see
+<A HREF="#find_clause_by_id">find_clause_by_id</A>()).
+<A NAME="clause_ids_assigned"></A><HR><PRE><B>int clause_ids_assigned(void);
+</B></PRE>What is the most recently assigned clause ID?
+<A NAME="clause_plist_member"></A><HR><PRE><B>BOOL clause_plist_member(Plist p, Topform c, BOOL increasing);
+</B></PRE>This routine checks if a clause occurs in a sorted (by ID) Plist of clauses.
+Boolean paramemeter "increasing" tells whether the list is increasing
+or decreasing.
+<A NAME="find_clause_by_id"></A><HR><PRE><B>Topform find_clause_by_id(int id);
+</B></PRE>This routine retrieves the clause with the given ID number
+(or NULL, if there is no such clause).
+<A NAME="fprint_clause_id_tab"></A><HR><PRE><B>void fprint_clause_id_tab(FILE *fp);
+</B></PRE>This routine prints (to FILE *fp) all the clauses in the ID hash table.
+<A NAME="insert_clause_into_plist"></A><HR><PRE><B>Plist insert_clause_into_plist(Plist p, Topform c, BOOL increasing);
+</B></PRE>This routine inserts a clause into a sorted (by ID) Plist of clauses.
+Boolean paramemeter "increasing" tells whether the list is increasing
+or decreasing.
+The updated Plist is returned.
+If the clause is already there, nothing happens.
+<A NAME="p_clause_id_tab"></A><HR><PRE><B>void p_clause_id_tab();
+</B></PRE>This routine prints (to stdout) all the clauses in the ID hash table.
+<A NAME="unassign_clause_id"></A><HR><PRE><B>void unassign_clause_id(Topform c);
+</B></PRE>This routine removes a clause from the ID hash table and resets
+the ID of the clause to 0.  A fatal error occurs if the clause
+has not been assigned an ID.
+<HR><A NAME=defns></A><H2>Public Definitions in File clauseid.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

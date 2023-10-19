@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<TITLE>weight.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "weight.h"</H1>
+
+This page has information from files
+<A HREF="../weight.h">weight.h</A> and <A HREF="../weight.c">weight.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File weight.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#clause_weight">clause_weight</A></TD><TD><A HREF="#init_weight">init_weight</A></TD><TD><A HREF="#weight">weight</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="clause_weight"></A><HR><PRE><B>int clause_weight(Literals lits);
+</B></PRE><A NAME="init_weight"></A><HR><PRE><B>void init_weight(Plist rules,
+		 int variable_weight,
+		 int constant_weight,
+		 int not_weight,
+		 int or_weight,
+		 int sk_constant_weight,
+		 int prop_atom_weight,
+		 int skolem_penalty,
+		 int nest_penalty,
+		 int depth_penalty,
+		 int var_penalty);
+</B></PRE>Initialize weighting.  The rules are copied.
+<A NAME="weight"></A><HR><PRE><B>int weight(<A HREF="term.html">Term</A> t, <A HREF="unify.html">Context</A> subst);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File weight.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- ===========================================
+
+  "proofs"        has an attribute "number_of_proofs"
+                  optional element "source"   (prover output file)
+                  optional element "heading"  (info about the job)
+                  contains 0 or more "proof"s
+
+  "proof"         has several attributes
+                  optional element "comments"
+                  contains 1 or more "clause"s 
+
+  "clause"        0 or more "attribute"s,
+                  contains 1 or more "literal"s
+                  an optional "justification"
+
+  "literal"       contains some data
+
+  "attribute"     contains some data
+
+  "justification" contains one "j1" (primary component)
+                  has 0 or more "j2"s (secondary components)
+                  contains an attribute "jstring" (the just. in standard form)
+
+  "j1"            has attributes "rule" and "parents"
+
+  "j2"            has attributes "rule" and "parents"
+
+=========================================== -->
+
+<!ELEMENT proofs (source?,heading?,proof*)>
+  <!ATTLIST proofs number_of_proofs CDATA #IMPLIED>
+  <!ELEMENT source       (#PCDATA)>
+  <!ELEMENT heading       (#PCDATA)>
+  <!ELEMENT proof (comments?,clause+)>
+    <!ATTLIST proof    number CDATA #IMPLIED
+                       length CDATA #IMPLIED
+                       max_count CDATA #IMPLIED
+                       seconds CDATA #IMPLIED>
+  
+      <!ELEMENT comments       (#PCDATA)>
+      <!ELEMENT clause (literal+,attribute*,justification?)>
+        <!ATTLIST clause    id CDATA #IMPLIED type CDATA #IMPLIED>
+          <!ELEMENT literal       (#PCDATA)>
+          <!ELEMENT attribute     (#PCDATA)>
+      
+          <!ELEMENT justification (j1,j2*)>
+            <!ATTLIST justification jstring CDATA #REQUIRED>
+              <!ELEMENT j1 EMPTY>
+                <!ATTLIST j1 rule CDATA #REQUIRED parents CDATA #IMPLIED>
+              <!ELEMENT j2 EMPTY>
+                <!ATTLIST j2 rule CDATA #REQUIRED parents CDATA #IMPLIED>

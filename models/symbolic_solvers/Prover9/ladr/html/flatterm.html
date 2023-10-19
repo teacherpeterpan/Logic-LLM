@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>flatterm.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "flatterm.h"</H1>
+
+This page has information from files
+<A HREF="../flatterm.h">flatterm.h</A> and <A HREF="../flatterm.c">flatterm.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File flatterm.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#copy_flatterm">copy_flatterm</A></TD><TD><A HREF="#flatterm_count_without_vars">flatterm_count_without_vars</A></TD><TD><A HREF="#fprint_flatterm_mem">fprint_flatterm_mem</A></TD><TD><A HREF="#print_flatterm">print_flatterm</A></TD>
+</TR>
+<TR><TD><A HREF="#flat_multiset_vars">flat_multiset_vars</A></TD><TD><A HREF="#flatterm_ident">flatterm_ident</A></TD><TD><A HREF="#get_flatterm">get_flatterm</A></TD><TD><A HREF="#term_to_flatterm">term_to_flatterm</A></TD>
+</TR>
+<TR><TD><A HREF="#flat_occurs_in">flat_occurs_in</A></TD><TD><A HREF="#flatterm_symbol_count">flatterm_symbol_count</A></TD><TD><A HREF="#p_flatterm">p_flatterm</A></TD><TD><A HREF="#zap_flatterm">zap_flatterm</A></TD>
+</TR>
+<TR><TD><A HREF="#flat_variables_multisubset">flat_variables_multisubset</A></TD><TD><A HREF="#flatterm_to_term">flatterm_to_term</A></TD><TD><A HREF="#p_flatterm_mem">p_flatterm_mem</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="copy_flatterm"></A><HR><PRE><B>Flatterm copy_flatterm(Flatterm f);
+</B></PRE><A NAME="flat_multiset_vars"></A><HR><PRE><B>I2list flat_multiset_vars(Flatterm f);
+</B></PRE><A NAME="flat_occurs_in"></A><HR><PRE><B>BOOL flat_occurs_in(Flatterm t1, Flatterm t2);
+</B></PRE><A NAME="flat_variables_multisubset"></A><HR><PRE><B>BOOL flat_variables_multisubset(Flatterm a, Flatterm b);
+</B></PRE><A NAME="flatterm_count_without_vars"></A><HR><PRE><B>int flatterm_count_without_vars(Flatterm f);
+</B></PRE><A NAME="flatterm_ident"></A><HR><PRE><B>BOOL flatterm_ident(Flatterm a, Flatterm b);
+</B></PRE><A NAME="flatterm_symbol_count"></A><HR><PRE><B>int flatterm_symbol_count(Flatterm f);
+</B></PRE><A NAME="flatterm_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> flatterm_to_term(Flatterm f);
+</B></PRE><A NAME="fprint_flatterm_mem"></A><HR><PRE><B>void fprint_flatterm_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the flatterm package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="get_flatterm"></A><HR><PRE><B>Flatterm get_flatterm(void);
+</B></PRE><A NAME="p_flatterm"></A><HR><PRE><B>void p_flatterm(Flatterm f);
+</B></PRE><A NAME="p_flatterm_mem"></A><HR><PRE><B>void p_flatterm_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the flatterm package.
+<A NAME="print_flatterm"></A><HR><PRE><B>void print_flatterm(Flatterm f);
+</B></PRE><A NAME="term_to_flatterm"></A><HR><PRE><B>Flatterm term_to_flatterm(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="zap_flatterm"></A><HR><PRE><B>void zap_flatterm(Flatterm f);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File flatterm.h</H2>
+<PRE>
+typedef struct flatterm * Flatterm;
+
+struct flatterm {
+  short         private_symbol; /* const/func/pred/var symbol ID */
+  unsigned char arity;          /* number of auguments */
+  Flatterm prev, next, end;
+
+  /* The rest of the fields are for index retrieval and demodulation. */
+  
+  int size;                      /* symbol count */
+  struct discrim *alternative;   /* subtree to try next */
+  int varnum_bound_to;           /* -1 for not bound */
+  BOOL reduced_flag;             /* fully demodulated */
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+<P>
+The Term macros VARIABLE(f), CONSTANT(f), COMPLEX(f), SYMNUM(f),
+VARNUM(f), ARITY(f) are used for Flatterms as well.  The Term macro
+ARG(t,i) is NOT used for Flatterms.
+<P>
+Traversing Flatterms.  It can be done recursively or iteratively.
+When building flatterms, recursive is better, because you have to
+make a Flatterm point to its end.
+
+Iterative:
+
+   Flatterm fi;
+   for (f = fi; fi != f->end->next; fi = fi->next)
+      ...
+
+Recursive:
+
+   int i;
+   Flatterm fi = f->next;
+   for (i = 0; i < ARITY(f); i++) {
+     ...
+     fi = fi->end->next;
+   }
+   
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,67 @@
+Task Description: You are given a problem description. The task is to parse the problem as a constraint satisfaction problem, defining the domain, variables, and contraints.
+------
+Problem:
+The following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn an antique car show, there are three vehicles: a station wagon, a convertible, and a minivan. The station wagon is the oldest. The minivan is newer than the convertible.
+Question:
+Which of the following is true?
+Options:
+A) The station wagon is the second-newest.
+B) The convertible is the second-newest.
+C) The minivan is the second-newest.
+###
+Domain:
+1: oldest
+3: newest
+Variables:
+station_wagon [IN] [1, 2, 3]
+convertible [IN] [1, 2, 3]
+minivan [IN] [1, 2, 3]
+Constraints:
+station_wagon == 1 ::: The station wagon is the oldest.
+minivan > convertible ::: The minivan is newer than the convertible.
+AllDifferentConstraint([station_wagon, convertible, minivan]) ::: All vehicles have different values.
+Query:
+A) station_wagon == 2 ::: The station wagon is the second-newest.
+B) convertible == 2 ::: The convertible is the second-newest.
+C) minivan == 2 ::: The minivan is the second-newest.
+------
+Problem:
+The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a branch, there are five birds: a quail, an owl, a raven, a falcon, and a robin. The owl is the leftmost. The robin is to the left of the raven. The quail is the rightmost. The raven is the third from the left.
+Question:
+Which of the following is true?
+Options:
+A) The quail is the rightmost.
+B) The owl is the rightmost.
+C) The raven is the rightmost.
+D) The falcon is the rightmost.
+E) The robin is the rightmost.
+###
+Domain:
+1: leftmost
+5: rightmost
+Variables:
+quail [IN] [1, 2, 3, 4, 5]
+owl [IN] [1, 2, 3, 4, 5]
+raven [IN] [1, 2, 3, 4, 5]
+falcon [IN] [1, 2, 3, 4, 5]
+robin [IN] [1, 2, 3, 4, 5]
+Constraints:
+owl == 1 ::: The owl is the leftmost.
+robin < raven ::: The robin is to the left of the raven.
+quail == 5 ::: The quail is the rightmost.
+raven == 3 ::: The raven is the third from the left.
+AllDifferentConstraint([quail, owl, raven, falcon, robin]) ::: All birds have different values.
+Query:
+A) quail == 5 ::: The quail is the rightmost.
+B) owl == 5 ::: The owl is the rightmost.
+C) raven == 5 ::: The raven is the rightmost.
+D) falcon == 5 ::: The falcon is the rightmost.
+E) robin == 5 ::: The robin is the rightmost.
+------
+Problem:
+[[PROBLEM]]
+Question:
+[[QUESTION]]
+Options:
+[[CHOICES]]
+###

@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>hash.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "hash.h"</H1>
+
+This page has information from files
+<A HREF="../hash.h">hash.h</A> and <A HREF="../hash.c">hash.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File hash.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fprint_hash_mem">fprint_hash_mem</A></TD><TD><A HREF="#hash_destroy">hash_destroy</A></TD><TD><A HREF="#hash_init">hash_init</A></TD><TD><A HREF="#hash_lookup">hash_lookup</A></TD>
+</TR>
+<TR><TD><A HREF="#hash_delete">hash_delete</A></TD><TD><A HREF="#hash_info">hash_info</A></TD><TD><A HREF="#hash_insert">hash_insert</A></TD><TD><A HREF="#p_hash_mem">p_hash_mem</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fprint_hash_mem"></A><HR><PRE><B>void fprint_hash_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the hash package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="hash_delete"></A><HR><PRE><B>void hash_delete(void *v, unsigned hashval, Hashtab h,
+		 BOOL (*id_func) (void *, void *));
+</B></PRE><A NAME="hash_destroy"></A><HR><PRE><B>void hash_destroy(Hashtab h);
+</B></PRE>Free all of the memory used by the given hash table.  Do not
+refer to the table after calling this routine.  The hash table
+need not be empty;
+<A NAME="hash_info"></A><HR><PRE><B>void hash_info(Hashtab h);
+</B></PRE><A NAME="hash_init"></A><HR><PRE><B>Hashtab hash_init(int size);
+</B></PRE>Allocate and initialize a hash table of the given size.
+<A NAME="hash_insert"></A><HR><PRE><B>void hash_insert(void *v, unsigned hashval, Hashtab h);
+</B></PRE><A NAME="hash_lookup"></A><HR><PRE><B>void *hash_lookup(void *v, unsigned hashval, Hashtab h,
+		  BOOL (*id_func) (void *, void *));
+</B></PRE><A NAME="p_hash_mem"></A><HR><PRE><B>void p_hash_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the hash package.
+<HR><A NAME=defns></A><H2>Public Definitions in File hash.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

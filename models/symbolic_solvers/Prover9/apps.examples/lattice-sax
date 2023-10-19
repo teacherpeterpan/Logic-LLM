@@ -1,0 +1,18 @@
+% Each these four equations is single axiom for lattice theory
+
+(((x ^ y) v (y ^ (x v y))) ^ z) v (((x ^ (((x1 ^ y) v (y ^ x2)) v y)) v (((y ^ 
+    (((x1 v (y v x2)) ^ (x3 v y)) ^ y)) v (u ^ (y v (((x1 v (y v x2)) ^ 
+    (x3 v y)) ^ y)))) ^ (x v (((x1 ^ y) v (y ^ x2)) v y)))) ^ (((x ^ y) v (y ^ 
+    (x v y))) v z)) = y.  % length 79, 7 variables
+
+(((x ^ y) v (y ^ (x v y))) ^ z) v (((x ^ (((x1 ^ y) v (y ^ x2)) v y)) v (((y ^
+    (((x1 v (y v x2)) ^ (x3 v y)) ^ y)) v (u ^ (y v (((y v xnew) ^
+    (x3 v y)) ^ y)))) ^ (x v (((x1 ^ y) v (y ^ x2)) v y)))) ^ (((x ^ y) v (y ^
+    (x v y))) v z)) = y.  % length 77, 8 variables
+
+(((y v x) ^ x) v (((z ^ (x v x)) v (u ^ x)) ^ v)) ^
+    (w v ((v6 v x) ^ (x v v7))) = x.  % A1
+
+(((y v x) ^ x) v (((z ^ (x v x)) v (u ^ x)) ^ v)) ^
+    (((w v x) ^ (v6 v x)) v v7) = x.  % A2
+

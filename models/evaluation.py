@@ -58,12 +58,12 @@ def get_choice(answer_str):
     for c in choices:
         if answer_str.startswith(c):
             return c.replace(')', '')
+
+    if answer_str.startswith(':'):
+       return answer_str.replace(':', '').replace('.', '').strip()
     return None
 
-def evaluate_QA(result_file):
-    with open(result_file, 'r') as f:
-        QA_results = json.load(f)
-
+def evaluate_QA(QA_results):
     total_em = 0.0
     count = 0
     for sample in QA_results:
@@ -81,32 +81,40 @@ def evaluate_QA(result_file):
                     prediction = get_choice(answer_str)
                     break
 
-        if prediction is None:
-            print(answer_str)
-
-        print(f"prediction: {prediction} \t gold_answers: {gold_answer} \t match: {prediction == gold_answer}")
+        # if prediction is None:
+        #     print(answer_str)
+        # print(f"prediction: {prediction} \t gold_answers: {gold_answer} \t match: {prediction == gold_answer}")
         
         em_score = 1.0 if prediction == gold_answer else 0.0
         total_em += em_score
         count += 1
     
     avg_em = total_em / count
-    print(f"Accuracy: {avg_em}")
+    # print(f"Accuracy: {avg_em}")
+    return avg_em
+
+def full_evaluation(result_file):
+    with open(result_file, 'r') as f:
+        all_samples = json.load(f)
+
+    executable_samples = [sample for sample in all_samples if sample['flag'] == 'success']
+    print(f"Overall accuracy: {evaluate_QA(all_samples)}")
+    print(f'Executable rate (Exe_Rate): {len(executable_samples)/len(all_samples)}')
+    print(f"Executable accuracy (Exe_Acc): {evaluate_QA(executable_samples)}")
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset_name", type=str)
     parser.add_argument("--model_name", type=str, default='text-davinci-003')
-    parser.add_argument("--interpreter", type=str)
     parser.add_argument("--split", type=str, default='dev')
     parser.add_argument("--backup", type=str, default='random')
-    parser.add_argument("--self_debug", action='store_true', default=False)
     args = parser.parse_args()
     return args
 
 if __name__ == "__main__":
     args = parse_args()
-    self_debug = 'self-debug_' if args.self_debug == True else ''
-    result_path = f'./results'
-    result_file = os.path.join(result_path, args.interpreter, f'{self_debug}{args.dataset_name}_{args.split}_{args.model_name}_backup-{args.backup}.json')
-    evaluate_QA(result_file)
+    result_path = f'./outputs/logic_inference'
+    result_file = os.path.join(result_path, f'{args.dataset_name}_{args.split}_{args.model_name}_backup-{args.backup}.json')
+    # evaluate_QA(result_file)
+    full_evaluation(result_file)

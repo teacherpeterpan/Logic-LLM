@@ -1,0 +1,147 @@
+#!/usr/bin/python
+
+# This script takes a Prover9 input file and runs Prover9 and Mace4
+# in parallel.  If the one that finishes first finished with success,
+# its output is sent to stdout of this process.
+# 
+# Note that the one that finishes first might have failed (e.g., Prover9
+# with sos empty), and the non-finisher might succeed given more time.
+# We'll miss the solution that case.
+#
+# This script might not be very useful; one can just as easily run
+# Prover9 and Mace4 in parallel on the command line.
+
+import sys
+import re
+import os
+import tempfile
+import signal
+import subprocess
+
+####################################
+
+def code_to_message(program, code):
+
+    if program == 'Mace4':
+        if code in mace4_exits.keys():
+            message = mace4_exits[code]
+        else:
+            message = 'unknown'
+    elif program == 'Prover9':
+        if code in prover9_exits.keys():
+            message = prover9_exits[code]
+        else:
+            message = 'unknown'
+    else:
+        message = 'unknown program'
+
+    return message
+
+####################################
+
+if len(sys.argv) != 3 or sys.argv[1] != '-f':
+    sys.stderr.write('need arguments: -f input_filename\n')
+    sys.exit(1)
+
+input_filename = sys.argv[2]
+
+# assume these programs are in the user's path
+
+mace4     = 'mace4'
+prover9   = 'prover9'
+
+####################################     Exit codes
+
+# These are all of the exit codes; some may be impossible
+# in this application.
+
+mace4_exits = {}
+
+mace4_exits[0]   = 'model';
+mace4_exits[1]   = 'fatal error';
+mace4_exits[2]   = 'search exhausted (no models)';
+mace4_exits[3]   = 'all models (with models)';
+mace4_exits[4]   = 'max_seconds (with models)';
+mace4_exits[5]   = 'max_seconds (no models)';
+mace4_exits[6]   = 'max_megs (with models)';
+mace4_exits[7]   = 'max_megs (without models)';
+mace4_exits[101] = 'process interrupt';
+mace4_exits[102] = 'process crash';
+
+prover9_exits = {}
+
+prover9_exits[0]   = 'model';
+prover9_exits[1]   = 'fatal error';
+prover9_exits[2]   = 'sos empty';
+prover9_exits[3]   = 'max_megs';
+prover9_exits[4]   = 'max_seconds';
+prover9_exits[5]   = 'max_given';
+prover9_exits[6]   = 'max_kept';
+prover9_exits[7]   = 'action';
+prover9_exits[101] = 'process interrupt';
+prover9_exits[102] = 'process crash';
+
+####################################
+
+# Program output is sent to temporary files.  If one of the
+# program succeeds, its output is sent to stdout of this process.
+
+fout1 = tempfile.TemporaryFile('w+')  # Prover9 stdout
+ferr1 = tempfile.TemporaryFile('w+')  # Prover9 stderr
+
+fout2 = tempfile.TemporaryFile('w+')  # Mace4 stdout (ignored)
+ferr2 = tempfile.TemporaryFile('w+')  # Mace4 stderr (ignored)
+
+prover9_command = [prover9, '-f', input_filename]
+mace4_command = [mace4, '-c', '-N', '-1', '-f', input_filename]
+
+p1 = subprocess.Popen(prover9_command, stdin=None, stdout=fout1, stderr=ferr1)
+p2 = subprocess.Popen(mace4_command,   stdin=None, stdout=fout2, stderr=ferr2)
+
+sys.stderr.write('Prover9 process ID %d.\n' % p1.pid)
+sys.stderr.write('Mace4   process ID %d.\n' % p2.pid)
+sys.stderr.write('Waiting for one of them to finish ... \n')
+
+(pid, status) = os.waitpid(0, 0)  # wait for one of them to finish
+
+# Determine the finisher; kill the non-finisher.
+
+if pid == p1.pid:
+    finisher = 'Prover9'
+    fout = fout1
+    os.kill(p2.pid, signal.SIGKILL)
+else:
+    finisher = 'Mace4'
+    fout = fout2
+    os.kill(p1.pid, signal.SIGKILL)
+
+if not os.WIFEXITED(status):
+    sys.stderr.write('error: %s exited abnormally\n' % finisher)
+    sys.exit(1)
+
+# Get the finisher's ordinary exit code.
+
+exit_code = os.WEXITSTATUS(status)
+
+if exit_code != 0:
+    # Finisher failed (no proof or counterexample).
+    message = code_to_message(finisher, exit_code)
+    sys.stderr.write('failure, %s ended by %s\n' % (finisher, message))
+    sys.exit(1)
+
+sys.stderr.write('%s finished with success, see the standard output.\n' % finisher)
+
+# Rewind the winning output, send to stdout.
+
+fout.seek(0)       
+for line in fout:
+    sys.stdout.write(line)
+
+# Close temporary files and exit.
+
+fout1.close()
+ferr1.close()
+fout2.close()
+ferr2.close()
+
+sys.exit(0)

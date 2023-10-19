@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<TITLE>fpa.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "fpa.h"</H1>
+
+This page has information from files
+<A HREF="../fpa.h">fpa.h</A> and <A HREF="../fpa.c">fpa.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File fpa.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fpa_cancel">fpa_cancel</A></TD><TD><A HREF="#fpa_update">fpa_update</A></TD><TD><A HREF="#mega_next_calls">mega_next_calls</A></TD><TD><A HREF="#p_fpa_state">p_fpa_state</A></TD>
+</TR>
+<TR><TD><A HREF="#fpa_empty">fpa_empty</A></TD><TD><A HREF="#fprint_fpa_index">fprint_fpa_index</A></TD><TD><A HREF="#p_fpa_density">p_fpa_density</A></TD><TD><A HREF="#p_path">p_path</A></TD>
+</TR>
+<TR><TD><A HREF="#fpa_first_answer">fpa_first_answer</A></TD><TD><A HREF="#fprint_fpa_mem">fprint_fpa_mem</A></TD><TD><A HREF="#p_fpa_index">p_fpa_index</A></TD><TD><A HREF="#zap_fpa_index">zap_fpa_index</A></TD>
+</TR>
+<TR><TD><A HREF="#fpa_init_index">fpa_init_index</A></TD><TD><A HREF="#fprint_fpa_state">fprint_fpa_state</A></TD><TD><A HREF="#p_fpa_mem">p_fpa_mem</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#fpa_next_answer">fpa_next_answer</A></TD><TD><A HREF="#fprint_path">fprint_path</A></TD><TD><A HREF="#p_fpa_query">p_fpa_query</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fpa_cancel"></A><HR><PRE><B>void fpa_cancel(<A HREF="fpa.html">Fpa_state</A> q);
+</B></PRE>This routine should be called if you get some, but not all answers
+to an fpa query.  See <A HREF="#fpa_first_answer">fpa_first_answer</A>() and <A HREF="#fpa_next_answer">fpa_next_answer</A>().
+<A NAME="fpa_empty"></A><HR><PRE><B>BOOL fpa_empty(<A HREF="fpa.html">Fpa_index</A> idx);
+</B></PRE>This Boolean routine checks if an FPA/Path index is empty.
+<A NAME="fpa_first_answer"></A><HR><PRE><B><A HREF="term.html">Term</A> fpa_first_answer(<A HREF="term.html">Term</A> t, <A HREF="unify.html">Context</A> c, Querytype query_type,
+		      <A HREF="fpa.html">Fpa_index</A> idx, <A HREF="fpa.html">Fpa_state</A> *ppos);
+</B></PRE>This routine extracts and returns the first answer term
+from an <A HREF="fpa.html">Fpa_state</A> tree.  If there
+are no more answers, NULL is returned, and the tree is freed.
+If you wish to stop getting answers before NULL is returned,
+call zap_fpa_state(q) to free the <A HREF="fpa.html">Fpa_state</A> tree.
+<P>
+The query types are
+UNIFY, INSTANCE, GENERALIZATION, VARIANT, and IDENTICAL.
+<P>
+If <A HREF="unify.html">Context</A> c is not NULL, then the instance of the term (in the
+context) is used for the query.
+<A NAME="fpa_init_index"></A><HR><PRE><B><A HREF="fpa.html">Fpa_index</A> fpa_init_index(int depth);
+</B></PRE>This routine allocates and returns an empty FPA/Path index.
+Parameter depth tells how deep to index the terms. For example,
+depth=0 means to index on the root symbol only.
+<A NAME="fpa_next_answer"></A><HR><PRE><B><A HREF="term.html">Term</A> fpa_next_answer(<A HREF="fpa.html">Fpa_state</A> q);
+</B></PRE>This routine extracts and returns the next answer term
+from an <A HREF="fpa.html">Fpa_state</A> tree.  If there
+are no more answers, NULL is returned, and the tree is freed.
+If you wish to stop getting answers before NULL is returned,
+call zap_fpa_state(q) to free the <A HREF="fpa.html">Fpa_state</A> tree.
+<A NAME="fpa_update"></A><HR><PRE><B>void fpa_update(<A HREF="term.html">Term</A> t, <A HREF="fpa.html">Fpa_index</A> idx, Indexop op);
+</B></PRE>This routine inserts (op==INSERT) a term into an <A HREF="fpa.html">Fpa_index</A> or
+deletes (op==DELETE) a term from an <A HREF="fpa.html">Fpa_index</A>.
+<P>
+IMPORTANT:  FPA indexing owns the FPA_ID field of the term.
+<P>
+A fatal error occurs if you try to delete a term that was not previously
+inserted.
+<A NAME="fprint_fpa_index"></A><HR><PRE><B>void fprint_fpa_index(FILE *fp, <A HREF="fpa.html">Fpa_index</A> idx);
+</B></PRE>This routine prints (to FILE *fp) an <A HREF="fpa.html">Fpa_index</A>.
+WARNING: An <A HREF="fpa.html">Fpa_index</A> can be very big, and it is printed as a tree,
+so if you use this routine, I suggest trying it on a small index first.
+<A NAME="fprint_fpa_mem"></A><HR><PRE><B>void fprint_fpa_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the fpa package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="fprint_fpa_state"></A><HR><PRE><B>void fprint_fpa_state(FILE *fp, <A HREF="fpa.html">Fpa_state</A> q, int depth);
+</B></PRE>This (recursive) routine prints (to FILE *fp) an <A HREF="fpa.html">Fpa_state</A> tree.
+The depth parameter should be 0 on the top call.
+This is an AND/OR tree, with lists of terms (ordered by FPA_ID)
+at the leaves.  If FPA_DEBUG is not defined in fpa.h, the
+paths corresponding to the leaves are not printed, and the
+tree is hard to understand without the paths.
+<A NAME="fprint_path"></A><HR><PRE><B>void fprint_path(FILE *fp, Ilist p);
+</B></PRE>This routine prints (to FILE *fp) an FPA Path.  A newline is NOT printed.
+<A NAME="mega_next_calls"></A><HR><PRE><B>unsigned mega_next_calls(void);
+</B></PRE><A NAME="p_fpa_density"></A><HR><PRE><B>void p_fpa_density(<A HREF="fpa.html">Fpa_index</A> idx);
+</B></PRE><A NAME="p_fpa_index"></A><HR><PRE><B>void p_fpa_index(<A HREF="fpa.html">Fpa_index</A> idx);
+</B></PRE>This routine prints (to stdout) an <A HREF="fpa.html">Fpa_index</A>.
+WARNING: An <A HREF="fpa.html">Fpa_index</A> can be very big, and it is printed as a tree,
+so if you use this routine, I suggest trying it on a small index first.
+<A NAME="p_fpa_mem"></A><HR><PRE><B>void p_fpa_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the fpa package.
+<A NAME="p_fpa_query"></A><HR><PRE><B>void p_fpa_query(<A HREF="term.html">Term</A> t, Querytype query_type, <A HREF="fpa.html">Fpa_index</A> idx);
+</B></PRE>This routine constructs an fpa_query tree and prints it to stdout.
+<A NAME="p_fpa_state"></A><HR><PRE><B>void p_fpa_state(<A HREF="fpa.html">Fpa_state</A> q);
+</B></PRE>This routine prints (to stdout) an <A HREF="fpa.html">Fpa_state</A> tree.
+See the description of <A HREF="#fprint_fpa_state">fprint_fpa_state</A>().
+<A NAME="p_path"></A><HR><PRE><B>void p_path(Ilist p);
+</B></PRE>This routine prints (to stdout) an FPA Path.  A newline is NOT printed.
+<A NAME="zap_fpa_index"></A><HR><PRE><B>void zap_fpa_index(<A HREF="fpa.html">Fpa_index</A> idx);
+</B></PRE>This routine removes all the entries from an <A HREF="fpa.html">Fpa_index</A> idx and
+frees all of the associated memory.
+<HR><A NAME=defns></A><H2>Public Definitions in File fpa.h</H2>
+<PRE>
+/* #define FPA_DEBUG */
+
+typedef struct fpa_index * <A HREF="fpa.html">Fpa_index</A>;
+typedef struct fpa_state * <A HREF="fpa.html">Fpa_state</A>;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package implements FPA/Path indexing for first-order terms.
+It is used to retrieive terms that are likely to unify (in various
+ways) with a query term.  The answers are not guaranteed to unify,
+and the caller must call some kind of unification routine to
+check and to construct a substitution.
+<P>
+The unification types are
+FPA_UNIFY, FPA_INSTANCE, FPA_GENERALIZATION, FPA_VARIANT, and FPA_IDENTICAL.
+Performance is very good for
+FPA_INSTANCE, FPA_VARIANT, and FPA_IDENTICAL,
+fair for FPA_UNIFY, and
+poor for FPA_GENERALIZATION.
+(Use Discrimination indexing for FPA_GENERALIZATION, e.g.,
+forward demodulation and forward subsumption.)
+<P>
+Associative-commutative (AC) function symbols are handled
+by simply ignoring all subterms of AC symbols (which can give
+bad performance).
+Commutative/symmetric (C) operations are handled.
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,176 @@
+============================== Prover9 ===============================
+Prover9 (32) version Apr-2006A, Apr 2006.
+Process 28593 was started by mccune on cleo.thornwood,
+Fri May  5 09:04:05 2006
+The command was "../bin/prover9 -f x2.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file x2.in
+
+
+clauses(sos).
+e * x = x.
+x ' * x = e.
+(x * y) * z = x * (y * z).
+x * x = e.
+end_of_list.
+
+clauses(goals).
+x * y = y * x.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS GOALS =========================
+
+% Each goal clause was negated; the result (to be placed in sos):
+
+clauses(negated_goals).
+c2 * c1 != c1 * c2.
+end_of_list.
+
+============================== end of process goals ==================
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+clauses(usable).
+end_of_list.
+
+clauses(sos).
+1 e * x = x.  [input].
+2 x ' * x = e.  [input].
+3 (x * y) * z = x * (y * z).  [input].
+4 x * x = e.  [input].
+5 c2 * c1 != c1 * c2.  [clausify].
+end_of_list.
+
+clauses(demodulators).
+end_of_list.
+
+Predicate elimination: (none).
+
+Term ordering decisions:
+Relation symbol precedence:  lex([ = ]).
+Function symbol precedence:  lex([ e, c1, c2, *, ' ]).
+After inverse_order: Function symbol precedence:  lex([ e, c1, c2, *, ' ]).
+Unfolding symbols: (none).
+
+Auto inference settings:
+  % set(paramodulation).  % (positive equality literals)
+    % set(paramodulation) -> set(back_demod).
+
+Reasonable options, based on the structure of the clauses:
+  (nothing changed)
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+clauses(usable).
+end_of_list.
+
+clauses(sos).
+6 e * x = x.  [input].
+7 x ' * x = e.  [input].
+8 (x * y) * z = x * (y * z).  [input].
+9 x * x = e.  [input].
+10 c2 * c1 != c1 * c2.  [clausify].
+end_of_list.
+
+clauses(demodulators).
+6 e * x = x.  [input].
+7 x ' * x = e.  [input].
+8 (x * y) * z = x * (y * z).  [input].
+9 x * x = e.  [input].
+end_of_list.
+
+clauses(denials).
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (wt=5): 6 e * x = x.  [input].
+
+given #2 (wt=6): 7 x ' * x = e.  [input].
+
+given #3 (wt=11): 8 (x * y) * z = x * (y * z).  [input].
+
+given #4 (wt=5): 9 x * x = e.  [input].
+
+given #5 (wt=7): 10 c2 * c1 != c1 * c2.  [clausify].
+
+given #6 (wt=8): 11 x ' * (x * y) = y.  [para(7(a,1),8(a,1,1)),demod(6(2)),flip(a)].
+
+given #7 (wt=4): 19 x ' = x.  [back_demod(15),demod(17(4))].
+
+given #8 (wt=5): 20 x * e = x.  [back_demod(17),demod(19(1))].
+
+given #9 (wt=7): 12 x * (x * y) = y.  [para(9(a,1),8(a,1,1)),demod(6(2)),flip(a)].
+
+given #10 (wt=9): 13 x * (y * (x * y)) = e.  [para(9(a,1),8(a,1)),flip(a)].
+
+given #11 (wt=11): 21 x * (y * (x * (y * z))) = z.  [back_demod(16),demod(19(2),8(4))].
+
+given #12 (wt=7): 23 x * (y * x) = y.  [para(13(a,1),12(a,1,2)),demod(20(2)),flip(a)].
+
+% Operation * is associative-commutative; redundancy checks enabled.
+
+============================== PROOF =================================
+
+% Proof 1 at 0.00 (+ 0.00) seconds.
+% Length of proof is 15.
+% Level of proof is 7.
+% Maximum clause weight is 11.
+% Given clauses 12.
+
+6 e * x = x.  [input].
+7 x ' * x = e.  [input].
+8 (x * y) * z = x * (y * z).  [input].
+9 x * x = e.  [input].
+10 c2 * c1 != c1 * c2.  [clausify].
+11 x ' * (x * y) = y.  [para(7(a,1),8(a,1,1)),demod(6(2)),flip(a)].
+12 x * (x * y) = y.  [para(9(a,1),8(a,1,1)),demod(6(2)),flip(a)].
+13 x * (y * (x * y)) = e.  [para(9(a,1),8(a,1)),flip(a)].
+15 x ' ' * e = x.  [para(7(a,1),11(a,1,2))].
+17 x ' * e = x.  [para(9(a,1),11(a,1,2))].
+19 x ' = x.  [back_demod(15),demod(17(4))].
+20 x * e = x.  [back_demod(17),demod(19(1))].
+23 x * (y * x) = y.  [para(13(a,1),12(a,1,2)),demod(20(2)),flip(a)].
+28 x * y = y * x.  [para(23(a,1),12(a,1,2))].
+29 $F.  [resolve(28,a,10,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=12. Generated=118. Kept=23. proofs=1.
+Usable=8. Sos=3. Demods=12. Denials=0. Limbo=2, Disabled=14. Hints=0.
+Weight_deleted=0. Literals_deleted=0.
+Forward_subsumed=95. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=21 (0 lex), Back_demodulated=9. Back_unit_deleted=0.
+Demod_attempts=683. Demod_rewrites=156.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=0.03.
+User_CPU=0.00, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+Process 28593 exit (max_proofs) Fri May  5 09:04:05 2006

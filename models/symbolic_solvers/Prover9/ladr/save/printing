@@ -1,0 +1,180 @@
+/*************
+ *
+ *   fwrite_clause_jmap()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine prints (to FILE *fp) a clause in mixfix form,
+followed by ".\n".
+*/
+
+/* PUBLIC */
+void fwrite_clause_jmap(FILE *fp, Clause c,
+		   BOOL print_id_just, BOOL justification_last,
+		   Ilist map)
+{
+  Term t = clause_to_term(c);
+  char a[10];
+  
+  if (t == NULL)
+    fatal_error("fwrite_clause_jmap, clause_to_term returns NULL.");
+  
+  if (!print_id_just)
+    fwrite_term_nl(fp, t);
+  else if (!justification_last) {
+    fprintf(fp, "%d%s ", jmap1(map, c->id), jmap2(map, c->id, a));
+    fprint_just(fp, c->justification, map);
+    fprintf(fp, " ");
+    fwrite_term_nl(fp, t);
+  }
+  else {
+    fprintf(fp, "%d%s ", jmap1(map, c->id), jmap2(map, c->id, a));
+    fwrite_term(fp, t);
+    fprintf(fp, ".  ");
+    fprint_just(fp, c->justification, map);
+    fprintf(fp, "\n");
+  }
+  fflush(fp);
+  zap_term(t);
+}  /* fwrite_clause_jmap */
+
+/*************
+ *
+ *   fprint_res_just() -- (1 a 2 b c 3 d e 4 f)
+ *
+ *   Assume input is well-formed, that is, length is 3n+1 for n>1.
+ *
+ *************/
+
+static
+void fprint_res_just(FILE *fp, Ilist p, Ilist map)
+{
+  char a[10];
+  Ilist q;
+  fprintf(fp, "(%d%s", jmap1(map, p->i), jmap2(map, p->i, a));
+  for (q = p->next; q != NULL; q = q->next->next->next) {
+    int nuc_lit = q->i;
+    int sat_id  = q->next->i;
+    int sat_lit = q->next->next->i;
+    fprintf(fp, " %c", itoc(nuc_lit));
+    if (sat_id == 0)
+      fprintf(fp, " xx");
+    else {
+      fprintf(fp, " %d%s", jmap1(map, sat_id), jmap2(map, sat_id, a));
+      if (sat_lit > 0)
+	fprintf(fp, " %c", itoc(sat_lit));
+      else
+	fprintf(fp, " %c_flip", itoc(-sat_lit));
+    }
+  }
+  fprintf(fp, ")");
+  fflush(fp);
+}  /* fprint_res_just */
+
+/*************
+ *
+ *   fprint_position()
+ *
+ *************/
+
+static
+void fprint_position(FILE *fp, Ilist p)
+{
+  Ilist q;
+  fprintf(fp, "(%c", itoc(p->i));
+  for (q = p->next; q != NULL; q = q->next) {
+    fprintf(fp, " %d", q->i);
+  }
+  fprintf(fp, ")");
+  fflush(fp);
+}  /* fprint_position */
+
+/*************
+ *
+ *   fprint_just()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine prints (to FILE *fp) a clause justification.
+No whitespace is printed before or after.
+*/
+
+/* PUBLIC */
+void fprint_just(FILE *fp, Just just, Ilist map)
+{
+  char a[10];
+  Just g = just;
+  fprintf(fp, "[");
+  while (g != NULL) {
+    Just_type rule = g->type;
+    if (rule == INPUT_JUST ||
+	     rule == CLAUSIFY_JUST)
+      fprintf(fp, "%s", jstring(g));
+    else if (rule==BINARY_RES_JUST ||
+	     rule==HYPER_RES_JUST ||
+	     rule==UR_RES_JUST) {
+      fprintf(fp, "%s ", jstring(g));
+      fprint_res_just(fp, g->u.lst, map);
+    }
+    else if (rule == DEMOD_JUST) {
+      fprintf(fp, "%s ", jstring(g));
+      fprint_ilist(fp, g->u.lst);
+    }
+    else if (rule == UNIT_DEL_JUST) {
+      Ilist p = g->u.lst;
+      int n = p->i;
+      int id = p->next->i;
+      if (n < 0)
+	/* flipped equality */
+	fprintf(fp, "%s (%c_flip %d%s)", jstring(g), itoc(-n),
+		jmap1(map, id),
+		jmap2(map, id, a));
+      else
+	fprintf(fp, "%s (%c %d%s)", jstring(g), itoc(n),
+		jmap1(map, id),
+		jmap2(map, id, a));
+    }
+    else if (rule == FACTOR_JUST) {
+      Ilist p = g->u.lst;
+      fprintf(fp, "%s (%d%s %c %c)", jstring(g),
+	      jmap1(map, p->i), jmap2(map, p->i, a),
+	      itoc(p->next->i), itoc(p->next->next->i));
+    }
+    else if (rule == XXRES_JUST) {
+      Ilist p = g->u.lst;
+      fprintf(fp, "%s (%d%s %c)", jstring(g),
+	      jmap1(map, p->i), jmap2(map, p->i, a),
+	      itoc(p->next->i));
+    }
+    else if (rule == BACK_DEMOD_JUST ||
+	     rule == BACK_UNIT_DEL_JUST ||
+	     rule == COPY_JUST)
+      fprintf(fp, "%s %d%s", jstring(g),
+	      jmap1(map, g->u.id),
+	      jmap2(map, g->u.id, a));
+    else if (rule == FLIP_JUST ||
+	     rule == XX_JUST ||
+	     rule == MERGE_JUST)
+      fprintf(fp, "%s %c", jstring(g), itoc(g->u.id));
+    else if (rule == PARA_JUST || rule == PARA_FX_JUST ||
+	     rule == PARA_IX_JUST || rule == PARA_FX_IX_JUST) {
+      Parajust p = g->u.para;
+      fprintf(fp, "%s (%d%s ", jstring(g),
+	      jmap1(map, p->from_id), jmap2(map, p->from_id, a));
+      fprint_position(fp, p->from_pos);
+      fprintf(fp, " %d%s ",
+	      jmap1(map, p->into_id), jmap2(map, p->into_id, a));
+      fprint_position(fp, p->into_pos);
+      fprintf(fp, ")");
+    }
+    else {
+      printf("\nunknown rule: %d\n", rule);
+      fatal_error("fprint_just: unknown rule");
+    }
+    g = g->next;
+  }
+  fprintf(fp, "]");
+}  /* fprint_just */
+

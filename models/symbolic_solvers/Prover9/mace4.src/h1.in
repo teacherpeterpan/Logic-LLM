@@ -1,0 +1,58 @@
+% Language Options
+
+op(500, infix, "+").    %addition
+op(490, infix, ";").    %multiplication
+op(490, infix, "*").    %concurrent
+op(480, postfix, "^").  %omega
+op(490, infix, "||"). %disjoint parallel
+op(490, infix, "/\"). %meet
+op(490, infix, "!!").  %alternation
+
+if(Prover9). % Options for Prover9
+  assign(max_seconds, 60).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+formulas(assumptions).
+%commutative additive monoid
+   x + y = y + x.
+   x + 0 = x.
+   x+(y+z) = (x+y)+z.
+%multiplicative monoid
+   x;1 = x & 1;x = x.
+   x;(y;z) = (x;y);z.
+%multiplicative monoid
+   x*1 = x & 1*x = x.
+   x*(y*z) = (x*y)*z.
+%distributivity
+   (x + y);z = x;z + y;z.
+   (x + y)*z = x*z + y*z.
+   z;(x + y) = z;x + z;y.
+   z*(x + y) = z*x + z*y.
+%annihilation
+   0;x = 0.
+   x;0 = 0.
+   0*x = 0.
+   x*0 = 0.
+%idempotence
+   x + x = x.
+%subsumption order
+   x <= y <-> x+y=y.
+%exchange
+  (x*x1);(y*y1) <= (x1;y)*(x;y1).
+%meet
+  x/\y <= x.
+  x/\y <= y.
+  z <= x & z<= y -> z<= x/\y.
+
+x||y = (x;y)/\(y;x).
+x!!y = (x/\1);y + x;(y/\1).
+
+end_of_list.
+
+formulas(goals).
+  x!!y=y!!x.
+end_of_list.

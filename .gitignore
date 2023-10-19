@@ -6,11 +6,16 @@ __pycache__/
 # C extensions
 *.so
 
-models/logic_programs/
-models/pyke_programs/
-models/results/
+debug/
+backupcodes/
+outputs/logic_inference/*
+outputs/self_refine
+models/symbolic_solvers/swipl
 models/__pycache__/
+*.sh
 baselines/results/
+models/symbolic_solvers/pyke_solver/.cache_program
+models/symbolic_solvers/z3_solver/.cache_program
 
 # Distribution / packaging
 .Python

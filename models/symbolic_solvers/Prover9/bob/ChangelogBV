@@ -1,0 +1,33 @@
+************************
+Changes to LADR-Aug-2007
+************************
+
+2007-aug-20
+
+   apps.src/prooftrans.c
+
+      add tagged proof option
+
+   ladr/ioutil.h
+
+      add format TAGGED
+
+      add prototype for function sb_tagged_write_clause_jmap()
+
+   ladr/just.c
+
+      new functions (at end of file)
+
+   ladr/ioutil.c
+
+      add code for call in function fwrite_clause_jmap()
+
+      new functions (at end of file)
+
+************************
+Changes to LADR-Jan-2008
+************************
+
+2008-jan-26
+
+   Previous BV changes ported to new release.

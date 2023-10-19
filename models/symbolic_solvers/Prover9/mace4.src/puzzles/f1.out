@@ -1,0 +1,108 @@
+============================== Mace4 =================================
+Mace4 (32) version 2008-10A+, October 2008.
+Process 15826 was started by mccune on cleo,
+Mon Nov 17 21:34:37 2008
+The command was "../mace4 -f f1.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file f1.in
+
+set(arithmetic).
+    % set(arithmetic) -> clear(lnh).
+    % set(arithmetic) -> assign(selection_order, 0).
+
+    % Declaring Mace4 arithmetic parse types.
+redeclare(conjunction,and).
+  % op(780, infix_right, and).  % copying parse/print properties from & to and
+
+formulas(assumptions).
+SIEVE_1 * cons_2 >= SIEVE_1 * filter_2 and SIEVE_1 * cons_3 >= SIEVE_1 * filter_3 and filter_2 * nil_1 + filter_3 >= nil_1 and cons_2 * filter_2 >= if_4 and cons_3 * filter_2 + filter_3 >= if_1 * isdiv_3 + if_5 and if_4 >= filter_2 and if_1 * true_1 + if_5 >= filter_3 and if_4 >= cons_2 * filter_2 and false_1 * if_1 + if_5 >= cons_2 * filter_3 + cons_3 and isdiv_3 >= true_1 and isdiv_3 >= false_1 and SIEVE_1 * cons_3 > SIEVE_1 * filter_3 and SIEVE_1 * cons_2 >= 0 and SIEVE_1 * cons_3 + SIEVE_2 >= 0.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 SIEVE_1 * cons_2 >= SIEVE_1 * filter_2 and SIEVE_1 * cons_3 >= SIEVE_1 * filter_3 and filter_2 * nil_1 + filter_3 >= nil_1 and cons_2 * filter_2 >= if_4 and cons_3 * filter_2 + filter_3 >= if_1 * isdiv_3 + if_5 and if_4 >= filter_2 and if_1 * true_1 + if_5 >= filter_3 and if_4 >= cons_2 * filter_2 and false_1 * if_1 + if_5 >= cons_2 * filter_3 + cons_3 and isdiv_3 >= true_1 and isdiv_3 >= false_1 and SIEVE_1 * cons_3 > SIEVE_1 * filter_3 and SIEVE_1 * cons_2 >= 0 and SIEVE_1 * cons_3 + SIEVE_2 >= 0 # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+SIEVE_1 * cons_2 >= SIEVE_1 * filter_2.
+SIEVE_1 * cons_3 >= SIEVE_1 * filter_3.
+filter_2 * nil_1 + filter_3 >= nil_1.
+cons_2 * filter_2 >= if_4.
+cons_3 * filter_2 + filter_3 >= if_1 * isdiv_3 + if_5.
+if_4 >= filter_2.
+if_1 * true_1 + if_5 >= filter_3.
+if_4 >= cons_2 * filter_2.
+false_1 * if_1 + if_5 >= cons_2 * filter_3 + cons_3.
+isdiv_3 >= true_1.
+isdiv_3 >= false_1.
+SIEVE_1 * cons_3 > SIEVE_1 * filter_3.
+SIEVE_1 * cons_2 >= 0.
+SIEVE_1 * cons_3 + SIEVE_2 >= 0.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 0.
+
+============================== DOMAIN SIZE 2 =========================
+
+============================== MODEL =================================
+
+interpretation( 2, [number=1, seconds=0], [
+
+        function(SIEVE_1, [ 1 ]),
+
+        function(SIEVE_2, [ 0 ]),
+
+        function(cons_2, [ 1 ]),
+
+        function(cons_3, [ 1 ]),
+
+        function(false_1, [ 0 ]),
+
+        function(filter_2, [ 1 ]),
+
+        function(filter_3, [ 0 ]),
+
+        function(if_1, [ 0 ]),
+
+        function(if_4, [ 1 ]),
+
+        function(if_5, [ 1 ]),
+
+        function(isdiv_3, [ 0 ]),
+
+        function(nil_1, [ 0 ]),
+
+        function(true_1, [ 0 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 2.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=14, kept=14.
+Selections=117, assignments=227, propagations=0, current_models=1.
+Rewrite_terms=668, rewrite_bools=235, indexes=0.
+Rules_from_neg_clauses=0, cross_offs=0.
+
+============================== end of statistics =====================
+
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 15826 exit (max_models) Mon Nov 17 21:34:37 2008
+The process finished Mon Nov 17 21:34:37 2008

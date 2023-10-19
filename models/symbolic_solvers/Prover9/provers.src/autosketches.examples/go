@@ -1,0 +1,22 @@
+#!/bin/csh
+
+setenv PATH ../../bin:"$PATH"
+
+# The old autosketches4.
+
+echo 'Starting autosketches on xhn.in ...'
+
+autosketches4 -f xhn.in > xhn.out.$$
+
+echo 'Starting autosketches on n3.in ...'
+
+autosketches4 -f n3.in > n3.out.$$
+
+# Bob's newauto from ADAM-2006.
+
+newauto -f BA.in > BA.out.$$
+
+# Bob's newsax from ADAM-2006.
+
+newsax -f ec.in > ec.out.$$
+

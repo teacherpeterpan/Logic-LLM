@@ -1,0 +1,399 @@
+<HTML>
+<HEAD>
+<TITLE>symbols.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "symbols.h"</H1>
+
+This page has information from files
+<A HREF="../symbols.h">symbols.h</A> and <A HREF="../symbols.c">symbols.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File symbols.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#add_new_symbols">add_new_symbols</A></TD><TD><A HREF="#function_or_relation_sn">function_or_relation_sn</A></TD><TD><A HREF="#not_sym">not_sym</A></TD><TD><A HREF="#set_variable_style">set_variable_style</A></TD>
+</TR>
+<TR><TD><A HREF="#add_skolems_to_preliminary_precedence">add_skolems_to_preliminary_precedence</A></TD><TD><A HREF="#function_symbol">function_symbol</A></TD><TD><A HREF="#not_symnum">not_symnum</A></TD><TD><A HREF="#skolem_check">skolem_check</A></TD>
+</TR>
+<TR><TD><A HREF="#all_function_symbols">all_function_symbols</A></TD><TD><A HREF="#gen_new_symbol">gen_new_symbol</A></TD><TD><A HREF="#or_sym">or_sym</A></TD><TD><A HREF="#skolem_reset">skolem_reset</A></TD>
+</TR>
+<TR><TD><A HREF="#all_relation_symbols">all_relation_symbols</A></TD><TD><A HREF="#get_operation_symbol">get_operation_symbol</A></TD><TD><A HREF="#or_symnum">or_symnum</A></TD><TD><A HREF="#skolem_symbols">skolem_symbols</A></TD>
+</TR>
+<TR><TD><A HREF="#all_sym">all_sym</A></TD><TD><A HREF="#get_symbol_type">get_symbol_type</A></TD><TD><A HREF="#p_sym">p_sym</A></TD><TD><A HREF="#sn_to_arity">sn_to_arity</A></TD>
+</TR>
+<TR><TD><A HREF="#all_symbols_lrpo_status">all_symbols_lrpo_status</A></TD><TD><A HREF="#greatest_symnum">greatest_symnum</A></TD><TD><A HREF="#p_syms">p_syms</A></TD><TD><A HREF="#sn_to_kb_wt">sn_to_kb_wt</A></TD>
+</TR>
+<TR><TD><A HREF="#and_sym">and_sym</A></TD><TD><A HREF="#has_greatest_precedence">has_greatest_precedence</A></TD><TD><A HREF="#parse_type_to_str">parse_type_to_str</A></TD><TD><A HREF="#sn_to_lex_val">sn_to_lex_val</A></TD>
+</TR>
+<TR><TD><A HREF="#arity_check">arity_check</A></TD><TD><A HREF="#iff_sym">iff_sym</A></TD><TD><A HREF="#preliminary_lex_compare">preliminary_lex_compare</A></TD><TD><A HREF="#sn_to_lrpo_status">sn_to_lrpo_status</A></TD>
+</TR>
+<TR><TD><A HREF="#assign_greatest_precedence">assign_greatest_precedence</A></TD><TD><A HREF="#imp_sym">imp_sym</A></TD><TD><A HREF="#print_fsym_precedence">print_fsym_precedence</A></TD><TD><A HREF="#sn_to_occurrences">sn_to_occurrences</A></TD>
+</TR>
+<TR><TD><A HREF="#assoc_comm_symbols">assoc_comm_symbols</A></TD><TD><A HREF="#impby_sym">impby_sym</A></TD><TD><A HREF="#print_kbo_weights">print_kbo_weights</A></TD><TD><A HREF="#sn_to_str">sn_to_str</A></TD>
+</TR>
+<TR><TD><A HREF="#attrib_sym">attrib_sym</A></TD><TD><A HREF="#is_assoc_comm">is_assoc_comm</A></TD><TD><A HREF="#print_rsym_precedence">print_rsym_precedence</A></TD><TD><A HREF="#sort_by_lex_val">sort_by_lex_val</A></TD>
+</TR>
+<TR><TD><A HREF="#binary_parse_type">binary_parse_type</A></TD><TD><A HREF="#is_commutative">is_commutative</A></TD><TD><A HREF="#process_lex_list">process_lex_list</A></TD><TD><A HREF="#special_parse_type">special_parse_type</A></TD>
+</TR>
+<TR><TD><A HREF="#clear_parse_type">clear_parse_type</A></TD><TD><A HREF="#is_eq_symbol">is_eq_symbol</A></TD><TD><A HREF="#process_skolem_list">process_skolem_list</A></TD><TD><A HREF="#sprint_sym">sprint_sym</A></TD>
+</TR>
+<TR><TD><A HREF="#clear_parse_type_for_all_symbols">clear_parse_type_for_all_symbols</A></TD><TD><A HREF="#is_skolem">is_skolem</A></TD><TD><A HREF="#quant_sym">quant_sym</A></TD><TD><A HREF="#str_exists">str_exists</A></TD>
+</TR>
+<TR><TD><A HREF="#comm_symbols">comm_symbols</A></TD><TD><A HREF="#is_symbol">is_symbol</A></TD><TD><A HREF="#relation_symbol">relation_symbol</A></TD><TD><A HREF="#str_to_sn">str_to_sn</A></TD>
+</TR>
+<TR><TD><A HREF="#current_fsym_precedence">current_fsym_precedence</A></TD><TD><A HREF="#is_unfold_symbol">is_unfold_symbol</A></TD><TD><A HREF="#remove_variable_symbols">remove_variable_symbols</A></TD><TD><A HREF="#sym_precedence">sym_precedence</A></TD>
+</TR>
+<TR><TD><A HREF="#current_rsym_precedence">current_rsym_precedence</A></TD><TD><A HREF="#lex_compare_arity_0123">lex_compare_arity_0123</A></TD><TD><A HREF="#set_assoc_comm">set_assoc_comm</A></TD><TD><A HREF="#symbol_for_variable">symbol_for_variable</A></TD>
+</TR>
+<TR><TD><A HREF="#declare_base_symbols">declare_base_symbols</A></TD><TD><A HREF="#lex_compare_arity_0213">lex_compare_arity_0213</A></TD><TD><A HREF="#set_commutative">set_commutative</A></TD><TD><A HREF="#symbol_in_use">symbol_in_use</A></TD>
+</TR>
+<TR><TD><A HREF="#declare_functions_and_relations">declare_functions_and_relations</A></TD><TD><A HREF="#lex_insert_after_initial_constants">lex_insert_after_initial_constants</A></TD><TD><A HREF="#set_kb_weight">set_kb_weight</A></TD><TD><A HREF="#symbol_with_string">symbol_with_string</A></TD>
+</TR>
+<TR><TD><A HREF="#decommission_skolem_symbols">decommission_skolem_symbols</A></TD><TD><A HREF="#lex_order">lex_order</A></TD><TD><A HREF="#set_lex_val">set_lex_val</A></TD><TD><A HREF="#symnums_of_arity">symnums_of_arity</A></TD>
+</TR>
+<TR><TD><A HREF="#eq_sym">eq_sym</A></TD><TD><A HREF="#mark_for_new_symbols">mark_for_new_symbols</A></TD><TD><A HREF="#set_lrpo_status">set_lrpo_status</A></TD><TD><A HREF="#syms_with_lex_val">syms_with_lex_val</A></TD>
+</TR>
+<TR><TD><A HREF="#exists_preliminary_precedence">exists_preliminary_precedence</A></TD><TD><A HREF="#min_lex_val">min_lex_val</A></TD><TD><A HREF="#set_operation_symbol">set_operation_symbol</A></TD><TD><A HREF="#true_sym">true_sym</A></TD>
+</TR>
+<TR><TD><A HREF="#exists_sym">exists_sym</A></TD><TD><A HREF="#neq_sym">neq_sym</A></TD><TD><A HREF="#set_parse_type">set_parse_type</A></TD><TD><A HREF="#unary_parse_type">unary_parse_type</A></TD>
+</TR>
+<TR><TD><A HREF="#false_sym">false_sym</A></TD><TD><A HREF="#new_constant_properties">new_constant_properties</A></TD><TD><A HREF="#set_skolem">set_skolem</A></TD><TD><A HREF="#variable_name">variable_name</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_sym">fprint_sym</A></TD><TD><A HREF="#new_symbols_since_mark">new_symbols_since_mark</A></TD><TD><A HREF="#set_skolem_symbols">set_skolem_symbols</A></TD><TD><A HREF="#variable_style">variable_style</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_syms">fprint_syms</A></TD><TD><A HREF="#next_skolem_symbol">next_skolem_symbol</A></TD><TD><A HREF="#set_symbol_type">set_symbol_type</A></TD><TD><A HREF="#variable_symbols">variable_symbols</A></TD>
+</TR>
+<TR><TD><A HREF="#fresh_symbol">fresh_symbol</A></TD><TD><A HREF="#not_in_preliminary_precedence">not_in_preliminary_precedence</A></TD><TD><A HREF="#set_unfold_symbol">set_unfold_symbol</A></TD><TD><A HREF="#zero_wt_kb">zero_wt_kb</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="add_new_symbols"></A><HR><PRE><B>void add_new_symbols(I2list syms);
+</B></PRE><A NAME="add_skolems_to_preliminary_precedence"></A><HR><PRE><B>void add_skolems_to_preliminary_precedence(void);
+</B></PRE>If there is a preliminary precedence, add the skolem symbols
+to it in the following way.  For each Skolem symbol of arity-n,
+add it to Preliminary_precedence just before the first symbol
+of higher arity (else at the end).
+<A NAME="all_function_symbols"></A><HR><PRE><B>Ilist all_function_symbols(void);
+</B></PRE><A NAME="all_relation_symbols"></A><HR><PRE><B>Ilist all_relation_symbols(void);
+</B></PRE><A NAME="all_sym"></A><HR><PRE><B>char *all_sym();
+</B></PRE><A NAME="all_symbols_lrpo_status"></A><HR><PRE><B>void all_symbols_lrpo_status(Lrpo_status status);
+</B></PRE>Assign all symbols the given lrpo status:
+LRPO_LR_STATUS or LRPO_MULTISET_STATUS.
+<A NAME="and_sym"></A><HR><PRE><B>char *and_sym();
+</B></PRE><A NAME="arity_check"></A><HR><PRE><B>Ilist arity_check(Ilist fsyms, Ilist rsyms);
+</B></PRE><A NAME="assign_greatest_precedence"></A><HR><PRE><B>void assign_greatest_precedence(int symnum);
+</B></PRE><A NAME="assoc_comm_symbols"></A><HR><PRE><B>BOOL assoc_comm_symbols(void);
+</B></PRE>This function tells you if any symbol has been declared to be
+associative-commutative;
+<A NAME="attrib_sym"></A><HR><PRE><B>char *attrib_sym();
+</B></PRE><A NAME="binary_parse_type"></A><HR><PRE><B>BOOL binary_parse_type(char *str, int *precedence, Parsetype *type);
+</B></PRE>This routine gets the parse/print properties for a binary symbol.
+If *str is a binary symbol, TRUE is returned and the properties are filled in.
+If *str is a not a binary symbol, FALSE is returned.
+<A NAME="clear_parse_type"></A><HR><PRE><B>void clear_parse_type(char *str);
+</B></PRE><A NAME="clear_parse_type_for_all_symbols"></A><HR><PRE><B>void clear_parse_type_for_all_symbols(void);
+</B></PRE><A NAME="comm_symbols"></A><HR><PRE><B>BOOL comm_symbols(void);
+</B></PRE>This function tells you if any symbol has been declared to be
+commutative.
+<A NAME="current_fsym_precedence"></A><HR><PRE><B>Ilist current_fsym_precedence();
+</B></PRE><A NAME="current_rsym_precedence"></A><HR><PRE><B>Ilist current_rsym_precedence();
+</B></PRE><A NAME="declare_base_symbols"></A><HR><PRE><B>void declare_base_symbols(void);
+</B></PRE><A NAME="declare_functions_and_relations"></A><HR><PRE><B>void declare_functions_and_relations(Ilist fsyms, Ilist rsyms);
+</B></PRE><A NAME="decommission_skolem_symbols"></A><HR><PRE><B>void decommission_skolem_symbols(void);
+</B></PRE>For each symbol in the symbol table, if it is marked
+"skolem", unmark it and set the type to "unspecified".
+<A NAME="eq_sym"></A><HR><PRE><B>char *eq_sym();
+</B></PRE><A NAME="exists_preliminary_precedence"></A><HR><PRE><B>BOOL exists_preliminary_precedence(Symbol_type type);
+</B></PRE><A NAME="exists_sym"></A><HR><PRE><B>char *exists_sym();
+</B></PRE><A NAME="false_sym"></A><HR><PRE><B>char *false_sym();
+</B></PRE><A NAME="fprint_sym"></A><HR><PRE><B>void fprint_sym(FILE *fp, int symnum);
+</B></PRE>This routine prints (to FILE *fp) the string associated with a symbol ID.
+A newline is NOT printed.
+<A NAME="fprint_syms"></A><HR><PRE><B>void fprint_syms(FILE *fp);
+</B></PRE>This routine prints (to FILE *fp) the symbol table, including many
+of the attributes of each symbol.
+<A NAME="fresh_symbol"></A><HR><PRE><B>int fresh_symbol(char *prefix, int arity);
+</B></PRE>This routine returns a symbol ID for a new symbol with the given
+arity.  The symbol is made up of the given prefix followed by the
+smallest natural number that results in a new symbol (regardless of
+arity).  The prefix must be less than MAX_NAME characters.
+<A NAME="function_or_relation_sn"></A><HR><PRE><B>int function_or_relation_sn(char *str);
+</B></PRE>If there is a function or relation symbol in the table
+with the given string, return the symnum; otherwise
+return -1.  (If there is more than one, the first one
+found is returned.)
+<A NAME="function_symbol"></A><HR><PRE><B>BOOL function_symbol(int symnum);
+</B></PRE><A NAME="gen_new_symbol"></A><HR><PRE><B>int gen_new_symbol(char *prefix, int arity, Ilist syms);
+</B></PRE><A NAME="get_operation_symbol"></A><HR><PRE><B>char *get_operation_symbol(char *operation);
+</B></PRE><A NAME="get_symbol_type"></A><HR><PRE><B>Symbol_type get_symbol_type(int symnum);
+</B></PRE><A NAME="greatest_symnum"></A><HR><PRE><B>int greatest_symnum(void);
+</B></PRE>This function returns the greatest symnum (symbol ID) currently in use.
+This can be used if you need to dynamnically allocate an array
+of objects to be indexed by symnum.
+<A NAME="has_greatest_precedence"></A><HR><PRE><B>BOOL has_greatest_precedence(int symnum);
+</B></PRE><A NAME="iff_sym"></A><HR><PRE><B>char *iff_sym();
+</B></PRE><A NAME="imp_sym"></A><HR><PRE><B>char *imp_sym();
+</B></PRE><A NAME="impby_sym"></A><HR><PRE><B>char *impby_sym();
+</B></PRE><A NAME="is_assoc_comm"></A><HR><PRE><B>BOOL is_assoc_comm(int sn);
+</B></PRE>This function checks if a symbol ID has the
+associative-commutative property.  Note that <A HREF="#set_assoc_comm">set_assoc_comm</A>() takes a
+string, but this routine takes a symbol ID.  Recall that <A HREF="#str_to_sn">str_to_sn</A>()
+and <A HREF="#sn_to_str">sn_to_str</A>() translate between the two forms.
+<A NAME="is_commutative"></A><HR><PRE><B>BOOL is_commutative(int sn);
+</B></PRE>This function checks if a symbol ID has the commutative property.
+Note that <A HREF="#set_commutative">set_commutative</A>() takes a string, but this routine
+takes a symbol ID.  Recall that <A HREF="#str_to_sn">str_to_sn</A>() and <A HREF="#sn_to_str">sn_to_str</A>()
+translate between the two forms.
+<A NAME="is_eq_symbol"></A><HR><PRE><B>BOOL is_eq_symbol(int symnum);
+</B></PRE>This Boolean routine checks if a given symbol ID is for <A HREF="#eq_sym">eq_sym</A>()/2.
+One could use <A HREF="#is_symbol">is_symbol</A>(symnum, <A HREF="#eq_sym">eq_sym</A>(), 2) instead, but this
+should be a bit faster.
+<A NAME="is_skolem"></A><HR><PRE><B>BOOL is_skolem(int symnum);
+</B></PRE><A NAME="is_symbol"></A><HR><PRE><B>BOOL is_symbol(int symnum, char *str, int arity);
+</B></PRE>This Boolean routine checks if a given symbol ID matches a given
+(string,arity) pair.
+<A NAME="is_unfold_symbol"></A><HR><PRE><B>BOOL is_unfold_symbol(int symnum);
+</B></PRE><A NAME="lex_compare_arity_0123"></A><HR><PRE><B>Ordertype lex_compare_arity_0123(Symbol s1, Symbol s2);
+</B></PRE><A NAME="lex_compare_arity_0213"></A><HR><PRE><B>Ordertype lex_compare_arity_0213(Symbol s1, Symbol s2);
+</B></PRE><A NAME="lex_insert_after_initial_constants"></A><HR><PRE><B>void lex_insert_after_initial_constants(Ilist syms);
+</B></PRE><A NAME="lex_order"></A><HR><PRE><B>void lex_order(Ilist fsyms, Ilist rsyms,
+	       I2list fsyms_multiset, I2list rsyms_multiset,
+	       Ordertype (*comp_proc) (Symbol, Symbol));
+</B></PRE>Assign a total order on lex_vals of (fsyms U rsyms).
+If a list of strings was previously given to
+set_preliminary_precedence, that order is maintained
+for symbols that have those strings.
+For the other rules, see *comp_proc (lex_compare*).
+<A NAME="mark_for_new_symbols"></A><HR><PRE><B>void mark_for_new_symbols(void);
+</B></PRE><A NAME="min_lex_val"></A><HR><PRE><B>int min_lex_val(void);
+</B></PRE><A NAME="neq_sym"></A><HR><PRE><B>char *neq_sym();
+</B></PRE><A NAME="new_constant_properties"></A><HR><PRE><B>void new_constant_properties(int sn);
+</B></PRE>In the symbol table entry for the given symbol number, set
+type=function, kb_weight=1, lex_val=(after initial constants)
+<A NAME="new_symbols_since_mark"></A><HR><PRE><B>I2list new_symbols_since_mark(void);
+</B></PRE><A NAME="next_skolem_symbol"></A><HR><PRE><B>int next_skolem_symbol(int arity);
+</B></PRE>This routine returns a fresh symbol ID, which is intended to be
+used as a Skolem symbol.  
+The symbols are c1, c2, c3, ... for arity 0 (constants) and
+f1, f2, f3, ... for arity != 0.
+If some of those symbols already exist
+in the symbol table (with any arity), they will be skipped.
+<A NAME="not_in_preliminary_precedence"></A><HR><PRE><B>Ilist not_in_preliminary_precedence(Ilist syms, Symbol_type type);
+</B></PRE><A NAME="not_sym"></A><HR><PRE><B>char *not_sym();
+</B></PRE><A NAME="not_symnum"></A><HR><PRE><B>int not_symnum(void);
+</B></PRE>Return the symnum for <A HREF="#not_sym">not_sym</A>()/1.
+<A NAME="or_sym"></A><HR><PRE><B>char *or_sym();
+</B></PRE><A NAME="or_symnum"></A><HR><PRE><B>int or_symnum(void);
+</B></PRE>Return the symnum for <A HREF="#or_sym">or_sym</A>()/2.
+<A NAME="p_sym"></A><HR><PRE><B>void p_sym(int symnum);
+</B></PRE>This routine prints (stdout) the string associated with a symbol ID.
+A newline is NOT printed.
+<A NAME="p_syms"></A><HR><PRE><B>void p_syms(void);
+</B></PRE>This routine prints (to stdout) the symbol table, including all
+of the attributes of each symbol.
+<A NAME="parse_type_to_str"></A><HR><PRE><B>char *parse_type_to_str(Parsetype type);
+</B></PRE><A NAME="preliminary_lex_compare"></A><HR><PRE><B>Ordertype preliminary_lex_compare(Symbol a, Symbol b);
+</B></PRE>Compare the given strings with respect to the list of strings
+given to the set_preliminary_precedence call.  Strings without
+preliminary_precedence are smaller than those with.  Two different
+strings without preliminary_precedence are NOT_COMPARABLE.
+<P>
+Return LESS_THAN, GREATER_THAN, SAME_AS, NOT_COMPARABLE.
+<A NAME="print_fsym_precedence"></A><HR><PRE><B>void print_fsym_precedence(FILE *fp);
+</B></PRE><A NAME="print_kbo_weights"></A><HR><PRE><B>void print_kbo_weights(FILE *fp);
+</B></PRE><A NAME="print_rsym_precedence"></A><HR><PRE><B>void print_rsym_precedence(FILE *fp);
+</B></PRE><A NAME="process_lex_list"></A><HR><PRE><B>void process_lex_list(Plist lex_strings, Ilist syms, Symbol_type type);
+</B></PRE><A NAME="process_skolem_list"></A><HR><PRE><B>void process_skolem_list(Plist skolem_strings, Ilist fsyms);
+</B></PRE><A NAME="quant_sym"></A><HR><PRE><B>char *quant_sym();
+</B></PRE><A NAME="relation_symbol"></A><HR><PRE><B>BOOL relation_symbol(int symnum);
+</B></PRE><A NAME="remove_variable_symbols"></A><HR><PRE><B>Ilist remove_variable_symbols(Ilist syms);
+</B></PRE>Given a Plist of symbols (symnums), remove the ones that
+are correspond to variables.
+<A NAME="set_assoc_comm"></A><HR><PRE><B>void set_assoc_comm(char *str, BOOL set);
+</B></PRE>This routine declares a string to be a (binary) symbol with the
+logical property "associative-commutative".  This property is used for
+AC unification/matching/identity.
+(If you wish to print AC expressions without parentheses, see
+<A HREF="#set_parse_type">set_parse_type</A>().)
+
+<A NAME="set_commutative"></A><HR><PRE><B>void set_commutative(char *str, BOOL set);
+</B></PRE>This routine declares a string to be a (binary) symbol with the
+logical property "commutative".  This property is used for commutative
+unification/matching/identity.
+<A NAME="set_kb_weight"></A><HR><PRE><B>void set_kb_weight(int symnum, int weight);
+</B></PRE><A NAME="set_lex_val"></A><HR><PRE><B>void set_lex_val(int symnum, int lex_val);
+</B></PRE>This routine is used to assign a lexical value to a symbol.
+The value can be retrieved later with <A HREF="#sn_to_lex_val">sn_to_lex_val</A>();
+<A NAME="set_lrpo_status"></A><HR><PRE><B>void set_lrpo_status(int symnum, Lrpo_status status);
+</B></PRE><A NAME="set_operation_symbol"></A><HR><PRE><B>void set_operation_symbol(char *operation, char *symbol);
+</B></PRE><A NAME="set_parse_type"></A><HR><PRE><B>void set_parse_type(char *str, int precedence, Parsetype type);
+</B></PRE>This routine sets the parse/print properties of a binary or unary symbol.
+The types for binary infix symbols are
+INFIX_LEFT,
+INFIX_RIGHT,
+INFIX.
+The types for prefix unary symbols are
+PREFIX,
+PREFIX_PAREN.
+The types for postfix unary symbols are
+POSTFIX,
+POSTFIX_PAREN.
+<P>
+If the precedence is out of range [MIN_PRECEDENCE ... MAX_PRECEDENCE],
+a fatal error occurs.
+<A NAME="set_skolem"></A><HR><PRE><B>void set_skolem(int symnum);
+</B></PRE>This routine declares that a symbol is a Skolem function (or constant).
+<A NAME="set_skolem_symbols"></A><HR><PRE><B>void set_skolem_symbols(Ilist symnums);
+</B></PRE><A NAME="set_symbol_type"></A><HR><PRE><B>void set_symbol_type(int symnum, Symbol_type type);
+</B></PRE><A NAME="set_unfold_symbol"></A><HR><PRE><B>void set_unfold_symbol(int symnum);
+</B></PRE>This routine declares that a symbol is a Skolem function (or constant).
+<A NAME="set_variable_style"></A><HR><PRE><B>void set_variable_style(Variable_style style);
+</B></PRE>This routine determines how variables are parsed and printed.
+<A NAME="skolem_check"></A><HR><PRE><B>void skolem_check(BOOL flag);
+</B></PRE><A NAME="skolem_reset"></A><HR><PRE><B>void skolem_reset(void);
+</B></PRE>Reset the Skolem symbol counters (constant and function) to 1.
+<A NAME="skolem_symbols"></A><HR><PRE><B>Ilist skolem_symbols(void);
+</B></PRE>Return the list of SYMNUMs (increasing) that have
+been declared to be Skolem symbols.
+<A NAME="sn_to_arity"></A><HR><PRE><B>int sn_to_arity(int symnum);
+</B></PRE>This routine returns the arity associated with a symbol ID.
+<A NAME="sn_to_kb_wt"></A><HR><PRE><B>int sn_to_kb_wt(int symnum);
+</B></PRE>This routine returns the Knuth-Bendix weight associated with a symbol ID.
+<A NAME="sn_to_lex_val"></A><HR><PRE><B>int sn_to_lex_val(int sn);
+</B></PRE>This routine returns the lexical value associated with a symbol ID.
+The default value is INT_MAX.  If the symbol ID is not valid, INT_MIN
+is returned.
+<A NAME="sn_to_lrpo_status"></A><HR><PRE><B>Lrpo_status sn_to_lrpo_status(int sn);
+</B></PRE>This routine returns the LRPO status associated with a symbol ID.
+The default value is LRPO_LR_STATUS.  See order.h for the possible
+values.  If the symbol ID is not valid, 0 is returned.
+<A NAME="sn_to_occurrences"></A><HR><PRE><B>int sn_to_occurrences(int symnum);
+</B></PRE>This routine returns the occurrences associated with a symbol ID.
+<A NAME="sn_to_str"></A><HR><PRE><B>char *sn_to_str(int symnum);
+</B></PRE>This routine returns the string assocated with a symbol ID.
+<A NAME="sort_by_lex_val"></A><HR><PRE><B>Ilist sort_by_lex_val(Ilist p);
+</B></PRE><A NAME="special_parse_type"></A><HR><PRE><B>int special_parse_type(char *str);
+</B></PRE>Is the string a unary or binary "special_parse_type"
+(e.g., PREFIX or INFIX)?  If so, return the arity; otherwise
+return -1.
+<A NAME="sprint_sym"></A><HR><PRE><B>void sprint_sym(<A HREF="strbuf.html">String_buf</A> sb, int symnum);
+</B></PRE>This routine appends, to <A HREF="strbuf.html">String_buf</A> sb, the string associated with
+a symbol ID.  A newline is NOT printed.
+<A NAME="str_exists"></A><HR><PRE><B>BOOL str_exists(char *str);
+</B></PRE>This function checks if the given string occurs in the
+symbol table (with any arity).  This should be used judiciously,
+because the whole table is scanned.
+<A NAME="str_to_sn"></A><HR><PRE><B>int str_to_sn(char *str, int arity);
+</B></PRE>This routine takes a string and an arity, and returns an integer
+identifier for the pair.  If the pair is not already in the symbol
+table, a new entry is inserted into the table.  A pair, say ("f",2),
+is sometimes written as f/2, which is a different symbol from f/3.
+There is no limit on the length of the string (which is copied).
+<A NAME="sym_precedence"></A><HR><PRE><B>Ordertype sym_precedence(int symnum_1, int symnum_2);
+</B></PRE>This routine compares two symbol IDs by looking at their lex_val
+in the symbol table.  The range of return values is<BR>
+{SAME_AS, GREATER_THAN, LESS_THAN, NOT_COMPARABLE}.
+<A NAME="symbol_for_variable"></A><HR><PRE><B>void symbol_for_variable(char *str, int varnum);
+</B></PRE>Given a pointer to a string and a variable index,
+fill in the string with the variable symbol.
+The variable symbol is determined by the current
+variable style (standard, prolog, integer, etc.),
+which can be changed with <A HREF="#set_variable_style">set_variable_style</A>().
+<A NAME="symbol_in_use"></A><HR><PRE><B>BOOL symbol_in_use(char *str);
+</B></PRE><A NAME="symbol_with_string"></A><HR><PRE><B>int symbol_with_string(Ilist syms, char *str);
+</B></PRE><A NAME="symnums_of_arity"></A><HR><PRE><B>Ilist symnums_of_arity(Ilist p, int i);
+</B></PRE><A NAME="syms_with_lex_val"></A><HR><PRE><B>Ilist syms_with_lex_val(void);
+</B></PRE>Return an Ilist containing symnums of symbols to which lex_vals have
+been assigned.
+<A NAME="true_sym"></A><HR><PRE><B>char *true_sym(void);
+</B></PRE><A NAME="unary_parse_type"></A><HR><PRE><B>BOOL unary_parse_type(char *str, int *precedence, Parsetype *type);
+</B></PRE>This routine gets the parse/print properties for a unary symbol.
+If *str is a unary symbol, TRUE is returned and the properties are filled in.
+If *str is a not a unary symbol, FALSE is returned.
+<A NAME="variable_name"></A><HR><PRE><B>BOOL variable_name(char *s);
+</B></PRE>Is the given name a variable?  Formulas can have free
+variables (not explicitly quantified), so we have a rule to
+distinguish variables from constants.  This is it.
+<A NAME="variable_style"></A><HR><PRE><B>Variable_style variable_style(void);
+</B></PRE>This routine gives the current variable style.
+<A NAME="variable_symbols"></A><HR><PRE><B>Ilist variable_symbols(Ilist syms);
+</B></PRE>Given a Plist of symbols (symnums), return a (new) list of the
+symnums that correspond to variables.
+<A NAME="zero_wt_kb"></A><HR><PRE><B>BOOL zero_wt_kb(void);
+</B></PRE>Is there already a symbol with KB weight 0?
+<HR><A NAME=defns></A><H2>Public Definitions in File symbols.h</H2>
+<PRE>
+/* maximum number of chars in string part of symbol (includes '\0') */
+
+#define MAX_NAME      51
+
+/* parse/print properties of symbols */
+
+typedef enum {NOTHING_SPECIAL,
+	      INFIX,         /* xfx */
+	      INFIX_LEFT ,   /* yfx */
+	      INFIX_RIGHT,   /* xfy */
+	      PREFIX_PAREN,  /* fx  */
+	      PREFIX,        /* fy  */
+	      POSTFIX_PAREN, /* xf  */
+	      POSTFIX        /* yf  */
+             } Parsetype;
+
+#define MIN_PRECEDENCE      1
+#define MAX_PRECEDENCE    999
+
+/* Function/relation properties of symbols */
+
+typedef enum { UNSPECIFIED_SYMBOL,
+	       FUNCTION_SYMBOL,
+	       PREDICATE_SYMBOL
+             } Symbol_type;
+
+/* Unification properties of symbols */
+
+typedef enum { EMPTY_THEORY,
+	       COMMUTE,
+	       ASSOC_COMMUTE
+             } Unif_theory;
+
+/* LRPO status */
+
+typedef enum { LRPO_LR_STATUS,
+	       LRPO_MULTISET_STATUS
+             } Lrpo_status;
+
+/* Variable style */
+
+typedef enum { STANDARD_STYLE,      /* x,y,z,... */
+	       PROLOG_STYLE,        /* A,B,C,... */
+	       INTEGER_STYLE        /* 0,1,2,... */
+             } Variable_style;
+
+typedef struct symbol * Symbol;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This collection of routines manages the global symbol table.
+Each symbol is a pair (string,arity) and has a unique ID number.
+For example, ("f",2), sometimes written f/2, is a different symbol
+from f/3.
+<P>
+These symbols are used mostly as constant, function, and predicate
+symbols, but they can be used for variables and other things as
+well.
+<P>
+The symbol table routines call malloc() and free() directly.
+The LADR memory package (tp_alloc()) is not used.
+
+<HR>
+</BODY>
+</HTML>

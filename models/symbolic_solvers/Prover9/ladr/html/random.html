@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<TITLE>random.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "random.h"</H1>
+
+This page has information from files
+<A HREF="../random.h">random.h</A> and <A HREF="../random.c">random.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File random.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#random_clause">random_clause</A></TD><TD><A HREF="#random_nonvariable_term">random_nonvariable_term</A></TD><TD><A HREF="#random_path">random_path</A></TD><TD><A HREF="#random_term">random_term</A></TD>
+</TR>
+<TR><TD><A HREF="#random_complex_term">random_complex_term</A></TD><TD><A HREF="#random_op_term">random_op_term</A></TD><TD><A HREF="#random_permutation">random_permutation</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="random_clause"></A><HR><PRE><B>Topform random_clause(int v, int a0, int a1, int a2, int a3,
+		     int max_depth, int max_lits);
+</B></PRE>This routin builds and returns a random clause.
+The arguments are like <A HREF="#random_term">random_term</A>(), with an extra
+argument giving the maximum number of literals.
+<A NAME="random_complex_term"></A><HR><PRE><B><A HREF="term.html">Term</A> random_complex_term(int v, int a0, int a1, int a2, int a3,
+			     int max_depth);
+</B></PRE>This is like <A HREF="#random_term">random_term</A>(), except that the returned term will not
+be a variable or a constant.  Subterms may be variables or constants.
+<A NAME="random_nonvariable_term"></A><HR><PRE><B><A HREF="term.html">Term</A> random_nonvariable_term(int v, int a0, int a1, int a2, int a3,
+			     int max_depth);
+</B></PRE>This is like <A HREF="#random_term">random_term</A>(), except that the returned term will not
+be a variable.  Subterms may be variables.
+<A NAME="random_op_term"></A><HR><PRE><B><A HREF="term.html">Term</A> random_op_term(int depth);
+</B></PRE><A NAME="random_path"></A><HR><PRE><B>Ilist random_path(int length_max, int value_max);
+</B></PRE>This routine returns a random-length list of random integers.
+The range for the length is [1..length_max], and the range
+for the values is [1..value_max].
+<A NAME="random_permutation"></A><HR><PRE><B>void random_permutation(int *a, int size);
+</B></PRE>This routine places a random permtation of [0..size-1] into the array a.
+(The randomness is not very good.)
+<A NAME="random_term"></A><HR><PRE><B><A HREF="term.html">Term</A> random_term(int v, int a0, int a1, int a2, int a3,
+		 int max_depth);
+</B></PRE>This routine generates a random term, with depth <= max_depth,
+and with subterms of arity <= 3.
+The parameters [v, a0, a1, a2, a3] tells how many
+variables (named v0,v1,...),
+constants (named a0,a1,...),
+unary (named g0,g1,...),
+binary (named f0,f1,...),
+ternary (named h0,h1,...),
+symbols to select from.  For example,
+<PRE>
+<A HREF="#random_term">random_term</A>(3, 2, 1, 1, 0, 5)
+</PRE>
+asks for a term, of depth <= 5, with <= 3 variable, <= 2 constant,
+<= 1 unary, <=1 binary, and 0 ternary symbols.
+<HR><A NAME=defns></A><H2>Public Definitions in File random.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+These are some routines I used for testing and debugging some
+of the low-level code.  The main reason I wrote these is so that
+I could write and test the early code without having to input terms.
+Maybe I'll see how far I can go before I have to write a term parser.
+<P>
+And, who knows, maybe the next big breakthrough in automated theorem
+proving will depend on randonly generated terms!
+
+<HR>
+</BODY>
+</HTML>

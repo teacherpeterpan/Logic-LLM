@@ -1,0 +1,74 @@
+#ifndef TP_SOS_H
+#define TP_SOS_H
+
+#include "clist.h"
+
+/* INTRODUCTION
+This package has routines for efficiently managing selection
+of the given clause from the Sos list when using the given-clause
+algorithm.
+<P>
+We use a private index to quickly find the first, shortest clause in Sos.
+Here are the routines to use under ordinary circumstances.
+<UL>
+<LI>insert_into_sos_lightest(Topform c, Clist sos);
+<LI>remove_from_sos_lightest(Topform c);
+<LI>extract_lightest_clause(Clist sos);
+<LI>extract_first_clause(Clist lst);
+</UL>
+Here's how it works (you probably don't need to know this).
+<P>
+We use an auxiliary
+Clist "Lightest" so that we don't have to scan Sos each time
+we need a new given clause.
+At any given time, Lightest is either empty or contains
+all of the Sos clauses of minimum weight, in the same order as
+in Sos.
+<P>
+To insert a newly kept clause c into Sos:  If c is the same
+weight as clauses in Lightest, append it to Lightest as well as
+to Sos.  If c is heaaver than Lightest, append it to Sos only.
+If c is lighter than Lightest, remove all clauses from Lightest,
+(leaving Lightest empty), and append c to Sos.
+<P>
+To get the first, lightest clause:  If Lightest is empty, build
+a new Lightest list.  Now just take the first member of Lightest.
+<P>
+Good performance of this scheme depends on the assumption that
+the Lightest list is farily stable; that is, as we go from
+given clause to given clause, the weight of the lightest clauses
+doesn't change often.
+*/
+
+/* Public definitions */
+
+enum { BY_AGE, BY_WEIGHT, BY_RATIO };
+enum { SOS1, SOS2 };
+
+/* End of public definitions */
+
+/* Public function prototypes from sos.c */
+
+void p_sos_tree(void);
+
+void p_sos_dist(void);
+
+void index_sos(Topform c, int set);
+
+void insert_into_sos(Topform c, Clist sos, int set);
+
+void remove_from_sos(Topform c, Clist sos, int set);
+
+Topform first_sos_clause(Clist lst);
+
+Topform lightest_sos_clause(int set);
+
+Topform worst_sos_clause(Clist sos, int method);
+
+int wt_of_clause_at(int set, double part);
+
+int clauses_of_weight(int wt, int set);
+
+void zap_sos_index(void);
+
+#endif  /* conditional compilation of whole file */

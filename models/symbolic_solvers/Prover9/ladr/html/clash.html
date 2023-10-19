@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>clash.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "clash.h"</H1>
+
+This page has information from files
+<A HREF="../clash.h">clash.h</A> and <A HREF="../clash.c">clash.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File clash.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#append_clash">append_clash</A></TD><TD><A HREF="#atom_to_literal">atom_to_literal</A></TD><TD><A HREF="#fprint_clash_mem">fprint_clash_mem</A></TD><TD><A HREF="#zap_clash">zap_clash</A></TD>
+</TR>
+<TR><TD><A HREF="#apply_lit">apply_lit</A></TD><TD><A HREF="#clash">clash</A></TD><TD><A HREF="#p_clash_mem">p_clash_mem</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="append_clash"></A><HR><PRE><B><A HREF="clash.html">Clash</A> append_clash(<A HREF="clash.html">Clash</A> p);
+</B></PRE>This routine simply allocates a new clash node, links it in after the
+given node, and returns the new node.
+<A NAME="apply_lit"></A><HR><PRE><B>Literals apply_lit(Literals lit, <A HREF="unify.html">Context</A> c);
+</B></PRE>This routine applies a substitution to a literal and returns the
+instance.  The given literal is not changed.
+<A NAME="atom_to_literal"></A><HR><PRE><B>Literals atom_to_literal(<A HREF="term.html">Term</A> atom);
+</B></PRE>This routine takes an atom and returns its parent literal.
+<A NAME="clash"></A><HR><PRE><B>void clash(<A HREF="clash.html">Clash</A> c,
+	   BOOL (*sat_test) (Literals),
+	   Just_type rule,
+	   void (*proc_proc) (Topform));
+</B></PRE>This routine takes a complete clash list and computes the
+resolvents.
+<UL>
+<LI>clash -- a complete clash list corresponding to the nucleus.
+<LI>sat_test -- a Boolean function on clauses which identifies
+potential satellites (e.g., positive clauses for hyperresolution).
+<LI>rule -- the name of the inference rule for the justification list
+(see just.h).
+<LI>proc_proc -- procedure for processing resolvents.
+</UL>
+<A NAME="fprint_clash_mem"></A><HR><PRE><B>void fprint_clash_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the clash package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="p_clash_mem"></A><HR><PRE><B>void p_clash_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the clash package.
+<A NAME="zap_clash"></A><HR><PRE><B>void  zap_clash(<A HREF="clash.html">Clash</A> p);
+</B></PRE>Free a clash list.  Contexts in clashable nodes (which are assumed to exist
+and be empty) are freed as well.
+<HR><A NAME=defns></A><H2>Public Definitions in File clash.h</H2>
+<PRE>
+typedef struct clash  * <A HREF="clash.html">Clash</A>;
+
+struct clash {
+  BOOL       clashable;
+  BOOL       clashed;
+  BOOL       flipped;  /* Is nuc_lit or sat_lit a flipped equality? */
+  Literals    nuc_lit;
+  <A HREF="unify.html">Context</A>    nuc_subst;
+  Literals    sat_lit;
+  <A HREF="unify.html">Context</A>    sat_subst;
+  <A HREF="mindex.html">Mindex</A>     mate_index;
+  <A HREF="mindex.html">Mindex_pos</A> mate_pos;
+  <A HREF="clash.html">Clash</A>      next;
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package deals with clash structures, which are used for
+binary resolution, hyperresolution, and UR-resolution.
+The inference rule sets up a clash list (corresponding
+to the nucleus), and then calls clash() to compute all of the
+resolvents.
+
+<HR>
+</BODY>
+</HTML>

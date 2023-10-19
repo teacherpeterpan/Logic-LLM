@@ -1,0 +1,4 @@
+When adding new flags or parms, decide if they can be changed by
+actions during the search, and if so, whether the sos index has
+to be reconstructed when they are.  If they can be changed, update
+the tables at the beginning of actions.c.

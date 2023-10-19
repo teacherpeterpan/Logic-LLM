@@ -1,0 +1,5 @@
+x v y = y v x.
+(x v y) v z = x v (y v z).
+x v (x ^ y) = x.
+(((y v x) ^ x) v (((z ^ (x v x)) v (u ^ x)) ^ v)) ^ (w v ((v6 v x) ^ (x v v7))) = x.
+% latfilter: checked 6, passed 4, user 0.00, system 0.00.

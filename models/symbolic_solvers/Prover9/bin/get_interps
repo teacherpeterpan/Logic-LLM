@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Extract interpretations (models) from a Mace4 output file.
+# The C program 'interpformat portable' is similar and should work in non-unix.
+
+awk '/^ *interpretation\(/,/\. *$/'
+

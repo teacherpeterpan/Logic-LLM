@@ -1,0 +1,43 @@
+#!/bin/csh
+
+# This script should run the examples described in index.html.
+
+set path = (../bin $path)
+
+# Remove isomorphic interpretations.
+
+mace4 -n3 < qg.in | get_interps > qg.out3
+isofilter < qg.out3 > qg.iso3
+
+# Use a set of interpretations to filter a stream of clauses.
+
+clausefilter non-MOL-OML false_in_all < MOL-cand.296 > MOL-cand.238 
+
+# Use a set of clauses to filter a stream of interpretations:
+# Get the nondistributive OLs (BAs) of order 8.
+
+mace4 -n8 < OL.in | get_interps | isofilter > OL.8
+interpfilter distributivity some_false < OL.8 > OL.8.out
+
+# Given a set of interpretations and a stream of clauses,
+# print the interpretations that model each clause.
+
+mace4 -n6 < OL.in | get_interps | isofilter > OL.6
+clausetester OL.6 < BA-sheffer > BA-sheffer.out
+
+# Given a set of rewrite rules, rewrite a stream of terms or clauses.
+
+rewriter lattice.rules < lattice-sax > lattice-sax.rewritten
+
+# Decision procedure for lattice identities in meet and join.
+
+latfilter < meet-join-equations > meet-join-equations.out
+
+# Decision procedure for ortholattice identities in
+# meet/join/complement/0/1/shefferstroke.
+
+olfilter < mjc01s-equations > mjc01s-equations.out
+
+# Print the upper covers of the 5 ortholattices of order 8.
+
+upper-covers < OL.8 > OL.8.upper-covers

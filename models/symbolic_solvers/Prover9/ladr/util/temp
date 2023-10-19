@@ -1,0 +1,114 @@
+
+#define PTRS_T2 CEILING(sizeof(struct t2),BYTES_POINTER)
+static unsigned T2_gets, T2_frees;
+
+#define PTRS_T3 CEILING(sizeof(struct t3),BYTES_POINTER)
+static unsigned T3_gets, T3_frees;
+
+/*************
+ *
+ *   T2 get_t2()
+ *
+ *************/
+
+static
+T2 get_t2(void)
+{
+  T2 p = get_mem(PTRS_T2);
+  T2 xxx_gets++;
+  return(p);
+}  /* get_t2 */
+
+/*************
+ *
+ *    free_t2()
+ *
+ *************/
+
+static
+void free_t2(T2 p)
+{
+  free_mem(p, PTRS_T2);
+  T2 xxx_frees++;
+}  /* free_t2 */
+
+/*************
+ *
+ *   T3 get_t3()
+ *
+ *************/
+
+static
+T3 get_t3(void)
+{
+  T3 p = get_mem(PTRS_T3);
+  T3 xxx_gets++;
+  return(p);
+}  /* get_t3 */
+
+/*************
+ *
+ *    free_t3()
+ *
+ *************/
+
+static
+void free_t3(T3 p)
+{
+  free_mem(p, PTRS_T3);
+  T3 xxx_frees++;
+}  /* free_t3 */
+
+/*************
+ *
+ *   fprint_t1 xxx_mem()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the t1 package.
+The Boolean argument heading tells whether to print a heading on the table.
+*/
+
+/* PUBLIC */
+void fprint_t1 xxx_mem(FILE *fp, BOOL heading)
+{
+  int n;
+  if (heading)
+    fprintf(fp, "  type (bytes each)        gets      frees     in use      bytes\n");
+
+  n = sizeof(struct t2);
+  fprintf(fp, "t2 (%4d)      %11u%11u%11u%9.1f K\n",
+          n, T2 xxx_gets, T2 xxx_frees,
+          T2 xxx_gets - T2 xxx_frees,
+          ((T2 xxx_gets - T2 xxx_frees) * n) / 1024.);
+
+  n = sizeof(struct t3);
+  fprintf(fp, "t3 (%4d)      %11u%11u%11u%9.1f K\n",
+          n, T3 xxx_gets, T3 xxx_frees,
+          T3 xxx_gets - T3 xxx_frees,
+          ((T3 xxx_gets - T3 xxx_frees) * n) / 1024.);
+
+}  /* fprint_t1 xxx_mem */
+
+/*************
+ *
+ *   p_t1 xxx_mem()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine prints (to stdout) memory usage statistics for data types
+associated with the t1 package.
+*/
+
+/* PUBLIC */
+void p_t1 xxx_mem()
+{
+  fprint_t1 xxx_mem(stdout, TRUE);
+}  /* p_t1 xxx_mem */
+
+/*
+ *  end of memory management
+ */

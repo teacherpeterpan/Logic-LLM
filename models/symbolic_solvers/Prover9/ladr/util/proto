@@ -1,0 +1,25 @@
+#!/bin/csh
+
+if ($#argv != 1) then
+	echo "need one arg: filename without .h or .c"
+	exit 1
+endif
+
+if (! -e $1.c || ! -e $1.h) then
+	echo "Both $1.c and $1.h must exist."
+	exit 1
+endif
+
+/bin/mv $1.h $1.h.bak
+
+sed '/Public function prototypes/,$d' $1.h.bak > $1.h
+
+echo "/* Public function prototypes from $1.c */" >> $1.h
+
+echo "" >> $1.h
+
+awk '/PUBLIC/,/^{/' < $1.c | sed -e '/PUBLIC/d' -e 's/{//' -e 's/) *$/);/' >> $1.h
+
+echo "#endif  /* conditional compilation of whole file */" >> $1.h
+
+echo "$1.h has been updated; old version is $1.h.bak."

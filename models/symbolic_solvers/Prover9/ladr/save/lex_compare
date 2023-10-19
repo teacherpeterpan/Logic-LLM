@@ -1,0 +1,179 @@
+/*************
+ *
+ *   lex_compare_1()
+ *
+ *   1. constants < arity-2 < arity-3 < ... < arity-infinity < arity-1
+ *   2. within arity, use strcmp.
+ *
+ *************/
+
+static
+Ordertype lex_compare_1(Sym_ent s1, Sym_ent s2)
+{
+  if (s1 == NULL)
+    return LESS_THAN;
+  else if (s2 == NULL)
+    return GREATER_THAN;
+  else if (s1->arity == s2->arity) {
+    int i = strcmp(s1->name, s2->name);
+    if (i < 0)
+      return LESS_THAN;
+    else if (i > 0)
+      return GREATER_THAN;
+    else
+      return SAME_AS;
+  }
+  else if (s1->arity == 1)
+    return GREATER_THAN;
+  else if (s2->arity == 1)
+    return LESS_THAN;
+  else if (s1->arity < s2->arity)
+    return LESS_THAN;
+  else
+    return GREATER_THAN;
+}  /* lex_compare_1 */
+
+/*************
+ *
+ *   lex_order_1()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine imposes a default total ordering on symbols.
+<BR>
+The primary order is
+<PRE>
+constants < arity-2 < arity-3 < ... < arity-infinity < arity-1
+<PRE>
+Within arity, the order is determined by the C library function
+strcmp, which is (usually) lexicographic ASCII order.
+*/
+
+/* PUBLIC */
+void lex_order_1(void)
+{
+  int n = greatest_symnum() + 1;
+  Sym_ent *a = malloc(n * sizeof(void *));
+  int i;
+  for (i = 0; i < n; i++)
+    a[i] = sn_to_node(i);
+
+  merge_sort((void **) a, n,
+	     (Ordertype (*)(void*, void*)) lex_compare_1);
+
+  for (i = 0; i < n; i++) {
+    if (a[i]) {
+      a[i]->lex_val = i;
+#if 0
+      printf("symbol %s/%d, lex_val=%d.\n",
+	     a[i]->name, a[i]->arity, a[i]->lex_val);
+#endif
+    }
+  }
+  free(a);
+}  /* lex_order_1 */
+
+/*************
+ *
+ *   lex_compare_2()
+ *
+ *   1. functions < relations < unspecified
+ *   2. existing lex_val  (default is INT_MAX)
+ *   3. function: constants < arity-2 < ... < arity-infinity < arity-1
+ *   4. relations & unspecified: constants < arity-1 < ... < arity-infinity < =
+ *   5. = is greatest
+ *   6. strcmp
+ *
+ *************/
+
+static
+Ordertype lex_compare_2(Sym_ent s1, Sym_ent s2)
+{
+  if (s1 == s2)
+    return SAME_AS;
+  else if (s1 == NULL)
+    return LESS_THAN;
+  else if (s2 == NULL)
+    return GREATER_THAN;
+
+  else if (s1->type == FUNCTION_SYMBOL && s2->type != FUNCTION_SYMBOL)
+    return LESS_THAN;
+  else if (s1->type != FUNCTION_SYMBOL && s2->type == FUNCTION_SYMBOL)
+    return GREATER_THAN;
+
+  else if (s1->type == RELATION_SYMBOL && s2->type != RELATION_SYMBOL)
+    return LESS_THAN;
+  else if (s1->type != RELATION_SYMBOL && s2->type == RELATION_SYMBOL)
+    return GREATER_THAN;
+
+  /* now they have the same type */
+
+  else if (s1->lex_val < s2->lex_val)
+    return LESS_THAN;
+  else if (s1->lex_val > s2->lex_val)
+    return GREATER_THAN;
+
+  else if (s1->type == RELATION_SYMBOL && is_eq_symbol(s2->sym_num))
+    return LESS_THAN;
+  else if (s1->type == RELATION_SYMBOL && is_eq_symbol(s1->sym_num))
+    return GREATER_THAN;
+
+  else if (s1->arity == s2->arity) {
+    if (!is_eq_symbol(s1->sym_num) && is_eq_symbol(s2->sym_num))
+      return LESS_THAN;
+    else if (is_eq_symbol(s1->sym_num) && !is_eq_symbol(s2->sym_num))
+      return GREATER_THAN;
+    else {
+      int i = strcmp(s1->name, s2->name);
+      if (i < 0)
+	return LESS_THAN;
+      else if (i > 0)
+	return GREATER_THAN;
+      else
+	return SAME_AS;
+    }
+  }
+  else if (s1->type == FUNCTION_SYMBOL && s1->arity == 1)
+    return GREATER_THAN;
+  else if (s1->type == FUNCTION_SYMBOL && s2->arity == 1)
+    return LESS_THAN;
+  else if (s1->arity < s2->arity)
+    return LESS_THAN;
+  else
+    return GREATER_THAN;
+}  /* lex_compare_2 */
+
+/*************
+ *
+ *   lex_order_2()
+ *
+ *************/
+
+/* DOCUMENTATION
+Assign a total order on lex_vals of (fsyms U rsyms).
+If any of the symbols already have lex_vals, they
+are considered, but overwritten by this rouine.
+For the rules, see lex_compare_2.
+*/
+
+/* PUBLIC */
+void lex_order_2(Ilist fsyms, Ilist rsyms)
+{
+  int n = ilist_count(fsyms) + ilist_count(rsyms);
+  Sym_ent *a = malloc(n * sizeof(void *));
+  Ilist p;
+  int i = 0;
+  for (p = fsyms; p; p = p->next)
+    a[i++] = sn_to_node(p->i);
+  for (p = rsyms; p; p = p->next)
+    a[i++] = sn_to_node(p->i);
+  
+  merge_sort((void **) a, n,
+	     (Ordertype (*)(void*, void*)) lex_compare_2);
+  
+  for (i = 0; i < n; i++)
+    a[i]->lex_val = i;
+  free(a);
+}  /* lex_order_2 */
+

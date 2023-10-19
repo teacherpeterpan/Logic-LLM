@@ -1,0 +1,21 @@
+
+clauses(hints).
+
+% 15 hints from 1 proof(s) in file x2.out, Fri May  5 09:04:17 2006
+
+e * x = x # label(1).
+x ' * x = e # label(2).
+(x * y) * z = x * (y * z) # label(3).
+x * x = e # label(4).
+c2 * c1 != c1 * c2 # label(5).
+x ' * (x * y) = y # label(6).
+x * (x * y) = y # label(7).
+x * (y * (x * y)) = e # label(8).
+x ' ' * e = x # label(9).
+x ' * e = x # label(10).
+x ' = x # label(11).
+x * e = x # label(12).
+x * (y * x) = y # label(13).
+x * y = y * x # label(14).
+$F # label(15).
+end_of_list.

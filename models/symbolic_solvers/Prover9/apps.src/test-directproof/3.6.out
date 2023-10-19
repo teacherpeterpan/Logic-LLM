@@ -1,0 +1,411 @@
+============================== Prover9 ===============================
+Prover9 (64) version Aug-2007, Aug 2007.
+Process 32412 was started by veroff on io,
+Mon Jan 21 11:14:54 2008
+The command was "prover9 -f 3.6.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file 3.6.in
+
+clear(auto).
+    % clear(auto) -> clear(auto_inference).
+    % clear(auto_inference) -> clear(predicate_elim).
+    % clear(auto_inference) -> assign(eq_defs, pass).
+    % clear(auto) -> clear(auto_limits).
+    % clear(auto_limits) -> assign(max_weight, 2147483647).
+    % clear(auto_limits) -> assign(sos_limit, -1).
+    % clear(auto) -> clear(auto_denials).
+    % clear(auto) -> clear(auto_process).
+op(400,infix,[^,v,"->","=>",*]).
+op(200,prefix,[~,-]).
+lex([0,1,*,^,=>,->,v,~,-]).
+assign(order,kbo).
+set(lex_order_vars).
+set(paramodulation).
+    % set(paramodulation) -> set(back_demod).
+set(para_units_only).
+    % set(para_units_only) -> assign(para_lit_limit, 1).
+clear(back_demod).
+set(hyper_resolution).
+    % set(hyper_resolution) -> set(pos_hyper_resolution).
+set(auto_denials).
+
+formulas(assumptions).
+(x v y) v z = x v (y v z) # label("(D1)").
+(x ^ y) ^ z = x ^ (y ^ z) # label("(D2)").
+x v y = y v x # label("(D3)").
+x ^ y = y ^ x # label("(D4)").
+x v (x ^ y) = x # label("(D5)").
+x ^ (x v y) = x # label("(D6)").
+(x v y) ^ (x v z) = x v (y ^ z) # label("(D7)").
+(x ^ y) v (x ^ z) = x ^ (y v z) # label("(D8)").
+x v 0 = x # label("(D9)").
+x ^ 1 = x # label("(D10)").
+x ^ 0 = 0 # label("(2.1)").
+~ x v ~ y = ~ (x ^ y) # label("(DM1)").
+~ x ^ ~ y = ~ (x v y) # label("(DM2)").
+~ ~ x = x # label("(DN)").
+~ 1 = 0 # label("(2.2)").
+(x ^ ~ x) ^ (y v ~ y) = x ^ ~ x # label("(N1)").
+x -> x = 1 # label("(N2)").
+(x -> y) ^ (~ x v y) = ~ x v y # label("(N3)").
+x ^ (~ x v y) = x ^ (x -> y) # label("(N4)").
+(x -> y) ^ (x -> z) = x -> (y ^ z) # label("(N5)").
+(x ^ y) -> z = x -> (y -> z) # label("(N6)").
+-x = x -> 0 # label("(N7)").
+x * y = ~ (x -> ~ y) v ~ (y -> ~ x) # label("(* def)").
+x => y = (x -> y) ^ (~ y -> ~ x) # label("(=> def)").
+x -> 1 = 1 # label("(3.1)").
+1 -> x = x # label("(3.2)").
+(x -> y) -> (x -> z) = x -> (y -> z) # label("(3.3)").
+x -> (y -> z) = y -> (x -> z) # label("(3.4)").
+x -> (x -> y) = x -> y # label("(3.5)").
+(x -> y) ^ (z -> y) = (x v z) -> y # label("(3.6)").
+x ^ ((x => y) => y) = x # label("(3.7)").
+x -> ~ (x -> y) = x -> ~ y # label("(3.8)").
+~ (x -> y) -> z = x -> (~ y -> z) # label("(3.9)").
+1 => x = x # label("(BCK2)").
+x => 1 = 1 # label("(BCK3)").
+x => y != 1 | y => x != 1 | x = y # label("(BCK4)").
+end_of_list.
+
+formulas(assumptions).
+(x ^ y) -> y = 1 # label("(3.10)").
+(x ^ y) => y = 1 # label("(3.11)").
+~ x => ~ y = y => x # label("(3.12)").
+(x => y) ^ y = y # label("(3.13)").
+x => (x ^ y) = x => y # label("(3.14)").
+x => (x => y) = x -> y # label("(3.15)").
+(x => y) => ((z => x) => (z => y)) = 1 # label("(BCK1')").
+x => ((x => y) => y) = 1 # label("(BCK5)").
+x => x = 1 # label("(3.16)").
+x => (y => x) = 1 # label("(3.17)").
+x => (y => z) = y => (x => z) # label("(3.18)").
+end_of_list.
+
+formulas(goals).
+x => (x => (x => y)) = x => (x => y) # label("(E2)").
+end_of_list.
+
+formulas(hints).
+(x => y) => (x -> y) = 1.
+(x => (x -> y)) => (x -> y) = 1.
+x -> y = x => (x -> y).
+x => (x -> y) = x -> y.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 x => (x => (x => y)) = x => (x => y) # label("(E2)") # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+(x v y) v z = x v (y v z) # label("(D1)").  [assumption].
+(x ^ y) ^ z = x ^ (y ^ z) # label("(D2)").  [assumption].
+x v y = y v x # label("(D3)").  [assumption].
+x ^ y = y ^ x # label("(D4)").  [assumption].
+x v (x ^ y) = x # label("(D5)").  [assumption].
+x ^ (x v y) = x # label("(D6)").  [assumption].
+(x v y) ^ (x v z) = x v (y ^ z) # label("(D7)").  [assumption].
+(x ^ y) v (x ^ z) = x ^ (y v z) # label("(D8)").  [assumption].
+x v 0 = x # label("(D9)").  [assumption].
+x ^ 1 = x # label("(D10)").  [assumption].
+x ^ 0 = 0 # label("(2.1)").  [assumption].
+~ x v ~ y = ~ (x ^ y) # label("(DM1)").  [assumption].
+~ x ^ ~ y = ~ (x v y) # label("(DM2)").  [assumption].
+~ ~ x = x # label("(DN)").  [assumption].
+~ 1 = 0 # label("(2.2)").  [assumption].
+(x ^ ~ x) ^ (y v ~ y) = x ^ ~ x # label("(N1)").  [assumption].
+x -> x = 1 # label("(N2)").  [assumption].
+(x -> y) ^ (~ x v y) = ~ x v y # label("(N3)").  [assumption].
+x ^ (~ x v y) = x ^ (x -> y) # label("(N4)").  [assumption].
+(x -> y) ^ (x -> z) = x -> (y ^ z) # label("(N5)").  [assumption].
+(x ^ y) -> z = x -> (y -> z) # label("(N6)").  [assumption].
+-x = x -> 0 # label("(N7)").  [assumption].
+x * y = ~ (x -> ~ y) v ~ (y -> ~ x) # label("(* def)").  [assumption].
+x => y = (x -> y) ^ (~ y -> ~ x) # label("(=> def)").  [assumption].
+x -> 1 = 1 # label("(3.1)").  [assumption].
+1 -> x = x # label("(3.2)").  [assumption].
+(x -> y) -> (x -> z) = x -> (y -> z) # label("(3.3)").  [assumption].
+x -> (y -> z) = y -> (x -> z) # label("(3.4)").  [assumption].
+x -> (x -> y) = x -> y # label("(3.5)").  [assumption].
+(x -> y) ^ (z -> y) = (x v z) -> y # label("(3.6)").  [assumption].
+x ^ ((x => y) => y) = x # label("(3.7)").  [assumption].
+x -> ~ (x -> y) = x -> ~ y # label("(3.8)").  [assumption].
+~ (x -> y) -> z = x -> (~ y -> z) # label("(3.9)").  [assumption].
+1 => x = x # label("(BCK2)").  [assumption].
+x => 1 = 1 # label("(BCK3)").  [assumption].
+x => y != 1 | y => x != 1 | x = y # label("(BCK4)").  [assumption].
+(x ^ y) -> y = 1 # label("(3.10)").  [assumption].
+(x ^ y) => y = 1 # label("(3.11)").  [assumption].
+~ x => ~ y = y => x # label("(3.12)").  [assumption].
+(x => y) ^ y = y # label("(3.13)").  [assumption].
+x => (x ^ y) = x => y # label("(3.14)").  [assumption].
+x => (x => y) = x -> y # label("(3.15)").  [assumption].
+(x => y) => ((z => x) => (z => y)) = 1 # label("(BCK1')").  [assumption].
+x => ((x => y) => y) = 1 # label("(BCK5)").  [assumption].
+x => x = 1 # label("(3.16)").  [assumption].
+x => (y => x) = 1 # label("(3.17)").  [assumption].
+x => (y => z) = y => (x => z) # label("(3.18)").  [assumption].
+c1 => (c1 => (c1 => c2)) != c1 => (c1 => c2) # label("(E2)").  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+% 4 hints input.
+
+Auto_denials:
+  % copying label "(E2)" to answer in negative clause
+
+Term ordering decisions:
+Function symbol KB weights:  0=1. 1=1. c1=1. c2=1. *=1. ^=1. =>=1. ->=1. v=1. ~=1. -=1.
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ 0, 1, c1, c2, *, ^, =>, ->, v, ~, - ]).
+Skipping inverse_order, because there is a function_order (lex) command.
+
+% Operation v is commutative; C redundancy checks enabled.
+
+% Operation ^ is commutative; C redundancy checks enabled.
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+2 (x v y) v z = x v (y v z) # label("(D1)").  [assumption].
+3 (x ^ y) ^ z = x ^ (y ^ z) # label("(D2)").  [assumption].
+4 x v y = y v x # label("(D3)").  [assumption].
+5 x ^ y = y ^ x # label("(D4)").  [assumption].
+6 x v (x ^ y) = x # label("(D5)").  [assumption].
+7 x ^ (x v y) = x # label("(D6)").  [assumption].
+8 (x v y) ^ (x v z) = x v (y ^ z) # label("(D7)").  [assumption].
+9 (x ^ y) v (x ^ z) = x ^ (y v z) # label("(D8)").  [assumption].
+10 x v 0 = x # label("(D9)").  [assumption].
+11 x ^ 1 = x # label("(D10)").  [assumption].
+12 x ^ 0 = 0 # label("(2.1)").  [assumption].
+13 ~ x v ~ y = ~ (x ^ y) # label("(DM1)").  [assumption].
+14 ~ x ^ ~ y = ~ (x v y) # label("(DM2)").  [assumption].
+15 ~ ~ x = x # label("(DN)").  [assumption].
+16 ~ 1 = 0 # label("(2.2)").  [assumption].
+17 (x ^ ~ x) ^ (y v ~ y) = x ^ ~ x # label("(N1)").  [assumption].
+18 x -> x = 1 # label("(N2)").  [assumption].
+19 (x -> y) ^ (~ x v y) = ~ x v y # label("(N3)").  [assumption].
+20 x ^ (~ x v y) = x ^ (x -> y) # label("(N4)").  [assumption].
+21 (x -> y) ^ (x -> z) = x -> (y ^ z) # label("(N5)").  [assumption].
+22 (x ^ y) -> z = x -> (y -> z) # label("(N6)").  [assumption].
+24 x -> 0 = -x.  [copy(23),flip(a)].
+26 ~ (x -> ~ y) v ~ (y -> ~ x) = x * y.  [copy(25),flip(a)].
+28 (x -> y) ^ (~ y -> ~ x) = x => y.  [copy(27),flip(a)].
+29 x -> 1 = 1 # label("(3.1)").  [assumption].
+30 1 -> x = x # label("(3.2)").  [assumption].
+31 (x -> y) -> (x -> z) = x -> (y -> z) # label("(3.3)").  [assumption].
+32 x -> (y -> z) = y -> (x -> z) # label("(3.4)").  [assumption].
+33 x -> (x -> y) = x -> y # label("(3.5)").  [assumption].
+34 (x -> y) ^ (z -> y) = (x v z) -> y # label("(3.6)").  [assumption].
+35 x ^ ((x => y) => y) = x # label("(3.7)").  [assumption].
+36 x -> ~ (x -> y) = x -> ~ y # label("(3.8)").  [assumption].
+37 ~ (x -> y) -> z = x -> (~ y -> z) # label("(3.9)").  [assumption].
+38 1 => x = x # label("(BCK2)").  [assumption].
+39 x => 1 = 1 # label("(BCK3)").  [assumption].
+40 x => y != 1 | y => x != 1 | x = y # label("(BCK4)").  [assumption].
+41 (x ^ y) -> y = 1 # label("(3.10)").  [assumption].
+42 (x ^ y) => y = 1 # label("(3.11)").  [assumption].
+43 ~ x => ~ y = y => x # label("(3.12)").  [assumption].
+44 (x => y) ^ y = y # label("(3.13)").  [assumption].
+45 x => (x ^ y) = x => y # label("(3.14)").  [assumption].
+46 x => (x => y) = x -> y # label("(3.15)").  [assumption].
+47 (x => y) => ((z => x) => (z => y)) = 1 # label("(BCK1')").  [assumption].
+48 x => ((x => y) => y) = 1 # label("(BCK5)").  [assumption].
+49 x => x = 1 # label("(3.16)").  [assumption].
+50 x => (y => x) = 1 # label("(3.17)").  [assumption].
+51 x => (y => z) = y => (x => z) # label("(3.18)").  [assumption].
+52 c1 => (c1 => (c1 => c2)) != c1 => (c1 => c2) # label("(E2)") # answer("(E2)").  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+% 4 hints processed (1 are redundant).
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (I,wt=11): 2 (x v y) v z = x v (y v z) # label("(D1)").  [assumption].
+
+given #2 (I,wt=11): 3 (x ^ y) ^ z = x ^ (y ^ z) # label("(D2)").  [assumption].
+
+given #3 (I,wt=7): 4 x v y = y v x # label("(D3)").  [assumption].
+
+given #4 (I,wt=7): 5 x ^ y = y ^ x # label("(D4)").  [assumption].
+
+given #5 (I,wt=7): 6 x v (x ^ y) = x # label("(D5)").  [assumption].
+
+given #6 (I,wt=7): 7 x ^ (x v y) = x # label("(D6)").  [assumption].
+
+given #7 (I,wt=13): 8 (x v y) ^ (x v z) = x v (y ^ z) # label("(D7)").  [assumption].
+
+given #8 (I,wt=13): 9 (x ^ y) v (x ^ z) = x ^ (y v z) # label("(D8)").  [assumption].
+
+given #9 (I,wt=5): 10 x v 0 = x # label("(D9)").  [assumption].
+
+given #10 (I,wt=5): 11 x ^ 1 = x # label("(D10)").  [assumption].
+
+given #11 (I,wt=5): 12 x ^ 0 = 0 # label("(2.1)").  [assumption].
+
+given #12 (I,wt=10): 13 ~ x v ~ y = ~ (x ^ y) # label("(DM1)").  [assumption].
+
+given #13 (I,wt=10): 14 ~ x ^ ~ y = ~ (x v y) # label("(DM2)").  [assumption].
+
+given #14 (I,wt=5): 15 ~ ~ x = x # label("(DN)").  [assumption].
+
+given #15 (I,wt=4): 16 ~ 1 = 0 # label("(2.2)").  [assumption].
+
+given #16 (I,wt=14): 17 (x ^ ~ x) ^ (y v ~ y) = x ^ ~ x # label("(N1)").  [assumption].
+
+given #17 (I,wt=5): 18 x -> x = 1 # label("(N2)").  [assumption].
+
+given #18 (I,wt=13): 19 (x -> y) ^ (~ x v y) = ~ x v y # label("(N3)").  [assumption].
+
+given #19 (I,wt=12): 20 x ^ (~ x v y) = x ^ (x -> y) # label("(N4)").  [assumption].
+
+given #20 (I,wt=13): 21 (x -> y) ^ (x -> z) = x -> (y ^ z) # label("(N5)").  [assumption].
+
+given #21 (I,wt=11): 22 (x ^ y) -> z = x -> (y -> z) # label("(N6)").  [assumption].
+
+given #22 (I,wt=6): 24 x -> 0 = -x.  [copy(23),flip(a)].
+
+given #23 (I,wt=15): 26 ~ (x -> ~ y) v ~ (y -> ~ x) = x * y.  [copy(25),flip(a)].
+
+given #24 (I,wt=13): 28 (x -> y) ^ (~ y -> ~ x) = x => y.  [copy(27),flip(a)].
+
+given #25 (I,wt=5): 29 x -> 1 = 1 # label("(3.1)").  [assumption].
+
+given #26 (I,wt=5): 30 1 -> x = x # label("(3.2)").  [assumption].
+
+given #27 (I,wt=13): 31 (x -> y) -> (x -> z) = x -> (y -> z) # label("(3.3)").  [assumption].
+
+given #28 (I,wt=11): 32 x -> (y -> z) = y -> (x -> z) # label("(3.4)").  [assumption].
+
+given #29 (I,wt=9): 33 x -> (x -> y) = x -> y # label("(3.5)").  [assumption].
+
+given #30 (I,wt=13): 34 (x -> y) ^ (z -> y) = (x v z) -> y # label("(3.6)").  [assumption].
+
+given #31 (I,wt=9): 35 x ^ ((x => y) => y) = x # label("(3.7)").  [assumption].
+
+given #32 (I,wt=11): 36 x -> ~ (x -> y) = x -> ~ y # label("(3.8)").  [assumption].
+
+given #33 (I,wt=13): 37 ~ (x -> y) -> z = x -> (~ y -> z) # label("(3.9)").  [assumption].
+
+given #34 (I,wt=5): 38 1 => x = x # label("(BCK2)").  [assumption].
+
+given #35 (I,wt=5): 39 x => 1 = 1 # label("(BCK3)").  [assumption].
+
+given #36 (I,wt=13): 40 x => y != 1 | y => x != 1 | x = y # label("(BCK4)").  [assumption].
+
+given #37 (I,wt=7): 41 (x ^ y) -> y = 1 # label("(3.10)").  [assumption].
+
+given #38 (I,wt=7): 42 (x ^ y) => y = 1 # label("(3.11)").  [assumption].
+
+given #39 (I,wt=9): 43 ~ x => ~ y = y => x # label("(3.12)").  [assumption].
+
+given #40 (I,wt=7): 44 (x => y) ^ y = y # label("(3.13)").  [assumption].
+
+given #41 (I,wt=9): 45 x => (x ^ y) = x => y # label("(3.14)").  [assumption].
+
+given #42 (I,wt=9): 46 x => (x => y) = x -> y # label("(3.15)").  [assumption].
+
+given #43 (I,wt=13): 47 (x => y) => ((z => x) => (z => y)) = 1 # label("(BCK1')").  [assumption].
+
+given #44 (I,wt=9): 48 x => ((x => y) => y) = 1 # label("(BCK5)").  [assumption].
+
+given #45 (I,wt=5): 49 x => x = 1 # label("(3.16)").  [assumption].
+
+given #46 (I,wt=7): 50 x => (y => x) = 1 # label("(3.17)").  [assumption].
+
+given #47 (I,wt=11): 51 x => (y => z) = y => (x => z) # label("(3.18)").  [assumption].
+
+given #48 (I,wt=13): 52 c1 => (c1 => (c1 => c2)) != c1 => (c1 => c2) # label("(E2)") # answer("(E2)").  [deny(1)].
+
+given #49 (H,wt=9): 711 (x => y) => (x -> y) = 1.  [para(46(a,1),50(a,1,2))].
+
+given #50 (H,wt=11): 752 (x => (x -> y)) => (x -> y) = 1.  [para(33(a,1),711(a,1,2))].
+
+given #51 (H,wt=9): 775 x => (x -> y) = x -> y.  [hyper(40,a,50,a,b,752,a),flip(a)].
+
+given #52 (A,wt=15): 53 (x v (y v z)) v u = (x v y) v (z v u).  [para(2(a,1),2(a,1,1))].
+
+given #53 (F,wt=11): 744 c1 => (c1 -> c2) != c1 => (c1 => c2) # answer("(E2)").  [para(46(a,1),52(a,1,2))].
+-------- Proof 1 -------- "(E2)".
+
+============================== PROOF =================================
+
+% Proof 1 at 0.03 (+ 0.00) seconds: "(E2)".
+% Length of proof is 12.
+% Level of proof is 4.
+% Maximum clause weight is 13.
+% Given clauses 53.
+
+1 x => (x => (x => y)) = x => (x => y) # label("(E2)") # label(non_clause) # label(goal).  [goal].
+33 x -> (x -> y) = x -> y # label("(3.5)").  [assumption].
+40 x => y != 1 | y => x != 1 | x = y # label("(BCK4)").  [assumption].
+46 x => (x => y) = x -> y # label("(3.15)").  [assumption].
+50 x => (y => x) = 1 # label("(3.17)").  [assumption].
+52 c1 => (c1 => (c1 => c2)) != c1 => (c1 => c2) # label("(E2)") # answer("(E2)").  [deny(1)].
+711 (x => y) => (x -> y) = 1.  [para(46(a,1),50(a,1,2))].
+744 c1 => (c1 -> c2) != c1 => (c1 => c2) # answer("(E2)").  [para(46(a,1),52(a,1,2))].
+752 (x => (x -> y)) => (x -> y) = 1.  [para(33(a,1),711(a,1,2))].
+775 x => (x -> y) = x -> y.  [hyper(40,a,50,a,b,752,a),flip(a)].
+871 c1 => (c1 -> c2) != c1 -> c2 # answer("(E2)").  [para(46(a,1),744(a,2))].
+872 $F # answer("(E2)").  [resolve(871,a,775,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=53. Generated=1176. Kept=867. proofs=1.
+Usable=53. Sos=808. Demods=0. Limbo=0, Disabled=53. Hints=4.
+Weight_deleted=0. Literals_deleted=0.
+Forward_subsumed=309. Back_subsumed=5.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=0 (0 lex), Back_demodulated=0. Back_unit_deleted=0.
+Demod_attempts=0. Demod_rewrites=0.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=1.
+Megabytes=1.16.
+User_CPU=0.03, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 32412 exit (max_proofs) ------
+
+Process 32412 exit (max_proofs) Mon Jan 21 11:14:54 2008

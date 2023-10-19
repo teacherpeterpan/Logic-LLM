@@ -1,0 +1,36 @@
+============================== directproof ===========================
+Prover9 (64) version Aug-2007, Aug 2007.
+Process 32412 was started by veroff on io,
+Mon Jan 21 11:14:54 2008
+The command was "prover9 -f 3.6.in".
+============================== end of head ===========================
+op(400,infix,[^,v,"->","=>",*]).
+op(200,prefix,[~,-]).
+
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.03 (+ 0.00) seconds: "(E2)".
+% Length of proof is 12.
+% Level of proof is 4.
+% Maximum clause weight is 13.
+% Given clauses 53.
+
+1 x => (x => (x => y)) = x => (x => y) # label("(E2)") # label(non_clause) # label(goal).  [goal].
+2 x -> (x -> y) = x -> y # label("(3.5)").  [assumption].
+3 x => y != 1 | y => x != 1 | x = y # label("(BCK4)").  [assumption].
+4 x => (x => y) = x -> y # label("(3.15)").  [assumption].
+5 x => (y => x) = 1 # label("(3.17)").  [assumption].
+6 c1 => (c1 => (c1 => c2)) != c1 => (c1 => c2) # label("(E2)") # answer("(E2)").  [deny(1)].
+7 (x => y) => (x -> y) = 1.  [para(4(a,1),5(a,1,2))].
+9 (x => (x -> y)) => (x -> y) = 1.  [para(2(a,1),7(a,1,2))].
+10 (x => y) => y != 1 | y = x => y.  [resolve(3,a,5,a)].
+11 x -> y = x => (x -> y).  [resolve(10,a,9,a)].
+12 x => (x -> y) = x -> y.  [copy(11),flip(a)].
+15 x => (x -> y) = x => (x => y).  [para(4(a,2),12(a,2))].
+17 x => (x => (x => y)) = x => (x => y).  [para(4(a,2),15(a,1,2))].
+18 $F # answer("(E2)").  [resolve(17,a,6,a)].
+
+============================== end of proof ==========================

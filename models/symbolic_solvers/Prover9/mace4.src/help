@@ -1,0 +1,29 @@
+
+I have to evaluate ground expressions involving division by 0.
+Expressions have (+ * - div mod < <= > >= =) and the leaves are integers.
+div and mod produce integers.
+
+1. We can't just fail when see division by zero, because, e.g.,
+3/0 = 3/0 has to evaluate to TRUE.
+
+2. We can't say that division by 0 produces a special value "undefined",
+which is propagated up to the top of the expression, because, e.g.,
+3/0 = 3/0 (undefined=undefined) has to evaluate to TRUE, and
+3/0 = 4/0 (undefined=undefined) has to evaluate to FALSE.
+
+3. <+,-,*> is the ring of integers, so simplification with x*0=0 and
+x-x = 0 can get rid of subexpressions involving division by 0.
+
+Current idea: starting with an expression with < <= > >= or = at the
+root, simplify to a unique canonical form.  If that gets rid of
+all division by 0 (including mod 0), we should have TRUE or FALSE,
+and we're done.  Otherwise, if the root is =, it is TRUE iff the
+2 arguments are identical.  If it is some other relation, it is
+FALSE.
+
+However, I don't know if this theory has unique canonical forms.
+such that two terms are equal iff their canincal forms are identical.
+
+What is this theory, anyway?  <+,-,*> is the ring of integers,
+but when we add / and mod, we don't have a field (no multiplicative
+inverses).

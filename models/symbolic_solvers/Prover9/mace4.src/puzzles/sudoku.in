@@ -1,0 +1,52 @@
+assign(domain_size, 9).
+
+formulas(assumptions).
+
+S(x, y1) = S(x, y2) -> y1 = y2.  % At most one of each in each row.
+
+S(x1, y) = S(x2, y) -> x1 = x2.  % At most one of each in each column.
+
+% "At least" rules.  These are not necessary, but they reduce the search.
+
+all x all z exists y S(x,y) = z.  % At least one of each in each row.
+
+all y all z exists x S(x,y) = z.  % At least one of each in each column.
+
+% For 9x9 puzzles, the intervals are {0,1,2}, {3,4,5}, {6,7,8};
+% same_interval(x,y) is an equivalence relation.
+
+same_interval(x,x).
+same_interval(x,y) -> same_interval(y,x).
+same_interval(x,y) & same_interval(y,z) -> same_interval(x,z).
+
+same_interval(0,1).  same_interval(1,2).
+same_interval(3,4).  same_interval(4,5).
+same_interval(6,7).  same_interval(7,8).
+
+-same_interval(0,3).  -same_interval(3,6).  -same_interval(0,6).
+
+% The preceding formulas completely specify the same_interval relation.
+
+% Rule 3a: At most one of each in each region.
+
+  (
+     S(x1, y1) = S(x2, y2) &
+     same_interval(x1,x2) &
+     same_interval(y1,y2)
+  ->
+     x1 = x2  &  y1 = y2 
+  ).
+
+% The initial state of the puzzle.  This should be a hard one.
+
+S(0,0) = 8. S(0,5) = 3. S(0,7) = 5.
+S(1,0) = 3. S(1,1) = 1. S(1,3) = 4. S(1,6) = 8.
+S(2,2) = 5.
+S(3,1) = 0. S(3,3) = 2.
+S(4,1) = 5. S(4,5) = 0. S(4,6) = 3. S(4,7) = 6.
+S(5,0) = 4. S(5,5) = 5. S(5,7) = 8.
+S(6,6) = 2.
+S(7,2) = 2. S(7,5) = 1. S(7,7) = 3. S(7,8) = 7.
+S(8,1) = 3. S(8,5) = 2. S(8,8) = 1.
+
+end_of_list.

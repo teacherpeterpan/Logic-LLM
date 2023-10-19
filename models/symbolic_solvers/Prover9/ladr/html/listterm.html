@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>listterm.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "listterm.h"</H1>
+
+This page has information from files
+<A HREF="../listterm.h">listterm.h</A> and <A HREF="../listterm.c">listterm.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File listterm.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#cons_term">cons_term</A></TD><TD><A HREF="#listterm_cons">listterm_cons</A></TD><TD><A HREF="#listterm_member">listterm_member</A></TD><TD><A HREF="#listterm_zap">listterm_zap</A></TD>
+</TR>
+<TR><TD><A HREF="#get_nil_term">get_nil_term</A></TD><TD><A HREF="#listterm_i">listterm_i</A></TD><TD><A HREF="#listterm_reverse">listterm_reverse</A></TD><TD><A HREF="#nil_term">nil_term</A></TD>
+</TR>
+<TR><TD><A HREF="#listterm_append">listterm_append</A></TD><TD><A HREF="#listterm_length">listterm_length</A></TD><TD><A HREF="#listterm_to_tlist">listterm_to_tlist</A></TD><TD><A HREF="#proper_listterm">proper_listterm</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="cons_term"></A><HR><PRE><B>BOOL cons_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This function checks if a term is a "cons", that is,
+arity 2 with the official "cons" symbol.   
+<A NAME="get_nil_term"></A><HR><PRE><B><A HREF="term.html">Term</A> get_nil_term();
+</B></PRE>Allocate and return an empty listterm.
+<A NAME="listterm_append"></A><HR><PRE><B><A HREF="term.html">Term</A> listterm_append(<A HREF="term.html">Term</A> list, <A HREF="term.html">Term</A> element);
+</B></PRE>This routine appends an element to a listterm.  The resulting
+listterm is returned.  Neither the list nor the element is copied.
+You should not refer to the argument "list" after calling this
+routine---a good way to call it is like this:
+<PRE>list = <A HREF="#listterm_append">listterm_append</A>(list, element)</PRE>
+<P>
+If "list" is not a <A HREF="#proper_listterm">proper_listterm</A>(), the result will be
+well-formed, but it might not be what you expect.
+<A NAME="listterm_cons"></A><HR><PRE><B><A HREF="term.html">Term</A> listterm_cons(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE>This routine returns the "cons" of two terms.
+The two terms are not copied.
+<A NAME="listterm_i"></A><HR><PRE><B><A HREF="term.html">Term</A> listterm_i(<A HREF="term.html">Term</A> lst, int i);
+</B></PRE>Return the i-th member, counting from 1, of a listterm.
+If there are less than i members, return NULL.
+<A NAME="listterm_length"></A><HR><PRE><B>int listterm_length(<A HREF="term.html">Term</A> t);
+</B></PRE>This function returns the length of a listterm.
+<A NAME="listterm_member"></A><HR><PRE><B>BOOL listterm_member(<A HREF="term.html">Term</A> t, <A HREF="term.html">Term</A> lst);
+</B></PRE>This function checks if <A HREF="term.html">Term</A> t is a member of a listterm (<A HREF="term.html">Term</A> lst).
+<A NAME="listterm_reverse"></A><HR><PRE><B><A HREF="term.html">Term</A> listterm_reverse(<A HREF="term.html">Term</A> t);
+</B></PRE>Reverse a listterm.  A new list structure is created, but
+the members are not copied.  The old list structure is freed.
+<A NAME="listterm_to_tlist"></A><HR><PRE><B>Plist listterm_to_tlist(<A HREF="term.html">Term</A> t);
+</B></PRE>Given a proper listterm (e.g, [a,b,c]), return a Plist
+of the members.  The members are not copied.
+<A NAME="listterm_zap"></A><HR><PRE><B>void listterm_zap(<A HREF="term.html">Term</A> t);
+</B></PRE>Free a list structure, but do not free its members.
+<A NAME="nil_term"></A><HR><PRE><B>BOOL nil_term(<A HREF="term.html">Term</A> t);
+</B></PRE>This function checks if a term is a "nil", that is,
+arity 0 with the official "nil" symbol.   
+<A NAME="proper_listterm"></A><HR><PRE><B>BOOL proper_listterm(<A HREF="term.html">Term</A> t);
+</B></PRE>This function checks if a term is a proper listterm,
+that is, a <A HREF="#nil_term">nil_term</A>(), or a <A HREF="#cons_term">cons_term</A>() whose tail
+is a <A HREF="#proper_listterm">proper_listterm</A>().
+<HR><A NAME=defns></A><H2>Public Definitions in File listterm.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package has routines for managing binary-tree lists built
+from Terms, which allows you to do some LISPy and Prology things.
+However, you must be careful to keep track of any terms that are
+shared and to recycle your own garbage.
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,90 @@
+Task: Given the wrong FOL formula and the error message, output the correct FOL formula.
+------
+>>> Initial Program:
+Premises:
+MusicPiece(symphonyNo9) ::: Symphony No. 9 is a music piece.
+∀x (Composer(x) → ∃y (Write(x, y) ∧ MusicPiece(y))) ::: Composers write music pieces.
+Write(beethoven, symphonyNo9) ::: Beethoven wrote Symphony No. 9.
+Lead(beethoven, viennaMusicSociety) ∧ Orchestra(viennaMusicSociety) ::: Vienna Music Society is an orchestra and Beethoven leads the Vienna Music Society.
+∀x (Orchestra(x) → ∃y (Lead(y, x) ∧ Conductor(y))) ::: Orchestras are led by conductors.
+Conclusion:
+¬Conductor(beethoven) ::: Beethoven is not a conductor."
+>>> Error Message:
+Parsing Error
+>>> Correct Program:
+Premises:
+MusicPiece(symphonyNo9) ::: Symphony No. 9 is a music piece.
+∀x ∃z (¬Composer(x) ∨ (Write(x,z) ∧ MusicPiece(z))) ::: Composers write music pieces.
+Write(beethoven, symphonyNo9) ::: Beethoven wrote Symphony No. 9.
+Lead(beethoven, viennaMusicSociety) ∧ Orchestra(viennaMusicSociety) ::: Vienna Music Society is an orchestra and Beethoven leads the Vienna Music Society.
+∀x ∃z (¬Orchestra(x) ∨ (Lead(z,x) ∧ Conductor(z))) ::: Orchestras are led by conductors.
+Conclusion:
+¬Conductor(beethoven) ::: Beethoven is not a conductor.
+------
+>>> Initial Program:
+Predicates:
+JapaneseCompany(x) ::: x is a Japanese game company.
+Create(x, y) ::: x created the game y.
+Top10(x) ::: x is in the Top 10 list.
+Sell(x, y) ::: x sold more than y copies.
+Premises:
+∃x (JapaneseCompany(x) ∧ Create(x, legendOfZelda)) ::: A Japanese game company created the game the Legend of Zelda.
+∀x (Top10(x) → ∃y (JapaneseCompany(y) ∧ Create(y, x))) ::: All games in the Top 10 list are made by Japanese game companies.
+∀x (Sell(x, oneMillion) → Top10(x)) ::: If a game sells more than one million copies, then it will be selected into the Top 10 list.
+Sell(legendOfZelda, oneMillion) ::: The Legend of Zelda sold more than one million copies.
+Conclusion:
+Top10(legendOfZelda) ::: The Legend of Zelda is in the Top 10 list.
+>>> Error Message:
+Parsing Error
+>>> Correct Program:
+Predicates:
+JapaneseCompany(x) ::: x is a Japanese game company.
+Create(x, y) ::: x created the game y.
+Top10(x) ::: x is in the Top 10 list.
+Sell(x, y) ::: x sold more than y copies.
+Premises:
+∃x (JapaneseCompany(x) ∧ Create(x, legendOfZelda)) ::: A Japanese game company created the game the Legend of Zelda.
+∀x ∃z (¬Top10(x) ∨ (JapaneseCompany(z) ∧ Create(z,x))) ::: All games in the Top 10 list are made by Japanese game companies.
+∀x (Sell(x, oneMillion) → Top10(x)) ::: If a game sells more than one million copies, then it will be selected into the Top 10 list.
+Sell(legendOfZelda, oneMillion) ::: The Legend of Zelda sold more than one million copies.
+Conclusion:
+Top10(legendOfZelda) ::: The Legend of Zelda is in the Top 10 list.
+------
+>>> Initial Program:
+Predicates:
+Listed(x) ::: x is listed in Yelp’s recommendations.
+NegativeReviews(x) ::: x receives many negative reviews.
+Rating(x, y) ::: x has a rating of y.
+TakeOut(x) ::: x provides take-out service.
+Popular(x) ::: x is popular among local residents.
+Premises:
+∀x (Listed(x) → ¬NegativeReviews(x)) ::: If the restaurant is listed in Yelp’s recommendations, then the restaurant does not receive many negative reviews.
+∀x (Rating(x, y) ∧ y > 9 → Listed(x)) ::: All restaurants with a rating greater than 9 are listed in Yelp’s recommendations.
+∃x (¬TakeOut(x) ∧ NegativeReviews(x)) ::: Some restaurants that do not provide take-out service receive many negative reviews.
+∀x (Popular(x) → (Rating(x, y) ∧ y > 9)) ::: All restaurants that are popular among local residents have ratings greater than 9.
+Rating(subway, y) ∧ y > 9 ∨ Popular(subway) ::: Subway has a rating greater than 9 or is popular among local residents.
+Conclusion:
+TakeOut(subway) ∧ ¬NegativeReviews(subway) ::: Subway provides take-out service and does not receive many negative reviews.
+>>> Error Message:
+Parsing Error
+>>> Correct Program:
+Predicates:
+Listed(x) ::: x is listed in Yelp’s recommendations.
+NegativeReviews(x) ::: x receives many negative reviews.
+TakeOut(x) ::: x provides take-out service.
+Popular(x) ::: x is popular among local residents.
+GreaterThanNine(x) ::: x has a rating greater than 9.
+Premises:
+∀x (Listed(x) → ¬NegativeReviews(x)) ::: If the restaurant is listed in Yelp’s recommendations, then the restaurant does not receive many negative reviews.
+∀x (GreaterThanNine(x) → Listed(x)) ::: All restaurants with a rating greater than 9 are listed in Yelp’s recommendations.
+∃x (¬TakeOut(x) ∧ NegativeReviews(x)) ::: Some restaurants that do not provide take-out service receive many negative reviews.
+∀x (Popular(x) → GreaterThanNine(x)) ::: All restaurants that are popular among local residents have ratings greater than 9.
+GreaterThanNine(subway) ∨ Popular(subway) ::: Subway has a rating greater than 9 or is popular among local residents.
+Conclusion:
+TakeOut(subway) ∧ ¬NegativeReviews(subway) ::: Subway provides take-out service and does not receive many negative reviews.
+------
+>>> Initial Program:
+[[PROGRAM]]
+>>> Error Message:
+[[ERROR MESSAGE]]
+>>> Corrected Program:

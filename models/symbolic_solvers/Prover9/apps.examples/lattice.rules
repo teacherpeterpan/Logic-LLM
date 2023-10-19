@@ -1,0 +1,11 @@
+op(400, infix, ^).
+op(400, infix, v).
+assoc_comm(^).       % meet is associative and commutative
+assoc_comm(v).       % join is associative and commutative
+
+clauses(theory).
+x ^ x = x.
+x ^ (x v y) = x.
+x v x = x.
+x v (x ^ y) = x.
+end_of_list.

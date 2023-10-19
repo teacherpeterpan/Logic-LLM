@@ -1,0 +1,248 @@
+<HTML>
+<HEAD>
+<TITLE>interp.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "interp.h"</H1>
+
+This page has information from files
+<A HREF="../interp.h">interp.h</A> and <A HREF="../interp.c">interp.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File interp.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#assign_discriminator_counts">assign_discriminator_counts</A></TD><TD><A HREF="#evaluable_literals">evaluable_literals</A></TD><TD><A HREF="#ident_interp_perm">ident_interp_perm</A></TD><TD><A HREF="#p_interp">p_interp</A></TD>
+</TR>
+<TR><TD><A HREF="#canon_interp">canon_interp</A></TD><TD><A HREF="#evaluable_term">evaluable_term</A></TD><TD><A HREF="#int_power">int_power</A></TD><TD><A HREF="#p_interp_mem">p_interp_mem</A></TD>
+</TR>
+<TR><TD><A HREF="#compare_interp">compare_interp</A></TD><TD><A HREF="#evaluable_topform">evaluable_topform</A></TD><TD><A HREF="#interp_comments">interp_comments</A></TD><TD><A HREF="#p_interp_profile">p_interp_profile</A></TD>
+</TR>
+<TR><TD><A HREF="#compile_interp">compile_interp</A></TD><TD><A HREF="#factorial">factorial</A></TD><TD><A HREF="#interp_remove_constants">interp_remove_constants</A></TD><TD><A HREF="#perms_required">perms_required</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_interp">copy_interp</A></TD><TD><A HREF="#fprint_interp_cooked">fprint_interp_cooked</A></TD><TD><A HREF="#interp_remove_constants_recurse">interp_remove_constants_recurse</A></TD><TD><A HREF="#permute_interp">permute_interp</A></TD>
+</TR>
+<TR><TD><A HREF="#create_profile">create_profile</A></TD><TD><A HREF="#fprint_interp_mem">fprint_interp_mem</A></TD><TD><A HREF="#interp_remove_others">interp_remove_others</A></TD><TD><A HREF="#same_discriminator_counts">same_discriminator_counts</A></TD>
+</TR>
+<TR><TD><A HREF="#eval_formula">eval_formula</A></TD><TD><A HREF="#fprint_interp_portable">fprint_interp_portable</A></TD><TD><A HREF="#interp_remove_others_recurse">interp_remove_others_recurse</A></TD><TD><A HREF="#same_profiles">same_profiles</A></TD>
+</TR>
+<TR><TD><A HREF="#eval_literals">eval_literals</A></TD><TD><A HREF="#fprint_interp_raw">fprint_interp_raw</A></TD><TD><A HREF="#interp_size">interp_size</A></TD><TD><A HREF="#transpose_binary">transpose_binary</A></TD>
+</TR>
+<TR><TD><A HREF="#eval_literals_false_instances">eval_literals_false_instances</A></TD><TD><A HREF="#fprint_interp_standard">fprint_interp_standard</A></TD><TD><A HREF="#interp_table">interp_table</A></TD><TD><A HREF="#update_interp_with_constant">update_interp_with_constant</A></TD>
+</TR>
+<TR><TD><A HREF="#eval_literals_true_instances">eval_literals_true_instances</A></TD><TD><A HREF="#fprint_interp_standard2">fprint_interp_standard2</A></TD><TD><A HREF="#iso_checks">iso_checks</A></TD><TD><A HREF="#update_profile">update_profile</A></TD>
+</TR>
+<TR><TD><A HREF="#eval_term_ground">eval_term_ground</A></TD><TD><A HREF="#fprint_interp_tabular">fprint_interp_tabular</A></TD><TD><A HREF="#iso_perms">iso_perms</A></TD><TD><A HREF="#zap_interp">zap_interp</A></TD>
+</TR>
+<TR><TD><A HREF="#eval_topform">eval_topform</A></TD><TD><A HREF="#fprint_interp_tex">fprint_interp_tex</A></TD><TD><A HREF="#isomorphic_interps">isomorphic_interps</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#evaluable_atom">evaluable_atom</A></TD><TD><A HREF="#fprint_interp_xml">fprint_interp_xml</A></TD><TD><A HREF="#normal3_interp">normal3_interp</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#evaluable_formula">evaluable_formula</A></TD><TD><A HREF="#ident_interp">ident_interp</A></TD><TD><A HREF="#normal_interp">normal_interp</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="assign_discriminator_counts"></A><HR><PRE><B>void assign_discriminator_counts(<A HREF="interp.html">Interp</A> a, Plist discriminators);
+</B></PRE><A NAME="canon_interp"></A><HR><PRE><B><A HREF="interp.html">Interp</A> canon_interp(<A HREF="interp.html">Interp</A> a);
+</B></PRE>Return the (unique) canonical form of the interp.
+The input interp (which is not changed) is assumed
+to be in normal form.
+<A NAME="compare_interp"></A><HR><PRE><B>Ordertype compare_interp(<A HREF="interp.html">Interp</A> a, <A HREF="interp.html">Interp</A> b);
+</B></PRE>Compare two compatible interpretations.
+Return SAME_AS, GREATER_THAN, or LESS_THAN.
+<A NAME="compile_interp"></A><HR><PRE><B><A HREF="interp.html">Interp</A> compile_interp(<A HREF="term.html">Term</A> t, BOOL allow_incomplete);
+</B></PRE>This routine takes a term representing an interpretation and
+builds a data structure that allows fast evaluation of clauses
+and formulas w.r.t. the interpretation.  Here is an example of
+the term form of an interpretation.
+<PRE>
+   interpretation(3, [
+       function(e,      [0]),
+       function(*(_,_), [0,1,2,1,2,0,2,0,1]),
+       relation(p,      [1])
+       relation(q(_),   [1,0,1])
+       ])
+</PRE>
+The given <A HREF="term.html">Term</A> t is not changed.
+<A NAME="copy_interp"></A><HR><PRE><B><A HREF="interp.html">Interp</A> copy_interp(<A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine copies an interpretation.  We don't check for errors.
+<A NAME="create_profile"></A><HR><PRE><B>void create_profile(<A HREF="interp.html">Interp</A> a, Plist discriminators);
+</B></PRE><A NAME="eval_formula"></A><HR><PRE><B>BOOL eval_formula(<A HREF="formula.html">Formula</A> f, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine evaluates a closed formula in an interpretation.
+<P>
+All natural numbers are interpreted as domain values, and if any
+domain values are out of range, a fatal error occurs.
+<P>
+A fatal error occurs if any constant, function or predicate symbol
+in the formula (other than eq_sym(), which is always built in)
+is absent from the interpetation.
+<p>
+A fatal error occurs if the formula contains any terms of type
+VARIABLE.  (Variables bound by quantifier are represented as terms
+of type CONSTANT.)
+<A NAME="eval_literals"></A><HR><PRE><B>BOOL eval_literals(Literals lits, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine evaluates a clause in an interpretation.
+If all instances (over the domain of the interpretation) of the clause
+are true in the interpretaion, TRUE is returned.  If any instance
+is false, FALSE is returned.
+<P>
+Note that if the interpretation has d elements and the clause has
+v variables, it takes d^v evaluations to verify the clause.
+<P>
+All natural numbers are interpreted as domain values, and if any
+domain values are out of range, a fatal error occurs.
+<P>
+A fatal error occurs if any constant, function or predicate symbol
+in the clause (other than eq_sym(), which is always built in)
+is absent from the interpetation.
+<A NAME="eval_literals_false_instances"></A><HR><PRE><B>int eval_literals_false_instances(Literals lits, <A HREF="interp.html">Interp</A> p);
+</B></PRE><A NAME="eval_literals_true_instances"></A><HR><PRE><B>int eval_literals_true_instances(Literals lits, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine evaluates a clause in an interpretation.
+The number of false instances is returned.f
+The variables in the clause must be normal (0,1,2,...).
+<A NAME="eval_term_ground"></A><HR><PRE><B>int eval_term_ground(<A HREF="term.html">Term</A> t, <A HREF="interp.html">Interp</A> p, int *vals);
+</B></PRE><A NAME="eval_topform"></A><HR><PRE><B>BOOL eval_topform(Topform tf, <A HREF="interp.html">Interp</A> p);
+</B></PRE><A NAME="evaluable_atom"></A><HR><PRE><B>BOOL evaluable_atom(<A HREF="term.html">Term</A> a, <A HREF="interp.html">Interp</A> p);
+</B></PRE><A NAME="evaluable_formula"></A><HR><PRE><B>BOOL evaluable_formula(<A HREF="formula.html">Formula</A> f, <A HREF="interp.html">Interp</A> p);
+</B></PRE><A NAME="evaluable_literals"></A><HR><PRE><B>BOOL evaluable_literals(Literals lits, <A HREF="interp.html">Interp</A> p);
+</B></PRE><A NAME="evaluable_term"></A><HR><PRE><B>BOOL evaluable_term(<A HREF="term.html">Term</A> t, <A HREF="interp.html">Interp</A> p);
+</B></PRE><A NAME="evaluable_topform"></A><HR><PRE><B>BOOL evaluable_topform(Topform tf, <A HREF="interp.html">Interp</A> p);
+</B></PRE><A NAME="factorial"></A><HR><PRE><B>long unsigned factorial(int n);
+</B></PRE>If overflow, return 0.
+<A NAME="fprint_interp_cooked"></A><HR><PRE><B>void fprint_interp_cooked(FILE *fp, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine prints (to FILE *fp) a compiled interpretation,
+in cooked form, e.g., f(0,2)=1.
+<A NAME="fprint_interp_mem"></A><HR><PRE><B>void fprint_interp_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the interp package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="fprint_interp_portable"></A><HR><PRE><B>void fprint_interp_portable(FILE *fp, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine prints (to FILE *fp) a compiled interpretation,
+in portable form.
+<A NAME="fprint_interp_raw"></A><HR><PRE><B>void fprint_interp_raw(FILE *fp, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine pretty prints (to FILE *fp) an interpretation in raw form.
+<A NAME="fprint_interp_standard"></A><HR><PRE><B>void fprint_interp_standard(FILE *fp, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine prints (to FILE *fp) a compiled interpretation,
+in standard form, with each operation on a separate line.
+<A NAME="fprint_interp_standard2"></A><HR><PRE><B>void fprint_interp_standard2(FILE *fp, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine prints (to FILE *fp) a compiled interpretation,
+in standard form, with each operation on a separate line,
+except that binary operations are printed on multiple lines.
+<A NAME="fprint_interp_tabular"></A><HR><PRE><B>void fprint_interp_tabular(FILE *fp, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine pretty prints (to FILE *fp) an interpretation
+in tabular (not easily parsable).  Arities > 2 are not pretty.
+<A NAME="fprint_interp_tex"></A><HR><PRE><B>void fprint_interp_tex(FILE *fp, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine prints (to FILE *fp) a compiled interpretation,
+in a form that might be useful as input to LaTeX.
+<A NAME="fprint_interp_xml"></A><HR><PRE><B>void fprint_interp_xml(FILE *fp, <A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine prints (to FILE *fp) a compiled interpretation,
+in a form that might be useful as input to LaTeX.
+<A NAME="ident_interp"></A><HR><PRE><B>BOOL ident_interp(<A HREF="interp.html">Interp</A> a, <A HREF="interp.html">Interp</A> b);
+</B></PRE>Are interpretations A and  B identical?
+It is assumed that A and B
+are the same size and have the same symbols.
+<A NAME="ident_interp_perm"></A><HR><PRE><B>BOOL ident_interp_perm(<A HREF="interp.html">Interp</A> a, <A HREF="interp.html">Interp</A> b, int *p);
+</B></PRE>Is interpretation B identical to a given permutation of interpretation A?
+If so, then A and B are isomorphic.  It is assumed that A and B
+are the same size and have the same symbols.
+<A NAME="int_power"></A><HR><PRE><B>int int_power(int n, int exp);
+</B></PRE>Return n^exp.
+If exp is negative, return -1.
+If the result is too big to fit into an int, return INT_MAX.
+<A NAME="interp_comments"></A><HR><PRE><B><A HREF="term.html">Term</A> interp_comments(<A HREF="interp.html">Interp</A> a);
+</B></PRE>Return the comments of an interpretation.   
+<A NAME="interp_remove_constants"></A><HR><PRE><B>void interp_remove_constants(<A HREF="term.html">Term</A> t);
+</B></PRE>In a non-compiled interpretation, remove all constants.
+<A NAME="interp_remove_constants_recurse"></A><HR><PRE><B><A HREF="term.html">Term</A> interp_remove_constants_recurse(<A HREF="term.html">Term</A> ops);
+</B></PRE>In a non-compiled interpretation, remove all constants.
+<A NAME="interp_remove_others"></A><HR><PRE><B>void interp_remove_others(<A HREF="term.html">Term</A> t, Plist keepers);
+</B></PRE>In a non-compiled interpretation, remove all others.
+<A NAME="interp_remove_others_recurse"></A><HR><PRE><B><A HREF="term.html">Term</A> interp_remove_others_recurse(<A HREF="term.html">Term</A> ops, Plist keepers);
+</B></PRE>In a non-compiled interpretation, remove all others.
+<A NAME="interp_size"></A><HR><PRE><B>int interp_size(<A HREF="interp.html">Interp</A> a);
+</B></PRE>Return the domain size of an interpretation.   
+<A NAME="interp_table"></A><HR><PRE><B>int *interp_table(<A HREF="interp.html">Interp</A> p, char *sym, int arity);
+</B></PRE>Given a symbol and arity, return the corresponding table.
+<A NAME="iso_checks"></A><HR><PRE><B>long unsigned iso_checks(void);
+</B></PRE>Return the number of isomorphism checks.  For normal checks,
+ones where the occurrence-types don't match are not counted.
+<A NAME="iso_perms"></A><HR><PRE><B>long unsigned iso_perms(void);
+</B></PRE>Return the number of permutations seen during isomorphism checks.
+<A NAME="isomorphic_interps"></A><HR><PRE><B>BOOL isomorphic_interps(<A HREF="interp.html">Interp</A> a, <A HREF="interp.html">Interp</A> b, BOOL normal);
+</B></PRE>Are interpretations A and B isomorphic?  We assume they are
+compatible (same operations/arities).  If the flag normal
+is set, it is assumed that both interps were produced by
+<A HREF="#normal_interp">normal_interp</A>(); this allows some optimization.
+<A NAME="normal3_interp"></A><HR><PRE><B><A HREF="interp.html">Interp</A> normal3_interp(<A HREF="interp.html">Interp</A> a, Plist discriminators);
+</B></PRE><A NAME="normal_interp"></A><HR><PRE><B><A HREF="interp.html">Interp</A> normal_interp(<A HREF="interp.html">Interp</A> a);
+</B></PRE>This routine returns a normalized copy of an interpretation.
+Normalized interpretations are used to speed up isomorphism checking.
+<P>
+Consider, in all of the function tables, the number of occurrences of each
+element.  If we have a size-4 interpretation with a binary function,
+a unary function, and a constant, the occurrence array might be
+something like [7,6,4,4], meaning that there are 7 occurrences of
+0, 6, occurrences of 1, 4 occurrences of 2, and 4 occurrences of 3.
+If the occurrence array is nonincreasing, the interpretation is in
+a normal form.  (Normal forms are not unique; otherwise,
+isomorphism checking would be trivial.)
+<P>
+If 2 normal interpretations have different occurrence arrays,
+they cannot be isomorphic.  That's the first check we make.
+<P>
+When checking whether two interpretations are isomorphic, we
+look at permutations of one of the interpretations, and we can
+use occurrence array to eliminate some of the permutations.
+Examples: with occurrence array [7,6,4,4], we 
+look at only 2 permutations: (0,1,2,3) and (0,1,3,2);
+with occurrence array [4,4,4,3,3], we'd look at 12 (6*2)
+permutations instead of 120 (5!).
+<A NAME="p_interp"></A><HR><PRE><B>void p_interp(<A HREF="interp.html">Interp</A> p);
+</B></PRE>This routine prints (to stdout) a compiled interpretation,
+in portable form, with each operation on a separate line.
+<A NAME="p_interp_mem"></A><HR><PRE><B>void p_interp_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the interp package.
+<A NAME="p_interp_profile"></A><HR><PRE><B>void p_interp_profile(<A HREF="interp.html">Interp</A> a, Plist discriminators);
+</B></PRE><A NAME="perms_required"></A><HR><PRE><B>long unsigned perms_required(<A HREF="interp.html">Interp</A> a);
+</B></PRE><A NAME="permute_interp"></A><HR><PRE><B><A HREF="interp.html">Interp</A> permute_interp(<A HREF="interp.html">Interp</A> source, int *p);
+</B></PRE>This routine returns a permutation of an interpretation.
+The permuted interpretation does not contain the term
+representation (because it would be nontrivial to construct it).
+<A NAME="same_discriminator_counts"></A><HR><PRE><B>BOOL same_discriminator_counts(<A HREF="interp.html">Interp</A> a, <A HREF="interp.html">Interp</A> b);
+</B></PRE><A NAME="same_profiles"></A><HR><PRE><B>BOOL same_profiles(<A HREF="interp.html">Interp</A> a, <A HREF="interp.html">Interp</A> b);
+</B></PRE><A NAME="transpose_binary"></A><HR><PRE><B>void transpose_binary(<A HREF="term.html">Term</A> t);
+</B></PRE>This routine takes a term representing an interpretation and
+(destructively) transposes all of the binary functions and relations.
+It is assumed that the interpretation is well-formed.  You can check
+well-formedness first by calling <A HREF="#compile_interp">compile_interp</A>().
+<A NAME="update_interp_with_constant"></A><HR><PRE><B>void update_interp_with_constant(<A HREF="interp.html">Interp</A> p, <A HREF="term.html">Term</A> constant, int val);
+</B></PRE><A NAME="update_profile"></A><HR><PRE><B>void update_profile(Topform c, <A HREF="interp.html">Interp</A> a, int *next)
+     /* vecs[domain_element][profile_component] */
+      ;
+</B></PRE><A NAME="zap_interp"></A><HR><PRE><B>void zap_interp(<A HREF="interp.html">Interp</A> p);
+</B></PRE>Free a compiled interpretation.
+<HR><A NAME=defns></A><H2>Public Definitions in File interp.h</H2>
+<PRE>
+typedef struct interp *<A HREF="interp.html">Interp</A>;
+
+enum { SEMANTICS_NOT_EVALUATED,
+       SEMANTICS_NOT_EVALUABLE,
+       SEMANTICS_TRUE,
+       SEMANTICS_FALSE
+ };
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

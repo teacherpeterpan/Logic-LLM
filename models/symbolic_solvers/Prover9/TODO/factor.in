@@ -1,0 +1,277 @@
+set(prolog_style_variables).
+
+clear(auto_inference).
+assign(literal_selection, none).
+set(paramodulation).
+set(binary_resolution).
+set(print_clause_properties).
+
+formulas(assumptions).
+
+-ssItem(A) | -ssItem(B) | neq(A,B) | B = A.
+-ssItem(A) | -ssItem(B) | B != A | -neq(A,B).
+ssItem(c1).
+ssItem(c2).
+c2 != c1.
+-ssList(A) | -ssItem(B) | memberP(A,B) | -ssList(C) | -ssList(D) | app(C,cons(B,D)) != A.
+-ssList(A) | -ssItem(B) | ssList(f1(A,B)) | -memberP(A,B).
+-ssList(A) | -ssItem(B) | ssList(f2(A,B)) | -memberP(A,B).
+-ssList(A) | -ssItem(B) | app(f1(A,B),cons(B,f2(A,B))) = A | -memberP(A,B).
+-ssList(A) | -ssItem(B) | ssList(f3(A,B)) | -ssList(C) | -ssList(D) | app(C,cons(B,D)) != A.
+-ssList(A) | -ssItem(B) | ssList(f4(A,B)) | -ssList(C) | -ssList(D) | app(C,cons(B,D)) != A.
+-ssList(A) | -ssItem(B) | app(f3(A,B),cons(B,f4(A,B))) = A | -ssList(C) | -ssList(D) | app(C,cons(B,D)) != A.
+-ssList(A) | singletonP(A) | -ssItem(B) | cons(B,nil) != A.
+-ssList(A) | ssItem(f5(A)) | -singletonP(A).
+-ssList(A) | cons(f5(A),nil) = A | -singletonP(A).
+-ssList(A) | ssItem(f6(A)) | -ssItem(B) | cons(B,nil) != A.
+-ssList(A) | cons(f6(A),nil) = A | -ssItem(B) | cons(B,nil) != A.
+-ssList(A) | -ssList(B) | frontsegP(A,B) | -ssList(C) | app(B,C) != A.
+-ssList(A) | -ssList(B) | ssList(f7(A,B)) | -frontsegP(A,B).
+-ssList(A) | -ssList(B) | app(B,f7(A,B)) = A | -frontsegP(A,B).
+-ssList(A) | -ssList(B) | ssList(f8(A,B)) | -ssList(C) | app(B,C) != A.
+-ssList(A) | -ssList(B) | app(B,f8(A,B)) = A | -ssList(C) | app(B,C) != A.
+-ssList(A) | -ssList(B) | rearsegP(A,B) | -ssList(C) | app(C,B) != A.
+-ssList(A) | -ssList(B) | ssList(f9(A,B)) | -rearsegP(A,B).
+-ssList(A) | -ssList(B) | app(f9(A,B),B) = A | -rearsegP(A,B).
+-ssList(A) | -ssList(B) | ssList(f10(A,B)) | -ssList(C) | app(C,B) != A.
+-ssList(A) | -ssList(B) | app(f10(A,B),B) = A | -ssList(C) | app(C,B) != A.
+-ssList(A) | -ssList(B) | segmentP(A,B) | -ssList(C) | -ssList(D) | app(app(C,B),D) != A.
+-ssList(A) | -ssList(B) | ssList(f11(A,B)) | -segmentP(A,B).
+-ssList(A) | -ssList(B) | ssList(f12(A,B)) | -segmentP(A,B).
+-ssList(A) | -ssList(B) | app(app(f11(A,B),B),f12(A,B)) = A | -segmentP(A,B).
+-ssList(A) | -ssList(B) | ssList(f13(A,B)) | -ssList(C) | -ssList(D) | app(app(C,B),D) != A.
+-ssList(A) | -ssList(B) | ssList(f14(A,B)) | -ssList(C) | -ssList(D) | app(app(C,B),D) != A.
+-ssList(A) | -ssList(B) | app(app(f13(A,B),B),f14(A,B)) = A | -ssList(C) | -ssList(D) | app(app(C,B),D) != A.
+-ssList(A) | cyclefreeP(A) | ssItem(f15(A)).
+-ssList(A) | cyclefreeP(A) | ssItem(f16(A)).
+-ssList(A) | cyclefreeP(A) | leq(f15(A),f16(A)).
+-ssList(A) | cyclefreeP(A) | leq(f16(A),f15(A)).
+-ssList(A) | cyclefreeP(A) | ssList(f17(A)).
+-ssList(A) | cyclefreeP(A) | ssList(f18(A)).
+-ssList(A) | cyclefreeP(A) | ssList(f19(A)).
+-ssList(A) | cyclefreeP(A) | app(app(f17(A),cons(f15(A),f18(A))),cons(f16(A),f19(A))) = A.
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -cyclefreeP(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f20(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f21(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | leq(f20(A),f21(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | leq(f21(A),f20(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f22(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f23(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f24(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | -leq(B,C) | -leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | app(app(f22(A),cons(f20(A),f23(A))),cons(f21(A),f24(A))) = A.
+-ssList(A) | totalorderP(A) | ssItem(f25(A)).
+-ssList(A) | totalorderP(A) | ssItem(f26(A)).
+-ssList(A) | totalorderP(A) | -leq(f25(A),f26(A)).
+-ssList(A) | totalorderP(A) | -leq(f26(A),f25(A)).
+-ssList(A) | totalorderP(A) | ssList(f27(A)).
+-ssList(A) | totalorderP(A) | ssList(f28(A)).
+-ssList(A) | totalorderP(A) | ssList(f29(A)).
+-ssList(A) | totalorderP(A) | app(app(f27(A),cons(f25(A),f28(A))),cons(f26(A),f29(A))) = A.
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -totalorderP(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f30(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f31(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -leq(f30(A),f31(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -leq(f31(A),f30(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f32(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f33(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f34(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | leq(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | app(app(f32(A),cons(f30(A),f33(A))),cons(f31(A),f34(A))) = A.
+-ssList(A) | strictorderP(A) | ssItem(f35(A)).
+-ssList(A) | strictorderP(A) | ssItem(f36(A)).
+-ssList(A) | strictorderP(A) | -lt(f35(A),f36(A)).
+-ssList(A) | strictorderP(A) | -lt(f36(A),f35(A)).
+-ssList(A) | strictorderP(A) | ssList(f37(A)).
+-ssList(A) | strictorderP(A) | ssList(f38(A)).
+-ssList(A) | strictorderP(A) | ssList(f39(A)).
+-ssList(A) | strictorderP(A) | app(app(f37(A),cons(f35(A),f38(A))),cons(f36(A),f39(A))) = A.
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -strictorderP(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f40(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f41(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -lt(f40(A),f41(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -lt(f41(A),f40(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f42(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f43(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f44(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | lt(C,B) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | app(app(f42(A),cons(f40(A),f43(A))),cons(f41(A),f44(A))) = A.
+-ssList(A) | totalorderedP(A) | ssItem(f45(A)).
+-ssList(A) | totalorderedP(A) | ssItem(f46(A)).
+-ssList(A) | totalorderedP(A) | -leq(f45(A),f46(A)).
+-ssList(A) | totalorderedP(A) | ssList(f47(A)).
+-ssList(A) | totalorderedP(A) | ssList(f48(A)).
+-ssList(A) | totalorderedP(A) | ssList(f49(A)).
+-ssList(A) | totalorderedP(A) | app(app(f47(A),cons(f45(A),f48(A))),cons(f46(A),f49(A))) = A.
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -totalorderedP(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f50(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f51(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -leq(f50(A),f51(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f52(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f53(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f54(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | leq(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | app(app(f52(A),cons(f50(A),f53(A))),cons(f51(A),f54(A))) = A.
+-ssList(A) | strictorderedP(A) | ssItem(f55(A)).
+-ssList(A) | strictorderedP(A) | ssItem(f56(A)).
+-ssList(A) | strictorderedP(A) | -lt(f55(A),f56(A)).
+-ssList(A) | strictorderedP(A) | ssList(f57(A)).
+-ssList(A) | strictorderedP(A) | ssList(f58(A)).
+-ssList(A) | strictorderedP(A) | ssList(f59(A)).
+-ssList(A) | strictorderedP(A) | app(app(f57(A),cons(f55(A),f58(A))),cons(f56(A),f59(A))) = A.
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -strictorderedP(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f60(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f61(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -lt(f60(A),f61(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f62(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f63(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f64(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | lt(B,C) | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | app(app(f62(A),cons(f60(A),f63(A))),cons(f61(A),f64(A))) = A.
+-ssList(A) | duplicatefreeP(A) | ssItem(f65(A)).
+-ssList(A) | duplicatefreeP(A) | ssItem(f66(A)).
+-ssList(A) | duplicatefreeP(A) | f66(A) = f65(A).
+-ssList(A) | duplicatefreeP(A) | ssList(f67(A)).
+-ssList(A) | duplicatefreeP(A) | ssList(f68(A)).
+-ssList(A) | duplicatefreeP(A) | ssList(f69(A)).
+-ssList(A) | duplicatefreeP(A) | app(app(f67(A),cons(f65(A),f68(A))),cons(f66(A),f69(A))) = A.
+-ssList(A) | -ssItem(B) | -ssItem(C) | C != B | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | -duplicatefreeP(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C != B | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f70(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C != B | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssItem(f71(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C != B | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | f71(A) = f70(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C != B | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f72(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C != B | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f73(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C != B | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | ssList(f74(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C != B | -ssList(D) | -ssList(E) | -ssList(F) | app(app(D,cons(B,E)),cons(C,F)) != A | app(app(f72(A),cons(f70(A),f73(A))),cons(f71(A),f74(A))) = A.
+-ssList(A) | equalelemsP(A) | ssItem(f75(A)).
+-ssList(A) | equalelemsP(A) | ssItem(f76(A)).
+-ssList(A) | equalelemsP(A) | f76(A) != f75(A).
+-ssList(A) | equalelemsP(A) | ssList(f77(A)).
+-ssList(A) | equalelemsP(A) | ssList(f78(A)).
+-ssList(A) | equalelemsP(A) | app(f77(A),cons(f75(A),cons(f76(A),f78(A)))) = A.
+-ssList(A) | -ssItem(B) | -ssItem(C) | C = B | -ssList(D) | -ssList(E) | app(D,cons(B,cons(C,E))) != A | -equalelemsP(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C = B | -ssList(D) | -ssList(E) | app(D,cons(B,cons(C,E))) != A | ssItem(f79(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C = B | -ssList(D) | -ssList(E) | app(D,cons(B,cons(C,E))) != A | ssItem(f80(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C = B | -ssList(D) | -ssList(E) | app(D,cons(B,cons(C,E))) != A | f80(A) != f79(A).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C = B | -ssList(D) | -ssList(E) | app(D,cons(B,cons(C,E))) != A | ssList(f81(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C = B | -ssList(D) | -ssList(E) | app(D,cons(B,cons(C,E))) != A | ssList(f82(A)).
+-ssList(A) | -ssItem(B) | -ssItem(C) | C = B | -ssList(D) | -ssList(E) | app(D,cons(B,cons(C,E))) != A | app(f81(A),cons(f79(A),cons(f80(A),f82(A)))) = A.
+-ssList(A) | -ssList(B) | neq(A,B) | B = A.
+-ssList(A) | -ssList(B) | B != A | -neq(A,B).
+-ssList(A) | -ssItem(B) | ssList(cons(B,A)).
+ssList(nil).
+-ssList(A) | -ssItem(B) | cons(B,A) != A.
+-ssList(A) | -ssList(B) | -ssItem(C) | -ssItem(D) | cons(D,B) != cons(C,A) | D = C.
+-ssList(A) | -ssList(B) | B = A | -ssItem(C) | -ssItem(D) | cons(D,B) != cons(C,A).
+-ssList(A) | nil = A | ssList(f83(A)).
+-ssList(A) | nil = A | ssItem(f84(A)).
+-ssList(A) | nil = A | cons(f84(A),f83(A)) = A.
+-ssList(A) | -ssItem(B) | cons(B,A) != nil.
+-ssList(A) | nil = A | ssItem(hd(A)).
+-ssList(A) | -ssItem(B) | hd(cons(B,A)) = B.
+-ssList(A) | nil = A | ssList(tl(A)).
+-ssList(A) | -ssItem(B) | tl(cons(B,A)) = A.
+-ssList(A) | -ssList(B) | ssList(app(A,B)).
+-ssList(A) | -ssList(B) | -ssItem(C) | app(cons(C,B),A) = cons(C,app(B,A)).
+-ssList(A) | app(nil,A) = A.
+-ssItem(A) | -ssItem(B) | -leq(A,B) | -leq(B,A) | B = A.
+-ssItem(A) | -ssItem(B) | -leq(A,B) | -ssItem(C) | -leq(B,C) | leq(A,C).
+-ssItem(A) | leq(A,A).
+-ssItem(A) | -ssItem(B) | geq(A,B) | -leq(B,A).
+-ssItem(A) | -ssItem(B) | leq(B,A) | -geq(A,B).
+-ssItem(A) | -ssItem(B) | -lt(A,B) | -lt(B,A).
+-ssItem(A) | -ssItem(B) | -lt(A,B) | -ssItem(C) | -lt(B,C) | lt(A,C).
+-ssItem(A) | -ssItem(B) | gt(A,B) | -lt(B,A).
+-ssItem(A) | -ssItem(B) | lt(B,A) | -gt(A,B).
+-ssItem(A) | -ssList(B) | -memberP(B,A) | -ssList(C) | memberP(app(B,C),A).
+-ssItem(A) | -ssList(B) | -ssList(C) | memberP(app(B,C),A) | -memberP(C,A).
+-ssItem(A) | -ssList(B) | memberP(B,A) | -ssList(C) | memberP(C,A) | -memberP(app(B,C),A).
+-ssItem(A) | -ssItem(B) | B != A | -ssList(C) | memberP(cons(B,C),A).
+-ssItem(A) | -ssItem(B) | -ssList(C) | memberP(cons(B,C),A) | -memberP(C,A).
+-ssItem(A) | -ssItem(B) | B = A | -ssList(C) | memberP(C,A) | -memberP(cons(B,C),A).
+-ssItem(A) | -memberP(nil,A).
+-singletonP(nil).
+-ssList(A) | -ssList(B) | -frontsegP(A,B) | -ssList(C) | -frontsegP(B,C) | frontsegP(A,C).
+-ssList(A) | -ssList(B) | -frontsegP(A,B) | -frontsegP(B,A) | B = A.
+-ssList(A) | frontsegP(A,A).
+-ssList(A) | -ssList(B) | -frontsegP(A,B) | -ssList(C) | frontsegP(app(A,C),B).
+-ssItem(A) | -ssItem(B) | B != A | -ssList(C) | -ssList(D) | frontsegP(cons(A,C),cons(B,D)) | -frontsegP(C,D).
+-ssItem(A) | -ssItem(B) | B = A | -ssList(C) | -ssList(D) | -frontsegP(cons(A,C),cons(B,D)).
+-ssItem(A) | -ssItem(B) | -ssList(C) | -ssList(D) | frontsegP(C,D) | -frontsegP(cons(A,C),cons(B,D)).
+-ssList(A) | frontsegP(A,nil).
+-ssList(A) | frontsegP(nil,A) | nil != A.
+-ssList(A) | nil = A | -frontsegP(nil,A).
+-ssList(A) | -ssList(B) | -rearsegP(A,B) | -ssList(C) | -rearsegP(B,C) | rearsegP(A,C).
+-ssList(A) | -ssList(B) | -rearsegP(A,B) | -rearsegP(B,A) | B = A.
+-ssList(A) | rearsegP(A,A).
+-ssList(A) | -ssList(B) | -rearsegP(A,B) | -ssList(C) | rearsegP(app(C,A),B).
+-ssList(A) | rearsegP(A,nil).
+-ssList(A) | rearsegP(nil,A) | nil != A.
+-ssList(A) | nil = A | -rearsegP(nil,A).
+-ssList(A) | -ssList(B) | -segmentP(A,B) | -ssList(C) | -segmentP(B,C) | segmentP(A,C).
+-ssList(A) | -ssList(B) | -segmentP(A,B) | -segmentP(B,A) | B = A.
+-ssList(A) | segmentP(A,A).
+-ssList(A) | -ssList(B) | -segmentP(A,B) | -ssList(C) | -ssList(D) | segmentP(app(app(C,A),D),B).
+-ssList(A) | segmentP(A,nil).
+-ssList(A) | segmentP(nil,A) | nil != A.
+-ssList(A) | nil = A | -segmentP(nil,A).
+-ssItem(A) | cyclefreeP(cons(A,nil)).
+cyclefreeP(nil).
+-ssItem(A) | totalorderP(cons(A,nil)).
+totalorderP(nil).
+-ssItem(A) | strictorderP(cons(A,nil)).
+strictorderP(nil).
+-ssItem(A) | totalorderedP(cons(A,nil)).
+totalorderedP(nil).
+-ssItem(A) | -ssList(B) | totalorderedP(cons(A,B)) | nil != B.
+-ssItem(A) | -ssList(B) | totalorderedP(cons(A,B)) | nil = B | -totalorderedP(B) | -leq(A,hd(B)).
+-ssItem(A) | -ssList(B) | nil = B | totalorderedP(B) | -totalorderedP(cons(A,B)).
+-ssItem(A) | -ssList(B) | nil = B | leq(A,hd(B)) | -totalorderedP(cons(A,B)).
+-ssItem(A) | strictorderedP(cons(A,nil)).
+strictorderedP(nil).
+-ssItem(A) | -ssList(B) | strictorderedP(cons(A,B)) | nil != B.
+-ssItem(A) | -ssList(B) | strictorderedP(cons(A,B)) | nil = B | -strictorderedP(B) | -lt(A,hd(B)).
+-ssItem(A) | -ssList(B) | nil = B | strictorderedP(B) | -strictorderedP(cons(A,B)).
+-ssItem(A) | -ssList(B) | nil = B | lt(A,hd(B)) | -strictorderedP(cons(A,B)).
+-ssItem(A) | duplicatefreeP(cons(A,nil)).
+duplicatefreeP(nil).
+-ssItem(A) | equalelemsP(cons(A,nil)).
+equalelemsP(nil).
+-ssList(A) | nil = A | ssItem(f85(A)).
+-ssList(A) | nil = A | hd(A) = f85(A).
+-ssList(A) | nil = A | ssList(f86(A)).
+-ssList(A) | nil = A | tl(A) = f86(A).
+-ssList(A) | nil = A | -ssList(B) | nil = B | hd(B) != hd(A) | tl(B) != tl(A) | B = A.
+-ssList(A) | nil = A | cons(hd(A),tl(A)) = A.
+-ssList(A) | -ssList(B) | -ssList(C) | app(C,B) != app(A,B) | C = A.
+-ssList(A) | -ssList(B) | -ssList(C) | app(B,C) != app(B,A) | C = A.
+-ssList(A) | -ssItem(B) | app(cons(B,nil),A) = cons(B,A).
+-ssList(A) | -ssList(B) | -ssList(C) | app(app(A,B),C) = app(A,app(B,C)).
+-ssList(A) | nil != A | -ssList(B) | app(A,B) = nil | nil != B.
+-ssList(A) | -ssList(B) | nil = B | app(A,B) != nil.
+-ssList(A) | nil = A | -ssList(B) | app(A,B) != nil.
+-ssList(A) | app(A,nil) = A.
+-ssList(A) | nil = A | -ssList(B) | hd(app(A,B)) = hd(A).
+-ssList(A) | nil = A | -ssList(B) | tl(app(A,B)) = app(tl(A),B).
+-ssItem(A) | -ssItem(B) | -geq(A,B) | -geq(B,A) | B = A.
+-ssItem(A) | -ssItem(B) | -geq(A,B) | -ssItem(C) | -geq(B,C) | geq(A,C).
+-ssItem(A) | geq(A,A).
+-ssItem(A) | -lt(A,A).
+-ssItem(A) | -ssItem(B) | -leq(A,B) | -ssItem(C) | -lt(B,C) | lt(A,C).
+-ssItem(A) | -ssItem(B) | -leq(A,B) | B = A | lt(A,B).
+-ssItem(A) | -ssItem(B) | lt(A,B) | B = A | -leq(A,B).
+-ssItem(A) | -ssItem(B) | B != A | -lt(A,B).
+-ssItem(A) | -ssItem(B) | leq(A,B) | -lt(A,B).
+-ssItem(A) | -ssItem(B) | -gt(A,B) | -gt(B,A).
+-ssItem(A) | -ssItem(B) | -gt(A,B) | -ssItem(C) | -gt(B,C) | gt(A,C).
+ssList(c3).
+ssList(c4).
+-segmentP(c4,c3).
+ssList(c5).
+c5 = c3.
+totalorderedP(c5).
+ssList(c6).
+c6 = c4.
+ssList(c7).
+-ssItem(A) | -ssItem(B) | -leq(A,B) | -ssList(C) | app(cons(B,nil),C) != c5 | -ssList(D) | app(D,cons(A,nil)) != c7.
+ssList(c8).
+app(app(c7,c5),c8) = c6.
+-ssItem(A) | -ssItem(B) | -leq(B,A) | -ssList(C) | app(C,cons(B,nil)) != c5 | -ssList(D) | app(cons(A,nil),D) != c8.
+nil = c6.
+
+end_of_list.

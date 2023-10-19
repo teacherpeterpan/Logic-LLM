@@ -1,0 +1,4 @@
+
+formulas(assumptions).
+P(/(a,b)).
+end_of_list.

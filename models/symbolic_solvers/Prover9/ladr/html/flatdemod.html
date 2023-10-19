@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE>flatdemod.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "flatdemod.h"</H1>
+
+This page has information from files
+<A HREF="../flatdemod.h">flatdemod.h</A> and <A HREF="../flatdemod.c">flatdemod.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File flatdemod.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#discrim_flat_cancel">discrim_flat_cancel</A></TD><TD><A HREF="#discrim_flat_retrieve_next">discrim_flat_retrieve_next</A></TD><TD><A HREF="#fdemod_clause">fdemod_clause</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#discrim_flat_retrieve_first">discrim_flat_retrieve_first</A></TD><TD><A HREF="#fapply_demod">fapply_demod</A></TD><TD><A HREF="#fdemod_rewrites">fdemod_rewrites</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#discrim_flat_retrieve_leaf">discrim_flat_retrieve_leaf</A></TD><TD><A HREF="#fdemod_attempts">fdemod_attempts</A></TD><TD><A HREF="#fdemodulate">fdemodulate</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="discrim_flat_cancel"></A><HR><PRE><B>void discrim_flat_cancel(<A HREF="discrim.html">Discrim_pos</A> pos);
+</B></PRE><A NAME="discrim_flat_retrieve_first"></A><HR><PRE><B>void *discrim_flat_retrieve_first(Flatterm f, <A HREF="discrim.html">Discrim</A> root,
+				  <A HREF="unify.html">Context</A> subst, <A HREF="discrim.html">Discrim_pos</A> *ppos);
+</B></PRE><A NAME="discrim_flat_retrieve_leaf"></A><HR><PRE><B>Plist discrim_flat_retrieve_leaf(Flatterm fin, <A HREF="discrim.html">Discrim</A> root,
+				 <A HREF="unify.html">Context</A> subst, Flatterm *ppos);
+</B></PRE><A NAME="discrim_flat_retrieve_next"></A><HR><PRE><B>void *discrim_flat_retrieve_next(<A HREF="discrim.html">Discrim_pos</A> pos);
+</B></PRE><A NAME="fapply_demod"></A><HR><PRE><B>Flatterm fapply_demod(<A HREF="term.html">Term</A> t, <A HREF="unify.html">Context</A> c);
+</B></PRE>Special-purpose apply for Flatterm demodulation.
+
+Apply a substitution to a (ordinary) <A HREF="term.html">Term</A>, building a Flatterm.
+Assumptions:
+(1) the terms in the substitution are Flatterms;
+(2) every variable in the term is bound.
+
+In the result, Flatterms that are copied from the substitution
+have the "reduced_flag" set.
+<A NAME="fdemod_attempts"></A><HR><PRE><B>int fdemod_attempts();
+</B></PRE>Return the number of flatterm rewrite attempts so far.
+<A NAME="fdemod_clause"></A><HR><PRE><B>void fdemod_clause(Topform c, <A HREF="mindex.html">Mindex</A> idx,
+		   int *step_limit, int size_limit, BOOL lex_order_vars);
+</B></PRE>Demodulate Topform c, using demodulators in <A HREF="mindex.html">Mindex</A> idx.
+If any rewriting occurs, the justification is appended to
+the clause's existing justification.
+<P>
+This version uses flatterm retrievel.
+<A NAME="fdemod_rewrites"></A><HR><PRE><B>int fdemod_rewrites();
+</B></PRE>Return the number of successful flatterm rewrites so far.
+<A NAME="fdemodulate"></A><HR><PRE><B><A HREF="term.html">Term</A> fdemodulate(<A HREF="term.html">Term</A> t, <A HREF="discrim.html">Discrim</A> root,
+		 int *step_limit, int size_limit, int *sequence,
+		 I3list *just_head, BOOL lex_order_vars);
+</B></PRE>This routine demodulates a term.  ID numbers of demodulators
+are put on the front of just_head, so you'll probably want
+to reverse the list before putting it into the clause justification.
+<P>
+This version uses flatterm retrieval.
+<HR><A NAME=defns></A><H2>Public Definitions in File flatdemod.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

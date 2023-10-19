@@ -1,0 +1,111 @@
+#!/usr/bin/perl
+
+use Getopt::Std;
+
+$deny = "$ENV{HOME}/LADR/bin/deny";
+$tmpfile = "/tmp/deny$$";
+
+die "$deny binary not found or not executable" if (! -x $deny);
+
+sub member {
+    local ($object, @list) = @_;
+    local ($element);
+
+    foreach $element (@list) {
+        return 1 if ($element eq $object);
+    }
+    return 0;
+}  # member
+
+$arguments = join(" ", @ARGV);
+
+# %options=();
+# 
+# getopts("xrajn:", \%options);  # removes args it regocnizes
+# 
+# if (@ARGV != 1) {
+#     print "proofs_to_goals [-xaj] output_file\n";
+#     print "    -x  : use expanded proofs\n";
+#     print "    -r  : use renumbered proofs\n";
+#     print "    -a  : copy attributes\n";
+#     print "    -j  : include justifications as comments\n";
+#     print "    -n 3: use only the third proof (for example)\n";
+#     exit;
+# }
+# 
+# $output_attr  = (defined $options{a} ? 1 : 0);
+# $output_just  = (defined $options{j} ? 1 : 0);
+# $expanded     = (defined $options{x} ? 1 : 0);
+# $renumbered   = (defined $options{r} ? 1 : 0);
+# $proof_to_get = (defined $options{n} ? "$options{n}" : "\\d*");
+
+$filename = $ARGV[0];
+open(FH, $filename) || die "Cannot open file $filename.\n";
+
+$collect = 0;
+
+while ($line = <FH>) {
+    if ($line =~ /^op\([0-9]*,/ ||
+	$line =~ /set\(prolog_style_variables\)\./) {
+	push(@commands, $line);
+    }
+    elsif ($line =~ /PROOF/) {
+	$collect = 1;
+    }
+    elsif ($line =~ /end of proof/) {
+	$collect = 0;
+    }
+    elsif ($collect) {
+	if ($line ne "\n" && !($line =~ /(\$F|\||~|!=| \$[Aa][Nn][Ss])/)) {
+	    # Now it is a posiive unit clause in the proof.
+	    chop $line;
+	    $id = $line;
+	    $id =~ s/ .*//;
+	    $id =~ s/,/_/;  # in double IDs, replace , with _.
+
+	    if (! &member($id, @ids)) {
+
+		$clause = $line;
+		$clause =~ s/^.*\] //;
+		$clause =~ s/\|\$[Aa][Nn][Ss].*//;
+
+		#print "\nid:        $id\n";
+		#print "clause:    $clause\n";
+
+		push(@ids,        $id);
+		push(@clauses,    $clause);
+            }
+	}
+    }
+}
+
+open(FH1, "> $tmpfile");
+print FH1 @commands;
+print FH1 "clauses(junk).\n";
+print FH1 @clauses;
+close(FH1);
+
+$output = `$deny -c < $tmpfile`;
+system("/bin/rm $tmpfile");
+$output =~ s/\.//g;
+$output =~ s/\$c/c_/g;
+@denials = split('\n', $output);
+
+die("wrong number of denials") if ($#clauses != $#denials);
+$num = @denials;
+
+#############################################################
+
+print "clauses(goals).\n";
+
+print "% Arguments: $arguments\n";
+print "% $num denials were constructed from the units in the proofs.\n";
+print @lengths;
+
+for ($i = 0; $i < @denials; $i++) {
+    $denial = $denials[$i];
+    $answer = " # answer($ids[$i])";
+    print "$denial$answer.\n";
+}
+
+print "end_of_list.\n";

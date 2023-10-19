@@ -1,0 +1,1595 @@
+-------- LADR 2009-11A ----------
+
+November 4, 2009.
+	Online Examples.  Somewhere along the line, the XML/XSL/HTML
+	rendering of the tables for interpretations broke in Firefox
+	(ok in Safari, don't know about IE).  I suspect it's a Firefox
+	problem, because using xsltproc separately to translate
+	the XML to HTML produces HTML that Firefox renders correctly.
+	This is beyond me.  Help?
+
+November 3, 2009.
+	Newauto.  Oct 1 fix causes big slowdown in fof-prover9 jobs
+	that spawn hundreds of children.  Undo that fix and fix it in
+	a different, kludgey way by inserting "flip_matches_hint" into
+	symbol table at start of forking_search.  Any other lables that
+	might be introduced by children should be handeled similarly.
+
+November 3, 2009.
+	Prover9, Mace4, LADR.  Change default max_megs from 200 to 500.
+	This also affects other LADR programs like prooftrans.
+	
+October 28, 2009.
+	Prover9.  Bug appears when using prolog_style_variables with
+	weighting rules: the special symbol "_" in weighting rules
+	is treated as an ordinary variable.  Fixed by changing the definition
+	of prolog_style_variables so that they don't include symbols
+	that start with "_".
+
+October 1, 2009.
+	Newauto.  Bug appears when child search introduces new hint label
+	("flip_matches_hint").  Fix by changing new_symbols_since_mark()
+	(in ladr/symbols.c) so that *all* new symbols are reported.
+
+July 9, 2009.
+	Prover9.  Very minor bug: at top of proof, the  line "Maximum clause
+	weight" always prints integer, even if floating-point.  Fixed.
+
+June 29, 2009.
+	Ladr_to_tptp.  Bug causes $F ("false" in LADR) to be treated as
+	a constant.  Fixed so that it translates to $false ("false" in TPTP).
+
+May 22, 2009.
+	Prover9.  Bug in production mode when compiled for 64-bit computers.
+	Line 103 in ladr/dollar.c: sizeof(int) should be sizeof(void *).
+	Fixed.
+
+April 9-10, 2009.
+	apps.src.  New program to generate constant definitions for TRC
+	experiments: gen_trc_defs.
+	LADR: flat demodulation: when clearing substitutions, also check
+	and clear "alternative" field.  This fixed a problem caused by
+	nonstandard use of flatterms in new app gen_trc_defs; the change
+	should not affect prover9.
+
+March 17, 2009.
+	Interpformat and Isofilter: would crash in some cases when
+	the Mace4 job used op commands to declare print/parse properties.
+	Fixed by introducing "simple_parse" flag in parse.c.  This
+	avoids problems when special symbols are used in standard
+	prefix form, e.g., interps in standard form.
+
+March 12, 2009.
+	Mace4.  Bug (segfault) in some cases when input formula
+	simplifies to $T or to $F.  Fixed.
+
+February 26, 2009.
+	Prover9.  Production mode bug: segfault when doing arithmetic
+	(op_code out of range in rewrite).  Fixed.
+
+-------- LADR 2009-02A ----------
+
+February 1-24, 2009.
+	Prover9.  New "production mode" which uses hyperresolution
+	along with new rewriting system (conditional rewrite rules
+	and ability to rewrite atomic formulas) to do things like
+	forward-chaining state-space searches.  See the HTML manual
+	"More Features -> Production Mode".
+
+February 19, 2009.
+	Prover9.  New parm eval_var_limit (for semantic guidance).
+	This simply changes eval_limit based on the size of the
+	largest interpretation.  See the manual.
+
+January 25-26, 2009.
+	Prover9.  Preliminary work on extending hyperresolution for
+	evaluable antecedents and consequents.
+
+January 21, 2009.
+	LADR.  The October 21 change of giving "--" built-in parsing
+	property op(500, infix, "--") took away the ability to write
+	terms like --x (without space) using unary minus.  I think this
+	important, so I'm rescinding that Oct 21 change.  The "--"
+	symbol was used for binary minus in the Mace4 built-in arithmetic,
+	so from now on, we'll have to write, e.g., "x + -y" instead
+	of "x -- y".  (Symbols in LADR cannot be overloaded, so we cannot
+	use "-" for both unary negation and binary minus.)
+
+	LADR has been updated so that it no longer accepts "op"
+	declarations for "--", "---", "----", ... .  Also, it no longer
+	accepts declarations for "''", "'''", "'''", ... .  These are
+	special-case restrictions so that the prefix operation "-"
+	can be input and output without space for nested occurrences,
+	e.g., "--x = x".  Similarly, for postfix operation "'", e.g.,
+	"x'' = x".
+
+	Unfortunately, this change messes up the programs tptp_to_ladr
+	and ladr_to_tptp, because they rely on an operation "--".
+	A kludge gets around the problem.
+	
+January 20, 2009.
+	Prover9.  A new experimental feature was enabled by mistake:
+	assign(complexity, 1).  This causes clause weights to get
+	floating-point values by default.  It has been disabled.
+
+-------- LADR 2009-01A ---------- (unannounced)
+
+January 15, 2009.
+	Mace4.  Bug (reported bu Peter Jipsen) when using set(skolems_last):
+	it can miss some (nonisomorphic) models.  Fixed.
+
+	Prover9.  Minor change requested by Bob Veroff: hints count message.
+	Newauto.  Minor change requested by Veroff: change prepend to append.
+
+December (mid).
+	Prover9.  Complexity function for weighting (preliminary work).
+	assign(complexity,1) breaks ties when selecting given clauses,
+	based on a complexity measure: more complex has lower weight.
+	Not in the manual.
+
+December 11, 2008.
+	Mace4.  User-declared skolem functions do not work with skolems_last
+	option.  Fixed.
+
+-------- LADR 2008-11A ----------
+
+November 15, 2008.
+	Mace4.  New option set(arithmetic) builds in some integer arithmetic.
+	See the Prover9 HTML manual.
+
+November 7, 2008.
+	Mace4.  Previously, a domain element out of range would always
+	cause a fatal error, even if higher domain sizes had been specified.
+	Now, it will simply skip the domain size and try the next size.
+
+October 26, 2008.
+	Prover9.  Bug when action, triggered by kept-clause-count,
+	asserts a clause, e.g., kept = 10 -> assert(-p | a | b).
+	(reported by Ken Kunen).  Clause is asserted repeatedly
+	until segfault.  Fixed by moving one line of code.  I can't
+	understand why that line of code was where it was; if there
+	was a good reason, this fix might cause some other problem.
+
+October 23, 2008.
+	LADR.  New type of option is accepted: "floatparm".  This allows
+	assignment of floating-point values to some of the parameters,
+	e.g., assign(max_weight, "10.2").  Floating-point values must be
+	enclosed in double quotes.
+
+	Prover9.  Floating-point values can be used for the parameters that
+	control weighting: max_weight, variable_weight, constant_weight,
+	not_weight, or_weight, sk_constant_weight, prop_atom_weight,
+	nest_penalty, depth_penalty, var_penalty, default_weight.
+	Integers can still be used for these.  Also, weighting rules
+	can have floating-point values (in double quotes) as well as
+	integers.
+
+October 23, 2008.
+	Prover9.  Parm skolem_penalty has been removed; it was for an
+	experiment, and it never made much sense.
+
+October 21, 2008.
+	Mace4.  New flag order_domain builds in the relations < and <=
+	(less-than, less-than-or-equal) on the members of the domain
+	(in the same way that the flag integer_ring builds in the
+	operations +,*,- as the ring of integers mod n).
+	Also, when integer_ring is set, the operation "--" is
+	built-in as binary minus.  (So you can write x -- y instead
+	of x + -y.)
+
+	Mace4. Accepts new list, list(distinct) to say that lists of
+	objects are distinct.  E.g.,
+	list(distinct). [a,b,c]. [d,e]. end_of_list.
+	is shorthand for
+	formulas(assumptions). a!=b. a!=b. b!=c. d!=e. end_of_list.
+
+	LADR. "--" and "++" get built-in parsing properties:
+	op(500, infix, ["--", "++"]).   
+
+October 18, 2008.
+	Interpformat.  Add option "wrap" which encloses interps in
+	list(interpretations). ... end_of_list.
+
+October 10, 2008.
+	Prover9.  Change hints matching so that non-orientable equality
+	units are tried both ways when looking for a matching hint.
+	When the flip matches a hint, append a label "flip_matches_hint"
+	to the clause.
+
+October 7, 2008.
+	Ladr_to_tptp.  Yet more changes.  More parentheses output.
+        New command-line options: -p says to output all parentheses.
+	-q says to single-quote unacceptable TPTP symbols, e.g., x*y
+	becomes '*'(x,y) instead of tptp0(x,y).
+
+	Tptp_to_ladr.  New command-line option: -q says to double-quote
+	unacceptable LADR symbols.
+
+October 2, 2008.
+	Prover9.  Bug: assign(demod_size_limit, -1) is supposed to mean
+	infinity, but it doesn't.  It causes demodulation to stop
+	prematurely.  While looking at this, we decided that a better
+	parameter would be demod_increase_limit, which would terminate
+	demodulation when the size (symbol count) of the clause increases
+	more than the limit.  So demod_size_limit is eliminated, and
+	demod_increase_limit (default 1000) is introduced.  Also, the
+	warning messages about demod_step_limit and demod_increase_limit
+	have been improved.
+
+-------- LADR 2008-09A ----------
+
+August 30, 2008.
+	LADR.  clause_ident failed to check sign when checking identity
+	of literals.  Fixed.  That routine is used in several places;
+	prooftrans caused the bug to appear (missing hints).
+
+August 28, 2008.
+	Changelog.  Reverse so that most recent entries are at the beginning.
+
+August 27, 2008.
+	Prover9 Manual.  It incorrectly said that max_weight=-1 means
+	infinity (no limit).  Fixed.
+
+August 22, 2008.
+	Prooftrans, Directproof.  These failed if the empty clause has
+	an answer attribute with more than 1000 characters (buffer limit,
+	not buffer overrun).  Fixed.
+
+	Prooftrans.  Previously, the order of the arguments "expand" and
+	"renumber" was irrelevant; it always expanded first.  Now, it
+	does the transformations in the order given on the command line.
+
+August 18, 2008.
+	Prover9.  Hint degradation: weights were artificially high,
+	because the number of previous matches included clauses that
+	were later forward subsumed.  Fixed.
+
+	Prover9.  When generating Skolem functions, allow them to
+	to occur in the hints list.  When building up sets of hints
+	by iteration, this change prevents generating new Skolem
+	functions in each search.  This involved substantial changes
+	to code in symbol_check_and_declare.  The routine accept_list
+	takes an additional argument.
+
+August 14, 2008.
+	Prover9.  Force evaluation (w.r.t. semantics) just before
+	clauses are "kept".  Previously, clauses were evaluated only
+	when needed by keep/delete rules or given-selection rules.
+	The change makes sure false clauses have the "false" label
+	if print_kept prints them.
+
+	Prover9.  Crash if sos is full (sos_limit) and all are high
+	priority (e.g., hints), because a "worst" clause cannot be found.
+	Fix: allow "worst" clauses to be high priority.
+
+-------- LADR 2008-08A ---------- (unannounced)
+
+August 5, 2008.
+	Prover9: Another incompatibility of lex_order_vars with KBO.
+	For example, with lex_order_vars, m(x,y,z) < m(z,y,x), but NOT
+	m(x',y,z') < m(z',y,x'), because, although x and z are
+	comparable, but x' and z' are not.  A patch: when trying
+	to compare f(alpha) and f(beta), go right to comparing
+	alpha and beta, rather than checking the variable condition.
+	This fixes this particular problem, but there may be similar
+	ones lurking.
+	(The change applies also without lex_order_vars, but it should
+	not change the behavior in that that case.)
+
+	Tptp_to_ladr: stupid inefficiency in list processing causes
+	inputs with many formulas to take a very long time.  Fixed.
+
+-------- LADR 2008-07A ---------- (unannounced)
+
+July 9, 2008.
+	All code: get rid of variable declarations that are not at the
+	beginning of a block.  (To satisfy old compilers.)
+
+-------- LADR 2008-06A ----------
+
+June 23, 2008.
+	Prover9.  Produce more output during preprocessing.  Previously,
+	in the section "CLAUSES FOR SEARCH", there could be justifications
+	like [back_rewrite(9),rewrite([11(3)])], with clauses 9 and 11
+	not appearing before that point, because they had already been
+	disabled, e.g., by back rewriting.  Now, most clauses that get
+	IDs during preprocessing are output (if print_initial_clauses is set).
+
+June 21, 2008.
+	LADR (ladr_to_tptp and tptp_to_ladr).  The May 14 changes caused
+	a problem: operations of different parse types with the same
+	precedence:
+	    declare_parse_type("|",   502, INFIX_RIGHT);
+	      declare_parse_type("~|",  502, INFIX);
+
+	    declare_parse_type("&",   503, INFIX_RIGHT);
+	    declare_parse_type("~&",  503, INFIX);
+	This is not allowed in LADR.  Solution: don't support ~| or ~&.
+
+June 12, 2008.
+	Prover9.  Remove the May 18 weighting code (too slow and broken).
+	New code: allow a user/programmer to write weighting functions in C,
+	and then refer to the new function, say func42, in weighting rules
+	like this:  weight(f(x,y) = call(func42,x) + weight(y).
+	See the new source file ladr/weight2.c.
+
+	Prover9.  Suppress selector_report in "Low Water" messages, unless
+	assign(stats, all).
+
+	Prover9.  Bug with assign(sos_limit, -1).  (E.g., clear(auto_limits)).
+	-1 is supposed to mean infinity, but Prover9 was interpreting
+	is as a small limit, causing sos_empty.  Fixed.
+
+June 11, 2008.
+	Prover9.  Bug reported by Michael Beeson.  Unit deletion, in which the
+	unit contains an answer attribute with variables: variables do not get
+	instantiated.  Fixed.
+
+	Prover9.  Another (minor) answer literal bug: When a proof has answers,
+	a message containing the answer goes to stderr and at the start of
+	the proof.  When there were multiple answers, only the first was
+	printed. (The empty clause at the end of the proof correctly printed
+	all answers.) Fixed.
+
+May 18, 2008.
+	Prover9.  Experiment to allow weighting function to call an external
+	program to compute the weight.  Works on Mac (very slowly), fails in
+	linux (system call popen() works differently.)
+
+-------- LADR 2008-05B ----------
+
+May 15, 2008.
+	Prooftrans.  Added Bob Veroff's "tagged" output format.  This involved
+	some new code in ladr/{just.c,ioutil.c}.
+
+May 14, 2008.
+	LADR (ladr_to_tptp and tptp_to_ladr).  Several changes (from
+	Geoff Sutcliffe) on parse/print declarations: "=>" and several
+	other TPTP operations changed from INFIX_RIGHT (xfy) to INFIX (xfx).
+
+-------- LADR 2008-05A ----------
+
+May 7, 2008.
+	Prover9.  The weighting rules now can include a vars(term) operation,
+	which is the number of (distinct) variables in the term.
+	This is analogous to the depth(term) operation.
+
+	Prover9.  The SELECTOR REPORT is printed only with assign(stats,all).
+
+	Prover9.  When a kept clause does not match any given_selection
+	rules, a warning is printed (previously, it caused a fatal error).
+
+	Fof-prover9.  Efficiency bug when there are many (>50) subproblems
+	having to do with new symbols.  Fixed by considering function/relation
+	symbols only.
+
+April 23, 2008.
+	Prover9.  Bug in new given_selection code: "positive" is true
+	if any positive literals.  Same for "negative".  Fixed.
+	This bug also affected list(keep) and list(delete).
+
+April 14, 2008.
+	Expand_proof bug (called by prooftrans, directproof) occurs for
+	assert-by-action with immediate simplification.  It was producing
+	justifications like [assumption,rewrite...].  Expand_proof could
+	not handle it.  Instead of fixing expand_proof, the assertion
+	was changed so that if it is immediately simplified, a "copy"
+	inference is inserted.  The reason: [assumption,rewrite...]
+	in a proof is bad, because you don't see what the actual
+	assumption is.
+
+April 13, 2008.
+	Directproof.  Bug causes coredump.  Trivial case not handled:
+	flip negative equality, then implicit resolution with x=x.  Fixed.
+
+-------- LADR 2008-04A ----------
+
+March 24--28, 2008.
+	LADR.  New language to specify clauses by various properties.
+	For example, "weight < 40 & (horn | variables = 3)".  This
+	will be used for deciding which clauses to keep and for selecting
+	given clauses.  See next paragraph.
+
+	Prover9.  Use the new language in three ways:
+	(1) list(keep).   <clause_property_expressions>  end_of_list.
+	(2) list(delete). <clause_property_expressions>  end_of_list.
+	(3) list(given_selection).  ... end_of_list.
+
+	See the HTML manual (new sections "Advanced Features").
+
+	list(delete) is a generalization of max_weight, max_vars, etc.
+	list(given_selection) is a generalization of weight_part, age_part,etc.
+
+	Max_weight, weight_part, etc. will still be accepted, but those
+	operations will now be implemented by the new mechanisms.
+
+	These are big changes to Prover9, and there are probably some bugs.
+
+	The way sos_limit works has been changed.  It has always been
+	an ad hoc heuristic, and it still is, but it is now simpler.
+	Warning: searches that use sos_limit *will* behave differently
+	in the new Prover9.  The new parm sos_keep_factor adjusts
+	how sos_limit works.
+
+	New naming convention for releases.
+
+March 21, 2008.
+	Prover9.  Minor bug involving lex_order_vars and hints.
+	Fix: renumber variables in hints, just after orienting and
+	before indexing (also for back-demodulated hints).
+
+-------- LADR March-2008A ---------- (unannounced release)
+
+February 28, 2008.
+	Prover9.  Bug involving hints with sos_limit.  Clauses matching
+	hints (i.e., really good clauses) were being deleted by sos_limit
+	to make room for clauses that might not be as good.  Also, this
+	bug can cause clauses to be inferred, kept, deleted, inferred,
+	kept, deleted, ... .  Fixed.
+	
+February 19, 2008.
+	Tptp_to_ladr.  The Feb 14 precedence change (~) was no good.
+	After discussion with Geoff and Josef, we decided that the
+	previous precedences were okay, so undo the Feb 14 change.
+
+-------- LADR Feb-2008B ---------- (unannounced release)
+
+February 15, 2008.
+	LADR.  Give a better error message (and catch the error sooner)
+	if variables are used as atomic formulae, e.g.,
+	xor(x,y) <-> ((x & -y) | (-x & y))
+
+February 14, 2008.
+	Clausefilter.  Accept new command-line option "ignore_nonevaluable"
+	which says to skip evaluations when the formula contains symbols
+	not in the interpretation.
+
+	Tptp_to_ladr.  Change precedence of ~ (TPTP spec changed).
+
+February 8, 2008.
+	Prover9.  Fix default_parts bug (clearing does nothing) introduced
+	on Jan 29.
+
+-------- LADR Feb-2008 ---------- (unannounced release)
+
+February 4, 2008.
+	Prover9.  New action "assert(some_clause)" causes the clause
+	to be generated and processed when the action is triggered,
+	e.g., list(actions). given=100 -> assert(x*y=y*x). end_of_list.
+	This does not work for non-clausal formulas.
+
+February 4, 2008.
+	Prover9.  Minor bug: failed to renumber variables after one kind of
+	simplification (removing literal s!=t when s & t unify and do
+	not instantiate any other literal).  This causes a problem
+	only when expanding a proof internally (e.g., newauto).  Fixed.
+
+January 29, 2008.
+	Directproof.  Fix bug that caused it to fail if the unit
+	conflict involves a flip.
+
+January 29, 2008.
+	Prover9/LADR.  Change options processing a bit so that
+	options in the GUI make more sense.  Introduce a new kind
+	of options dependency that resets options to defaults.
+	Several meta-options (lightest_first, breadth_first, random_given,
+	auto2, raw) did nothing when cleared.  This is okay for
+	Prover9, but not for the GUI, which displays current values
+	of options.
+
+-------- LADR Jan-2008 ---------- (unannounced release)
+
+January 25, 2008.
+	Prover9.  Two new flags for paramodulation: para_into_vars
+	(paramodulate into variables) and para_from_small (paramodulate
+	from smaller sides of oriented equalities).  These are not
+	needed for finding refutations, but they can be useful for
+	*deriving* interesting things (fishing expeditions) and for
+	transforming a bidirectional proof into a forward proof.
+	Use with caution.
+
+January 23, 2008.
+	Prooftrans.  Some answer attributes were not being inherited
+	in translated proofs.  Fixed by declaring answer attributes
+	to be inheritable.
+
+-------- LADR Dec-2007 ----------
+
+December 12, 2007.
+	Prover9.  New flag "raw", which is a sort of anti-auto mode.
+	This removes restrictions on inference rules and other limits
+	on the search, allowing users to start from scratch and roll
+	their own strategies.
+	To see exactly what it does, set(raw) and look at the output.
+	
+December 9, 2007.
+	Mace4.  New stringparm "iterate" takes values in
+	[all, evens, odds, primes, nonprimes].  "all" is default.
+	E.g., assign(iterate, odds).
+	This supersedes set(iterate_primes) and set(iterate_nonprimes),
+	and those two flags become meta-options which just assign
+	to "iterate".
+
+December 5, 2007.
+	New program isofilter2, which uses a different
+	algorithm: canonicalize the interps so that isomorphic iff
+	identical.  It also accepts a file of discriminators to
+	cut down the number of permutations.  Results are mixed.
+
+	Isofilter (the original version).  Add new option specifying
+	a file of discriminator clauses.  Results are good.
+
+	Dprofile: new program to see how discriminators behave.
+	
+December 4, 2007.
+	Prover9.  Allow restrict_denials to be used for non-Horn sets.
+	It usually doesn't make much sense for non-Horn sets (because
+	negative clauses usually don't correspond to the conclusion),
+	so let the user beware.
+	
+December 3, 2007.
+	Prooftrans.  Get rid of multiple "Comments from original proof"
+	messages.  These occurred when running prooftrans on the output
+	of a previous prooftrans job.
+
+	Prover9.  New parm: assign(multiple_interps, false_in_some).
+	Default is false_in_all, which is the previous behavior.
+	If there are multiple interpretations, this parm determines
+	how a clause is labeled "false": false in some of the interps
+	or false in all of the interps.
+
+	Mace4.  Bug calculating the maximum domain element in the
+	input:  it was always >=0; it should be -1 when there are
+	none.  This caused some extra isomorphic models to be
+	produced in some cases.
+	
+November 19, 2007.
+	Prover9.  New parameter backsub_check (default 500) tells Prover9,
+	when it reaches the specified number of given clauses, to disable
+	back subsumption if the percentage of kept clauses that have been
+	back subsumed is less than 5%.  Previously, this test was wired in
+	(at 500 given clauses), so behavior will be the same with the
+	default value.
+
+	ladr_to_tptp.  Four changes:
+	(1) a <-> b translated correctly.
+	(2) Attributes on all formulas simply deleted.
+	(3) TPTP symbols that are different from the corresponding LADR
+	    symbols (e..g, <=) can now be used as ordinary function or
+	    predicate symbols in the LADR formulas; they are given new names.
+	(4) Clausal (CNF) goals are made into non-clausal (FOF) goals.
+	
+	Isofilter.  New command-line option "output" tells which operations
+	to output.  Syntax is the same as the "check" option.  Although
+	"check" and "output" will frequently be used together with
+	the same operations, e.g., isofilter check '*' output '*',
+	they are independent.
+	Also, change ignore_constants option so that constants are neither
+	checked nor output.
+
+October 22, 2007.
+	Mace4.  Undo the Oct 7 change to domain_size dependency, and
+	change how domain sizes are specified:
+
+	    start_size   (new parm, default 2)
+	    end_size     (new parm, default -1 (infinity))
+	    domain_size  (meta: copy value to start_size and end_size)
+
+	We'll keep iterate_up_to for a while, and make it a synonym
+	for end_size.  That way, input (before Oct-2007) should behave
+	well.  Note that that default end_size (iterate_up_to) is -1, not 10.
+
+	Mace4. New flag iterate_nonprimes (analogous to iterate_primes).
+
+	Mace4. There was an (arbitrary, I think) limit of 200 on the
+	domain size.  I have removed this.
+
+October 18, 2007.
+	Prover9.  While working on adding the notion of dependent option to
+	the GUI, I decided that the dependent options in Prover9 should
+	be simplified.  From now on, options that update other options
+	will be called meta options, and the only thing they do will be
+	to update other options (there might be a few exceptions).
+	The changes:
+	  1. New flag auto_setup, whose role is to change eq_defs and
+	     predicate_elim (previously controlled by auto_inference.
+	     auto_setup is dependent on auto.
+	  2. The back_unit_deletion flag has been removed.  Now, there is
+	     just 'unit_deletion', and back unit deletion is always done
+	     when unit_deletion is set.
+	  3. Back demodulation is set by default.
+	  4. The flag positive_inference has been removed.  (Positive
+	     inference happens by default, because literal_selection is
+	     max_negative by default.
+
+	LADR.  New flag ignore_option_dependences.  If set, dependencies
+	on options will be ignore during input.  Dependencies will be
+	enabled after input, because options can change after input
+	(e.g., auto_inference, actions).  This flag will be used by
+	the GUI, because the GUI will be handling dependencies.
+
+-------- LADR Oct-2007 ----------
+
+October 7, 2007.
+	Mace4.  Remove option dependency:
+	domain_size=n -> iterate_up_to=0.  Now, if you want to search
+	only one domain size, you'll have to assign to both domain_size
+	and iterate_up_to (to a value <= domain_size).
+
+	Prover9: Change literal_selection option value:
+	maximal_negative -> max_negative.
+
+October 6, 2007.
+	Prooftrans and Interpformat: change exit codes.  0: at least one
+	proof/model processed.  2: no proof/model processed.  1: error.
+
+October 4, 2007.
+	Prover9 and Mace4: new flag assign(report_stderr, <n>) sends "some"
+	statistics to stderr every n seconds and at the end.
+	This is for the GUI "Info" button.
+	
+October 3, 2007.
+	Interpformat: There is now a default format: "standard2".
+	(Previously a format had to be given.)
+
+	Mace4: Change flag names:  print_models to print_models_tabular,
+	print_models_standard to print_models.
+
+	Mace4: Do not print === MODEL === for print_models_tabular,
+	because interpformat cannot handle it.
+	
+September 25, 2007.
+	Mace4: Change max_seconds and max_seconds_per so that -1
+	means infinity.  (For consistency with Prover9 options.)
+	Update Mace4 HTML manual with these changes.
+
+September 24, 2007.
+	LADR: Added primitive conditional inclusion for input.
+	The only conditions so far are "Prover9" and "Mace4".
+	if(Prover9). assign(max_given, 100). end_if.
+	if(Mace4). assign(domain_size, 5). end_if.
+	The conditions can be nested (though I don't see how that
+	would be useful so far).
+
+September 18, 2007.
+	LADR: Change error messages for syntax errors and some other
+	input errors such as unrecognized options.  Mark the beginning
+	of error as well as the end.  This is so that errors can be
+	highlighted in the GUI.  Also fix 2 parsing bugs: 'f(.' and '[.'
+	were crashing.
+
+-------- LADR Aug-2007 ----------
+
+August 3, 2007.
+	Interpformat, Mace4.  Change the name of the interpretation format
+	"portable" to "standard".  This is the format that LADR programs
+	use.  This change was made so we could use "portable" for the
+	following.
+
+	Interpformat.  Introduce a new output format "portable" to be used
+	for input to Python, GAP (and possibly Java and Javascript).
+	The new portable format is similar in structure to "standard",
+	but it is made up of natural numbers, double-quoted strings,
+	and lists.  See the manual page "Interpformat".
+
+July 18, 2007.
+	Prover9.  Handling of redundant hints has been improved w.r.t.
+	labels and bsub_hint_wt attributes.  Bsub_hint_wt attributes
+	on redundant (equivalent) hints are copied to the original (retained)
+	hint.  If a hints ends up with more than one bsub_hint_wt
+	attribute, the first is used.  When searching for matching
+	hints, if an equivalent hint is available, it is used; otherwise
+	the first subsumee is used.
+
+June 30, 2007.
+	LADR.  New language feature:  allow the user to redefine several
+	built-in operations such as equality, disjunction, attribute.
+
+	For example,
+	   redeclare(equality, "==").
+	   redeclare(negated_equality, "=/=").
+	   redeclare(disjunction, "&&").
+
+	The redeclarable operations are:
+
+	true, false, conjunction, disjunction, negation, implication,
+	backward_implication, equivalence, universal_quantification,
+	existential_quantification, attribute, equality, negated_equality.
+
+	Note: When a redeclaration occurs, the parsing/printing
+	properties (infix, precedence, etc.) are copied from the
+	old symbol to the new one.
+
+June 18, 2007.
+	Prover9.  New flag limit_hint_matchers (default clear).  Setting
+	the flag causes max_{weight,literals,vars,depth} to be
+	applied to clauses that match hints.
+
+-------- LADR June-2007 ----------
+
+June 14, 2007.
+	LADR: Change printing of variables (standard style) to
+	x,y,z,u,w,v5,v6,v7,... .  (That is, don't use "v".)
+	This avoids confusing terms like (v v v), because
+	"v" is commonly used as the lattice join operation.
+
+June 13, 2007.
+	Prooftrans: fix the "proliferating ops problem", add option
+	striplabels, and append labels to hints only if asked to do so.
+	See the updated HTML manual.
+
+June 12, 2007.
+	Prover9: Disabled rule pos_binary_resolution.  The parameter
+	literal_selection (maximal_negative) will be used to do
+	positive binary resolution (and positive paramodulation).
+	The reason: before the change, we could have pos_binary_resolution
+	without positive paramodulation, which blocks proofs.
+
+	Change breadth_first "Starting on level" messages so they
+	don't appear if some other part has been set.
+
+June 4, 2007.
+	Newauto, newsax, autosketches (non-documented experimental
+	programs):  updates for expand_relational_defs broke these
+	programs.  Fixed by including call to embed_formulas_in_topforms.
+
+-------- LADR May-2007 ----------
+
+May 21-23, 2007.
+	Prover9: Added flag set(expand_relational_defs) (default clear),
+	which causes Prover9 to look for relational definitions in
+	the assumptions, and use them to expand all occurrences
+	of the defined relation in the input, before the start of
+	the search.  See the HTML manual, page "More Prep".
+
+May 6-11, 2007.
+	Prover9: *MAJOR* changes to binary resolution and paramodulation
+	for non-unit clauses.  The goal is improved performance
+	for non-unit, especially non-Horn, problems.
+
+	There are several changes in flags and parameters.
+	See the Prover9 HTML manual page "Inference Rules".
+
+	An unfortunate consequence of these changes is that
+	paramodulation for (unit) equational problems can
+	behave differently from previous versions, because
+	paramodulants can be derived in a different order,
+	causing given clauses to be selected in a different order.
+
+May 9, 2007.
+	Change default predicate symbol precedence so that equality
+	is the smallest instead of the largest.  In problems with
+	both equality and non-equality predicates, this change
+	usually causes resolution to occur before paramodulation.
+	
+May 8, 2007.
+	Separate the lex([...]) command into two commands:
+	function_order([...]) and predicate_order([...]).
+	(The old lex([...]) command will continue to be accepted,
+	and it is now a synonym for function_order([...]).)
+	
+May 8, 2007.
+	Bob Veroff reminded me that the parsing code can
+	accept ambiguous terms, for example, if ~ is prefix and '
+	is postfix with the same precedence, the term (~ x ') is
+	accepted.  (Prolog systems (all Prologs??) have the same
+	problem.)  Fix: do not allow declarations of two different
+	symbols with different parse types and the same precedence.
+	This applies also to built-in declarations, so the error may
+	be confusing.  Also change built-in precedence of
+	op(400, prefix, -) to op(350, prefix, -), because people tend
+	to use 400 for infix ops.
+
+April 19, 2007.
+	Prover9, minor bug:  If predicates were eliminated in preprocessing,
+	they were still listed in the symbol precedence for the search
+	(at the top of the order).  Fixed.
+
+April 18-19, 2007.
+	Ken Kunen reminded me that Prover9 doesn't paramodulate from
+	variables, making it incomplete when there are (positive)
+	equality literals t=x in which variable x does not occur in term t.
+
+	A new flag: para_from_vars (default set).  Note that this is almost
+	always irrelevant for purely equational (unit) problems.
+
+April 16, 2007.
+	prooftrans: bug reading proofs containing justifications
+	with more than 256 rewrites.  There is a hard limit of 256
+	on the arity of symbols.  Fix: change format of rewrite
+	justifications from "rewrite(step1,step2, ...)" to
+	"rewrite([step1,step2, ...])".   After the fix, you can use
+	the new prooftrans prooftrans only with new prover9 outputs,
+	and old prooftrans only with old prover9 outputs.
+	Related: check for arity-too-big when building terms.
+
+April 16, 2007.
+	LADR: yet another parsing bug.  Terms like "h(v) * (x + y)"
+	(assuming v is infix (the default)) are parsed incorrectly
+	(parser thinks v is binary and * is unary.  Fixed.
+
+-------- LADR April-2007 ----------
+
+April 12, 2007.
+	Mace4: fixed 2 bugs in signal handling.
+	Apps.src: updated clausefilter, clausetester, interpfilter so that
+	they work for non-clausal formulas as well as clauses.
+
+April 9, 2007.
+	Prooftrans bug: fatal error expanding new_constant inference
+	with secondary justification.  Fixed.
+
+April 6, 2007.
+	Prover9, added parm var_penalty, which can be used to penalize
+	clauses by the number of (distinct) variables.  At the end of
+	the weighing process, the weight is increased by
+	n * number_of_variables.  N can be negative, which lowers the
+	weight.  Update manual.
+
+April 5, 2007.
+	Prover9, Bugs: max_depth, max_vars, max_literals can delete
+	clauses that match hints.  Also, sos_keep can delete clauses
+	that match hints.  These were fixed by reorganizing the
+	cl_process_delete code.
+
+April 3, 2007.
+	Isofilter: very slow memory leak.  Fixed (zap_interp failed
+	to free comments).
+
+April 2, 2007.
+	Prover9, new flags and parms for selecting the given clause:
+
+	parm random_part: picks random clauses from sos;
+	flag random_given: random_part=1, other parts (except hints) 0; 
+	parm random_seed: (-1 means use "random seed");
+	flag default_parts: clearing sets ALL parts to 0.
+
+-------- LADR March-2007 ----------
+
+March 16, 2007.
+	Two new utilities to support the TPTP language:
+
+	ladr_to_tptp: Prover9 input file -> TPTP problem file.
+	tptp_to_ladr: TPTP problem file -> Prover9/Mace4 formulas.
+
+	These are still in development and do not yet support all
+	of the TPTP features.  Eventually, Prover9 and Mace4 will
+	accept the TPTP language directly.
+
+March 15, 2007.
+	Prover9: insert several fflush() so that output is better
+	behaved when stderr is sent to the same file as stdout.
+
+March 12, 2007.
+	Prover9: new parms max_depth and depth_penalty.
+
+	Prover9: new command-line option -p causes all output to
+	be fully parenthesized.  This is mostly to check and debug
+	parsing declarations (op commands).
+
+March 7, 2007.
+	LADR: Bug in clausify_prepare causes result of Skolemization to be
+	more complex than necessary.  Fixed.
+
+	Prover9: max_megs limit caused fatal error if it occurred in
+	CNF translation (before search).  Fixed.
+
+	LADR: Several substantial changes to basic parsing of terms:
+
+	1. Previously, some legal terms were rejected.  For example,
+	if you have a binary infix op, say *, and you use it as a
+	unary op, and write it in standard form, say p(*(x)), it
+	would be rejected.  (Input cannot have a symbol with multiple
+	arities, but if it is declared, but not used, that does not
+	count.)  Several cases like this have been fixed, but there
+	may still be related problems.
+
+	2. Parsing/printing of quantified formulas has been changed.
+	Previously, "p | all x q | r" would be rejected.  Now
+	it is accepted with association "p | (all x q) | r".
+	Also, fewer parentheses are output for quantified formulas.
+	Quantifiers have lower precedence (bind tighter) than other
+	logic operations, so "all x p -> q" means "(all x p) -> q".
+	When in doubt, include parentheses and look at the output.
+
+March 5, 2007.
+	Bug in manual (Clauses and Formulas section): the "cons"
+	operator is shown as "|" (as in Prolog), but it is really ":".
+	Fixed.
+
+February 27, 2007.
+	Prooftrans (from Kinyon):  bug with options "expand renumber".
+	The transformed proof can have strage IDs, e.g., 27A.  Fixed.
+
+February 12, 2007.
+	Prover9 bug: KBO and fold_eq, in a problem with exactly one unary
+	operation, that happens to be an equational definition.  Fold_eq
+	can arrange the precedence in a way that violates the KBO rules,
+	causing non-termination.  Fix: do not change precedence of
+	special unary op (such symbol is still folded).
+
+January 30, 2007
+	Updated the Mace4 pages of the (HTML) Prover9 Manual.  Previously
+	the Mace4 pages were cursory, with reference to the out-of-date
+	(2003) tech memo.  Now the HTML version is reasonably complete.
+	
+January 26, 2007
+	Hints are now back demodulated (as in Otter).
+
+January 22-25, 2007
+	Prover9: Major overhaul of the given clause selection code.
+	A new source file prover9.src/picker.c was introduced;
+	the files ladr/sos.c and prover9.src/control_sos.c are now gone.
+
+	BEWARE: YOU WILL NOTICE A DIFFERENCE.  Even with the same input,
+	given clauses will probably be selected in a different order from
+	previous versions, resulting in different searches.  There is
+	no way to opt for the old method.
+
+	The main difference has to do with the selection ratio.  Previously,
+	if a clause of a particular type was not available, another
+	type could be substituted.  Now, if none is available, that type
+	is skipped.  Because of this change, the default values of
+	true_part and false_part have been changed from 2 to 4.
+
+	Also, there is a new parameter "weight_part", which is used
+	for basic selection-by-weight.  (Previously, true_part and
+	false_part were used in a round-about way for simple
+	selection-by-eight.)  There is a new (meta-)flag "lightest_first",
+	which sets weight_part=1 and all other parts to 0 (except hints_part).
+	Also, "pick_given_ratio" now sets weight_part=n, age_part=1,
+	true_part=false_part=0.
+
+	Selection by Hints: Previously clauses that matched hints
+	were given preference simply by adjusting their weights.
+	Now, clauses that match hints have their own component of the
+	selection ratio: "hints_part", with default value infinity,
+	and those clauses now get ordinary weights.
+
+	In summary, the components of the selection ratio are (with defaults):
+	        age_part        1
+	        true_part        4
+	        false_part        4
+	        weight_part        0
+	        hints_part        INT_MAX
+
+	Other "_part"s may be added in the future.
+
+	The manual has been updated to reflect all of these changes.
+
+January 24, 2007
+	Prover9 bug: answer attributes not instantiated for the "xx"
+	(resolve with x=x) simplification rule.  The first version of
+	this rule simply removed instances of x!=x, so answer attributes
+	didn't have to be instantiated.  However, the rule was changed
+	so that it removes s!=t, when s and t are unifiable without
+	instantiating any other literals in the clause.  When I made
+	the change, I overlooked the fact that it can instantiate
+	answer attributes.  Fixed.
+
+--------- LADR-Jan-2007 ----------
+
+January 4, 2007
+	
+December 11, 2006
+	Isofilter: A new option to specify exactly the symbols to be
+	used for the isomorphism checks.  (Sort of a generalization of
+	"ignore_constants".)  It is given on the command line, e.g.,
+	the command "isofilter check '+ *'" says to consider only those
+	two operations (any other operations are still printed in the
+	results).  If there is more than one operation, or if some of
+	the operations might be interpreted by the shell, include
+	single quotes as in the example.  This was prompted by
+	Joao Araujo.
+
+December 8, 2006
+	Improve warning messages for symbols missing from lex command
+	and extra symbols in lex command.
+
+December 5, 2006
+	Prover9 (bug reported by Sebastian Sonntag): Predicate elimination
+	changes the basic clause properties so auto_denials gets the
+	wrong count of number of negative clauses. Fix: move
+	basic_clause_properties() after predicate elimination.
+
+December 3, 2006
+	Prooftrans: change heading on "prooftrans ivy" output.
+
+--------- LADR-November-2006 ----------
+
+November 22, 2006
+	Remove index-test directory (because it's 4MB).
+
+November 21, 2006
+	Prover9 bug (Kinyon): Multiple proofs of the same denial
+	when reuse_denials was clear.  This was caused by
+	negative_clause call on compressed disabled clauses.  Fix:
+	put yet another flag (negative compressed) in Topform.
+	
+--------- LADR-October-2006 ----------
+
+October 24, 2006.
+	ladr: read_term_list(), in ladr/ioutil.c, is very slow when
+	reading big lists because of a silly inefficiency.  Fixed.
+
+	Include index-test.  This is a test program for a project
+	of Michael Kohlhase.  See index-test/jobs/README.
+
+October 16, 2006.
+	ladr: If the % character that starts an ordinary comment is
+	the last character on a line, then the following line is ignored.
+	(I got the operator precedence wrong in an expression a = b == c).
+	Fixed.
+
+September 14, 2006.
+	Prover9: minor bug fixed: do not check max_literals or
+	max_vars for restricted denials.
+
+--------- LADR-September-2006 ----------
+
+September 13, 2006.
+	Prover9: Change the way restrict_denials is implemented.
+	Previously, restricted denials would get weight=0 and
+	go into sos, so they would not be deleted by max_weight and
+	they would be selected right away as given clauses.  That
+	caused an annoyance:  adding or taking away a denial could
+	changed the search, because sequence of given clauses would
+	change.  The fix: restricted denials now go directly into
+	usable (e.g., when back demodulated), bypassing sos.  Also,
+	the ordinary weighting function is applied to them, but they
+	are NOT deleted if heavier than max_weight.
+
+August 31, 2006.
+	Prover9: Rolf Schwitter reminded me that answer attributes
+	do not work correctly for non-clausal formulas.  Solution:
+	(1) Do not allow proper subformulas of non-clausal formulas to
+	have any attributes.  (2) Do not allow answer attributes on
+	non-clausal formulas to have variables.  Update the manual.
+	Answer attributes with variables do make sense for formulas
+	and subformulas in some cases, and we might accept them some day.
+	One of the problems is that the attribute operator # is not good
+	enough for arbitrary formulas, because we need to know whether
+	it acts as conjunction or as disjunction.
+
+August 29, 2006.
+	ladr: Change printing of XML proofs (prooftrans), adding
+	a "type" attribute: <clause id="33" type="goal">.  The
+	types (so far) are goal, assumption, deny, clausify.
+	Also change proof3.dtd and proof3.xsl so that the different
+	types are displayed differently.
+
+August 28, 2006.
+	Prover9: Give goal formulas the attribute "label(goal)".  These
+	formulas appear in proofs, and the label is to emphasize that
+	these formulas have not been negated and will not be used for
+	inferences.
+	
+August 25, 2006.
+	Prover9: Changed warning message for shared constants in denials
+	so that it simply prints the shared constants instead of all of the
+	pairs of clauses that share constants.
+
+	Prover9: I think that sos_limit is too aggressive in deleting
+	clauses, so I'm changing the default from 10,000 to 20,000.
+	Also, the point at which prover9 starts being more selective
+	about keeping clauses was changed from .5 to .9 (fullness of sos).
+	As always, experts may wish to clear(auto_limits).
+
+August 23, 2006.
+	Prover9: Fix variable declaration in prover9.src/prover9.c.
+	Mace4: Fix formatting in mace4.src/print.c.
+	Updated SOBB-II to use LADR-August-2006A.
+
+--------- LADR-August-2006A ----------
+
+August 11, 2006.
+	Mace4: Change the default value of "iterate_up_to" from
+	0 to 10, and introduce an option dependency: if "domain_size" is
+	changed, change "iterate_up_to" to 0.  If iterate_up_to is changed,
+	it all behaves as before.  These changes were made so that if
+	no options are given (in the input file or on the command line),
+	then it will start at domain_size=2, and iterate up to 10.
+	Previously, it would try 2 and then terminate.
+	        
+August 8, 2006.
+	Prover9, semantic guidance.  If there is more than one interpretation,
+	a clause is marked "false" if it is false in ALL (previously SOME)
+	interpretations.  The reason: In experiments, I found that I wanted
+	fewer false clauses.
+	
+August 1, 2006.
+	Prover9: print_gen -> print_kept.  Also improve print_gen messages.
+	Prover9/LADR: change CAC redundancy so that (xy)z=x(yz) and
+	x(yz)=y(xz) are both kept.  Implement back CAC simplification.
+
+July 31, 2006.
+	Bug: did not accept negative integer attributes.  Fixed.
+
+July 30--31, 2006.
+	Reorganize include structure in ladr/ and prover9.src/.
+
+July 25, 2006.
+	Mace4: Prolog_style_variables specified on the command line (-V1)
+	does not work.  (I'm not sure when it broke.)  Fix by simply
+	not accepting -V1.
+      
+June 27 -- July ??, 2006 (just after ADAM-2006)
+
+	MAJOR CHANGES, in 3 groups.  Not everything is detailed here,
+	so see the HTML manual.
+
+	LADR: Change parsing/printing so that less space is required
+	around prefix and postfix ops.  The important difference is that
+	prefix "-" and postfix "'" need not have space, e.g.,
+	"---p'''" will be parsed as unary operations.  The downside:
+	If you wish to use a new multicharacter "special symbol",
+	you must give an "op" command that has quotes around the symbol,
+	e.g., op(400, infix, "--->").
+	The "clear" parse type has been renamed "ordinary", and
+	it can be given in an op command without the precedence argument,
+	e.g., op(ordinary, "###").
+
+	LADR: "Formulas" can now have free variables, so Clauses are
+	now formulas.  Prover9 (also Mace4) decides which formulas are
+	not clauses and clausifies them.  clauses(...) is no longer
+	accepted --- everything goes into formulas(...).  Also,
+	non-clausal and "goal" formulas appear in proofs.
+
+	Prover9: The flags restrict_denials, reuse_denials, and
+	auto_denials have changed.  For Horn sets, when reuse_denials
+	is clear, and when searching for multiple proofs:  when a
+	proof is found, the first negative clause in the proof,
+	and all of its descendants, are disabled.  This allows
+	multiple proofs, without redundant proofs, when restrict_denials
+	is clear.
+
+	Less major changes.
+
+	Prover9: new flag "bell", default set.
+
+	LADR: Change start of block comment from %START to %BEGIN.
+
+	Prover9: flag fof_reduction is gone.  There is a new program
+	fof-prover9.
+
+--------- LADR-June-2006C ----------
+
+June 17, 2006
+	Prover9: change input list name terms(kb_weights) to 
+	terms(kbo_weights).
+
+	Prover9: parameters true_part and false_part are now changable
+	by actions.  Also fix some of the other changable options.
+
+	LADR: parsing routines accept comment-blocks, delimited by
+	%START  and  END%.  (Ok if there's no END%.)  See the manual.
+
+Jun 16, 2006
+	Prover9: disable internal flag no_fapl.  This is rarely used and
+	I think it might cause some problems.
+
+	Substantial changes to Prover9:  Reorganized auto flags and
+	introduced a few secondary auto flags: auto_denials and auto_process.
+	(See the manual.)
+
+	Auto_denials (default set): if a Horn set has more than one
+	negative clause, max_proofs is set to the the number of negative
+	clauses (which in turn sets restrict_denials).  This is questionable,
+	because restrict_denials can substantially alter the search.
+	This will likely change after some more thought.
+
+--------- LADR-June-2006B----------
+
+Jun 9, 2006
+	Prover9: add selection code (I,A,T,F), meaning
+	(Input, Age, True, False) to printing of given clauses.
+
+Jun 5, 2006.
+	LADR: Reorganized and changed names of some of the resolution
+	and paramodulation options: ordered_inference and ordered_instance
+	are replaced with separate options for resolution and paramodulation.
+
+--------- LADR-June-2006A----------
+
+Jun 2, 2006.
+	LADR bug from Veroff.  Fatal error if more than 2^15 different
+	function symbols.  (It happens with prooftrans, because justifications
+	are parsed as ordinary terms.)  Overflow check was broken.
+	Changed term structure to allow 2^31 different function symbols
+	and fixed overflow check.
+
+May 30, 2006.
+	Changed default eval_limit from 1000 to 1024.
+
+May 29, 2006.
+	Two weighting bugs introduced in May 2 change: minus and depth. Fixed.
+
+--------- LADR-May-2006B----------
+
+May 25, 2006.
+	Change Demod_limit messages if there are a lot of them.
+
+May 25, 2006.
+	Bugs found by Veroff.
+	1. "Fatal error:  xx_simp2, bad literal."  xproofs did not handle x!=c.
+	2. "Fatal error:  expand step, result is not identical"  Unit deletion
+	    failed to mark clause vars "nonnormal".
+	3. search.c: "if (Opt->dont_flip_input)" forgot flag().  This
+	   gets rid of "WARNING: orient_equalities, backward eq2:x = 1"
+	   and might change behavior, because lits now get flipped.
+	4. max_megs_exit caused longjmp fatal exit.  Fixed.
+
+--------- LADR-May-2006A----------
+
+May 24, 2006.
+
+May 20, 2006.
+	Prover9: When new_constants introduced in the presence of
+	interpretations, update interps.
+
+May 17, 2006.
+	Prover9: new parms max_minutes, max_hours, max_days; these just
+	change max_seconds.
+
+May 15, 2006.
+	New option dependency: assign(max_proofs, n) -> set(restrict_denials).
+	This is a highly questionable change, because (1) you get a proof
+	with one goal, (2) you add a goal and set max_proofs=2, (3)
+	now you might get NO PROOFS, because restrict_denials is now in
+	effect.
+
+May 2, 2006.
+	LADR: change weighting, making rules more verbose, with cleaner
+	semantics.  For example,
+	Old rule:    f(a,x) = x + 2.
+	New rule:    weight(f(a,x)) = weight(x) + 2.
+
+Apr 24, 2006.
+	Prover9: fiddle with options fold/unfold.
+
+Apr 21, 2006.
+	Prover9: Restrict clauses(goals) so that all must be positive units.
+	Restrict formulas(goals) to at most one formula.
+
+Apr 17, 2006.
+	Prover9: Make set(auto) the default (undo with clear(auto).)
+	        Remove command-line option -a (auto).
+	        Remove lrs_seconds. (Keep lrs_ticks.)
+	        Change limit parms so that -1 represents infinity.
+	
+--------- LADR-Apr-2006A----------
+
+Apr 17, 2006.
+	LADR parsing bug (Veroff).  If user has an op command for a
+	symbol that has a built-in op declaration, the built-in should
+	be disabled.  Fixed.
+
+Apr 11, 2006.
+	Prover9: Fix a few bugs that come up with clear(process_initial_sos).
+	(1) $F in input or produced by predicate elimination; (2) p & - p
+	didn't trigger any inference rules in auto_inference().
+	(There are so few cases in which clear(process_initial_sos) should
+	be used that I would like to remove it.  This would simplify things
+	and allow more peace of mind.)
+
+Apr 5--10, 2006.
+	Prooftrans: add ability to produce Ivy-style proof objects (which
+	can be checked with Ivy).  This took much longer than expected,
+	but I think it is much more robust than Otter's build_proof_object2.
+
+Mar 29, 2006.
+	Prover9: rename flag casc_2005 to auto2.  Move set(fof_reduction)
+	and assign(new_constants, 1) from auto to auto2.  With these
+	changes, auto2 should behave about the same as casc_2005 before
+	these changes.  (However, so many changes have been made to Prover9
+	since the CASC-2005 contest that even with auto2, the current
+	version will probably behave differently on the 2005 contest problems.)
+
+Mar 23, 2006.
+	Prover9: change default demod_size_limit from 500 to 1000.
+	Mace4: change default to set(print_models_portable).
+
+Mar 20, 2006.
+	Rewrite prooftrans and interpformat.  Change Interp data structure
+	to include comment term, and make the portable format like this:
+	interpretation( size, list-of-comments, list-of-ops ).
+	
+Mar 17, 2006.
+	Reformat output files for Prover9 and Mace4.  This separates the
+	output files into well-defined sections (input, proof, model,
+	statistics, etc.).
+
+Mar 13, 2006.
+	apps.src/modelformat.  Added xml option to output interpretations
+	in xml.  Added -f <file> option.
+
+Mar 6, 2006.
+	apps.src/prooftrans.  Added xml option to output proofs in xml.
+
+Mar 3, 2007.
+	Reorganize command-line options.  Now accepted:
+	    -h            help
+	    -a            auto (like set(auto) as first line of input)
+	    -x            casc_2005 (special-purpose auto)
+	    -t <n>        max_seconds (overrides ordinary input)
+	    -f <files>    files to read instead of stdin (clauses, etc.)
+	More command-line options may be added, but the primary location
+	for options will remain in the ordinary input.
+
+Feb 28, 2006.
+	Bug in prooftrans (Veroff) reading justification with hyper xx.
+	Fixed.
+
+--------- LADR-Feb-2006A----------
+
+Feb 7, 2006.
+	Changed the way dates and versions are included in source files.
+	Changed names of parms (OK MK): weight1_part -> true_part,
+	weight2_part -> false_part.  (These, together with age_part,
+	specify the given clause selection ratio,
+	oldest : false-in-some-interp : true-in-interps.)
+
+Jan 23, 2006.
+	Incompleteness bug from Ilya Mezhirov: input clause f(x) != f(a).
+	does not give a refutation.  Fixed simplify_literals2() in
+	ladr/subsume.c so that it removes literals like that (if the
+	instantiated vars do not occur elsewhere in the clause).
+
+Jan 12, 2006
+	Bug (fatal_error) in fof_reduction (reported by Ilya Mezhirov).
+	Changed balanced_binary so that non-AND/OR is ok.
+
+Jan 6, 2006
+	Get rid of clauses(denials).  Instead, introduce the flag
+	set(restrict_denials).  This flag says to move negative
+	clauses from sos to the internal denials list.
+	From then on, the behavior is the same as before.
+
+	This change was made so that "goal" clauses can be "denials".
+	The downside: it's an all-or-nothing option; before you could
+	select which clauses go into "denials".
+
+	Remove the dollar from Skolem constants and functions.  I did this
+	because we're using them more often (goals list), and the dollars
+	are annoying to look at.
+
+Jan 4, 2006
+	Prover9 and Mace4: Changed "goals" list yet again.  Goals can be
+	either clauses or formulas.  If clauses, they are made into formulas
+	by universal closure.  Each is then negated and clausified, and
+	the clauses are appended to sos.  For Prover9, this means that
+	if ANY goal is proved, a proof is given.  For Mace4, models must
+	falsify ALL goals.  Note that if there are multiple nonatomic
+	goals, the semantics are nonintuitive and might not what you expect,
+	because a proof can involve parts of different goals.  If this
+	is not clear, you can easily do without "goals" by putting
+	an appropriate formula into formulas(sos).
+
+--------- LADR-Dec-2005A----------
+
+Dec 16, 2005
+	Mace4: changed "verbose" flag so that it prints the clauses (once)
+	and the cell selection order (for each domain size)  before the
+	search starts.
+
+Dec 13-14, 2005.
+	Reorganize ladr/symbols.c (it's still a hodgepodge), especially
+	the symbol precedence routines.  Precedence for Prover9 should
+	be the same as before, but it might be different for Mace4.
+	In Mace4, the cell ordering can be different, giving different
+	searches (compared to the old Mace4), but (so far), differences
+	have been minor.
+
+	Accept new input: skolem([a,b,f]), which declares symbols to be
+	Skolem constants or functions, so that they behave like real
+	Skolem constants/function w.r.t. options, etc..  The form is
+	just like the lex command.  This is in read_from_file, so it
+	applies to both Prover9 and Mace4.
+
+	Mace4: New flag set(skolems_last) does two things. (1) it changes
+	the order in which cells are filled in (Skolems last), and
+	(2) prevents multiple models in which only the Skolem functions
+	change.  I was hoping that this would reduce the number of isomorphic
+	models (ignoring Skolems), but the experimental results are not good:
+	It can reduce the number of isomorphic models, but it seems to take
+	much longer to find models.
+
+Dec 8-19, 2005.
+	Semantic guidance.  Accept list of interpretations and use them
+	to help select the given clause.  Changed parms
+	(weight_part, weight_neg_part) to (weight1_part,weight2_part).
+	Weight1_part applies to clauses TRUE in all interps, weight2_part
+	applies to clauses FALSE in at least one interp.  If there are
+	no interps, the default interp is "all atoms true".  This is
+	consistent with the old meanings of the parms (weight_part,
+	weight_neg_part), because, with the default interp, nonnegative
+	clauses are TRUE, and neg clauses are FALSE.
+
+	New parm: eval_limit (default 1000).  If the clause to be
+	evaluated has V variables, and the largest interp has N
+	variables, and if N^V > eval_limit, the evaluation is skipped,
+	and the clause is given the value TRUE.
+
+December 1, 2005.
+	Changed isofilter so that symbols starting with $ are ignored.
+	These are assumed to be Skolem constants and functions.
+	A new command-line options "include_skolems" causes the old behavior.
+
+November 22, 2005.
+	Reorganized ladr/glist.c.
+	Changed parameters for clause printing routines (see ladr/ioutil.h).
+
+	Forked search: child sends symbol table updates to parent.  This
+	allows child to introduce new symbols.
+
+November 17-18, 2005.
+	Prover9: removed options x_proofs, r_proofs, xr_proofs, xr_proofs,
+	standard_proofs.  Now, the only kind of proof produced is
+	standard_proof.  Various proof transformations will be done by
+	separate programs, e.g., apps.src/prooftrans.c.
+
+November 11, 2005.
+	Changed format of justifications so they can be parsed as terms.
+
+	In demodulation justifications, included an integer giving
+	the position of the rewritten term.  This is so that proofs can
+	be easily reconstructed without knowing the demodulation parameters
+	(term ordering, etc).  This is a substantial change.
+
+	Old: [para (37 (a 1) 216 (a 1 1)) demod (136 (R) 272)]
+	New: [para(37(a,1),216(a,1,1)),demod(136(4,R),272(2))].
+
+	The term 136(4,R) means demodulation from the right (R) side of
+	demodulator 136 at position 4 (4th nonvariable subterm,
+	left-to-right, bottom-up).  Without the R means the demodulator
+	is used in the ordinary way (from the left).
+
+	Removed parm demod_limit.
+	 Introduced parm demod_step_limit (max steps per clause)
+	 Introduced parm demod_size_limit (maximum size of rewritten term)
+	
+November 7, 2005.
+	Minor Mace4 bug: with set(trace), terms are printed with
+	variables instead of integers (e.g., f(x,y)=z instead of
+	f(0,1)=2) during trace.  Fixed.
+
+--------- LADR-Oct-2005A----------
+
+October 20--31, 2005.
+	Several small changes, mostly cosmetic.
+
+October 19, 2005.
+	Removed Prover9 CASC heuristics: limit on number of heavy clauses
+	of the same weight, and demod_limit size increase.  These were
+	ad hoc and should be thought out before re-introduction.
+
+October 10-11, 2005.
+	(While working on SOBB-II.)  Renamed "goals" list to "denials".
+	Introduced new "goals_positive" lists (clauses and formulas),
+	to which the following happens.
+	Clauses: conjoin, universal closure, negate, clausify.
+	Formulas: conjoin, negate, clausify.
+	The resulting clauses are appended to sos.
+	SOBB-II uses this version.
+
+--------- LADR-Sep-2005A----------
+
+September 30, 2005.
+	Change auto_kbo so that if there is a lex command, the
+	special unary processing is done only if the unary op is greatest.
+
+September 27, 2005
+	A new app (in apps.src) to format Mace4 models in various ways.
+	It reads a Mace4 output and formats all of the "portable" models
+	as one of the following: portable, portable2, cooked, raw,
+	tabular, tex.  This can replace the script get_interps.
+
+September 23, 2005
+	Mace4 max_megs bug.  Cannot be increased beyond the default of
+	200 megs.  Fixed by disabling the check in ladr/memory.c (mace4
+	handles max_megs its own way, because it allocates substantial
+	memory without going through ladr/memory.c).
+
+September 22, 2005
+	When compiling on AMD64 machines, there were a few compiler
+	warnings about pointers and integers being different sizes.
+	All but one were inconsequential and trivial to fix.
+	The nontrivial on was in mace4.src/propagate.c, in which
+	something tricky was done (handling integers as pointers).
+	The code was fixed by introducing a union to force alignment
+	(see mace4.src/ground.h), but the warning still occurs.
+
+September 7, 2005
+	Check that variables in answer literals also occur in ordinary
+	literals.  Fatal error if not.
+
+September 1, 2005
+	Changed auto_inference for paramodulation with Horn sets.  If
+	the user has set para_units_only or para_lit_limit, the para_lit_limit
+	is no longer changed automatically.
+
+	Updated utilities/proofs_to_hints so that duplicate clauses are
+	omitted.  (Previously, clauses with duplicate IDs were omitted.)
+	
+--------- LADR-Aug-2005B----------
+
+August 25, 2005.
+	Updated actions: (1) accept only a subset of flags/parms;
+	(2) if weight function or given clause selection is changed,
+	reweigh sos clauses and reconstruct the sos index.
+
+August 24, 2005
+	Print "level" messages for breadth_first.
+	Accept actions triggered by level, e.g.,
+	level=3 -> set(print_kept).
+	When printing proof, print level as well as length.
+
+August 19-21, 2005
+	Reorganized cac_redundancy code.
+	Reorganized literal simplification (tautology, x=x).
+	Reorganized examples on Prover9 Website.
+
+--------- LADR-Aug-2005A----------
+
+August 18, 2005
+	Changed fold_eq and unfold_eq so that they are ignored if
+	there is a lex command.
+
+August 16, 2005.
+	Bug from Branden Fitelson (on PowerBook).
+	Forking_search() (fof_reduction) sending data from child
+	to parent.  Fixed fd_read_to_ibuf() ladr/ibuffer.c.
+
+August 8, 2005.
+	The new flag lex_order_vars introduced (exposed?) a bug in AC
+	redundancy checking that caused associativity (when demodulated by
+	commutativity) to be deleted.  Fixed.
+
+	Added parm max_vars.  (Same as max_distinct_vars in otter.)
+
+	Bug in term weighting if variables on right side of equation.  Fixed.
+
+August 3, 2005.
+	Changed auto (auto1_inference) so that for Horn sets with equality,
+	para_lit_limit is set to the maximum number of literals in an input 
+	clause.  (Previously it was always set to 2.)
+
+July 29, 2005
+	fold_eq flag.  When more than one symbol gets folded, make
+	sure that the relative precedence of those symbols stays the same.
+	(Behavior of fold_eq with KBO (unary symbol of weight 0) still needs
+	to be thought out.)
+
+July 29, 2005
+	Minor bug related to goals list.  You can get multiple proofs of a
+	goal when clear(reuse_goals) (the default).  Fixed.
+
+--------- LADR-July-2005D----------
+
+July 18, 2005
+	Sutcliffe found that prolog_style_variables is broken in Mace4.
+	Fixed read_from_file().  This should not affect Prover9.
+
+July 13, 2005
+	New flag lex_order_vars (default clear).  Similar to Otter's.
+	New weighting feature: term depth.
+	These allow proof of Knuth ternary problem.
+
+--------- LADR-July-2005C ----------
+
+July 7, 2005
+	Prover9 released at the Milehigh talk.
+	Michael Kinyon reports that it doesn't compile with GCC 2.96.
+	Fixed some variable declarations in apps.src.  Also made a few
+	changes to the makefiles.
+
+July 1, 2005
+	Geoff points out that it can't prove a really easy theorem.
+	Fixed a completeness problem with predicate elimination and equality.
+	LADR-July-2005B sent to Geoff for CASC.
+
+--------- LADR-July-2005 ----------
+
+June 30, 2005
+	Sent to Geoff Sutcliffe for CASC:
+

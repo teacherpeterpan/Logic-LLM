@@ -1,0 +1,60 @@
+/*************
+ *
+ *   print_model_cooked()
+ *
+ *************/
+
+void print_model_cooked(FILE *fp, BOOL print_head)
+{
+  Symbol_data p;
+
+  Variable_style save_style = variable_style();  /* restore at end */
+  set_variable_style(INTEGER_STYLE);
+
+  if (print_head)
+    fprintf(fp, "\n-------- Model %d at %.2f seconds --------\n",
+	    Total_models,
+	    user_seconds());
+  
+  fprintf(fp, "\n%% Size of model is %d.\n", Domain_size);
+
+  for (p = Symbols; p != NULL; p = p->next) {
+    if (p->attribute != EQUALITY_SYMBOL) {
+
+      BOOL relation = (p->type == RELATION);
+      
+      int n = int_power(Domain_size, p->arity);
+      int i;
+
+      fprintf(fp, "\n");
+      for (i = 0; i < n; i++) {
+	int id = p->base + i;
+
+	if (relation) {
+	  BOOL positive = (VARNUM(Cells[id].value) == 0);
+	  if (positive)
+	    fwrite_term_nl(fp, Cells[id].eterm);
+	  else {
+	    Term negation = build_unary_term(str_to_sn(NOT_SYM, 1),
+					     Cells[id].eterm);
+	    fwrite_term_nl(fp, negation);
+	    free_term(negation);  /* top node only */
+	  }
+	}
+	else {
+	  fwrite_term(fp, Cells[id].eterm);
+	  if (Cells[id].value == NULL)
+	    fprintf(fp, " = -.\n");
+	  else
+	    fprintf(fp, " = %d.\n", VARNUM(Cells[id].value));
+	}
+      }
+    }
+  }
+
+  if (print_head)
+    fprintf(fp, "\n-------- end of model --------\n");
+
+  set_variable_style(save_style);
+}  /* print_model_cooked */
+

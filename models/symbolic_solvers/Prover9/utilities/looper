@@ -1,0 +1,182 @@
+#!/usr/bin/python
+
+# This script takes a (Prover9|Mace4) input file (the head), and
+# a stream of candidates.  For each candidate, it appends the
+# candidate to the head, and then runs (Prover9|Mace4).
+# An agrument to the script says whether the candidate is
+# appended as an assumption or as a goal.
+# 
+# Actually, a "candidate" is a line from the input, so a candidate
+# can consist of more than one formula.
+# 
+# Standard output gets any (proofs|models) that are found, and
+# a few statistics about each search.
+# 
+# Before using this script for Mace4, consider using the script "attack",
+# which does something similar, but it first checks each candidate against
+# previously found models, before calling Mace4.
+
+help_string = 'need 3 args: (prover9|mace4) (assumptions|goals) head < candidates\n'
+
+import os
+import sys
+import re
+import time
+import socket
+from subprocess import *
+
+####################################
+
+def runjob4(command_and_args, stdin_string=None):
+
+    if debug:
+        print "Starting job:", command_and_args
+
+    # Must have stdin arg; otherwise, it uses this process's stdin.
+    p1 = Popen(command_and_args, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+    (out, err) = p1.communicate(stdin_string)
+        
+    exit_code = p1.wait()
+    pid = p1.pid
+
+    if debug:
+        sys.stdout.writelines(out)
+        sys.stdout.writelines(err)
+        print "pid=%d, exit_code=%d" % (pid,exit_code)
+
+    return (pid, exit_code, out, err)
+
+def echo_file(fname):
+    f = open(fname, 'r')
+    sys.stdout.writelines(f.readlines())
+    sys.stdout.flush()
+    f.close()
+
+def goodlines(lines):
+    keep = []
+    collect = False
+    for line in lines:
+        if re.search('= (PROOF|MODEL) =', line):
+            collect = True
+        if collect or re.search('Fatal|Given|Selections|CPU|Process.*exit', line):
+            keep.append(line)
+        if re.search('= end of (proof|model) =', line):
+            collect = False
+    return keep
+
+def get_cpu(lines):
+    cpu = '???'
+    for line in lines:
+        if re.match('User_CPU', line):
+            cpu = re.split('=|,', line)[1]
+    return cpu
+
+####################################
+
+if len(sys.argv) != 4:
+    sys.stderr.write(help_string)
+    sys.exit(1)
+
+# assume prover9 and mace4 are in the user's path
+
+program    = sys.argv[1]
+list       = sys.argv[2]
+head_fname = sys.argv[3]
+
+scriptname = 'looper'
+
+if (program != 'prover9' and program != 'mace4') or (list != 'assumptions' and list != 'goals'):
+    sys.stderr.write(help_string)
+    sys.exit(1)
+
+if not os.path.isfile(head_fname):
+    sys.stderr.write('head file %s not found\n' % head)
+    sys.exit(1)
+
+cand_fname = 'cand_%d.in' % os.getpid()
+
+debug = False
+
+mace4_model_exits = [0]
+mace4_error_exits = [1, 101, 102]
+
+prover9_proof_exits = [0]
+prover9_error_exits = [1, 101, 102]
+
+date = time.strftime('%A, %b %d, %I:%M %p %Y', time.localtime())
+host = socket.gethostname()
+
+print "Started %s %s on %s." % (scriptname,date,host)
+
+print "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEAD FILE %%%%%%%%%"
+echo_file(head_fname)
+print "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end of head file %%%%%"
+
+if (program == 'prover9'):
+    command_list = [program, '-f', head_fname, cand_fname]
+else:
+    command_list = [program, '-c', '-f', head_fname, cand_fname]
+
+n = 0
+successes = 0
+failures = 0
+
+####################################
+
+for cand in sys.stdin:
+
+    # get rid of newline and any comment
+    cand = re.sub('\n', '', cand)
+    cand = re.sub(' *%.*', '', cand)
+
+    if cand == '':
+        continue
+
+    n += 1
+
+    sys.stdout.write('----------------------------------------------------------------------\n')
+    sys.stdout.write('%s %% Problem %d\n\n' % (cand, n))
+    sys.stdout.flush()
+    
+    cand_file = open(cand_fname, 'w')
+    cand_file.write('formulas(%s).\n' % list)
+    cand_file.write(cand + '\n')
+    cand_file.write('end_of_list.\n')
+    cand_file.write('clear(print_given).\n')
+    cand_file.close()
+
+    (pid, rc, out, err) = runjob4(command_list)
+
+    if (program == 'mace4'   and rc in mace4_error_exits) or \
+       (program == 'prover9' and rc in prover9_error_exits):
+        sys.stderr.write('program error, rc=%d\n' % rc)
+        sys.stdout.write(err)
+        sys.stdout.write(out)
+        failures += 1
+    else:
+        outlines = out.splitlines(1)
+        keeplines = goodlines(outlines)
+        for line in keeplines:
+            sys.stdout.write(line)
+        cpu = get_cpu(keeplines)
+        if (program == 'prover9' and rc in prover9_proof_exits):
+            message = 'Proved'
+            successes += 1
+        elif (program == 'mace4' and rc in mace4_model_exits):
+            message = 'Disproved'
+            successes += 1
+        else:
+            message = 'Failed'
+            failures += 1
+        sys.stdout.write('\n%s  %% %s %s seconds PROBLEM %d\n' % (cand, message, cpu, n))
+    sys.stdout.flush()
+
+os.remove(cand_fname)
+
+date = time.strftime('%A, %b %d, %I:%M %p %Y', time.localtime())
+
+print "\nFinished %s, processed %d, successes %d, failures %d.\n" % (date,n,successes,failures)
+
+sys.exit(0)
+
+

@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<TITLE>pindex.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "pindex.h"</H1>
+
+This page has information from files
+<A HREF="../pindex.h">pindex.h</A> and <A HREF="../pindex.c">pindex.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File pindex.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#delete_pair_index">delete_pair_index</A></TD><TD><A HREF="#insert_pair_index">insert_pair_index</A></TD><TD><A HREF="#pairs_exhausted">pairs_exhausted</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#fprint_pindex_mem">fprint_pindex_mem</A></TD><TD><A HREF="#p_pindex_mem">p_pindex_mem</A></TD><TD><A HREF="#retrieve_pair">retrieve_pair</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#init_pair_index">init_pair_index</A></TD><TD><A HREF="#pair_already_used">pair_already_used</A></TD><TD><A HREF="#zap_pair_index">zap_pair_index</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="delete_pair_index"></A><HR><PRE><B>void delete_pair_index(Topform c, int wt, <A HREF="pindex.html">Pair_index</A> p);
+</B></PRE>This routine removes a clause from a <A HREF="pindex.html">Pair_index</A>.
+The parameter wt must be the same as when the clause was inserted.
+A fatal error may occur if the clause was not previously
+inserted or if it was inserted with a different weight.
+<A NAME="fprint_pindex_mem"></A><HR><PRE><B>void fprint_pindex_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the pindex package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="init_pair_index"></A><HR><PRE><B><A HREF="pindex.html">Pair_index</A> init_pair_index(int n);
+</B></PRE>This routine allocates and initializes a <A HREF="pindex.html">Pair_index</A>.
+Parameter n specifies the range 0 .. n-1 of weights
+that will be used.  If a clause is inserted with weight
+outside of that range, the effective weight for pair
+indexing will be set to 0 or n-1.
+<A NAME="insert_pair_index"></A><HR><PRE><B>void insert_pair_index(Topform c, int wt, <A HREF="pindex.html">Pair_index</A> p);
+</B></PRE>This routine inserts a clause into a <A HREF="pindex.html">Pair_index</A>.
+If the given weight is out of range [0 ... n-1] (where
+n is the parameter given to <A HREF="#init_pair_index">init_pair_index</A>()),
+weight 0 or n-1 will be used instead.
+<A NAME="p_pindex_mem"></A><HR><PRE><B>void p_pindex_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the pindex package.
+<A NAME="pair_already_used"></A><HR><PRE><B>int pair_already_used(Topform c1, int weight1,
+		      Topform c2, int weight2,
+		      <A HREF="pindex.html">Pair_index</A> p);
+</B></PRE>This Boolean routine checks if a pair of clauses (with corresponding
+weights) has already been retrieved.
+<A NAME="pairs_exhausted"></A><HR><PRE><B>int pairs_exhausted(<A HREF="pindex.html">Pair_index</A> p);
+</B></PRE><I>
+This routine is TRUE if the previous call to <A HREF="#retrieve_pair">retrieve_pair</A>()
+returned nothing and no more pairs have been inserted since then.
+(Also, TRUE is returned if no pairs were ever inserted.)
+<P>
+Note that FALSE may be returned when there really no pairs
+available.
+</I>
+<A NAME="retrieve_pair"></A><HR><PRE><B>void retrieve_pair(<A HREF="pindex.html">Pair_index</A> p, Topform *cp1, Topform *cp2);
+</B></PRE>This routine retrieves the next pair from a <A HREF="pindex.html">Pair_index</A>.
+The caller gives addresses of clauses which are filled
+in with the answer.  If no pair is available, NULLs are
+filled in.
+<A NAME="zap_pair_index"></A><HR><PRE><B>void zap_pair_index(<A HREF="pindex.html">Pair_index</A> p);
+</B></PRE>This routine frees a pair index.  It need not be empty.
+<HR><A NAME=defns></A><H2>Public Definitions in File pindex.h</H2>
+<PRE>
+typedef struct pair_index * <A HREF="pindex.html">Pair_index</A>;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package has code for indexing clauses that are to be retrieved in
+pairs.  When a clause is inserted, its weight is given.  Retrieval
+is by sum of the weights of the pair -- lowest first.  Say we have
+clauses with weights 0--4.  Then pairs will be returned in this order:
+<PRE>
+(0,0)
+(0,1)
+(1,1)  (0,2)
+(1,2)  (0,3)
+(2,2)  (1,3)  (0,4)
+(2,3)  (1,4)
+(3,3)  (2,4)
+(3,4)
+(4,4)
+</PRE>
+Clauses can be inserted or deleted after retrieval has begun; the smallest
+available pair will always be returned.  When the index is
+initialized, the caller supplies a parameter N, and the actual
+weight range for indexing will be 0...N-1.  If an inserted clause has
+weight outside of this range, the weight will be changed to 0 or N-1.
+<P>
+This is intended to be used for binary inference rules such as
+paramodulation and resolution.
+It is similar to the method in ``A Theorem-Proving Language
+for Experimentation'' by Henschen, Overbeek, Wos, CACM 17(6), 1974.
+
+<HR>
+</BODY>
+</HTML>

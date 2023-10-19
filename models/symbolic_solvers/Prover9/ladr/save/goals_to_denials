@@ -1,0 +1,49 @@
+/*************
+ *
+ *   goals_to_denials()
+ *
+ *************/
+
+/* DOCUMENTATION
+This takes a list of clauses and a list of formulas.
+The clauses are converted to universally quantified formulas.
+Then everything is conjoined, negated, and clausified.
+<P>
+In this scheme, if there are multiple goals, a proof will be
+produced only if all goals are proved.
+*/
+
+/* PUBLIC */
+Plist goals_to_denials(Plist clauses, Plist formulas)
+{
+  Plist p1, p2;
+  Formula f1, f2, f;
+  Plist p;
+
+  // do clauses
+
+  p1 = NULL;
+  for (p = clauses; p; p = p->next) {
+    Clause c = p->v;
+    Formula f = clause_to_formula(c);  // deep
+    f = universal_closure(f);
+    p1 = plist_append(p1, f);
+  }
+  f1 = formulas_to_conjunction(p1);  // shallow
+  zap_plist(p1);  // shallow
+
+  // do formulas
+
+  p2 = copy_plist_of_formulas(formulas);  // deep
+  f2 = formulas_to_conjunction(p2);  // shallow
+  zap_plist(p2);  // shallow
+
+  // conjoin, negate, clausify
+
+  f = and(f1,f2);
+  f = negate(f);
+  p = clausify_formula(f);  // deep
+  zap_formula(f);
+  return p;
+}  /* goals_to_denials */
+

@@ -1,0 +1,26 @@
+clauseid.h:#include "clause.h"
+compress.h:#include "clause.h"
+compress.h:#include "parautil.h"
+clause.h:#include "tlist.h"
+clause.h:#include "termflag.h"
+clause.h:#include "attrib.h"
+parautil.h:#include "termflag.h"
+parautil.h:#include "termorder.h"
+parautil.h:#include "unify.h"
+parautil.h:#include "just.h"
+parautil.h:#include "parse.h"
+termflag.h:#include "term.h"
+termorder.h:#include "order.h"
+termorder.h:#include "glist.h"
+termorder.h:#include "term.h"
+unify.h:#include "term.h"
+just.h:#include "clauseid.h"
+just.h:#include "compress.h"
+
+
+
+                                just
+         clauseid                                 compress
+          clause                               clause         parautil
+      tlist termflag attrib                      ...        unify just parse
+             term                                                cid comp

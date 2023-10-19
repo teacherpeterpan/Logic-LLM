@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<TITLE>basic.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "basic.h"</H1>
+
+This page has information from files
+<A HREF="../basic.h">basic.h</A> and <A HREF="../basic.c">basic.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File basic.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#apply_basic">apply_basic</A></TD><TD><A HREF="#basic_term">basic_term</A></TD><TD><A HREF="#mark_all_nonbasic">mark_all_nonbasic</A></TD><TD><A HREF="#nonbasic_term">nonbasic_term</A></TD>
+</TR>
+<TR><TD><A HREF="#apply_basic_substitute">apply_basic_substitute</A></TD><TD><A HREF="#clear_all_nonbasic_marks">clear_all_nonbasic_marks</A></TD><TD><A HREF="#mark_term_nonbasic">mark_term_nonbasic</A></TD><TD><A HREF="#p_term_basic">p_term_basic</A></TD>
+</TR>
+<TR><TD><A HREF="#basic_paramod">basic_paramod</A></TD><TD><A HREF="#init_basic_paramod">init_basic_paramod</A></TD><TD><A HREF="#nonbasic_flag">nonbasic_flag</A></TD><TD><A HREF="#set_basic_paramod">set_basic_paramod</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="apply_basic"></A><HR><PRE><B><A HREF="term.html">Term</A> apply_basic(<A HREF="term.html">Term</A> t, <A HREF="unify.html">Context</A> c);
+</B></PRE>This is similar to apply(), but it makes "nonbasic" marks for
+"basic paramodulation".
+<A NAME="apply_basic_substitute"></A><HR><PRE><B><A HREF="term.html">Term</A> apply_basic_substitute(<A HREF="term.html">Term</A> t, <A HREF="term.html">Term</A> beta, <A HREF="unify.html">Context</A> c_from,
+			    <A HREF="term.html">Term</A> into_term, <A HREF="unify.html">Context</A> c_into);
+</B></PRE>This is similar to apply_substitute(), but it makes "nonbasic" marks for
+"basic paramodulation".
+<A NAME="basic_paramod"></A><HR><PRE><B>BOOL basic_paramod(void);
+</B></PRE>Is basic paramodulation enabled?
+<A NAME="basic_term"></A><HR><PRE><B>BOOL basic_term(<A HREF="term.html">Term</A> t);
+</B></PRE>Check if a term is basic.  This simply checks the "nonbasic" mark.
+<A NAME="clear_all_nonbasic_marks"></A><HR><PRE><B>void clear_all_nonbasic_marks(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="init_basic_paramod"></A><HR><PRE><B>void init_basic_paramod(void);
+</B></PRE><A NAME="mark_all_nonbasic"></A><HR><PRE><B>void mark_all_nonbasic(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="mark_term_nonbasic"></A><HR><PRE><B>void mark_term_nonbasic(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="nonbasic_flag"></A><HR><PRE><B>int nonbasic_flag(void);
+</B></PRE><A NAME="nonbasic_term"></A><HR><PRE><B>BOOL nonbasic_term(<A HREF="term.html">Term</A> t);
+</B></PRE>Check if a term is nonbasic.  This simply checks the "nonbasic" mark.
+<A NAME="p_term_basic"></A><HR><PRE><B>void p_term_basic(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="set_basic_paramod"></A><HR><PRE><B>void set_basic_paramod(BOOL flag);
+</B></PRE>Set or clear basic paramodulation.
+<HR><A NAME=defns></A><H2>Public Definitions in File basic.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

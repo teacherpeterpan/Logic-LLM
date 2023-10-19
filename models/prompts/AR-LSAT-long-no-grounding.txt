@@ -1,0 +1,176 @@
+Given a problem description and a question. The task is to formulate the problem as a logic program, consisting three parts: Declarations, Constraints, and Options.
+Declarations: Declare the variables and functions.
+Constraints: Write the constraints in the problem description as logic formulas.
+Options: Write the options in the question as logic formulas.
+------
+Problem:
+On Tuesday Vladimir and Wendy each eat exactly four separate meals: breakfast, lunch, dinner, and a snack. The following is all that is known about what they eat during that day: At no meal does Vladimir eat the same kind of food as Wendy. Neither of them eats the same kind of food more than once during the day. For breakfast, each eats exactly one of the following: hot cakes, poached eggs, or omelet. For lunch, each eats exactly one of the following: fish, hot cakes, macaroni, or omelet. For dinner, each eats exactly one of the following: fish, hot cakes, macaroni, or omelet. For a snack, each eats exactly one of the following: fish or omelet. Wendy eats an omelet for lunch.
+Question:
+Vladimir must eat which one of the following foods?
+Choices:
+(A) fish
+(B) hot cakes
+(C) macaroni
+(D) omelet
+(E) poached eggs
+###
+# Declarations
+people = EnumSort([Vladimir, Wendy])
+meals = EnumSort([breakfast, lunch, dinner, snack])
+foods = EnumSort([fish, hot_cakes, macaroni, omelet, poached_eggs])
+eats = Function([people, meals] -> [foods])
+
+# Constraints
+ForAll([m:meals], eats(Vladimir, m) != eats(Wendy, m))
+ForAll([p:people, f:foods], Count([m:meals], eats(p, m) == f) <= 1)
+ForAll([p:people], Or(eats(p, breakfast) == hot_cakes, eats(p, breakfast) == poached_eggs, eats(p, breakfast) == omelet))
+ForAll([p:people], Or(eats(p, lunch) == fish, eats(p, lunch) == hot_cakes, eats(p, lunch) == macaroni, eats(p, lunch) == omelet))
+ForAll([p:people], Or(eats(p, dinner) == fish, eats(p, dinner) == hot_cakes, eats(p, dinner) == macaroni, eats(p, dinner) == omelet))
+ForAll([p:people], Or(eats(p, snack) == fish, eats(p, snack) == omelet))
+eats(Wendy, lunch) == omelet
+
+# Options
+Question ::: Vladimir must eat which one of the following foods?
+is_valid(Exists([m:meals], eats(Vladimir, m) == fish)) ::: (A)
+is_valid(Exists([m:meals], eats(Vladimir, m) == hot_cakes)) ::: (B)
+is_valid(Exists([m:meals], eats(Vladimir, m) == macaroni)) ::: (C)
+is_valid(Exists([m:meals], eats(Vladimir, m) == omelet)) ::: (D)
+is_valid(Exists([m:meals], eats(Vladimir, m) == poached_eggs)) ::: (E)
+------
+Problem:
+In a repair facility there are exactly six technicians: Stacy, Urma, Wim, Xena, Yolanda, and Zane. Each technician repairs machines of at least one of the following three types—radios, televisions, and VCRs—and no other types. The following conditions apply: Xena and exactly three other technicians repair radios. Yolanda repairs both televisions and VCRs. Stacy does not repair any type of machine that Yolanda repairs. Zane repairs more types of machines than Yolanda repairs. Wim does not repair any type of machine that Stacy repairs. Urma repairs exactly two types of machines.
+Question:
+Which one of the following pairs of technicians could repair all and only the same types of machines as each other?
+Choices:
+(A) Stacy and Urma
+(B) Urma and Yolanda
+(C) Urma and Xena
+(D) Wim and Xena
+(E) Xena and Yolanda
+###
+# Declarations
+technicians = EnumSort([Stacy, Urma, Wim, Xena, Yolanda, Zane])
+machines = EnumSort([radios, televisions, VCRs])
+repairs = Function([technicians, machines] -> [bool])
+
+# Constraints
+ForAll([t:technicians], Count([m:machines], repairs(t, m)) >= 1)
+And(repairs(Xena, radios), Count([t:technicians], And(t != Xena, repairs(t, radios))) == 3)
+And(repairs(Yolanda, televisions), repairs(Yolanda, VCRs))
+ForAll([m:machines], Implies(repairs(Yolanda, m), Not(repairs(Stacy, m))))
+Count([m:machines], repairs(Zane, m)) > Count([m:machines], repairs(Yolanda, m))
+ForAll([m:machines], Implies(repairs(Stacy, m), Not(repairs(Wim, m))))
+Count([m:machines], repairs(Urma, m)) == 2
+
+# Options
+Question ::: ::: Which one of the following pairs of technicians could repair all and only the same types of machines as each other?
+is_sat(ForAll([m:machines], repairs(Stacy, m) == repairs(Urma, m))) ::: (A)
+is_sat(ForAll([m:machines], repairs(Urma, m) == repairs(Yolanda, m))) ::: (B)
+is_sat(ForAll([m:machines], repairs(Urma, m) == repairs(Xena, m))) ::: (C)
+is_sat(ForAll([m:machines], repairs(Wim, m) == repairs(Xena, m))) ::: (D)
+is_sat(ForAll([m:machines], repairs(Xena, m) == repairs(Yolanda, m))) ::: (E)
+------
+Problem:
+Workers at a water treatment plant open eight valves—G, H, I, K, L, N, O, and P—to flush out a system of pipes that needs emergency repairs. To maximize safety and efficiency, each valve is opened exactly once, and no two valves are opened at the same time. The valves are opened in accordance with the following conditions: Both K and P are opened before H. O is opened before L but after H. L is opened after G. N is opened before H. I is opened after K.
+Question: Each of the following could be the fifth valve opened EXCEPT:
+Choices:
+(A) H
+(B) I
+(C) K
+(D) N
+(E) O
+"""
+# Declarations
+valves = EnumSort([G, H, I, K, L, N, O, P])
+opened = Function([valves] -> [int])
+ForAll([v:valves], And(1 <= opened(v), opened(v) <= 8))
+
+# Constraints
+Distinct([v:valves], opened(v))
+And(opened(K) < opened(H), opened(P) < opened(H))
+And(opened(O) > opened(H), opened(O) < opened(L))
+opened(L) > opened(G)
+opened(N) < opened(H)
+opened(I) > opened(K)
+
+# Options
+Question ::: Each of the following could be the fifth valve opened EXCEPT:
+is_exception(is_sat(opened(H) == 5)) ::: (A)
+is_exception(is_sat(opened(I) == 5)) ::: (B)
+is_exception(is_sat(opened(K) == 5)) ::: (C)
+is_exception(is_sat(opened(N) == 5)) ::: (D)
+is_exception(is_sat(opened(O) == 5)) ::: (E)
+------
+Problem:
+Five candidates for mayor—Q, R, S, T, and U—will each speak exactly once at each of three town meetings—meetings 1, 2, and 3. At each meeting, each candidate will speak in one of five consecutive time slots. No two candidates will speak in the same time slot as each other at any meeting. The order in which the candidates will speak will meet the following conditions: Each candidate must speak either first or second at at least one of the meetings. Any candidate who speaks fifth at any of the meetings must speak first at at least one of the other meetings. No candidate can speak fourth at more than one of the meetings.
+Question:
+If R speaks second at meeting 2 and first at meeting 3, which one of the following is a complete and accurate list of those time slots any one of which could be the time slot in which R speaks at meeting 1?
+Choices:
+(A) fourth, fifth
+(B) first, second, fifth
+(C) second, third, fifth
+(D) third, fourth, fifth
+(E) second, third, fourth, fifth
+###
+# Declarations
+candidates = EnumSort([Q, R, S, T, U])
+meetings = EnumSort([1, 2, 3])
+speaks = Function([meetings, candidates] -> [int])
+ForAll([m:meetings, c:candidates], And(1 <= speaks(m, c), speaks(m, c) <= 5))
+
+# Constraints
+ForAll([m:meetings], Distinct([c:candidates], speaks(m, c)))
+ForAll([c:candidates], Exists([m:meetings], Or(speaks(m, c) == 1, speaks(m, c) == 2)))
+ForAll([c:candidates], Implies(Exists([m:meetings], speaks(m, c) == 5), Exists([m:meetings], speaks(m, c) == 1)))
+ForAll([c:candidates], Count([m:meetings], speaks(m, c) == 4) <= 1)
+And(speaks(2, R) == 2, speaks(3, R) == 1)
+
+# Options
+Question ::: Which one of the following is a complete and accurate list of those time slots any one of which could be the time slot in which R speaks at meeting 1?
+is_accurate_list([speaks(1, R) == 4, speaks(1, R) == 5]) ::: (A)
+is_accurate_list([speaks(1, R) == 1, speaks(1, R) == 2, speaks(1, R) == 5]) ::: (B)
+is_accurate_list([speaks(1, R) == 2, speaks(1, R) == 3, speaks(1, R) == 5]) ::: (C)
+is_accurate_list([speaks(1, R) == 3, speaks(1, R) == 4, speaks(1, R) == 5]) ::: (D)
+is_accurate_list([speaks(1, R) == 2, speaks(1, R) == 3, speaks(1, R) == 4, speaks(1, R) == 5]) ::: (E)
+------
+Problem:
+A travel magazine has hired six interns—Farber, Gombarick, Hall, Jackson, Kanze, and Lha—to assist in covering three stories—Romania, Spain, and Tuscany. Each intern will be trained either as a photographer's assistant or as a writer's assistant. Each story is assigned a team of two interns—one photographer's assistant and one writer's assistant—in accordance with the following conditions: Gombarick and Lha will be trained in the same field. Farber and Kanze will be trained in different fields. Hall will be trained as a photographer's assistant. Jackson is assigned to Tuscany. Kanze is not assigned to Spain.
+Question:
+Which one of the following interns CANNOT be assigned to Tuscany?
+Choices:
+(A) Farber
+(B) Gombarick
+(C) Hall
+(D) Kanze
+(E) Lha
+###
+# Declarations
+interns = EnumSort([Farber, Gombarick, Hall, Jackson, Kanze, Lha])
+stories = EnumSort([Romania, Spain, Tuscany])
+assistants = EnumSort([photographer, writer])
+assigned = Function([interns] -> [stories])
+trained = Function([interns] -> [assistants])
+
+# Constraints
+ForAll([s:stories], Exists([i1:interns, i2:interns], And(i1 != i2, And(assigned(i1) == s, assigned(i2) == s, trained(i1) == photographer, trained(i2) == writer))))
+trained(Gombarick) == trained(Lha)
+trained(Farber) != trained(Kanze)
+trained(Hall) == photographer
+assigned(Jackson) == Tuscany
+assigned(Kanze) != Spain
+
+# Options
+Question ::: Which one of the following interns CANNOT be assigned to Tuscany?
+is_unsat(assigned(Farber) == Tuscany) ::: (A)
+is_unsat(assigned(Gombarick) == Tuscany) ::: (B)
+is_unsat(assigned(Hall) == Tuscany) ::: (C)
+is_unsat(assigned(Kanze) == Tuscany) ::: (D)
+is_unsat(assigned(Lha) == Tuscany) ::: (E)
+------
+Problem:
+[[PROBLEM]]
+Question:
+[[QUESTION]]
+Choices:
+[[CHOICES]]
+###

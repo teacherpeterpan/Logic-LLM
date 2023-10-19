@@ -1,0 +1,75 @@
+BOOL end_char(char c)
+{
+    return (c == '.');
+}  /* end_char */
+
+BOOL comment_char(char c)
+{
+    return (c == COMMENT_CHAR);
+}  /* comment_char */
+
+BOOL quote_char(char c)
+{
+    return (c == '\"');
+}  /* quote_char */
+
+BOOL punctuation_char(char c)
+{
+    return (c == ',' ||
+	    c == ':' ||
+	    c == '(' || c == ')' ||
+	    c == '[' || c == ']' ||
+	    c == '{' || c == '}' ||
+	    
+	    c == '.');
+}  /* punctuation_char */
+
+BOOL ordinary_char(char c)
+{
+    return ((c >= '0' && c <= '9') ||
+	    (c >= 'a' && c <= 'z') ||
+	    (c >= 'A' && c <= 'Z') ||
+	    c == '_' ||
+	    c == '$');
+}  /* ordinary_char */
+
+BOOL special_char(char c)
+{
+  /* This allows us to have special chars in the list below. */
+  if (quote_char(c) || end_char(c) || comment_char(c))
+    return 0;
+  else
+    return (c == '+' ||
+	    c == '-' ||
+	    c == '*' ||
+	    c == '/' ||
+	    c == '\\' ||
+	    c == '^' ||
+	    c == '<' ||
+	    c == '>' ||
+	    c == '=' ||
+	    c == '`' ||
+	    c == '~' ||
+	    c == '?' ||
+	    c == '@' ||
+	    c == '&' ||
+	    c == '|' ||
+	    c == '!' ||
+	    c == '#' ||
+	    c == '%' ||
+	    c == '\'' ||
+	    c == '\"' ||
+	    c == '.' ||
+	    c == ';'    );
+}  /* special_char */
+
+BOOL white_char(char c)
+{
+  return (c == ' '  ||
+	  c == '\t' ||  /* tab */
+	  c == '\n' ||  /* newline */
+	  c == '\v' ||  /* vertical tab */
+	  c == '\r' ||  /* carriage return */
+	  c == '\f');   /* form feed */
+}  /* white_char */
+

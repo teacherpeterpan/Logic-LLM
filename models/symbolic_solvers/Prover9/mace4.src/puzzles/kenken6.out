@@ -1,0 +1,111 @@
+============================== Mace4 =================================
+Mace4 (32) version 2008-10A+, October 2008.
+Process 15827 was started by mccune on cleo,
+Mon Nov 17 21:34:37 2008
+The command was "../mace4 -f kenken6.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file kenken6.in
+
+set(arithmetic).
+    % set(arithmetic) -> clear(lnh).
+    % set(arithmetic) -> assign(selection_order, 0).
+
+    % Declaring Mace4 arithmetic parse types.
+assign(domain_size,6).
+    % assign(domain_size, 6) -> assign(start_size, 6).
+    % assign(domain_size, 6) -> assign(end_size, 6).
+
+formulas(assumptions).
+f(x,y1) = f(x,y2) -> y1 = y2.
+f(x1,y) = f(x2,y) -> x1 = x2.
+f(0,1) * f(0,2) = 0.
+f(0,0) + f(1,0) = 5.
+f(0,3) * f(1,3) = 20.
+f(0,4) * f(0,5) * f(1,5) * f(2,5) = 6.
+f(1,4) + f(2,4) = 2.
+abs(f(1,1) -- f(1,2)) = 3.
+f(2,0) * f(2,1) * f(3,0) * f(3,1) = 240.
+f(2,2) * f(2,3) = 6.
+f(3,2) * f(4,2) = 0.
+f(3,3) + f(4,3) + f(4,4) = 7.
+f(3,4) * f(3,5) = 0.
+f(4,0) * f(4,1) = 6.
+abs(f(4,5) -- f(5,5)) = 1.
+f(5,0) + f(5,1) + f(5,2) = 8.
+f(5,3) + f(5,4) = 3.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 f(x,y1) = f(x,y2) -> y1 = y2 # label(non_clause).  [assumption].
+2 f(x1,y) = f(x2,y) -> x1 = x2 # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+f(x,y) != f(x,z) | y = z.
+f(x,y) != f(z,y) | x = z.
+f(0,1) * f(0,2) = 0.
+f(0,0) + f(1,0) = 5.
+f(0,3) * f(1,3) = 20.
+f(0,4) * f(0,5) * f(1,5) * f(2,5) = 6.
+f(1,4) + f(2,4) = 2.
+abs(f(1,1) -- f(1,2)) = 3.
+f(2,0) * f(2,1) * f(3,0) * f(3,1) = 240.
+f(2,2) * f(2,3) = 6.
+f(3,2) * f(4,2) = 0.
+f(3,3) + f(4,3) + f(4,4) = 7.
+f(3,4) * f(3,5) = 0.
+f(4,0) * f(4,1) = 6.
+abs(f(4,5) -- f(5,5)) = 1.
+f(5,0) + f(5,1) + f(5,2) = 8.
+f(5,3) + f(5,4) = 3.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 240.
+
+============================== DOMAIN SIZE 6 =========================
+
+============================== MODEL =================================
+
+interpretation( 6, [number=1, seconds=0], [
+
+        function(f(_,_), [
+			   5, 0, 3, 4, 1, 2,
+			   0, 1, 4, 5, 2, 3,
+			   4, 5, 2, 3, 0, 1,
+			   3, 4, 1, 2, 5, 0,
+			   2, 3, 0, 1, 4, 5,
+			   1, 2, 5, 0, 3, 4 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 6.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.17 seconds).
+Ground clauses: seen=447, kept=375.
+Selections=9666, assignments=57959, propagations=1697, current_models=1.
+Rewrite_terms=437866, rewrite_bools=159862, indexes=0.
+Rules_from_neg_clauses=1697, cross_offs=86308.
+
+============================== end of statistics =====================
+
+User_CPU=0.17, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 15827 exit (max_models) Mon Nov 17 21:34:37 2008
+The process finished Mon Nov 17 21:34:37 2008

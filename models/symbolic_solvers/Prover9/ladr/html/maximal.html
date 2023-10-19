@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<TITLE>maximal.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "maximal.h"</H1>
+
+This page has information from files
+<A HREF="../maximal.h">maximal.h</A> and <A HREF="../maximal.c">maximal.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File maximal.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#copy_selected_literal_marks">copy_selected_literal_marks</A></TD><TD><A HREF="#mark_maximal_literals">mark_maximal_literals</A></TD><TD><A HREF="#max_lit_test">max_lit_test</A></TD><TD><A HREF="#maximal_signed_literal">maximal_signed_literal</A></TD>
+</TR>
+<TR><TD><A HREF="#exists_selected_literal">exists_selected_literal</A></TD><TD><A HREF="#mark_selected_literal">mark_selected_literal</A></TD><TD><A HREF="#max_signed_lit_test">max_signed_lit_test</A></TD><TD><A HREF="#number_of_maximal_literals">number_of_maximal_literals</A></TD>
+</TR>
+<TR><TD><A HREF="#init_maximal">init_maximal</A></TD><TD><A HREF="#mark_selected_literals">mark_selected_literals</A></TD><TD><A HREF="#maximal_literal">maximal_literal</A></TD><TD><A HREF="#selected_literal">selected_literal</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="copy_selected_literal_marks"></A><HR><PRE><B>void copy_selected_literal_marks(Literals a, Literals b);
+</B></PRE><A NAME="exists_selected_literal"></A><HR><PRE><B>BOOL exists_selected_literal(Literals lits);
+</B></PRE><A NAME="init_maximal"></A><HR><PRE><B>void init_maximal(void);
+</B></PRE><A NAME="mark_maximal_literals"></A><HR><PRE><B>void mark_maximal_literals(Literals lits);
+</B></PRE><A NAME="mark_selected_literal"></A><HR><PRE><B>void mark_selected_literal(Literals lit);
+</B></PRE><A NAME="mark_selected_literals"></A><HR><PRE><B>void mark_selected_literals(Literals lits, char *selection);
+</B></PRE><A NAME="max_lit_test"></A><HR><PRE><B>BOOL max_lit_test(Literals lits, Literals lit);
+</B></PRE>Test if a literal is maximal in a clause (w.r.t. others literals
+of the either sign).
+This version does not use a flag.
+<A NAME="max_signed_lit_test"></A><HR><PRE><B>BOOL max_signed_lit_test(Literals lits, Literals lit);
+</B></PRE>Test if a literal is maximal in a clause (w.r.t. others literals
+of the same sign).
+This version does not use a flag.
+<A NAME="maximal_literal"></A><HR><PRE><B>BOOL maximal_literal(Literals lits, Literals lit, int check);
+</B></PRE>Check if a literal is maximal in the clause that contains it.
+The argument "check" should be FLAG_CHECK (check the flag only)
+or FULL_CHECK (do the full comparicon).
+<A NAME="maximal_signed_literal"></A><HR><PRE><B>BOOL maximal_signed_literal(Literals lits, Literals lit, int check);
+</B></PRE>Check if a literal is maximal in the clause that contains it.
+This only checks a flag.  It does not compute maximality.
+<A NAME="number_of_maximal_literals"></A><HR><PRE><B>int number_of_maximal_literals(Literals lits, int check);
+</B></PRE>Return the number of maximal literals.  This checks a flag only.
+<A NAME="selected_literal"></A><HR><PRE><B>BOOL selected_literal(Literals lit);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File maximal.h</H2>
+<PRE>
+enum {  /* how to check for maximal literals */
+  FLAG_CHECK,
+  FULL_CHECK
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

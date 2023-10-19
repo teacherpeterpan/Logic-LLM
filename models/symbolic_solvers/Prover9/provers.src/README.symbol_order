@@ -1,0 +1,5 @@
+Where to put the default symbol ordering?
+
+    symbol_order(usable, sos, demodulators, goals, defns);
+
+

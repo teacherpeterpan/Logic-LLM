@@ -1,0 +1,16 @@
+Each function (including constant) symbol has a positive weight.
+
+  exception: there can be a unary function with weight 0 (think group inverse)
+
+There is a symbol precedence, independent of the symbol weight.
+
+  exception: if there is a unary of weight 0, it is greatest in the precedence.
+
+The exceptions are so that equations like g(f(x,y)) = f(g(y),g(x)) can
+be demodulators (in that orientation).
+
+The weight of a term is simply the sym of the weights of the function and
+constant symbols.
+
+Is alpha > beta in KBO?  See kbo() in termorder.c.
+

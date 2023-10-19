@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>fastparse.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "fastparse.h"</H1>
+
+This page has information from files
+<A HREF="../fastparse.h">fastparse.h</A> and <A HREF="../fastparse.c">fastparse.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File fastparse.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fast_fwrite_clause">fast_fwrite_clause</A></TD><TD><A HREF="#fast_read_clause">fast_read_clause</A></TD><TD><A HREF="#fast_set_defaults">fast_set_defaults</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#fast_fwrite_term_nl">fast_fwrite_term_nl</A></TD><TD><A HREF="#fast_read_term">fast_read_term</A></TD><TD><A HREF="#fast_set_symbol">fast_set_symbol</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fast_fwrite_clause"></A><HR><PRE><B>void fast_fwrite_clause(FILE *fp, Topform c);
+</B></PRE>This routine writes a clause in fastparse form.
+<A NAME="fast_fwrite_term_nl"></A><HR><PRE><B>void fast_fwrite_term_nl(FILE *fp, <A HREF="term.html">Term</A> t);
+</B></PRE>This routine writes a term in prefix form, without parentheses, commas,
+or spaces, followed by ".\n".  If a variable number is >= 9, then '?'
+is printed for that variable.
+<P>
+If each symbol is one character, then terms written by this routine
+should be readable by <A HREF="#fast_read_term">fast_read_term</A>().
+<P>
+There is nothing particularly "fast" about this routine.
+<A NAME="fast_read_clause"></A><HR><PRE><B>Topform fast_read_clause(FILE *fin, FILE *fout);
+</B></PRE>This routine reads a clause in fast-parse form.
+<P>
+If the clause has more than one literal, then '|' must first be
+declared as binary with <A HREF="#fast_set_symbol">fast_set_symbol</A>(), and if the clause has
+any negative literals, then '~' must first be declared as unary.
+<P>
+For example, the fast-parse form of <I>p(a,b) | ~q | ~(f(x)=x)</I> is
+<PRE>
+|pab|~q~=fxx.
+</PRE>
+<A NAME="fast_read_term"></A><HR><PRE><B><A HREF="term.html">Term</A> fast_read_term(FILE *fin, FILE *fout);
+</B></PRE>This routine reads a prefix term.
+<UL>
+<LI> The term must start on a new line and end with a period.
+<LI> Without parentheses, commas, or spaces.
+<LI> Each symbol is one character.
+<LI> Variables are 'r' -- 'z'.
+<LI> Symbols with arity > 0 (including '=') must declared first by calling
+     <A HREF="#fast_set_symbol">fast_set_symbol</A>().
+<LI> If the first character is '%', the line is a comment and sent
+     directly to the output stream fout.
+<LI> Example:
+<PRE>
+=mxxx.
+=jxyjyx.
+=jxxmxx.
+=jjxyzjxjyz.
+</PRE>
+</UL>
+<A NAME="fast_set_defaults"></A><HR><PRE><B>void fast_set_defaults(void);
+</B></PRE>Call this routine to declare a fixed set of symbols for fast parsing.
+<UL>
+<LI>binary: [=mjfd*+/]
+<LI>unary: [cgi-~']
+</UL>
+The defaults can be overridden by nsubsequent calls to fast_set_symbol
+<A NAME="fast_set_symbol"></A><HR><PRE><B>void fast_set_symbol(char c, int arity);
+</B></PRE>Call this routine to declare a symbol/arity for fast parsing.
+Since fast parsing handles single-characters symbols only,
+you send character/arity to this routine.
+<P>
+For fast parsing, variables are always 'r' -- 'z', and
+those symbols should not be declared.
+<P>
+Also, you don't need to call this routine for constants.
+<HR><A NAME=defns></A><H2>Public Definitions in File fastparse.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package is meant for use when there are a great number
+of terms to be read and written.  I wrote it when I was
+looking for a single axiom for lattice theory and was
+filtering trillions (really) of equations.
+<P>
+The ordinary parsing is very general and rather slow.
+<P>
+This package reads and writes prefix terms, without parentheses
+commas, or spaces.  Each symbol is one character.
+Each term to be read starts on a new line and ends with a period.
+The user has to declare the arities of symbols
+by calling fast_set_symbol().
+<P>
+Here's an example to read lattice equations in fast-parse form and
+write them in ordinary form.
+<PRE>
+int main(int argc, char **argv)
+{
+  Term t;
+  fast_set_symbol('=', 2);
+  fast_set_symbol('m', 2);
+  fast_set_symbol('j', 2);
+  t = fast_read_term(stdin, stderr);
+  while (t != NULL) {
+    fwrite_term_nl(stdout, t);
+    zap_term(t);
+    t = fast_read_term(stdin, stderr);
+  }
+  exit(0);
+}
+</PRE>
+<P>
+There are also routines for reading and writing fast-parse clauses.
+
+<HR>
+</BODY>
+</HTML>

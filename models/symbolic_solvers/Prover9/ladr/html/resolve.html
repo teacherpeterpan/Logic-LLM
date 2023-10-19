@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<TITLE>resolve.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "resolve.h"</H1>
+
+This page has information from files
+<A HREF="../resolve.h">resolve.h</A> and <A HREF="../resolve.c">resolve.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File resolve.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#"></A></TD><TD><A HREF="#copy_inference">copy_inference</A></TD><TD><A HREF="#merge_literals">merge_literals</A></TD><TD><A HREF="#resolve3">resolve3</A></TD>
+</TR>
+<TR><TD><A HREF="#binary_factors">binary_factors</A></TD><TD><A HREF="#hyper_resolution">hyper_resolution</A></TD><TD><A HREF="#res_instance_prunes">res_instance_prunes</A></TD><TD><A HREF="#ur_resolution">ur_resolution</A></TD>
+</TR>
+<TR><TD><A HREF="#binary_resolution">binary_resolution</A></TD><TD><A HREF="#instantiate_clause">instantiate_clause</A></TD><TD><A HREF="#resolve2">resolve2</A></TD><TD><A HREF="#xx_resolve2">xx_resolve2</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME=""></A><HR><PRE><B>
+void resolution_options(BOOL ordered,
+			BOOL check_instances,
+			BOOL initial_nuclei,
+			int ur_nucleus_limit);
+</B></PRE><A NAME="binary_factors"></A><HR><PRE><B>void binary_factors(Topform c, void (*proc_proc) (Topform));
+</B></PRE><A NAME="binary_resolution"></A><HR><PRE><B>void binary_resolution(Topform c,
+		       int res_type,  /* POS_RES, NEG_RES, ANY_RES */
+		       Lindex idx,
+		       void (*proc_proc) (Topform));
+</B></PRE>Binary resolution.
+<A NAME="copy_inference"></A><HR><PRE><B>Topform copy_inference(Topform c);
+</B></PRE>This makes a "copy" inference; that is, a copy of the clause
+in which the justification is "copy".
+All attributes are copied (not just the inheritible attributes).
+An ID is not assigned.
+<A NAME="hyper_resolution"></A><HR><PRE><B>void hyper_resolution(Topform c, int pos_or_neg, Lindex idx,
+		      void (*proc_proc) (Topform));
+</B></PRE>Hyperresolution.
+<A NAME="instantiate_clause"></A><HR><PRE><B>Topform instantiate_clause(Topform c, <A HREF="unify.html">Context</A> subst);
+</B></PRE><A NAME="merge_literals"></A><HR><PRE><B>void merge_literals(Topform c);
+</B></PRE><A NAME="res_instance_prunes"></A><HR><PRE><B>int res_instance_prunes();
+</B></PRE><A NAME="resolve2"></A><HR><PRE><B>Topform resolve2(Topform c1, int n1, Topform c2, int n2, BOOL renumber_vars);
+</B></PRE>Resolve, if possible, two clauses on the literals (specified
+by literals, counting from 1).
+Include justification, transfer inheritable
+attributes, but do not assign an ID.  Renumbering of variables
+is optional.
+<P>
+if n2 < 0, then the literal is abs<A HREF="#"></A>(n2), and it should be flipped.
+<A NAME="resolve3"></A><HR><PRE><B>Topform resolve3(Topform c1, Literals l1, Topform c2, Literals l2, BOOL renumber_vars);
+</B></PRE>Similar to resolve2<A HREF="#"></A>(), but literals are given instead of integers.
+<A NAME="ur_resolution"></A><HR><PRE><B>void ur_resolution(Topform c, int target_constraint, Lindex idx,
+		   void (*proc_proc) (Topform));
+</B></PRE>Unit-resulting resolution.
+<A NAME="xx_resolve2"></A><HR><PRE><B>Topform xx_resolve2(Topform c, int n, BOOL renumber_vars);
+</B></PRE>Resolve, if possible, a clause with x=x.
+Renumber vars, include justification, transfer inheritable
+attributes, but do not assign an ID.
+<HR><A NAME=defns></A><H2>Public Definitions in File resolve.h</H2>
+<PRE>
+enum {  /* literal selection */
+  LIT_SELECTION_NONE,
+  LIT_SELECTION_MAXIMAL,
+  LIT_SELECTION_ALL
+};
+
+enum {  /* types of resolution (binary, hyper, UR) */
+  POS_RES,  /* positive */
+  NEG_RES,  /* negative */
+  ANY_RES   /* unrestricted by sign */
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

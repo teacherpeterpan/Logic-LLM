@@ -1,0 +1,36 @@
+% These are OL identities
+
+x v y = y v x.
+
+(x v y) v z = x v (y v z).
+
+x v (x ^ y) = x.
+
+(((y v x) ^ x) v (((z ^ (x v x)) v (u ^ x)) ^ v)) ^
+    (w v ((v6 v x) ^ (x v v7))) = x.  % A1
+
+ x ^ c(x) = 0.
+
+c(x ^ y) = c(x) v c(y).
+
+c(x v y) = c(x) ^ c(y).
+
+c(c(x)) = x.
+
+f(f(x,x),f(x,y)) = x.  % f is the Sheffer stroke
+
+f(x,f(x,x)) = f(y,f(y,y)).
+
+f(x,f(f(y,z),f(y,z))) = f(z,f(f(y,x),f(y,x))).
+
+% These are not OL identities
+
+x v (y ^ (x v z)) = (x v y) ^ (x v z).  % Modularity
+
+x v (y ^ z) = (x v y) ^ (x v z).  % Distributivity
+
+x v (c(x) ^ (x v y)) = x v y.   % OML law
+
+f(x,f(x,f(x,y))) = f(x,y).  % OML law
+
+f(x,f(y,f(x,f(z,z)))) = f(x,f(z,f(x,f(y,y)))).   % Modularity

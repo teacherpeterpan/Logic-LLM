@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>clauses.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "clauses.h"</H1>
+
+This page has information from files
+<A HREF="../clauses.h">clauses.h</A> and <A HREF="../clauses.c">clauses.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File clauses.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#all_clauses_horn">all_clauses_horn</A></TD><TD><A HREF="#equality_in_clauses">equality_in_clauses</A></TD><TD><A HREF="#most_literals">most_literals</A></TD><TD><A HREF="#pos_equality_in_clauses">pos_equality_in_clauses</A></TD>
+</TR>
+<TR><TD><A HREF="#all_clauses_positive">all_clauses_positive</A></TD><TD><A HREF="#intersect_clauses">intersect_clauses</A></TD><TD><A HREF="#neg_nonunit_clauses">neg_nonunit_clauses</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#all_clauses_unit">all_clauses_unit</A></TD><TD><A HREF="#max_clause_symbol_count">max_clause_symbol_count</A></TD><TD><A HREF="#negative_clauses">negative_clauses</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#clause_member_plist">clause_member_plist</A></TD><TD><A HREF="#max_clause_weight">max_clause_weight</A></TD><TD><A HREF="#nonneg_clauses">nonneg_clauses</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="all_clauses_horn"></A><HR><PRE><B>BOOL all_clauses_horn(Plist l);
+</B></PRE>Is every clause in the Plist a Horn clause?
+<A NAME="all_clauses_positive"></A><HR><PRE><B>BOOL all_clauses_positive(Plist l);
+</B></PRE>Is every clause in the Plist a unit clause?
+<A NAME="all_clauses_unit"></A><HR><PRE><B>BOOL all_clauses_unit(Plist l);
+</B></PRE>Is every clause in the Plist a unit clause?
+<A NAME="clause_member_plist"></A><HR><PRE><B>Topform clause_member_plist(Plist p, Topform c);
+</B></PRE>Is a clause a member of a Plist?  A deep identity check is done (clause_ident).
+<A NAME="equality_in_clauses"></A><HR><PRE><B>BOOL equality_in_clauses(Plist clauses);
+</B></PRE>Does the Plist contain a clause with a positive equality literal?
+<A NAME="intersect_clauses"></A><HR><PRE><B>Plist intersect_clauses(Plist a, Plist b);
+</B></PRE>Intersect 2 Plists of clauses.
+The order of the result is determined by the order of the first list.
+A deep identity check is done (clause_ident).
+<A NAME="max_clause_symbol_count"></A><HR><PRE><B>int max_clause_symbol_count(Plist p);
+</B></PRE>Given a Plist of clauses, return the symbol_count of a clause
+with most symbols.
+<A NAME="max_clause_weight"></A><HR><PRE><B>int max_clause_weight(Plist p);
+</B></PRE>Given a Plist of clauses, return the weight of the heaviest clause.
+The weight field of the clause is used.
+<A NAME="most_literals"></A><HR><PRE><B>int most_literals(Plist clauses);
+</B></PRE>Given a Plist of clauses,
+what is the maximum number of literals in a clause.
+<A NAME="neg_nonunit_clauses"></A><HR><PRE><B>int neg_nonunit_clauses(Plist l);
+</B></PRE>How many negative nonunits are in a Plist of clauses?
+<A NAME="negative_clauses"></A><HR><PRE><B>int negative_clauses(Plist l);
+</B></PRE>How many negative clauses are in a Plist of clauses?
+<A NAME="nonneg_clauses"></A><HR><PRE><B>Plist nonneg_clauses(Plist clauses);
+</B></PRE>Given a Plist of clauses, return the subset of nonnegative clauses.
+<A NAME="pos_equality_in_clauses"></A><HR><PRE><B>BOOL pos_equality_in_clauses(Plist clauses);
+</B></PRE>Does the Plist contain a clause with a positive equality literal?
+<HR><A NAME=defns></A><H2>Public Definitions in File clauses.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package contains various functions on Plists of clauses.
+
+<HR>
+</BODY>
+</HTML>

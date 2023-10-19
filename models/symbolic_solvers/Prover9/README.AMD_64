@@ -1,0 +1,29 @@
+A few quick tests on an AMD-64 (939, 1MB cache).
+
+Comparing 64- and 32-bit versions of Prover9 and Mace4.
+
+64-bit versions: compiled with gcc defaults on AMD-64.
+32-bit versions: compiled with gcc defaults on i386.
+
+Both run on AMD-64.
+
+Nearly all of the data for both Mace4 and Prover9 consists of
+pointers, so the jobs on the 64-bit versions take twice the memory.
+
+Prover9: the 64-bit version seems faster.
+
+  ord-rev.out.32:-------- Proof 1 -------- (27.30 + 0.36 seconds)
+  ord-rev.out.32:Megabytes=13.05.
+
+  ord-rev.out.64:-------- Proof 1 -------- (22.70 + 0.43 seconds)
+  ord-rev.out.64:Megabytes=25.70.
+
+Mace4:   the 32-bit version seems faster.
+
+  m.out.32:-------- Model 1 at 18.13 seconds --------
+  m.out.32:Memory report, 1 @ 20 = 20 megs (13.53 megs used).
+
+  m.out.64:-------- Model 1 at 22.96 seconds --------
+  m.out.64:Memory report, 2 @ 20 = 40 megs (26.60 megs used).
+
+Your mileage may vary.

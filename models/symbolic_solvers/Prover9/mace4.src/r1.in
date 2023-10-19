@@ -1,0 +1,23 @@
+set(arithmetic).
+
+assngn(max_models, -1).
+
+lex([A,E,P1,P2,K,a,p]).
+
+formulas(assumptions).
+
+A + E + P1 + P2 = a + p + 1.
+
+A + E + P1 + P2 + a + p + K >  1.
+A + E + P1 + P2 + a + p + K <= domain_size.
+
+%BEGIN
+a > 0.
+K > 0.
+A > 0.
+E > 0.
+p > 0.
+P1 > 0 | P2 > 0.
+END%
+
+end_of_list.

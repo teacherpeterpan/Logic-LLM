@@ -1,0 +1,45 @@
+
+formulas(assumptions).
+
+% A problem from Norm Megill, on weak orthomodular lattices (WOM).
+
+% Mace4 should produce a counterexample in a few seconds.
+
+% Lattice Axioms
+
+x ^ y = y ^ x.
+(x ^ y) ^ z = x ^ (y ^ z).
+x v y = y v x.
+(x v y) v z = x v (y v z).
+x v (x ^ y) = x.
+x ^ (x v y) = x.
+
+% The following gives us ortholattices.
+
+x' ^ x = 0.
+x' v x = 1.
+x'' = x.
+x ^ y = (x' v y')'.
+
+% Ortholattice lemmas.
+
+% 1 v x = 1.
+% 1 ^ x = x.
+
+% 0 ^ x = 0.
+% 0 v x = x.
+
+% Weak orthomodular law (*1 of mail 68).
+
+(x' ^ (x v y)) v (y' v (x ^ y)) = 1  # label(mail_68_1).
+
+end_of_list.
+
+formulas(goals).
+
+% Equation in question (*3 of mail 68).
+
+x ^ (y v (x ^ (x' v (x ^ y)))) = x ^ (x' v (x ^ y)) # label(mail_68_3).
+
+end_of_list.
+

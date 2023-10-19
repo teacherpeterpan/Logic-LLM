@@ -1,0 +1,7 @@
+formulas(demodulators).
+
+app([], x) = x.
+
+app([x|y], z) = [x|app(y,z)].
+
+end_of_list.

@@ -1,0 +1,12 @@
+x v y = y v x.
+(x v y) v z = x v (y v z).
+x v (x ^ y) = x.
+(((y v x) ^ x) v (((z ^ (x v x)) v (u ^ x)) ^ v)) ^ (w v ((v6 v x) ^ (x v v7))) = x.
+x ^ c(x) = 0.
+c(x ^ y) = c(x) v c(y).
+c(x v y) = c(x) ^ c(y).
+c(c(x)) = x.
+f(f(x,x),f(x,y)) = x.
+f(x,f(x,x)) = f(y,f(y,y)).
+f(x,f(f(y,z),f(y,z))) = f(z,f(f(y,x),f(y,x))).
+% olfilter: checked 16, passed 11, user 0.00, system 0.00.

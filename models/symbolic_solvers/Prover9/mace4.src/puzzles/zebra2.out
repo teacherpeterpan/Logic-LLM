@@ -1,0 +1,226 @@
+============================== Mace4 =================================
+Mace4 (32) version 2008-10A+, October 2008.
+Process 15833 was started by mccune on cleo,
+Mon Nov 17 21:34:40 2008
+The command was "../mace4 -f zebra2.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file zebra2.in
+
+set(arithmetic).
+    % set(arithmetic) -> clear(lnh).
+    % set(arithmetic) -> assign(selection_order, 0).
+
+    % Declaring Mace4 arithmetic parse types.
+assign(domain_size,5).
+    % assign(domain_size, 5) -> assign(start_size, 5).
+    % assign(domain_size, 5) -> assign(end_size, 5).
+
+formulas(assumptions).
+England = Red.
+Lucky = Juice.
+Spain = Dog.
+Ukraine = Tea.
+Norway = 0.
+Japan = Parlaiment.
+Kool = Yellow.
+neighbors(Kool,Horse).
+neighbors(Chesterfield,Fox).
+Coffee = Green.
+neighbors(Norway,Blue).
+successor(Green,Ivory).
+Winston = Snail.
+Milk = 2.
+successor(x,y) <-> x + 1 = y.
+neighbors(x,y) <-> successor(x,y) | successor(y,x).
+end_of_list.
+
+list(distinct).
+[England,Spain,Ukraine,Japan,Norway].
+[Dog,Snail,Horse,Zebra,Fox].
+[Water,Milk,Juice,Tea,Coffee].
+[Red,Blue,Yellow,Ivory,Green].
+[Lucky,Winston,Kool,Chesterfield,Parlaiment].
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 successor(x,y) <-> x + 1 = y # label(non_clause).  [assumption].
+2 neighbors(x,y) <-> successor(x,y) | successor(y,x) # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+England = Red.
+Lucky = Juice.
+Spain = Dog.
+Ukraine = Tea.
+Norway = 0.
+Japan = Parlaiment.
+Kool = Yellow.
+neighbors(Kool,Horse).
+neighbors(Chesterfield,Fox).
+Coffee = Green.
+neighbors(Norway,Blue).
+successor(Green,Ivory).
+Winston = Snail.
+Milk = 2.
+-successor(x,y) | x + 1 = y.
+successor(x,y) | x + 1 != y.
+-neighbors(x,y) | successor(x,y) | successor(y,x).
+neighbors(x,y) | -successor(x,y).
+neighbors(x,y) | -successor(y,x).
+England != Spain.
+England != Ukraine.
+England != Japan.
+England != Norway.
+Spain != Ukraine.
+Spain != Japan.
+Spain != Norway.
+Ukraine != Japan.
+Ukraine != Norway.
+Japan != Norway.
+Dog != Snail.
+Dog != Horse.
+Dog != Zebra.
+Dog != Fox.
+Snail != Horse.
+Snail != Zebra.
+Snail != Fox.
+Horse != Zebra.
+Horse != Fox.
+Zebra != Fox.
+Water != Milk.
+Water != Juice.
+Water != Tea.
+Water != Coffee.
+Milk != Juice.
+Milk != Tea.
+Milk != Coffee.
+Juice != Tea.
+Juice != Coffee.
+Tea != Coffee.
+Red != Blue.
+Red != Yellow.
+Red != Ivory.
+Red != Green.
+Blue != Yellow.
+Blue != Ivory.
+Blue != Green.
+Yellow != Ivory.
+Yellow != Green.
+Ivory != Green.
+Lucky != Winston.
+Lucky != Kool.
+Lucky != Chesterfield.
+Lucky != Parlaiment.
+Winston != Kool.
+Winston != Chesterfield.
+Winston != Parlaiment.
+Kool != Chesterfield.
+Kool != Parlaiment.
+Chesterfield != Parlaiment.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 2.
+
+============================== DOMAIN SIZE 5 =========================
+
+============================== MODEL =================================
+
+interpretation( 5, [number=1, seconds=0], [
+
+        function(Blue, [ 1 ]),
+
+        function(Chesterfield, [ 1 ]),
+
+        function(Coffee, [ 3 ]),
+
+        function(Dog, [ 4 ]),
+
+        function(England, [ 2 ]),
+
+        function(Fox, [ 0 ]),
+
+        function(Green, [ 3 ]),
+
+        function(Horse, [ 1 ]),
+
+        function(Ivory, [ 4 ]),
+
+        function(Japan, [ 3 ]),
+
+        function(Juice, [ 4 ]),
+
+        function(Kool, [ 0 ]),
+
+        function(Lucky, [ 4 ]),
+
+        function(Milk, [ 2 ]),
+
+        function(Norway, [ 0 ]),
+
+        function(Parlaiment, [ 3 ]),
+
+        function(Red, [ 2 ]),
+
+        function(Snail, [ 2 ]),
+
+        function(Spain, [ 4 ]),
+
+        function(Tea, [ 1 ]),
+
+        function(Ukraine, [ 1 ]),
+
+        function(Winston, [ 2 ]),
+
+        function(Yellow, [ 0 ]),
+
+        relation(neighbors(_,_), [
+			   0, 1, 0, 0, 0,
+			   1, 0, 1, 0, 0,
+			   0, 1, 0, 1, 0,
+			   0, 0, 1, 0, 1,
+			   0, 0, 0, 1, 0 ]),
+
+        relation(successor(_,_), [
+			   0, 1, 0, 0, 0,
+			   0, 0, 1, 0, 0,
+			   0, 0, 0, 1, 0,
+			   0, 0, 0, 0, 1,
+			   0, 0, 0, 0, 0 ]),
+
+        function(Water, [ 0 ]),
+
+        function(Zebra, [ 3 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 5.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=189, kept=113.
+Selections=8, assignments=33, propagations=89, current_models=1.
+Rewrite_terms=254, rewrite_bools=199, indexes=1.
+Rules_from_neg_clauses=17, cross_offs=92.
+
+============================== end of statistics =====================
+
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 15833 exit (max_models) Mon Nov 17 21:34:40 2008
+The process finished Mon Nov 17 21:34:40 2008

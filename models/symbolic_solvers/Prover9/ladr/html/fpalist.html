@@ -1,0 +1,110 @@
+<HTML>
+<HEAD>
+<TITLE>fpalist.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "fpalist.h"</H1>
+
+This page has information from files
+<A HREF="../fpalist.h">fpalist.h</A> and <A HREF="../fpalist.c">fpalist.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File fpalist.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#first_fpos">first_fpos</A></TD><TD><A HREF="#fpalist_insert">fpalist_insert</A></TD><TD><A HREF="#next_fpos">next_fpos</A></TD><TD><A HREF="#zap_fpa_chunks">zap_fpa_chunks</A></TD>
+</TR>
+<TR><TD><A HREF="#fpalist_delete">fpalist_delete</A></TD><TD><A HREF="#fprint_fpalist_mem">fprint_fpalist_mem</A></TD><TD><A HREF="#p_fpa_list">p_fpa_list</A></TD><TD><A HREF="#zap_fpalist">zap_fpalist</A></TD>
+</TR>
+<TR><TD><A HREF="#fpalist_empty">fpalist_empty</A></TD><TD><A HREF="#get_fpa_list">get_fpa_list</A></TD><TD><A HREF="#p_fpalist_mem">p_fpalist_mem</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="first_fpos"></A><HR><PRE><B>struct fposition first_fpos(Fpa_list f);
+</B></PRE><A NAME="fpalist_delete"></A><HR><PRE><B>void fpalist_delete(Fpa_list p, <A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="fpalist_empty"></A><HR><PRE><B>BOOL fpalist_empty(Fpa_list p);
+</B></PRE><A NAME="fpalist_insert"></A><HR><PRE><B>void fpalist_insert(Fpa_list p, <A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="fprint_fpalist_mem"></A><HR><PRE><B>void fprint_fpalist_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the fpalist package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="get_fpa_list"></A><HR><PRE><B>Fpa_list get_fpa_list();
+</B></PRE><A NAME="next_fpos"></A><HR><PRE><B>struct fposition next_fpos(struct fposition p);
+</B></PRE><A NAME="p_fpa_list"></A><HR><PRE><B>void p_fpa_list(Fpa_chunk c);
+</B></PRE><A NAME="p_fpalist_mem"></A><HR><PRE><B>void p_fpalist_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the fpalist package.
+<A NAME="zap_fpa_chunks"></A><HR><PRE><B>void zap_fpa_chunks(Fpa_chunk p);
+</B></PRE><A NAME="zap_fpalist"></A><HR><PRE><B>void zap_fpalist(Fpa_list p);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File fpalist.h</H2>
+<PRE>
+/* We use the <A HREF="term.html">Term</A> ID to order FPA lists. */
+
+#define FPA_ID_TYPE unsigned
+#define FPA_ID_MAX UINT_MAX
+#define FPA_ID(t) (((<A HREF="term.html">Term</A>) t)->u.id)
+
+/*
+  I experimented with using the address of the term as the
+  term ID for ordering FPA lists.  Although not technically
+  legal in C (because addresses in different arrays (malloced blocks)
+  are compared), I believe it works correctly on all modern systems.
+  (It didn't work in DOS.)
+  However, there is a practical problem.
+  On some systems, malloc() returns addresses in increasing order,
+  and on others, they are decreasing, giving answers to queries in
+  the reverse order, causing different searches.
+
+  define FPA_ID_TYPE <A HREF="term.html">Term</A>
+  define FPA_ID_MAX ((<A HREF="term.html">Term</A>) ULONG_MAX) //
+  define FPA_ID(t) ((<A HREF="term.html">Term</A>) t)
+*/
+
+#define FLT(x,y) (FPA_ID(x) <  FPA_ID(y))
+#define FGT(x,y) (FPA_ID(x) >  FPA_ID(y))
+#define FLE(x,y) (FPA_ID(x) <= FPA_ID(y))
+#define FGE(x,y) (FPA_ID(x) >= FPA_ID(y))
+
+#define FTERM(p) ((p).f == NULL ? NULL : (p).f->d[(p).i])
+
+/* FPA lists */
+
+typedef struct fpa_chunk *Fpa_chunk;
+typedef struct fpa_list *Fpa_list;
+
+struct fpa_chunk {
+  int size;         /* size of array */
+  <A HREF="term.html">Term</A> *d;          /* array for chunk */
+  int n;            /* current number of items in chunk (right justified) */
+  Fpa_list head;    /* beginning of list to which this chunk belongs */
+  Fpa_chunk next;   /* list of chunks is singly-linked */
+};
+
+struct fpa_list {
+  Fpa_chunk chunks;
+  int num_chunks;
+  int chunksize;
+  int num_terms;
+};
+
+/* to maintain a position in an FPA list while traversing for set operations */
+
+struct fposition {
+  Fpa_chunk f;
+  int i;
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,68 @@
+Task: Given the initial program and the error message, debug the following logic program.
+------
+>>> Initial Program:
+# Declarations
+children = EnumSort([Fred, Juan, Marc, Paul, Nita, Rachel, Trisha])
+lockers = EnumSort([1, 2, 3, 4, 5])
+assigned = Function([children] -> [lockers])
+gender = Function([children] -> [EnumSort([boy, girl])])
+>>> Error Message:
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
+>>> Corrected Program:
+# Declarations
+children = EnumSort([Fred, Juan, Marc, Paul, Nita, Rachel, Trisha])
+lockers = EnumSort([1, 2, 3, 4, 5])
+genders = EnumSort([boy, girl])
+assigned = Function([children] -> [lockers])
+gender = Function([children] -> [genders])
+------
+>>> Initial Program:
+# Constraints
+ForAll([l:lockers], Or(Exists([c:children], assigned(c) == l), Exists([c1:children, c2:children], And(c1 != c2, And(assigned(c1) == l, assigned(c2) == l, gender(c1) != gender(c2)))))) ::: Each locker must be assigned to either one or two children, and each child must be assigned to exactly one locker
+Exists([c:children, l:lockers], And(assigned(Juan) == l, assigned(c) == l, c != Juan)) ::: Juan must share a locker
+ForAll([l:lockers], assigned(Rachel) != l Or Not(Exists([c:children], And(c != Rachel, assigned(c) == l)))) ::: Rachel cannot share a locker
+ForAll([l:lockers], Implies(assigned(Nita) == l, And(assigned(Trisha) != l - 1, assigned(Trisha) != l + 1))) ::: Nita's locker cannot be adjacent to Trisha's locker
+assigned(Fred) == 3 ::: Fred must be assigned to locker 3
+And(assigned(Trisha) == 3, assigned(Marc) == 1, ForAll([c:children], Implies(c != Marc, assigned(c) != 1))) ::: if Trisha is assigned to locker 3 and Marc alone is assigned to locker 1
+>>> Error Message:
+SyntaxError: invalid syntax
+>>> Corrected Program:
+# Constraints
+ForAll([l:lockers], Or(Exists([c:children], assigned(c) == l), Exists([c1:children, c2:children], And(c1 != c2, And(assigned(c1) == l, assigned(c2) == l, gender(c1) != gender(c2)))))) ::: Each locker must be assigned to either one or two children, and each child must be assigned to exactly one locker
+Exists([c:children, l:lockers], And(assigned(Juan) == l, assigned(c) == l, c != Juan)) ::: Juan must share a locker
+ForAll([l:lockers], Or(assigned(Rachel) != l, Not(Exists([c:children], And(c != Rachel, assigned(c) == l))))) ::: Rachel cannot share a locker
+ForAll([l:lockers], Implies(assigned(Nita) == l, And(assigned(Trisha) != l - 1, assigned(Trisha) != l + 1))) ::: Nita's locker cannot be adjacent to Trisha's locker
+assigned(Fred) == 3 ::: Fred must be assigned to locker 3
+And(assigned(Trisha) == 3, assigned(Marc) == 1, ForAll([c:children], Implies(c != Marc, assigned(c) != 1))) ::: if Trisha is assigned to locker 3 and Marc alone is assigned to locker 1
+------
+>>> Initial Program:
+# Declarations
+days = EnumSort([Monday, Tuesday, Wednesday, Thursday, Friday])
+divisions = EnumSort([Operations, Production, Sales])
+toured = Function([days] -> [divisions])
+
+# Constraints
+Count([d:days], toured(d) == Operations) >= 1 ::: Each division is toured at least once
+Count([d:days], toured(d) == Production) >= 1 ::: Each division is toured at least once
+Count([d:days], toured(d) == Sales) >= 1 ::: Each division is toured at least once
+toured(Monday) != Operations ::: The Operations division is not toured on Monday
+>>> Error Message:
+TypeError: '<' not supported between instances of 'DatatypeRef' and 'DatatypeRef'
+>>> Corrected Program:
+# Declarations
+days = IntSort([Monday, Tuesday, Wednesday, Thursday, Friday])
+divisions = EnumSort([Operations, Production, Sales])
+toured = Function([days] -> [divisions])
+
+# Constraints
+And(Monday == 1, Tuesday == 2, Wednesday == 3, Thursday == 4, Friday == 5)
+Count([d:days], toured(d) == Operations) >= 1 ::: Each division is toured at least once
+Count([d:days], toured(d) == Production) >= 1 ::: Each division is toured at least once
+Count([d:days], toured(d) == Sales) >= 1 ::: Each division is toured at least once
+toured(Monday) != Operations ::: The Operations division is not toured on Monday
+------
+>>> Initial Program:
+[[PROGRAM]]
+>>> Error Message:
+[[ERROR MESSAGE]]
+>>> Corrected Program:

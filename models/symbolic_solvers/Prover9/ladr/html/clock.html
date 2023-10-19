@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>clock.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "clock.h"</H1>
+
+This page has information from files
+<A HREF="../clock.h">clock.h</A> and <A HREF="../clock.c">clock.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File clock.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#absolute_wallclock">absolute_wallclock</A></TD><TD><A HREF="#clock_seconds">clock_seconds</A></TD><TD><A HREF="#enable_clocks">enable_clocks</A></TD><TD><A HREF="#system_seconds">system_seconds</A></TD>
+</TR>
+<TR><TD><A HREF="#clock_init">clock_init</A></TD><TD><A HREF="#clock_start">clock_start</A></TD><TD><A HREF="#fprint_clock">fprint_clock</A></TD><TD><A HREF="#system_time">system_time</A></TD>
+</TR>
+<TR><TD><A HREF="#clock_milliseconds">clock_milliseconds</A></TD><TD><A HREF="#clock_stop">clock_stop</A></TD><TD><A HREF="#free_clock">free_clock</A></TD><TD><A HREF="#user_seconds">user_seconds</A></TD>
+</TR>
+<TR><TD><A HREF="#clock_reset">clock_reset</A></TD><TD><A HREF="#clocks_enabled">clocks_enabled</A></TD><TD><A HREF="#get_date">get_date</A></TD><TD><A HREF="#user_time">user_time</A></TD>
+</TR>
+<TR><TD><A HREF="#clock_running">clock_running</A></TD><TD><A HREF="#disable_clocks">disable_clocks</A></TD><TD><A HREF="#init_wallclock">init_wallclock</A></TD><TD><A HREF="#wallclock">wallclock</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="absolute_wallclock"></A><HR><PRE><B>unsigned absolute_wallclock(void);
+</B></PRE><A NAME="clock_init"></A><HR><PRE><B>Clock clock_init(char *str);
+</B></PRE>This routine initializes a clock.  You give it a string
+(which is not copied), representing the name of the new clock,
+and it returns a Clock to be used for all operations on the clock.
+<P>
+The clock operations are <A HREF="#clock_start">clock_start</A>(), <A HREF="#clock_stop">clock_stop</A>(),
+<A HREF="#clock_seconds">clock_seconds</A>(), <A HREF="#clock_milliseconds">clock_milliseconds</A>(), and <A HREF="#clock_reset">clock_reset</A>().
+<A NAME="clock_milliseconds"></A><HR><PRE><B>unsigned clock_milliseconds(Clock p);
+</B></PRE>This routine returns the current value of a clock, in milliseconds.
+The value is in milliseconds.
+<A NAME="clock_reset"></A><HR><PRE><B>void clock_reset(Clock p);
+</B></PRE>This routine resets a clock, as if it had just been initialized.
+(You should not need this routine under normal circumstances.)
+<A NAME="clock_running"></A><HR><PRE><B>BOOL clock_running(Clock p);
+</B></PRE>This routine tells you whether or not a clock is running.
+<A NAME="clock_seconds"></A><HR><PRE><B>double clock_seconds(Clock p);
+</B></PRE>This routine returns the current value of a clock, in seconds.
+The clock need not be stopped.
+<A NAME="clock_start"></A><HR><PRE><B>void clock_start(Clock p);
+</B></PRE>This routine starts clock n.  It is okay if the clock is already going.
+<A NAME="clock_stop"></A><HR><PRE><B>void clock_stop(Clock p);
+</B></PRE>This routine stops clock n and adds the time to the accumulated total,
+<I>unless there have been too many starts and not enough stops</I>.
+See the introduction.
+<A NAME="clocks_enabled"></A><HR><PRE><B>BOOL clocks_enabled(void);
+</B></PRE><A NAME="disable_clocks"></A><HR><PRE><B>void disable_clocks(void);
+</B></PRE><A NAME="enable_clocks"></A><HR><PRE><B>void enable_clocks(void);
+</B></PRE><A NAME="fprint_clock"></A><HR><PRE><B>void fprint_clock(FILE *fp, Clock p);
+</B></PRE>This routine
+<A NAME="free_clock"></A><HR><PRE><B>void free_clock(Clock p);
+</B></PRE><A NAME="get_date"></A><HR><PRE><B>char * get_date(void);
+</B></PRE>This routine returns a string representation of the current date and time.
+<A NAME="init_wallclock"></A><HR><PRE><B>void init_wallclock();
+</B></PRE>This routine initializes the wall-clock timer.
+<A NAME="system_seconds"></A><HR><PRE><B>double system_seconds();
+</B></PRE>This routine returns the system CPU time, in seconds, that has
+been spent on the current process.
+(System time measures low-level operations such
+as system calls, paging, and I/O that the operating systems does
+on behalf of the process.)
+<A NAME="system_time"></A><HR><PRE><B>unsigned system_time();
+</B></PRE>This routine returns the system CPU time, in milliseconds, that has
+been spent on the current process.
+(System time measures low-level operations such
+as system calls, paging, and I/O that the operating systems does
+on behalf of the process.)
+<A NAME="user_seconds"></A><HR><PRE><B>double user_seconds();
+</B></PRE>This routine returns the user CPU time, in seconds, that the
+current process has used so far.
+<A NAME="user_time"></A><HR><PRE><B>unsigned user_time();
+</B></PRE>This routine returns the user CPU time, in milliseconds, that the
+current process has used so far.
+<A NAME="wallclock"></A><HR><PRE><B>unsigned wallclock();
+</B></PRE>This routine returns the number of wall-clock seconds since
+<A HREF="#init_wallclock">init_wallclock</A>() was called.  The result is unsigned.
+<HR><A NAME=defns></A><H2>Public Definitions in File clock.h</H2>
+<PRE>
+typedef struct clock * Clock;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package is for timing various operations.  Say you need to time
+an operation P.  You first call clock_init() to set up a clock,
+then you can start and stop the clock as you wish, then you
+can get the accumulated time with clock_value().
+These clocks measure the user CPU time.
+<P>
+An unusual feature of these clocks is that they can be used
+inside of recursive routines.  For example, you can start
+the clock at the beginning of a recursive routine and stop
+it at the end.  If you start it 3 times then stop it
+three times, it will really stop only on the third call.
+This works by a counter of the number of extra
+times the clock has been started, and clock_stop() will stop
+the clock only when the count is 0.   (This feature probably isn't
+very useful, and most people can ignore it.)
+<P>
+Also here are some routines for getting process system/user CPU time, 
+elapsed wall-clock time, and the time/date.
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,26 @@
+============================== directproof ===========================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 9270 was started by mccune on cleo,
+Tue Jan 22 11:28:26 2008
+The command was "prover9 -f bw.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 5.51 (+ 0.02) seconds: fixed_point_combinator.
+% Length of proof is 13.
+% Level of proof is 6.
+% Maximum clause weight is 60.
+% Given clauses 117.
+
+1 a = b.  [assumption].
+2 f(c,g(h(g(a),d))) != g(h(g(b),d)).  [assumption].
+3 f(c,x) = x.  [assumption].
+6 f(c,g(h(g(y),z))) = g(h(g(y),z)).  [instantiate(3,[[x:g(h(g(y),z))]])].
+7 f(c,g(h(g(a),x))) = g(h(g(b),x)).  [para(1(a,2),6(a,1,2,1,1,1))].
+8 $F.  [resolve(7,a,2,a)].
+
+============================== end of proof ==========================

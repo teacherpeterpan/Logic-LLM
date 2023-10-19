@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<TITLE>string.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "string.h"</H1>
+
+This page has information from files
+<A HREF="../string.h">string.h</A> and <A HREF="../string.c">string.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File string.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#initial_substring">initial_substring</A></TD><TD><A HREF="#new_str_copy">new_str_copy</A></TD><TD><A HREF="#str_to_int">str_to_int</A></TD><TD><A HREF="#which_string_member">which_string_member</A></TD>
+</TR>
+<TR><TD><A HREF="#itoa">itoa</A></TD><TD><A HREF="#reverse_chars">reverse_chars</A></TD><TD><A HREF="#string_member">string_member</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#natural_string">natural_string</A></TD><TD><A HREF="#str_ident">str_ident</A></TD><TD><A HREF="#substring">substring</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="initial_substring"></A><HR><PRE><B>BOOL initial_substring(char *x, char *y);
+</B></PRE>Is x an initial substring of y?
+<A NAME="itoa"></A><HR><PRE><B>char *itoa(int n, char *s);
+</B></PRE>This routine converts an integer to a string (in decimal form).
+The character array s must be large enough to hold the string.
+The string is returned.
+<A NAME="natural_string"></A><HR><PRE><B>int natural_string(char *str);
+</B></PRE><A NAME="new_str_copy"></A><HR><PRE><B>char *new_str_copy(char *str);
+</B></PRE>Return a malloced copy of the given string.  To avoid memory leaks,
+call free() on the copy if you finish referring to it.
+<A NAME="reverse_chars"></A><HR><PRE><B>void reverse_chars(char *s, int start, int end);
+</B></PRE>This routine reverses an array of characters.
+You must give the starting and ending positions.
+<A NAME="str_ident"></A><HR><PRE><B>BOOL str_ident(char *s, char *t);
+</B></PRE>This function routine checks identity of two strings.
+<A NAME="str_to_int"></A><HR><PRE><B>BOOL str_to_int(char *str, int *ip);
+</B></PRE>This routine tries to convert a string into an integer (using strtol()).
+If successful, TRUE is returned and *ip is set to the integer.
+If failure, FALSE is returned.
+<A NAME="string_member"></A><HR><PRE><B>BOOL string_member(char *string, char **strings, int n);
+</B></PRE>Is "string" a member of an array of "strings"?
+<A NAME="substring"></A><HR><PRE><B>BOOL substring(char *x, char *y);
+</B></PRE>Is x a substring of y?
+<A NAME="which_string_member"></A><HR><PRE><B>int which_string_member(char *string, char **strings, int n);
+</B></PRE>If "string" is a member of an array of "strings", return the index;
+else return -1.
+<HR><A NAME=defns></A><H2>Public Definitions in File string.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package contains a few utilities for character strings.
+
+<HR>
+</BODY>
+</HTML>

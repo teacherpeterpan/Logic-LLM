@@ -1,0 +1,191 @@
+============================== directproof ===========================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 16239 was started by mccune on cleo,
+Thu Dec 13 11:34:09 2007
+The command was "/home/mccune/bin/prover9 -f dist-short-long.in".
+============================== end of head ===========================
+
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 1.34 (+ 0.01) seconds: dist_long.
+% Length of proof is 39.
+% Level of proof is 10.
+% Maximum clause weight is 30.
+% Given clauses 57.
+
+1 f(f(x,y,z),u,w) = f(f(x,u,w),f(y,u,w),f(z,u,w)) # answer(dist_long) # label(non_clause) # label(goal).  [goal].
+2 f(x,x,y) = x # label(majority).  [assumption].
+3 f(x,y,z) = f(z,x,y) # label(2a).  [assumption].
+4 f(x,y,z) = f(x,z,y) # label(2b).  [assumption].
+5 f(f(x,y,z),y,u) = f(x,y,f(z,y,u)) # label(associativity).  [assumption].
+6 f(u,f(x,y,z),y) = f(x,y,f(z,y,u)).  [para(3(a,1),5(a,1))].
+7 f(y,u,f(x,y,z)) = f(x,y,f(z,y,u)).  [para(3(a,1),6(a,1))].
+8 f(y,u,f(x,y,z)) = f(x,y,f(y,u,z)).  [para(3(a,2),7(a,2,3))].
+9 f(y,u,f(x,y,z)) = f(x,y,f(y,z,u)).  [para(4(a,1),8(a,2,3))].
+10 f(y,u,f(y,z,x)) = f(x,y,f(y,z,u)).  [para(3(a,2),9(a,1,3))].
+11 f(y,u,f(y,x,z)) = f(x,y,f(y,z,u)).  [para(4(a,1),10(a,1,3))].
+12 f(y,u,f(y,x,z)) = f(x,y,f(y,u,z)).  [para(4(a,1),11(a,2,3))].
+13 f(y,u,f(y,x,z)) = f(y,f(y,u,z),x).  [para(3(a,2),12(a,2))].
+14 f(x,y,f(x,z,u)) = f(x,z,f(x,y,u)).  [para(4(a,1),13(a,2))].
+15 f(f(x,y,z),u,w) = f(x,f(y,u,w),f(z,u,w)) # label(dist_short).  [assumption].
+16 f(w,f(x,y,z),u) = f(x,f(y,u,w),f(z,u,w)).  [para(3(a,1),15(a,1))].
+17 f(u,w,f(x,y,z)) = f(x,f(y,u,w),f(z,u,w)).  [para(3(a,1),16(a,1))].
+18 f(x,f(y,u,w),f(z,u,w)) = f(u,w,f(x,y,z)).  [copy(17),flip(a)].
+19 f(x,f(y,u,w),f(w,z,u)) = f(u,w,f(x,y,z)).  [para(3(a,1),18(a,1,3))].
+20 f(x,f(y,z,u),f(z,u,w)) = f(z,u,f(x,y,w)).  [para(3(a,1),19(a,1,3))].
+21 f(f(c1,c4,c5),f(c2,c4,c5),f(c3,c4,c5)) != f(f(c1,c2,c3),c4,c5) # answer(dist_long).  [deny(1)].
+24 f(x,y,y) = y.  [para(3(a,1),2(a,1))].
+25 f(x,f(y,z,u),y) = f(y,z,f(y,x,u)).  [para(14(a,1),3(a,2))].
+26 f(x,y,f(y,z,u)) = f(y,z,f(y,x,u)).  [para(4(a,1),25(a,1))].
+27 f(x,y,f(y,z,u)) = f(y,z,f(x,u,y)).  [para(3(a,2),26(a,2,3))].
+28 f(x,y,f(y,z,u)) = f(y,z,f(x,y,u)).  [para(4(a,1),27(a,2,3))].
+29 f(x,y,f(z,x,u)) = f(z,x,f(x,y,u)).  [copy(28),flip(a)].
+30 f(x,y,f(z,x,u)) = f(x,u,f(x,y,z)).  [para(3(a,1),14(a,1,3))].
+31 f(x,y,f(x,u,z)) = f(x,u,f(x,y,z)).  [para(3(a,2),30(a,1,3))].
+32 f(x,y,f(x,z,u)) = f(x,u,f(x,y,z)).  [para(4(a,1),31(a,1,3))].
+33 f(x,y,f(z,u,w)) = f(f(x,y,w),z,f(u,x,y)).  [para(20(a,1),3(a,1))].
+34 f(x,y,f(z,u,w)) = f(f(x,y,w),z,f(y,u,x)).  [para(3(a,1),33(a,2,3))].
+35 f(x,y,f(z,u,w)) = f(f(x,y,w),z,f(x,y,u)).  [para(3(a,1),34(a,2,3))].
+36 f(x,y,f(z,u,w)) = f(z,f(x,y,u),f(x,y,w)).  [para(3(a,2),35(a,2))].
+37 f(x,f(y,z,u),f(y,z,w)) = f(y,z,f(x,u,w)).  [copy(36),flip(a)].
+38 f(x,f(y,z,u),f(u,y,w)) = f(u,y,f(x,z,w)).  [para(3(a,1),20(a,1,2))].
+39 f(x,f(y,z,u),f(y,w,u)) = f(u,y,f(x,z,w)).  [para(3(a,2),38(a,1,3))].
+40 f(x,f(y,z,u),f(y,u,w)) = f(u,y,f(x,z,w)).  [para(4(a,1),39(a,1,3))].
+41 f(x,f(y,z,u),f(y,u,w)) = f(y,f(x,z,w),u).  [para(3(a,2),40(a,2))].
+42 f(x,f(y,z,u),f(y,u,w)) = f(y,u,f(x,z,w)).  [para(4(a,1),41(a,2))].
+43 f(x,f(y,z,f(u,w,v5)),f(w,v5,f(z,u,v6))) = f(z,f(u,w,v5),f(x,y,f(w,v5,v6))).  [para(20(a,1),20(a,1,3))].
+44 f(x,y,z) = f(x,z,f(x,y,z)).  [para(24(a,1),14(a,1,3))].
+45 f(x,y,f(x,z,y)) = f(x,z,y).  [copy(44),flip(a)].
+46 f(x,f(y,z,u),u) = f(z,u,f(x,y,u)).  [para(24(a,1),20(a,1,3))].
+47 f(x,y,f(z,u,y)) = f(u,y,f(x,z,y)).  [para(4(a,1),46(a,1))].
+48 f(x,f(y,z,u),f(z,w,u)) = f(z,u,f(x,y,f(z,w,u))).  [para(45(a,1),20(a,1,3))].
+49 f(x,f(y,z,u),f(z,u,w)) = f(z,u,f(x,y,f(z,w,u))).  [para(4(a,1),48(a,1,3))].
+50 f(z,u,f(x,y,w)) = f(z,u,f(x,y,f(z,w,u))).  [para(20(a,1),49(a,1))].
+51 f(z,u,f(x,y,w)) = f(z,u,f(x,y,f(z,u,w))).  [para(4(a,1),50(a,2,3,3))].
+52 f(x,y,f(z,u,f(x,y,w))) = f(x,y,f(z,u,w)).  [copy(51),flip(a)].
+53 f(x,f(y,z,u),z) = f(y,z,f(z,x,u)).  [para(29(a,1),3(a,2))].
+54 f(x,z,f(y,z,u)) = f(y,z,f(z,x,u)).  [para(4(a,1),53(a,1))].
+55 f(x,z,f(y,z,u)) = f(y,z,f(x,u,z)).  [para(3(a,2),54(a,2,3))].
+56 f(x,y,f(z,y,u)) = f(z,y,f(x,y,u)).  [para(4(a,1),55(a,2,3))].
+57 f(x,f(y,z,f(u,y,w)),f(y,f(y,z,w),v5)) = f(y,f(y,z,w),f(x,u,v5)).  [para(29(a,2),20(a,1,2))].
+58 f(x,f(y,z,f(y,w,u)),f(y,f(y,z,w),v5)) = f(y,f(y,z,w),f(x,u,v5)).  [para(3(a,2),57(a,1,2,3))].
+59 f(x,f(y,z,f(y,u,w)),f(y,f(y,z,w),v5)) = f(y,f(y,z,w),f(x,u,v5)).  [para(4(a,1),58(a,1,2,3))].
+60 f(x,f(y,z,f(y,u,w)),f(y,v5,f(y,z,w))) = f(y,f(y,z,w),f(x,u,v5)).  [para(4(a,1),59(a,1,3))].
+61 f(x,f(x,y,z),u) = f(x,z,f(x,u,y)).  [para(32(a,1),4(a,2))].
+62 f(x,u,f(x,y,z)) = f(x,z,f(x,u,y)).  [para(4(a,1),61(a,1))].
+63 f(x,y,f(x,z,u)) = f(x,u,f(x,z,y)).  [para(4(a,1),62(a,2,3))].
+64 f(x,y,z) = f(z,y,f(x,z,y)).  [para(2(a,1),47(a,1,3))].
+65 f(x,y,z) = f(z,y,f(x,y,z)).  [para(4(a,1),64(a,2,3))].
+66 f(x,y,z) = f(y,f(x,y,z),z).  [para(3(a,2),65(a,2))].
+67 f(x,y,z) = f(y,z,f(x,y,z)).  [para(4(a,1),66(a,2))].
+68 f(x,y,f(z,x,y)) = f(z,x,y).  [copy(67),flip(a)].
+69 f(x,f(y,z,u),f(y,z,f(w,z,u))) = f(z,f(y,z,u),f(x,w,f(y,z,u))).  [para(56(a,1),47(a,1,3))].
+70 f(x,f(y,z,u),f(y,z,f(u,w,z))) = f(z,f(y,z,u),f(x,w,f(y,z,u))).  [para(3(a,1),69(a,1,3,3))].
+71 f(x,f(y,z,u),f(y,z,f(z,u,w))) = f(z,f(y,z,u),f(x,w,f(y,z,u))).  [para(3(a,1),70(a,1,3,3))].
+72 f(y,z,f(x,u,f(z,u,w))) = f(z,f(y,z,u),f(x,w,f(y,z,u))).  [para(37(a,1),71(a,1))].
+73 f(x,f(y,x,z),f(u,w,f(y,x,z))) = f(y,x,f(u,z,f(x,z,w))).  [copy(72),flip(a)].
+74 f(x,f(y,z,u),f(y,w,f(y,z,v5))) = f(y,z,f(x,u,f(y,w,v5))).  [para(14(a,1),37(a,1,3))].
+75 f(x,y,f(z,u,f(x,y,u))) = f(y,f(x,y,u),f(z,x,f(x,y,u))).  [para(37(a,1),47(a,1))].
+76 f(x,y,f(z,u,u)) = f(y,f(x,y,u),f(z,x,f(x,y,u))).  [para(52(a,1),75(a,1))].
+77 f(x,y,u) = f(y,f(x,y,u),f(z,x,f(x,y,u))).  [para(24(a,1),76(a,1,3))].
+78 f(x,y,u) = f(y,f(x,y,u),f(x,f(x,y,u),z)).  [para(3(a,2),77(a,2,3))].
+79 f(x,y,u) = f(y,f(x,y,u),f(x,z,f(x,y,u))).  [para(4(a,1),78(a,2,3))].
+80 f(x,y,u) = f(x,y,f(x,u,f(y,u,z))).  [para(73(a,1),79(a,2))].
+81 f(x,y,u) = f(x,y,f(x,u,f(y,z,u))).  [para(4(a,1),80(a,2,3,3))].
+82 f(x,y,f(x,z,f(y,u,z))) = f(x,y,z).  [copy(81),flip(a)].
+83 f(x,f(y,z,u),f(y,z,z)) = f(u,z,f(y,x,z)).  [para(47(a,1),37(a,2))].
+84 f(x,f(y,z,u),z) = f(u,z,f(y,x,z)).  [para(24(a,1),83(a,1,3))].
+85 f(x,z,f(y,z,u)) = f(u,z,f(y,x,z)).  [para(4(a,1),84(a,1))].
+86 f(x,z,f(y,z,u)) = f(u,z,f(x,z,y)).  [para(3(a,2),85(a,2,3))].
+87 f(x,z,f(y,z,u)) = f(u,z,f(x,y,z)).  [para(4(a,1),86(a,2,3))].
+88 f(x,z,f(y,z,u)) = f(z,f(x,y,z),u).  [para(3(a,2),87(a,2))].
+89 f(x,z,f(y,z,u)) = f(z,u,f(x,y,z)).  [para(4(a,1),88(a,2))].
+90 f(x,y,f(z,u,x)) = f(z,x,f(u,x,y)).  [copy(89),flip(a)].
+91 f(x,f(y,z,f(u,w,z)),f(w,z,v5)) = f(w,z,f(x,f(y,u,z),v5)).  [para(47(a,2),37(a,1,2))].
+92 f(x,f(y,z,f(z,u,w)),f(w,z,v5)) = f(w,z,f(x,f(y,u,z),v5)).  [para(3(a,1),91(a,1,2,3))].
+93 f(x,f(y,z,f(z,u,w)),f(z,v5,w)) = f(w,z,f(x,f(y,u,z),v5)).  [para(3(a,2),92(a,1,3))].
+94 f(x,f(y,z,f(z,u,w)),f(z,w,v5)) = f(w,z,f(x,f(y,u,z),v5)).  [para(4(a,1),93(a,1,3))].
+95 f(x,f(y,z,f(z,u,w)),f(z,w,v5)) = f(w,z,f(x,f(y,z,u),v5)).  [para(4(a,1),94(a,2,3,2))].
+96 f(x,f(y,z,f(z,u,w)),f(z,w,v5)) = f(w,z,f(x,v5,f(y,z,u))).  [para(4(a,1),95(a,2,3))].
+97 f(x,f(y,z,f(z,u,w)),f(z,w,v5)) = f(z,f(x,v5,f(y,z,u)),w).  [para(3(a,2),96(a,2))].
+98 f(x,f(y,z,f(z,u,w)),f(z,w,v5)) = f(z,w,f(x,v5,f(y,z,u))).  [para(4(a,1),97(a,2))].
+99 f(x,f(y,z,u),f(z,u,w)) = f(z,u,f(x,f(y,z,u),w)).  [para(68(a,1),37(a,1,2))].
+100 f(z,u,f(x,y,w)) = f(z,u,f(x,f(y,z,u),w)).  [para(20(a,1),99(a,1))].
+101 f(z,u,f(x,y,w)) = f(z,u,f(x,w,f(y,z,u))).  [para(4(a,1),100(a,2,3))].
+102 f(x,y,f(z,u,f(w,x,y))) = f(x,y,f(z,w,u)).  [copy(101),flip(a)].
+103 f(y,z,f(x,f(y,u,w),f(y,v5,w))) = f(y,f(y,z,w),f(x,u,v5)).  [para(74(a,1),60(a,1))].
+104 f(y,z,f(x,f(y,u,w),f(y,w,v5))) = f(y,f(y,z,w),f(x,u,v5)).  [para(4(a,1),103(a,1,3,3))].
+105 f(y,z,f(y,w,f(x,u,v5))) = f(y,f(y,z,w),f(x,u,v5)).  [para(42(a,1),104(a,1,3))].
+106 f(x,f(x,y,z),f(u,w,v5)) = f(x,y,f(x,z,f(u,w,v5))).  [copy(105),flip(a)].
+107 f(x,f(y,z,f(x,u,z)),y) = f(y,x,z).  [para(82(a,1),3(a,2))].
+108 f(x,f(y,z,f(x,z,u)),y) = f(y,x,z).  [para(4(a,1),107(a,1,2,3))].
+109 f(x,y,f(y,z,f(x,z,u))) = f(y,x,z).  [para(4(a,1),108(a,1))].
+110 f(x,y,f(y,z,f(x,z,u))) = f(x,z,y).  [para(3(a,2),109(a,2))].
+111 f(x,y,f(y,z,f(x,z,u))) = f(x,y,z).  [para(4(a,1),110(a,2))].
+112 f(x,f(y,z,u),f(x,u,y)) = f(x,y,u).  [para(82(a,1),63(a,2))].
+113 f(x,f(y,z,u),f(x,y,u)) = f(x,y,u).  [para(4(a,1),112(a,1,3))].
+114 f(f(x,y,z),u,f(x,z,f(w,y,v5))) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,v5))).  [para(42(a,1),29(a,1,3))].
+115 f(f(x,y,z),u,f(x,z,f(y,v5,w))) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,v5))).  [para(3(a,2),114(a,1,3,3))].
+116 f(f(x,y,z),u,f(x,z,f(y,w,v5))) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,v5))).  [para(4(a,1),115(a,1,3,3))].
+117 f(u,f(x,z,f(y,w,v5)),f(x,y,z)) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,v5))).  [para(3(a,2),116(a,1))].
+118 f(u,f(x,y,z),f(x,z,f(y,w,v5))) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,v5))).  [para(4(a,1),117(a,1))].
+119 f(x,z,f(u,y,f(y,w,v5))) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,v5))).  [para(42(a,1),118(a,1))].
+120 f(x,z,f(y,f(y,w,v5),u)) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,v5))).  [para(3(a,2),119(a,1,3))].
+121 f(x,z,f(y,u,f(y,w,v5))) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,v5))).  [para(4(a,1),120(a,1,3))].
+122 f(x,z,f(y,u,f(y,w,v5))) = f(w,f(x,y,z),f(u,f(x,z,v5),f(x,y,z))).  [para(3(a,2),121(a,2,3))].
+123 f(x,f(y,z,u),f(w,f(y,u,v5),f(y,z,u))) = f(y,u,f(z,w,f(z,x,v5))).  [copy(122),flip(a)].
+124 f(x,y,f(z,u,z)) = f(x,z,f(y,z,f(x,u,y))).  [para(42(a,1),90(a,1))].
+125 f(x,y,f(z,z,u)) = f(x,z,f(y,z,f(x,u,y))).  [para(3(a,1),124(a,1,3))].
+126 f(x,y,z) = f(x,z,f(y,z,f(x,u,y))).  [para(2(a,1),125(a,1,3))].
+127 f(x,y,z) = f(x,z,f(y,z,f(x,y,u))).  [para(4(a,1),126(a,2,3,3))].
+128 f(x,y,f(z,y,f(x,z,u))) = f(x,z,y).  [copy(127),flip(a)].
+129 f(f(x,y,z),u,f(w,x,z)) = f(w,f(x,y,z),f(f(x,y,z),u,f(w,x,z))).  [para(113(a,1),29(a,1,3))].
+130 f(f(x,y,z),u,f(z,w,x)) = f(w,f(x,y,z),f(f(x,y,z),u,f(w,x,z))).  [para(3(a,1),129(a,1,3))].
+131 f(f(x,y,z),u,f(x,z,w)) = f(w,f(x,y,z),f(f(x,y,z),u,f(w,x,z))).  [para(3(a,1),130(a,1,3))].
+132 f(u,f(x,z,w),f(x,y,z)) = f(w,f(x,y,z),f(f(x,y,z),u,f(w,x,z))).  [para(3(a,2),131(a,1))].
+133 f(u,f(x,z,w),f(x,y,z)) = f(w,f(x,y,z),f(f(x,y,z),u,f(z,w,x))).  [para(3(a,1),132(a,2,3,3))].
+134 f(u,f(x,z,w),f(x,y,z)) = f(w,f(x,y,z),f(f(x,y,z),u,f(x,z,w))).  [para(3(a,1),133(a,2,3,3))].
+135 f(u,f(x,z,w),f(x,y,z)) = f(w,f(x,y,z),f(u,f(x,z,w),f(x,y,z))).  [para(3(a,2),134(a,2,3))].
+136 f(u,f(x,z,w),f(x,y,z)) = f(x,z,f(y,u,f(y,w,w))).  [para(123(a,1),135(a,2))].
+137 f(x,f(y,z,u),f(y,w,z)) = f(y,z,f(w,x,u)).  [para(24(a,1),136(a,2,3,3))].
+138 f(x,f(y,z,f(x,z,u)),f(y,f(y,z,f(x,z,u)),f(x,y,w))) = f(x,y,z).  [para(111(a,1),128(a,2))].
+139 f(x,f(y,z,f(x,z,u)),f(y,z,f(y,f(x,z,u),f(x,y,w)))) = f(x,y,z).  [para(106(a,1),138(a,1,3))].
+140 f(y,z,f(x,f(x,z,u),f(y,f(x,z,u),f(x,y,w)))) = f(x,y,z).  [para(37(a,1),139(a,1))].
+141 f(x,y,f(z,x,f(z,y,u))) = f(z,x,y).  [para(128(a,1),140(a,1,3))].
+142 f(x,f(y,z,f(z,u,w)),f(z,w,f(u,y,v5))) = f(u,f(y,z,w),f(x,z,f(z,w,v5))).  [para(29(a,1),43(a,1,2))].
+143 f(x,f(y,z,f(z,u,w)),f(z,w,f(y,v5,u))) = f(u,f(y,z,w),f(x,z,f(z,w,v5))).  [para(3(a,2),142(a,1,3,3))].
+144 f(x,f(y,z,f(z,u,w)),f(z,w,f(y,u,v5))) = f(u,f(y,z,w),f(x,z,f(z,w,v5))).  [para(4(a,1),143(a,1,3,3))].
+145 f(z,w,f(x,f(y,u,v5),f(y,z,u))) = f(u,f(y,z,w),f(x,z,f(z,w,v5))).  [para(98(a,1),144(a,1))].
+146 f(z,w,f(y,u,f(z,x,v5))) = f(u,f(y,z,w),f(x,z,f(z,w,v5))).  [para(137(a,1),145(a,1,3))].
+147 f(z,w,f(y,u,f(x,v5,z))) = f(u,f(y,z,w),f(x,z,f(z,w,v5))).  [para(3(a,2),146(a,1,3,3))].
+148 f(z,w,f(y,u,f(x,z,v5))) = f(u,f(y,z,w),f(x,z,f(z,w,v5))).  [para(4(a,1),147(a,1,3,3))].
+149 f(x,f(y,z,u),f(w,z,f(z,u,v5))) = f(z,u,f(y,x,f(w,z,v5))).  [copy(148),flip(a)].
+150 f(f(x,y,f(z,u,w)),w,f(y,f(z,u,w),f(u,x,f(u,w,v5)))) = f(u,f(x,y,f(z,u,w)),w).  [para(43(a,1),141(a,1,3))].
+151 f(f(x,y,f(z,u,w)),w,f(y,f(z,u,w),f(x,f(u,w,v5),u))) = f(u,f(x,y,f(z,u,w)),w).  [para(3(a,2),150(a,1,3,3))].
+152 f(f(x,y,f(z,u,w)),w,f(y,f(z,u,w),f(x,u,f(u,w,v5)))) = f(u,f(x,y,f(z,u,w)),w).  [para(4(a,1),151(a,1,3,3))].
+153 f(f(x,y,f(z,u,w)),w,f(u,w,f(z,y,f(x,u,v5)))) = f(u,f(x,y,f(z,u,w)),w).  [para(149(a,1),152(a,1,3))].
+154 f(f(x,y,f(z,u,w)),w,f(u,w,f(y,f(x,u,v5),z))) = f(u,f(x,y,f(z,u,w)),w).  [para(3(a,2),153(a,1,3,3))].
+155 f(f(x,y,f(z,u,w)),w,f(u,w,f(y,z,f(x,u,v5)))) = f(u,f(x,y,f(z,u,w)),w).  [para(4(a,1),154(a,1,3,3))].
+156 f(w,f(u,w,f(y,z,f(x,u,v5))),f(x,y,f(z,u,w))) = f(u,f(x,y,f(z,u,w)),w).  [para(3(a,2),155(a,1))].
+157 f(w,f(x,y,f(z,u,w)),f(u,w,f(y,z,f(x,u,v5)))) = f(u,f(x,y,f(z,u,w)),w).  [para(4(a,1),156(a,1))].
+158 f(y,f(z,u,w),f(w,x,f(u,w,f(x,u,v5)))) = f(u,f(x,y,f(z,u,w)),w).  [para(43(a,1),157(a,1))].
+159 f(y,f(z,u,w),f(x,f(u,w,f(x,u,v5)),w)) = f(u,f(x,y,f(z,u,w)),w).  [para(3(a,2),158(a,1,3))].
+160 f(y,f(z,u,w),f(x,w,f(u,w,f(x,u,v5)))) = f(u,f(x,y,f(z,u,w)),w).  [para(4(a,1),159(a,1,3))].
+161 f(y,f(z,u,w),f(x,u,w)) = f(u,f(x,y,f(z,u,w)),w).  [para(128(a,1),160(a,1,3))].
+162 f(y,f(z,u,w),f(x,u,w)) = f(u,w,f(x,y,f(z,u,w))).  [para(4(a,1),161(a,2))].
+163 f(y,f(z,u,w),f(x,u,w)) = f(u,w,f(x,z,y)).  [para(102(a,1),162(a,2))].
+164 f(x,f(y,z,u),f(w,z,u)) = f(z,u,f(w,x,y)).  [para(4(a,1),163(a,2,3))].
+171 f(x,y,z) = f(x,y,z).  [assumption].
+172 f(x,y,f(z,u,w)) = f(x,y,f(z,w,u)).  [para(4(a,2),171(a,1,3))].
+174 f(x,y,f(z,u,w)) = f(x,y,f(u,z,w)).  [para(3(a,1),172(a,1,3))].
+176 f(x,y,f(z,u,f(w,x,y))) = f(x,y,f(w,z,u)).  [para(102(a,2),174(a,1))].
+178 f(x,y,f(z,f(u,x,y),w)) = f(x,y,f(u,w,z)).  [para(3(a,2),176(a,1,3))].
+180 f(f(x,y,z),f(u,y,z),f(w,y,z)) = f(y,z,f(x,u,w)).  [para(164(a,2),178(a,1))].
+182 f(f(x,y,z),f(u,y,z),f(w,y,z)) = f(z,f(x,u,w),y).  [para(3(a,2),180(a,2))].
+184 f(f(x,y,z),f(u,y,z),f(w,y,z)) = f(f(x,u,w),y,z).  [para(3(a,2),182(a,2))].
+185 $F # answer(dist_long).  [resolve(184,a,21,a)].
+
+============================== end of proof ==========================

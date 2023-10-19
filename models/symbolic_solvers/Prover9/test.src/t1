@@ -1,0 +1,12 @@
+'hi there'.
+
+p( a : b ).
+
+fof(a,b,c <=> (d:e)).
+
+fof(a, b, ( ! a : b )).
+
+fof(subset_union,axiom,
+    ( ! [B,C] : 
+        ( subset(B,C)
+       => union(B,C) = C ) )).

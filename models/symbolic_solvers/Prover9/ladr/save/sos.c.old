@@ -1,0 +1,180 @@
+#else  /* not NEW_SOS*/
+
+/****************************************************************************/
+
+/* Private definitions and types */
+
+static Clist Lightest = NULL;     /* Lightest clauses in Sos, or empty */
+
+/*************
+ *
+ *   clist_lightest_append()
+ *
+ *************/
+
+static
+void clist_lightest_append(Clause c)
+{
+  if (Lightest->first == NULL || c->weight > Lightest->first->c->weight)
+    ;  /* do nothing */
+  else if (c->weight == Lightest->first->c->weight)
+    clist_append(c, Lightest);
+  else
+    clist_remove_all_clauses(Lightest);
+}  /* clist_lightest_append */
+
+/*************
+ *
+ *   insert_into_sos()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine appends a clause to the sos list and updates
+the (private) index for extracting shortest clauses.
+*/
+
+/* PUBLIC */
+void insert_into_sos(Clause c, Clist sos)
+{
+  if (Lightest == NULL)
+     Lightest = clist_init("lightest");
+
+  clist_lightest_append(c);
+  clist_append(c, sos);
+}  /* insert_into_sos */
+
+/*************
+ *
+ *   remove_from_sos()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine removes a clause from the sos list and updates
+the index for extracting the lightest clause.
+*/
+
+/* PUBLIC */
+void remove_from_sos(Clause c, Clist sos)
+{
+  clist_remove(c, sos);
+  if (clist_member(c, Lightest))
+    clist_remove(c, Lightest);
+}  /* remove_from_sos */
+
+/*************
+ *
+ *   first_lightest_clause()
+ *
+ *************/
+
+static
+Clause first_lightest_clause(Clist l)
+{
+  int min = INT_MAX;
+  Clause lightest = NULL;
+  Clist_pos p;
+  for (p = l->first; p; p = p->next) {
+    int len = p->c->weight;
+    if (len < min) {
+      lightest = p->c;
+      min = len;
+    }
+  }
+  return lightest;
+}  /* first_lightest_clause */
+
+/*************
+ *
+ *   first_sos_clause()
+ *
+ *************/
+
+/* DOCUMENTATION
+Given a nonempty Clist, remove and return the first clause.
+Also, this may update the index for finding lightest clauses.
+*/
+
+/* PUBLIC */
+Clause first_sos_clause(Clist lst)
+{
+  if (lst->first == NULL)
+    return NULL;
+  else
+    return lst->first->c;
+}  /* first_sos_clause */
+
+/*************
+ *
+ *   lightest_sos_clause()
+ *
+ *   Get the first, lightest clause in Sos.  We use an auxiliary
+ *   Clist "Lightest" so that we don't have to scan Sos each time.
+ *   At any given time, Lightest is either empty or contains
+ *   all of the Sos clauses of minimum weight, in the same order as
+ *   in Sos.
+ *
+ *   To insert a newly kept clause c into Sos:  If c is the same
+ *   weight as clauses in Lightest, append it to Lightest as well as
+ *   to Sos.  If c is heaaver than Lightest, append it to Sos only.
+ *   If c is lighter than Lightest, remove all clauses from Lightest,
+ *   (leaving Lightest empty), and append c to Sos.
+ *
+ *   To get the first, lightest clause:  If Lightest is empty, build
+ *   a new Lightest list.  (This currently requires 2 scans of Sos.)
+ *   Now just take the first member of Lightest.
+ *
+ *   Good performance of this scheme depends on the assumption that
+ *   the Lightest list is farily stable; that is, as we go from
+ *   given clause to given clause, the weight of the lightest clauses
+ *   doesn't change often.
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine uses a private index to extract the first shortest
+clause from the sos list.
+*/
+
+/* PUBLIC */
+Clause lightest_sos_clause(Clist sos)
+{
+  if (sos->first == NULL)
+    return NULL;
+  else {
+    if (Lightest->first == NULL) {
+      /* Build a new "lightest" list. */
+      int wt = first_lightest_clause(sos)->weight;
+      Clist_pos p;
+      for (p = sos->first; p; p = p->next) {
+	if (p->c->weight == wt)
+	  clist_append(p->c, Lightest);
+      }
+    }
+    return Lightest->first->c;
+  }
+}  /* lightest_sos_clause */
+
+/*************
+ *
+ *   zap_sos()
+ *
+ *************/
+
+/* DOCUMENTATION
+*/
+
+/* PUBLIC */
+void zap_sos(void)
+{
+  if (Lightest != NULL) {
+    clist_remove_all_clauses(Lightest);
+    clist_free(Lightest);
+    Lightest = NULL;
+  }
+}  /* zap_sos */
+
+/****************************************************************************/
+
+#endif /* NEW_SOS */

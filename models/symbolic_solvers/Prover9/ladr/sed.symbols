@@ -1,0 +1,14 @@
+s/TRUE_SYM/true_sym()/g
+s/FALSE_SYM/false_sym()/g
+s/AND_SYM/and_sym()/g
+s/OR_SYM/or_sym()/g
+s/NOT_SYM/not_sym()/g
+s/IFF_SYM/iff_sym()/g
+s/IMP_SYM/imp_sym()/g
+s/IMPBY_SYM/impby_sym()/g
+s/ALL_SYM/all_sym()/g
+s/EXISTS_SYM/exists_sym()/g
+s/QUANT_SYM/quant_sym()/g
+s/ATTRIB_SYM/attrib_sym()/g
+s/EQ_SYM/eq_sym()/g
+s/NEQ_SYM/neq_sym()/g

@@ -1,0 +1,61 @@
+========================================================================
+
+McCune
+
+1. Isofilter: quiet option, which removes "1000 interps" messages.
+
+2. Prover9: automatic disabling of back subsumption at 500 given clauses
+    can cause problems; make it an option?
+
+3. LADR: give users the option of redeclaring built-in operations,
+    e.g., redeclare(conjuntion, and) changes conjunction from
+    the default "&" to "and".
+
+4. Interpformat: New format so that models can be easily parsed
+    by python, perl, etc.
+
+5. Package manual and examples for offline Windows users.
+
+6. Prover9: Rethink hints processing w.r.t. redundant hints.
+
+========================================================================
+
+Jipsen
+
+That's quite a list already, and I'm definitely going to use most of
+these added features. Here are a couple of longer term ideas that were
+mentioned (and probably weren't meant to be on your specific
+list). You probably remember them in some form, but since you asked...
+
+-- Set up a (Media)Wiki for theory definitions in Prover9/Mace4 syntax
+
+-- Make manual searchable
+
+-- Elaborate some glossary entries (e.g. paramodulation) with notation
+and (general) examples to make it easier to understand what Prover9 is
+doing in a proof step
+
+-- Incorporate isofilter into Mace4 at an appropriate point using the
+notion of a canonical partial interpretation
+
+-- Make Prover9/Mace4 available as an optional package in SAGE 
+
+========================================================================
+
+Kinyon
+
+Let me know when you have interpformat on the table, and
+I'll send you a useful format for binary operations.
+
+Similarly for Mace4. I have some ideas -- not difficult, I think --
+which I couldn't articulate at the workshop. 
+
+========================================================================
+
+Veroff
+
+
+========================================================================
+
+
+

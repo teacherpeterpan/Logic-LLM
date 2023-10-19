@@ -1,0 +1,264 @@
+<HTML>
+<HEAD>
+<TITLE>unify.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "unify.h"</H1>
+
+This page has information from files
+<A HREF="../unify.h">unify.h</A> and <A HREF="../unify.c">unify.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File unify.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#apply">apply</A></TD><TD><A HREF="#fprint_trail">fprint_trail</A></TD><TD><A HREF="#occur_check">occur_check</A></TD><TD><A HREF="#undo_subst_2">undo_subst_2</A></TD>
+</TR>
+<TR><TD><A HREF="#apply_substitute">apply_substitute</A></TD><TD><A HREF="#fprint_unify_mem">fprint_unify_mem</A></TD><TD><A HREF="#p_context">p_context</A></TD><TD><A HREF="#unify">unify</A></TD>
+</TR>
+<TR><TD><A HREF="#apply_substitute2">apply_substitute2</A></TD><TD><A HREF="#free_context">free_context</A></TD><TD><A HREF="#p_trail">p_trail</A></TD><TD><A HREF="#variable_substitution">variable_substitution</A></TD>
+</TR>
+<TR><TD><A HREF="#context_to_pairs">context_to_pairs</A></TD><TD><A HREF="#get_context">get_context</A></TD><TD><A HREF="#p_unify_mem">p_unify_mem</A></TD><TD><A HREF="#variant">variant</A></TD>
+</TR>
+<TR><TD><A HREF="#empty_substitution">empty_substitution</A></TD><TD><A HREF="#match">match</A></TD><TD><A HREF="#subst_changes_term">subst_changes_term</A></TD><TD><A HREF="#vars_in_trail">vars_in_trail</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_context">fprint_context</A></TD><TD><A HREF="#match_weight">match_weight</A></TD><TD><A HREF="#undo_subst">undo_subst</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="apply"></A><HR><PRE><B><A HREF="term.html">Term</A> apply(<A HREF="term.html">Term</A> t, <A HREF="unify.html">Context</A> c);
+</B></PRE>This routine applies the substitution in <A HREF="unify.html">Context</A> c to <A HREF="term.html">Term</A> t.
+See the explanation of <A HREF="#unify">unify</A>() for an example of the use of <A HREF="#apply">apply</A>().
+<A NAME="apply_substitute"></A><HR><PRE><B><A HREF="term.html">Term</A> apply_substitute(<A HREF="term.html">Term</A> t, <A HREF="term.html">Term</A> beta, <A HREF="unify.html">Context</A> c_from,
+		      <A HREF="term.html">Term</A> into_term, <A HREF="unify.html">Context</A> c_into);
+</B></PRE>This routine is like <A HREF="#apply">apply</A>(), but when it reaches a particular subterm
+(into_term) of the source term (t), it continues with another source
+term (beta).
+This routine is intended to be used for paramodulation, to avoid
+unnecessary work.  For example, when paramodulating alpha=beta into
+p[into_term], where alpha unifies with into_term, we construct
+the appropriate instance of p[beta] in one step by using this routine.
+<A NAME="apply_substitute2"></A><HR><PRE><B><A HREF="term.html">Term</A> apply_substitute2(<A HREF="term.html">Term</A> t, <A HREF="term.html">Term</A> beta, <A HREF="unify.html">Context</A> c_from,
+		       Ilist into_pos, <A HREF="unify.html">Context</A> c_into);
+</B></PRE>Similar to apply_substitute, but the into_term is specified with
+a position vector instead of the term itself.  This is so that
+the into term can be a variable.  (Recall that variables are
+probably shared, and we have to specify an *occurrence*.)
+<A NAME="context_to_pairs"></A><HR><PRE><B>Plist context_to_pairs(Ilist varnums, <A HREF="unify.html">Context</A> c);
+</B></PRE><A NAME="empty_substitution"></A><HR><PRE><B>BOOL empty_substitution(<A HREF="unify.html">Context</A> s);
+</B></PRE><A NAME="fprint_context"></A><HR><PRE><B>void fprint_context(FILE *fp, <A HREF="unify.html">Context</A> c);
+</B></PRE>This routine prints (to FILE *fp) a <A HREF="unify.html">Context</A>.
+<A NAME="fprint_trail"></A><HR><PRE><B>void fprint_trail(FILE *fp, <A HREF="unify.html">Trail</A> t);
+</B></PRE>This routine prints (to FILE *fp) a <A HREF="unify.html">Trail</A>.  The whole list is printed.
+<A NAME="fprint_unify_mem"></A><HR><PRE><B>void fprint_unify_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the unify package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="free_context"></A><HR><PRE><B>void free_context(<A HREF="unify.html">Context</A> p);
+</B></PRE><A NAME="get_context"></A><HR><PRE><B><A HREF="unify.html">Context</A> get_context(void);
+</B></PRE><A NAME="match"></A><HR><PRE><B>BOOL match(<A HREF="term.html">Term</A> t1, <A HREF="unify.html">Context</A> c1, <A HREF="term.html">Term</A> t2, <A HREF="unify.html">Trail</A> *trp);
+</B></PRE>This routine checks if <A HREF="term.html">Term</A> t2 (without a <A HREF="unify.html">Context</A>) is an
+instance of <A HREF="term.html">Term</A> t1 (in <A HREF="unify.html">Context</A> c1).
+If successful, <A HREF="unify.html">Context</A> c1 and <A HREF="unify.html">Trail</A> * trp are updated.
+The calling sequence and the use of Contexts and Trails is similar
+to those for <A HREF="#unify">unify</A>().
+<A NAME="match_weight"></A><HR><PRE><B>BOOL match_weight(<A HREF="term.html">Term</A> t1, <A HREF="unify.html">Context</A> c1, <A HREF="term.html">Term</A> t2, <A HREF="unify.html">Trail</A> *trp, int var_sn);
+</B></PRE>Special-purpose match for weighting.
+<A NAME="occur_check"></A><HR><PRE><B>BOOL occur_check(int vn, <A HREF="unify.html">Context</A> vc, <A HREF="term.html">Term</A> t, <A HREF="unify.html">Context</A> c);
+</B></PRE>This function checks if a variable with index vn (in <A HREF="unify.html">Context</A> vc)
+occurs in <A HREF="term.html">Term</A> t (in <A HREF="unify.html">Context</A> c), including the top case, where t
+is the variable in question.
+<A NAME="p_context"></A><HR><PRE><B>void p_context(<A HREF="unify.html">Context</A> c);
+</B></PRE>This routine prints (to stdout) a <A HREF="unify.html">Context</A>.
+<A NAME="p_trail"></A><HR><PRE><B>void p_trail(<A HREF="unify.html">Trail</A> t);
+</B></PRE>This routine prints (to stdout) a <A HREF="unify.html">Trail</A>.  The whole list is printed.
+<A NAME="p_unify_mem"></A><HR><PRE><B>void p_unify_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the unify package.
+<A NAME="subst_changes_term"></A><HR><PRE><B>BOOL subst_changes_term(<A HREF="term.html">Term</A> t, <A HREF="unify.html">Context</A> c);
+</B></PRE>This routine checks if a subsitution would change a term, if applied.
+<A NAME="undo_subst"></A><HR><PRE><B>void undo_subst(<A HREF="unify.html">Trail</A> tr);
+</B></PRE>This routine clears substitution entries recoded in <A HREF="unify.html">Trail</A> tr,
+and frees the corresponding <A HREF="unify.html">Trail</A> nodes.
+<A NAME="undo_subst_2"></A><HR><PRE><B>void undo_subst_2(<A HREF="unify.html">Trail</A> tr, <A HREF="unify.html">Trail</A> sub_tr);
+</B></PRE>It is assumed that <A HREF="unify.html">Trail</A> sub_tr is a subtrail of <A HREF="unify.html">Trail</A> tr.
+This routine clears part (maybe all) of a substitution, by
+clearing the entries from tr up to, but not including sub_tr.
+The corresponding <A HREF="unify.html">Trail</A> nodes are deallocated, so the
+caller should no longer refer to tr.  (This is useful for
+inference rules like hyperresolution, which backtrack,
+undoing parts of substitutions.)
+<A NAME="unify"></A><HR><PRE><B>BOOL unify(<A HREF="term.html">Term</A> t1, <A HREF="unify.html">Context</A> c1,
+	   <A HREF="term.html">Term</A> t2, <A HREF="unify.html">Context</A> c2, <A HREF="unify.html">Trail</A> *trp);
+</B></PRE>This routine tries to unify two terms in their respective
+contexts.  <A HREF="unify.html">Trail</A> * trp is the address of a <A HREF="unify.html">Trail</A>.
+If successful, the trail is extended (at its front) with
+substitutions that were made, and trp is updated to point to
+the new beginning of the trail.  If unify fails, the Contexts and
+the <A HREF="unify.html">Trail</A> * are not changed.
+<P>
+You must make sure, before calling <A HREF="#unify">unify</A>(), that no variable v in
+t1 or t2 has VARNUM(v) >= MAXVARS.  This is usually accomplished by
+calling a routine that renames variables.
+<P>
+Here is an example how to use <A HREF="#unify">unify</A>(),
+<A HREF="#apply">apply</A>(), and <A HREF="#undo_subst">undo_subst</A>().  Assume we have terms t1 and t2.
+(Terms t1 and t2 may share variables, but we "separate" the
+variables by using different contexts.  That is, variable v1 in
+context c1 is different from variable v1 in context c2.)
+<PRE>
+    {
+        <A HREF="unify.html">Context</A> c1 = <A HREF="#get_context">get_context</A>();
+        <A HREF="unify.html">Context</A> c2 = <A HREF="#get_context">get_context</A>();
+        <A HREF="unify.html">Trail</A> tr = NULL;
+        if (<A HREF="#unify">unify</A>(t1, c1, t2, c2, &tr)) {
+            <A HREF="term.html">Term</A> t3 = <A HREF="#apply">apply</A>(t1, c1);
+            <A HREF="term.html">Term</A> t4 = <A HREF="#apply">apply</A>(t2, c2);
+            if (term_ident(t3, t4))
+                printf("everything is OK\n");
+            else
+                printf("something is broken\n");
+            <A HREF="#undo_subst">undo_subst</A>(tr);
+            zap_term(t3);
+            zap_term(t4);
+        }
+        else
+            printf("unify fails\n");
+        <A HREF="#free_context">free_context</A>(c1);
+        <A HREF="#free_context">free_context</A>(c2);
+    }
+</PRE>
+<A NAME="variable_substitution"></A><HR><PRE><B>BOOL variable_substitution(<A HREF="unify.html">Context</A> s);
+</B></PRE><A NAME="variant"></A><HR><PRE><B>BOOL variant(<A HREF="term.html">Term</A> t1, <A HREF="unify.html">Context</A> c1,
+	    <A HREF="term.html">Term</A> t2, <A HREF="unify.html">Trail</A> *trp);
+</B></PRE>This routine checks if <A HREF="term.html">Term</A> t1 (in <A HREF="unify.html">Context</A> c1) and <A HREF="term.html">Term</A> t2
+(without a <A HREF="unify.html">Context</A>) are variants, that is, if each is an instance of the other.
+If successful, the unifying substitution is in <A HREF="unify.html">Context</A> c1.
+The calling sequence and the use of Contexts and Trails is the same
+as for <A HREF="#unify">unify</A>().
+<A NAME="vars_in_trail"></A><HR><PRE><B>Ilist vars_in_trail(<A HREF="unify.html">Trail</A> tr);
+</B></PRE>Return the list of variables (as integers) in a trail.  Note that this
+ignores the contexts associated with the varibles.
+<HR><A NAME=defns></A><H2>Public Definitions in File unify.h</H2>
+<PRE>
+/* Dereference a variable. */
+
+#define DEREFERENCE(t, c) { int i; \
+    while (c!=NULL && VARIABLE(t) && c->terms[i=VARNUM(t)]) \
+    { t = c->terms[i]; c = c->contexts[i]; } } 
+
+/* A <A HREF="unify.html">Context</A> records a substitution of terms for variables. */
+
+typedef struct context * <A HREF="unify.html">Context</A>;
+
+struct context {
+  <A HREF="term.html">Term</A>    terms[MAX_VARS];    /* terms substituted for variables */
+  <A HREF="unify.html">Context</A> contexts[MAX_VARS]; /* Contexts corresponding to terms */
+  int     multiplier;         /* for getting separate vars in apply */
+  <A HREF="term.html">Term</A>    partial_term;       /* for AC matching */
+};
+
+typedef struct trail * <A HREF="unify.html">Trail</A>;
+
+/* The following type is for backtrack unification and matching. */
+
+typedef enum { NO_ALT = 0,
+	       AC_ALT,
+	       COMM_ALT
+             } Unif_alternative;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package handles ordinary <GL>unification</GL> and <GL>matching</GL>
+of terms.
+The methods are probably different from what you learned in your
+logic course, so pay close attention.
+<P>
+In situations where you consider instantiating the variables of a term
+t, you will have an associated Context c.  The Context
+keeps track of the terms that are substituted for the variables---
+think of it as a substitution table indexed by the variable number.
+<P>
+Contexts allow you to separate variables of two terms without
+creating a renamed copy of one of the terms.  Say we have
+two terms with different Contexts: (t1,c1) and (t2,c2).
+If t1 and t2 share a variable, say v3, occurrences in
+t1 are a different variable from occurrences in t2, because
+the contexts are different.
+Think of the those variables as (v3,c1) and (v3,c2).
+In fact, when an instantiation is recorded in a Context,
+the variable in question is set to a pair, say (t4,c4) rather
+than just t4, because we have to know how to interpret the
+variables of t4.
+<P>
+There are situations where the terms being unified really do
+share variables, for example when factoring the literals of
+a clause; in those cases, you simply use the same context
+for both terms.
+<P>
+When you call unify(), match(), or any other routine that
+tries to make terms identical by instantiation, the terms you
+give are not changed---all of the action happens in their contexts
+(and in the trail, see below).
+So you do not have to copy terms before calling the routine.
+<P>
+When a unify or match routine succeeds, the Contexts are updated
+to reflect the common instance of the terms.  Also, a Trail is
+returned.  A Trail is a linked list of (variable,context)
+pairs telling exactly which variables were instantiated during
+the operation.  Its purpose is to quickly restore the Contexts to 
+their previous states.
+<P>
+You must explicitly allocate and free Contexts.
+To save time, we don't initialize the arrays each
+time a Context is re-allocated, and we don't check that Contexts
+are clear when they are freed.  Therefore, <I>you must make
+sure that a Context is clear before freeing it</I>.
+See undo_subst().  Also, if you forget to clear the Context with
+undo_subst(), you will have a memory leak, because the Trail will be
+lost.
+(If you suspect that you have a bug which causes a non-empty
+context to be freed, you can enable a run-time check in free_context()
+and recompile unify.c.)
+<P>
+When you wish to find out what a context does to a term t, you can
+call apply(), which builds a new copy of the term with all of
+the instantiations of the context applied to the term t.
+But I wrote above that (v3,c1) is a different variable 
+from (v3,c2)---what does apply do with uninstantiated variables?
+Each context has a unique multiplier (a small natural number);
+When apply() gets to an uninstantiated variable v, it returns
+a variable with index (multiplier*MAX_VARS)+VARNUM(v).
+Of course, this can give you VARNUMs > MAX_VARS, so you may
+have to rename variables of the result before calling a unification
+routine on the result.
+<P>
+Unification and matching can be used incrementally.  For example,
+you can all unify() with a context which has entries from a
+previous call to unify().  Hyperresolution can be implemented by
+backtracking through the negative literals of a nucleus
+and the satellites that unify with a given literal of the nucleus,
+constructing and undoing partial substitutions along the way.
+Another example is subsumption.
+Checking whether one clause subsumes another can be done by
+incremental matching, backtracking through the literals of the
+potential subsumer, trying to map them to the literals of the
+other clause.
+<P>
+Associative-commutative unification and matching, and commutative
+unification and matching, use different unification code, because they
+have to deal with multiple unifiers for a pair of terms.  (These other
+kinds of unification and matching may use the Context data
+type defined here.)
+
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,141 @@
+#!/usr/bin/perl -w
+
+# This script takes a Mace4 input file (the head) and a stream of
+# candidates.  It builds a list of models (M) of the candidates w.r.t.
+# the clauses in the head.
+#
+# For each candidate C, if the C is true in any member of M,
+# it is discarded; otherwise look for a model of C and the
+# clauses in the head; if a model is found, add it to M and
+# discard C; otherwise pass C through to the standard output.
+#
+# Call it, for example, like this:
+#
+#    attack head interps < candidates > candidates.out
+#
+# The file interps is created from scratch and must not exist at the start.
+#
+# The candidates must be one per line.  A candidate need not be a single
+# clause, e.g., it can be a pair of clauses.  The important thing
+# is that it makes sense when surrounded by "formulas(cand)." and
+# "end_of_list."  An exception: lines that start with "%" are treated
+# as comment lines and are passed directly through to stdout.
+
+$host = `hostname`; chop($host);
+$date = `date`;     chop($date);
+
+$mace4        = "mace4";
+$interpfilter = "interpfilter";
+$get_interps  = "get_interps";
+
+$model_exit_A = 0;  # one of the mace4 exit codes for "model found"
+$model_exit_B = 3;  # one of the mace4 exit codes for "model found"
+$model_exit_C = 4;  # one of the mace4 exit codes for "model found"
+$error_exit = 1;    # mace4 exit code for "error"
+
+$min  = "min";
+$mout = "mout";
+
+$fin  = "fin";
+$fout = "fout";
+
+if ($#ARGV != 1) {
+    print "need two args: head (must exist), interps (must not exist).\n";
+    die;
+}
+
+$mhead   = $ARGV[0];
+$interps = $ARGV[1];
+
+open(FH, $mhead) || die "Cannot open file $mhead.\n";
+@mace_head = <FH>;  # This reads the whole head file.
+close(FH);
+
+if (-e $interps) { die "file $interps already exists"; }
+
+open(FH, ">$interps") || die "Cannot open (create) file $interps.\n";
+print FH "% Started on $host at $date.\n";
+print FH "% Here is the head file $mhead.\n\n";
+print FH "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n";
+print FH `cat $mhead | sed 's/^/% /'`;
+print FH "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n";
+close(FH);
+
+$checked     = 0;
+$passed      = 0;
+$new_interps = 0;
+
+while ($cand = <STDIN>) {  # for each line on the standard input
+
+    if ($cand =~ /^%/) {
+	print $cand;  # Pass comment lines through to output.
+    }
+    else {
+	# Assume it's a candidate.
+
+	$checked++;
+
+	if ($checked % 100 == 0) {
+	    print STDERR "checked $checked\n";
+	}
+
+	open(FH, ">$fin") || die "Cannot open file $fin";
+	print FH "$cand\n";
+	close(FH);
+
+	system("$interpfilter $fin all_true < $interps > $fout");
+
+	# If interpfilter had error, that stderr message goes to this stderr.
+
+	if (system("grep 'passed 0' $fout > /dev/null 2> /dev/null") == 0) {
+
+	    # Candidate is still alive, so try to kill it.
+	    # print "still alive $cand";
+
+	    open(FH, ">$min") || die "Cannot open file $min";
+	    print FH @mace_head;
+	    print FH "formulas(candidate). \n $cand \n end_of_list.\n";
+	    close(FH);
+
+	    $rc = system("$mace4 -P1 < $min > $mout 2> /dev/null");
+	    $rc = $rc / 256;	# This gets the actual exit code.
+
+	    if ($rc == $error_exit) {
+		print "Mace4 error (in $mhead?), candidate $cand\n";
+	    }
+	    elsif ($rc == $model_exit_A ||
+		   $rc == $model_exit_B ||
+		   $rc == $model_exit_C) {
+		# print "just killed $cand";
+		# Candidate has been killed; add the interp to our arsenal.
+		$new_interps++;  # Wrong if there is more than one interp.
+		open(FH, ">>$interps");
+		chop $cand;
+		print FH "% $cand % cand $checked killed by\n\n";
+		close(FH);
+		system("$get_interps < $mout >> $interps");
+	    }
+	    else {
+		# print "kept $cand";
+		$passed++;
+		chop $cand;
+		print "$cand % cand $checked\n";
+	    }
+	}
+	else {
+	    # print "killed by old $cand";
+	}
+    }
+}
+
+print "% attack $mhead $interps (on $host): checked $checked," .
+      " passed $passed, new_interps $new_interps.\n";
+
+$date = `date`; chop($date);
+
+open(FH, ">>$interps") || die "Cannot open file $interps.\n";
+print FH "% Checked $checked, passed $passed, new_interps $new_interps.\n";
+print FH "% Finished $date.\n";
+close(FH);
+
+system("/bin/rm -f $min $mout $fin $fout");

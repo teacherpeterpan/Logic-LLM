@@ -1,0 +1,3 @@
+fof(name1, role1, ! [x,y] : (p(x,y) & q(y))).
+
+cnf(name2, role2, p(x,y) | ~q(y)).

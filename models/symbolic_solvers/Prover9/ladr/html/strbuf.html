@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>strbuf.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "strbuf.h"</H1>
+
+This page has information from files
+<A HREF="../strbuf.h">strbuf.h</A> and <A HREF="../strbuf.c">strbuf.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File strbuf.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fprint_sb">fprint_sb</A></TD><TD><A HREF="#p_strbuf_mem">p_strbuf_mem</A></TD><TD><A HREF="#sb_cat_copy">sb_cat_copy</A></TD><TD><A HREF="#sb_to_malloc_string">sb_to_malloc_string</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_strbuf_mem">fprint_strbuf_mem</A></TD><TD><A HREF="#sb_append">sb_append</A></TD><TD><A HREF="#sb_char">sb_char</A></TD><TD><A HREF="#zap_string_buf">zap_string_buf</A></TD>
+</TR>
+<TR><TD><A HREF="#get_string_buf">get_string_buf</A></TD><TD><A HREF="#sb_append_char">sb_append_char</A></TD><TD><A HREF="#sb_replace_char">sb_replace_char</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#init_string_buf">init_string_buf</A></TD><TD><A HREF="#sb_append_int">sb_append_int</A></TD><TD><A HREF="#sb_size">sb_size</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#p_sb">p_sb</A></TD><TD><A HREF="#sb_cat">sb_cat</A></TD><TD><A HREF="#sb_to_malloc_char_array">sb_to_malloc_char_array</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fprint_sb"></A><HR><PRE><B>void fprint_sb(FILE *fp, <A HREF="strbuf.html">String_buf</A> sb);
+</B></PRE>This routine prints <A HREF="strbuf.html">String_buf</A> sb to FILE *fp.
+<A NAME="fprint_strbuf_mem"></A><HR><PRE><B>void fprint_strbuf_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the strbuf package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="get_string_buf"></A><HR><PRE><B><A HREF="strbuf.html">String_buf</A> get_string_buf(void);
+</B></PRE><A NAME="init_string_buf"></A><HR><PRE><B><A HREF="strbuf.html">String_buf</A> init_string_buf(char *s);
+</B></PRE>This routine allocates and returns a <A HREF="strbuf.html">String_buf</A>, initialized
+to string s.  Don't forget to call <A HREF="#zap_string_buf">zap_string_buf</A>(sb) when
+finished with it.
+Also see <A HREF="#get_string_buf">get_string_buf</A>().
+<A NAME="p_sb"></A><HR><PRE><B>void p_sb(<A HREF="strbuf.html">String_buf</A> sb);
+</B></PRE>This routine prints <A HREF="strbuf.html">String_buf</A> sb, followed by '\n' and fflush, to stdout.
+If you don't want the newline, use <A HREF="#fprint_sb">fprint_sb</A>() instead.
+<A NAME="p_strbuf_mem"></A><HR><PRE><B>void p_strbuf_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the strbuf package.
+<A NAME="sb_append"></A><HR><PRE><B>void sb_append(<A HREF="strbuf.html">String_buf</A> sb, char *s);
+</B></PRE>This routine appends string s to <A HREF="strbuf.html">String_buf</A> sb.
+The NULL character that marks the end of s does not go into
+the <A HREF="strbuf.html">String_buf</A>.
+<A NAME="sb_append_char"></A><HR><PRE><B>void sb_append_char(<A HREF="strbuf.html">String_buf</A> sb, char c);
+</B></PRE>This routine appends character c to <A HREF="strbuf.html">String_buf</A> sb.
+<A NAME="sb_append_int"></A><HR><PRE><B>void sb_append_int(<A HREF="strbuf.html">String_buf</A> sb, int i);
+</B></PRE>Convert an integer to a string and append the string to a <A HREF="strbuf.html">String_buf</A>.
+<A NAME="sb_cat"></A><HR><PRE><B>void sb_cat(<A HREF="strbuf.html">String_buf</A> sb1, <A HREF="strbuf.html">String_buf</A> sb2);
+</B></PRE>This routine appends a copy of sb2 to sb1, then deallocates sb2.
+Do not refer to sb2 after calling this rouine because it won't exist.
+You can use <A HREF="#sb_cat_copy">sb_cat_copy</A>() instead if you need to save sb2.
+<A NAME="sb_cat_copy"></A><HR><PRE><B>void sb_cat_copy(<A HREF="strbuf.html">String_buf</A> sb1, <A HREF="strbuf.html">String_buf</A> sb2);
+</B></PRE>This routine appends a copy of sb2 to sb1.
+<A HREF="strbuf.html">String_buf</A> sb2 is not changed.
+You can use <A HREF="#sb_cat">sb_cat</A>() instead if you won't be needing sb2.
+<A NAME="sb_char"></A><HR><PRE><B>char sb_char(<A HREF="strbuf.html">String_buf</A> sb, int n);
+</B></PRE>This routine returns the n-th character (counting from 0) of <A HREF="strbuf.html">String_buf</A> sb.
+If index n is out of range, the NULL character '\0' is returned.
+<A NAME="sb_replace_char"></A><HR><PRE><B>void sb_replace_char(<A HREF="strbuf.html">String_buf</A> sb, int i, char c);
+</B></PRE>This routine replaces a character in a <A HREF="strbuf.html">String_buf</A>.
+If the index i is out of range, nothing happens.
+<A NAME="sb_size"></A><HR><PRE><B>int sb_size(<A HREF="strbuf.html">String_buf</A> sb);
+</B></PRE><A NAME="sb_to_malloc_char_array"></A><HR><PRE><B>char *sb_to_malloc_char_array(<A HREF="strbuf.html">String_buf</A> sb);
+</B></PRE>This routine is similar to <A HREF="#sb_to_malloc_string">sb_to_malloc_string</A>(), except that
+null characters are copied to the new string. 
+<A NAME="sb_to_malloc_string"></A><HR><PRE><B>char *sb_to_malloc_string(<A HREF="strbuf.html">String_buf</A> sb);
+</B></PRE>This routine returns a new, ordinary C string corresponding to the
+<A HREF="strbuf.html">String_buf</A> argument sb.  WARNING: the new string, say s, is
+dynamically allocated (malloced), so don't forget to call
+free(s) when you are finished with the string.  (This routine
+is not intended for printing String_bufs; use <A HREF="#fprint_sb">fprint_sb</A>() instead.)
+<P>
+String_bufs do not have a NULL character marking the end;
+instead, they keep a count of the number of characters.
+<p>
+If the <A HREF="strbuf.html">String_buf</A> contains NULL characters, they do NOT mark the
+end of the string.  Instead, they are simply ignored when constructing
+the ordinary string.
+<A NAME="zap_string_buf"></A><HR><PRE><B>void zap_string_buf(<A HREF="strbuf.html">String_buf</A> sb);
+</B></PRE>This routine deallocates a <A HREF="strbuf.html">String_buf</A> and frees all memory
+associated with it.
+<HR><A NAME=defns></A><H2>Public Definitions in File strbuf.h</H2>
+<PRE>
+typedef struct string_buf * <A HREF="strbuf.html">String_buf</A>;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+A String_buf is a kind of string that can grow as big as you need.
+This is implemented as a list of dynamically allocated character
+arrays of fixed size.
+The only problem with using String_bufs is that you have to remember
+to free a String_buf when you are finished with it.
+<P>
+This is similar to the StringBuffer class in Java, and the
+cstrings of our old theorem prover LMA/ITP.  We didn't have anything
+like this in Otter, but there were times when I wish we had,
+so here it is.
+
+<HR>
+</BODY>
+</HTML>

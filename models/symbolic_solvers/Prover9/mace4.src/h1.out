@@ -1,0 +1,206 @@
+============================== Mace4 =================================
+Mace4 (32) version 2009-02A, February 2009.
+Process 24442 was started by mccune on cleo,
+Fri Mar 13 08:49:39 2009
+The command was "mace4 -f h1.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file h1.in
+
+op(500,infix,"+").
+op(490,infix,";").
+op(490,infix,"*").
+op(480,postfix,"^").
+op(490,infix,"||").
+op(490,infix,"/\").
+op(490,infix,"!!").
+if(Prover9).
+% Conditional input omitted.
+end_if.
+if(Mace4).
+% Conditional input included.
+assign(max_seconds,60).
+end_if.
+
+formulas(assumptions).
+x + y = y + x.
+x + 0 = x.
+x + (y + z) = (x + y) + z.
+x ; 1 = x & 1 ; x = x.
+x ; (y ; z) = (x ; y) ; z.
+x * 1 = x & 1 * x = x.
+x * (y * z) = (x * y) * z.
+(x + y) ; z = x ; z + y ; z.
+(x + y) * z = x * z + y * z.
+z ; (x + y) = z ; x + z ; y.
+z * (x + y) = z * x + z * y.
+0 ; x = 0.
+x ; 0 = 0.
+0 * x = 0.
+x * 0 = 0.
+x + x = x.
+x <= y <-> x + y = y.
+(x * x1) ; (y * y1) <= (x1 ; y) * (x ; y1).
+x /\ y <= x.
+x /\ y <= y.
+z <= x & z <= y -> z <= x /\ y.
+x || y = (x ; y) /\ (y ; x).
+x !! y = (x /\ 1) ; y + x ; (y /\ 1).
+end_of_list.
+
+formulas(goals).
+x !! y = y !! x.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 x ; 1 = x & 1 ; x = x # label(non_clause).  [assumption].
+2 x * 1 = x & 1 * x = x # label(non_clause).  [assumption].
+3 x <= y <-> x + y = y # label(non_clause).  [assumption].
+4 z <= x & z <= y -> z <= x /\ y # label(non_clause).  [assumption].
+5 x !! y = y !! x # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+x + y = y + x.
+x + 0 = x.
+x + (y + z) = (x + y) + z.
+x ; 1 = x.
+1 ; x = x.
+x ; (y ; z) = (x ; y) ; z.
+x * 1 = x.
+1 * x = x.
+x * (y * z) = (x * y) * z.
+(x + y) ; z = x ; z + y ; z.
+(x + y) * z = x * z + y * z.
+x ; (y + z) = x ; y + x ; z.
+x * (y + z) = x * y + x * z.
+0 ; x = 0.
+x ; 0 = 0.
+0 * x = 0.
+x * 0 = 0.
+x + x = x.
+-(x <= y) | x + y = y.
+x <= y | x + y != y.
+(x * y) ; (z * u) <= (y ; z) * (x ; u).
+x /\ y <= x.
+x /\ y <= y.
+-(x <= y) | -(x <= z) | x <= y /\ z.
+x || y = (x ; y) /\ (y ; x).
+x !! y = (x /\ 1) ; y + x ; (y /\ 1).
+c2 !! c1 != c1 !! c2.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 1.
+
+============================== DOMAIN SIZE 2 =========================
+
+============================== STATISTICS ============================
+
+For domain size 2.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=129, kept=58.
+Selections=3, assignments=6, propagations=28, current_models=0.
+Rewrite_terms=121, rewrite_bools=61, indexes=0.
+Rules_from_neg_clauses=6, cross_offs=6.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 3 =========================
+
+============================== STATISTICS ============================
+
+For domain size 3.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.12 seconds).
+Ground clauses: seen=391, kept=251.
+Selections=2425, assignments=7275, propagations=14992, current_models=0.
+Rewrite_terms=458623, rewrite_bools=164648, indexes=14310.
+Rules_from_neg_clauses=4543, cross_offs=12388.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 4 =========================
+
+============================== MODEL =================================
+
+interpretation( 4, [number=1, seconds=4], [
+
+        function(c1, [ 2 ]),
+
+        function(c2, [ 3 ]),
+
+        function(!!(_,_), [
+			   0, 0, 0, 0,
+			   0, 1, 2, 3,
+			   0, 2, 0, 0,
+			   0, 3, 2, 3 ]),
+
+        function(*(_,_), [
+			   0, 0, 0, 0,
+			   0, 1, 2, 3,
+			   0, 2, 0, 2,
+			   0, 3, 2, 3 ]),
+
+        function(+(_,_), [
+			   0, 1, 2, 3,
+			   1, 1, 1, 1,
+			   2, 1, 2, 3,
+			   3, 1, 3, 3 ]),
+
+        function(/\(_,_), [
+			   0, 0, 0, 0,
+			   0, 1, 2, 3,
+			   0, 2, 2, 2,
+			   0, 3, 2, 3 ]),
+
+        function(;(_,_), [
+			   0, 0, 0, 0,
+			   0, 1, 2, 3,
+			   0, 2, 0, 0,
+			   0, 3, 2, 3 ]),
+
+        function(||(_,_), [
+			   0, 0, 0, 0,
+			   0, 1, 2, 3,
+			   0, 2, 0, 0,
+			   0, 3, 0, 3 ]),
+
+        relation(<=(_,_), [
+			   1, 1, 1, 1,
+			   0, 1, 0, 0,
+			   0, 1, 1, 1,
+			   0, 1, 0, 1 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 4.
+
+Current CPU time: 0.00 seconds (total CPU time: 4.78 seconds).
+Ground clauses: seen=921, kept=696.
+Selections=36759, assignments=147005, propagations=665193, current_models=1.
+Rewrite_terms=18503894, rewrite_bools=6591134, indexes=1533814.
+Rules_from_neg_clauses=132667, cross_offs=660041.
+
+============================== end of statistics =====================
+
+User_CPU=4.78, System_CPU=0.01, Wall_clock=9.
+
+Exiting with 1 model.
+
+Process 24442 exit (max_models) Fri Mar 13 08:49:48 2009
+The process finished Fri Mar 13 08:49:48 2009

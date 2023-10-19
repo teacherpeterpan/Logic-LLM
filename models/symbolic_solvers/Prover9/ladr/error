@@ -1,0 +1,5 @@
+      fprintf(fout, "%%%%ERROR: unrecognized command or list:\n\n");
+      fprintf(fout, "%%%%START ERROR%%%%\n");
+      fprint_term(fout, t); fprintf(fout, "\n");
+      fprintf(fout, "%%%%END ERROR%%%%\n");
+      fatal_error("read_from_file, unrecognized command or list");

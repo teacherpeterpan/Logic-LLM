@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>di_tree.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "di_tree.h"</H1>
+
+This page has information from files
+<A HREF="../di_tree.h">di_tree.h</A> and <A HREF="../di_tree.c">di_tree.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File di_tree.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#back_feature_subsume">back_feature_subsume</A></TD><TD><A HREF="#fprint_di_tree_mem">fprint_di_tree_mem</A></TD><TD><A HREF="#mega_sub_calls">mega_sub_calls</A></TD><TD><A HREF="#p_di_tree_mem">p_di_tree_mem</A></TD>
+</TR>
+<TR><TD><A HREF="#di_tree_delete">di_tree_delete</A></TD><TD><A HREF="#free_di_tree">free_di_tree</A></TD><TD><A HREF="#nonunit_bsub_tests">nonunit_bsub_tests</A></TD><TD><A HREF="#zap_di_tree">zap_di_tree</A></TD>
+</TR>
+<TR><TD><A HREF="#di_tree_insert">di_tree_insert</A></TD><TD><A HREF="#get_di_tree">get_di_tree</A></TD><TD><A HREF="#nonunit_fsub_tests">nonunit_fsub_tests</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#forward_feature_subsume">forward_feature_subsume</A></TD><TD><A HREF="#init_di_tree">init_di_tree</A></TD><TD><A HREF="#p_di_tree">p_di_tree</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="back_feature_subsume"></A><HR><PRE><B>Plist back_feature_subsume(Topform c, Di_tree root);
+</B></PRE><A NAME="di_tree_delete"></A><HR><PRE><B>BOOL di_tree_delete(Ilist vec, Di_tree node, void *datum);
+</B></PRE><A NAME="di_tree_insert"></A><HR><PRE><B>void di_tree_insert(Ilist vec, Di_tree node, void *datum);
+</B></PRE><A NAME="forward_feature_subsume"></A><HR><PRE><B>Topform forward_feature_subsume(Topform d, Di_tree root);
+</B></PRE><A NAME="fprint_di_tree_mem"></A><HR><PRE><B>void fprint_di_tree_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the di_tree package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="free_di_tree"></A><HR><PRE><B>void free_di_tree(Di_tree p);
+</B></PRE><A NAME="get_di_tree"></A><HR><PRE><B>Di_tree get_di_tree(void);
+</B></PRE><A NAME="init_di_tree"></A><HR><PRE><B>Di_tree init_di_tree(void);
+</B></PRE>This routine allocates and returns an empty integer-vector
+discrimination index.
+<A NAME="mega_sub_calls"></A><HR><PRE><B>unsigned mega_sub_calls(void);
+</B></PRE><A NAME="nonunit_bsub_tests"></A><HR><PRE><B>int nonunit_bsub_tests(void);
+</B></PRE><A NAME="nonunit_fsub_tests"></A><HR><PRE><B>int nonunit_fsub_tests(void);
+</B></PRE><A NAME="p_di_tree"></A><HR><PRE><B>void p_di_tree(Ilist vec, Di_tree node, int depth);
+</B></PRE><A NAME="p_di_tree_mem"></A><HR><PRE><B>void p_di_tree_mem(void);
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the di_tree package.
+<A NAME="zap_di_tree"></A><HR><PRE><B>void zap_di_tree(Di_tree node, int depth);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File di_tree.h</H2>
+<PRE>
+typedef struct di_tree * Di_tree;
+
+struct di_tree {       /* node in an integer vector discrimination tree */
+  int label;           /* label of node */
+  Di_tree   next;      /* sibling */
+  union {
+    Di_tree kids;      /* for internal nodes */
+    Plist data;        /* for leaves */
+  } u;
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

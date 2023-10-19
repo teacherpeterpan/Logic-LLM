@@ -1,0 +1,328 @@
+<HTML>
+<HEAD>
+<TITLE>glist.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "glist.h"</H1>
+
+This page has information from files
+<A HREF="../glist.h">glist.h</A> and <A HREF="../glist.c">glist.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File glist.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#alist2_insert">alist2_insert</A></TD><TD><A HREF="#i2list_member">i2list_member</A></TD><TD><A HREF="#ilist_rem_dups">ilist_rem_dups</A></TD><TD><A HREF="#plist_last">plist_last</A></TD>
+</TR>
+<TR><TD><A HREF="#alist2_remove">alist2_remove</A></TD><TD><A HREF="#i2list_multimember">i2list_multimember</A></TD><TD><A HREF="#ilist_remove_last">ilist_remove_last</A></TD><TD><A HREF="#plist_member">plist_member</A></TD>
+</TR>
+<TR><TD><A HREF="#alist_insert">alist_insert</A></TD><TD><A HREF="#i2list_multisubset">i2list_multisubset</A></TD><TD><A HREF="#ilist_removeall">ilist_removeall</A></TD><TD><A HREF="#plist_pop">plist_pop</A></TD>
+</TR>
+<TR><TD><A HREF="#assoc">assoc</A></TD><TD><A HREF="#i2list_prepend">i2list_prepend</A></TD><TD><A HREF="#ilist_set">ilist_set</A></TD><TD><A HREF="#plist_prepend">plist_prepend</A></TD>
+</TR>
+<TR><TD><A HREF="#assoc2a">assoc2a</A></TD><TD><A HREF="#i2list_removeall">i2list_removeall</A></TD><TD><A HREF="#ilist_subset">ilist_subset</A></TD><TD><A HREF="#plist_remove">plist_remove</A></TD>
+</TR>
+<TR><TD><A HREF="#assoc2b">assoc2b</A></TD><TD><A HREF="#i3list_append">i3list_append</A></TD><TD><A HREF="#ilist_subtract">ilist_subtract</A></TD><TD><A HREF="#plist_remove_last">plist_remove_last</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_i3list">copy_i3list</A></TD><TD><A HREF="#i3list_count">i3list_count</A></TD><TD><A HREF="#ilist_union">ilist_union</A></TD><TD><A HREF="#plist_subset">plist_subset</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_ilist">copy_ilist</A></TD><TD><A HREF="#i3list_prepend">i3list_prepend</A></TD><TD><A HREF="#ith_in_plist">ith_in_plist</A></TD><TD><A HREF="#plist_subtract">plist_subtract</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_plist">copy_plist</A></TD><TD><A HREF="#ilist_append">ilist_append</A></TD><TD><A HREF="#longest_string_in_plist">longest_string_in_plist</A></TD><TD><A HREF="#position_in_ilist">position_in_ilist</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_glist_mem">fprint_glist_mem</A></TD><TD><A HREF="#ilist_cat">ilist_cat</A></TD><TD><A HREF="#multiset_add">multiset_add</A></TD><TD><A HREF="#position_of_string_in_plist">position_of_string_in_plist</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_ilist">fprint_ilist</A></TD><TD><A HREF="#ilist_cat2">ilist_cat2</A></TD><TD><A HREF="#multiset_add_n">multiset_add_n</A></TD><TD><A HREF="#reverse_i3list">reverse_i3list</A></TD>
+</TR>
+<TR><TD><A HREF="#free_i2list">free_i2list</A></TD><TD><A HREF="#ilist_copy">ilist_copy</A></TD><TD><A HREF="#multiset_occurrences">multiset_occurrences</A></TD><TD><A HREF="#reverse_ilist">reverse_ilist</A></TD>
+</TR>
+<TR><TD><A HREF="#free_i3list">free_i3list</A></TD><TD><A HREF="#ilist_count">ilist_count</A></TD><TD><A HREF="#multiset_to_set">multiset_to_set</A></TD><TD><A HREF="#reverse_plist">reverse_plist</A></TD>
+</TR>
+<TR><TD><A HREF="#free_ilist">free_ilist</A></TD><TD><A HREF="#ilist_insert_up">ilist_insert_up</A></TD><TD><A HREF="#multiset_union">multiset_union</A></TD><TD><A HREF="#sort_plist">sort_plist</A></TD>
+</TR>
+<TR><TD><A HREF="#free_plist">free_plist</A></TD><TD><A HREF="#ilist_intersect">ilist_intersect</A></TD><TD><A HREF="#p_glist_mem">p_glist_mem</A></TD><TD><A HREF="#string_member_plist">string_member_plist</A></TD>
+</TR>
+<TR><TD><A HREF="#get_i2list">get_i2list</A></TD><TD><A HREF="#ilist_is_set">ilist_is_set</A></TD><TD><A HREF="#p_i2list">p_i2list</A></TD><TD><A HREF="#zap_i2list">zap_i2list</A></TD>
+</TR>
+<TR><TD><A HREF="#get_i3list">get_i3list</A></TD><TD><A HREF="#ilist_last">ilist_last</A></TD><TD><A HREF="#p_ilist">p_ilist</A></TD><TD><A HREF="#zap_i3list">zap_i3list</A></TD>
+</TR>
+<TR><TD><A HREF="#get_ilist">get_ilist</A></TD><TD><A HREF="#ilist_member">ilist_member</A></TD><TD><A HREF="#plist_append">plist_append</A></TD><TD><A HREF="#zap_ilist">zap_ilist</A></TD>
+</TR>
+<TR><TD><A HREF="#get_plist">get_plist</A></TD><TD><A HREF="#ilist_occurrences">ilist_occurrences</A></TD><TD><A HREF="#plist_cat">plist_cat</A></TD><TD><A HREF="#zap_plist">zap_plist</A></TD>
+</TR>
+<TR><TD><A HREF="#i2list_append">i2list_append</A></TD><TD><A HREF="#ilist_pop">ilist_pop</A></TD><TD><A HREF="#plist_cat2">plist_cat2</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#i2list_count">i2list_count</A></TD><TD><A HREF="#ilist_prepend">ilist_prepend</A></TD><TD><A HREF="#plist_count">plist_count</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="alist2_insert"></A><HR><PRE><B>I3list alist2_insert(I3list p, int key, int a, int b);
+</B></PRE>Alist2 (association list) for pairs of integers.
+Insert key/<value-a,value-b> pairs.
+With <A HREF="#assoc2a">assoc2a</A>(key), retreive value-a.
+With <A HREF="#assoc2b">assoc2b</A>(key), retreive value-b.
+If a key has more than one value pair, the most recent is returned.
+It a key is not in the alist2, INT_MIN is returned.
+An alist2 can be freed with <A HREF="#zap_i3list">zap_i3list</A>(alist2).
+<A NAME="alist2_remove"></A><HR><PRE><B>I3list alist2_remove(I3list p, int key);
+</B></PRE><A NAME="alist_insert"></A><HR><PRE><B>I2list alist_insert(I2list p, int key, int val);
+</B></PRE>Alists (association list) for integers.
+Insert key/value pairs.  With <A HREF="#assoc">assoc</A>(key), retreive value.
+If a key has more than one value, the most recent is returned.
+It an key is not in the alist, INT_MIN is returned.
+An alist can be freed with <A HREF="#zap_i2list">zap_i2list</A>(alist).
+This is not efficient, because no hashing is done; lookups are linear.
+<A NAME="assoc"></A><HR><PRE><B>int assoc(I2list p, int key);
+</B></PRE>See alist_insert.
+<A NAME="assoc2a"></A><HR><PRE><B>int assoc2a(I3list p, int key);
+</B></PRE>See alist2_insert.
+<A NAME="assoc2b"></A><HR><PRE><B>int assoc2b(I3list p, int key);
+</B></PRE>See alist2_insert.
+<A NAME="copy_i3list"></A><HR><PRE><B>I3list copy_i3list(I3list p);
+</B></PRE>This routine copies a I3list (the whole 3list) and returns the copy.
+<A NAME="copy_ilist"></A><HR><PRE><B>Ilist copy_ilist(Ilist p);
+</B></PRE>This routine copies a Ilist (the whole list) and returns the copy.
+<A NAME="copy_plist"></A><HR><PRE><B>Plist copy_plist(Plist p);
+</B></PRE>This routine copies a Plist (the whole list) and returns the copy.
+<A NAME="fprint_glist_mem"></A><HR><PRE><B>void fprint_glist_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the glist package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="fprint_ilist"></A><HR><PRE><B>void fprint_ilist(FILE *fp, Ilist p);
+</B></PRE>The list of integers is printed to FILE *fp like this: (4 5 1 3),
+without a newline.
+<A NAME="free_i2list"></A><HR><PRE><B>void free_i2list(I2list p);
+</B></PRE><A NAME="free_i3list"></A><HR><PRE><B>void free_i3list(I3list p);
+</B></PRE><A NAME="free_ilist"></A><HR><PRE><B>void free_ilist(Ilist p);
+</B></PRE><A NAME="free_plist"></A><HR><PRE><B>void free_plist(Plist p);
+</B></PRE><A NAME="get_i2list"></A><HR><PRE><B>I2list get_i2list(void);
+</B></PRE><A NAME="get_i3list"></A><HR><PRE><B>I3list get_i3list(void);
+</B></PRE><A NAME="get_ilist"></A><HR><PRE><B>Ilist get_ilist(void);
+</B></PRE><A NAME="get_plist"></A><HR><PRE><B>Plist get_plist(void);
+</B></PRE><A NAME="i2list_append"></A><HR><PRE><B>I2list i2list_append(I2list lst, int i, int j);
+</B></PRE>This routine appends an integer to a I2list.  The updated I2list
+is returned.
+<A NAME="i2list_count"></A><HR><PRE><B>int i2list_count(I2list p);
+</B></PRE>This routine returns the length of a I2list.
+<A NAME="i2list_member"></A><HR><PRE><B>I2list i2list_member(I2list lst, int i);
+</B></PRE><A NAME="i2list_multimember"></A><HR><PRE><B>BOOL i2list_multimember(I2list b, int i, int n);
+</B></PRE>Is <i,n> a multimember of multiset b?
+<A NAME="i2list_multisubset"></A><HR><PRE><B>BOOL i2list_multisubset(I2list a, I2list b);
+</B></PRE><A NAME="i2list_prepend"></A><HR><PRE><B>I2list i2list_prepend(I2list lst, int i, int j);
+</B></PRE>This routine inserts an integer triple as the first member of a I2list.
+The updated I2list is returned.
+<A NAME="i2list_removeall"></A><HR><PRE><B>I2list i2list_removeall(I2list p, int i);
+</B></PRE>Remove all occurrences of i.
+<P>
+The argument is "used up".
+<A NAME="i3list_append"></A><HR><PRE><B>I3list i3list_append(I3list lst, int i, int j, int k);
+</B></PRE>This routine appends an integer to a I3list.  The updated I3list
+is returned.
+<A NAME="i3list_count"></A><HR><PRE><B>int i3list_count(I3list p);
+</B></PRE>This routine returns the length of a I3list.
+<A NAME="i3list_prepend"></A><HR><PRE><B>I3list i3list_prepend(I3list lst, int i, int j, int k);
+</B></PRE>This routine inserts an integer triple as the first member of a I3list.
+The updated I3list is returned.
+<A NAME="ilist_append"></A><HR><PRE><B>Ilist ilist_append(Ilist lst, int i);
+</B></PRE>This routine appends an integer to a Ilist.  The updated Ilist
+is returned.
+<A NAME="ilist_cat"></A><HR><PRE><B>Ilist ilist_cat(Ilist p1, Ilist p2);
+</B></PRE>Concatenate two Ilists and return the result.  The result is constructed
+from the arguments, so do not refer to either of the arguments after the call.
+<P>
+That is, both arguments are "used up".
+<A NAME="ilist_cat2"></A><HR><PRE><B>Ilist ilist_cat2(Ilist p1, Ilist p2);
+</B></PRE>Concatenate two Ilists and return the result.
+In this version, the second ilist is copied and
+placed at the end of p1.  That is, p1 is "used up",
+but p2 is not.
+<A NAME="ilist_copy"></A><HR><PRE><B>Ilist ilist_copy(Ilist p);
+</B></PRE><A NAME="ilist_count"></A><HR><PRE><B>int ilist_count(Ilist p);
+</B></PRE>This routine returns the length of a Ilist.
+<A NAME="ilist_insert_up"></A><HR><PRE><B>Ilist ilist_insert_up(Ilist p, int i);
+</B></PRE><A NAME="ilist_intersect"></A><HR><PRE><B>Ilist ilist_intersect(Ilist a, Ilist b);
+</B></PRE>Construct the intersection (as a new Ilist).
+<P>
+The arguments are not changed.
+<A NAME="ilist_is_set"></A><HR><PRE><B>BOOL ilist_is_set(Ilist a);
+</B></PRE><A NAME="ilist_last"></A><HR><PRE><B>Ilist ilist_last(Ilist lst);
+</B></PRE><A NAME="ilist_member"></A><HR><PRE><B>BOOL ilist_member(Ilist lst, int i);
+</B></PRE>This function checks if an integer is a member of a Ilist.
+(If a node in the Ilist contains a pointer instead of an integer,
+the result is undefined.)
+<A NAME="ilist_occurrences"></A><HR><PRE><B>int ilist_occurrences(Ilist p, int i);
+</B></PRE>How many times does an integer occur in an ilist?
+<A NAME="ilist_pop"></A><HR><PRE><B>Ilist ilist_pop(Ilist p);
+</B></PRE>This routine takes a nonempty Ilist, removes and frees the first node
+(ignoring the contents), and returns the remainder of the list.
+<A NAME="ilist_prepend"></A><HR><PRE><B>Ilist ilist_prepend(Ilist lst, int i);
+</B></PRE>This routine inserts an integer as the first member of a Ilist.
+The updated Ilist is returned.
+<A NAME="ilist_rem_dups"></A><HR><PRE><B>Ilist ilist_rem_dups(Ilist m);
+</B></PRE>Take a list of integers and remove duplicates.
+<P>
+This version "uses up" the argument.
+<A NAME="ilist_remove_last"></A><HR><PRE><B>Ilist ilist_remove_last(Ilist p);
+</B></PRE><A NAME="ilist_removeall"></A><HR><PRE><B>Ilist ilist_removeall(Ilist p, int i);
+</B></PRE>Remove all occurrences of i.
+<P>
+The argument is "used up".
+<A NAME="ilist_set"></A><HR><PRE><B>Ilist ilist_set(Ilist m);
+</B></PRE>Take a list of integers and remove duplicates.
+This creates a new list and leave the old list as it was.
+Don't make any assumptions about the order of the result.
+<A NAME="ilist_subset"></A><HR><PRE><B>BOOL ilist_subset(Ilist a, Ilist b);
+</B></PRE><A NAME="ilist_subtract"></A><HR><PRE><B>Ilist ilist_subtract(Ilist p1, Ilist p2);
+</B></PRE>Return the members of p1 that are not in p2.
+<P>
+The arguments are not changed.
+<A NAME="ilist_union"></A><HR><PRE><B>Ilist ilist_union(Ilist a, Ilist b);
+</B></PRE>Construct the union (as a new Ilist).
+<p>
+The arguments need not be sets, the result is a set.
+<p>
+The arguments are not changed.
+<A NAME="ith_in_plist"></A><HR><PRE><B>void *ith_in_plist(Plist p, int i);
+</B></PRE><A NAME="longest_string_in_plist"></A><HR><PRE><B>int longest_string_in_plist(Plist p);
+</B></PRE>Return -1 if the Plist is empty.
+<A NAME="multiset_add"></A><HR><PRE><B>I2list multiset_add(I2list a, int i);
+</B></PRE>Add 1 occurrence of i to multiset a.
+<A NAME="multiset_add_n"></A><HR><PRE><B>I2list multiset_add_n(I2list a, int i, int n);
+</B></PRE>Add n occurrences of i to multiset a.
+<A NAME="multiset_occurrences"></A><HR><PRE><B>int multiset_occurrences(I2list m, int i);
+</B></PRE><A NAME="multiset_to_set"></A><HR><PRE><B>Ilist multiset_to_set(I2list m);
+</B></PRE><A NAME="multiset_union"></A><HR><PRE><B>I2list multiset_union(I2list a, I2list b);
+</B></PRE>The result is constructed from the arguments,
+so do not refer to either of the arguments after the call.
+That is, both arguments are "used up".
+<A NAME="p_glist_mem"></A><HR><PRE><B>void p_glist_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the glist package.
+<A NAME="p_i2list"></A><HR><PRE><B>void p_i2list(I2list p);
+</B></PRE>The list of integers is printed to stdout like this: (4 5 1 3),
+with a '\n' at the end.
+<A NAME="p_ilist"></A><HR><PRE><B>void p_ilist(Ilist p);
+</B></PRE>The list of integers is printed to stdout like this: (4 5 1 3),
+with a '\n' at the end.
+<A NAME="plist_append"></A><HR><PRE><B>Plist plist_append(Plist lst, void *v);
+</B></PRE>This routine appends a pointer to a Plist.  The updated Plist
+is returned.
+<A NAME="plist_cat"></A><HR><PRE><B>Plist plist_cat(Plist p1, Plist p2);
+</B></PRE>Concatenate two Plists and return the result.  The result is constructed
+from the arguments, so do not refer to either of the arguments after the call.
+<P>
+That is, both args are destroyed.
+<A NAME="plist_cat2"></A><HR><PRE><B>Plist plist_cat2(Plist p1, Plist p2);
+</B></PRE>Concatenate two Plists and return the result.
+In this version, the second plist is copied and
+placed at the end of p1.
+<P>
+That is, the first arg is destroyed, and the second
+is preserved.
+<A NAME="plist_count"></A><HR><PRE><B>int plist_count(Plist p);
+</B></PRE>This routine returns the length of a Plist.
+<A NAME="plist_last"></A><HR><PRE><B>void *plist_last(Plist p);
+</B></PRE><A NAME="plist_member"></A><HR><PRE><B>BOOL plist_member(Plist lst, void *v);
+</B></PRE>This function checks if a pointer is a member of a Plist.
+<A NAME="plist_pop"></A><HR><PRE><B>Plist plist_pop(Plist p);
+</B></PRE>This routine takes a nonempty Plist, removes and frees the first node
+(ignoring the contents), and returns the remainder of the list.
+<A NAME="plist_prepend"></A><HR><PRE><B>Plist plist_prepend(Plist lst, void *v);
+</B></PRE>This routine inserts a pointer as the first member of a Plist.
+The updated Plist is returned.
+<A NAME="plist_remove"></A><HR><PRE><B>Plist plist_remove(Plist p, void *v);
+</B></PRE>Remove the first occurrence of a pointer from a Plist.
+<A NAME="plist_remove_last"></A><HR><PRE><B>Plist plist_remove_last(Plist p);
+</B></PRE><A NAME="plist_subset"></A><HR><PRE><B>BOOL plist_subset(Plist a, Plist b);
+</B></PRE><A NAME="plist_subtract"></A><HR><PRE><B>Plist plist_subtract(Plist p1, Plist p2);
+</B></PRE>Return the members of p1 that are not in p2.
+<P>
+The arguments are not changed.
+<A NAME="position_in_ilist"></A><HR><PRE><B>int position_in_ilist(int i, Ilist p);
+</B></PRE>Count from 1; return -1 if the int is not in the Ilist.
+<A NAME="position_of_string_in_plist"></A><HR><PRE><B>int position_of_string_in_plist(char *s, Plist p);
+</B></PRE>Count from 1; return -1 if the string is not in the Plist.
+<A NAME="reverse_i3list"></A><HR><PRE><B>I3list reverse_i3list(I3list p);
+</B></PRE>This routine reverses a I3list.  The 3list is reversed in-place,
+so you should not refer to the argument after calling this routine.
+A good way to use it is like this:
+<PRE>
+p = <A HREF="#reverse_i3list">reverse_i3list</A>(p);
+</PRE>
+<A NAME="reverse_ilist"></A><HR><PRE><B>Ilist reverse_ilist(Ilist p);
+</B></PRE>This routine reverses a Ilist.  The list is reversed in-place,
+so you should not refer to the argument after calling this routine.
+A good way to use it is like this:
+<PRE>
+p = <A HREF="#reverse_ilist">reverse_ilist</A>(p);
+</PRE>
+<A NAME="reverse_plist"></A><HR><PRE><B>Plist reverse_plist(Plist p);
+</B></PRE>This routine reverses a Plist.  The list is reversed in-place,
+so you should not refer to the argument after calling this routine.
+A good way to use it is like this:
+<PRE>
+p = <A HREF="#reverse_plist">reverse_plist</A>(p);
+</PRE>
+<A NAME="sort_plist"></A><HR><PRE><B>Plist sort_plist(Plist objects,	Ordertype (*comp_proc) (void *, void *));
+</B></PRE><A NAME="string_member_plist"></A><HR><PRE><B>BOOL string_member_plist(char *s, Plist p);
+</B></PRE><A NAME="zap_i2list"></A><HR><PRE><B>void zap_i2list(I2list p);
+</B></PRE>This routine frees an I2list (the whole list).
+<A NAME="zap_i3list"></A><HR><PRE><B>void zap_i3list(I3list p);
+</B></PRE>This routine frees a I3list (the whole list).
+<A NAME="zap_ilist"></A><HR><PRE><B>void zap_ilist(Ilist p);
+</B></PRE>This routine frees a Ilist (the whole list).
+<A NAME="zap_plist"></A><HR><PRE><B>void zap_plist(Plist p);
+</B></PRE>This routine frees a Plist (the whole list).  The things to which
+the members point are not freed.
+<HR><A NAME=defns></A><H2>Public Definitions in File glist.h</H2>
+<PRE>
+typedef struct plist * Plist;
+
+struct plist {
+  void *v;
+  Plist next;
+};
+
+typedef struct ilist * Ilist;
+
+struct ilist {
+  int i;
+  Ilist next;
+};
+
+typedef struct i2list * I2list;
+
+struct i2list {
+  int i;
+  int j;
+  I2list next;
+};
+
+typedef struct i3list * I3list;
+
+struct i3list {
+  int i;
+  int j;
+  int k;
+  I3list next;
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package handles
+Plist (singly-linked list of void pointers),
+Ilist (singly-linked list of integers),
+I2list (singly-linked list of <integer,integer> pairs),
+I3list (singly-linked list of <integer,integer,integer> triples).
+
+<HR>
+</BODY>
+</HTML>

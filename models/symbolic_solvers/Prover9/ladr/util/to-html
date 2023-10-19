@@ -1,0 +1,8 @@
+#!/bin/csh
+
+if ($#argv != 1) then
+	echo "need 1 arg:  filename without .h or .c"
+	exit(1)
+endif
+
+util/doc5 $1 > html/$1.html

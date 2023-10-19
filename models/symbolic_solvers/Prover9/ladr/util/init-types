@@ -1,0 +1,127 @@
+#!/usr/bin/perl
+
+$this_file = __FILE__;
+
+if (scalar(@ARGV) == 0) {
+    print "Usage: $this_file package type1 type2 ...\n";
+    exit 1;
+}
+
+$package = shift @ARGV;
+
+$n = scalar(@ARGV);
+
+foreach $arg (@ARGV) {
+    push @args, $arg;
+    $uarg = uc $arg;
+    push @uargs, $uarg;
+    $carg = ucfirst $arg;
+    push @cargs, $carg;
+}
+
+for ($i = 0; $i < $n; $i++) {
+    $a = $args[$i];
+    $u = $uargs[$i];
+    $c = $cargs[$i];
+    printf "\n#define PTRS_%s CEILING(sizeof(struct %s),BYTES_POINTER)\n", $u, $a;
+    printf "static unsigned %s_gets, %s_frees;\n", $c, $c;
+}
+
+for ($i = 0; $i < $n; $i++) {
+    $a = $args[$i];
+    $u = $uargs[$i];
+    $c = $cargs[$i];
+
+print <<ENDA
+
+/*************
+ *
+ *   $c get_$a()
+ *
+ *************/
+
+static
+$c get_$a(void)
+{
+  $c p = get_mem(PTRS_$u);
+  $c xxx_gets++;
+  return(p);
+}  /* get_$a */
+
+/*************
+ *
+ *    free_$a()
+ *
+ *************/
+
+static
+void free_$a($c p)
+{
+  free_mem(p, PTRS_$u);
+  $c xxx_frees++;
+}  /* free_$a */
+ENDA
+}
+
+print <<ENDB
+
+/*************
+ *
+ *   fprint_$package xxx_mem()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the $package package.
+The Boolean argument heading tells whether to print a heading on the table.
+*/
+
+/* PUBLIC */
+void fprint_$package xxx_mem(FILE *fp, BOOL heading)
+{
+  int n;
+  if (heading)
+    fprintf(fp, "  type (bytes each)        gets      frees     in use      bytes\\n");
+ENDB
+    ;
+for ($i = 0; $i < $n; $i++) {
+    $a = $args[$i];
+    $u = $uargs[$i];
+    $c = $cargs[$i];
+
+print <<ENDC
+
+  n = sizeof(struct $a);
+  fprintf(fp, "$a (%4d)      %11u%11u%11u%9.1f K\\n",
+          n, $c xxx_gets, $c xxx_frees,
+          $c xxx_gets - $c xxx_frees,
+          (($c xxx_gets - $c xxx_frees) * n) / 1024.);
+ENDC
+}
+
+print <<ENDD
+
+}  /* fprint_$package xxx_mem */
+
+/*************
+ *
+ *   p_$package xxx_mem()
+ *
+ *************/
+
+/* DOCUMENTATION
+This routine prints (to stdout) memory usage statistics for data types
+associated with the $package package.
+*/
+
+/* PUBLIC */
+void p_$package xxx_mem()
+{
+  fprint_$package xxx_mem(stdout, TRUE);
+}  /* p_$package xxx_mem */
+
+/*
+ *  end of memory management
+ */
+ENDD

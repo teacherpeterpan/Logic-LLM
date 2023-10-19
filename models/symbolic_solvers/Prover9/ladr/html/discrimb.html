@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<TITLE>discrimb.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "discrimb.h"</H1>
+
+This page has information from files
+<A HREF="../discrimb.h">discrimb.h</A> and <A HREF="../discrimb.c">discrimb.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File discrimb.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#discrim_bind_cancel">discrim_bind_cancel</A></TD><TD><A HREF="#discrim_bind_retrieve_next">discrim_bind_retrieve_next</A></TD><TD><A HREF="#fprint_discrim_bind_index">fprint_discrim_bind_index</A></TD><TD><A HREF="#p_discrim_bind_index">p_discrim_bind_index</A></TD>
+</TR>
+<TR><TD><A HREF="#discrim_bind_retrieve_first">discrim_bind_retrieve_first</A></TD><TD><A HREF="#discrim_bind_update">discrim_bind_update</A></TD><TD><A HREF="#fprint_discrimb_mem">fprint_discrimb_mem</A></TD><TD><A HREF="#p_discrimb_mem">p_discrimb_mem</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="discrim_bind_cancel"></A><HR><PRE><B>void discrim_bind_cancel(<A HREF="discrim.html">Discrim_pos</A> pos);
+</B></PRE>This routine <I>must</I> be called if you get some, but not all
+answers to a tame discrimbintaion query.
+The <A HREF="unify.html">Context</A> (which was given to the <A HREF="#discrim_bind_retrieve_first">discrim_bind_retrieve_first</A>() call) is
+cleared, and the memory associated the retrieval state is freed.
+<A NAME="discrim_bind_retrieve_first"></A><HR><PRE><B>void *discrim_bind_retrieve_first(<A HREF="term.html">Term</A> t, <A HREF="discrim.html">Discrim</A> root,
+				  <A HREF="unify.html">Context</A> subst, <A HREF="discrim.html">Discrim_pos</A> *ppos);
+</B></PRE>This routine, along with <A HREF="#discrim_bind_retrieve_next">discrim_bind_retrieve_next</A>(), gets answers from
+a tame discrimination index.
+This routine retrieves the first object associated with a term, say ft,
+more general than <A HREF="term.html">Term</A> t.  (NULL is returned if there is none.)
+The substitution for variables of ft is placed into <A HREF="unify.html">Context</A> subst.
+<P>
+If an object is returned, <A HREF="discrim.html">Discrim_pos</A> *ppos is set to the retrieval
+state and is used for subsequent discrim_tame_retrieve_next() calls.
+<P>
+If you to get some, but not all answers, you must call
+discrim_tame_cancel() to clear the substitution and free memory
+associated with the <A HREF="discrim.html">Discrim_pos</A>.
+<A NAME="discrim_bind_retrieve_next"></A><HR><PRE><B>void *discrim_bind_retrieve_next(<A HREF="discrim.html">Discrim_pos</A> pos);
+</B></PRE>This routine retrieves the next object in the sequence of answers to
+a query of a tame discrimbination tree.
+You must <I>not</I> explicitly clear the <A HREF="unify.html">Context</A> you gave to
+<A HREF="#discrim_bind_retrieve_first">discrim_bind_retrieve_first</A>()---that is handled internally.
+See <A HREF="#discrim_bind_retrieve_first">discrim_bind_retrieve_first</A>().
+<A NAME="discrim_bind_update"></A><HR><PRE><B>void discrim_bind_update(<A HREF="term.html">Term</A> t, <A HREF="discrim.html">Discrim</A> root, void *object, Indexop op);
+</B></PRE>This routine inserts (op==INSERT) or deletes (op==DELETE)
+an object into/from a tame discrimination index.
+<A HREF="term.html">Term</A> t is the key, root is the root of the discrimination tree,
+and *object is a pointer (in many cases, *object will be t).
+See discrim_tame_retrieve_first().
+<P>
+A fatal error occurs if yout ry to delete an object that was not
+previouly inserted.
+<A NAME="fprint_discrim_bind_index"></A><HR><PRE><B>void fprint_discrim_bind_index(FILE *fp, <A HREF="discrim.html">Discrim</A> d);
+</B></PRE>This routine prints (to FILE *fp) a tame discrimination index.
+<A NAME="fprint_discrimb_mem"></A><HR><PRE><B>void fprint_discrimb_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the discrimb package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="p_discrim_bind_index"></A><HR><PRE><B>void p_discrim_bind_index(<A HREF="discrim.html">Discrim</A> d);
+</B></PRE>This routine prints (to stdout) a tame discrimination index.
+<A NAME="p_discrimb_mem"></A><HR><PRE><B>void p_discrimb_mem(void);
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the discrimb package.
+<HR><A NAME=defns></A><H2>Public Definitions in File discrimb.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+Discrimination tree indexing in which variables are
+distinguished in the index and are bound
+as soon as possible during retrieval.
+
+<HR>
+</BODY>
+</HTML>

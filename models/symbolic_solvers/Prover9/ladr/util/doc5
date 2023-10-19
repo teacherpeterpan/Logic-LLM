@@ -1,0 +1,218 @@
+#!/usr/bin/perl
+
+# This associative array tells the file associated with a given data type.
+
+%types = ("Btm_state",    "btm",
+	  "Btu_state",    "btu",
+	  "Clash",        "clash",
+	  "Literal",      "clause",
+	  "Clause",       "clause",
+	  "Clist_pos",    "clist",
+	  "Clist",        "clist",
+	  "Discrim",      "discrim",
+	  "Discrim_pos",  "discrim",
+	  "Formula",      "formula",
+	  "Fpa_index",    "fpa",
+	  "Fpa_state",    "fpa",
+	  "Glist",        "glist",
+	  "Interp",       "interp",
+	  "Mace_state",   "mace",
+	  "Mindex",       "mindex",
+	  "Mindex_pos",   "mindex",
+	  "Pair_index",   "pindex",
+	  "DP_state",     "putnam",
+	  "String_buf",   "strbuf",
+	  "Sym_ent",      "symbols",
+	  "Term",         "term",
+	  "Context",      "unify",
+	  "Trail",        "unify");
+
+# This routine inserts html links for data types.
+
+sub type_links {
+    local ($line) = @_;
+    local $type;
+    foreach $type (keys(%types)) {
+	if ($line =~ $type) {
+	    $line =~ s/\b$type\b/<A HREF="$types{$type}.html">$type<\/A>/g;
+	}
+    }
+    return $line;
+}
+
+# Main program starts here.
+
+$this_file = __FILE__;
+
+if (scalar(@ARGV) != 1) {
+    print "Usage: $this_file filename (without .h or .c)\n";
+    exit 1;
+}
+
+$cfile = $ARGV[0] . ".c";
+$hfile = $ARGV[0] . ".h";
+
+if (! open(FC, $cfile)) {
+    print "Cannot open file $cfile\n";
+    die;
+}
+
+if (! open(FH, $hfile)) {
+    print "Cannot open file $hfile\n";
+    die;
+}
+
+# Get stuff from .h file and put it in @definitions.
+
+push(@definitions, "<PRE>");
+$pub = 0;
+while ($line = <FH>) {
+    if ($intro && $line =~ /\*\//) {
+	$intro = 0;
+    }
+    elsif ($pub && $line =~ "End of public definitions") {
+	$pub = 0;
+    }
+
+    if ($pub) {
+	$line = &type_links($line);
+	push(@definitions, $line);
+    }
+    elsif ($intro) {
+	push(@intro_lines, $line);
+    }
+
+    if ($line =~ "INTRODUCTION") {
+	$intro = 1;
+	undef @intro_lines;
+    }
+    elsif ($line =~ "Public definitions") {
+	$pub = 1;
+    }
+}  # each line of .h file
+push(@definitions, "</PRE>");
+
+# Get prototypes and documentation from .c file and put in @routines.
+
+$doc = 0;
+$pub = 0;
+while ($line = <FC>) {
+    if ($doc && $line =~ /\*\//) {
+	$doc = 0;
+    }
+    if ($pub && $line =~ "{") {
+	$pub = 0;
+
+	# Now we have a prototype (pub_lines) , and possibly doc_lines.
+	# Get the function name from pub_lines and add to @functions.
+
+	$function = $pub_lines[0];
+	$function =~ s/.*(\b\w+\b)\(.*/\1/;
+	chop($function);
+	push(@functions, "<A HREF=\"#$function\">$function</A>");
+
+	# Put a ; at the end of the prototype
+
+	$pub_lines[$#pub_lines] =~ s/\n/;\n/;
+
+
+	$document{$function} = join("", @doc_lines);
+	$prototype{$function} = join("", @pub_lines);
+
+	undef @doc_lines;  # in case a routine has no doc
+    }
+
+    if ($doc) {
+	$line = &type_links($line);
+	push(@doc_lines, $line);
+    }
+    if ($pub) {
+	$line = &type_links($line);
+	push(@pub_lines, $line);
+    }
+
+    if ($line =~ "DOCUMENTATION") {
+	$doc = 1;
+	undef @doc_lines;
+    }
+    if ($line =~ "PUBLIC") {
+	$pub = 1;
+	undef @pub_lines;
+    }
+}  # each line of .c file
+
+# Create 4-column function index and put in @index.
+
+@functions = sort(@functions);
+$n = scalar(@functions);
+if ($n % 4 == 0) {$rows = $n / 4;} else {$rows = int($n / 4) + 1;}
+@x1 = @functions[0 .. $rows-1];
+@x2 = @functions[$rows .. 2*$rows-1];
+@x3 = @functions[2*$rows .. 3*$rows-1];
+@x4 = @functions[3*$rows .. $n-1];
+
+push(@index, "<TABLE CELLPADDING=3>\n");
+foreach $i (0 .. $rows-1) {
+    push(@index, "<TR>");
+    push(@index, "<TD>$x1[$i]</TD><TD>$x2[$i]</TD><TD>$x3[$i]</TD><TD>$x4[$i]</TD>\n");
+    push(@index, "</TR>\n");
+}
+push(@index, "</TABLE>\n");
+
+# Insert function links into %document.
+
+foreach $func (keys(%document)) {
+    foreach $func2 (keys(%document)) {
+	$document{$func2} =~ s/\b$func\(/<A HREF=\"#$func\">$func<\/A>(/g;
+    }
+}
+
+# OK, now we can print the HTML.
+
+print <<END_OF_HEAD;
+<HTML>
+<HEAD>
+<TITLE>$hfile</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "$hfile"</H1>
+
+This page has information from files
+<A HREF="../$hfile">$hfile</A> and <A HREF="../$cfile">$cfile</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF=\"#routines\">Public Routines</A>
+<LI><A HREF=\"#defns\">Public Definitions</A>
+<LI><A HREF=\"#intro\">Introduction</A>
+</UL>
+
+<P>
+END_OF_HEAD
+
+print "<HR><A NAME=routines></A><H2>Public Routines in File $cfile</H2>\n";
+print "<H4>Index</H4>\n";
+print @index;
+print "<H4>Details</H4>\n";
+
+foreach $func (sort keys(%prototype)) {
+    print "<A NAME=\"$func\"></A>";
+    print "<HR><PRE><B>"; 
+    print $prototype{$func};
+    print "</B></PRE>";
+    print $document{$func};
+}
+
+print "<HR><A NAME=defns></A><H2>Public Definitions in File $hfile</H2>\n";
+print @definitions;
+print "<HR><A NAME=intro></A><H2>Introduction</H2>\n";
+print @intro_lines;
+
+print <<END_OF_TAIL;
+
+<HR>
+</BODY>
+</HTML>
+END_OF_TAIL

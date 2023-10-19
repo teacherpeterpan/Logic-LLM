@@ -1,0 +1,49 @@
+Process inferred clause (c):
+
+	check time limit
+	report
+
+	simplify:
+		print generated
+		renumber?
+		demodulate
+		orient equalities
+		simplify literals (x=x, $T)
+		merge literals
+		unit deletion
+		cac redundancy
+
+	empty clause check
+	tautology check
+	max_literals
+	max_vars
+	safe unit conflict
+	weight check (max_weight, semantic eval, sos_keep)
+	subsume
+	KEEP:
+		kept actions
+		renumber?
+		assign ID
+		mark parents used
+		mark maximal literals
+		print
+	
+	unsafe unit conflict
+	new demod
+	index
+	add to limbo
+
+Limbo process:
+
+	factor
+	new_constants
+	fold demial (if input or copy just)
+	back subsumption
+	back demodulation
+	back unit deletion
+	move to sos (maybe displacing another)
+	index for back demod
+	
+	
+
+  

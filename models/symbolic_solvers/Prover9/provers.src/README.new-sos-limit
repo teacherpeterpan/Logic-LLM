@@ -1,0 +1,32 @@
+MANAGING SOS_LIMIT
+
+-----------------------------------------------------
+
+A. Deciding whether to keep a clause (C)
+
+   Find its would-be position in each matching property list;
+   If it is in the better half in one of the lists, keep it.
+
+-----------------------------------------------------
+
+B. Deleting the worst sos clause.
+
+Calculate priority(Clause C) -- lower is better
+
+   pi: selection properties that apply to C,
+       also, the corresponding list, ordered by weight.
+   ri: corresponding ratios.
+
+   position(C, pi): in the range 1--size(pi)
+
+   L = LCM(ri)
+
+   priority(C) = min_i(L / ri * position(C, pi))
+
+To calculate the worst clause:
+
+   Consider all nonempty property lists, pi;
+   Worst_clause = max_i(last_clause(pi))
+
+
+   

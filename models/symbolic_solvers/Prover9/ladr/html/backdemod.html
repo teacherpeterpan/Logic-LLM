@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<TITLE>backdemod.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "backdemod.h"</H1>
+
+This page has information from files
+<A HREF="../backdemod.h">backdemod.h</A> and <A HREF="../backdemod.c">backdemod.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File backdemod.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#back_demod_indexed">back_demod_indexed</A></TD><TD><A HREF="#back_demod_linear">back_demod_linear</A></TD><TD><A HREF="#index_clause_back_demod">index_clause_back_demod</A></TD><TD><A HREF="#rewritable_clause">rewritable_clause</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="back_demod_indexed"></A><HR><PRE><B>Plist back_demod_indexed(Topform demod, int type, <A HREF="mindex.html">Mindex</A> idx,
+			 BOOL lex_order_vars);
+</B></PRE>This routine returns a Plist: the set clauses that have terms
+that can be rewritten with Topform demod.
+<P>
+If demod is oriented, demodulation is assumed to be left-to-right.
+If demod is not oriented, either way is allowed.
+<P>
+The Plist which is returned is ordered
+by decreasing clause ID.
+<A NAME="back_demod_linear"></A><HR><PRE><B>Plist back_demod_linear(Topform demod, <A HREF="clist.html">Clist</A> lst, Plist rewritables);
+</B></PRE>This routine returns a Plist: the subset of <A HREF="clist.html">Clist</A> lst that can be
+rewritten with Topform demod (which is assumed to be an oriented
+equation).  The Plist which is returned is ordered by decreasing
+clause ID.
+<A NAME="index_clause_back_demod"></A><HR><PRE><B>void index_clause_back_demod(Topform c, <A HREF="mindex.html">Mindex</A> idx, Indexop op);
+</B></PRE>This routine indexes or unindexes a clause for back demodulation.
+<A NAME="rewritable_clause"></A><HR><PRE><B>BOOL rewritable_clause(Topform demod, Topform c);
+</B></PRE>This Boolean function checks if Topform c is can be rewritten
+by Topform demod, which is assumed to be an oriented (left-to-right)
+equation.
+<HR><A NAME=defns></A><H2>Public Definitions in File backdemod.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

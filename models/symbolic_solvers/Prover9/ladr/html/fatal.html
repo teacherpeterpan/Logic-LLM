@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<TITLE>fatal.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "fatal.h"</H1>
+
+This page has information from files
+<A HREF="../fatal.h">fatal.h</A> and <A HREF="../fatal.c">fatal.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File fatal.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#bell">bell</A></TD><TD><A HREF="#fatal_error">fatal_error</A></TD><TD><A HREF="#get_fatal_exit_code">get_fatal_exit_code</A></TD><TD><A HREF="#set_fatal_exit_code">set_fatal_exit_code</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="bell"></A><HR><PRE><B>void bell(FILE *fp);
+</B></PRE>Send the bell character '\007' to a file.
+<A NAME="fatal_error"></A><HR><PRE><B>void fatal_error(char *message);
+</B></PRE>This routine should be called if something terrible happens.
+The message is printed to stdout and to stderr, and the
+process exits with the fatal_exit_code (default 1).
+<A NAME="get_fatal_exit_code"></A><HR><PRE><B>int get_fatal_exit_code();
+</B></PRE>This function returns the exit code that will be used in
+case <A HREF="#fatal_error">fatal_error</A>() is called.
+<A NAME="set_fatal_exit_code"></A><HR><PRE><B>void set_fatal_exit_code(int exit_code);
+</B></PRE>This routine changes the exit code that will be used in case
+<A HREF="#fatal_error">fatal_error</A>() is called.  The default value is 1.
+<HR><A NAME=defns></A><H2>Public Definitions in File fatal.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package is just a few utilities for handling fatal errors.
+
+<HR>
+</BODY>
+</HTML>

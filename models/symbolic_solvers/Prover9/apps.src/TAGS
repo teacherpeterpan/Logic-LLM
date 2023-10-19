@@ -1,0 +1,2613 @@
+
+clausefilter.c,368
+#define PROGRAM_NAME 22,815
+static char Help_string[25,884
+static Ordertype interp_compare(33,1240
+void sort_interps(50,1541
+Interp find_interp(76,2230
+enum {TRUE_IN_ALL,95,2679
+enum {TRUE_IN_ALL, TRUE_IN_SOME,95,2679
+enum {TRUE_IN_ALL, TRUE_IN_SOME, FALSE_IN_ALL,95,2679
+enum {TRUE_IN_ALL, TRUE_IN_SOME, FALSE_IN_ALL, FALSE_IN_SOME}95,2679
+int main(97,2743
+
+clausetester.c,79
+#define PROGRAM_NAME 22,815
+static char Help_string[25,884
+int main(32,1151
+
+complex.c,155
+#define PROGRAM_NAME 21,787
+void complex4_compare(31,920
+BOOL complex4_p2(56,1412
+void complex4_p1(77,1748
+double complex4(96,2022
+int main(115,2297
+
+directproof.c,702
+#define PROGRAM_NAME 27,907
+static char Help_string[30,972
+static int Transformations 31,1004
+#define BUF_MAX 33,1037
+String_buf read_heading(42,1124
+void read_program_input(70,1641
+BOOL read_to_line(117,3040
+void print_proof(135,3366
+BOOL horn_eq_clauses(188,4679
+BOOL pos_bin_res(214,5165
+BOOL all_resolutions_pos_binary(244,5877
+BOOL all_paramodulations_unit(264,6186
+Topform first_pos_parent(283,6529
+Topform first_neg_parent(302,6903
+BOOL bidirectional(321,7274
+void last_two_steps(340,7615
+Term xx_recurse(358,7990
+Topform xx_instance(389,8497
+Term instance_from_position_recurse(410,9022
+Term instance_from_position(430,9440
+Plist forward_proof(445,9830
+int main(640,16260
+
+dprofiles.c,79
+#define PROGRAM_NAME 25,888
+static char Help_string[28,953
+int main(33,1126
+
+idfilter.c,79
+#define PROGRAM_NAME 22,814
+static char Help_string[25,879
+int main(47,1679
+
+interpfilter.c,271
+#define PROGRAM_NAME 22,815
+static char Help_string[25,884
+Topform find_clause(47,1628
+enum {ALL_TRUE,60,1906
+enum {ALL_TRUE, SOME_TRUE,60,1906
+enum {ALL_TRUE, SOME_TRUE, ALL_FALSE,60,1906
+enum {ALL_TRUE, SOME_TRUE, ALL_FALSE, SOME_FALSE}60,1906
+int main(62,1958
+
+interpformat.c,643
+#define PROGRAM_NAME 26,892
+static char Help_string[29,960
+enum {STANDARD,44,1743
+enum {STANDARD, STANDARD2,44,1743
+enum {STANDARD, STANDARD2, PORTABLE,44,1743
+enum {STANDARD, STANDARD2, PORTABLE, TABULAR,44,1743
+enum {STANDARD, STANDARD2, PORTABLE, TABULAR, RAW,44,1743
+enum {STANDARD, STANDARD2, PORTABLE, TABULAR, RAW, COOKED,44,1743
+enum {STANDARD, STANDARD2, PORTABLE, TABULAR, RAW, COOKED, TEX,44,1743
+enum {STANDARD, STANDARD2, PORTABLE, TABULAR, RAW, COOKED, TEX, XML}44,1743
+String_buf read_next_section(53,1884
+String_buf read_mace4_input(81,2438
+BOOL read_to_line(118,3217
+Term next_interp(136,3528
+int main(159,3996
+
+isofilter.c,111
+#define PROGRAM_NAME 25,888
+static char Help_string[28,954
+static BOOL iso_member(42,1493
+int main(52,1722
+
+isofilter0.c,111
+#define PROGRAM_NAME 25,888
+static char Help_string[28,955
+static BOOL iso_member(41,1443
+int main(51,1672
+
+isofilter2.c,114
+#define PROGRAM_NAME 25,888
+static char Help_string[28,955
+static BOOL interp_member(42,1494
+int main(52,1720
+
+latfilter.c,267
+#define PROGRAM_NAME 21,787
+static char Help_string[24,853
+int Meet_sym;38,1520
+int Join_sym;39,1543
+int M_sym;40,1566
+int J_sym;41,1589
+BOOL meet_term(49,1668
+BOOL join_term(60,1824
+BOOL lattice_leq(84,2457
+int lattice_identity(125,3572
+int main(139,3834
+
+miniscope.c,46
+#define PROGRAM_NAME 22,812
+int main(31,928
+
+mirror-flip.c,213
+#define PROGRAM_NAME 21,787
+static char Help_string[24,855
+static BOOL Debug 27,909
+Term mirror_term(36,1001
+Topform mirror(62,1488
+Topform flip(79,1786
+BOOL contains_mirror_flip(97,2090
+int main(126,2806
+
+olfilter.c,758
+#define PROGRAM_NAME 21,787
+static char Help_string[24,852
+int Meet_sym;50,1919
+int Join_sym;51,1933
+int Comp_sym;52,1947
+int Zero_sym;53,1961
+int One_sym;54,1975
+int Sheffer_sym;55,1988
+#define MEET_TERM(MEET_TERM57,2006
+#define JOIN_TERM(JOIN_TERM58,2058
+#define COMPLEMENT_TERM(COMPLEMENT_TERM59,2110
+#define ZERO_TERM(ZERO_TERM60,2162
+#define ONE_TERM(ONE_TERM61,2214
+#define SHEFFER_TERM(SHEFFER_TERM62,2265
+static Term complement(74,2583
+static Term neg_norm_form(98,3170
+static Term simplify_01(154,4515
+BOOL ol_leq(229,6355
+static BOOL reduced_join(292,7631
+static BOOL reduced_meet(306,7866
+static BOOL reduced(322,8137
+static Term beta(361,9035
+BOOL ol_identity(405,9896
+Term expand_defs(437,10736
+int main(463,11255
+
+perm3.c,182
+#define PROGRAM_NAME 21,787
+static char Help_string[24,849
+static BOOL Debug 27,903
+Term perm3_term(36,993
+Topform perm3(57,1346
+BOOL contains_perm3(74,1664
+int main(117,2906
+
+prooftrans.c,685
+#define PROGRAM_NAME 27,922
+static char Help_string[30,986
+enum {NO_TRANS,39,1478
+enum {NO_TRANS, EXPAND_EQ,39,1478
+enum {NO_TRANS, EXPAND_EQ, EXPAND,39,1478
+enum {NO_TRANS, EXPAND_EQ, EXPAND, EXPAND_IVY}39,1478
+enum {ORDINARY,41,1557
+enum {ORDINARY, PARENTS_ONLY,41,1557
+enum {ORDINARY, PARENTS_ONLY, XML,41,1557
+enum {ORDINARY, PARENTS_ONLY, XML, HINTS,41,1557
+enum {ORDINARY, PARENTS_ONLY, XML, HINTS, IVY,41,1557
+enum {ORDINARY, PARENTS_ONLY, XML, HINTS, IVY, TAGGED}41,1557
+#define BUF_MAX 43,1636
+String_buf read_heading(52,1723
+void read_program_input(82,2314
+BOOL read_to_line(133,3891
+void print_proof(151,4217
+Plist add_to_hints(197,5379
+int main(213,5651
+
+renamer.c,79
+#define PROGRAM_NAME 21,787
+static char Help_string[24,851
+int main(32,1184
+
+rewriter.c,79
+#define PROGRAM_NAME 22,814
+static char Help_string[25,879
+int main(46,1617
+
+rewriter2.c,79
+#define PROGRAM_NAME 22,815
+static char Help_string[25,880
+int main(40,1455
+
+sigtest.c,78
+#define PROGRAM_NAME 22,815
+static char Help_string[25,879
+int main(29,921
+
+test_clause_eval.c,46
+#define PROGRAM_NAME 23,848
+int main(26,921
+
+test_complex.c,46
+#define PROGRAM_NAME 22,816
+int main(25,885
+
+unfast.c,79
+#define PROGRAM_NAME 21,787
+static char Help_string[24,850
+int main(37,1286
+
+upper-covers.c,167
+#define I2(I225,895
+#define PROGRAM_NAME 27,936
+static char Help_string[30,1005
+static BOOL adjacent(43,1390
+static void upper_covers(52,1573
+int main(106,2869
+
+../ladr/ac_redun.c,440
+static Ilist  C_symbols 21,778
+static Ilist A1_symbols 22,833
+static Ilist A2_symbols 23,905
+static Ilist AC_symbols 24,977
+BOOL same_top(39,1200
+int commutativity(59,1569
+int associativity(91,2262
+int c_associativity(132,3207
+int associativity3(179,4198
+int associativity4(231,5386
+Ordertype can_compare(272,6474
+Term canon(293,6928
+BOOL cac_redundant_atom(342,7960
+BOOL cac_tautology(387,9107
+BOOL cac_redundancy(425,10067
+
+../ladr/accanon.c,142
+void flatten(36,1030
+void right_associate(69,1748
+void ac_canonical2(121,2627
+void ac_canonical(180,4499
+int check_ac_canonical(234,5902
+
+../ladr/attrib.c,1700
+struct attribute attribute25,875
+#define MAX_ATTRIBUTE_NAMES 37,1170
+} Attribute_names[43,1482
+static int Next_attribute_name 45,1523
+#define PTRS_ATTRIBUTE 51,1589
+static unsigned Attribute_gets,52,1643
+static unsigned Attribute_gets, Attribute_frees;52,1643
+Attribute get_attribute(61,1769
+void free_attribute(75,1968
+void fprint_attrib_mem(94,2362
+void p_attrib_mem(120,2992
+Attribute_type attribute_type(136,3176
+char *attribute_name(148,3351
+int register_attribute(166,3693
+void declare_term_attribute_inheritable(195,4526
+BOOL inheritable(209,4840
+Attribute set_int_attribute(228,5206
+int get_int_attribute(261,5911
+BOOL exists_attribute(287,6465
+Attribute set_term_attribute(312,6950
+void replace_term_attribute(346,7713
+void replace_int_attribute(378,8531
+Term get_term_attribute(410,9327
+Term get_term_attributes(441,10052
+Attribute set_string_attribute(477,10858
+char *get_string_attribute(512,11717
+BOOL string_attribute_member(542,12414
+void zap_attributes(567,12990
+Attribute delete_attributes(589,13421
+Attribute cat_att(619,14026
+Term build_attr_term(644,14497
+Term attributes_to_term(689,15504
+Attribute cat_attributes(709,15928
+int attribute_name_to_id(732,16387
+Attribute term_to_attributes(762,17061
+Attribute inheritable_att_instances(814,18323
+Attribute copy_attributes(840,18889
+void instantiate_inheritable_attributes(869,19513
+void renumber_vars_attributes(892,20006
+void set_vars_attributes(913,20429
+Plist vars_in_attributes(935,20868
+int label_att(959,21280
+BOOL attributes_contain_variables(982,21725
+Attribute copy_int_attribute(1009,22234
+Attribute copy_string_attribute(1030,22613
+Attribute copy_term_attribute(1051,22993
+
+../ladr/avltree.c,964
+struct avl_node avl_node24,832
+static BOOL Debug 31,1046
+#define PTRS_AVL_NODE 37,1103
+static unsigned Avl_node_gets,38,1155
+static unsigned Avl_node_gets, Avl_node_frees;38,1155
+Avl_node get_avl_node(47,1277
+void free_avl_node(61,1468
+void fprint_avltree_mem(80,1859
+void p_avltree_mem(106,2486
+int avl_height(126,2753
+int avl_size(142,2972
+void set_height_and_size(154,3126
+BOOL balance_ok(167,3383
+Avl_node rotate_left(179,3563
+Avl_node rotate_right(198,3893
+Avl_node avl_fix(217,4220
+Avl_node avl_insert(262,5260
+Avl_node remove_and_return_largest(295,6105
+Avl_node remove_and_return_smallest(315,6512
+Avl_node avl_delete(342,7133
+Avl_node avl_lookup(383,8118
+void *avl_find(414,8891
+void *avl_smallest(432,9226
+void *avl_largest(453,9575
+int avl_place(476,10045
+double avl_position(510,10853
+void *avl_nth_item(529,11236
+void *avl_item_at_position(556,11890
+void avl_zap(580,12406
+void avl_check(604,12878
+void p_avl(646,14150
+
+../ladr/backdemod.c,234
+void index_term_back_demod(30,890
+void index_clause_back_demod(51,1303
+BOOL rewritable_term(70,1684
+BOOL rewritable_clause(99,2257
+Plist back_demod_linear(129,2996
+BOOL lex_rewritable(149,3404
+Plist back_demod_indexed(177,4113
+
+../ladr/banner.c,57
+void print_separator(40,1020
+void print_banner(66,1615
+
+../ladr/basic.c,453
+static BOOL Basic_paramodulation 64,2487
+static int Nonbasic_flag 65,2561
+void init_basic_paramod(77,2744
+void set_basic_paramod(95,3090
+BOOL basic_paramod(111,3311
+void mark_term_nonbasic(126,3491
+void mark_all_nonbasic(143,3781
+BOOL nonbasic_term(165,4200
+BOOL basic_term(181,4448
+int nonbasic_flag(196,4627
+Term apply_basic(213,4932
+Term apply_basic_substitute(258,6220
+void clear_all_nonbasic_marks(287,6842
+void p_term_basic(308,7218
+
+../ladr/btm.c,1920
+typedef struct ac_match_pos * Ac_match_pos;Ac_match_pos23,810
+typedef struct ac_match_free_vars_pos * Ac_match_free_vars_pos;Ac_match_free_vars_pos24,854
+struct btm_state btm_state26,919
+struct ac_match_pos ac_match_pos47,1586
+struct ac_match_free_vars_pos ac_match_free_vars_pos70,2776
+#define POP 81,3224
+#define BACKTRACK 82,3244
+#define GO 83,3264
+#define SUCCESS 84,3284
+#define FAILURE 85,3304
+#define BIND_BT(BIND_BT89,3378
+#define PTRS_AC_MATCH_POS 101,3681
+static unsigned Ac_match_pos_gets,102,3741
+static unsigned Ac_match_pos_gets, Ac_match_pos_frees;102,3741
+#define PTRS_AC_MATCH_FREE_VARS_POS 104,3797
+static unsigned Ac_match_free_vars_pos_gets,105,3877
+static unsigned Ac_match_free_vars_pos_gets, Ac_match_free_vars_pos_frees;105,3877
+#define PTRS_BTM_STATE 107,3953
+static unsigned Btm_state_gets,108,4007
+static unsigned Btm_state_gets, Btm_state_frees;108,4007
+Ac_match_pos get_ac_match_pos(117,4139
+void free_ac_match_pos(131,4359
+Ac_match_free_vars_pos get_ac_match_free_vars_pos(144,4588
+void free_ac_match_free_vars_pos(158,4878
+Btm_state get_btm_state(171,5131
+void free_btm_state(187,5375
+void fprint_btm_mem(206,5763
+void p_btm_mem(244,7007
+void flatten_mult(265,7447
+int macbv_rec(302,8180
+int match_ac_bound_vars(340,9232
+void set_up_free_vars(382,10517
+void unbind_free_var(442,11941
+int free_var_match(477,12690
+Term build_partial_term(591,15486
+void clear_partial_term(621,16054
+#define GO_FUNCTORS 637,16348
+#define GO_BOUND_VARS 638,16372
+#define GO_FREE_VARS 639,16396
+#define SUCCESS 640,16420
+#define FAILURE 641,16444
+int match_ac(661,16973
+void match_ac_cancel(860,22259
+Btm_state match_bt_backup(888,22838
+Btm_state match_bt_guts(932,23563
+int match_commute(1081,26575
+void p_acm(1134,27766
+void p_btm_state(1177,28734
+Btm_state match_bt_first(1234,30497
+Btm_state match_bt_next(1259,30987
+void match_bt_cancel(1294,31787
+
+../ladr/btu.c,1356
+#define MAX_ACU_ARGS 23,810
+typedef struct ac_position * Ac_position;Ac_position25,836
+struct ac_position ac_position27,879
+struct btu_state btu_state45,1792
+#define GO 67,2411
+#define SUCCESS 68,2431
+#define EXHAUSTED 69,2451
+#define FAILURE 70,2471
+#define POP 71,2491
+#define BACKTRACK 72,2511
+#define BIND_BT(BIND_BT76,2598
+#define PTRS_BTU_STATE 88,2836
+static unsigned Btu_state_gets,89,2890
+static unsigned Btu_state_gets, Btu_state_frees;89,2890
+#define PTRS_AC_POSITION 91,2940
+static unsigned Ac_position_gets,92,2998
+static unsigned Ac_position_gets, Ac_position_frees;92,2998
+Btu_state get_btu_state(101,3128
+void free_btu_state(116,3345
+Ac_position get_ac_position(129,3537
+void free_ac_position(143,3750
+void fprint_btu_mem(162,4148
+void p_btu_mem(194,5020
+void p_binding(210,5195
+void flatten_deref(244,6222
+int compare_ncv_context(287,7062
+void sort_ac(345,8378
+void elim_con_context(382,9030
+void ac_mult_context(411,9681
+void ac_prepare(466,10784
+void set_up_basis_terms(514,12013
+int unify_ac(560,13210
+void unify_ac_cancel(897,22343
+void p_ac_position(956,23602
+Btu_state unify_bt_backup(986,24303
+int unify_commute(1040,25430
+Btu_state unify_bt_first(1152,28803
+Btu_state unify_bt_next(1175,29320
+void unify_bt_cancel(1208,30123
+Btu_state unify_bt_guts(1246,30927
+void p_bt_tree(1434,34834
+
+../ladr/clash.c,438
+#define PTRS_CLASH 27,841
+static unsigned Clash_gets,28,887
+static unsigned Clash_gets, Clash_frees;28,887
+Clash get_clash(37,997
+void free_clash(51,1168
+void fprint_clash_mem(70,1540
+void p_clash_mem(96,2138
+Clash append_clash(116,2451
+void  zap_clash(136,2773
+Literals atom_to_literal(158,3124
+Literals apply_lit(179,3547
+int lit_position(191,3732
+Topform resolve(212,4064
+void clash_recurse(272,5622
+void clash(356,8078
+
+../ladr/clause_eval.c,1430
+enum { CL_EVAL_AND,39,1420
+       CL_EVAL_OR,40,1440
+       CL_EVAL_NOT,41,1459
+       CL_EVAL_ALL,42,1479
+       CL_EVAL_LESS,44,1500
+       CL_EVAL_LESS_EQUAL,45,1521
+       CL_EVAL_GREATER,46,1548
+       CL_EVAL_GREATER_EQUAL,47,1572
+       CL_EVAL_EQUAL,48,1602
+       CL_EVAL_POSITIVE,50,1625
+       CL_EVAL_NEGATIVE,51,1650
+       CL_EVAL_MIXED,52,1675
+       CL_EVAL_HINT,54,1698
+       CL_EVAL_TRUE,56,1720
+       CL_EVAL_FALSE,57,1741
+       CL_EVAL_HAS_EQUALITY,59,1764
+       CL_EVAL_HORN,60,1793
+       CL_EVAL_DEFINITE,61,1814
+       CL_EVAL_UNIT,62,1839
+       CL_EVAL_INITIAL,64,1861
+       CL_EVAL_RESOLVENT,65,1885
+       CL_EVAL_UR_RESOLVENT,66,1911
+       CL_EVAL_HYPER_RESOLVENT,67,1940
+       CL_EVAL_FACTOR,68,1972
+       CL_EVAL_PARAMODULANT,69,1995
+       CL_EVAL_BACK_DEMODULANT,70,2024
+       CL_EVAL_SUBSUMER,71,2056
+       CL_EVAL_WEIGHT,73,2082
+       CL_EVAL_VARIABLES,74,2105
+       CL_EVAL_DEPTH,75,2131
+       CL_EVAL_LITERALS,76,2153
+       CL_EVAL_LEVEL77,2178
+struct clause_eval clause_eval82,2300
+#define PTRS_EVAL_RULE 94,2608
+static unsigned Clause_eval_gets,95,2682
+static unsigned Clause_eval_gets, Clause_eval_frees;95,2682
+Clause_eval get_clause_eval(104,2816
+void free_clause_eval(118,3027
+void zap_clause_eval_rule(138,3280
+Clause_eval compile_clause_eval_rule(160,3685
+BOOL eval_clause_in_rule(284,7091
+BOOL rule_contains_semantics(384,9884
+
+../ladr/clause_misc.c,317
+Clist clist_copy(39,1033
+Clist copy_clauses_to_clist(64,1527
+Clist move_clauses_to_clist(90,2067
+Plist input_clauses(115,2549
+void delete_clause(145,3153
+void delete_clist(169,3732
+Topform copy_clause_ija(199,4222
+Plist copy_clauses_ija(220,4687
+void delete_clauses(244,5109
+void make_clause_basic(264,5419
+
+../ladr/clauseid.c,421
+#define CLAUSE_ID_TAB_SIZE 23,815
+static Plist     Topform_id_tab[25,850
+static unsigned  Topform_id_count 26,903
+int next_clause_id(35,1010
+int clause_ids_assigned(51,1236
+void assign_clause_id(70,1642
+void unassign_clause_id(97,2232
+Topform find_clause_by_id(135,3043
+void fprint_clause_id_tab(161,3524
+void p_clause_id_tab(184,3955
+Plist insert_clause_into_plist(204,4377
+BOOL clause_plist_member(239,5183
+
+../ladr/clauses.c,437
+Topform clause_member_plist(38,1022
+Plist intersect_clauses(62,1485
+int max_clause_weight(87,1954
+int max_clause_symbol_count(110,2355
+Plist nonneg_clauses(132,2776
+BOOL all_clauses_horn(155,3173
+BOOL all_clauses_unit(177,3512
+BOOL all_clauses_positive(199,3855
+int neg_nonunit_clauses(221,4219
+int negative_clauses(244,4615
+int most_literals(268,4988
+BOOL pos_equality_in_clauses(291,5389
+BOOL equality_in_clauses(315,5835
+
+../ladr/clausify.c,280
+Literals formula_to_literal(39,1157
+Literals formula_to_literals(59,1553
+Topform formula_to_clause(91,2367
+Plist formula_to_clauses(117,2962
+Plist clausify_formula(147,3746
+Term vars_to_names(170,4123
+Formula literal_to_formula(207,4852
+Formula clause_to_formula(231,5263
+
+../ladr/clist.c,1622
+#define PTRS_CLIST_POS 27,841
+static unsigned Clist_pos_gets,28,895
+static unsigned Clist_pos_gets, Clist_pos_frees;28,895
+#define PTRS_CLIST 30,945
+static unsigned Clist_gets,31,991
+static unsigned Clist_gets, Clist_frees;31,991
+Clist_pos get_clist_pos(40,1109
+void free_clist_pos(54,1308
+Clist get_clist(67,1488
+void free_clist(81,1659
+void fprint_clist_mem(100,2031
+void p_clist_mem(132,2871
+Clist clist_init(155,3359
+void name_clist(178,3714
+void clist_free(201,4068
+void clist_append(223,4378
+void clist_prepend(255,4847
+void clist_insert_before(287,5333
+void clist_insert_after(319,5861
+void clist_remove(353,6518
+void clist_remove_all_clauses(397,7384
+int clist_remove_all(415,7735
+int clist_member(436,8061
+void fprint_clist(461,8549
+void p_clist(486,8968
+void clist_zap(504,9279
+void clist_check(532,9736
+void clist_append_all(570,10469
+BOOL clist_empty(589,10852
+int clist_length(604,11025
+int max_wt_in_clist(620,11248
+BOOL horn_clist(641,11587
+BOOL unit_clist(661,11901
+BOOL equality_in_clist(681,12244
+BOOL neg_nonunit_in_clist(701,12592
+Plist clauses_in_clist(722,13005
+void clist_swap(746,13489
+void clist_move_clauses(772,14011
+Plist move_clist_to_plist(791,14285
+Plist copy_clist_to_plist_shallow(814,14637
+Clist plist_to_clist(833,14955
+void clist_reverse(854,15260
+Clist_pos pos_in_clist(879,15637
+void clist_append_plist(896,15894
+Plist prepend_clist_to_plist(914,16159
+int clist_number_of_weight(936,16490
+Ordertype compare_clause_ids(958,16827
+void sort_clist_by_id(978,17126
+Plist neg_clauses_in_clist(1008,17641
+void fprint_clause_clist(1031,18092
+
+../ladr/clock.c,937
+struct clock clock23,812
+static BOOL Clocks_enabled 30,1081
+static unsigned Clock_starts 31,1146
+static unsigned Wall_start;33,1203
+#define CPU_TIME(CPU_TIME42,1527
+#define CPU_TIME(CPU_TIME45,1674
+#define PTRS_CLOCK 52,1761
+static unsigned Clock_gets,53,1807
+static unsigned Clock_gets, Clock_frees;53,1807
+Clock get_clock(62,1917
+void free_clock(79,2115
+Clock clock_init(107,2663
+void clock_start(127,2968
+void clock_stop(151,3396
+unsigned clock_milliseconds(179,3912
+double clock_seconds(207,4372
+BOOL clock_running(234,4808
+void clock_reset(251,5106
+void fprint_clock(270,5325
+char * get_date(287,5644
+unsigned user_time(305,5933
+double user_seconds(329,6331
+unsigned system_time(356,6877
+double system_seconds(383,7425
+unsigned absolute_wallclock(405,7739
+void init_wallclock(422,8004
+unsigned wallclock(439,8293
+void disable_clocks(454,8474
+void enable_clocks(469,8646
+BOOL clocks_enabled(484,8816
+
+../ladr/cnf.c,1177
+static jmp_buf Jump_env;41,1433
+static unsigned Fid_call_limit 43,1491
+static unsigned Fid_calls 44,1534
+Formula share_formula(53,1632
+Formula consolidate_formula(90,2386
+BOOL formula_ident_share(115,2931
+Formula formula_copy_share(152,3804
+BOOL complementary_share(180,4399
+BOOL contains_complements_share(197,4738
+BOOL prop_member_share(216,5099
+BOOL prop_subset_share(232,5423
+BOOL prop_subsume_share(250,5741
+Formula remove_subsumed_share(274,6226
+Formula bbt(316,7052
+Formula balanced_binary(338,7474
+Formula disjoin_flatten_simplify(360,7885
+Formula simplify_and_share(407,9049
+Formula distribute_top(436,9582
+Formula distribute(473,10375
+Formula cnf(502,10907
+Formula dnf(535,11490
+Formula skolem(547,11617
+Formula skolemize(621,13568
+Ilist unique_qvars(634,13719
+Formula unique_quantified_vars(679,14878
+void mark_free_vars_formula(697,15195
+Formula remove_uni_quant(717,15650
+Formula remove_universal_quantifiers(751,16407
+Formula clausify_prepare(781,17249
+Formula ms_free_vars(811,17860
+Formula miniscope(871,19356
+typedef void (*sighandler_t)sighandler_t932,20765
+Formula miniscope_formula(938,20835
+int cnf_max_clauses(990,22135
+
+../ladr/complex.c,399
+#define IMAX(IMAX24,936
+double complexity1(51,1570
+double complexity2(111,2721
+double complexity3(152,3498
+Term complex4_devar(185,4140
+Term complex4_revar(207,4566
+void complex4_compare(229,4954
+BOOL complex4_p2(249,5423
+void complex4_p1(271,5813
+double complex4(302,6749
+void term_to_ints(335,7465
+double term_complexity(358,7801
+double clause_complexity(390,8370
+int main(401,8659
+
+../ladr/compress.c,192
+Term uncompress_term(33,910
+void compress_term_recurse(55,1319
+char *compress_term(78,1696
+void compress_clause(103,2153
+void uncompress_clause(132,2862
+void uncompress_clauses(162,3508
+
+../ladr/definitions.c,379
+BOOL is_definition(37,940
+Term subst_terms(78,1936
+void subst_free_vars(112,2782
+Formula subst_atomic_formula(135,3358
+Formula strip_quantifiers(174,4541
+BOOL definition_applies(188,4735
+Formula expand_with_definition(210,5158
+Topform first_definition(236,5869
+void process_definitions(260,6261
+void expand_with_definitions(303,7215
+void separate_definitions(344,8150
+
+../ladr/demod.c,397
+static int Demod_attempts 26,866
+static int Demod_rewrites 27,897
+int demodulator_type(40,1100
+void idx_demodulator(90,2289
+int demod_attempts(117,2927
+int demod_rewrites(133,3167
+Term demod(147,3324
+Term contract_bt(207,4875
+Term demod_bt(242,5761
+Term demodulate(288,6961
+Term demod1_recurse(312,7536
+void demod1(372,8902
+Term part_recurse(403,9616
+void particular_demod(468,11105
+
+../ladr/di_tree.c,869
+static int Nonunit_fsub_tests;23,814
+static int Nonunit_bsub_tests;24,845
+static unsigned Sub_calls 26,877
+static unsigned Sub_calls_overflows 27,908
+#define BUMP_SUB_CALLS 28,949
+int nonunit_fsub_tests(40,1133
+int nonunit_bsub_tests(55,1324
+#define PTRS_DI_TREE 64,1442
+static unsigned Di_tree_gets,65,1492
+static unsigned Di_tree_gets, Di_tree_frees;65,1492
+Di_tree get_di_tree(77,1637
+void free_di_tree(94,1849
+void fprint_di_tree_mem(113,2235
+void p_di_tree_mem(139,2855
+Di_tree init_di_tree(160,3152
+void di_tree_insert(175,3322
+BOOL di_tree_delete(215,4094
+void zap_di_tree(256,4984
+void p_di_tree(281,5358
+BOOL subsume_di_literals(311,5899
+BOOL subsumes_di(343,6538
+Topform di_tree_forward(359,6817
+Topform forward_feature_subsume(395,7566
+void di_tree_back(412,7903
+Plist back_feature_subsume(448,8685
+unsigned mega_sub_calls(469,9075
+
+../ladr/dioph.c,641
+int gcd(28,860
+int lcm(44,1095
+int less_vec(57,1316
+int var_check_1(79,1794
+int var_check_2(105,2379
+int add_solution(131,2924
+int a_in_bounds(158,3623
+int b_in_bounds(199,4664
+int dio(242,5899
+#define ADD_TO_SUM(ADD_TO_SUM359,8409
+#define SUBTRACT_FROM_SUM(SUBTRACT_FROM_SUM362,8507
+int next_combo_a(391,9547
+int next_combo_b(451,10916
+#define DOWN 514,12188
+#define OVER 515,12206
+#define BACKUP 516,12224
+#define SUCCESS 517,12242
+#define FAILURE 518,12260
+int next_combo_c(527,12463
+int superset_degree(615,14638
+int next_combo_ss(661,16079
+void p_ac_basis(722,17305
+int all_combos(745,17807
+int main(790,18715
+
+../ladr/discrim.c,598
+#define PTRS_DISCRIM 27,843
+static unsigned Discrim_gets,28,893
+static unsigned Discrim_gets, Discrim_frees;28,893
+#define PTRS_DISCRIM_POS 30,939
+static unsigned Discrim_pos_gets,31,997
+static unsigned Discrim_pos_gets, Discrim_pos_frees;31,997
+Discrim get_discrim(43,1150
+void free_discrim(60,1362
+Discrim_pos get_discrim_pos(77,1605
+void free_discrim_pos(94,1867
+void fprint_discrim_mem(113,2273
+void p_discrim_mem(145,3149
+Discrim discrim_init(166,3480
+void discrim_dealloc(182,3717
+void zap_discrim_tree(198,3950
+void destroy_discrim_tree(235,4636
+BOOL discrim_empty(252,4937
+
+../ladr/discrimb.c,913
+typedef struct flat2 * Flat2;Flat227,844
+struct flat2 flat229,875
+#define GO 38,1079
+#define BACKTRACK 39,1099
+#define SUCCESS 40,1119
+#define FAILURE 41,1139
+#define PTRS_FLAT2 47,1189
+static unsigned Flat2_gets,48,1235
+static unsigned Flat2_gets, Flat2_frees;48,1235
+Flat2 get_flat2(57,1345
+void free_flat2(71,1516
+void fprint_discrimb_mem(90,1894
+void p_discrimb_mem(116,2504
+void print_discrim_bind_tree(132,2724
+void fprint_discrim_bind_index(176,3623
+void p_discrim_bind_index(192,3913
+Discrim discrim_bind_insert_rec(207,4231
+void discrim_bind_insert(279,5800
+Discrim discrim_bind_end(313,6725
+void discrim_bind_delete(364,7795
+void discrim_bind_update(447,9650
+Flat2 check_flat2(462,9927
+void p_flat2(489,10403
+Plist discrim_bind_retrieve_leaf(512,10803
+void *discrim_bind_retrieve_first(681,14446
+void *discrim_bind_retrieve_next(721,15400
+void discrim_bind_cancel(758,16255
+
+../ladr/discrimw.c,1022
+typedef struct flat * Flat;Flat23,815
+struct flat flat25,844
+#define GO 38,1324
+#define BACKTRACK 39,1344
+#define SUCCESS 40,1364
+#define FAILURE 41,1384
+#define PTRS_FLAT 47,1434
+static unsigned Flat_gets,48,1478
+static unsigned Flat_gets, Flat_frees;48,1478
+Flat get_flat(57,1584
+void free_flat(85,1982
+void fprint_discrimw_mem(104,2355
+void p_discrimw_mem(130,2958
+Flat check_flat(146,3145
+void p_flat(173,3612
+void flip_flat(193,3918
+int num_ac_args(230,4647
+int num_ac_nv_args(246,4937
+void print_discrim_wild_tree(262,5259
+void fprint_discrim_wild_index(313,6394
+void p_discrim_wild_index(329,6685
+Discrim discrim_wild_insert_ac(341,6876
+Discrim discrim_wild_insert_rec(390,7938
+void discrim_wild_insert(459,9393
+Discrim discrim_wild_end(493,10311
+void discrim_wild_delete(568,11780
+void discrim_wild_update(650,13625
+Plist discrim_wild_retrieve_leaf(665,13937
+void *discrim_wild_retrieve_first(895,19451
+void *discrim_wild_retrieve_next(932,20234
+void discrim_wild_cancel(968,20980
+
+../ladr/dollar.c,1127
+struct rule rule26,963
+  SUM_OP=35,1067
+  SUM_OP=1, PROD_OP,35,1067
+  SUM_OP=1, PROD_OP, DIV_OP,35,1067
+  SUM_OP=1, PROD_OP, DIV_OP, MOD_OP,35,1067
+  SUM_OP=1, PROD_OP, DIV_OP, MOD_OP, MIN_OP,35,1067
+  SUM_OP=1, PROD_OP, DIV_OP, MOD_OP, MIN_OP, MAX_OP,35,1067
+  SUM_OP=1, PROD_OP, DIV_OP, MOD_OP, MIN_OP, MAX_OP, ABS_OP,35,1067
+  NEG_OP,36,1128
+  LT_OP,37,1138
+  LT_OP, LE_OP,37,1138
+  LT_OP, LE_OP, GT_OP,37,1138
+  LT_OP, LE_OP, GT_OP, GE_OP,37,1138
+  LLT_OP,38,1201
+  LLT_OP, LLE_OP,38,1201
+  LLT_OP, LLE_OP, LGT_OP,38,1201
+  LLT_OP, LLE_OP, LGT_OP, LGE_OP,38,1201
+  AND_OP,39,1261
+  AND_OP, OR_OP,39,1261
+  AND2_OP,40,1278
+  AND2_OP, OR2_OP,40,1278
+  IF_OP,41,1297
+  ID_OP,42,1306
+  ID_OP, NID_OP,42,1306
+  VAR_OP,43,1381
+  VAR_OP, CONST_OP,43,1381
+  VAR_OP, CONST_OP, GROUND_OP}43,1381
+static int Symbols_size;45,1414
+static int *Op_codes;46,1439
+static struct rule **Rules;47,1461
+static int Local_evals;48,1489
+void init_dollar_eval(64,1639
+BOOL evaluable_predicate(167,4724
+Term dollar_eval(189,5046
+Term rewrite_top(364,8968
+Term rewrite(419,10202
+void rewrite_with_eval(510,11971
+
+../ladr/fastparse.c,354
+static int Arity[23,816
+static int Symnum[24,883
+static int Pos;26,951
+#define MAX_LINE 28,1003
+void fast_set_symbol(48,1442
+void fast_set_defaults(79,2054
+Term fast_parse(105,2556
+Term fast_read_term(169,4110
+void fast_fwrite_term(201,4733
+void fast_fwrite_term_nl(245,5761
+Topform fast_read_clause(271,6328
+void fast_fwrite_clause(305,7065
+
+../ladr/fatal.c,146
+static int Fatal_exit_code 23,812
+void bell(36,971
+int get_fatal_exit_code(53,1223
+void set_fatal_exit_code(70,1517
+void fatal_error(88,1880
+
+../ladr/features.c,384
+static Ilist Feature_symbols;23,815
+static int Work_size;30,1078
+static int *Pos_occurrences;31,1139
+static int *Neg_occurrences;32,1168
+static int *Pos_maxdepth;33,1197
+static int *Neg_maxdepth;34,1223
+void init_features(46,1343
+void fill_in_arrays(66,1852
+Ilist features(114,2905
+int feature_length(161,3850
+BOOL features_less_or_equal(185,4281
+void p_features(204,4544
+
+../ladr/flatdemod.c,528
+static int Fdemod_attempts 23,816
+static int Fdemod_rewrites 24,848
+Flatterm fapply_demod(45,1284
+enum { GO,75,1854
+enum { GO, BACKTRACK 75,1854
+void maybe_unbind(85,1964
+#define MAYBE_UNBIND(MAYBE_UNBIND94,2152
+Plist discrim_flat_retrieve_leaf(100,2309
+void *discrim_flat_retrieve_first(187,3981
+void *discrim_flat_retrieve_next(217,4536
+void discrim_flat_cancel(250,5155
+Flatterm fdemod(272,5561
+Term fdemodulate(387,8548
+int fdemod_attempts(426,9492
+int fdemod_rewrites(442,9721
+void fdemod_clause(462,10083
+
+../ladr/flatterm.c,646
+#define PTRS_FLATTERM 27,844
+static unsigned Flatterm_gets,28,896
+static unsigned Flatterm_gets, Flatterm_frees;28,896
+Flatterm get_flatterm(40,1045
+void free_flatterm(63,1450
+void fprint_flatterm_mem(82,1843
+void p_flatterm_mem(108,2474
+BOOL flatterm_ident(127,2691
+void zap_flatterm(146,3031
+Flatterm term_to_flatterm(166,3302
+Term flatterm_to_term(204,3921
+Flatterm copy_flatterm(230,4367
+void print_flatterm(264,4906
+int flatterm_symbol_count(300,5563
+void p_flatterm(326,5941
+BOOL flat_occurs_in(342,6123
+I2list flat_multiset_vars(361,6434
+BOOL flat_variables_multisubset(381,6778
+int flatterm_count_without_vars(401,7167
+
+../ladr/formula.c,2323
+#define PTRS_FORMULA 27,843
+static unsigned Formula_gets,28,893
+static unsigned Formula_gets, Formula_frees;28,893
+static unsigned Arg_mem;30,939
+Formula get_formula(39,1081
+void free_formula(59,1367
+void fprint_formula_mem(82,1891
+void p_formula_mem(111,2630
+unsigned formula_megs(131,2917
+Formula formula_get(151,3208
+void zap_formula(170,3576
+BOOL logic_term(200,4042
+void gather_symbols_in_term(220,4455
+void gather_symbols_in_formula_term(248,5073
+void gather_symbols_in_formula(277,5701
+void gather_symbols_in_formulas(305,6386
+Ilist function_symbols_in_formula(322,6699
+Ilist relation_symbols_in_formula(344,7080
+BOOL relation_symbol_in_formula(366,7460
+Formula term_to_formula(386,7870
+Term formula_to_term(459,9600
+void fprint_formula(533,11467
+void p_formula(602,13310
+unsigned hash_formula(621,13611
+BOOL formula_ident(652,14307
+Formula formula_copy(682,14976
+BOOL dual_type(708,15395
+Formula dual(730,15755
+Formula and(750,16001
+Formula or(768,16221
+Formula imp(786,16439
+Formula impby(804,16662
+Formula not(819,16862
+Formula negate(836,17057
+BOOL quant_form(851,17241
+Formula flatten_top(866,17466
+Formula formula_flatten(922,18562
+Formula nnf2(949,19247
+Formula nnf(1069,22166
+Formula make_conjunction(1085,22381
+Formula make_disjunction(1107,22721
+void formula_canon_eq(1130,23122
+int formula_size(1161,23679
+int greatest_qvar(1189,24231
+int greatest_symnum_in_formula(1222,24937
+void subst_free_var(1256,25698
+Formula elim_rebind(1277,26210
+Formula eliminate_rebinding(1332,27677
+Plist free_vars(1345,27850
+BOOL closed_formula(1374,28407
+Formula get_quant_form(1392,28686
+Formula uni_close(1407,28935
+Formula universal_closure(1430,29364
+BOOL free_var(1445,29616
+BOOL free_variable(1472,30064
+Formula formulas_to_conjunction(1495,30575
+Formula formulas_to_disjunction(1522,31168
+Plist copy_plist_of_formulas(1544,31530
+BOOL literal_formula(1567,31927
+BOOL clausal_formula(1587,32226
+void formula_set_vars_recurse(1608,32559
+void formula_set_variables(1639,33407
+BOOL positive_formula(1697,34792
+BOOL formula_contains_attributes(1726,35312
+BOOL subformula_contains_attributes(1752,35792
+Ilist constants_in_formula(1775,36170
+BOOL relation_in_formula(1792,36426
+void rename_all_bound_vars(1815,36815
+void rename_these_bound_vars(1843,37364
+
+../ladr/fpa.c,2247
+static unsigned Fpa_id_count 23,810
+static unsigned Next_calls 25,845
+static unsigned Next_calls_overflows 26,877
+#define BUMP_NEXT_CALLS 27,919
+typedef struct fpa_trie * Fpa_trie;Fpa_trie29,1005
+struct fpa_trie fpa_trie31,1042
+struct fpa_index fpa_index40,1180
+struct fpa_state fpa_state46,1261
+struct path path61,1661
+enum { LEAF,66,1708
+enum { LEAF, UNION,66,1708
+enum { LEAF, UNION, INTERSECT 66,1708
+#define PTRS_FPA_TRIE 77,1963
+static unsigned Fpa_trie_gets,78,2015
+static unsigned Fpa_trie_gets, Fpa_trie_frees;78,2015
+#define PTRS_FPA_STATE 80,2063
+static unsigned Fpa_state_gets,81,2117
+static unsigned Fpa_state_gets, Fpa_state_frees;81,2117
+#define PTRS_FPA_INDEX 83,2167
+static unsigned Fpa_index_gets,84,2221
+static unsigned Fpa_index_gets, Fpa_index_frees;84,2221
+Fpa_trie get_fpa_trie(93,2345
+void free_fpa_trie(108,2554
+Fpa_state get_fpa_state(121,2737
+void free_fpa_state(135,2936
+Fpa_index get_fpa_index(148,3124
+void free_fpa_index(163,3340
+void fprint_fpa_mem(182,3728
+void p_fpa_mem(220,4823
+void fprint_path(240,5096
+void p_path(271,5602
+void fprint_fpa_trie(284,5785
+void fprint_fpa_index(326,6666
+void p_fpa_index(345,7117
+Fpa_trie fpa_trie_member_insert(360,7486
+Fpa_trie fpa_trie_member(400,8533
+void fpa_trie_possible_delete(430,9371
+void path_insert(457,9995
+void path_delete(479,10475
+Ilist path_push(506,11060
+void path_restore(529,11490
+void fpa_paths(548,11912
+Fpa_index fpa_init_index(591,12904
+void fpa_update(616,13461
+Fpa_state query_leaf_full(645,14164
+Fpa_state query_leaf(663,14497
+Fpa_state query_intersect(690,14941
+Fpa_state query_union(707,15219
+Fpa_state query_special(729,15561
+void zap_fpa_state(779,16950
+Fpa_state union_commuted(798,17226
+BOOL var_in_context(846,18193
+BOOL all_args_vars_in_context(859,18379
+Fpa_state build_query(878,18691
+void fprint_fpa_state(961,21085
+void p_fpa_state(1007,22033
+void p_fpa_query(1023,22283
+Term next_term(1063,23565
+Term fpa_next_answer(1180,26140
+Term fpa_first_answer(1206,26777
+void fpa_cancel(1229,27278
+void zap_fpa_trie(1241,27415
+void zap_fpa_index(1273,27873
+BOOL fpa_empty(1290,28131
+void fpa_density(1302,28304
+void p_fpa_density(1325,28682
+unsigned mega_next_calls(1340,28864
+
+../ladr/fpalist.c,985
+#define F_INITIAL_SIZE 48,1970
+#define F_MAX_SIZE 49,2050
+#define PTRS_FPA_CHUNK 55,2135
+static unsigned Fpa_chunk_gets,56,2189
+static unsigned Fpa_chunk_gets, Fpa_chunk_frees;56,2189
+#define PTRS_FPA_LIST 58,2239
+static unsigned Fpa_list_gets,59,2291
+static unsigned Fpa_list_gets, Fpa_list_frees;59,2291
+static unsigned Chunk_mem;61,2339
+Fpa_chunk get_fpa_chunk(70,2493
+void free_fpa_chunk(87,2748
+Fpa_list get_fpa_list(105,3012
+void free_fpa_list(120,3233
+void fprint_fpalist_mem(139,3624
+void p_fpalist_mem(173,4613
+#define FLAST(FLAST184,4799
+#define FFIRST(FFIRST185,4838
+Fpa_chunk double_chunksize(194,4953
+Fpa_chunk flist_insert(232,5850
+void fpalist_insert(314,7782
+Fpa_chunk consolidate(344,8542
+Fpa_chunk flist_delete(367,8977
+void fpalist_delete(413,9894
+struct fposition first_fpos(433,10232
+struct fposition next_fpos(448,10440
+void zap_fpa_chunks(474,10917
+void zap_fpalist(492,11143
+BOOL fpalist_empty(508,11338
+void p_fpa_list(523,11519
+
+../ladr/glist.c,3091
+#define PTRS_ILIST 25,804
+static unsigned Ilist_gets,26,850
+static unsigned Ilist_gets, Ilist_frees;26,850
+#define PTRS_PLIST 28,892
+static unsigned Plist_gets,29,938
+static unsigned Plist_gets, Plist_frees;29,938
+#define PTRS_I2LIST 31,980
+static unsigned I2list_gets,32,1028
+static unsigned I2list_gets, I2list_frees;32,1028
+#define PTRS_I3LIST 34,1072
+static unsigned I3list_gets,35,1120
+static unsigned I3list_gets, I3list_frees;35,1120
+Ilist get_ilist(47,1259
+void free_ilist(65,1474
+Plist get_plist(81,1661
+void free_plist(99,1876
+I2list get_i2list(115,2065
+void free_i2list(133,2287
+I3list get_i3list(149,2481
+void free_i3list(167,2703
+void fprint_glist_mem(186,3080
+void p_glist_mem(224,4113
+Plist plist_cat(251,4747
+Plist plist_cat2(282,5266
+Plist plist_pop(299,5589
+int plist_count(318,5830
+Plist rev_app_plist(332,6009
+Plist reverse_plist(361,6506
+Plist copy_plist(377,6752
+void zap_plist(408,7226
+Plist plist_append(432,7563
+Plist plist_prepend(458,7987
+BOOL plist_member(477,8269
+Plist plist_subtract(500,8630
+BOOL plist_subset(523,8978
+Plist plist_remove(544,9317
+Plist plist_remove_string(572,9760
+Plist sort_plist(599,10177
+Plist plist_remove_last(624,10653
+int position_of_string_in_plist(649,11055
+BOOL string_member_plist(674,11454
+int longest_string_in_plist(690,11714
+void *ith_in_plist(711,12022
+void *plist_last(731,12298
+Ilist ilist_cat(759,12990
+Ilist ilist_cat2(788,13481
+Ilist ilist_pop(810,13878
+int ilist_count(829,14119
+Ilist rev_app_ilist(843,14298
+Ilist reverse_ilist(872,14795
+Ilist copy_ilist(888,15041
+void zap_ilist(918,15461
+Ilist ilist_append(942,15799
+Ilist ilist_prepend(968,16222
+Ilist ilist_last(986,16442
+BOOL ilist_member(1009,16859
+Ilist ilist_subtract(1032,17218
+Ilist ilist_removeall(1058,17629
+Ilist ilist_intersect(1086,18078
+Ilist ilist_union(1114,18550
+Ilist ilist_set(1137,19085
+Ilist ilist_rem_dups(1163,19488
+BOOL ilist_is_set(1190,19851
+BOOL ilist_subset(1210,20128
+void fprint_ilist(1232,20497
+void p_ilist(1255,20899
+Ilist ilist_copy(1272,21092
+Ilist ilist_remove_last(1294,21386
+int ilist_occurrences(1319,21769
+Ilist ilist_insert_up(1337,22034
+int position_in_ilist(1362,22431
+void zap_i2list(1392,23069
+I2list i2list_append(1416,23415
+I2list i2list_prepend(1443,23879
+I2list i2list_removeall(1465,24190
+I2list i2list_member(1490,24565
+void p_i2list(1512,24930
+int i2list_count(1534,25272
+BOOL i3list_member(1556,25786
+I3list i3list_append(1578,26196
+I3list i3list_prepend(1606,26684
+void zap_i3list(1627,26995
+I3list rev_app_i3list(1646,27243
+I3list reverse_i3list(1675,27751
+I3list copy_i3list(1691,28005
+int i3list_count(1723,28469
+I2list alist_insert(1750,29242
+int assoc(1766,29456
+I3list alist2_insert(1793,30040
+int assoc2a(1809,30265
+int assoc2b(1831,30591
+I3list alist2_remove(1852,30904
+BOOL i2list_multimember(1889,31720
+BOOL i2list_multisubset(1909,32029
+I2list multiset_add_n(1930,32385
+I2list multiset_add(1955,32761
+I2list multiset_union(1973,33095
+Ilist multiset_to_set(1992,33369
+int multiset_occurrences(2014,33674
+
+../ladr/hash.c,644
+struct hashtab hashtab23,811
+struct hashnode hashnode28,868
+#define PTRS_HASHTAB 37,952
+static unsigned Hashtab_gets,38,1002
+static unsigned Hashtab_gets, Hashtab_frees;38,1002
+#define PTRS_HASHNODE 40,1048
+static unsigned Hashnode_gets,41,1100
+static unsigned Hashnode_gets, Hashnode_frees;41,1100
+Hashtab get_hashtab(50,1220
+void free_hashtab(64,1405
+Hashnode get_hashnode(77,1581
+void free_hashnode(91,1773
+void fprint_hash_mem(110,2158
+void p_hash_mem(142,3001
+Hashtab hash_init(161,3256
+void hash_insert(180,3502
+void *hash_lookup(199,3796
+void hash_delete(220,4134
+void hash_destroy(255,4798
+void hash_info(280,5152
+
+../ladr/hints.c,647
+static Lindex Hints_idx 23,812
+static Clist Redundant_hints 24,876
+static Mindex Back_demod_idx;25,946
+static int Bsub_wt_attr;26,1026
+static BOOL Back_demod_hints;27,1051
+static BOOL Collect_labels;28,1081
+static int Hint_id_count 36,1258
+static int Active_hints_count 37,1288
+static int Redundant_hints_count 38,1323
+void init_hints(50,1452
+void done_with_hints(76,2040
+int redundant_hints(99,2474
+Topform find_equivalent_hint(111,2641
+Topform find_matching_hint(139,3373
+void index_hint(168,4042
+void unindex_hint(208,5136
+void adjust_weight_with_hints(232,5571
+void keep_hint_matcher(300,7373
+void back_demod_hints(316,7586
+
+../ladr/ibuffer.c,317
+Ibuffer ibuf_init(39,1002
+void ibuf_free(60,1356
+void ibuf_write(77,1562
+void ibuf_write_block(106,2183
+void ibuf_rewind(124,2447
+int ibuf_read(141,2725
+int ibuf_xread(165,3175
+int ibuf_length(185,3499
+int *ibuf_buffer(200,3675
+#define ISIZE 211,3811
+Ibuffer fd_read_to_ibuf(217,3864
+void p_ibuf(254,4562
+
+../ladr/int_code.c,374
+void put_ilist_to_ibuf(30,885
+Ilist get_ilist_from_ibuf(45,1158
+void put_i3list_to_ibuf(63,1473
+I3list get_i3list_from_ibuf(81,1814
+void put_term_to_ibuf(103,2226
+Term get_term_from_ibuf(123,2563
+void put_just_to_ibuf(150,3118
+Just get_just_from_ibuf(208,4462
+void put_clause_to_ibuf(277,6069
+Topform get_clause_from_ibuf(312,6775
+void check_ibuf_clause(348,7493
+
+../ladr/interp.c,2821
+struct interp interp28,878
+#define ISWAP(ISWAP50,1726
+#define I2(I254,1828
+#define I3(I355,1868
+#define UNDEFINED 57,1927
+#define FUNCTION 58,1947
+#define RELATION 59,1967
+#define MAX_VARS_EVAL 61,1988
+static long unsigned Iso_checks 65,2033
+static long unsigned Iso_perms 66,2070
+#define PTRS_INTERP 72,2136
+static unsigned Interp_gets,73,2184
+static unsigned Interp_gets, Interp_frees;73,2184
+Interp get_interp(82,2298
+void free_interp(96,2476
+void fprint_interp_mem(115,2855
+void p_interp_mem(141,3464
+int *trivial_permutation(157,3653
+int int_power(179,4009
+Interp compile_interp(219,4800
+void transpose_binary(355,8547
+void zap_interp(394,9407
+void fprint_interp_tex(436,10153
+void compute_args(535,12726
+void fprint_interp_xml(558,13122
+void fprint_interp_standard(669,16515
+void fprint_interp_standard2(727,17968
+static void portable_indent(785,19409
+void portable_recurse(800,19634
+void fprint_interp_portable(834,20417
+void p_interp(891,21744
+void fprint_interp_cooked(908,22019
+void fprint_interp_tabular(979,23652
+void fprint_interp_raw(1065,25522
+int eval_term_ground(1120,26821
+BOOL eval_literals_ground(1169,27986
+BOOL all_recurse(1195,28581
+BOOL eval_literals(1238,29798
+int all_recurse2(1263,30229
+int eval_literals_true_instances(1295,31009
+int eval_literals_false_instances(1322,31558
+int eval_fterm_ground(1340,32021
+BOOL eval_form(1390,33153
+BOOL eval_formula(1483,35753
+Term interp_remove_constants_recurse(1524,36471
+void interp_remove_constants(1552,37072
+Term interp_remove_others_recurse(1568,37362
+void interp_remove_others(1596,38002
+Interp copy_interp(1612,38304
+Interp permute_interp(1697,40420
+BOOL ident_interp_perm(1765,42087
+Interp normal_interp(1846,44462
+BOOL iso_interp_recurse(1890,45364
+BOOL isomorphic_interps(1931,46353
+int interp_size(1969,47049
+Term interp_comments(1985,47257
+int *interp_table(2001,47488
+long unsigned iso_checks(2022,47898
+long unsigned iso_perms(2038,48128
+BOOL evaluable_term(2053,48294
+BOOL evaluable_atom(2084,48896
+BOOL evaluable_literals(2115,49511
+BOOL evaluable_formula(2134,49818
+BOOL evaluable_topform(2157,50192
+void update_interp_with_constant(2175,50497
+BOOL eval_topform(2201,51060
+Ordertype compare_interp(2221,51416
+BOOL ident_interp(2254,52054
+Ordertype compare_ints(2260,52165
+void invert_perm(2271,52339
+void copy_perm(2279,52462
+Ordertype compare_permed_interps(2301,52814
+void canon_recurse(2376,54556
+Interp canon_interp(2426,55803
+void assign_discriminator_counts(2460,56579
+BOOL same_discriminator_counts(2484,57099
+void update_profile(2503,57518
+void create_profile(2538,58246
+void p_interp_profile(2573,59022
+Interp normal3_interp(2625,60257
+BOOL same_profiles(2695,61897
+long unsigned perms_required(2715,62230
+long unsigned factorial(2750,62758
+
+../ladr/ioutil.c,1118
+void fwrite_formula(39,1187
+Topform read_clause(66,1781
+Topform parse_clause_from_string(89,2167
+BOOL end_of_list_clause(108,2509
+Clist read_clause_clist(139,3248
+Plist read_clause_list(168,3865
+void sb_write_clause_jmap(185,4223
+void sb_write_clause(245,5407
+void sb_xml_write_clause_jmap(262,5747
+void sb_tagged_write_clause_jmap(328,7779
+void fwrite_clause_jmap(372,8576
+void fwrite_clause(405,9332
+void f_clause(421,9601
+void fwrite_clause_clist(444,9974
+void fwrite_demod_clist(470,10547
+void fwrite_clause_list(510,11400
+void f_clauses(535,11865
+Formula read_formula(554,12238
+BOOL end_of_list_formula(576,12553
+Plist read_formula_list(605,13137
+void fwrite_formula_list(639,13751
+void zap_formula_list(665,14232
+BOOL end_of_list_term(687,14559
+BOOL end_of_commands_term(708,14905
+Plist read_term_list(735,15512
+void fwrite_term_list(769,16107
+Term term_reader(801,16807
+void term_writer(823,17271
+Topform clause_reader(847,17767
+void clause_writer(863,18187
+Topform term_to_topform2(882,18466
+Topform read_clause_or_formula(912,19033
+Plist read_clause_or_formula_list(934,19379
+
+../ladr/ivy.c,790
+#define DICT_SIZE 23,810
+static char *Dict[27,895
+char *dict_lookup(40,1177
+void ivy_term_trans(57,1422
+void ivy_clause_trans(78,1779
+void sb_ivy_write_term(93,2012
+void sb_ivy_write_pair(118,2462
+void sb_ivy_write_pairs(136,2784
+void sb_ivy_write_position(155,3113
+void sb_ivy_write_lit(174,3445
+void sb_ivy_write_literals(192,3766
+void sb_ivy_write_just(217,4228
+void sb_ivy_write_clause_jmap(275,5687
+Topform instantiate_inference(299,6422
+Topform renumber_inference(316,6902
+Ilist ivy_lit_position(339,7358
+Ilist ivy_para_position(368,8198
+Plist paramod2_instances(396,8920
+Topform flip_inference(481,11512
+Plist resolve2_instances(524,12674
+Plist factor2_instances(621,15016
+Plist copy_proof_and_rename_symbols_for_ivy(682,16548
+Plist expand_proof_ivy(704,16948
+
+../ladr/just.c,2701
+#define PTRS_JUST 27,840
+static unsigned Just_gets,28,884
+static unsigned Just_gets, Just_frees;28,884
+#define PTRS_PARAJUST 30,924
+static unsigned Parajust_gets,31,976
+static unsigned Parajust_gets, Parajust_frees;31,976
+#define PTRS_INSTANCEJUST 33,1024
+static unsigned Instancejust_gets,34,1084
+static unsigned Instancejust_gets, Instancejust_frees;34,1084
+#define PTRS_IVYJUST 36,1140
+static unsigned Ivyjust_gets,37,1190
+static unsigned Ivyjust_gets, Ivyjust_frees;37,1190
+Just get_just(49,1329
+void free_just(63,1493
+Parajust get_parajust(79,1681
+void free_parajust(93,1873
+Instancejust get_instancejust(109,2089
+void free_instancejust(123,2309
+Ivyjust get_ivyjust(136,2508
+void free_ivyjust(150,2692
+void fprint_just_mem(169,3072
+void p_just_mem(213,4385
+Just ivy_just(232,4584
+Just input_just(260,5122
+Just goal_just(279,5399
+Just deny_just(298,5672
+Just clausify_just(318,5979
+Just expand_def_just(338,6306
+Just copy_just(358,6686
+Just propositional_just(378,7011
+Just new_symbol_just(398,7376
+Just back_demod_just(418,7719
+Just back_unit_deletion_just(438,8078
+Just binary_res_just(460,8541
+Just binary_res_just_by_id(484,9082
+Just factor_just(508,9609
+Just xxres_just(528,10030
+Just resolve_just(549,10454
+Just demod_just(568,10749
+Just para_just(588,11095
+Just instance_just(616,11650
+Just para_just_rev_copy(640,12131
+Just unit_del_just(660,12557
+Just flip_just(680,12966
+Just xx_just(700,13286
+Just merge_just(721,13641
+Just eval_just(741,13959
+Just append_just(760,14220
+Just copy_justification(781,14502
+char *jstring(859,16592
+int jstring_to_jtype(907,18115
+char itoc(974,19897
+int ctoi(993,20130
+int jmap1(1015,20486
+char *jmap2(1039,20998
+void sb_append_id(1065,21403
+void sb_write_res_just(1081,21733
+void sb_write_position(1120,22565
+void sb_write_ids(1142,22947
+void sb_write_just(1164,23346
+void sb_xml_write_just(1324,27317
+void p_just(1371,28377
+void zap_parajust(1387,28617
+void zap_instancejust(1401,28813
+void zap_ivyjust(1414,29000
+void zap_just(1433,29300
+Ilist get_parents(1491,30600
+Topform first_negative_parent(1586,33386
+Plist get_clanc(1607,33826
+Plist get_clause_ancestors(1643,34667
+int proof_length(1659,34894
+int map_id(1671,35037
+void map_just(1688,35301
+int just_count(1780,37903
+void mark_parents_as_used(1797,38119
+I2list cl_level(1815,38451
+int clause_level(1849,39245
+int lit_string_to_int(1864,39488
+Ilist args_to_ilist(1882,39739
+Just term_to_just(1914,40333
+BOOL primary_just_type(2078,43902
+BOOL has_input_just(2094,44174
+BOOL has_copy_just(2110,44409
+BOOL has_copy_flip_just(2126,44670
+void sb_tagged_write_res_just(2148,45325
+void sb_tagged_write_just(2183,46015
+
+../ladr/lindex.c,409
+#define PTRS_LINDEX 27,842
+static unsigned Lindex_gets,28,890
+static unsigned Lindex_gets, Lindex_frees;28,890
+Lindex get_lindex(37,1004
+void free_lindex(51,1182
+void fprint_lindex_mem(70,1561
+void p_lindex_mem(96,2170
+Lindex lindex_init(126,2904
+void lindex_destroy(149,3447
+void lindex_update(167,3737
+void lindex_update_first(189,4181
+BOOL lindex_empty(212,4636
+BOOL lindex_backtrack(229,4949
+
+../ladr/listterm.c,413
+#define CONS_SYM 23,815
+#define NIL_SYM 24,841
+Term get_nil_term(37,998
+Term listterm_cons(54,1249
+BOOL cons_term(74,1584
+BOOL nil_term(91,1856
+BOOL proper_listterm(109,2165
+Term listterm_append(137,2839
+int listterm_length(158,3208
+Term listterm_i(179,3547
+BOOL listterm_member(200,3896
+Plist listterm_to_tlist(224,4321
+void listterm_zap(249,4709
+Term rev2(266,4914
+Term listterm_reverse(286,5279
+
+../ladr/literals.c,1875
+#define PTRS_LITERALS 27,844
+static unsigned Literals_gets,28,896
+static unsigned Literals_gets, Literals_frees;28,896
+Literals get_literals(40,1045
+void free_literals(57,1264
+void fprint_literals_mem(76,1655
+void p_literals_mem(102,2284
+void zap_literal(122,2527
+void zap_literals(139,2754
+Literals new_literal(159,3063
+Literals copy_literal(177,3308
+Literals append_literal(193,3572
+Literals term_to_literals(213,3864
+Term literal_to_term(248,4584
+Term literals_to_term(270,4892
+Term lits_to_term(297,5513
+void free_lits_to_term(327,6046
+int positive_literals(349,6449
+int negative_literals(370,6832
+BOOL positive_clause(391,7217
+BOOL any_clause(407,7485
+BOOL negative_clause(423,7719
+BOOL mixed_clause(440,8008
+int number_of_literals(457,8298
+BOOL unit_clause(476,8604
+BOOL horn_clause(492,8861
+BOOL definite_clause(508,9129
+int greatest_variable_in_clause(525,9443
+Plist vars_in_clause(547,9888
+Ilist varnums_in_clause(566,10233
+int number_of_variables(590,10686
+BOOL ground_clause(608,10947
+Literals copy_literals(626,11272
+Literals copy_literals_with_flags(652,11785
+Literals copy_literals_with_flag(678,12334
+int literal_number(704,12938
+int atom_number(729,13444
+Literals ith_literal(753,13853
+BOOL true_clause(775,14233
+BOOL complementary_scan(792,14506
+BOOL tautology(815,15004
+int symbol_occurrences_in_clause(839,15441
+Literals remove_null_literals(859,15797
+Literals first_literal_of_sign(885,16191
+Ilist constants_in_clause(906,16590
+BOOL clause_ident(927,16968
+int clause_symbol_count(952,17478
+int clause_depth(972,17872
+BOOL pos_eq(995,18305
+BOOL neg_eq(1012,18588
+BOOL pos_eq_unit(1029,18899
+BOOL neg_eq_unit(1047,19191
+BOOL contains_pos_eq(1066,19539
+BOOL contains_eq(1089,19959
+BOOL only_eq(1111,20321
+int literals_depth(1133,20707
+Term term_at_position(1154,21010
+Ilist pos_predicates(1175,21354
+
+../ladr/maximal.c,539
+int Maximal_flag 23,814
+int Maximal_signed_flag 24,886
+int Selected_flag 25,961
+void init_maximal(37,1118
+BOOL greater_literals(53,1434
+BOOL max_lit_test(83,2124
+BOOL max_signed_lit_test(110,2672
+void mark_maximal_literals(134,3148
+BOOL maximal_literal(164,3873
+BOOL maximal_signed_literal(184,4301
+int number_of_maximal_literals(203,4706
+void mark_selected_literal(224,5045
+void mark_selected_literals(239,5265
+BOOL selected_literal(270,5924
+BOOL exists_selected_literal(285,6138
+void copy_selected_literal_marks(304,6448
+
+../ladr/memory.c,816
+#define MALLOC_MEGS 21,776
+#define DEFAULT_MAX_MEGS 22,847
+#define MAX_MEM_LISTS 23,912
+static void ** M[25,985
+static BOOL Max_megs_check 27,1019
+static int Max_megs 28,1054
+static int Malloc_calls 31,1206
+static unsigned Bytes_palloced 33,1280
+static void *Block 35,1317
+static void *Block_pos 36,1397
+static unsigned Mem_calls 38,1464
+static unsigned Mem_calls_overflows 39,1495
+#define BUMP_MEM_CALLS 41,1537
+void *palloc(50,1728
+void *get_cmem(96,2788
+void *get_mem(134,3421
+void free_mem(166,4013
+int mlist_length(190,4401
+void memory_report(207,4598
+int megs_malloced(233,5277
+void set_max_megs(251,5617
+void set_max_megs_proc(268,5900
+int bytes_palloced(285,6189
+void *tp_alloc(302,6468
+unsigned mega_mem_calls(321,6786
+void disable_max_megs(338,7026
+void enable_max_megs(353,7204
+
+../ladr/mindex.c,948
+struct mindex_pos mindex_pos23,813
+#define PTRS_MINDEX 53,1371
+static unsigned Mindex_gets,54,1419
+static unsigned Mindex_gets, Mindex_frees;54,1419
+#define PTRS_MINDEX_POS 56,1463
+static unsigned Mindex_pos_gets,57,1519
+static unsigned Mindex_pos_gets, Mindex_pos_frees;57,1519
+Mindex get_mindex(66,1641
+void free_mindex(82,1862
+Mindex_pos get_mindex_pos(95,2037
+void free_mindex_pos(110,2265
+void fprint_mindex_mem(129,2664
+void p_mindex_mem(161,3522
+Mindex mindex_init(204,4833
+BOOL mindex_empty(234,5560
+void mindex_free(263,6056
+void mindex_destroy(295,6675
+void linear_insert(324,7230
+void linear_delete(343,7538
+void linear_update(375,8158
+void mindex_update(398,8628
+Term mindex_retrieve_first(465,10746
+Term next_candidate(510,11865
+Term retrieve_next_backtrack(565,13185
+Term mindex_retrieve_next(643,15321
+void mindex_retrieve_cancel(733,17311
+void fprint_linear_index(765,18162
+void fprint_mindex(787,18560
+
+../ladr/multiset.c,98
+int num_occurrences(30,883
+Plist set_of_more_occurrences(48,1211
+BOOL greater_multiset(83,2083
+
+../ladr/nonport.c,98
+char *username(42,1117
+char *hostname(64,1471
+int my_process_id(87,1826
+int get_bits(107,2093
+
+../ladr/options.c,2570
+typedef enum { FLAGT,28,892
+typedef enum { FLAGT, PARMT,28,892
+typedef enum { FLAGT, PARMT, FLOATPARMT,28,892
+typedef enum { FLAGT, PARMT, FLOATPARMT, STRINGPARMT 28,892
+typedef enum { FLAGT, PARMT, FLOATPARMT, STRINGPARMT } Opttype;Opttype28,892
+typedef struct optdep * Optdep;Optdep29,956
+struct optdep optdep31,989
+struct flag flag42,1544
+struct parm parm49,1671
+struct floatparm floatparm57,1858
+struct stringparm stringparm65,2063
+static struct flag Flags[74,2414
+static struct parm Parms[75,2451
+static struct floatparm Floatparms[76,2488
+static struct stringparm Stringparms[77,2540
+static int Next_flag 79,2596
+static int Next_parm 80,2622
+static int Next_floatparm 81,2648
+static int Next_stringparm 82,2679
+static int Option_updates 84,2712
+static BOOL Ignore_dependencies 86,2774
+#define PTRS_OPTDEP 92,2845
+static unsigned Optdep_gets,93,2893
+static unsigned Optdep_gets, Optdep_frees;93,2893
+Optdep get_optdep(102,3007
+void free_optdep(117,3191
+void fprint_options_mem(137,3579
+void p_options_mem(163,4192
+void enable_option_dependencies(182,4418
+void disable_option_dependencies(197,4633
+BOOL option_dependencies_state(212,4847
+int init_flag(232,5286
+int init_parm(269,6140
+int init_floatparm(304,6932
+int init_stringparm(343,7903
+void fprint_options(380,8848
+void p_options(433,10186
+int flag(451,10449
+int parm(468,10715
+BOOL at_parm_limit(484,10918
+BOOL over_parm_limit(504,11245
+double floatparm(525,11646
+BOOL stringparm(542,11938
+char *stringparm1(559,12207
+void update_flag(576,12495
+void set_flag(654,14482
+void clear_flag(672,14825
+void assign_parm(691,15219
+void assign_floatparm(753,16903
+void assign_stringparm(788,18079
+int str_to_flag_id(827,19037
+int str_to_parm_id(848,19417
+int str_to_floatparm_id(869,19802
+int str_to_stringparm_id(890,20214
+char *flag_id_to_str(910,20562
+char *parm_id_to_str(928,20873
+char *floatparm_id_to_str(946,21199
+char *stringparm_id_to_str(964,21553
+Optdep append_dep(978,21803
+void flag_flag_dependency(1001,22217
+void flag_flag_dep_default(1024,22759
+void flag_parm_dependency(1047,23298
+void flag_floatparm_dependency(1070,23840
+void flag_parm_dep_default(1093,24394
+void flag_floatparm_dep_default(1116,24941
+void parm_flag_dependency(1139,25497
+void parm_parm_dependency(1160,25974
+void flag_stringparm_dependency(1183,26530
+void flag_stringparm_dep_default(1206,27104
+int option_updates(1227,27582
+int flag_default(1242,27751
+int parm_default(1257,27935
+int floatparm_default(1272,28124
+char *stringparm1_default(1287,28340
+
+../ladr/order.c,116
+void merge_sort_recurse(49,1403
+void merge_sort(110,2752
+Ordertype compare_vecs(129,3112
+void copy_vec(151,3428
+
+../ladr/paramod.c,839
+static BOOL  Ordered_inference 23,814
+static BOOL  Positive_inference 24,854
+static BOOL  Para_from_vars 25,895
+static BOOL  Para_into_vars 26,931
+static BOOL  Para_from_small 27,968
+static BOOL  Check_instances 28,1006
+static int Para_instance_prunes 30,1077
+static int Basic_prunes 31,1132
+void paramodulation_options(44,1291
+int para_instance_prunes(73,1977
+int basic_paramodulation_prunes(89,2248
+BOOL basic_check(101,2413
+Literals apply_lit_para(118,2656
+Term apply_substitute_para(134,2960
+Topform paramodulate(156,3402
+BOOL para_from_right(200,4715
+BOOL from_parent_test(221,5098
+BOOL into_parent_test(245,5699
+BOOL check_instance(287,6779
+BOOL check_instances(319,7529
+void para_into(341,7989
+void para_into_lit(391,9296
+void para_from_into(442,10931
+Topform para_pos(479,11980
+Topform para_pos2(529,13395
+
+../ladr/parautil.c,719
+int Oriented_flag 23,815
+int Renamable_flip_flag 24,893
+void init_paramod(36,1064
+void mark_renamable_flip(55,1452
+BOOL renamable_flip_eq(74,1898
+BOOL renamable_flip_eq_test(95,2333
+void mark_oriented_eq(126,2933
+BOOL oriented_eq(145,3347
+BOOL same_term_structure(168,3792
+void flip_eq(194,4304
+void orient_equalities(218,4878
+BOOL eq_tautology(295,7028
+Term top_flip(320,7539
+void zap_top_flip(343,7906
+Literals literal_flip(358,8065
+void zap_literal_flip(377,8355
+Topform clause_with_new_constant(390,8537
+Topform new_constant(422,9495
+Topform fold_denial(453,10163
+BOOL equational_def_2(486,10939
+int equational_def(504,11256
+Ordertype unfold_order(530,11691
+Topform build_reflex_eq(555,12146
+
+../ladr/parse.c,3210
+#define COMMENT_CHAR 23,812
+static char Cons_char 25,838
+static char Quote_char 26,867
+static int Quantifier_precedence 27,898
+static BOOL Parenthesize 29,978
+static BOOL Check_for_illegal_symbols 30,1012
+typedef enum {TOK_UNKNOWN,34,1078
+	      TOK_ORDINARY,35,1143
+	      TOK_SPECIAL,36,1190
+	      TOK_STRING,37,1236
+	      TOK_COMMENT,38,1280
+	      TOK_PUNC 39,1326
+} Toktype;Toktype40,1377
+typedef enum {READ_BUF_OK,44,1425
+typedef enum {READ_BUF_OK,READ_BUF_EOF,44,1425
+	      READ_BUF_ERROR,45,1465
+	      READ_BUF_ERROR,READ_BUF_QUOTE_ERROR}45,1465
+	      READ_BUF_ERROR,READ_BUF_QUOTE_ERROR} Read_rc;Read_rc45,1465
+typedef struct token * Token;Token49,1543
+struct token token51,1574
+typedef struct pterm * Pterm;Pterm61,1848
+struct pterm pterm63,1879
+typedef struct tok_pos *Tok_pos;Tok_pos71,2017
+struct tok_pos tok_pos73,2051
+static BOOL   Translate_neg_equalities 81,2163
+static Plist  Multiple_char_special_syms 82,2211
+#define PTRS_TOKEN 88,2290
+static unsigned Token_gets,89,2336
+static unsigned Token_gets, Token_frees;89,2336
+#define PTRS_PTERM 91,2378
+static unsigned Pterm_gets,92,2424
+static unsigned Pterm_gets, Pterm_frees;92,2424
+Token get_token(101,2534
+void free_token(115,2705
+Pterm get_pterm(128,2865
+void free_pterm(142,3036
+void fprint_parse_mem(161,3408
+void p_parse_mem(193,4220
+void p_tokens(210,4405
+void translate_neg_equalities(238,4950
+Term translate_neg_eq(250,5132
+Term untranslate_neg_eq(276,5697
+void free_pterm_list(302,6270
+void free_token_list(321,6527
+BOOL end_char(340,6788
+BOOL comment_char(352,6920
+BOOL quote_char(364,7067
+BOOL punctuation_char(376,7214
+BOOL ordinary_char(394,7496
+BOOL special_char(410,7749
+BOOL white_char(448,8430
+BOOL all_whitespace(465,8733
+int finish_comment(494,9236
+int read_buf(545,10478
+String_buf max_special_symbol(605,11583
+Token tokenize(653,12639
+int comma_terms(737,14469
+void transfer_comma_term(752,14722
+BOOL quantifier(771,15075
+BOOL ordinary_constant_string(787,15320
+BOOL ordinary_constant(801,15524
+BOOL quant_prefix(816,15755
+Term terms_to_term(836,16173
+void next_token(985,20811
+Term toks_to_set(1005,21119
+Term make_a_list(1022,21443
+Term toks_to_list(1043,21856
+Pterm toks_to_terms(1107,23377
+Term toks_to_term(1226,26058
+void fprint_parse_error(1259,26820
+Term sread_term(1296,27820
+Term read_term(1347,29180
+Term parse_term_from_string(1395,30120
+void arrange_term(1410,30364
+void sb_remove_some_space(1528,33570
+void sb_write_term(1564,34452
+void fwrite_term(1594,35155
+void fwrite_term_nl(1617,35633
+char *process_quoted_symbol(1633,35843
+void remember_multiple_char_special_syms(1661,36447
+void forget_multiple_char_special_syms(1681,36944
+void look_for_illegal_symbols(1701,37433
+void declare_parse_type(1721,37933
+void declare_quantifier_precedence(1744,38457
+void declare_standard_parse_types(1759,38684
+BOOL redeclare_symbol_and_copy_parsetype(1815,40550
+void skip_to_nl(1852,41549
+Plist split_string(1872,41888
+void set_cons_char(1902,42418
+char get_cons_char(1917,42581
+void set_quote_char(1932,42746
+char get_quote_char(1947,42913
+void parenthesize(1962,43079
+void check_for_illegal_symbols(1977,43267
+
+../ladr/pindex.c,636
+struct pair_index pair_index23,813
+#define INT_LARGE 35,1259
+#define IN_RANGE(IN_RANGE36,1332
+#define PTRS_PAIR_INDEX 42,1430
+static unsigned Pair_index_gets,43,1486
+static unsigned Pair_index_gets, Pair_index_frees;43,1486
+Pair_index get_pair_index(52,1616
+void free_pair_index(68,1870
+void fprint_pindex_mem(87,2269
+void p_pindex_mem(113,2906
+Pair_index init_pair_index(137,3368
+void zap_pair_index(180,4129
+int pairs_exhausted(210,4697
+void init_pair(224,4894
+void insert_pair_index(265,5757
+void delete_pair_index(304,6619
+void retrieve_pair(401,8657
+void p_pair_index(514,11412
+int pair_already_used(558,12222
+
+../ladr/random.c,224
+Term random_term(45,1344
+Term random_nonvariable_term(112,2549
+Term random_complex_term(136,3110
+Ilist random_path(161,3687
+void random_permutation(194,4356
+Topform random_clause(238,5072
+Term random_op_term(265,5604
+
+../ladr/resolve.c,1076
+static BOOL  Ordered 24,834
+static BOOL  Check_instances 25,875
+static int   Ur_nucleus_limit 27,917
+static BOOL  Initial_nuclei 28,995
+static BOOL  Production_mode 29,1075
+static int   Res_instance_prunes 31,1117
+void resolution_options(45,1271
+int res_instance_prunes(70,1772
+BOOL unit_check(82,1923
+BOOL pos_hyper_sat_test(95,2118
+BOOL neg_hyper_sat_test(111,2430
+void hyper_sat_atom(127,2738
+void hyper_satellite(191,4489
+void hyper_nucleus(214,5115
+void hyper_resolution(258,6158
+BOOL target_check(276,6562
+void ur_sat_atom(297,7005
+void ur_satellite(364,8858
+void ur_nucleus(385,9332
+void ur_resolution(430,10391
+void xx_res(446,10724
+void binary_resolvent(479,11566
+BOOL binary_parent_test(529,12788
+Topform instantiate_clause(576,14334
+BOOL check_instance(594,14738
+BOOL check_instances(628,15574
+void bin_res_lit(647,15930
+void binary_resolution(681,16847
+void binary_factors(716,17626
+void merge_literals(759,18566
+Topform copy_inference(795,19439
+Topform resolve2(827,20231
+Topform resolve3(883,21518
+Topform xx_resolve2(903,21972
+
+../ladr/std_options.c,252
+static int Prolog_style_variables 25,831
+static int Ignore_option_dependencies 26,898
+static int Clocks 27,967
+void init_standard_options(39,1136
+void process_standard_options(58,1559
+int clocks_id(86,2038
+int prolog_style_variables_id(101,2202
+
+../ladr/strbuf.c,953
+struct string_buf string_buf25,817
+#define CHUNK_SIZE 30,876
+struct chunk chunk32,900
+typedef struct chunk *Chunk;Chunk37,963
+#define PTRS_CHUNK 43,1022
+static unsigned Chunk_gets,44,1068
+static unsigned Chunk_gets, Chunk_frees;44,1068
+#define PTRS_STRING_BUF 46,1110
+static unsigned String_buf_gets,47,1166
+static unsigned String_buf_gets, String_buf_frees;47,1166
+Chunk get_chunk(56,1286
+void free_chunk(70,1457
+String_buf get_string_buf(86,1654
+void free_string_buf(100,1860
+void fprint_strbuf_mem(119,2259
+void p_strbuf_mem(151,3110
+String_buf init_string_buf(173,3495
+void fprint_sb(191,3762
+void p_sb(218,4235
+void sb_append(238,4549
+void sb_append_char(273,5138
+void sb_replace_char(312,6005
+char sb_char(337,6493
+void sb_cat_copy(363,6960
+void sb_cat(386,7480
+void zap_string_buf(404,7764
+char *sb_to_malloc_string(438,8673
+char *sb_to_malloc_char_array(469,9262
+int sb_size(494,9618
+void sb_append_int(510,9847
+
+../ladr/string.c,468
+static char *Float_format 23,813
+BOOL str_ident(36,1027
+char *new_str_copy(53,1325
+BOOL string_member(71,1585
+int which_string_member(92,1983
+BOOL initial_substring(112,2308
+BOOL substring(131,2563
+void reverse_chars(153,2935
+int natural_string(171,3220
+int char_occurrences(192,3479
+char *escape_char(215,3849
+BOOL str_to_int(243,4396
+char *int_to_str(266,4802
+BOOL str_to_double(286,5142
+char *double_to_str(316,5653
+BOOL string_of_repeated(349,6145
+
+../ladr/subsume.c,574
+static int Nonunit_subsumption_tests 23,814
+int nonunit_subsumption_tests(35,966
+BOOL subsume_literals(53,1367
+BOOL subsume_bt_literals(87,2046
+BOOL subsumes(133,2991
+BOOL subsumes_bt(158,3532
+Topform forward_subsume(185,4008
+Plist back_subsume(238,5526
+Topform back_subsume_one(294,7039
+void atom_conflict(343,8206
+void unit_conflict_by_index(388,9345
+Topform try_unit_conflict(413,9942
+void unit_delete(445,10778
+Plist back_unit_del_by_index(519,12836
+void simplify_literals(566,13936
+BOOL eq_removable_literal(604,14823
+void simplify_literals2(646,15920
+
+../ladr/symbols.c,5368
+struct symbol symbol23,813
+#define SYM_TAB_SIZE 42,1707
+static Plist By_id[44,1736
+static Plist By_sym[45,1804
+static unsigned Symbol_count;47,1874
+static char *True_sym 51,1944
+static char *False_sym 52,1977
+static char *And_sym 53,2010
+static char *Or_sym 54,2042
+static char *Not_sym 55,2074
+static char *Iff_sym 56,2106
+static char *Imp_sym 57,2140
+static char *Impby_sym 58,2173
+static char *All_sym 59,2206
+static char *Exists_sym 60,2240
+static char *Quant_sym 61,2277
+static char *Attrib_sym 65,2359
+static char *Eq_sym 66,2434
+static char *Neq_sym 67,2504
+char *true_sym(79,2670
+char *false_sym(94,2820
+char *and_sym(109,2967
+char *or_sym(124,3107
+char *not_sym(139,3245
+char *iff_sym(154,3386
+char *imp_sym(169,3527
+char *impby_sym(184,3670
+char *all_sym(199,3817
+char *exists_sym(214,3961
+char *quant_sym(229,4118
+char *attrib_sym(244,4273
+char *eq_sym(259,4422
+char *neq_sym(274,4560
+void set_operation_symbol(289,4714
+char *get_operation_symbol(335,6043
+BOOL symbol_in_use(382,7339
+Symbol get_symbol(427,8477
+int new_symnum(457,9065
+unsigned hash_sym(470,9212
+unsigned hash_id(488,9464
+Symbol lookup_by_id(500,9607
+Symbol lookup_by_sym(518,9879
+int str_to_sn(544,10557
+void fprint_syms(580,11386
+void p_syms(609,12018
+void fprint_sym(626,12269
+void sprint_sym(643,12568
+void p_sym(660,12851
+BOOL str_exists(678,13168
+int greatest_symnum(705,13684
+char *sn_to_str(725,14205
+BOOL is_symbol(747,14552
+int sn_to_arity(767,14966
+int sn_to_occurrences(787,15289
+void set_unfold_symbol(807,15626
+BOOL is_unfold_symbol(823,15842
+void declare_aux_symbols(839,16059
+char *parse_type_to_str(862,16573
+void clear_parse_type_for_all_symbols(887,17104
+void clear_parse_type(910,17488
+void check_diff_type_same_prec(932,17865
+void set_parse_type(979,19088
+BOOL binary_parse_type(1023,20238
+BOOL unary_parse_type(1048,20824
+int special_parse_type(1073,21340
+static int Assoc_comm_symbols 1089,21815
+static int Comm_symbols 1090,21873
+void set_assoc_comm(1108,22278
+void set_commutative(1135,22822
+BOOL assoc_comm_symbols(1161,23274
+BOOL comm_symbols(1178,23537
+BOOL is_assoc_comm(1199,24000
+BOOL is_commutative(1221,24518
+static int Eq_symnum 1231,24896
+static int Or_symnum 1232,24922
+static int Not_symnum 1233,24948
+BOOL is_eq_symbol(1248,25234
+int not_symnum(1267,25529
+int or_symnum(1285,25782
+void declare_base_symbols(1302,26006
+static Variable_style Var_style 1315,26405
+void set_variable_style(1328,26616
+Variable_style variable_style(1344,26855
+BOOL variable_name(1362,27200
+void symbol_for_variable(1387,27814
+Ilist variable_symbols(1424,28651
+Ilist remove_variable_symbols(1448,29133
+void set_symbol_type(1471,29682
+Symbol_type get_symbol_type(1489,29974
+BOOL function_symbol(1507,30255
+BOOL relation_symbol(1522,30464
+BOOL function_or_relation_symbol(1537,30686
+void declare_functions_and_relations(1553,30981
+int function_or_relation_sn(1576,31540
+Ilist all_function_symbols(1601,31983
+Ilist all_relation_symbols(1626,32397
+void set_lrpo_status(1655,33045
+void all_symbols_lrpo_status(1673,33373
+Lrpo_status sn_to_lrpo_status(1698,33908
+static BOOL Zero_wt_kb 1708,34288
+void set_kb_weight(1720,34455
+BOOL zero_wt_kb(1750,35093
+int sn_to_kb_wt(1766,35329
+void print_kbo_weights(1785,35579
+static char *Skolem_constant_prefix 1801,36121
+static char *Skolem_function_prefix 1802,36164
+static int Next_skolem_constant 1803,36207
+static int Next_skolem_function 1804,36279
+static BOOL Skolem_check 1805,36351
+void set_skolem(1818,36591
+void skolem_check(1835,36818
+BOOL skolem_ok(1847,36957
+int next_skolem_symbol(1876,37565
+Ilist skolem_symbols(1910,38221
+BOOL is_skolem(1935,38599
+void skolem_reset(1952,38858
+void decommission_skolem_symbols(1970,39178
+void set_skolem_symbols(1995,39590
+static Ilist Preliminary_prec_func 2010,40092
+static Ilist Preliminary_prec_pred 2011,40135
+void set_lex_val(2025,40387
+int sn_to_lex_val(2047,40891
+Ordertype sym_precedence(2066,41309
+Ilist syms_with_lex_val(2099,41911
+BOOL exists_preliminary_precedence(2124,42311
+Ordertype preliminary_lex_compare(2150,42998
+Ordertype lex_compare_base(2189,43968
+Ordertype lex_compare_arity_0123(2278,46207
+Ordertype lex_compare_arity_0213(2299,46616
+void lex_order(2337,47653
+Ilist insert_by_lex_val(2370,48473
+Ilist sort_by_lex_val(2396,48902
+Ilist remove_syms_without_lex_val(2412,49147
+Ilist current_fsym_precedence(2438,49598
+Ilist current_rsym_precedence(2456,49899
+Ilist not_in_preliminary_precedence(2474,50206
+void print_fsym_precedence(2500,50789
+void print_rsym_precedence(2523,51210
+int min_lex_val(2546,51623
+int max_lex_val(2566,51921
+void assign_greatest_precedence(2589,52261
+BOOL has_greatest_precedence(2604,52489
+void lex_insert_after_initial_constants(2619,52729
+Ilist skolem_insert(2650,53369
+void add_skolems_to_preliminary_precedence(2676,53990
+static unsigned Mark_for_new_symbols 2695,54752
+int fresh_symbol(2711,55152
+int gen_new_symbol(2738,55564
+void mark_for_new_symbols(2769,56107
+I2list new_symbols_since_mark(2784,56336
+void add_new_symbols(2806,56707
+void new_constant_properties(2833,57314
+Ilist collect_multiples(2855,57751
+Ilist arity_check(2888,58425
+int symbol_with_string(2905,58718
+void process_skolem_list(2925,59051
+void process_lex_list(2950,59593
+Ilist symnums_of_arity(2992,60712
+
+../ladr/term.c,2866
+static Term Shared_variables[59,2360
+#define PTRS_TERM 65,2430
+static unsigned Term_gets,66,2474
+static unsigned Term_gets, Term_frees;66,2474
+static unsigned Arg_mem;68,2514
+Term get_term(77,2655
+void free_term(114,3487
+void fprint_term_mem(135,3937
+void p_term_mem(165,4627
+Term get_variable_term(187,4957
+Term get_rigid_term_like(219,5707
+Term get_rigid_term(240,6162
+Term get_rigid_term_dangerously(274,7100
+void zap_term(295,7514
+BOOL term_ident(319,8002
+Term copy_term(347,8545
+BOOL ground_term(373,9027
+int biggest_variable(398,9454
+int term_depth(423,9882
+int symbol_count(450,10328
+BOOL occurs_in(475,10893
+void fprint_term(499,11283
+void sprint_term(535,11939
+char *term_to_string(573,12641
+void p_term(596,13110
+BOOL all_args_vars(615,13409
+Term build_binary_term(642,13867
+Term build_binary_term_safe(665,14354
+Term build_unary_term(683,14730
+Term build_unary_term_safe(704,15159
+Term subst_term(721,15501
+Term subst_var_term(748,16050
+int greatest_variable(775,16576
+int greatest_symnum_in_term(802,17086
+void upward_term_links(829,17592
+BOOL check_upward_term_links(851,18011
+int occurrences(877,18501
+Term trm_set_vars_recurse(899,18882
+void term_set_variables(945,19996
+Term nat_to_term(978,20634
+Term int_to_term(998,20964
+Term bool_to_term(1020,21308
+Term double_to_term(1038,21642
+int natural_constant_term(1057,21999
+int arg_position(1078,22377
+BOOL is_term(1099,22694
+BOOL is_constant(1115,22935
+char *term_symbol(1132,23223
+BOOL term_to_int(1153,23647
+BOOL term_to_double(1186,24258
+BOOL term_to_number(1207,24666
+BOOL true_term(1230,24990
+BOOL false_term(1245,25161
+BOOL term_to_bool(1263,25461
+I2list symbols_in_term(1289,25893
+Ilist fsym_set_in_term(1310,26218
+Term renum_vars_recurse(1335,26816
+Term set_vars_recurse(1373,27707
+I2list multiset_of_vars(1409,28397
+I2list multiset_vars(1431,28748
+Plist set_of_vars(1447,28955
+Plist set_of_variables(1474,29395
+int number_of_vars_in_term(1490,29631
+Ilist set_of_ivars(1509,29907
+Ilist set_of_ivariables(1536,30404
+BOOL variables_subset(1551,30594
+BOOL variables_multisubset(1571,30945
+Term term_at_pos(1603,31527
+Ilist pos_of_subterm(1622,31811
+Ilist position_of_subterm(1653,32563
+int symbol_occurrences(1674,32923
+BOOL args_distinct_vars(1699,33383
+unsigned hash_term(1750,34178
+BOOL skolem_term(1773,34502
+BOOL contains_skolem_term(1788,34682
+BOOL contains_skolem_function(1813,35067
+Term term0(1839,35480
+Term term1(1855,35692
+Term term2(1873,35949
+BOOL symbol_in_term(1891,36190
+BOOL same_structure(1917,36623
+Plist copy_plist_of_terms(1942,37049
+void zap_plist_of_terms(1966,37448
+BOOL eq_term(1989,37848
+Plist plist_of_subterms(2004,38032
+BOOL tlist_member(2025,38416
+int position_of_term_in_tlist(2045,38717
+BOOL tlist_subset(2065,39018
+BOOL tlist_set(2083,39271
+Plist free_vars_term(2104,39673
+
+../ladr/termflag.c,410
+#define TERM_BITS 25,842
+#define SET_BIT(SET_BIT27,893
+#define CLEAR_BIT(CLEAR_BIT28,949
+static int bits_in_use[31,1058
+int claim_term_flag(47,1414
+void release_term_flag(73,1862
+void term_flag_set(99,2602
+void term_flag_clear(119,3045
+BOOL term_flag(139,3489
+int term_flags(162,3944
+Term copy_term_with_flags(180,4242
+Term copy_term_with_flag(209,4822
+void term_flag_clear_recursively(236,5289
+
+../ladr/termorder.c,697
+Order_method Ordering_method 24,838
+void assign_order_method(36,1014
+Ordertype term_compare_basic(55,1421
+Ordertype term_compare_ncv(107,2712
+Ordertype term_compare_vcp(155,3913
+Ordertype term_compare_vr(203,5088
+Ordertype flatterm_compare_vr(246,6030
+BOOL lrpo_multiset(291,6920
+BOOL lrpo_lex(306,7244
+BOOL lrpo(354,8491
+void init_kbo_weights(413,9891
+int kbo_weight(454,10743
+BOOL kbo(478,11082
+BOOL term_greater(536,12612
+Ordertype term_order(556,13071
+int flat_kbo_weight(578,13455
+BOOL flat_kbo(601,13814
+BOOL flat_lrpo_multiset(659,15326
+BOOL flat_lrpo_lex(677,15699
+BOOL flat_lrpo(731,16764
+BOOL flat_greater(796,18114
+BOOL greater_multiset_current_ordering(828,18956
+
+../ladr/test.c,57
+#define N 22,795
+void compute_args(24,808
+main(35,987
+
+../ladr/tlist.c,140
+void zap_tlist(35,1035
+Plist tlist_remove(56,1346
+Plist tlist_union(87,1890
+Ilist constants_in_term(114,2345
+Plist tlist_copy(142,2788
+
+../ladr/top_input.c,1344
+typedef struct readlist * Readlist;Readlist29,933
+struct readlist readlist31,970
+static Readlist Input_lists 39,1179
+static Plist Lex_function_list 41,1216
+static Plist Lex_predicate_list 42,1255
+static Plist Skolem_list 43,1295
+static char *Program_name 45,1372
+#define PTRS_READLIST 51,1434
+static unsigned Readlist_gets,52,1486
+static unsigned Readlist_gets, Readlist_frees;52,1486
+Readlist get_readlist(61,1608
+void free_readlist(76,1806
+void fprint_top_input_mem(96,2208
+void p_top_input_mem(122,2844
+void init_standard_ladr(142,3117
+void fatal_input_error(161,3449
+void set_program_name(186,3927
+BOOL condition_is_true(198,4083
+void process_op2(210,4246
+void process_op(249,5317
+void process_redeclare(298,6408
+void execute_unknown_action(333,7283
+void flag_handler(361,7923
+void parm_handler(390,8658
+void process_symbol_list(440,9806
+Readlist readlist_member(468,10675
+Readlist readlist_member_wild(485,10995
+void accept_list(513,11772
+void input_symbols(538,12219
+void symbol_check_and_declare(582,13457
+void read_from_file(697,16616
+void read_all_input(880,22079
+void check_formula_attributes(913,22828
+Plist process_input_formulas(939,23499
+Plist process_demod_formulas(992,25007
+Plist process_goal_formulas(1032,26043
+Term read_commands(1081,27281
+Plist embed_formulas_in_topforms(1175,29840
+
+../ladr/topform.c,1249
+#define PTRS_TOPFORM 27,843
+static unsigned Topform_gets,28,893
+static unsigned Topform_gets, Topform_frees;28,893
+Topform get_topform(40,1038
+void free_topform(54,1223
+void fprint_topform_mem(73,1608
+void p_topform_mem(99,2226
+void zap_topform(124,2712
+void fprint_clause(143,3010
+void p_clause(184,3756
+Topform term_to_clause(206,4271
+Topform term_to_topform(233,4712
+Term topform_to_term(269,5528
+Term topform_to_term_without_attributes(304,6331
+void clause_set_variables(338,7176
+void renumber_variables(405,8912
+void term_renumber_variables(453,10002
+Plist renum_vars_map(482,10453
+void upward_clause_links(526,11387
+BOOL check_upward_clause_links(545,11754
+Topform copy_clause(568,12208
+Topform copy_clause_with_flags(589,12614
+Topform copy_clause_with_flag(610,13056
+void inherit_attributes(634,13587
+void gather_symbols_in_topform(653,14047
+void gather_symbols_in_topforms(674,14485
+Ilist fsym_set_in_topforms(691,14791
+Ilist rsym_set_in_topforms(713,15154
+BOOL min_depth(736,15582
+BOOL initial_clause(760,16026
+BOOL negative_clause_possibly_compressed(777,16322
+Term topform_properties(797,16764
+void append_label_attribute(848,18000
+Ordertype cl_id_compare(863,18250
+Ordertype cl_wt_id_compare(883,18545
+
+../ladr/tptp_trans.c,562
+void declare_tptp_input_types(152,4779
+void declare_tptp_output_types(198,5945
+Term tptp2_to_ladr_term(250,7493
+Term tptp3_to_ladr_term(301,8629
+Formula tptp_input_to_ladr_formula(418,11841
+void rename_vars_to_upper(459,12889
+Term ladr_term_to_tptp_term(482,13388
+Plist ladr_list_to_tptp_list(564,15539
+Ilist syms_in_form(613,16793
+BOOL good_tptp_sym(667,18225
+BOOL good_ladr_sym(697,18731
+I2list map_for_bad_tptp_syms(712,18909
+I2list map_for_bad_ladr_syms(752,19771
+Term replace_bad_syms_term(793,20657
+Term replace_bad_tptp_syms_form(824,21289
+
+../ladr/unify.c,1146
+struct trail trail28,1016
+#define BIND_TR(BIND_TR36,1258
+#define MAX_MULTIPLIERS 41,1456
+static BOOL Multipliers[45,1510
+int next_available_multiplier(54,1669
+#define PTRS_CONTEXT 70,2011
+static unsigned Context_gets,71,2061
+static unsigned Context_gets, Context_frees;71,2061
+#define PTRS_TRAIL 73,2107
+static unsigned Trail_gets,74,2153
+static unsigned Trail_gets, Trail_frees;74,2153
+Context get_context(86,2294
+void free_context(104,2553
+Trail get_trail(120,2853
+void free_trail(134,3044
+void fprint_unify_mem(153,3416
+void p_unify_mem(185,4242
+BOOL unify(241,5800
+BOOL variant(333,7872
+BOOL occur_check(370,8651
+BOOL match(419,10170
+Term apply(477,11462
+Term apply_substitute(516,12530
+Term apply_substitute2(546,13300
+Term apply_demod(585,14289
+void undo_subst(613,14835
+void undo_subst_2(646,15760
+void fprint_context(669,16166
+void p_context(712,17023
+void fprint_trail(728,17281
+void p_trail(751,17676
+BOOL match_weight(767,17874
+Ilist vars_in_trail(824,19130
+Plist context_to_pairs(842,19386
+BOOL empty_substitution(873,19923
+BOOL variable_substitution(893,20202
+BOOL subst_changes_term(919,20673
+
+../ladr/weight.c,987
+static Plist Rules;26,874
+static double Constant_weight;28,895
+static double Sk_constant_weight;29,926
+static double Not_weight;30,960
+static double Or_weight;31,986
+static double Prop_atom_weight;32,1011
+static double Variable_weight;33,1043
+static double Nest_penalty;34,1074
+static double Depth_penalty;35,1102
+static double Var_penalty;36,1131
+static double Complexity;37,1158
+static BOOL Not_rules;38,1184
+static BOOL Or_rules;39,1239
+static int Eq_sn;43,1319
+static int Weight_sn;44,1357
+static int Sum_sn;46,1402
+static int Prod_sn;47,1450
+static int Neg_sn;48,1498
+static int Div_sn;49,1546
+static int Max_sn;50,1594
+static int Min_sn;51,1642
+static int Depth_sn;52,1690
+static int Vars_sn;53,1725
+static int Call_sn;54,1759
+static int Avar_sn;55,1793
+BOOL weight_beta_check(64,1912
+BOOL weight_rule_check(100,2720
+void init_weight(125,3224
+int apply_depth(193,4832
+double weight_calc(217,5280
+double weight(301,7546
+double clause_weight(358,8787
+
+../ladr/weight2.c,186
+#define IMAX(IMAX39,1413
+int char_array_ident(52,1612
+int char_array_find(69,1954
+double complexity_1(88,2316
+double test1(141,3647
+double call_weight(166,4182
+int main(179,4426
+
+../ladr/xproofs.c,350
+void check_parents_and_uplinks_in_proof(36,975
+Topform xx_res2(65,1751
+void xx_simp2(108,2678
+Topform factor(134,3290
+void merge1(171,4145
+Topform proof_id_to_clause(201,4773
+int greatest_id_in_proof(222,5088
+Plist expand_proof(251,5910
+void renumber_proof(539,14887
+Plist copy_and_renumber_proof(568,15492
+Plist proof_to_xproof(585,15778

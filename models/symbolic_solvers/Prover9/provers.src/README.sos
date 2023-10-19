@@ -1,0 +1,43 @@
+Limiting the size of sos.
+
+---------------------------------------------------------------
+
+Assume a fixed limit, e.g., assign(sos_limit, 10000).
+
+When sos gets half full, start being more selective, based on clause
+weight, about what to keep.
+
+(Max_weight is used in the normal way, and this is a secondary
+constraint.)
+
+The official sos is ordered by ID.  Consider an alternate order: first by
+weight, then by ID.  We'll be looking at weights of clauses
+along in this alternate order.  For example the weight of the clause
+at 50% ... up to 100%.
+
+When the sos is P% full (P > 50), keep a clause only if its weight is
+less than the weight of the clause at (150 - P)%.
+
+For example, if 55% full, keep only if weight is less than the
+weight of the clause at 95%.  (This should keep most clauses.)
+
+For example, if 100% full, keep only if weight is less than the
+weight of the clause at 50%.  (This should keep a few clauses.)
+
+---------------------------------------------------------------
+
+If sos is full and the above scheme says to keep another clause,
+we have to delete the "worst" clause from sos:
+
+Ratio == -1 (best-first): delete last heaviest clause;
+Ratio == 0 (breadth-first): delete last clause;
+else (some ratio): delete the last heaviest clause in the second half of sos.
+
+---------------------------------------------------------------
+
+Dynamic sos_limit e.g., assign(lrs_seconds, 600).
+
+This works with the above schemes.  If we lower the limit,
+simply delete "worst" clauses from sos (as described above).
+If we raise the limit, all is well (although we may have
+deleted some clasues that we would keep were they generated later.)

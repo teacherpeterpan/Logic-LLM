@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<TITLE>attrib.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "attrib.h"</H1>
+
+This page has information from files
+<A HREF="../attrib.h">attrib.h</A> and <A HREF="../attrib.c">attrib.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File attrib.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#attribute_name_to_id">attribute_name_to_id</A></TD><TD><A HREF="#copy_term_attribute">copy_term_attribute</A></TD><TD><A HREF="#inheritable_att_instances">inheritable_att_instances</A></TD><TD><A HREF="#set_int_attribute">set_int_attribute</A></TD>
+</TR>
+<TR><TD><A HREF="#attributes_contain_variables">attributes_contain_variables</A></TD><TD><A HREF="#declare_term_attribute_inheritable">declare_term_attribute_inheritable</A></TD><TD><A HREF="#instantiate_inheritable_attributes">instantiate_inheritable_attributes</A></TD><TD><A HREF="#set_string_attribute">set_string_attribute</A></TD>
+</TR>
+<TR><TD><A HREF="#attributes_to_term">attributes_to_term</A></TD><TD><A HREF="#delete_attributes">delete_attributes</A></TD><TD><A HREF="#label_att">label_att</A></TD><TD><A HREF="#set_term_attribute">set_term_attribute</A></TD>
+</TR>
+<TR><TD><A HREF="#build_attr_term">build_attr_term</A></TD><TD><A HREF="#exists_attribute">exists_attribute</A></TD><TD><A HREF="#p_attrib_mem">p_attrib_mem</A></TD><TD><A HREF="#set_vars_attributes">set_vars_attributes</A></TD>
+</TR>
+<TR><TD><A HREF="#cat_att">cat_att</A></TD><TD><A HREF="#fprint_attrib_mem">fprint_attrib_mem</A></TD><TD><A HREF="#register_attribute">register_attribute</A></TD><TD><A HREF="#string_attribute_member">string_attribute_member</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_attributes">copy_attributes</A></TD><TD><A HREF="#get_int_attribute">get_int_attribute</A></TD><TD><A HREF="#renumber_vars_attributes">renumber_vars_attributes</A></TD><TD><A HREF="#term_to_attributes">term_to_attributes</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_int_attribute">copy_int_attribute</A></TD><TD><A HREF="#get_string_attribute">get_string_attribute</A></TD><TD><A HREF="#replace_int_attribute">replace_int_attribute</A></TD><TD><A HREF="#vars_in_attributes">vars_in_attributes</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_string_attribute">copy_string_attribute</A></TD><TD><A HREF="#get_term_attribute">get_term_attribute</A></TD><TD><A HREF="#replace_term_attribute">replace_term_attribute</A></TD><TD><A HREF="#zap_attributes">zap_attributes</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="attribute_name_to_id"></A><HR><PRE><B>int attribute_name_to_id(char *name);
+</B></PRE>Given an attribute name, return the attribute ID which is used
+for the "get" and "set" operations.  Return -1 if the name
+has not been registered with "register_attribute".
+<A NAME="attributes_contain_variables"></A><HR><PRE><B>BOOL attributes_contain_variables(Attribute a);
+</B></PRE>Does the list of attributes contain a <A HREF="term.html">Term</A> attribute that
+contains a constant that looks like a variable?
+<A NAME="attributes_to_term"></A><HR><PRE><B><A HREF="term.html">Term</A> attributes_to_term(Attribute a, char *operator);
+</B></PRE>This routine takes a list of attributes and
+constructs a term representation.  It is a
+right-associated binary tree with <A HREF="term.html">Term</A> forms
+of the attributes at the leaves.
+<A NAME="build_attr_term"></A><HR><PRE><B><A HREF="term.html">Term</A> build_attr_term(Attribute a);
+</B></PRE>Given an attribute, build (and return) a term representation of it.
+The name of the attribute will be the (unary) function symbol,
+and the value will be the argument.
+<P>
+This is typically used for printing attributes.
+<A NAME="cat_att"></A><HR><PRE><B>Attribute cat_att(Attribute a, Attribute b);
+</B></PRE>Concatenate two lists of attributes.  Either may be NULL. Return the result.
+<A NAME="copy_attributes"></A><HR><PRE><B>Attribute copy_attributes(Attribute a);
+</B></PRE>This routine copies a list of attributes.
+<A NAME="copy_int_attribute"></A><HR><PRE><B>Attribute copy_int_attribute(Attribute source, Attribute dest, int attr_id);
+</B></PRE><A NAME="copy_string_attribute"></A><HR><PRE><B>Attribute copy_string_attribute(Attribute source, Attribute dest, int attr_id);
+</B></PRE><A NAME="copy_term_attribute"></A><HR><PRE><B>Attribute copy_term_attribute(Attribute source, Attribute dest, int attr_id);
+</B></PRE><A NAME="declare_term_attribute_inheritable"></A><HR><PRE><B>void declare_term_attribute_inheritable(int id);
+</B></PRE>This routine makes a term attribute (which has already been
+registered) inheritable.  This usually means that when the
+clause to which the attribute is attached begets a child,
+the child gets a copy of the instantiated attribute.  This
+was designed for answer literals and ordering constraints.
+<A NAME="delete_attributes"></A><HR><PRE><B>Attribute delete_attributes(Attribute a, int id);
+</B></PRE>This routine frees all attributes of the given type.
+<A NAME="exists_attribute"></A><HR><PRE><B>BOOL exists_attribute(Attribute a, int id);
+</B></PRE>This routine checks if there are any attributes of the given type.
+<A NAME="fprint_attrib_mem"></A><HR><PRE><B>void fprint_attrib_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the attrib package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="get_int_attribute"></A><HR><PRE><B>int get_int_attribute(Attribute a, int id, int n);
+</B></PRE>This routine gets the n-th (counting from 1) attribute value
+associated with an attribute ID.
+If nothing matches, INT_MAX is returned.
+<P>
+A fatal error occurs if the ID does not refer to an integer type
+attribute (see register_attribute).
+<A NAME="get_string_attribute"></A><HR><PRE><B>char *get_string_attribute(Attribute a, int id, int n);
+</B></PRE>This routine gets the n-th (counting from 1) attribute value
+associated with an attribute ID.
+If nothing matches, NULL is returned.
+<P>
+A fatal error occurs if the ID does not refer to a string type
+attribute (see register_attribute).
+<A NAME="get_term_attribute"></A><HR><PRE><B><A HREF="term.html">Term</A> get_term_attribute(Attribute a, int id, int n);
+</B></PRE>This routine gets the n-th (counting from 1) attribute value
+associated with an attribute ID.
+If nothing matches, NULL is returned.
+<P>
+A fatal error occurs if the ID does not refer to a <A HREF="term.html">Term</A> type
+attribute (see register_attribute).
+<A NAME="inheritable_att_instances"></A><HR><PRE><B>Attribute inheritable_att_instances(Attribute a, <A HREF="unify.html">Context</A> subst);
+</B></PRE>Given a list of attributes, this routine copies, instantiates,
+and returns the inheritable attributes.  The <A HREF="unify.html">Context</A> can be NULL.
+<A NAME="instantiate_inheritable_attributes"></A><HR><PRE><B>void instantiate_inheritable_attributes(Attribute a, <A HREF="unify.html">Context</A> subst);
+</B></PRE>This routine
+<A NAME="label_att"></A><HR><PRE><B>int label_att(void);
+</B></PRE>Return the attribute identifier for label attributes.
+If it does not exist, return -1.
+<A NAME="p_attrib_mem"></A><HR><PRE><B>void p_attrib_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the attrib package.
+<A NAME="register_attribute"></A><HR><PRE><B>int register_attribute(char *name, Attribute_type type);
+</B></PRE>This routine associates an attribute name and attribute
+type and returns an integer ID to be used with the attribute
+operations (set, get, etc).
+<A NAME="renumber_vars_attributes"></A><HR><PRE><B>void renumber_vars_attributes(Attribute attrs, int vmap[], int max_vars);
+</B></PRE>This routine renumbers the variables in the inheritable attribute terms.
+<A NAME="replace_int_attribute"></A><HR><PRE><B>void replace_int_attribute(Attribute a, int id, int val, int n);
+</B></PRE>This routine replaces that n-th int attribute for given attribute ID.
+<P>
+A fatal error occurs if the ID does not refer to an int type
+attribute (see register_attribute), or if there are not
+n attributes identified by ID.
+<A NAME="replace_term_attribute"></A><HR><PRE><B>void replace_term_attribute(Attribute a, int id, <A HREF="term.html">Term</A> val, int n);
+</B></PRE>This routine replaces that n-th term attribute for given ID.
+The term that is already there is zapped, and the new
+term is NOT copied.
+<P>
+A fatal error occurs if the ID does not refer to a <A HREF="term.html">Term</A> type
+attribute (see register_attribute), or if there are not
+n attributes identified by ID.
+<A NAME="set_int_attribute"></A><HR><PRE><B>Attribute set_int_attribute(Attribute a, int id, int val);
+</B></PRE>This routine appends an <ID,value> pair to a list of attributes.
+<P>
+A fatal error occurs if the ID does not refer to an integer type
+attribute (see register_attribute).
+<A NAME="set_string_attribute"></A><HR><PRE><B>Attribute set_string_attribute(Attribute a, int id, char *val);
+</B></PRE>This routine appends an <ID,string> pair to a list of attributes.
+If the string is not already in the symbol table, it is inserted
+(which copies the string).
+<P>
+A fatal error occurs if the ID does not refer to a string type
+attribute (see register_attribute).
+<A NAME="set_term_attribute"></A><HR><PRE><B>Attribute set_term_attribute(Attribute a, int id, <A HREF="term.html">Term</A> val);
+</B></PRE>This routine appends an <ID,value> pair to a list of attributes.
+The term is not copied.
+<P>
+A fatal error occurs if the ID does not refer to a <A HREF="term.html">Term</A> type
+attribute (see register_attribute).
+<A NAME="set_vars_attributes"></A><HR><PRE><B>void set_vars_attributes(Attribute attrs, char *vnames[], int max_vars);
+</B></PRE>This routine sets the variables in the inheritable attribute terms.
+<A NAME="string_attribute_member"></A><HR><PRE><B>BOOL string_attribute_member(Attribute a, int id, char *s);
+</B></PRE>This routine checks of a list of attributes contains a particular
+attribute/value.
+<P>
+A fatal error occurs if the ID does not refer to a string type
+attribute (see register_attribute).
+<A NAME="term_to_attributes"></A><HR><PRE><B>Attribute term_to_attributes(<A HREF="term.html">Term</A> t, char *operator);
+</B></PRE>This routine takes a term representing a list of
+attributes and builds list of attributes.
+The input term form is a binary term, constructed
+with the given operator, with the attributes at
+the leaves.  For example,
+<PRE>
+    label("hi there!") # answer(XGK(x,y,z)) # hint_wt(32)
+</PRE>
+If anuthing goes wrong, a fatal error occurs.
+<A NAME="vars_in_attributes"></A><HR><PRE><B>Plist vars_in_attributes(Attribute attrs);
+</B></PRE>This routine returns the set of variables (as a Plist) in the
+inheritable attributes.
+<A NAME="zap_attributes"></A><HR><PRE><B>void zap_attributes(Attribute a);
+</B></PRE>This routine frees a list of attributes and any associated memory.
+In particular, the terms in term attributes are zapped.
+<HR><A NAME=defns></A><H2>Public Definitions in File attrib.h</H2>
+<PRE>
+typedef enum { INT_ATTRIBUTE,
+	       STRING_ATTRIBUTE,
+               TERM_ATTRIBUTE
+             } Attribute_type;
+
+typedef struct attribute * Attribute;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package is about lists of attributes.  Each attribute is
+a pair (attribute-id, attribute-value).  Each attribute-id
+is associated with a data type.
+<P>
+To use an attribute, you first have to call register_attribute(),
+giving and ID, name, and type of the attribute.
+The ID is used with the "set" and "get"  operations.
+<P>
+For example,
+<PRE>
+  register_attribute(label_attr, "label", STRING_ATTRIBUTE);
+  ...
+  Attribute a = set_string_attribute(NULL, label_attr, "clause_32");
+  ...
+  char *s = get_string_attribute(a, label_attr, 1);
+</PRE>
+
+<HR>
+</BODY>
+</HTML>

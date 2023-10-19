@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>btu.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "btu.h"</H1>
+
+This page has information from files
+<A HREF="../btu.h">btu.h</A> and <A HREF="../btu.c">btu.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File btu.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fprint_btu_mem">fprint_btu_mem</A></TD><TD><A HREF="#p_btu_mem">p_btu_mem</A></TD><TD><A HREF="#unify_bt_first">unify_bt_first</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#p_bt_tree">p_bt_tree</A></TD><TD><A HREF="#unify_bt_cancel">unify_bt_cancel</A></TD><TD><A HREF="#unify_bt_next">unify_bt_next</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fprint_btu_mem"></A><HR><PRE><B>void fprint_btu_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the btu package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="p_bt_tree"></A><HR><PRE><B>void p_bt_tree(<A HREF="btu.html">Btu_state</A> bt, int n);
+</B></PRE>This (recursive) routine prints (to stdout) a backtrack unification state.
+Parameter n should be 0 on the top call.
+<A NAME="p_btu_mem"></A><HR><PRE><B>void p_btu_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the btu package.
+<A NAME="unify_bt_cancel"></A><HR><PRE><B>void unify_bt_cancel(<A HREF="btu.html">Btu_state</A> bt);
+</B></PRE>This routine frees the memory associated with a state in
+backtrack unification.  This should be called if you decide
+to get some, but not all, unifiers from <A HREF="#unify_bt_first">unify_bt_first</A>() and
+<A HREF="#unify_bt_next">unify_bt_next</A>().
+<A NAME="unify_bt_first"></A><HR><PRE><B><A HREF="btu.html">Btu_state</A> unify_bt_first(<A HREF="term.html">Term</A> t1, <A HREF="unify.html">Context</A> c1,
+			<A HREF="term.html">Term</A> t2, <A HREF="unify.html">Context</A> c2);
+</B></PRE>This routine gets the first unifier for a pair of terms and
+returns a <A HREF="btu.html">Btu_state</A> (or NULL if there are no unifiers) to be
+used for calls to <A HREF="#unify_bt_next">unify_bt_next</A>() to get the rest of the unifiers.
+This unification handles associative-commutative (AC) and 
+commutative (C) symbols, so there can be more than one unifier.
+(Commutatvie unification is primitive, and you can get duplicate unifiers.)
+<P>
+This is called "backtrack unification", because the unifiers
+are constructed incrementally, as needed.  Here is an example
+of how to do it.  Assume we have Terms t1 and t2.
+<PRE>
+  {
+    <A HREF="unify.html">Context</A> c1 = get_context();
+    <A HREF="unify.html">Context</A> c2 = get_context();
+    bt = <A HREF="#unify_bt_first">unify_bt_first</A>(t1, c1, t2, c2);
+    while (bt != NULL) {
+      t3 = apply(t1, c1);
+      t4 = apply(t2, c2);
+      <Now, t3 and t4 should be identical, mod any AC or C symbols.>
+      zap_term(t4);
+      bt = <A HREF="#unify_bt_next">unify_bt_next</A>(bt);
+      }
+    free_context(c1);
+    free_context(c2);
+  }
+</PRE>
+The routine <A HREF="#unify_bt_next">unify_bt_next</A>() takes care of clearing the substitutions
+before getting the next unifier.
+If you decide not to get all of the unifiers, you should call
+<A HREF="#unify_bt_cancel">unify_bt_cancel</A>() to free the memory used by the <A HREF="btu.html">Btu_state</A>.
+<P>
+If there are no AC or C symbols, it is a little bit faster to
+use unify() (ordinary unification) instead of backtrack unification.
+<A NAME="unify_bt_next"></A><HR><PRE><B><A HREF="btu.html">Btu_state</A> unify_bt_next(<A HREF="btu.html">Btu_state</A> bt1);
+</B></PRE>This routine gets the next unifier for "backtrack unification".
+See <A HREF="#unify_bt_first">unify_bt_first</A>() for an explanation.
+<HR><A NAME=defns></A><H2>Public Definitions in File btu.h</H2>
+<PRE>
+typedef struct btu_state * <A HREF="btu.html">Btu_state</A>;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package handles "backtrack unification", that is, unification
+that allows more than one unifier for a pair of terms, and computes
+the unifiers incrementally by backtracking.  As I write this,
+we support associative commutative (AC) operations and 
+commutative/symmetric (C) operations.  Symbols are declared to be
+AC with set_assoc_comm() and C with set_commutative().
+The use of Terms and Contexts is similar to ordinary unification,
+except that the means for undoing substitutions is different.
+
+<HR>
+</BODY>
+</HTML>

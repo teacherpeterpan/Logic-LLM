@@ -1,0 +1,33 @@
+/*************
+ *
+ *   fork_and_wait()
+ *
+ *************/
+
+/* DOCUMENTATION
+Note the nonstandard return codes:
+Child process: return -1.
+Parent process: wait for child, and return the child's exit code.
+*/
+
+/* PUBLIC */
+int fork_and_wait(void)
+{
+  int fork_result;
+  fflush(stdout);
+  fork_result = fork();
+  if (fork_result < 0)
+    fatal_error("fork_and_wait, fork failed");
+  if (fork_result == 0)  // child
+    return -1;
+  else {  // parent
+    int child_status;
+    // signal(SIGINT, SIG_DFL);
+    wait(&child_status);
+    // signal(SIGINT, sig_handler);
+    if (!WIFEXITED(child_status))
+      fatal_error("fork_and_wait, child failed for unknown reason");
+    return WEXITSTATUS(child_status);
+  }  // end parent code
+}  /* fork_and_wait */
+

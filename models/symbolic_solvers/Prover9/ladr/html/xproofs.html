@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<TITLE>xproofs.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "xproofs.h"</H1>
+
+This page has information from files
+<A HREF="../xproofs.h">xproofs.h</A> and <A HREF="../xproofs.c">xproofs.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File xproofs.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#check_parents_and_uplinks_in_proof">check_parents_and_uplinks_in_proof</A></TD><TD><A HREF="#expand_proof">expand_proof</A></TD><TD><A HREF="#proof_id_to_clause">proof_id_to_clause</A></TD><TD><A HREF="#renumber_proof">renumber_proof</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_and_renumber_proof">copy_and_renumber_proof</A></TD><TD><A HREF="#greatest_id_in_proof">greatest_id_in_proof</A></TD><TD><A HREF="#proof_to_xproof">proof_to_xproof</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="check_parents_and_uplinks_in_proof"></A><HR><PRE><B>void check_parents_and_uplinks_in_proof(Plist proof);
+</B></PRE><A NAME="copy_and_renumber_proof"></A><HR><PRE><B>Plist copy_and_renumber_proof(Plist proof, int start);
+</B></PRE>We assume that every clause occurs after its parents.
+<A NAME="expand_proof"></A><HR><PRE><B>Plist expand_proof(Plist proof, I3list *pmap);
+</B></PRE>Given a proof, return a more detailed proof, entirely new, leaving the
+given proof unchanged.  Also returned is an I3list mapping new IDs to
+pairs <old_id, n>.  The n compnent identifies the sub-steps arising
+from the expansions, e.g.,  66 -> <23,4> means that step 66 in the new
+proof corresponds to the 4th substep in expanding step 23 of the old proof.
+
+Clauses in the new proof that match clauses in the old proof retain
+the IDs from the old proof, and there is no entry in the map for them.
+<A NAME="greatest_id_in_proof"></A><HR><PRE><B>int greatest_id_in_proof(Plist proof);
+</B></PRE><A NAME="proof_id_to_clause"></A><HR><PRE><B>Topform proof_id_to_clause(Plist proof, int id);
+</B></PRE><A NAME="proof_to_xproof"></A><HR><PRE><B>Plist proof_to_xproof(Plist proof);
+</B></PRE><A NAME="renumber_proof"></A><HR><PRE><B>void renumber_proof(Plist proof, int start);
+</B></PRE>We assume that every clause occurs after its parents.
+<HR><A NAME=defns></A><H2>Public Definitions in File xproofs.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

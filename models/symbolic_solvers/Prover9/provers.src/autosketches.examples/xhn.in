@@ -1,0 +1,37 @@
+
+clear(back_subsume).
+assign(max_weight, 48).
+assign(sos_limit, 10000).
+
+clear(use_expanded_proofs).   % autosketches option
+
+formulas(usable).
+-P(e(x,y)) | -P(x) | P(y).
+end_of_list.
+  
+formulas(sos).
+P(e(x,e(e(y,z),e(e(z,x),y))))  # label("XHN").
+end_of_list.
+  
+formulas(goals).
+P(e(e(e(x,y),z),e(y,e(z,x))))  # answer("UM").
+end_of_list.
+
+% for autosketches
+
+formulas(extra_assumptions).
+P(e(e(x,y),e(e(z,y),e(x,z))))  # label("YQL").
+P(e(e(x,y),e(e(x,z),e(z,y))))  # label("YQF").
+P(e(e(x,y),e(e(z,x),e(y,z))))  # label("YQJ").
+% P(e(e(e(x,y),z),e(y,e(z,x))))  # label("UM").
+P(e(x,e(e(y,e(x,z)),e(z,y))))  # label("XGF").
+P(e(e(x,e(y,z)),e(z,e(x,y))))  # label("WN").
+P(e(e(x,y),e(z,e(e(y,z),x))))  # label("YRM").
+P(e(e(x,y),e(z,e(e(z,y),x))))  # label("YRO").
+P(e(e(e(x,e(y,z)),z),e(y,x)))  # label("PYO").
+P(e(e(e(x,e(y,z)),y),e(z,x)))  # label("PYM").
+P(e(x,e(e(y,e(z,x)),e(z,y))))  # label("XGK").
+P(e(x,e(e(y,z),e(e(x,z),y))))  # label("XHK").
+% P(e(x,e(e(y,z),e(e(z,x),y))))  # label("XHN").
+P(e(x,e(e(e(x,y),e(z,y)),z)))  # label("XCB").
+end_of_list.

@@ -1,0 +1,288 @@
+#!/usr/bin/python
+"""
+gvizify: convert prover9 XML proof files into graphviz ".dot" format
+(producing a graphical display of a proof); tested with prover9 Aug-2007
+Copyright (C) 2007 David A. Wheeler
+Use '--help' to get information on options.
+
+Note: The output of this program is in ".dot" format; you must send
+it to one of graphviz' programs (usually "dot") to produce real output.
+
+This program includes embedded test cases using the 'doctest' format:
+>>> from gvizify import *
+"""
+
+# WARNING: Some versions of graphviz have a bug that produces bad
+# Postscript/PDF; if this happens to you, save the generated Postscript
+# (really EPS), use eps2eps to fix it, and THEN print it or convert to PDF.
+# Unfortunately, esp2eps produces 'less nice' Postscript.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+# Version Information:
+# 1.2 - Supports "rotate" for "rotation", add name for entire graph.
+# 1.1 - Supports environment variable GVIZIFY
+# 1.0 - includes labels in output by default; --removelabels to prevent
+# 0.4 - can now control formatting for each node (step) type
+# 0.3 - add recombine() (reduce lines/node), diff shapes for diff node types
+# 0.2 - fixed margin problem
+# 0.1 - initial release
+
+
+# We could use either the "SAX" or "DOM" interface; the DOM interface is
+# easier to use and more flexible, and the data size of proofs is trivial,
+# so we'll use DOM.  minidom has enough functionality for our needs.
+
+from xml.dom.minidom import *
+import textwrap
+import sys
+import os
+import shlex  # Used to process environment variable GVIZIFY
+from optparse import OptionParser
+
+# globals:
+#   options: processed options
+#   args:    processed positional arguments
+#   datasource: file or filename to process.
+
+def recombine(ls, maxlen):
+  """Given list of strings ls, recombined the (short) strings into longer ones.
+  The strings must not be longer than max(maxlen, longest string in list).
+
+  >>> recombine(['hi', 'there', 'freddy'], 10)
+  ['hi there', 'freddy']
+  >>> recombine(['big', 'bug', 'anotherlongone'], 5)
+  ['big bug', 'anotherlongone']
+  >>> recombine(['reallylongword', 'a', 'b', 'anotherlongone'], 5)
+  ['reallylongword', 'a b', 'anotherlongone']
+"""
+  if len(ls) < 2: return ls
+  realmax = max(maxlen, max([len(x) for x in ls]))
+  newls = ls[:]
+  while True:  # Loop and 1/2 - anneal list until all recombined
+    changed = False
+    oldls = newls[:]
+    for i in reversed(range(len(oldls))):
+      if i < len(oldls)-1: # If there's a line after line i...
+        newstr = oldls[i] + " " + oldls[i+1]
+        if len(newstr) <= realmax: # If smaller, recombine.
+          newls = oldls[:i] + [newstr] + oldls[i+2:]
+          changed = True
+          break
+      if i > 0:            # If there's a line before line i...
+        newstr = oldls[i-1] + " " + oldls[i]
+        if len(newstr) <= realmax: # If smaller, recombine.
+          newls = oldls[:max(0,i-1)] + [newstr] + oldls[i+1:]
+          changed = True
+          break
+    # Done an anneal; either we made a change, or we ran out of things to do.
+    if not changed: break
+  # Completely finished, we've merged all we can.
+  return newls
+
+def reformat(s,minwidth=12,maxwidth=17):
+  """Reformat text to multiple lines; we'll try to avoid having tiny lines"""
+  if len(s) <= minwidth: return s
+  bestresult=""
+  bestscore = -100
+  for curwidth in range(minwidth,maxwidth+1):
+    result = textwrap.wrap(s, width=curwidth, break_long_words=False)
+    result = recombine(result, curwidth) # Recombine if sensible to do so.
+    score = 20-len(result)  # More lines penalized
+    score -= 2 * len([x for x in result if len(x)<3]) # short lines penalized
+    score -= 2 * len([x for x in result if len(x)<5])
+    # if "\n" in result[-1][-2:]: score -= 4  # Really short last line
+    # if "\n" in result[-1][-4:]: score -= 2  # Short last line
+    # print "Score %s for %s" % (score, result)
+    if score>bestscore:
+      bestresult=result
+      bestscore=score
+  # We'll accept the best we found.
+  return "\\n".join(bestresult)
+
+def extract_textlist(elements):
+  "Given list of elements e, return as list the text enclosed by each."
+  resultfragments = []
+  for element in elements:
+    textfragment = []
+    for child in element.childNodes:
+      if child.nodeType in (child.TEXT_NODE, child.CDATA_SECTION_NODE):
+        textfragment.append(child.data)
+    resultfragments.append( "".join(textfragment) )
+  return resultfragments
+
+def process_command_line():
+  global options, args, datasource  # This function sets these.
+  parser = OptionParser(
+   usage = "usage: %prog [options] [XML filename]",
+   version="%prog 1.0, 2007-10-18",
+   description=
+"""This program by David A. Wheeler translates prover9 XML data into
+graphviz format, so that proofs are much easier to follow.
+Parameters may be optionally included in the environment variable GVIZIFY:
+ GVIZIFY='--rotation=0 --relax --size=42,42' gvizify stuff.xml > stuff.dot
+"""
+)
+  parser.add_option("-u", "--unnumbered",
+                    action="store_false", dest="numberit", default=True,
+                    help="do not number each step")
+  parser.add_option("--minwidth", dest="minwidth", default=12, metavar="WIDTH",
+                    help="minimum width (less than this stays on one line)")
+  parser.add_option("--maxwidth", dest="maxwidth", default=17, metavar="WIDTH",
+                    help="minimum width ('longest' allowed line)")
+  parser.add_option("--removelabels",
+                    action="store_false", dest="labels", default=True,
+                    help="remove labels (normally they're included)")
+
+  parser.add_option("--rotation", "--rotate",
+                    dest="rotation", default=90, metavar="ANGLE",
+                    help="rotation (in degrees; 90 is landscape)")
+  parser.add_option("--size", dest="size", default="10,7.5",
+                    help="papersize 'width,length' in inches minus margins")
+  parser.add_option("--multipage", dest="multipage", default=False,
+                    action="store_true",
+                    help="spread to multiple pages (use --size also)")
+  parser.add_option("--relax",
+                    action="store_true", dest="relax", default=False,
+                    help="use 'natural' graph size (vs. expanding to page size)")
+  parser.add_option("--margin", dest="margin", default="0.5,0.5",
+                    help="paper margin 'width,length' in inches")
+  parser.add_option("--command", dest="command", default="",
+                    help="literal graphviz command (inserted into output)")
+  parser.add_option("--defaultstep", dest="defaultstep",
+                    default='shape="ellipse"', metavar="GVIZATTRIBUTE",
+                    help="node attribute for ordinary steps (graphviz format)")
+  parser.add_option("--assumption", dest="assumption", default='shape="box"',
+                    metavar="GVIZATTRIBUTE",
+                    help="node attribute for assumption steps (graphviz format)")
+  parser.add_option("--clausify", dest="clausify", default='shape="plaintext"',
+                    metavar="GVIZATTRIBUTE",
+                    help="node attribute for clausify steps (graphviz format)")
+  parser.add_option("--goal", dest="goal", default=' shape="doubleoctagon"',
+                    metavar="GVIZATTRIBUTE",
+                    help="node attribute for goal steps (graphviz format)")
+  parser.add_option("--deny", dest="deny", default=' shape="octagon"',
+                    metavar="GVIZATTRIBUTE",
+                    help="node attribute for deny steps (graphviz format)")
+  parser.add_option("--name", dest="name", default="",
+                    help="name of entire graph")
+  parser.add_option("--selftest", action="store_true", dest="selftest",
+                    default=False,
+                    help="run trivial self-test; no output==okay")
+  optionparams = sys.argv[1:]
+  if 'GVIZIFY' in os.environ:
+    optionparams += shlex.split(os.environ['GVIZIFY'])
+  (options, args) = parser.parse_args(args=optionparams)
+  if len(args) == 0:
+    datasource=sys.stdin
+    if options.name == "":
+      options.name = "-"
+  elif len(args) == 1:
+    datasource=args[0]
+    if options.name == "":
+      options.name = args[0].replace(".xml","")
+  else:
+    print "Sorry, must provide at most 1 argument (the XML's filename)"
+    exit(1)
+  if options.name == "":
+    options.name = "Graph"
+
+
+def generate_results():
+  "Parse XML from datasource, and write to stdout the graphviz results"
+  # Generate header:
+  print "strict digraph \"%s\" {" % (options.name.replace('"', r'\"') ,)
+  print " rotate=%s;" % (options.rotation,)
+  if options.multipage:
+    print " page=\"%s\";" % (options.size,)
+  else:
+    force="" if options.relax else "!"
+    print " size=\"%s%s\";" % (options.size, force)
+  print " margin=\"%s\";" % (options.margin,)
+  if options.command != "":
+    print options.command
+  
+  # Process XML file:
+  doc = parse(datasource)  # [0] is the program name.
+  prooflist = doc.getElementsByTagName("proof")
+  if (prooflist.length != 1):
+    print "Error! Must be exactly 1 proof item in the XML file"
+    exit(1)
+  proof=prooflist.item(0)
+  for clause in proof.getElementsByTagName("clause"):
+    # At a clause, get its id.
+    step = clause.getAttribute("id")
+
+    # Get and format its result
+    literals = clause.getElementsByTagName("literal")
+    literaltexts = extract_textlist(literals)
+    # If >1 literal, they're implicitly joined by "|":
+    result = " | ".join(literaltexts)
+
+    if options.labels:
+      attributes = clause.getElementsByTagName("attribute")
+      attributetexts = extract_textlist(attributes)
+      # Keep only labels, and remove label(non_clause), label(goal)
+      attributetexts = [x for x in attributetexts if
+                                     (("label(" in x) and
+                                      ("label(non_clause)" not in x) and
+                                      ("label(goal)" not in x))]
+      attributetexts = [" # " + x for x in attributetexts]
+      attributeresults = " ".join(attributetexts)
+      result += attributeresults
+
+    result = result.replace("\n"," ").strip()
+    result = " ".join(result.split())   # Remove duplicate whitespace
+    if options.numberit:
+      result = "{%s} %s" % (step, result)
+
+    result = reformat(result,options.minwidth,options.maxwidth)
+
+    # Determine parent list (assumptions won't have any)
+    parentlist = []
+    justification = clause.getElementsByTagName("justification")[0]
+    for rule in justification.childNodes:
+      if rule.nodeType == rule.ELEMENT_NODE:
+        parentlist.extend([int(x) for x in
+                                     rule.getAttribute("parents").split()])
+
+    steptype = clause.getAttribute("type")
+    if steptype in ('assumption', 'clausify', 'goal', 'deny'):
+      extras=',' + getattr(options,steptype)
+    else:
+      extras=',' + options.defaultstep
+
+    print " %s [label=\"%s\"%s];" % (step, result, extras)
+    for edge in parentlist:
+      print " %s -> %s;" % (edge, step)
+
+  # Done with the graph; generate graph footer.
+  print " root=%s; // last step is plausible root" % step
+  print "}"
+
+def test():
+  import doctest
+  doctest.testmod()
+
+def main():
+  process_command_line()
+  if options.selftest:
+    test()
+  else:
+    generate_results()
+
+if __name__ == "__main__":
+    main()
+

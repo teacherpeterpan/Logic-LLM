@@ -1,0 +1,18 @@
+op(400, infix, +).
+op(390, infix, *).
+
+redeclare(conjunction, and).  % change the conjunction symbol to and.
+
+set(arithmetic).
+
+formulas(assumptions).
+
+((SIEVE_1*cons_2 >= SIEVE_1*filter_2 and SIEVE_1*cons_3 >= SIEVE_1*filter_3)
+and filter_2*nil_1 + filter_3 >= nil_1 and cons_2*filter_2 >= if_4 and
+cons_3*filter_2 + filter_3 >= if_1*isdiv_3 + if_5 and if_4 >= filter_2 and
+if_1*true_1 + if_5 >= filter_3 and if_4 >= cons_2*filter_2 and
+false_1*if_1 + if_5 >= cons_2*filter_3 + cons_3 and isdiv_3 >= true_1 and
+isdiv_3 >= false_1 and (SIEVE_1*cons_3 > SIEVE_1*filter_3 and
+SIEVE_1*cons_2 >= 0 and SIEVE_1*cons_3 + SIEVE_2 >= 0)).
+
+end_of_list.

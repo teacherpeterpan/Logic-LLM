@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<TITLE>termorder.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "termorder.h"</H1>
+
+This page has information from files
+<A HREF="../termorder.h">termorder.h</A> and <A HREF="../termorder.c">termorder.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File termorder.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#assign_order_method">assign_order_method</A></TD><TD><A HREF="#flatterm_compare_vr">flatterm_compare_vr</A></TD><TD><A HREF="#kbo_weight">kbo_weight</A></TD><TD><A HREF="#term_compare_vcp">term_compare_vcp</A></TD>
+</TR>
+<TR><TD><A HREF="#flat_greater">flat_greater</A></TD><TD><A HREF="#greater_multiset_current_ordering">greater_multiset_current_ordering</A></TD><TD><A HREF="#lrpo">lrpo</A></TD><TD><A HREF="#term_compare_vr">term_compare_vr</A></TD>
+</TR>
+<TR><TD><A HREF="#flat_kbo_weight">flat_kbo_weight</A></TD><TD><A HREF="#init_kbo_weights">init_kbo_weights</A></TD><TD><A HREF="#lrpo_multiset">lrpo_multiset</A></TD><TD><A HREF="#term_greater">term_greater</A></TD>
+</TR>
+<TR><TD><A HREF="#flat_lrpo">flat_lrpo</A></TD><TD><A HREF="#kbo">kbo</A></TD><TD><A HREF="#term_compare_ncv">term_compare_ncv</A></TD><TD><A HREF="#term_order">term_order</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="assign_order_method"></A><HR><PRE><B>void assign_order_method(Order_method method);
+</B></PRE><A NAME="flat_greater"></A><HR><PRE><B>BOOL flat_greater(Flatterm alpha, Flatterm beta, BOOL lex_order_vars);
+</B></PRE><A NAME="flat_kbo_weight"></A><HR><PRE><B>int flat_kbo_weight(Flatterm f);
+</B></PRE><A NAME="flat_lrpo"></A><HR><PRE><B>BOOL flat_lrpo(Flatterm s, Flatterm t, BOOL lex_order_vars);
+</B></PRE><A NAME="flatterm_compare_vr"></A><HR><PRE><B>Ordertype flatterm_compare_vr(Flatterm a, Flatterm b);
+</B></PRE>This routine compares two flatterms.
+variable < nonvariable; within type, the order is by VARNUM
+and lexigocgaphic by symbol precedence.  The range of return values is<BR>
+{SAME_AS, GREATER_THAN, LESS_THAN, NOT_COMPARABLE}.
+<A NAME="greater_multiset_current_ordering"></A><HR><PRE><B>BOOL greater_multiset_current_ordering(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE><A NAME="init_kbo_weights"></A><HR><PRE><B>void init_kbo_weights(Plist weights);
+</B></PRE>Plist should be a list of terms, e.g., a=3, g=0.
+Symbols are written as constants; arity is deduced from the symbol table.
+<A NAME="kbo"></A><HR><PRE><B>BOOL kbo(<A HREF="term.html">Term</A> alpha, <A HREF="term.html">Term</A> beta, BOOL lex_order_vars);
+</B></PRE>Is alpha kbo-greater-than beta?
+<A NAME="kbo_weight"></A><HR><PRE><B>int kbo_weight(<A HREF="term.html">Term</A> t);
+</B></PRE><A NAME="lrpo"></A><HR><PRE><B>BOOL lrpo(<A HREF="term.html">Term</A> s, <A HREF="term.html">Term</A> t, BOOL lex_order_vars);
+</B></PRE>This routine checks if <A HREF="term.html">Term</A> s > <A HREF="term.html">Term</A> t in the
+Lexicographic Recursive Path Ordering (LRPO),
+also known as Recursive Path Ordering with Status (RPOS).
+
+<P>
+Function symbols can have either multiset or left-to-right status
+(see symbols.c).
+If all symbols are multiset, this reduces to the Recursive
+Path Ordering (RPO).
+If all symbols are left-to-right, this reduces to Lexicographic
+Path Ordering (LPO).
+<A NAME="lrpo_multiset"></A><HR><PRE><B>BOOL lrpo_multiset(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2, BOOL lex_order_vars);
+</B></PRE>This routine
+<A NAME="term_compare_ncv"></A><HR><PRE><B>Ordertype term_compare_ncv(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE>This routine compares two terms.  The ordering is total:
+CONSTANT < COMPLEX < VARIABLE; within type, the order is by VARNUM
+and lexigocgaphic by SYMNUM.  The range of return values is<BR>
+{SAME_AS, GREATER_THAN, LESS_THAN}.
+<A NAME="term_compare_vcp"></A><HR><PRE><B>Ordertype term_compare_vcp(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE>This routine compares two terms.  The ordering is total:
+VARIABLE < CONSTANT < COMPLEX; within type, the order is by VARNUM
+and lexigocgaphic by SYMNUM.  The range of return values is<BR>
+{SAME_AS, GREATER_THAN, LESS_THAN}.
+<A NAME="term_compare_vr"></A><HR><PRE><B>Ordertype term_compare_vr(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE>This routine compares two terms.
+variable < nonvariable; within type, the order is by VARNUM
+and lexigocgaphic by symbol precedence.  The range of return values is<BR>
+{SAME_AS, GREATER_THAN, LESS_THAN, NOT_COMPARABLE}.
+<A NAME="term_greater"></A><HR><PRE><B>BOOL term_greater(<A HREF="term.html">Term</A> alpha, <A HREF="term.html">Term</A> beta, BOOL lex_order_vars);
+</B></PRE>Is alpha > beta in the current term ordering?  (LPR, RPO, KBO)
+<A NAME="term_order"></A><HR><PRE><B>Ordertype term_order(<A HREF="term.html">Term</A> alpha, <A HREF="term.html">Term</A> beta);
+</B></PRE>Compare two terms with the current term ordering (LPR, RPO, KBO)
+Return GREATER_THAN, LESS_THAN, or NOT_COMPARABLE.
+<HR><A NAME=defns></A><H2>Public Definitions in File termorder.h</H2>
+<PRE>
+/* <A HREF="term.html">Term</A> ordering method */
+
+typedef enum { LRPO_METHOD,
+	       LPO_METHOD,
+	       RPO_METHOD,
+	       KBO_METHOD
+             } Order_method;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

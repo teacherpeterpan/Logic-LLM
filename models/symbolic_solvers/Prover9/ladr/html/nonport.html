@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<TITLE>nonport.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "nonport.h"</H1>
+
+This page has information from files
+<A HREF="../nonport.h">nonport.h</A> and <A HREF="../nonport.c">nonport.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File nonport.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#get_bits">get_bits</A></TD><TD><A HREF="#hostname">hostname</A></TD><TD><A HREF="#my_process_id">my_process_id</A></TD><TD><A HREF="#username">username</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="get_bits"></A><HR><PRE><B>int get_bits(void);
+</B></PRE>If (64-bit long and pointer) return 64, else return 32.
+<A NAME="hostname"></A><HR><PRE><B>char *hostname(void);
+</B></PRE>Return the hostname of the computer on which the current job is running.
+<A NAME="my_process_id"></A><HR><PRE><B>int my_process_id(void);
+</B></PRE>Return the process ID of the current process.
+<A NAME="username"></A><HR><PRE><B>char *username(void);
+</B></PRE>Return the name of the user who started the current job.
+<HR><A NAME=defns></A><H2>Public Definitions in File nonport.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package has some utilities that might not be portable
+to other environments.  If you get errors trying to compile
+this package, you can either modify nonport.c, or
+<PRE>
+#define PRIMITIVE_ENVIRONMENT
+</PRE>
+in nonport.h, which disables everything.
+
+<HR>
+</BODY>
+</HTML>

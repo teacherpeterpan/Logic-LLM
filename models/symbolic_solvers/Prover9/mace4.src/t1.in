@@ -1,0 +1,5 @@
+op(490,infix,"!!").
+
+formulas(assumptions).
+P(!!(a,b)).
+end_of_list.

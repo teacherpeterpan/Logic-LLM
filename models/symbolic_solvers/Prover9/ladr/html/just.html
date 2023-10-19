@@ -1,0 +1,270 @@
+<HTML>
+<HEAD>
+<TITLE>just.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "just.h"</H1>
+
+This page has information from files
+<A HREF="../just.h">just.h</A> and <A HREF="../just.c">just.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File just.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#append_just">append_just</A></TD><TD><A HREF="#flip_just">flip_just</A></TD><TD><A HREF="#jmap1">jmap1</A></TD><TD><A HREF="#propositional_just">propositional_just</A></TD>
+</TR>
+<TR><TD><A HREF="#back_demod_just">back_demod_just</A></TD><TD><A HREF="#fprint_just_mem">fprint_just_mem</A></TD><TD><A HREF="#jmap2">jmap2</A></TD><TD><A HREF="#resolve_just">resolve_just</A></TD>
+</TR>
+<TR><TD><A HREF="#back_unit_deletion_just">back_unit_deletion_just</A></TD><TD><A HREF="#get_clause_ancestors">get_clause_ancestors</A></TD><TD><A HREF="#jstring">jstring</A></TD><TD><A HREF="#sb_append_id">sb_append_id</A></TD>
+</TR>
+<TR><TD><A HREF="#binary_res_just">binary_res_just</A></TD><TD><A HREF="#get_instancejust">get_instancejust</A></TD><TD><A HREF="#just_count">just_count</A></TD><TD><A HREF="#sb_write_ids">sb_write_ids</A></TD>
+</TR>
+<TR><TD><A HREF="#binary_res_just_by_id">binary_res_just_by_id</A></TD><TD><A HREF="#get_just">get_just</A></TD><TD><A HREF="#map_just">map_just</A></TD><TD><A HREF="#sb_write_just">sb_write_just</A></TD>
+</TR>
+<TR><TD><A HREF="#clause_level">clause_level</A></TD><TD><A HREF="#get_parajust">get_parajust</A></TD><TD><A HREF="#mark_parents_as_used">mark_parents_as_used</A></TD><TD><A HREF="#sb_xml_write_just">sb_xml_write_just</A></TD>
+</TR>
+<TR><TD><A HREF="#clausify_just">clausify_just</A></TD><TD><A HREF="#get_parents">get_parents</A></TD><TD><A HREF="#merge_just">merge_just</A></TD><TD><A HREF="#term_to_just">term_to_just</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_just">copy_just</A></TD><TD><A HREF="#goal_just">goal_just</A></TD><TD><A HREF="#new_symbol_just">new_symbol_just</A></TD><TD><A HREF="#unit_del_just">unit_del_just</A></TD>
+</TR>
+<TR><TD><A HREF="#copy_justification">copy_justification</A></TD><TD><A HREF="#has_copy_flip_just">has_copy_flip_just</A></TD><TD><A HREF="#p_just">p_just</A></TD><TD><A HREF="#xx_just">xx_just</A></TD>
+</TR>
+<TR><TD><A HREF="#demod_just">demod_just</A></TD><TD><A HREF="#has_copy_just">has_copy_just</A></TD><TD><A HREF="#p_just_mem">p_just_mem</A></TD><TD><A HREF="#xxres_just">xxres_just</A></TD>
+</TR>
+<TR><TD><A HREF="#deny_just">deny_just</A></TD><TD><A HREF="#has_input_just">has_input_just</A></TD><TD><A HREF="#para_just">para_just</A></TD><TD><A HREF="#zap_just">zap_just</A></TD>
+</TR>
+<TR><TD><A HREF="#expand_def_just">expand_def_just</A></TD><TD><A HREF="#input_just">input_just</A></TD><TD><A HREF="#para_just_rev_copy">para_just_rev_copy</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#factor_just">factor_just</A></TD><TD><A HREF="#instance_just">instance_just</A></TD><TD><A HREF="#primary_just_type">primary_just_type</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#first_negative_parent">first_negative_parent</A></TD><TD><A HREF="#ivy_just">ivy_just</A></TD><TD><A HREF="#proof_length">proof_length</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="append_just"></A><HR><PRE><B>Just append_just(Just j1, Just j2);
+</B></PRE>This appends two justifications.  No copying occurs.
+<A NAME="back_demod_just"></A><HR><PRE><B>Just back_demod_just(Topform c);
+</B></PRE>This routine builds and returns a justification list for back_demod.
+<A NAME="back_unit_deletion_just"></A><HR><PRE><B>Just back_unit_deletion_just(Topform c);
+</B></PRE>This routine builds and returns a justification list for back_unit_deletion.
+<A NAME="binary_res_just"></A><HR><PRE><B>Just binary_res_just(Topform c1, int n1, Topform c2, int n2);
+</B></PRE>This routine builds and returns a justification list for binary resolution.
+(Binary res justifications may also be constructed in resolve(), along
+with hyper and UR.)
+<A NAME="binary_res_just_by_id"></A><HR><PRE><B>Just binary_res_just_by_id(int c1, int n1, int c2, int n2);
+</B></PRE>Similar to binary_res_just, except that IDs are given instead of clauses.
+<A NAME="clause_level"></A><HR><PRE><B>int clause_level(Topform c);
+</B></PRE>Return the level of a clause.  Input clauses have level=0, and
+a derived clause has level 1 more than the max of the levels of its parents.
+<A NAME="clausify_just"></A><HR><PRE><B>Just clausify_just(Topform tf);
+</B></PRE>This routine builds and returns a justification list for clausify.
+<A NAME="copy_just"></A><HR><PRE><B>Just copy_just(Topform c);
+</B></PRE>This routine builds and returns a justification list for copy.
+<A NAME="copy_justification"></A><HR><PRE><B>Just copy_justification(Just j);
+</B></PRE>Copy a justification.
+<A NAME="demod_just"></A><HR><PRE><B>Just demod_just(I3list steps);
+</B></PRE>This routine builds and returns a justification for a demodulation.
+<A NAME="deny_just"></A><HR><PRE><B>Just deny_just(Topform tf);
+</B></PRE>This routine builds and returns a justification list for deny.
+<A NAME="expand_def_just"></A><HR><PRE><B>Just expand_def_just(Topform tf, Topform def);
+</B></PRE>This routine builds and returns a justification list for expand_def.
+<A NAME="factor_just"></A><HR><PRE><B>Just factor_just(Topform c, int lit1, int lit2);
+</B></PRE>This routine builds and returns a justification list for a factorization.
+<A NAME="first_negative_parent"></A><HR><PRE><B>Topform first_negative_parent(Topform c);
+</B></PRE><A NAME="flip_just"></A><HR><PRE><B>Just flip_just(int n);
+</B></PRE>This routine builds and returns a justification for equality flipping.
+<A NAME="fprint_just_mem"></A><HR><PRE><B>void fprint_just_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the just package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="get_clause_ancestors"></A><HR><PRE><B>Plist get_clause_ancestors(Topform c);
+</B></PRE>This routine returns the Plist of clauses that are ancestors of Topform c,
+including clause c.  The result is sorted (increasing) by ID.
+If any of the ancestors are compressed, they are uncompressed
+(in place) and left uncompressed.
+<A NAME="get_instancejust"></A><HR><PRE><B>Instancejust get_instancejust(void);
+</B></PRE><A NAME="get_just"></A><HR><PRE><B>Just get_just(void);
+</B></PRE><A NAME="get_parajust"></A><HR><PRE><B>Parajust get_parajust(void);
+</B></PRE><A NAME="get_parents"></A><HR><PRE><B>Ilist get_parents(Just just, BOOL all);
+</B></PRE>This routine returns an Ilist of parent IDs.
+If (all), get parents from the whole justification; otherwise
+get parents from the first node only.
+<A NAME="goal_just"></A><HR><PRE><B>Just goal_just(void);
+</B></PRE>This routine builds and returns a justification list for goal.
+<A NAME="has_copy_flip_just"></A><HR><PRE><B>BOOL has_copy_flip_just(Topform c);
+</B></PRE>Does a clause have justification "copy, flip", and nothing else?
+<A NAME="has_copy_just"></A><HR><PRE><B>BOOL has_copy_just(Topform c);
+</B></PRE>Does a clause have justification "copy"?
+<A NAME="has_input_just"></A><HR><PRE><B>BOOL has_input_just(Topform c);
+</B></PRE>Does a clause have justtification "input"?
+<A NAME="input_just"></A><HR><PRE><B>Just input_just(void);
+</B></PRE>This routine builds and returns a justification list for input.
+<A NAME="instance_just"></A><HR><PRE><B>Just instance_just(Topform parent, Plist pairs);
+</B></PRE>This routine builds and returns a justification list for an instance
+inference.  The list of pairs is not copied.
+<A NAME="ivy_just"></A><HR><PRE><B>Just ivy_just(Just_type type,
+	      int parent1, Ilist pos1,
+	      int parent2, Ilist pos2,
+	      Plist pairs);
+</B></PRE><A NAME="jmap1"></A><HR><PRE><B>int jmap1(I3list map, int i);
+</B></PRE>A jmap maps ints to pairs of ints.  This returns the first.
+If i is not in the map, i is returned.
+<A NAME="jmap2"></A><HR><PRE><B>char *jmap2(I3list map, int i, char *a);
+</B></PRE>A jmap maps ints to pairs of ints.  This returns a string
+representation of the second.  If i is not in the map, or
+if the int value of is INT_MIN, "" is returned.
+
+Starting with 0, the strings are "A" - "Z", "A26", "A27", ... .
+
+The argument *a must point to available space for the result.
+The result is returned.
+<A NAME="jstring"></A><HR><PRE><B>char *jstring(Just j);
+</B></PRE>What is the string, e.g., "resolve" associated with a justification node?
+<A NAME="just_count"></A><HR><PRE><B>int just_count(Just j);
+</B></PRE>Return the number of justification elements in a justtification.
+<A NAME="map_just"></A><HR><PRE><B>void map_just(Just just, I2list map);
+</B></PRE>Update the clause IDs in a justification according to the map.
+<A NAME="mark_parents_as_used"></A><HR><PRE><B>void mark_parents_as_used(Topform c);
+</B></PRE><A NAME="merge_just"></A><HR><PRE><B>Just merge_just(int n);
+</B></PRE>This routine builds and returns a justification for the merging
+a literal.  The n-th literal has been removed because it is
+identical to another literal.
+<A NAME="new_symbol_just"></A><HR><PRE><B>Just new_symbol_just(Topform c);
+</B></PRE>This routine builds and returns a justification list for new_symbol inference.
+<A NAME="p_just"></A><HR><PRE><B>void p_just(Just j);
+</B></PRE><A NAME="p_just_mem"></A><HR><PRE><B>void p_just_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the just package.
+<A NAME="para_just"></A><HR><PRE><B>Just para_just(Just_type rule,
+	       Topform from, Ilist from_vec,
+	       Topform into, Ilist into_vec);
+</B></PRE>This routine builds and returns a justification list for a paramodulation
+inference.  The position vectors are not copied.
+<A NAME="para_just_rev_copy"></A><HR><PRE><B>Just para_just_rev_copy(Just_type rule,
+			Topform from, Ilist from_vec,
+			Topform into, Ilist into_vec);
+</B></PRE>This routine builds and returns a justification list for a paramodulation
+inference.  The position vectors are copied and reversed.
+<A NAME="primary_just_type"></A><HR><PRE><B>BOOL primary_just_type(Topform c, Just_type t);
+</B></PRE>Does a clause have justtification "input"?
+<A NAME="proof_length"></A><HR><PRE><B>int proof_length(Plist proof);
+</B></PRE><A NAME="propositional_just"></A><HR><PRE><B>Just propositional_just(Topform c);
+</B></PRE>This routine builds and returns a justification list for propositional.
+<A NAME="resolve_just"></A><HR><PRE><B>Just resolve_just(Ilist g, Just_type type);
+</B></PRE>This routine builds and returns a justification for resolution rules.
+This handles binary, hyper, ur, and maybe others.
+<A NAME="sb_append_id"></A><HR><PRE><B>void sb_append_id(<A HREF="strbuf.html">String_buf</A> sb, int id, I3list map);
+</B></PRE><A NAME="sb_write_ids"></A><HR><PRE><B>void sb_write_ids(<A HREF="strbuf.html">String_buf</A> sb, Ilist p, I3list map);
+</B></PRE><A NAME="sb_write_just"></A><HR><PRE><B>void sb_write_just(<A HREF="strbuf.html">String_buf</A> sb, Just just, I3list map);
+</B></PRE>This routine writes (to a <A HREF="strbuf.html">String_buf</A>) a clause justification.
+No whitespace is printed before or after.
+<A NAME="sb_xml_write_just"></A><HR><PRE><B>void sb_xml_write_just(<A HREF="strbuf.html">String_buf</A> sb, Just just, I3list map);
+</B></PRE><A NAME="term_to_just"></A><HR><PRE><B>Just term_to_just(<A HREF="term.html">Term</A> lst);
+</B></PRE><A NAME="unit_del_just"></A><HR><PRE><B>Just unit_del_just(Topform deleter, int literal_num);
+</B></PRE>This routine builds and returns a justification list for a factorization.
+<A NAME="xx_just"></A><HR><PRE><B>Just xx_just(int n);
+</B></PRE>This routine builds and returns a justification for the XX rule,
+which removes literals that are instances of x!=x.
+<A NAME="xxres_just"></A><HR><PRE><B>Just xxres_just(Topform c, int lit);
+</B></PRE>This routine builds and returns a justification list for resolution with x=x.
+<A NAME="zap_just"></A><HR><PRE><B>void zap_just(Just just);
+</B></PRE>This routine frees a justification list, including any sublists.
+<HR><A NAME=defns></A><H2>Public Definitions in File just.h</H2>
+<PRE>
+typedef enum {
+  INPUT_JUST,         /* Primary                              */
+  GOAL_JUST,          /* Primary                              */
+  DENY_JUST,          /* Primary    int       (ID)            */
+  CLAUSIFY_JUST,      /* Primary    int       (ID)            */
+  COPY_JUST,          /* Primary    int       (ID)            */
+  BACK_DEMOD_JUST,    /* Primary    int       (ID)            */
+  BACK_UNIT_DEL_JUST, /* Primary    int       (ID)            */
+  NEW_SYMBOL_JUST,    /* Primary    int       (ID)            */
+  EXPAND_DEF_JUST,    /* Primary    Ilist     (ID,def-ID)     */
+  BINARY_RES_JUST,    /* Primary    Ilist                     */
+  HYPER_RES_JUST,     /* Primary    Ilist                     */
+  UR_RES_JUST,        /* Primary    Ilist                     */
+  FACTOR_JUST,        /* Primary    Ilist     (ID,lit1,lit2)  */
+  XXRES_JUST,         /* Primary    Ilist     (ID,lit)        */
+  PARA_JUST,          /* Primary    Parajust                  */
+  PARA_FX_JUST,       /* Primary    Parajust                  */
+  PARA_IX_JUST,       /* Primary    Parajust                  */
+  PARA_FX_IX_JUST,    /* Primary    Parajust                  */
+  INSTANCE_JUST,      /* Primary    Instancejust              */
+  PROPOSITIONAL_JUST, /* Primary    int       (ID)            */
+
+  DEMOD_JUST,         /* Secondary  I3list                    */
+  UNIT_DEL_JUST,      /* Secondary  Ilist     (lit,ID)        */
+  FLIP_JUST,          /* Secondary  int       (lit)           */
+  XX_JUST,            /* Secondary  int       (lit)           */
+  MERGE_JUST,         /* Secondary  int       (lit)           */
+
+  IVY_JUST,           /* Primary    Ivyjust                   */
+
+  UNKNOWN_JUST        /* probably an error                    */
+} Just_type;
+
+typedef struct parajust * Parajust;
+
+struct parajust {
+  int from_id;
+  int into_id;
+  Ilist from_pos;
+  Ilist into_pos;
+};
+
+typedef struct instancejust * Instancejust;
+
+struct instancejust {
+  int parent_id;
+  Plist pairs;
+};
+
+typedef struct ivyjust * Ivyjust;
+
+struct ivyjust {
+  Just_type type;  /* input,resolve,paramod,instantiate,flip,propositional */
+  int parent1;
+  int parent2;
+  Ilist pos1;
+  Ilist pos2;
+  Plist pairs;  /* for instantiate */
+};
+
+typedef struct just * Just;
+
+struct just {
+  Just_type type;
+  Just next;
+  union {
+    int id;
+    Ilist lst;
+    Parajust para;
+    I3list demod;
+    Instancejust instance;
+    Ivyjust ivy;
+  } u;
+};
+
+/* A justification starts with a Primary part and then
+   has a sequence (maybe none) of Secondary parts.
+   Each type has some data, an integer or Ilist (integer
+   list) giving clause IDs, or positions of literals or
+   subterms.
+*/
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

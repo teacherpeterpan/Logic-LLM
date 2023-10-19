@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>tlist.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "tlist.h"</H1>
+
+This page has information from files
+<A HREF="../tlist.h">tlist.h</A> and <A HREF="../tlist.c">tlist.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File tlist.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#constants_in_term">constants_in_term</A></TD><TD><A HREF="#tlist_remove">tlist_remove</A></TD><TD><A HREF="#zap_tlist">zap_tlist</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#tlist_copy">tlist_copy</A></TD><TD><A HREF="#tlist_union">tlist_union</A></TD><TD></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="constants_in_term"></A><HR><PRE><B>Ilist constants_in_term(<A HREF="term.html">Term</A> t, Ilist p);
+</B></PRE>Given a term t, return a plist containing the set of constants in t.
+<A NAME="tlist_copy"></A><HR><PRE><B>Plist tlist_copy(Plist p);
+</B></PRE><A NAME="tlist_remove"></A><HR><PRE><B>Plist tlist_remove(<A HREF="term.html">Term</A> t, Plist p);
+</B></PRE>Remove a term from a Plist.  Term_ident() is used, and the
+term in the list is zapped.
+<A NAME="tlist_union"></A><HR><PRE><B>Plist tlist_union(Plist a, Plist b);
+</B></PRE>Return the union of two Plists of terms.  If the inputs
+are sets, the output is a set.  Do not refer the inputs
+after the call.  Duplicates are zapped.
+<A NAME="zap_tlist"></A><HR><PRE><B>void zap_tlist(Plist p);
+</B></PRE>Zap each term in the list and free the list.  If you want to free the
+list only, without zapping the terms, use zap_plist(p) instead.
+<HR><A NAME=defns></A><H2>Public Definitions in File tlist.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This little package handles singly-linked lists of terms.
+The data type Plist is used to build the lists.
+<P>
+Note that there is another package, listterm, that does similar
+things, but constructing the lists from ordinary terms, as in Prolog.
+
+<HR>
+</BODY>
+</HTML>

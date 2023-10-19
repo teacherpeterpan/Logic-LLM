@@ -1,0 +1,295 @@
+============================== Prover9 ===============================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 16239 was started by mccune on cleo,
+Thu Dec 13 11:34:09 2007
+The command was "/home/mccune/bin/prover9 -f dist-short-long.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file dist-short-long.in
+
+assign(max_seconds,30).
+assign(order,kbo).
+set(lex_order_vars).
+
+formulas(sos).
+f(x,x,y) = x # label(majority).
+f(x,y,z) = f(z,x,y) # label(2a).
+f(x,y,z) = f(x,z,y) # label(2b).
+f(f(x,w,y),w,z) = f(x,w,f(y,w,z)) # label(associativity).
+f(f(x,y,z),u,w) = f(x,f(y,u,w),f(z,u,w)) # label(dist_short).
+end_of_list.
+
+formulas(goals).
+f(f(x,y,z),u,w) = f(f(x,u,w),f(y,u,w),f(z,u,w)) # answer(dist_long).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 f(f(x,y,z),u,w) = f(f(x,u,w),f(y,u,w),f(z,u,w)) # answer(dist_long) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+f(x,x,y) = x # label(majority).  [assumption].
+f(x,y,z) = f(z,x,y) # label(2a).  [assumption].
+f(x,y,z) = f(x,z,y) # label(2b).  [assumption].
+f(f(x,y,z),y,u) = f(x,y,f(z,y,u)) # label(associativity).  [assumption].
+f(f(x,y,z),u,w) = f(x,f(y,u,w),f(z,u,w)) # label(dist_short).  [assumption].
+f(f(c1,c4,c5),f(c2,c4,c5),f(c3,c4,c5)) != f(f(c1,c2,c3),c4,c5) # answer(dist_long).  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Function symbol KB weights:  c1=1. c2=1. c3=1. c4=1. c5=1. f=1.
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ c1, c2, c3, c4, c5, f ]).
+Skipping inverse_order, because term ordering is KBO.
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+
+Auto_process settings:  (no changes).
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+2 f(x,x,y) = x # label(majority).  [assumption].
+3 f(x,y,z) = f(z,x,y) # label(2a).  [assumption].
+4 f(x,y,z) = f(x,z,y) # label(2b).  [assumption].
+6 f(x,y,f(x,z,u)) = f(x,z,f(x,y,u)).  [copy(5),rewrite([3(2),3(2),3(3,R),4(3)]),rewrite([3(1,R),4(1),4(3),3(4,R),4(4)])].
+8 f(x,f(y,z,u),f(z,u,w)) = f(z,u,f(x,y,w)).  [copy(7),rewrite([3(2),3(2)]),flip(a),rewrite([3(2),3(2)])].
+10 f(f(c1,c4,c5),f(c2,c4,c5),f(c3,c4,c5)) != f(c4,c5,f(c1,c2,c3)) # answer(dist_long).  [copy(9),rewrite([3(20),3(20)])].
+end_of_list.
+
+formulas(demodulators).
+2 f(x,x,y) = x # label(majority).  [assumption].
+3 f(x,y,z) = f(z,x,y) # label(2a).  [assumption].
+        % (lex-dep)
+4 f(x,y,z) = f(x,z,y) # label(2b).  [assumption].
+        % (lex-dep)
+8 f(x,f(y,z,u),f(z,u,w)) = f(z,u,f(x,y,w)).  [copy(7),rewrite([3(2),3(2)]),flip(a),rewrite([3(2),3(2)])].
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (I,wt=6): 2 f(x,x,y) = x # label(majority).  [assumption].
+
+given #2 (I,wt=9): 3 f(x,y,z) = f(z,x,y) # label(2a).  [assumption].
+
+given #3 (I,wt=9): 4 f(x,y,z) = f(x,z,y) # label(2b).  [assumption].
+
+given #4 (I,wt=15): 6 f(x,y,f(x,z,u)) = f(x,z,f(x,y,u)).  [copy(5),rewrite([3(2),3(2),3(3,R),4(3)]),rewrite([3(1,R),4(1),4(3),3(4,R),4(4)])].
+
+given #5 (I,wt=18): 8 f(x,f(y,z,u),f(z,u,w)) = f(z,u,f(x,y,w)).  [copy(7),rewrite([3(2),3(2)]),flip(a),rewrite([3(2),3(2)])].
+
+given #6 (I,wt=21): 10 f(f(c1,c4,c5),f(c2,c4,c5),f(c3,c4,c5)) != f(c4,c5,f(c1,c2,c3)) # answer(dist_long).  [copy(9),rewrite([3(20),3(20)])].
+
+given #7 (A,wt=6): 11 f(x,y,y) = y.  [para(3(a,1),2(a,1))].
+
+given #8 (T,wt=12): 27 f(x,y,f(x,z,y)) = f(x,z,y).  [para(11(a,1),6(a,1,3)),flip(a)].
+
+given #9 (T,wt=12): 28 f(x,y,f(x,y,z)) = f(x,y,z).  [para(11(a,1),6(a,1)),rewrite([4(3),27(3)]),flip(a)].
+
+given #10 (T,wt=15): 12 f(x,y,f(z,x,u)) = f(z,x,f(x,y,u)).  [para(6(a,1),3(a,2)),rewrite([4(2),3(3,R),4(3)]),flip(a)].
+
+given #11 (T,wt=15): 13 f(x,y,f(x,z,u)) = f(x,u,f(x,y,z)).  [para(3(a,1),6(a,1,3)),rewrite([3(1,R),4(1)])].
+
+given #12 (A,wt=21): 14 f(x,y,f(x,z,f(x,u,w))) = f(x,u,f(x,y,f(x,z,w))).  [para(6(a,1),6(a,1,3))].
+
+given #13 (T,wt=15): 29 f(x,y,f(z,u,y)) = f(u,y,f(x,z,y)).  [para(11(a,1),8(a,1,3)),rewrite([4(2)])].
+
+given #14 (T,wt=12): 84 f(x,y,f(z,x,y)) = f(z,x,y).  [para(2(a,1),29(a,1,3)),rewrite([4(2),3(3,R),4(3)]),flip(a)].
+
+given #15 (T,wt=15): 34 f(x,y,f(z,y,u)) = f(z,y,f(x,y,u)).  [para(12(a,1),3(a,2)),rewrite([4(2),3(3,R),4(3)])].
+
+given #16 (T,wt=15): 42 f(x,y,f(z,x,u)) = f(z,x,f(x,u,y)).  [para(13(a,1),3(a,2)),rewrite([4(2),3(3,R),4(3)]),flip(a)].
+
+given #17 (A,wt=18): 16 f(x,f(y,z,u),f(y,z,w)) = f(y,z,f(x,u,w)).  [para(8(a,1),3(a,1)),rewrite([3(4),3(4),3(5,R)]),flip(a)].
+
+given #18 (T,wt=15): 43 f(x,y,f(x,z,u)) = f(x,u,f(x,z,y)).  [para(13(a,1),4(a,2)),rewrite([4(2),4(3)])].
+
+given #19 (T,wt=15): 85 f(x,y,f(z,u,y)) = f(z,y,f(x,u,y)).  [para(29(a,2),4(a,2)),rewrite([4(2),3(3,R),4(3)])].
+
+given #20 (T,wt=15): 149 f(x,y,f(x,z,f(y,u,z))) = f(x,y,z).  [para(16(a,1),29(a,1)),rewrite([32(3),11(1),3(4,R),4(4),122(5),4(2)]),flip(a)].
+
+given #21 (T,wt=15): 150 f(x,y,f(z,u,x)) = f(z,x,f(u,x,y)).  [para(29(a,1),16(a,2)),rewrite([11(2),4(2),3(3,R),4(3),3(4,R),4(4)]),flip(a)].
+
+given #22 (A,wt=18): 17 f(x,f(y,z,u),f(y,u,w)) = f(y,u,f(x,z,w)).  [para(3(a,1),8(a,1,2)),rewrite([3(2,R),4(2),3(5,R),4(5)])].
+
+given #23 (T,wt=15): 166 f(x,y,f(x,z,f(y,z,u))) = f(x,y,z).  [para(85(a,1),8(a,1)),rewrite([3(1,R),4(1),3(2,R),4(2),3(3,R),4(3),155(4),143(3),3(1,R),4(1),3(4,R),4(4),3(5,R),4(5),143(6),2(4),4(4)])].
+
+given #24 (T,wt=15): 167 f(x,y,f(x,z,f(u,y,z))) = f(x,y,z).  [para(27(a,1),85(a,1,3)),rewrite([11(3),155(5),143(4)]),flip(a)].
+
+given #25 (T,wt=15): 172 f(x,y,f(y,z,f(x,z,u))) = f(x,y,z).  [para(149(a,1),3(a,2)),rewrite([4(1),4(3),3(4,R),4(4)])].
+
+given #26 (T,wt=15): 173 f(x,y,f(x,z,f(z,y,u))) = f(x,z,y).  [para(149(a,1),4(a,2)),rewrite([3(1),4(3),4(4)])].
+
+given #27 (A,wt=24): 18 f(x,f(y,z,u),f(x,w,f(y,z,v5))) = f(x,w,f(y,z,f(x,u,v5))).  [para(8(a,1),6(a,1,3)),rewrite([3(4),3(4)]),flip(a)].
+
+given #28 (T,wt=15): 182 f(x,f(y,z,u),f(x,y,z)) = f(x,y,z).  [para(149(a,1),13(a,1)),rewrite([4(2)]),flip(a)].
+
+given #29 (T,wt=15): 191 f(x,f(y,z,u),f(x,y,u)) = f(x,y,u).  [para(149(a,1),43(a,2)),rewrite([4(2)])].
+
+given #30 (T,wt=15): 221 f(x,y,f(z,y,f(x,z,u))) = f(x,z,y).  [para(17(a,1),150(a,1)),rewrite([3(1),2(1),4(2)]),flip(a)].
+
+given #31 (T,wt=15): 226 f(x,y,f(x,z,f(z,u,y))) = f(x,z,y).  [para(167(a,1),4(a,2)),rewrite([3(1),4(3),4(4)])].
+
+given #32 (A,wt=24): 20 f(x,f(y,z,u),f(x,w,f(z,u,v5))) = f(x,w,f(z,u,f(x,y,v5))).  [para(8(a,1),6(a,2,3))].
+
+given #33 (T,wt=15): 232 f(x,f(y,z,u),f(x,z,u)) = f(x,z,u).  [para(167(a,1),43(a,2)),rewrite([4(2)])].
+
+given #34 (T,wt=15): 245 f(x,y,f(z,x,u)) = f(x,u,f(z,x,y)).  [para(29(a,1),172(a,2)),rewrite([3(1),3(2),4(3),155(4),143(3),240(4),4(3),3(4,R),4(4)])].
+
+given #35 (T,wt=15): 348 f(x,y,f(y,z,f(x,u,z))) = f(x,y,z).  [para(149(a,1),191(a,1,3)),rewrite([4(1),4(5),155(5),32(4),325(4),4(1),4(4),166(6)])].
+
+given #36 (T,wt=15): 362 f(x,y,f(z,y,f(z,x,u))) = f(z,x,y).  [para(221(a,1),34(a,1)),flip(a)].
+
+given #37 (A,wt=27): 21 f(x,f(y,z,f(y,u,w)),f(u,v5,f(y,z,w))) = f(u,f(y,z,w),f(x,y,v5)).  [para(6(a,1),8(a,1,2)),rewrite([4(4)])].
+
+given #38 (T,wt=15): 367 f(x,y,f(z,x,f(z,y,u))) = f(z,x,y).  [para(172(a,1),221(a,2)),rewrite([155(6),16(7),221(5)])].
+
+given #39 (T,wt=18): 32 f(x,y,f(z,u,f(x,y,w))) = f(x,y,f(z,u,w)).  [para(27(a,1),8(a,1,3)),rewrite([4(2),8(3),4(3)]),flip(a)].
+
+given #40 (T,wt=18): 143 f(x,y,f(z,u,f(x,w,y))) = f(x,y,f(z,w,u)).  [para(27(a,1),16(a,1,2)),rewrite([17(3),4(4)]),flip(a)].
+
+given #41 (T,wt=18): 152 f(x,y,f(z,u,f(w,x,y))) = f(x,y,f(z,w,u)).  [para(84(a,1),16(a,1,2)),rewrite([8(3),4(4)]),flip(a)].
+
+given #42 (A,wt=24): 22 f(x,f(y,z,u),f(z,w,f(z,u,v5))) = f(z,u,f(x,y,f(z,w,v5))).  [para(6(a,1),8(a,1,3))].
+
+given #43 (T,wt=15): 708 f(x,y,f(z,u,x)) = f(u,x,f(z,x,y)).  [para(221(a,1),22(a,2,3)),rewrite([3(4,R),4(4),16(5),221(3),4(3)]),flip(a)].
+
+given #44 (T,wt=18): 236 f(x,y,f(y,z,f(x,u,f(x,z,w)))) = f(x,y,z).  [para(6(a,1),172(a,1,3,3))].
+
+given #45 (T,wt=18): 239 f(x,y,f(y,z,f(z,u,f(x,z,w)))) = f(x,y,z).  [para(12(a,2),172(a,1,3,3))].
+
+given #46 (T,wt=18): 310 f(x,f(y,z,f(y,u,w)),f(x,y,u)) = f(x,y,u).  [para(6(a,1),182(a,1,2))].
+
+given #47 (A,wt=21): 23 f(x,y,f(z,u,f(z,w,v5))) = f(x,y,f(z,w,f(z,u,v5))).  [para(6(a,1),8(a,2,3)),rewrite([8(4)])].
+
+given #48 (T,wt=18): 314 f(x,f(y,z,f(z,u,w)),f(x,z,u)) = f(x,z,u).  [para(12(a,1),182(a,1,2))].
+
+given #49 (T,wt=18): 316 f(x,f(y,z,f(y,u,w)),f(x,y,w)) = f(x,y,w).  [para(13(a,2),182(a,1,2))].
+
+given #50 (T,wt=18): 321 f(x,f(y,z,f(z,u,w)),f(x,z,w)) = f(x,z,w).  [para(29(a,2),182(a,1,2)),rewrite([3(1),4(3),4(5)])].
+
+given #51 (T,wt=18): 338 f(x,f(y,z,u),f(y,w,z)) = f(y,z,f(w,x,u)).  [para(191(a,1),12(a,1,3)),rewrite([3(2),3(2),3(3,R),3(6),3(6),3(7,R),213(8),11(4)])].
+
+given #52 (A,wt=24): 24 f(f(x,y,z),f(x,y,u),f(w,v5,v6)) = f(x,y,f(z,u,f(w,v5,v6))).  [para(8(a,1),8(a,1,2)),rewrite([3(3),3(3),3(5),16(5),3(3),3(3),16(5),8(3),3(4),3(4)]),flip(a)].
+
+given #53 (T,wt=18): 355 f(x,y,f(x,z,f(y,u,f(y,w,z)))) = f(x,y,z).  [para(191(a,1),182(a,1,3)),rewrite([3(3),4(5),155(5),143(4),3(2,R),4(2),191(7)])].
+
+given #54 (T,wt=18): 368 f(x,y,f(z,y,f(x,u,f(x,z,w)))) = f(x,z,y).  [para(221(a,1),173(a,2)),rewrite([4(5),364(6),3(3,R),4(3),18(5),4(2)])].
+
+given #55 (T,wt=18): 426 f(x,y,f(z,f(y,u,z),f(x,z,w))) = f(x,y,z).  [back_rewrite(351),rewrite([380(6),32(5)])].
+
+given #56 (T,wt=18): 430 f(x,f(y,z,u),f(w,y,z)) = f(y,z,f(w,x,u)).  [para(232(a,1),12(a,1,3)),rewrite([3(2),3(2),3(3,R),3(6),3(6),3(7,R),40(8),11(4)])].
+
+given #57 (A,wt=30): 25 f(x,f(y,z,f(u,w,v5)),f(w,v5,f(z,u,v6))) = f(z,f(u,w,v5),f(x,y,f(w,v5,v6))).  [para(8(a,1),8(a,1,3))].
+
+============================== PROOF =================================
+
+% Proof 1 at 1.34 (+ 0.01) seconds: dist_long.
+% Length of proof is 39.
+% Level of proof is 10.
+% Maximum clause weight is 30.
+% Given clauses 57.
+
+1 f(f(x,y,z),u,w) = f(f(x,u,w),f(y,u,w),f(z,u,w)) # answer(dist_long) # label(non_clause) # label(goal).  [goal].
+2 f(x,x,y) = x # label(majority).  [assumption].
+3 f(x,y,z) = f(z,x,y) # label(2a).  [assumption].
+4 f(x,y,z) = f(x,z,y) # label(2b).  [assumption].
+5 f(f(x,y,z),y,u) = f(x,y,f(z,y,u)) # label(associativity).  [assumption].
+6 f(x,y,f(x,z,u)) = f(x,z,f(x,y,u)).  [copy(5),rewrite([3(2),3(2),3(3,R),4(3)]),rewrite([3(1,R),4(1),4(3),3(4,R),4(4)])].
+7 f(f(x,y,z),u,w) = f(x,f(y,u,w),f(z,u,w)) # label(dist_short).  [assumption].
+8 f(x,f(y,z,u),f(z,u,w)) = f(z,u,f(x,y,w)).  [copy(7),rewrite([3(2),3(2)]),flip(a),rewrite([3(2),3(2)])].
+9 f(f(c1,c4,c5),f(c2,c4,c5),f(c3,c4,c5)) != f(f(c1,c2,c3),c4,c5) # answer(dist_long).  [deny(1)].
+10 f(f(c1,c4,c5),f(c2,c4,c5),f(c3,c4,c5)) != f(c4,c5,f(c1,c2,c3)) # answer(dist_long).  [copy(9),rewrite([3(20),3(20)])].
+11 f(x,y,y) = y.  [para(3(a,1),2(a,1))].
+12 f(x,y,f(z,x,u)) = f(z,x,f(x,y,u)).  [para(6(a,1),3(a,2)),rewrite([4(2),3(3,R),4(3)]),flip(a)].
+13 f(x,y,f(x,z,u)) = f(x,u,f(x,y,z)).  [para(3(a,1),6(a,1,3)),rewrite([3(1,R),4(1)])].
+16 f(x,f(y,z,u),f(y,z,w)) = f(y,z,f(x,u,w)).  [para(8(a,1),3(a,1)),rewrite([3(4),3(4),3(5,R)]),flip(a)].
+17 f(x,f(y,z,u),f(y,u,w)) = f(y,u,f(x,z,w)).  [para(3(a,1),8(a,1,2)),rewrite([3(2,R),4(2),3(5,R),4(5)])].
+25 f(x,f(y,z,f(u,w,v5)),f(w,v5,f(z,u,v6))) = f(z,f(u,w,v5),f(x,y,f(w,v5,v6))).  [para(8(a,1),8(a,1,3))].
+27 f(x,y,f(x,z,y)) = f(x,z,y).  [para(11(a,1),6(a,1,3)),flip(a)].
+29 f(x,y,f(z,u,y)) = f(u,y,f(x,z,y)).  [para(11(a,1),8(a,1,3)),rewrite([4(2)])].
+32 f(x,y,f(z,u,f(x,y,w))) = f(x,y,f(z,u,w)).  [para(27(a,1),8(a,1,3)),rewrite([4(2),8(3),4(3)]),flip(a)].
+34 f(x,y,f(z,y,u)) = f(z,y,f(x,y,u)).  [para(12(a,1),3(a,2)),rewrite([4(2),3(3,R),4(3)])].
+37 f(x,f(y,z,f(y,u,w)),f(y,v5,f(y,z,w))) = f(y,f(y,z,w),f(x,u,v5)).  [para(12(a,2),8(a,1,2)),rewrite([3(1,R),4(1),4(4)])].
+43 f(x,y,f(x,z,u)) = f(x,u,f(x,z,y)).  [para(13(a,1),4(a,2)),rewrite([4(2),4(3)])].
+84 f(x,y,f(z,x,y)) = f(z,x,y).  [para(2(a,1),29(a,1,3)),rewrite([4(2),3(3,R),4(3)]),flip(a)].
+122 f(x,f(y,x,z),f(u,w,f(y,x,z))) = f(y,x,f(u,z,f(x,z,w))).  [para(34(a,1),29(a,1,3)),rewrite([3(2),3(2),16(4)]),flip(a)].
+137 f(x,f(y,z,u),f(y,w,f(y,z,v5))) = f(y,z,f(x,u,f(y,w,v5))).  [para(6(a,1),16(a,1,3))].
+149 f(x,y,f(x,z,f(y,u,z))) = f(x,y,z).  [para(16(a,1),29(a,1)),rewrite([32(3),11(1),3(4,R),4(4),122(5),4(2)]),flip(a)].
+150 f(x,y,f(z,u,x)) = f(z,x,f(u,x,y)).  [para(29(a,1),16(a,2)),rewrite([11(2),4(2),3(3,R),4(3),3(4,R),4(4)]),flip(a)].
+151 f(x,f(y,z,f(z,u,w)),f(z,w,v5)) = f(z,w,f(x,v5,f(y,z,u))).  [para(29(a,2),16(a,1,2)),rewrite([3(1),3(3,R),4(3),4(5),4(6),3(7,R),4(7)])].
+152 f(x,y,f(z,u,f(w,x,y))) = f(x,y,f(z,w,u)).  [para(84(a,1),16(a,1,2)),rewrite([8(3),4(4)]),flip(a)].
+155 f(x,f(x,y,z),f(u,w,v5)) = f(x,y,f(x,z,f(u,w,v5))).  [back_rewrite(37),rewrite([137(5),4(2),17(3)]),flip(a)].
+172 f(x,y,f(y,z,f(x,z,u))) = f(x,y,z).  [para(149(a,1),3(a,2)),rewrite([4(1),4(3),3(4,R),4(4)])].
+191 f(x,f(y,z,u),f(x,y,u)) = f(x,y,u).  [para(149(a,1),43(a,2)),rewrite([4(2)])].
+213 f(x,f(y,z,u),f(w,f(y,u,v5),f(y,z,u))) = f(y,u,f(z,w,f(z,x,v5))).  [para(17(a,1),12(a,1,3)),rewrite([3(2,R),4(2),3(4,R),4(4),17(4),3(2,R),4(2),3(7,R)]),flip(a)].
+221 f(x,y,f(z,y,f(x,z,u))) = f(x,z,y).  [para(17(a,1),150(a,1)),rewrite([3(1),2(1),4(2)]),flip(a)].
+338 f(x,f(y,z,u),f(y,w,z)) = f(y,z,f(w,x,u)).  [para(191(a,1),12(a,1,3)),rewrite([3(2),3(2),3(3,R),3(6),3(6),3(7,R),213(8),11(4)])].
+367 f(x,y,f(z,x,f(z,y,u))) = f(z,x,y).  [para(172(a,1),221(a,2)),rewrite([155(6),16(7),221(5)])].
+1384 f(x,f(y,z,u),f(w,z,f(z,u,v5))) = f(z,u,f(y,x,f(w,z,v5))).  [para(12(a,1),25(a,1,2)),rewrite([3(3,R),4(3),151(5),338(3),3(1,R),4(1)]),flip(a)].
+1464 f(x,f(y,z,u),f(w,z,u)) = f(z,u,f(w,x,y)).  [para(25(a,1),367(a,1,3)),rewrite([3(5,R),4(5),1384(6),3(4,R),4(4),3(6,R),4(6),25(6),3(4,R),4(4),221(4),4(6),152(6),4(4)])].
+1549 $F # answer(dist_long).  [back_rewrite(10),rewrite([1464(13),3(9),152(10),3(6,R),4(6)]),xx(a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=57. Generated=13427. Kept=1544. proofs=1.
+Usable=52. Sos=1120. Demods=972. Limbo=85, Disabled=293. Hints=0.
+Weight_deleted=0. Literals_deleted=0.
+Forward_subsumed=11882. Back_subsumed=43.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=1216 (2 lex), Back_demodulated=244. Back_unit_deleted=0.
+Demod_attempts=200969. Demod_rewrites=69200.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=1.83.
+User_CPU=1.34, System_CPU=0.01, Wall_clock=2.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+Process 16239 exit (max_proofs) Thu Dec 13 11:34:11 2007

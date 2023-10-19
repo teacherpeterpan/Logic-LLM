@@ -1,0 +1,5 @@
+(((x ^ y) v (y ^ (x v y))) ^ z) v (((x ^ (((x1 ^ y) v (y ^ x2)) v y)) v (((y ^ (((x1 v (y v x2)) ^ (x3 v y)) ^ y)) v (u ^ (y v (((x1 v (y v x2)) ^ (x3 v y)) ^ y)))) ^ (x v (((x1 ^ y) v (y ^ x2)) v y)))) ^ (((x ^ y) v (y ^ (x v y))) v z)) = y.
+(((x ^ y) v (y ^ (x v y))) ^ z) v (((x ^ (((x1 ^ y) v (y ^ x2)) v y)) v (((y ^ (((x1 v (y v x2)) ^ (x3 v y)) ^ y)) v (u ^ (y v (((y v xnew) ^ (x3 v y)) ^ y)))) ^ (x v (((x1 ^ y) v (y ^ x2)) v y)))) ^ (((x ^ y) v (y ^ (x v y))) v z)) = y.
+(((y v x) ^ x) v (((z ^ (x v x)) v (u ^ x)) ^ v)) ^ (w v ((v6 v x) ^ (x v v7))) = x.
+(((y v x) ^ x) v (((z ^ (x v x)) v (u ^ x)) ^ v)) ^ (((w v x) ^ (v6 v x)) v v7) = x.
+% olfilter: checked 4, passed 4, user 0.00, system 0.01.

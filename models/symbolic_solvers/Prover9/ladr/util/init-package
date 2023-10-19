@@ -1,0 +1,90 @@
+#!/usr/bin/perl
+
+$this_file = __FILE__;
+
+if (scalar(@ARGV) != 1) {
+    print "Usage: $this_file filename (without .c or .h)\n";
+    exit 1;
+}
+
+if (-e "$ARGV[0].h") {
+    print "File $ARGV[0].h already exists.\n";
+    exit 1;
+}
+if (-e "$ARGV[0].c") {
+    print "File $ARGV[0].c already exists.\n";
+    exit 1;
+}
+
+open(FH, ">$ARGV[0].h");
+open(FC, ">$ARGV[0].c");
+
+print FC <<EOFC
+/*  Copyright (C) 2006, 2007 William McCune
+
+    This file is part of the LADR Deduction Library.
+
+    The LADR Deduction Library is free software; you can redistribute it
+    and/or modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2 of the
+    License, or (at your option) any later version.
+
+    The LADR Deduction Library is distributed in the hope that it will be
+    useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with the LADR Deduction Library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+
+#include "$ARGV[0].h"
+
+/* Private definitions and types */
+
+/*
+ * memory management
+ */
+
+EOFC
+    ;
+$upper[0] = $ARGV[0];
+$upper[0] =~ tr [a-z] [A-Z];
+
+print FH <<EOFH
+/*  Copyright (C) 2006, 2007 William McCune
+
+    This file is part of the LADR Deduction Library.
+
+    The LADR Deduction Library is free software; you can redistribute it
+    and/or modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2 of the
+    License, or (at your option) any later version.
+
+    The LADR Deduction Library is distributed in the hope that it will be
+    useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with the LADR Deduction Library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+
+#ifndef TP_$upper[0]_H
+#define TP_$upper[0]_H
+
+#include ""
+
+/* INTRODUCTION
+*/
+
+/* Public definitions */
+
+/* End of public definitions */
+
+/* Public function prototypes */
+
+#endif  /* conditional compilation of whole file */
+EOFH

@@ -1,0 +1,8 @@
+#!/bin/csh
+
+# h option says to follow symlinks (html directory)
+
+tar cvhf go.tar *.h *.c Makefile util html */*.in
+gzip go.tar
+ls -l go.tar.gz
+

@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<TITLE>ibuffer.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "ibuffer.h"</H1>
+
+This page has information from files
+<A HREF="../ibuffer.h">ibuffer.h</A> and <A HREF="../ibuffer.c">ibuffer.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File ibuffer.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fd_read_to_ibuf">fd_read_to_ibuf</A></TD><TD><A HREF="#ibuf_init">ibuf_init</A></TD><TD><A HREF="#ibuf_rewind">ibuf_rewind</A></TD><TD><A HREF="#ibuf_xread">ibuf_xread</A></TD>
+</TR>
+<TR><TD><A HREF="#ibuf_buffer">ibuf_buffer</A></TD><TD><A HREF="#ibuf_length">ibuf_length</A></TD><TD><A HREF="#ibuf_write">ibuf_write</A></TD><TD><A HREF="#p_ibuf">p_ibuf</A></TD>
+</TR>
+<TR><TD><A HREF="#ibuf_free">ibuf_free</A></TD><TD><A HREF="#ibuf_read">ibuf_read</A></TD><TD><A HREF="#ibuf_write_block">ibuf_write_block</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fd_read_to_ibuf"></A><HR><PRE><B>Ibuffer fd_read_to_ibuf(int fd);
+</B></PRE><A NAME="ibuf_buffer"></A><HR><PRE><B>int *ibuf_buffer(Ibuffer ibuf);
+</B></PRE><A NAME="ibuf_free"></A><HR><PRE><B>void ibuf_free(Ibuffer ibuf);
+</B></PRE>Free an Ibuffer.
+<A NAME="ibuf_init"></A><HR><PRE><B>Ibuffer ibuf_init(void);
+</B></PRE>Allocate and initialize an Ibuffer.
+<A NAME="ibuf_length"></A><HR><PRE><B>int ibuf_length(Ibuffer ibuf);
+</B></PRE><A NAME="ibuf_read"></A><HR><PRE><B>int ibuf_read(Ibuffer ibuf);
+</B></PRE>Get the next integer from an Ibuffer.
+This version returns IBUF_EOF (INT_MIN) if there is nothing to read.
+<A NAME="ibuf_rewind"></A><HR><PRE><B>void ibuf_rewind(Ibuffer ibuf);
+</B></PRE>Reset an Ibuffer for reading.
+<A NAME="ibuf_write"></A><HR><PRE><B>void ibuf_write(Ibuffer ibuf, int i);
+</B></PRE>Write an integer to an Ibuffer.
+<A NAME="ibuf_write_block"></A><HR><PRE><B>void ibuf_write_block(Ibuffer ibuf, int *a, int n);
+</B></PRE>Write an array of integers to an Ibuffer.
+<A NAME="ibuf_xread"></A><HR><PRE><B>int ibuf_xread(Ibuffer ibuf);
+</B></PRE>Get the next integer from an Ibuffer.
+This version assumes there is an integer to read;
+if it is at the end IBUF_EOF, a fatal error occurs.
+<A NAME="p_ibuf"></A><HR><PRE><B>void p_ibuf(Ibuffer ibuf);
+</B></PRE>Print a an Ibuffer to a stdout.  This is mainly for debugging.
+<HR><A NAME=defns></A><H2>Public Definitions in File ibuffer.h</H2>
+<PRE>
+#define IBUF_INIT_SIZE    40000
+#define IBUF_EOF        INT_MIN
+
+struct ibuffer {
+  int write_position; /* current number of ints in buf (next pos to write) */
+  int read_position;  /* next pos to read */
+  int size;           /* size of buf */
+  int *buf;           /* the buffer */
+};
+
+typedef struct ibuffer * Ibuffer;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

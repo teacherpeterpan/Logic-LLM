@@ -1,0 +1,133 @@
+============================== Mace4 =================================
+Mace4 (32) version 2008-10A+, October 2008.
+Process 15830 was started by mccune on cleo,
+Mon Nov 17 21:34:37 2008
+The command was "../mace4 -f send-money.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file send-money.in
+
+set(arithmetic).
+    % set(arithmetic) -> clear(lnh).
+    % set(arithmetic) -> assign(selection_order, 0).
+
+    % Declaring Mace4 arithmetic parse types.
+assign(domain_size,10).
+    % assign(domain_size, 10) -> assign(start_size, 10).
+    % assign(domain_size, 10) -> assign(end_size, 10).
+
+list(distinct).
+[S,E,N,D,M,O,R,Y].
+end_of_list.
+
+formulas(assumptions).
+D + E = Y + C1 * 10.
+N + R + C1 = E + C2 * 10.
+E + O + C2 = N + C3 * 10.
+S + M + C3 = O + M * 10.
+S != 0.
+M != 0.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+D + E = Y + C1 * 10.
+N + R + C1 = E + C2 * 10.
+E + O + C2 = N + C3 * 10.
+S + M + C3 = O + M * 10.
+S != 0.
+M != 0.
+S != E.
+S != N.
+S != D.
+S != M.
+S != O.
+S != R.
+S != Y.
+E != N.
+E != D.
+E != M.
+E != O.
+E != R.
+E != Y.
+N != D.
+N != M.
+N != O.
+N != R.
+N != Y.
+D != M.
+D != O.
+D != R.
+D != Y.
+M != O.
+M != R.
+M != Y.
+O != R.
+O != Y.
+R != Y.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% The largest natural number in the input is 10.
+
+============================== DOMAIN SIZE 10 ========================
+
+============================== MODEL =================================
+
+interpretation( 10, [number=1, seconds=2], [
+
+        function(C1, [ 1 ]),
+
+        function(C2, [ 1 ]),
+
+        function(C3, [ 0 ]),
+
+        function(D, [ 7 ]),
+
+        function(E, [ 5 ]),
+
+        function(M, [ 1 ]),
+
+        function(N, [ 6 ]),
+
+        function(O, [ 0 ]),
+
+        function(R, [ 8 ]),
+
+        function(S, [ 9 ]),
+
+        function(Y, [ 2 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 10.
+
+Current CPU time: 0.00 seconds (total CPU time: 2.70 seconds).
+Ground clauses: seen=34, kept=34.
+Selections=242526, assignments=2425201, propagations=0, current_models=1.
+Rewrite_terms=7196584, rewrite_bools=5030322, indexes=0.
+Rules_from_neg_clauses=0, cross_offs=89005.
+
+============================== end of statistics =====================
+
+User_CPU=2.70, System_CPU=0.02, Wall_clock=3.
+
+Exiting with 1 model.
+
+Process 15830 exit (max_models) Mon Nov 17 21:34:40 2008
+The process finished Mon Nov 17 21:34:40 2008

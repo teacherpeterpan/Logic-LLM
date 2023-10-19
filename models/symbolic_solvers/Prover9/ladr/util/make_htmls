@@ -1,0 +1,11 @@
+#!/bin/csh
+
+if ($#argv == 0) then
+    echo "need n args: filenames with or without extension
+    exit(1)
+endif
+
+foreach f ($argv)
+    echo "doing $f ..."
+    util/to-html $f:r
+end

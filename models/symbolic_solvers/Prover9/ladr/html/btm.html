@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>btm.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "btm.h"</H1>
+
+This page has information from files
+<A HREF="../btm.h">btm.h</A> and <A HREF="../btm.c">btm.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File btm.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fprint_btm_mem">fprint_btm_mem</A></TD><TD><A HREF="#match_bt_first">match_bt_first</A></TD><TD><A HREF="#p_btm_mem">p_btm_mem</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#match_bt_cancel">match_bt_cancel</A></TD><TD><A HREF="#match_bt_next">match_bt_next</A></TD><TD><A HREF="#p_btm_state">p_btm_state</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fprint_btm_mem"></A><HR><PRE><B>void fprint_btm_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the btm package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="match_bt_cancel"></A><HR><PRE><B>void match_bt_cancel(<A HREF="btm.html">Btm_state</A> bt);
+</B></PRE>This routine clears any substitution and frees memory associated
+with a backtrack matching state.  This should be called if you
+get some, but not all, matching substitutions in backtrack matching.
+See <A HREF="#match_bt_first">match_bt_first</A>().
+<A NAME="match_bt_first"></A><HR><PRE><B><A HREF="btm.html">Btm_state</A> match_bt_first(<A HREF="term.html">Term</A> t1, <A HREF="unify.html">Context</A> c1, <A HREF="term.html">Term</A> t2, int partial);
+</B></PRE>This is backtracking matching, to be used when there
+can be more than one unifier.  This version handles (any number of)
+commutative (C) and associative-commutative (AC) function symbols.
+<P>
+The flag `partial' says that if the top level is AC, then
+not all arguments of t2 have to be matched.  The non-matched
+args are put in c1->partial_term.  Partial matches are allowed
+for the top level only.  This is useful for AC rewriting.
+<P>
+If any AC terms are in t1 or t2, then both t1 and t2 should be
+in `ac_canonical()' form before the call, that is, AC terms are
+right associated and sorted.  C terms are in t1 or t2
+need not be c_canonical.  (Commutatvie matching is primitive,
+and you can get duplicate unifiers.)
+<P>
+Get first matching substitution.  Return position for <A HREF="#match_bt_next">match_bt_next</A>()
+calls.  Here is an example.  Assume we have terms t1 and t2.
+<PRE>
+  {
+    <A HREF="unify.html">Context</A> c1 = get_context();
+    <A HREF="btm.html">Btm_state</A> bt = <A HREF="#match_bt_first">match_bt_first</A>(t1, c1, t2, 0);
+    while (bt != NULL) {
+        <A HREF="term.html">Term</A> t3 = apply(t1, c1);
+        zap_term(t3);
+        bt = <A HREF="#match_bt_next">match_bt_next</A>(bt);
+        }
+    free_context(c1);
+  }
+</PRE>
+If you quit before NULL is returned, call <A HREF="#match_bt_cancel">match_bt_cancel</A>(bt)
+to clear substitutions and free memory.
+<A NAME="match_bt_next"></A><HR><PRE><B><A HREF="btm.html">Btm_state</A> match_bt_next(<A HREF="btm.html">Btm_state</A> bt1);
+</B></PRE>This routine gets the next matching substitution.
+See <A HREF="#match_bt_first">match_bt_first</A>() for details.
+<A NAME="p_btm_mem"></A><HR><PRE><B>void p_btm_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the btm package.
+<A NAME="p_btm_state"></A><HR><PRE><B>void p_btm_state(<A HREF="btm.html">Btm_state</A> bt);
+</B></PRE>This routine prints (to stdout) a <A HREF="btm.html">Btm_state</A>.  It is not pretty.
+<HR><A NAME=defns></A><H2>Public Definitions in File btm.h</H2>
+<PRE>
+typedef struct btm_state * <A HREF="btm.html">Btm_state</A>;
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This package handles "backtrack matching", that is, matching
+that allows more than one unifier for a pair of terms, and computes
+the unifiers incrementally by backtracking.  As I write this,
+we support associative commutative (AC) operations and 
+commutative/symmetric (C) operations.  Symbols are declared to be
+AC with set_assoc_comm() and C with set_commutative().
+The use of Terms and Contexts is similar to ordinary matching,
+except that the means for undoing substitutions is different.
+
+<HR>
+</BODY>
+</HTML>

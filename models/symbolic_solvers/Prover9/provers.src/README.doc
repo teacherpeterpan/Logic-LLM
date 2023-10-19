@@ -1,0 +1,4 @@
+unfold_eq:
+  1. eq must be in initial sos, and process_initial_sos must be set.
+  2. constants: if more than 3 unfoldable constants, no constants are unfolded.
+  3. constant is unfolded only if it occurs in a negative clause.

@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<TITLE>memory.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "memory.h"</H1>
+
+This page has information from files
+<A HREF="../memory.h">memory.h</A> and <A HREF="../memory.c">memory.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File memory.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#bytes_palloced">bytes_palloced</A></TD><TD><A HREF="#free_mem">free_mem</A></TD><TD><A HREF="#mega_mem_calls">mega_mem_calls</A></TD><TD><A HREF="#set_max_megs">set_max_megs</A></TD>
+</TR>
+<TR><TD><A HREF="#disable_max_megs">disable_max_megs</A></TD><TD><A HREF="#get_cmem">get_cmem</A></TD><TD><A HREF="#megs_malloced">megs_malloced</A></TD><TD><A HREF="#set_max_megs_proc">set_max_megs_proc</A></TD>
+</TR>
+<TR><TD><A HREF="#enable_max_megs">enable_max_megs</A></TD><TD><A HREF="#get_mem">get_mem</A></TD><TD><A HREF="#memory_report">memory_report</A></TD><TD><A HREF="#tp_alloc">tp_alloc</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="bytes_palloced"></A><HR><PRE><B>int bytes_palloced(void);
+</B></PRE>How many bytes have been allocated by the palloc() routine?
+This includes all of the <A HREF="#get_mem">get_mem</A>() calls.
+<A NAME="disable_max_megs"></A><HR><PRE><B>void disable_max_megs(void);
+</B></PRE><A NAME="enable_max_megs"></A><HR><PRE><B>void enable_max_megs(void);
+</B></PRE><A NAME="free_mem"></A><HR><PRE><B>void free_mem(void *q, unsigned n);
+</B></PRE>Free a chunk of memory that holds n pointers (not n bytes)
+that was returned from a previous <A HREF="#get_mem">get_mem</A>() or <A HREF="#get_cmem">get_cmem</A>() call.
+<A NAME="get_cmem"></A><HR><PRE><B>void *get_cmem(unsigned n);
+</B></PRE>Get a chunk of memory that will hold n pointers (NOT n BYTES).
+The memory is initialized to all 0.
+<A NAME="get_mem"></A><HR><PRE><B>void *get_mem(unsigned n);
+</B></PRE>Get a chunk of memory that will hold n pointers (NOT n BYTES).
+The memory is NOT initialized.
+<A NAME="mega_mem_calls"></A><HR><PRE><B>unsigned mega_mem_calls(void);
+</B></PRE><A NAME="megs_malloced"></A><HR><PRE><B>int megs_malloced(void);
+</B></PRE>This routine returns the number of megabytes that palloc()
+has obtained from the operating system by malloc();
+<A NAME="memory_report"></A><HR><PRE><B>void memory_report(FILE *fp);
+</B></PRE><A NAME="set_max_megs"></A><HR><PRE><B>void set_max_megs(int megs);
+</B></PRE>This routine changes the limit on the amount of memory obtained
+from malloc() by palloc().  The argument is in megabytes.
+The default value is DEFAULT_MAX_MEGS.
+<A NAME="set_max_megs_proc"></A><HR><PRE><B>void set_max_megs_proc(void (*proc)(void));
+</B></PRE>This routine is used to specify the routine that will be called
+if max_megs is exceeded.
+<A NAME="tp_alloc"></A><HR><PRE><B>void *tp_alloc(size_t n);
+</B></PRE>Allocate n bytes of memory, aligned on a pointer boundary.
+The memory is not initialized, and it cannot be freed.
+<HR><A NAME=defns></A><H2>Public Definitions in File memory.h</H2>
+<PRE>
+/* The following definitions exist because the memory get/free
+   routines measure memory by pointers instead of bytes. */
+
+#define CEILING(n,d)   ((n)%(d) == 0 ? (n)/(d) : (n)/(d) + 1)
+#define BYTES_POINTER  sizeof(void *)  /* bytes per pointer */
+#define PTRS(n)        CEILING(n, BYTES_POINTER) /* ptrs needed for n bytes */
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

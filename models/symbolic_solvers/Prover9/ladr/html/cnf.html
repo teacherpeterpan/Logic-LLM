@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>cnf.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "cnf.h"</H1>
+
+This page has information from files
+<A HREF="../cnf.h">cnf.h</A> and <A HREF="../cnf.c">cnf.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File cnf.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#clausify_prepare">clausify_prepare</A></TD><TD><A HREF="#dnf">dnf</A></TD><TD><A HREF="#miniscope">miniscope</A></TD><TD><A HREF="#skolemize">skolemize</A></TD>
+</TR>
+<TR><TD><A HREF="#cnf">cnf</A></TD><TD><A HREF="#formula_copy_share">formula_copy_share</A></TD><TD><A HREF="#miniscope_formula">miniscope_formula</A></TD><TD><A HREF="#unique_quantified_vars">unique_quantified_vars</A></TD>
+</TR>
+<TR><TD><A HREF="#cnf_max_clauses">cnf_max_clauses</A></TD><TD><A HREF="#formula_ident_share">formula_ident_share</A></TD><TD><A HREF="#remove_universal_quantifiers">remove_universal_quantifiers</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="clausify_prepare"></A><HR><PRE><B><A HREF="formula.html">Formula</A> clausify_prepare(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine gets a formula all ready for translation into clauses.
+The sequence of transformations is
+<UL>
+<LI> change to negation normal form;
+<LI> propositional simplification;
+<LI> make the universally quantified variables unique;
+<LI> skolemize (nothing fancy here);
+<LI> remove universal quantifiers, changing the
+     constants-which-represent-variables into genuine variables;
+<LI> change to conjunctive normal form
+     (with basic propositional simplification).
+</UL>
+The caller should not refer to the given formula f after the call;
+A good way to call is <TT>f = <A HREF="#clausify_prepare">clausify_prepare</A>(f)</TT>
+<A NAME="cnf"></A><HR><PRE><B><A HREF="formula.html">Formula</A> cnf(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="cnf_max_clauses"></A><HR><PRE><B>int cnf_max_clauses(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Given an NNF formula, return the maximum number of clauses that
+it can produce.  (The maximum happens if no simplification occurs.)
+<A NAME="dnf"></A><HR><PRE><B><A HREF="formula.html">Formula</A> dnf(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="formula_copy_share"></A><HR><PRE><B><A HREF="formula.html">Formula</A> formula_copy_share(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This function returns a copy of the given formula.
+All subformulas, including the atoms, are copied.
+<A NAME="formula_ident_share"></A><HR><PRE><B>BOOL formula_ident_share(<A HREF="formula.html">Formula</A> f, <A HREF="formula.html">Formula</A> g);
+</B></PRE>This Boolean function checks if two formulas are identical.
+The routine term_ident() checks identity of atoms.
+<P>
+The test is for strict identity---it does not consider
+renamability of bound variables, permutability of AND or OR,
+or symmetry of IFF or equality.
+<A NAME="miniscope"></A><HR><PRE><B><A HREF="formula.html">Formula</A> miniscope(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="miniscope_formula"></A><HR><PRE><B><A HREF="formula.html">Formula</A> miniscope_formula(<A HREF="formula.html">Formula</A> f, unsigned mega_fid_call_limit);
+</B></PRE><A NAME="remove_universal_quantifiers"></A><HR><PRE><B><A HREF="formula.html">Formula</A> remove_universal_quantifiers(<A HREF="formula.html">Formula</A> f);
+</B></PRE>For each universally quantified variable in the given formula,
+<A NAME="skolemize"></A><HR><PRE><B><A HREF="formula.html">Formula</A> skolemize(<A HREF="formula.html">Formula</A> f);
+</B></PRE>This routine Skolemizes an NNF formula.
+The quantified variables need not be named in any particular way.
+If there are universally quantified variables with the same name,
+one in the scope of another, the inner variable will be renamed.
+(Existential nodes are removed.)
+<A NAME="unique_quantified_vars"></A><HR><PRE><B><A HREF="formula.html">Formula</A> unique_quantified_vars(<A HREF="formula.html">Formula</A> f);
+</B></PRE>Rename quantified variables, if necessary, so that each is unique.
+This works for any formula.
+<P>
+If you wish to rename a quantified variable only if it occurs in
+the scope of of a quantified variable with the same name, you
+can use the routine eliminate_rebinding() instead.
+<P>
+(This could be a void routine, because none of the formula nodes
+is changed.)
+<HR><A NAME=defns></A><H2>Public Definitions in File cnf.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

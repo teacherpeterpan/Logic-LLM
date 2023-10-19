@@ -1,0 +1,45 @@
+% prover9 -f t1.in > t1.out
+
+% mace4 -f t1.in > t1.mout
+
+% prooftrans xml -f t1.out > t1.xml
+
+% modelformat xml < t1.mout > t1.xml
+
+% clausefilter interps true_in_all fast < clauses.in > clauses.out
+
+  Filter clauses based on interps
+
+% clausetester interps < clauses.in
+
+  Interps in which each clause is true.
+
+% interpfilter clauses some_false < interps.in > interps.out
+
+  Filter interps based on clauses.
+
+% isofilter < interps.in > interps.out
+
+% renamer < clauses.in > clauses.out
+
+  Renumbers variables.
+
+% rewriter demods < terms.in > terms.out
+
+% hints_rewriter demods < terms.in > terms.out
+
+% upper-covers < lattices.in > lattices.out
+
+===============================================
+
+% idfilter demods < terms.in > terms.out
+
+  Try to rewrite equations to x=x.
+
+% latfilter < eqs.in > eqs.out
+
+% olfilter < eqs.in > eqs.out
+
+% unfast < terms.in > terms.out
+
+% miniscope

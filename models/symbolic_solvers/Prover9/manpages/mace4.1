@@ -1,0 +1,86 @@
+.TH MACE4 1 "August 12, 2007"
+.SH NAME
+mace4 \- searches for finite countermodels of first-order statements
+.SH SYNOPSIS
+.B mace4
+.RI [ options ]
+<
+.I input-file
+>
+.I output-file
+.SH DESCRIPTION
+This manual page documents briefly the
+.B mace4
+command.
+.PP
+The program \fBmace4\fP searches for finite structures satisfying first-order and equational statements, the same kind of statement that
+.BR prover9 (1)
+accepts. If the statement is the denial of some conjecture, any structures found by \fBmace4\fP are counterexamples to the conjecture.  \fBmace4\fP can be a valuable complement to
+.BR prover9 (1),
+looking for counterexamples before (or at the same time as) using
+.BR prover9 (1)
+to search for a proof. It can also be used to help debug input clauses and formulas for
+.BR prover9 (1).
+.SH OPTIONS
+A summary of options is included below.  Options override the equivalent settings given in the input file.  To set or clear a flag, you must give 1 or 0 as the value.
+.TP
+.B \-help
+This tells \fBmace4\fP to print a summary of these command-line options.
+.TP
+.B \-n \fIn
+This gives the starting domain size for the search. The default value is 2. If you also give an \fB-N\fP option, \fBmace4\fP will iterate domain sizes up through the \fB-N\fP value, using an increment given by the \fB-I\fP value. Otherwise, \fBmace4\fP will search only for the \fB-n\fP value.
+.TP
+.B \-N \fIn
+This gives the ending domain size for the search. The default is 10.
+.TP
+.B \-i \fIn
+This gives the domain size increment for the search. The default is 1.
+.TP
+.B \-q \fIn
+This flag overrides the parameter iterate. It says to try the sizes that are prime numbers, from \fB-n\fP up through \fB-N\fP.
+.TP
+.B \-m \fIn
+Stop searching when the \fIn\fPth structure has been found.  The default is 1.
+.TP
+.B \-t \fIn
+Stop searching after \fIn\fP seconds.
+.TP
+.B \-s \fIn
+Allow at most \fIn\fP seconds for each domain size. The parameter can be used (together with \fB-t\fP) to give an overall time limit.
+.TP
+.B \-b \fIn
+Stop searching when (about) \fIn\fP megabytes of memory have been used.
+.TP
+.B \-V \fIn
+A rule is needed for distinguishing variables from constants in clauses and formulas with free variables. If this flag is clear, variables start with (lower case) `u' through `z'. If this flag is set, variables in clauses start with (upper case) `A' through `Z' or `_'.
+.TP
+.B \-P \fIn
+If this flag is set, all structures that are found are printed in `standard' form, which means they are suitable as input to other LADR programs such as
+.BR isofilter (1)
+and
+.BR interpformat (1).
+.TP
+.B \-p \fIn
+If this flag is set, and if \fB-P\fP is clear, all structures that are found are printed in a tabular form.
+.TP
+.B \-R \fIn
+If this flag is set, a ring structure is is applied to the search. The operations {+,-,*} are assumed to be the ring of integers (mod domain_size). This method puts a tight constraint on the search, allowing much larger structures to be investigated.
+.TP
+.B \-v \fIn
+If this flag is set, the output file receives information about the search, including the initial partial model (the part of the model that can be determined before backtracking starts) and timing and other statistics for each domain size. (It does not give a trace of the backtracking, so it does not consume a lot of file space.) 
+.TP
+.B \-T \fIn
+If the trace flag is set, detailed information about the search, including a trace of all assignments and backtracking, is printed to the standard output. This flag causes a lot of output, so it should be used only on small searches.
+.PP
+There also exist a number of advanced options, which are used for experimentation with search methods. They can be ignored by nearly all users. For descriptions of these options, see the original \fBmace4\fP manual.
+.SH SEE ALSO
+.BR prover9 (1).
+.br
+Full documentation for \fBmace4\fP is found in the \fBprover9\fP manual, available on Debian systems in the \fIprover9-doc\fP package at \fI/usr/share/doc/prover9-doc/manual/index.html\fP.
+.br
+The original \fBmace4\fP manual, which can be downloaded at http://www.cs.unm.edu/~mccune/prover9/mace4.pdf
+.SH AUTHOR
+\fBmace4\fP ws written by William McCune <mccune@cs.unm.edu>
+.PP
+This manual page was written by Peter Collingbourne <pcc03@doc.ic.ac.uk>,
+for the Debian project (but may be used by others).

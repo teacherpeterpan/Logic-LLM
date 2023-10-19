@@ -1,0 +1,86 @@
+#!/usr/bin/perl
+
+$this_file = __FILE__;
+
+sub member {
+    local ($h, $l) = @_;
+    return ($l =~ /\b$h\b/);
+}
+
+sub append_desc {
+    local ($a, $b) = @_;
+    local $d;
+    foreach $d (split(" ", $b)) {
+	if (!&member($d, $a)) {
+	    $a = $a . " " . $d;
+	}
+    }
+    return $a;
+}
+
+sub descendents {
+    local ($h) = @_;
+    print "call with $h, $Done{$h}.\n";
+    if (!$Done{$h}) {
+	local ($d, $k);
+	$d = $Kids{$h};
+	foreach $k (split(" ", $d)) {
+	    $d = &append_desc($d, &descendents($k));
+	}
+	$Desc{$h} = $d;
+	$Done{$h} = 1;
+    }
+    # print "returning $h: $Desc{$h}\n";
+    return $Desc{$h};
+}
+
+if (scalar(@ARGV) == 0) {
+    print "Usage: $this_file filenames (with .o)\n";
+    exit 1;
+}
+
+# MAIN
+
+foreach $ofile (@ARGV) {
+    $hfile = $ofile;
+    $hfile =~ s/\.o/.h/;
+    push(@hfiles, $hfile);
+    open(FH, "<$hfile");
+    @lines = <FH>;
+    @includes = grep(/^#include\s+\"/, @lines);
+    foreach $includeline (@includes) {
+	($junk,$kid) = split("\"", $includeline);
+
+	if (!defined($Kids{$hfile})) {
+	    $Kids{$hfile} = $kid;
+	}
+	else {
+	    $Kids{$hfile} = $Kids{$hfile} . " $kid";
+	}
+    }
+    close(FH);
+}
+
+foreach $hfile (@hfiles) {
+    @desc = &descendents($hfile);
+}
+
+`/bin/mv Makefile Makefile.bak`;
+print "\nMakefile has been backed up to Makefile.bak\n";
+
+open(FIN, "<Makefile.bak");
+open(FOUT, ">Makefile");
+
+$line = <FIN>;
+while (!$done) {
+    $done = ($line =~ /rest of the file/);
+    print FOUT "$line";
+    $line = <FIN>;
+}
+
+foreach $hfile (@hfiles) {
+    $ofile = $hfile;
+    $ofile =~ s/\.h/.o/;
+    print FOUT "\n$ofile:   \t$hfile $Desc{$hfile}\n";
+}
+

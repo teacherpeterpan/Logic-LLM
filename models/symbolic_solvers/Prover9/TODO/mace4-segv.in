@@ -1,0 +1,63 @@
+assign(max_seconds, 60).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reference
+%
+%    On Some Ternary Relations in Lattices
+%    R. Padmanabhan
+%    Colloquium Mathematicum 15:195-198, 1966.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+set(expand_relational_defs).
+
+formulas(assumptions).
+
+% Lattice Theory
+
+x ^ y = y ^ x                # label("commutativity_meet").
+x v y = y v x                # label("commutativity_join").
+(x ^ y) ^ z = x ^ (y ^ z)    # label("associativity_meet").
+(x v y) v z = x v (y v z)    # label("associativity_join").
+(x v y) ^ x = x              # label("absorption_1").
+(x ^ y) v x = x              # label("absorption_2").
+
+end_of_list.
+
+formulas(assumptions).
+
+% Definition of less-than-or-equal
+
+all x all y ((x <= y) <-> x ^ y = x).
+
+% Definitions of ternary relations
+
+all x all y all z (A(x,y,z)
+    <-> ((x <= y & y <= z) | (z <= y & y <= x))).
+
+all x all y all z (B(x,y,z)
+    <-> (((x ^ y) v (y ^ z) = y) & ((x v y) ^ (y v z) = y))).
+ 
+all x all y all z (C(x,y,z)
+   <-> ((((x ^ y) v (y ^ z)) = y) & ((x ^ z) v y = y))).
+
+all x all y all z (CS(x,y,z)
+   <-> ((((x v y) ^ (y v z)) = y) & ((x v z) ^ y = y))).
+ 
+all x all y all z (D(x,y,z)
+   <-> ( ((x ^ z) <= y) & (y <= (x v z)))).
+
+end_of_list.
+
+formulas(goals).
+
+% all a all x all b (  A(a,x,b) ->  B(a,x,b)).
+% all a all x all b (  B(a,x,b) ->  C(a,x,b)).
+% all a all x all b (  C(a,x,b) ->  D(a,x,b)).
+% all a all x all b (  B(a,x,b) -> CS(a,x,b)).
+% all a all x all b ( CS(a,x,b) ->  D(a,x,b)).
+
+% all a all x all b (  B(a,x,b) ->  A(a,x,b)).  % 4
+% all a all x all b (  C(a,x,b) ->  B(a,x,b)).  % 5
+all a all x all b (  C(a,x,b) ->  C(a,x,b)).  %
+
+end_of_list.

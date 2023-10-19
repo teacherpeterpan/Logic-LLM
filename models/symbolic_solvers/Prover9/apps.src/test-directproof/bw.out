@@ -1,0 +1,379 @@
+============================== Prover9 ===============================
+Prover9 (32) version Dec-2007, Dec 2007.
+Process 9270 was started by mccune on cleo,
+Tue Jan 22 11:28:26 2008
+The command was "prover9 -f bw.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file bw.in
+
+assign(max_seconds,30).
+assign(order,kbo).
+
+formulas(assumptions).
+a(a(a(B,x),y),z) = a(x,a(y,z)) # label(B).
+a(a(W,x),y) = a(a(x,y),y) # label(W).
+end_of_list.
+
+formulas(goals).
+(exists Q all x a(Q,x) = a(x,a(Q,x))) # label(fixed_point_combinator).
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (exists Q all x a(Q,x) = a(x,a(Q,x))) # label(fixed_point_combinator) # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+a(a(a(B,x),y),z) = a(x,a(y,z)) # label(B).  [assumption].
+a(a(W,x),y) = a(a(x,y),y) # label(W).  [assumption].
+a(x,f1(x)) != a(f1(x),a(x,f1(x))) # label(fixed_point_combinator).  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:
+  % copying label fixed_point_combinator to answer in negative clause
+
+Term ordering decisions:
+
+% Assigning unary symbol f1 kb_weight 0 and highest precedence (5).
+Function symbol KB weights:  B=1. W=1. a=1. f1=0.
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ B, W, a, f1 ]).
+Skipping inverse_order, because term ordering is KBO.
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+
+Auto_process settings:  (no changes).
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+2 a(a(a(B,x),y),z) = a(x,a(y,z)) # label(B).  [assumption].
+3 a(a(W,x),y) = a(a(x,y),y) # label(W).  [assumption].
+5 a(f1(x),a(x,f1(x))) != a(x,f1(x)) # answer(fixed_point_combinator).  [copy(4),flip(a)].
+end_of_list.
+
+formulas(demodulators).
+2 a(a(a(B,x),y),z) = a(x,a(y,z)) # label(B).  [assumption].
+3 a(a(W,x),y) = a(a(x,y),y) # label(W).  [assumption].
+        % (lex-dep)
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (I,wt=13): 2 a(a(a(B,x),y),z) = a(x,a(y,z)) # label(B).  [assumption].
+
+given #2 (I,wt=11): 3 a(a(W,x),y) = a(a(x,y),y) # label(W).  [assumption].
+
+given #3 (I,wt=12): 5 a(f1(x),a(x,f1(x))) != a(x,f1(x)) # answer(fixed_point_combinator).  [copy(4),flip(a)].
+
+given #4 (A,wt=15): 6 a(x,a(a(W,y),z)) = a(x,a(a(y,z),z)).  [para(3(a,1),2(a,2,2)),rewrite([2(6)])].
+
+given #5 (F,wt=28): 13 a(f1(a(a(B,x),y)),a(x,a(y,f1(a(a(B,x),y))))) != a(x,a(y,f1(a(a(B,x),y)))) # answer(fixed_point_combinator).  [para(2(a,1),5(a,1,2)),rewrite([2(19)])].
+
+given #6 (F,wt=28): 29 a(f1(a(a(W,B),x)),a(x,a(x,f1(a(a(B,x),x))))) != a(x,a(x,f1(a(a(B,x),x)))) # answer(fixed_point_combinator).  [para(3(a,2),13(a,1,1,1))].
+
+given #7 (F,wt=28): 30 a(f1(a(a(B,x),x)),a(x,a(x,f1(a(a(W,B),x))))) != a(x,a(x,f1(a(a(B,x),x)))) # answer(fixed_point_combinator).  [para(3(a,2),13(a,1,2,2,2,1))].
+
+given #8 (F,wt=28): 31 a(f1(a(a(B,x),x)),a(x,a(x,f1(a(a(B,x),x))))) != a(x,a(x,f1(a(a(W,B),x)))) # answer(fixed_point_combinator).  [para(3(a,2),13(a,2,2,2,1))].
+
+given #9 (T,wt=11): 11 a(a(W,W),x) = a(a(x,x),x).  [para(3(a,1),3(a,2))].
+
+given #10 (T,wt=13): 7 a(a(a(W,B),x),y) = a(x,a(x,y)).  [para(3(a,2),2(a,1,1))].
+
+given #11 (T,wt=13): 8 a(a(W,a(B,x)),y) = a(x,a(y,y)).  [para(3(a,2),2(a,1))].
+
+given #12 (T,wt=13): 66 a(a(W,a(W,B)),x) = a(x,a(x,x)).  [para(7(a,1),3(a,2))].
+
+given #13 (A,wt=17): 9 a(a(W,a(a(B,x),y)),z) = a(a(x,a(y,z)),z).  [para(2(a,1),3(a,2,1))].
+
+given #14 (F,wt=28): 46 a(f1(a(a(W,B),x)),a(x,a(x,f1(a(a(W,B),x))))) != a(x,a(x,f1(a(a(B,x),x)))) # answer(fixed_point_combinator).  [para(3(a,2),29(a,1,2,2,2,1))].
+
+given #15 (F,wt=28): 47 a(f1(a(a(W,B),x)),a(x,a(x,f1(a(a(B,x),x))))) != a(x,a(x,f1(a(a(W,B),x)))) # answer(fixed_point_combinator).  [para(3(a,2),29(a,2,2,2,1))].
+
+given #16 (F,wt=28): 53 a(f1(a(a(B,x),x)),a(x,a(x,f1(a(a(W,B),x))))) != a(x,a(x,f1(a(a(W,B),x)))) # answer(fixed_point_combinator).  [para(3(a,2),30(a,2,2,2,1))].
+
+given #17 (F,wt=28): 263 a(f1(a(a(W,B),x)),a(x,a(x,f1(a(a(W,B),x))))) != a(x,a(x,f1(a(a(W,B),x)))) # answer(fixed_point_combinator).  [para(3(a,2),46(a,2,2,2,1))].
+
+given #18 (T,wt=15): 10 a(a(a(x,y),y),y) = a(a(W,a(W,x)),y).  [para(3(a,1),3(a,2,1)),flip(a)].
+
+given #19 (T,wt=13): 283 a(a(W,a(W,W)),B) = a(B,a(B,B)).  [para(10(a,1),7(a,1))].
+
+given #20 (T,wt=15): 12 a(a(a(W,x),y),y) = a(a(W,a(x,y)),y).  [para(3(a,2),3(a,2,1)),flip(a)].
+
+given #21 (T,wt=15): 24 a(x,a(a(W,W),y)) = a(x,a(a(y,y),y)).  [para(3(a,1),6(a,2,2))].
+
+given #22 (A,wt=19): 14 a(a(a(W,x),y),a(z,u)) = a(a(a(x,y),y),a(z,u)).  [para(6(a,1),2(a,1,1,1)),rewrite([2(6)]),flip(a)].
+
+given #23 (F,wt=30): 71 a(f1(a(a(W,B),x)),a(x,a(x,f1(a(a(W,B),x))))) != a(a(a(W,B),x),f1(a(a(W,B),x))) # answer(fixed_point_combinator).  [para(7(a,1),5(a,1,2))].
+
+given #24 (F,wt=30): 72 a(f1(a(a(W,B),x)),a(a(a(W,B),x),f1(a(a(W,B),x)))) != a(x,a(x,f1(a(a(W,B),x)))) # answer(fixed_point_combinator).  [para(7(a,1),5(a,2))].
+
+given #25 (F,wt=30): 86 a(f1(a(a(B,x),x)),a(a(a(W,B),x),f1(a(a(B,x),x)))) != a(x,a(x,f1(a(a(B,x),x)))) # answer(fixed_point_combinator).  [para(7(a,2),13(a,1,2))].
+
+given #26 (F,wt=30): 88 a(f1(a(a(B,x),x)),a(x,a(x,f1(a(a(B,x),x))))) != a(a(a(W,B),x),f1(a(a(B,x),x))) # answer(fixed_point_combinator).  [para(7(a,2),13(a,2))].
+
+given #27 (T,wt=15): 58 a(a(a(x,x),x),x) = a(a(W,a(W,W)),x).  [para(11(a,1),3(a,2,1)),flip(a)].
+
+given #28 (T,wt=15): 67 a(a(W,a(W,x)),y) = a(a(W,a(x,y)),y).  [para(7(a,2),3(a,1,1)),rewrite([3(5),2(6),12(9)])].
+
+given #29 (T,wt=15): 161 a(a(a(W,a(B,W)),B),x) = a(B,a(x,x)).  [para(8(a,2),8(a,1,1))].
+
+given #30 (T,wt=15): 273 a(a(a(x,y),y),y) = a(a(W,a(x,y)),y).  [para(10(a,2),3(a,1)),rewrite([12(7)])].
+
+given #31 (A,wt=19): 15 a(x,a(a(a(W,y),z),u)) = a(x,a(a(a(y,z),z),u)).  [para(6(a,1),2(a,1,1)),rewrite([2(6)]),flip(a)].
+
+given #32 (F,wt=30): 95 a(f1(a(a(W,B),x)),a(a(a(W,B),x),f1(a(a(B,x),x)))) != a(x,a(x,f1(a(a(B,x),x)))) # answer(fixed_point_combinator).  [para(7(a,2),29(a,1,2))].
+
+given #33 (F,wt=30): 96 a(f1(a(a(W,B),x)),a(x,a(x,f1(a(a(B,x),x))))) != a(a(a(W,B),x),f1(a(a(B,x),x))) # answer(fixed_point_combinator).  [para(7(a,2),29(a,2))].
+
+given #34 (F,wt=30): 98 a(f1(a(a(B,x),x)),a(a(a(W,B),x),f1(a(a(W,B),x)))) != a(x,a(x,f1(a(a(B,x),x)))) # answer(fixed_point_combinator).  [para(7(a,2),30(a,1,2))].
+
+given #35 (F,wt=30): 99 a(f1(a(a(B,x),x)),a(x,a(x,f1(a(a(W,B),x))))) != a(a(a(W,B),x),f1(a(a(B,x),x))) # answer(fixed_point_combinator).  [para(7(a,2),30(a,2))].
+
+given #36 (T,wt=15): 315 a(a(a(W,a(B,W)),W),B) = a(B,a(B,B)).  [para(7(a,2),283(a,1,1)),rewrite([3(5),3(7,R)])].
+
+given #37 (T,wt=15): 316 a(a(a(W,a(W,B)),W),B) = a(B,a(B,B)).  [para(66(a,2),283(a,1,1))].
+
+given #38 (T,wt=15): 333 a(a(W,a(W,W)),x) = a(a(W,a(x,x)),x).  [para(12(a,1),10(a,1)),flip(a)].
+
+given #39 (T,wt=15): 559 a(a(W,a(W,a(B,W))),B) = a(B,a(B,B)).  [para(161(a,1),3(a,2))].
+
+given #40 (A,wt=19): 16 a(x,a(y,a(a(W,z),u))) = a(x,a(y,a(a(z,u),u))).  [para(6(a,1),2(a,1)),rewrite([2(6)]),flip(a)].
+
+given #41 (F,wt=30): 100 a(f1(a(a(B,x),x)),a(a(a(W,B),x),f1(a(a(B,x),x)))) != a(x,a(x,f1(a(a(W,B),x)))) # answer(fixed_point_combinator).  [para(7(a,2),31(a,1,2))].
+
+given #42 (F,wt=30): 102 a(f1(a(a(B,x),x)),a(x,a(x,f1(a(a(B,x),x))))) != a(a(a(W,B),x),f1(a(a(W,B),x))) # answer(fixed_point_combinator).  [para(7(a,2),31(a,2))].
+
+given #43 (F,wt=30): 264 a(f1(a(a(W,B),x)),a(a(a(W,B),x),f1(a(a(W,B),x)))) != a(x,a(x,f1(a(a(B,x),x)))) # answer(fixed_point_combinator).  [para(7(a,2),46(a,1,2))].
+
+given #44 (F,wt=30): 265 a(f1(a(a(W,B),x)),a(x,a(x,f1(a(a(W,B),x))))) != a(a(a(W,B),x),f1(a(a(B,x),x))) # answer(fixed_point_combinator).  [para(7(a,2),46(a,2))].
+
+given #45 (T,wt=17): 18 a(x,a(a(W,a(B,y)),z)) = a(x,a(y,a(z,z))).  [para(2(a,1),6(a,2,2))].
+
+given #46 (T,wt=17): 56 a(x,a(a(B,x),a(B,x))) = a(a(W,W),a(B,x)).  [para(11(a,2),2(a,1)),flip(a)].
+
+given #47 (T,wt=17): 62 a(x,a(a(a(W,B),y),z)) = a(x,a(y,a(y,z))).  [para(7(a,1),2(a,2,2)),rewrite([2(8)])].
+
+given #48 (T,wt=17): 65 a(a(W,a(a(W,B),x)),y) = a(a(x,a(x,y)),y).  [para(7(a,1),3(a,2,1))].
+
+given #49 (A,wt=21): 17 a(x,a(a(W,a(a(B,y),z)),u)) = a(x,a(a(y,a(z,u)),u)).  [para(2(a,1),6(a,2,2,1))].
+
+given #50 (F,wt=30): 268 a(f1(a(a(W,B),x)),a(a(a(W,B),x),f1(a(a(B,x),x)))) != a(x,a(x,f1(a(a(W,B),x)))) # answer(fixed_point_combinator).  [para(7(a,2),47(a,1,2))].
+
+given #51 (F,wt=30): 269 a(f1(a(a(W,B),x)),a(x,a(x,f1(a(a(B,x),x))))) != a(a(a(W,B),x),f1(a(a(W,B),x))) # answer(fixed_point_combinator).  [para(7(a,2),47(a,2))].
+
+given #52 (F,wt=30): 270 a(f1(a(a(B,x),x)),a(a(a(W,B),x),f1(a(a(W,B),x)))) != a(x,a(x,f1(a(a(W,B),x)))) # answer(fixed_point_combinator).  [para(7(a,2),53(a,1,2))].
+
+given #53 (F,wt=30): 271 a(f1(a(a(B,x),x)),a(x,a(x,f1(a(a(W,B),x))))) != a(a(a(W,B),x),f1(a(a(W,B),x))) # answer(fixed_point_combinator).  [para(7(a,2),53(a,2))].
+
+given #54 (T,wt=17): 75 a(x,a(a(W,a(W,B)),y)) = a(x,a(y,a(y,y))).  [para(7(a,1),6(a,2,2))].
+
+given #55 (T,wt=17): 122 a(a(W,a(W,a(B,x))),y) = a(a(x,a(y,y)),y).  [para(8(a,1),3(a,2,1))].
+
+given #56 (T,wt=17): 123 a(a(a(W,a(B,W)),x),y) = a(a(a(x,x),y),y).  [para(8(a,2),3(a,1,1))].
+
+given #57 (T,wt=15): 1581 a(a(a(x,x),y),y) = a(a(W,a(x,x)),y).  [para(3(a,1),123(a,1,1)),rewrite([2(5)]),flip(a)].
+
+given #58 (A,wt=19): 19 a(a(a(a(W,x),y),z),z) = a(a(W,a(a(x,y),y)),z).  [para(6(a,1),3(a,1,1)),flip(a)].
+
+given #59 (F,wt=32): 494 a(f1(a(a(B,x),x)),a(a(a(W,B),x),f1(a(a(B,x),x)))) != a(a(a(W,B),x),f1(a(a(B,x),x))) # answer(fixed_point_combinator).  [para(7(a,2),86(a,2))].
+
+given #60 (F,wt=32): 619 a(f1(a(a(W,x),y)),a(a(a(x,y),y),f1(a(a(W,x),y)))) != a(a(a(W,x),y),f1(a(a(W,x),y))) # answer(fixed_point_combinator).  [para(15(a,1),5(a,1))].
+
+given #61 (F,wt=32): 620 a(f1(a(a(x,y),y)),a(a(a(W,x),y),f1(a(a(x,y),y)))) != a(a(a(x,y),y),f1(a(a(x,y),y))) # answer(fixed_point_combinator).  [para(15(a,2),5(a,1))].
+
+given #62 (F,wt=32): 737 a(f1(a(a(W,B),x)),a(a(a(W,B),x),f1(a(a(B,x),x)))) != a(a(a(W,B),x),f1(a(a(B,x),x))) # answer(fixed_point_combinator).  [para(7(a,2),95(a,2))].
+
+given #63 (T,wt=17): 167 a(a(W,a(W,a(W,B))),x) = a(a(x,a(x,x)),x).  [para(66(a,1),3(a,2,1))].
+
+given #64 (T,wt=17): 168 a(a(a(W,a(W,B)),W),x) = a(a(W,a(W,x)),x).  [para(66(a,2),3(a,1,1)),rewrite([12(13)])].
+
+given #65 (T,wt=17): 293 a(a(a(W,a(B,W)),W),x) = a(a(W,a(x,x)),x).  [para(8(a,2),10(a,2,1)),rewrite([12(4)]),flip(a)].
+
+given #66 (T,wt=17): 313 a(a(W,a(W,a(W,W))),B) = a(a(B,a(B,B)),B).  [para(283(a,1),3(a,2,1))].
+
+given #67 (A,wt=23): 20 a(a(x,a(a(y,z),z)),a(a(W,y),z)) = a(a(W,x),a(a(W,y),z)).  [para(6(a,1),3(a,2,1)),flip(a)].
+
+given #68 (F,wt=32): 738 a(f1(a(a(B,x),x)),a(a(a(W,B),x),f1(a(a(W,B),x)))) != a(a(a(W,B),x),f1(a(a(B,x),x))) # answer(fixed_point_combinator).  [para(7(a,2),98(a,2))].
+
+given #69 (F,wt=32): 915 a(f1(a(a(B,x),x)),a(a(a(W,B),x),f1(a(a(B,x),x)))) != a(a(a(W,B),x),f1(a(a(W,B),x))) # answer(fixed_point_combinator).  [para(7(a,2),100(a,2))].
+
+given #70 (F,wt=32): 916 a(f1(a(a(W,B),x)),a(a(a(W,B),x),f1(a(a(W,B),x)))) != a(a(a(W,B),x),f1(a(a(B,x),x))) # answer(fixed_point_combinator).  [para(7(a,2),264(a,2))].
+
+given #71 (F,wt=32): 1399 a(f1(a(a(W,B),x)),a(a(a(W,B),x),f1(a(a(B,x),x)))) != a(a(a(W,B),x),f1(a(a(W,B),x))) # answer(fixed_point_combinator).  [para(7(a,2),268(a,2))].
+
+given #72 (T,wt=17): 500 a(a(a(W,a(B,W)),W),x) = a(a(a(x,x),x),x).  [para(7(a,2),58(a,2,1)),rewrite([3(8),3(10,R)]),flip(a)].
+
+given #73 (T,wt=17): 532 a(a(a(W,a(B,W)),W),x) = a(a(W,a(W,x)),x).  [para(8(a,2),67(a,1,1))].
+
+given #74 (T,wt=17): 541 a(a(W,a(a(B,W),x)),y) = a(a(W,a(W,x)),y).  [para(67(a,2),9(a,2))].
+
+given #75 (T,wt=17): 1171 a(a(a(a(W,B),x),y),y) = a(a(x,a(x,y)),y).  [para(65(a,1),3(a,1)),flip(a)].
+
+given #76 (A,wt=23): 21 a(a(x,a(a(W,y),z)),a(a(y,z),z)) = a(a(W,x),a(a(W,y),z)).  [para(6(a,1),3(a,2)),flip(a)].
+
+given #77 (F,wt=32): 1400 a(f1(a(a(B,x),x)),a(a(a(W,B),x),f1(a(a(W,B),x)))) != a(a(a(W,B),x),f1(a(a(W,B),x))) # answer(fixed_point_combinator).  [para(7(a,2),270(a,2))].
+
+given #78 (F,wt=32): 1906 a(f1(a(a(x,y),y)),a(a(a(x,y),y),f1(a(a(W,x),y)))) != a(a(a(W,x),y),f1(a(a(W,x),y))) # answer(fixed_point_combinator).  [para(3(a,1),619(a,1,1,1))].
+
+given #79 (F,wt=32): 1908 a(f1(a(a(W,W),x)),a(a(a(x,x),x),f1(a(a(W,W),x)))) != a(a(a(W,W),x),f1(a(a(W,W),x))) # answer(fixed_point_combinator).  [para(3(a,1),619(a,1,2,1))].
+
+given #80 (F,wt=32): 1909 a(f1(a(a(W,x),y)),a(a(a(x,y),y),f1(a(a(x,y),y)))) != a(a(a(W,x),y),f1(a(a(W,x),y))) # answer(fixed_point_combinator).  [para(3(a,1),619(a,1,2,2,1))].
+
+given #81 (T,wt=17): 1557 a(a(W,a(W,a(B,W))),x) = a(a(W,a(W,W)),x).  [para(122(a,2),333(a,2)),flip(a)].
+
+given #82 (T,wt=17): 1580 a(a(a(W,a(B,W)),x),y) = a(a(W,a(x,x)),y).  [para(123(a,2),3(a,2)),flip(a)].
+
+given #83 (T,wt=15): 3227 a(a(a(W,a(B,W)),B),x) = a(B,a(x,x)).  [para(1580(a,2),8(a,1))].
+
+given #84 (T,wt=17): 2410 a(a(a(W,a(W,B)),W),x) = a(a(W,a(W,W)),x).  [para(168(a,2),9(a,2)),rewrite([541(8)]),flip(a)].
+
+given #85 (A,wt=19): 22 a(a(a(a(x,y),y),z),z) = a(a(W,a(a(W,x),y)),z).  [para(6(a,2),3(a,1,1)),flip(a)].
+
+given #86 (F,wt=32): 1910 a(f1(a(a(W,x),y)),a(a(a(x,y),y),f1(a(a(W,x),y)))) != a(a(a(x,y),y),f1(a(a(W,x),y))) # answer(fixed_point_combinator).  [para(3(a,1),619(a,2,1))].
+
+given #87 (F,wt=32): 1911 a(f1(a(a(W,x),y)),a(a(a(x,y),y),f1(a(a(W,x),y)))) != a(a(a(W,x),y),f1(a(a(x,y),y))) # answer(fixed_point_combinator).  [para(3(a,1),619(a,2,2,1))].
+
+given #88 (F,wt=32): 1912 a(f1(a(a(W,W),x)),a(a(a(x,x),x),f1(a(a(W,x),x)))) != a(a(a(W,x),x),f1(a(a(W,x),x))) # answer(fixed_point_combinator).  [para(3(a,2),619(a,1,1,1))].
+
+given #89 (F,wt=32): 1913 a(f1(a(a(W,x),x)),a(a(a(x,x),x),f1(a(a(W,W),x)))) != a(a(a(W,x),x),f1(a(a(W,x),x))) # answer(fixed_point_combinator).  [para(3(a,2),619(a,1,2,2,1))].
+
+given #90 (T,wt=17): 2702 a(a(a(W,W),a(B,W)),x) = a(a(W,a(W,W)),x).  [para(8(a,2),541(a,1,1)),rewrite([3(9,R),1557(16)])].
+
+given #91 (T,wt=19): 23 a(x,a(a(a(y,z),z),z)) = a(x,a(a(W,a(W,y)),z)).  [para(3(a,1),6(a,2,2,1)),flip(a)].
+
+given #92 (T,wt=19): 60 a(x,a(a(a(y,y),y),y)) = a(x,a(a(W,a(W,W)),y)).  [para(11(a,1),6(a,2,2,1)),flip(a)].
+
+given #93 (T,wt=19): 63 a(a(a(a(W,B),a(B,x)),y),z) = a(x,a(x,a(y,z))).  [para(7(a,2),2(a,1,1)),rewrite([2(12)])].
+
+given #94 (A,wt=23): 25 a(x,a(a(a(a(W,y),z),u),u)) = a(x,a(a(W,a(a(y,z),z)),u)).  [para(6(a,1),6(a,1,2,1)),flip(a)].
+
+given #95 (F,wt=32): 1914 a(f1(a(a(W,x),x)),a(a(a(x,x),x),f1(a(a(W,x),x)))) != a(a(a(W,W),x),f1(a(a(W,x),x))) # answer(fixed_point_combinator).  [para(3(a,2),619(a,2,1))].
+
+given #96 (F,wt=32): 1915 a(f1(a(a(W,x),x)),a(a(a(x,x),x),f1(a(a(W,x),x)))) != a(a(a(W,x),x),f1(a(a(W,W),x))) # answer(fixed_point_combinator).  [para(3(a,2),619(a,2,2,1))].
+
+given #97 (F,wt=32): 1933 a(f1(a(a(x,x),x)),a(a(a(W,x),x),f1(a(a(W,W),x)))) != a(a(a(W,W),x),f1(a(a(W,W),x))) # answer(fixed_point_combinator).  [para(11(a,1),619(a,1,1,1))].
+
+given #98 (F,wt=32): 1935 a(f1(a(a(W,W),x)),a(a(a(W,x),x),f1(a(a(x,x),x)))) != a(a(a(W,W),x),f1(a(a(W,W),x))) # answer(fixed_point_combinator).  [para(11(a,1),619(a,1,2,2,1))].
+
+given #99 (T,wt=19): 68 a(a(a(a(W,B),x),y),a(x,y)) = a(a(W,x),a(x,y)).  [para(7(a,2),3(a,2,1)),flip(a)].
+
+given #100 (T,wt=19): 69 a(a(a(W,B),a(W,x)),y) = a(a(W,x),a(a(x,y),y)).  [para(3(a,1),7(a,2,2))].
+
+given #101 (T,wt=19): 70 a(a(a(W,B),a(x,y)),y) = a(a(x,y),a(a(W,x),y)).  [para(3(a,2),7(a,2,2))].
+
+given #102 (T,wt=19): 77 a(x,a(a(W,a(W,y)),z)) = a(x,a(a(W,a(y,z)),z)).  [para(7(a,2),6(a,1,2,1)),rewrite([3(5),2(6),12(10)])].
+
+given #103 (A,wt=23): 26 a(x,a(a(a(a(y,z),z),u),u)) = a(x,a(a(W,a(a(W,y),z)),u)).  [para(6(a,2),6(a,1,2,1)),flip(a)].
+
+given #104 (F,wt=32): 1936 a(f1(a(a(W,W),x)),a(a(a(W,x),x),f1(a(a(W,W),x)))) != a(a(a(x,x),x),f1(a(a(W,W),x))) # answer(fixed_point_combinator).  [para(11(a,1),619(a,2,1))].
+
+given #105 (F,wt=32): 1937 a(f1(a(a(W,W),x)),a(a(a(W,x),x),f1(a(a(W,W),x)))) != a(a(a(W,W),x),f1(a(a(x,x),x))) # answer(fixed_point_combinator).  [para(11(a,1),619(a,2,2,1))].
+
+given #106 (F,wt=32): 2160 a(f1(a(a(x,x),x)),a(a(a(W,W),x),f1(a(a(W,x),x)))) != a(a(a(W,x),x),f1(a(a(W,x),x))) # answer(fixed_point_combinator).  [para(3(a,1),620(a,1,1,1))].
+
+given #107 (F,wt=32): 2162 a(f1(a(a(W,x),x)),a(a(a(W,W),x),f1(a(a(x,x),x)))) != a(a(a(W,x),x),f1(a(a(W,x),x))) # answer(fixed_point_combinator).  [para(3(a,1),620(a,1,2,2,1))].
+
+given #108 (T,wt=19): 105 a(a(a(W,B),a(W,W)),x) = a(a(W,W),a(a(x,x),x)).  [para(11(a,1),7(a,2,2))].
+
+given #109 (T,wt=19): 106 a(a(a(W,B),a(x,x)),x) = a(a(x,x),a(a(W,W),x)).  [para(11(a,2),7(a,2,2))].
+
+given #110 (T,wt=19): 110 a(a(a(W,B),x),a(x,y)) = a(x,a(a(a(W,B),x),y)).  [para(7(a,2),7(a,2,2))].
+
+given #111 (T,wt=19): 118 a(a(a(a(W,a(B,B)),x),y),z) = a(a(x,x),a(y,z)).  [para(8(a,2),2(a,1,1,1))].
+
+given #112 (A,wt=44): 27 a(f1(a(a(B,x),a(a(B,y),z))),a(x,a(y,a(z,f1(a(a(B,x),a(a(B,y),z))))))) != a(x,a(y,a(z,f1(a(a(B,x),a(a(B,y),z)))))) # answer(fixed_point_combinator).  [para(2(a,1),13(a,1,2,2)),rewrite([2(29)])].
+
+given #113 (F,wt=32): 2164 a(f1(a(a(W,x),x)),a(a(a(W,W),x),f1(a(a(W,x),x)))) != a(a(a(x,x),x),f1(a(a(W,x),x))) # answer(fixed_point_combinator).  [para(3(a,1),620(a,2,1))].
+
+given #114 (F,wt=32): 2166 a(f1(a(a(W,x),x)),a(a(a(W,W),x),f1(a(a(W,x),x)))) != a(a(a(W,x),x),f1(a(a(x,x),x))) # answer(fixed_point_combinator).  [para(3(a,1),620(a,2,2,1))].
+
+given #115 (F,wt=32): 2168 a(f1(a(a(W,x),y)),a(a(a(W,x),y),f1(a(a(x,y),y)))) != a(a(a(x,y),y),f1(a(a(x,y),y))) # answer(fixed_point_combinator).  [para(3(a,2),620(a,1,1,1))].
+
+given #116 (F,wt=32): 2169 a(f1(a(a(x,x),x)),a(a(a(W,W),x),f1(a(a(x,x),x)))) != a(a(a(x,x),x),f1(a(a(x,x),x))) # answer(fixed_point_combinator).  [para(3(a,2),620(a,1,2,1))].
+
+given #117 (T,wt=19): 119 a(a(a(W,a(B,a(B,x))),y),z) = a(x,a(a(y,y),z)).  [para(8(a,2),2(a,1,1))].
+
+============================== PROOF =================================
+
+% Proof 1 at 5.51 (+ 0.02) seconds: fixed_point_combinator.
+% Length of proof is 13.
+% Level of proof is 6.
+% Maximum clause weight is 60.
+% Given clauses 117.
+
+1 (exists Q all x a(Q,x) = a(x,a(Q,x))) # label(fixed_point_combinator) # label(non_clause) # label(goal).  [goal].
+2 a(a(a(B,x),y),z) = a(x,a(y,z)) # label(B).  [assumption].
+3 a(a(W,x),y) = a(a(x,y),y) # label(W).  [assumption].
+4 a(x,f1(x)) != a(f1(x),a(x,f1(x))) # label(fixed_point_combinator) # answer(fixed_point_combinator).  [deny(1)].
+5 a(f1(x),a(x,f1(x))) != a(x,f1(x)) # answer(fixed_point_combinator).  [copy(4),flip(a)].
+8 a(a(W,a(B,x)),y) = a(x,a(y,y)).  [para(3(a,2),2(a,1))].
+11 a(a(W,W),x) = a(a(x,x),x).  [para(3(a,1),3(a,2))].
+13 a(f1(a(a(B,x),y)),a(x,a(y,f1(a(a(B,x),y))))) != a(x,a(y,f1(a(a(B,x),y)))) # answer(fixed_point_combinator).  [para(2(a,1),5(a,1,2)),rewrite([2(19)])].
+27 a(f1(a(a(B,x),a(a(B,y),z))),a(x,a(y,a(z,f1(a(a(B,x),a(a(B,y),z))))))) != a(x,a(y,a(z,f1(a(a(B,x),a(a(B,y),z)))))) # answer(fixed_point_combinator).  [para(2(a,1),13(a,1,2,2)),rewrite([2(29)])].
+119 a(a(a(W,a(B,a(B,x))),y),z) = a(x,a(a(y,y),z)).  [para(8(a,2),2(a,1,1))].
+6487 a(f1(a(a(B,a(a(B,x),y)),a(a(B,z),u))),a(x,a(y,a(z,a(u,f1(a(a(B,a(a(B,x),y)),a(a(B,z),u)))))))) != a(x,a(y,a(z,a(u,f1(a(a(B,a(a(B,x),y)),a(a(B,z),u))))))) # answer(fixed_point_combinator).  [para(2(a,1),27(a,1,2)),rewrite([2(41)])].
+7180 a(x,a(a(W,W),a(W,a(B,a(B,x))))) = a(a(W,W),a(W,a(B,a(B,x)))).  [para(119(a,1),11(a,2)),rewrite([11(30,R)]),flip(a)].
+7181 $F # answer(fixed_point_combinator).  [resolve(7180,a,6487,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=117. Generated=35725. Kept=7178. proofs=1.
+Usable=107. Sos=6331. Demods=1089. Limbo=45, Disabled=697. Hints=0.
+Weight_deleted=6. Literals_deleted=0.
+Forward_subsumed=28541. Back_subsumed=303.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=1265 (2 lex), Back_demodulated=391. Back_unit_deleted=0.
+Demod_attempts=1835915. Demod_rewrites=85089.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=0. Nonunit_bsub_feature_tests=0.
+Megabytes=13.59.
+User_CPU=5.51, System_CPU=0.02, Wall_clock=6.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+Process 9270 exit (max_proofs) Tue Jan 22 11:28:32 2008

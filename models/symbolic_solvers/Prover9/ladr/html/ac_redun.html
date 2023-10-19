@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>ac_redun.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "ac_redun.h"</H1>
+
+This page has information from files
+<A HREF="../ac_redun.h">ac_redun.h</A> and <A HREF="../ac_redun.c">ac_redun.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File ac_redun.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#associativity">associativity</A></TD><TD><A HREF="#associativity4">associativity4</A></TD><TD><A HREF="#cac_redundancy">cac_redundancy</A></TD><TD><A HREF="#commutativity">commutativity</A></TD>
+</TR>
+<TR><TD><A HREF="#associativity3">associativity3</A></TD><TD><A HREF="#c_associativity">c_associativity</A></TD><TD><A HREF="#cac_tautology">cac_tautology</A></TD><TD><A HREF="#same_top">same_top</A></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="associativity"></A><HR><PRE><B>int associativity(<A HREF="term.html">Term</A> atom);
+</B></PRE>If the atom is associativity, f(f(x,y),z) = f(x,f(y,z)),
+return the symnum of the operation;
+otherwise return 0 (which is never a symnum).
+<A NAME="associativity3"></A><HR><PRE><B>int associativity3(<A HREF="term.html">Term</A> atom);
+</B></PRE>If the atom is any of the following
+
+  (ab)c = a(bc)
+  (ab)c = a(cb)
+  (ab)c = b(ac)
+  (ab)c = b(ca)
+
+return the symnum of the operation;
+otherwise return 0 (which is never a symnum).
+<A NAME="associativity4"></A><HR><PRE><B>int associativity4(<A HREF="term.html">Term</A> atom);
+</B></PRE>If the atom is any of the following
+
+  a(bc) = b(ac)
+  a(bc) = b(ca)
+  a(bc) = c(ab)
+  a(bc) = c(ba)
+
+return the symnum of the operation;
+otherwise return 0 (which is never a symnum).
+<A NAME="c_associativity"></A><HR><PRE><B>int c_associativity(<A HREF="term.html">Term</A> atom);
+</B></PRE>If the atom is c_associativity, f(x,f(y,z)) = f(y,f(x,z)),
+return the symnum of the operation;
+otherwise return 0 (which is never a symnum).
+<A NAME="cac_redundancy"></A><HR><PRE><B>BOOL cac_redundancy(Topform c, BOOL print);
+</B></PRE>This routine checks if the clause is commutativity or 
+"c-associativity" x(yz)=y(xz);
+if so, it stores that information for later calls
+to <A HREF="#cac_redundancy">cac_redundancy</A>().  If an operation is found to C or AC,
+return TRUE; if found to be just A, return FALSE;
+<P>
+Otherwise,
+if any positive literal is 
+an instance of x=x (mod C and AC as previously noted),
+it is rewritten to $T.
+Then return FALSE.
+<P>
+Motivation: If we know that * is commutative, and we derive
+an equation f(a,b*c)=f(a,c*b), we can delete that equation,
+because commutativity can do anything that equation can do.
+The same goes for AC operations.
+<A NAME="cac_tautology"></A><HR><PRE><B>BOOL cac_tautology(Literals lits);
+</B></PRE><A NAME="commutativity"></A><HR><PRE><B>int commutativity(<A HREF="term.html">Term</A> atom);
+</B></PRE>If the atom is commutativity, return the symnum of the operation;
+otherwise return 0 (which is never a symnum).
+<A NAME="same_top"></A><HR><PRE><B>BOOL same_top(<A HREF="term.html">Term</A> t1, <A HREF="term.html">Term</A> t2);
+</B></PRE>Do the two terms have the same top symbol?
+<HR><A NAME=defns></A><H2>Public Definitions in File ac_redun.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

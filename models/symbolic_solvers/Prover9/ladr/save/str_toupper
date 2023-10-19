@@ -1,0 +1,32 @@
+/*************
+ *
+ *   str_toupper()
+ *
+ *************/
+
+static
+char *str_toupper(char *source, char *dest)
+{
+  int i;
+  int n = strlen(source) + 1;
+  for (i = 0; i < n; i++)
+    dest[i] = toupper(source[i]);
+  return dest;
+}  /* str_toupper */
+
+/*************
+ *
+ *   str_tolower()
+ *
+ *************/
+
+static
+char *str_tolower(char *source, char *dest)
+{
+  int i;
+  int n = strlen(source) + 1;
+  for (i = 0; i < n; i++)
+    dest[i] = tolower(source[i]);
+  return dest;
+}  /* str_tolower */
+

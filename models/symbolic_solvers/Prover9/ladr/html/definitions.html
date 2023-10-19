@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>definitions.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "definitions.h"</H1>
+
+This page has information from files
+<A HREF="../definitions.h">definitions.h</A> and <A HREF="../definitions.c">definitions.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File definitions.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#expand_with_definition">expand_with_definition</A></TD><TD><A HREF="#is_definition">is_definition</A></TD><TD><A HREF="#separate_definitions">separate_definitions</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#expand_with_definitions">expand_with_definitions</A></TD><TD><A HREF="#process_definitions">process_definitions</A></TD><TD></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="expand_with_definition"></A><HR><PRE><B><A HREF="formula.html">Formula</A> expand_with_definition(<A HREF="formula.html">Formula</A> f, <A HREF="formula.html">Formula</A> def);
+</B></PRE><A NAME="expand_with_definitions"></A><HR><PRE><B>void expand_with_definitions(Plist formulas,
+			     Plist defs,
+			     Plist *results,
+			     Plist *rewritten);
+</B></PRE>All arguments are plists of Topforms containing formulas.
+<A NAME="is_definition"></A><HR><PRE><B>BOOL is_definition(<A HREF="formula.html">Formula</A> f);
+</B></PRE><A NAME="process_definitions"></A><HR><PRE><B>void process_definitions(Plist formulas,
+			 Plist *results,
+			 Plist *defs,
+			 Plist *rewritten);
+</B></PRE>All arguments are plists of Topforms containing formulas.
+<A NAME="separate_definitions"></A><HR><PRE><B>void separate_definitions(Plist formulas,
+			  Plist *defs,
+			  Plist *nondefs);
+</B></PRE>All arguments are plists of Topforms containing formulas.
+<HR><A NAME=defns></A><H2>Public Definitions in File definitions.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

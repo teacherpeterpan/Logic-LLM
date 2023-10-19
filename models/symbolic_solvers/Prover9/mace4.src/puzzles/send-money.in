@@ -1,0 +1,29 @@
+set(arithmetic).
+
+assign(domain_size, 10).  % domain is {0,1,2,3,4,5,6,7,8,9}.
+
+%     S E N D
+%   + M O R E
+%   ---------
+%   M O N E Y
+
+list(distinct).
+
+  [S,E,N,D,M,O,R,Y].
+
+end_of_list.
+
+formulas(assumptions).  
+
+  D + E      = Y + C1 * 10.
+  N + R + C1 = E + C2 * 10.
+  E + O + C2 = N + C3 * 10.
+  S + M + C3 = O + M  * 10.
+
+% Leading zeros are not allowed.
+
+  S != 0.
+  M != 0.
+
+end_of_list.
+

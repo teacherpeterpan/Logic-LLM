@@ -1,0 +1,21 @@
+set(arithmetic).
+
+formulas(assumptions).
+
+% n-Queens Puzzle
+%
+% Relation Q(x,y) means there is a queen at row x, column y.
+
+all x exists y Q(x,y).           % Each row has at *least* one queen.
+
+Q(x,y1) & Q(x,y2) -> y1 = y2.    % Each row has at most one queen.
+
+Q(x1,y) & Q(x2,y) -> x1 = x2.    % Each column has at most one queen.
+
+Q(x1,y1) & Q(x2,y2) & (x2 -- x1 = y2 -- y1) ->
+           x1 = x2 & y1 = y2.     % Each \ diagonal has at most one queen.
+
+Q(x1,y1) & Q(x2,y2) & (x1 -- x2 = y2 -- y1) ->
+           x1 = x2 & y1 = y2.     % Each / diagonal has at most one queen.
+
+end_of_list.

@@ -1,0 +1,16 @@
+assign(max_models, -1).       % This means there is no limit.
+
+op(400, infix, *).
+op(400, infix, \).
+op(400, infix, /).
+
+formulas(theory).
+
+% Quasigroup axioms
+
+x * (x \ y) = y.
+x \ (x * y) = y.
+(x / y) * y = x.
+(x * y) / y = x.
+
+end_of_list.

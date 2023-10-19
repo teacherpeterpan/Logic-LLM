@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>features.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "features.h"</H1>
+
+This page has information from files
+<A HREF="../features.h">features.h</A> and <A HREF="../features.c">features.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File features.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#feature_length">feature_length</A></TD><TD><A HREF="#features_less_or_equal">features_less_or_equal</A></TD><TD><A HREF="#p_features">p_features</A></TD><TD></TD>
+</TR>
+<TR><TD><A HREF="#features">features</A></TD><TD><A HREF="#init_features">init_features</A></TD><TD></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="feature_length"></A><HR><PRE><B>int feature_length(void);
+</B></PRE><A NAME="features"></A><HR><PRE><B>Ilist features(Literals lits);
+</B></PRE>Given a clause, build the feature vector.
+
+Features:
+  positive literals
+  negative literals
+  foreach relation symbol
+     positive occurrences
+     negative occurrences
+  foreach function symbol
+     positive occurrences
+     negative occurrences
+     positive maxdepth
+     negative maxdepth
+<A NAME="features_less_or_equal"></A><HR><PRE><B>BOOL features_less_or_equal(Ilist c, Ilist d);
+</B></PRE>Return TRUE if Ilists c and d are thr same length and
+each member of c is <= the corresponding member of d.
+<A NAME="init_features"></A><HR><PRE><B>void init_features(Ilist fsyms, Ilist rsyms);
+</B></PRE><A NAME="p_features"></A><HR><PRE><B>void p_features(Ilist f);
+</B></PRE><HR><A NAME=defns></A><H2>Public Definitions in File features.h</H2>
+<PRE>
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+
+<HR>
+</BODY>
+</HTML>

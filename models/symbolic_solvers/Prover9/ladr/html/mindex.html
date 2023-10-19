@@ -1,0 +1,233 @@
+<HTML>
+<HEAD>
+<TITLE>mindex.h</TITLE>
+</HEAD>
+
+<BODY>
+
+<H1>#include "mindex.h"</H1>
+
+This page has information from files
+<A HREF="../mindex.h">mindex.h</A> and <A HREF="../mindex.c">mindex.c</A>.
+
+<H2>Contents</H2>
+<UL>
+<LI><A HREF="#routines">Public Routines</A>
+<LI><A HREF="#defns">Public Definitions</A>
+<LI><A HREF="#intro">Introduction</A>
+</UL>
+
+<P>
+<HR><A NAME=routines></A><H2>Public Routines in File mindex.c</H2>
+<H4>Index</H4>
+<TABLE CELLPADDING=3>
+<TR><TD><A HREF="#fprint_mindex">fprint_mindex</A></TD><TD><A HREF="#mindex_empty">mindex_empty</A></TD><TD><A HREF="#mindex_retrieve_cancel">mindex_retrieve_cancel</A></TD><TD><A HREF="#mindex_update">mindex_update</A></TD>
+</TR>
+<TR><TD><A HREF="#fprint_mindex_mem">fprint_mindex_mem</A></TD><TD><A HREF="#mindex_free">mindex_free</A></TD><TD><A HREF="#mindex_retrieve_first">mindex_retrieve_first</A></TD><TD><A HREF="#p_mindex_mem">p_mindex_mem</A></TD>
+</TR>
+<TR><TD><A HREF="#mindex_destroy">mindex_destroy</A></TD><TD><A HREF="#mindex_init">mindex_init</A></TD><TD><A HREF="#mindex_retrieve_next">mindex_retrieve_next</A></TD><TD></TD>
+</TR>
+</TABLE>
+<H4>Details</H4>
+<A NAME="fprint_mindex"></A><HR><PRE><B>void fprint_mindex(FILE *fp, <A HREF="mindex.html">Mindex</A> mdx);
+</B></PRE>This routine prints (to FILE *fp) <A HREF="mindex.html">Mindex</A> mdx.
+<A NAME="fprint_mindex_mem"></A><HR><PRE><B>void fprint_mindex_mem(FILE *fp, BOOL heading);
+</B></PRE>This routine prints (to FILE *fp) memory usage statistics for data types
+associated with the mindex package.
+The Boolean argument heading tells whether to print a heading on the table.
+<A NAME="mindex_destroy"></A><HR><PRE><B>void mindex_destroy(<A HREF="mindex.html">Mindex</A> mdx);
+</B></PRE>This frees all the memory associated with an <A HREF="mindex.html">Mindex</A>.  Do not refer
+to the <A HREF="mindex.html">Mindex</A> after calling this routine.
+<A NAME="mindex_empty"></A><HR><PRE><B>BOOL mindex_empty(<A HREF="mindex.html">Mindex</A> mdx);
+</B></PRE>This Boolean routine checks if an <A HREF="mindex.html">Mindex</A> is empty, that is, has no
+terms.  It must exist (be non-NULL).
+<A NAME="mindex_free"></A><HR><PRE><B>void mindex_free(<A HREF="mindex.html">Mindex</A> mdx);
+</B></PRE>This routine frees an empty <A HREF="mindex.html">Mindex</A>.  (If the <A HREF="mindex.html">Mindex</A> is not empty,
+nothing happens.)
+<A NAME="mindex_init"></A><HR><PRE><B><A HREF="mindex.html">Mindex</A> mindex_init(Mindextype mtype, Uniftype utype, int fpa_depth);
+</B></PRE>This routine allocates and returns an (empty) <A HREF="mindex.html">Mindex</A>, which is
+used to retrieve unifiable terms.
+<UL>
+<LI><TT>index_type: {LINEAR, FPA, DISCRIM_WILD, DISCRIM_BIND}</TT>
+<LI><TT>unif_type: {ORDINARY_UNIF, BACKTRACK_UNIF}</TT>
+<LI><TT>fpa_depth: </TT>depth of FPA indexing
+    (ignored for other index types).
+</UL>
+<I>Types of retrieval</I>.  LINEAR and FPA indexes support all types
+of retrieval (FPA is slow for GENERALIZATION).
+DISCRIM_WILD and DISCRIM_BIND indexes support GENERALIZATION retrieval only.
+See <A HREF="#mindex_retrieve_first">mindex_retrieve_first</A>().
+<P>
+<I>Associative-commutative (AC) and commutative (C) symbols</I>.
+DISCRIM_BIND does <I>not</I> support
+AC symbols.  All other combinations are okay.  If you have any
+AC or C symbols, you must specify unif_type BACKTRACK_UNIF.
+(BACKTRACK_UNIF is also okay with no AC or C symbols, but it
+is a little bit slower than ORDINARY_UNIF.)
+<P>
+AC symbols must be declared (with set_assoc_comm()) before calling
+<A HREF="#mindex_update">mindex_update</A>().
+C symbols need not be declared before <A HREF="#mindex_update">mindex_update</A>(), but they
+must be declared (with set_commutative()) before calling
+<A HREF="#mindex_retrieve_first">mindex_retrieve_first</A>().
+<A NAME="mindex_retrieve_cancel"></A><HR><PRE><B>void mindex_retrieve_cancel(<A HREF="mindex.html">Mindex_pos</A> pos);
+</B></PRE>This routine should be called if you get some, but not all,
+answers to a query.  For example, if you need only one answer
+you can do something like the following:
+<PRE>
+{
+  <A HREF="mindex.html">Mindex_pos</A> pos;
+  <A HREF="term.html">Term</A> t2;
+  <A HREF="unify.html">Context</A> cf = get_context();
+  
+  t2 = <A HREF="#mindex_retrieve_first">mindex_retrieve_first</A>(t, mdx, GENERALIZATION, (<A HREF="unify.html">Context</A>) NULL, cf, &pos);
+  if (t2 != NULL) {
+    printf("we found a mate!\n");
+    <A HREF="#mindex_retrieve_cancel">mindex_retrieve_cancel</A>(pos);
+  }
+  else
+    printf("no answer\n");
+  free_context(cf);
+}
+</PRE>
+If you fail to  call this routine, then the memory associated
+with an <A HREF="mindex.html">Mindex_pos</A> will be forever lost, that is, you will have
+a memory leak.
+<A NAME="mindex_retrieve_first"></A><HR><PRE><B><A HREF="term.html">Term</A> mindex_retrieve_first(<A HREF="term.html">Term</A> t, <A HREF="mindex.html">Mindex</A> mdx, Querytype qtype,
+			   <A HREF="unify.html">Context</A> query_subst, <A HREF="unify.html">Context</A> found_subst,
+			   BOOL partial_match,
+			   <A HREF="mindex.html">Mindex_pos</A> *ppos);
+</B></PRE>This routine finds and returns the first answer to a query (returning NULL
+if there are no answers).
+<UL>
+<LI> <A HREF="term.html">Term</A> t: the query term;
+<LI> <A HREF="mindex.html">Mindex</A> mdx: the <A HREF="mindex.html">Mindex</A>;
+<LI> int query_type: UNIFY, INSTANCE, GENERALIZATION, VARIANT, or IDENTICAL;
+<LI> <A HREF="unify.html">Context</A> query_subst: subsitution for variables in query term t;
+this can be NULL for GENERALIZATION, and IDENTICAL;
+<LI> <A HREF="unify.html">Context</A> found_subst: subsitution for variables in the answer term;
+this can be NULL for INSTANCE, VARIANT, and IDENTICAL;
+<LI> BOOL partial_match: If TRUE, then for GENERALIZATION, with BACKTRACK_UNIF,  
+when t has an AC symbol at the root, allow the retrieved term to match only
+part of t, with the remainder of the retrieved term placed in
+fond_subst->partial_term.  This is used for AC rewriting, for example, to
+let x+x=x rewrite a+a+b.
+<LI> <A HREF="mindex.html">Mindex_pos</A> *ppos (output parameter): If an answer is returned,
+this address is set to a pointer to a structure that holds the position
+so you can get the rest of the answers.
+</UL>
+If you ask for a type of retrieval not supported by the <A HREF="mindex.html">Mindex</A> mdx,
+you will get no answers (and no error message).
+<P>
+Here is an example of how to retrieve all answers.  Assume we have
+<A HREF="term.html">Term</A> t and <A HREF="mindex.html">Mindex</A> mdx.
+<PRE>
+{
+  <A HREF="mindex.html">Mindex_pos</A> pos;
+  <A HREF="term.html">Term</A> t2;
+  <A HREF="unify.html">Context</A> cq = get_context();
+  <A HREF="unify.html">Context</A> cf = get_context();
+  int n = 0;
+  
+  t2 = <A HREF="#mindex_retrieve_first">mindex_retrieve_first</A>(t, mdx, UNIFY, cq, cf, FALSE, &pos);
+  while (t2 != NULL) {
+    t2 = <A HREF="#mindex_retrieve_next">mindex_retrieve_next</A>(pos);
+    n++;
+  }
+  free_context(cq);
+  free_context(cf);
+  printf("there are %d mates\n", n);
+}
+</PRE>
+<A NAME="mindex_retrieve_next"></A><HR><PRE><B><A HREF="term.html">Term</A> mindex_retrieve_next(<A HREF="mindex.html">Mindex_pos</A> pos);
+</B></PRE>This routine finds and returns the next answer to a query.
+See <A HREF="#mindex_retrieve_first">mindex_retrieve_first</A>() for an explanation.
+<A NAME="mindex_update"></A><HR><PRE><B>void mindex_update(<A HREF="mindex.html">Mindex</A> mdx, <A HREF="term.html">Term</A> t, Indexop op);
+</B></PRE>This routine inserts (op==INSERT) or deletes (op==DELETE)
+a <A HREF="term.html">Term</A> t into/from an <A HREF="mindex.html">Mindex</A> mdx.
+<P>
+It is your responsibility to remember that t is in the index,
+because we don't currently have a routine "mindex_member()".
+<A NAME="p_mindex_mem"></A><HR><PRE><B>void p_mindex_mem();
+</B></PRE>This routine prints (to stdout) memory usage statistics for data types
+associated with the mindex package.
+<HR><A NAME=defns></A><H2>Public Definitions in File mindex.h</H2>
+<PRE>
+/* types of index */
+
+typedef enum { LINEAR,
+	       FPA,
+	       DISCRIM_WILD,
+	       DISCRIM_BIND
+             } Mindextype;
+
+/* types of unification */
+
+typedef enum { ORDINARY_UNIF,
+	       BACKTRACK_UNIF
+             } Uniftype;
+
+typedef struct mindex * <A HREF="mindex.html">Mindex</A>;
+typedef struct mindex_pos * <A HREF="mindex.html">Mindex_pos</A>;
+
+struct mindex {
+  Mindextype index_type;
+  Uniftype   unif_type;
+
+  /* FPA */
+  <A HREF="fpa.html">Fpa_index</A>  fpa;
+
+  /* LINEAR */
+  Plist   linear_first;
+  Plist   linear_last;
+
+  /* DISCRIM_WILD and DISCRIM_BIND */
+  <A HREF="discrim.html">Discrim</A>   discrim_tree;
+
+  <A HREF="mindex.html">Mindex</A>     next;  /* for avail list */
+};
+
+</PRE><HR><A NAME=intro></A><H2>Introduction</H2>
+This is an indexing/unification package to store terms and to
+retrieve unifiable terms.
+(It is really just an interface to the various indexing and
+unification packages.)
+Several types of indexing and unification are supported.
+When you allocate an index (with mindex_init()), you specify the
+type of index and the type of unification.
+<P>
+Types of Retrieval
+<P>
+<TT>UNIFY, INSTANCE, GENERALIZATION, VARIANT, IDENTICAL</TT>.
+<P>
+Types of Unification
+<P>
+Associative-commutative (AC) and commutative/symmetric (C) symbols
+are supported in most cases.  If you have any AC or C symbols,
+you must use backtrack unification, which handles more than one
+unifier for a pair of terms; otherwise, you can use ordinary unification,
+which assumes at most one unifier for a pair of terms.
+(For the empty theory, ordinary unification is a bit
+faster than backtrack unification.)
+<P>
+Types of Indexing
+<UL>
+<LI><TT>LINEAR       :</TT> This is indexing without an index.
+The terms you insert are put on a list, and each is tested in turn.
+This supports AC and C symbols.
+<LI><TT>FPA          :</TT> This is FPA/Path indexing.
+Supports AC symbols (in a primitive way, by treating them
+as constants) and C symbols.
+<LI><TT>DISCRIM_WILD :</TT> Discrimination indexing,
+where matching is separate from unidexing.
+This supports AC symbols and C symbols.
+With C symbols, you can get duplicate answers.
+Supports <TT>GENERALIZATION</TT> retrieval only.
+<LI><TT>DISCRIM_BIND :</TT> Discrimination indexing, where matching
+occurs during indexing. This supports C symbols, <I>but not AC symbols</I>.
+Supports <TT>GENERALIZATION</TT> retrieval only.
+</UL>
+
+<HR>
+</BODY>
+</HTML>
