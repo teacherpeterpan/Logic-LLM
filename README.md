@@ -143,5 +143,8 @@ Please cite the paper in the following format if you use this dataset during you
 }
 ```
 
+## Credit
+The codes for the SMT solver are modified from [SatLM](https://github.com/xiye17/sat-lm). 
+
 ## Q&A
 If you encounter any problem, please either directly contact the [Liangming Pan](liangmingpan@ucsb.edu) or leave an issue in the github repo.
