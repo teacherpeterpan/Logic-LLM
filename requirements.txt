@@ -11,7 +11,6 @@ bibtexparser==1.4.0
 blinker==1.6.2
 blis==0.7.10
 catalogue==2.0.9
-certifi @ file:///croot/certifi_1671487769961/work/certifi
 charset-normalizer==3.2.0
 click==8.1.7
 cmake==3.27.4.1
@@ -103,7 +102,7 @@ scikit-learn==1.3.0
 scipy==1.11.2
 scitools-pyke==1.1.1
 six==1.16.0
-sklearn==0.0.post7
+scikit-learn
 smart-open==6.4.0
 snowballstemmer==2.2.0
 spacy==3.6.1

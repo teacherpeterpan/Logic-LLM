@@ -9,7 +9,7 @@ from symbolic_solvers.fol_solver.prover9_solver import FOL_Prover9_Program
 import argparse
 import random
 from backup_answer_generation import Backup_Answer_Generator
-from utils import OpenAIModel
+from utils import OpenAIModel, HuggingFaceModel, LLMClass
 
 class SelfRefinementEngine:
     def __init__(self, args, current_round):
@@ -18,7 +18,16 @@ class SelfRefinementEngine:
         self.model_name = args.model_name
         self.dataset_name = args.dataset_name
         self.backup_strategy = args.backup_strategy
-        self.openai_api = OpenAIModel(args.api_key, 'gpt-4', args.stop_words, args.max_new_tokens)
+        self.framework_to_use = args.framework_to_use
+        if self.framework_to_use == "OpenAI":
+            self.llm_model = OpenAIModel(args.api_key, 'gpt-4', args.stop_words, args.max_new_tokens)
+        elif self.framework_to_use == "HuggingFace":
+            self.llm_model = HuggingFaceModel(model_id=self.model_name)
+        else:
+            self.llm_model = LLMClass()
+
+        self.model_name=self.model_name.replace("/","-")
+
         self.current_round = current_round
 
         self.logic_programs = self.load_logic_programs()
@@ -84,7 +93,7 @@ class SelfRefinementEngine:
                 if not error_message == 'No Output': # this is not execution error, but parsing error
                     # perform self-correction based on the error message
                     full_prompt = self.load_prompt(logic_program, error_message)
-                    revised_program = self.openai_api.generate(full_prompt).strip()
+                    revised_program = self.llm_model.generate(full_prompt).strip()
                     programs = [revised_program]
                     output = {'id': example['id'], 
                             'context': example['context'],
@@ -127,8 +136,9 @@ def parse_args():
     parser.add_argument('--backup_strategy', type=str, default='random', choices=['random', 'LLM'])
     parser.add_argument('--backup_LLM_result_path', type=str, default='../baselines/results')
     parser.add_argument('--model_name', type=str, default='text-davinci-003')
+    parser.add_argument('--framework_to_use', type=str, default='HuggingFace')
     parser.add_argument('--timeout', type=int, default=60)
-    parser.add_argument('--api_key', type=str)
+    parser.add_argument('--api_key', type=str, default='KEY')
     parser.add_argument('--stop_words', type=str, default='------')
     parser.add_argument('--max_new_tokens', type=int, default=1024)
     args = parser.parse_args()

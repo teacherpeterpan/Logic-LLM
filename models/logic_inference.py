@@ -15,6 +15,7 @@ class LogicInferenceEngine:
         self.dataset_name = args.dataset_name
         self.split = args.split
         self.model_name = args.model_name
+        self.model_name=self.model_name.replace("/","-")
         self.save_path = args.save_path
         self.backup_strategy = args.backup_strategy
 

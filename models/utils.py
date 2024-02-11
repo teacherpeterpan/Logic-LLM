@@ -68,7 +68,42 @@ async def dispatch_openai_prompt_requests(
     ]
     return await asyncio.gather(*async_responses)
 
-class OpenAIModel:
+
+from typing import List
+
+class LLMClass:
+    def generate(self, input_string: str, temperature: float = 0.0) -> str:
+        return input_string
+
+    def batch_generate(self, messages_list: List[str], temperature: float = 0.0) -> List[str]:
+        return messages_list
+
+
+from transformers import pipeline
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+class HuggingFaceModel(LLMClass):
+    def __init__(self, model_id, max_new_tokens) -> None:
+        self.model_id = model_id
+        self.tokenizer = AutoTokenizer.from_pretrained(model_id)
+        self.model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto")
+        self.pipe = pipeline("text-generation", model=self.model, tokenizer=self.tokenizer, max_new_tokens=max_new_tokens, batch_size=10, device_map="auto", do_sample=False, top_p = 1.0, return_full_text=False)
+        if self.pipe.tokenizer.pad_token_id is None:
+            self.pipe.tokenizer.pad_token_id = self.pipe.model.config.eos_token_id
+
+    def generate(self, input_string, temperature = 0.0):
+        response = self.pipe(input_string, temperature=temperature)
+        generated_text = response[0]["generated_text"].strip()
+        return generated_text
+
+    def batch_generate(self, messages_list, temperature = 0.0):
+        responses = self.pipe(messages_list, temperature=temperature)
+        generated_text = [response[0]["generated_text"].strip() for response in responses]
+        return generated_text
+
+
+class OpenAIModel(LLMClass):
     def __init__(self, API_KEY, model_name, stop_words, max_new_tokens) -> None:
         openai.api_key = API_KEY
         self.model_name = model_name

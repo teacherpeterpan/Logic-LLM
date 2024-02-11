@@ -5,7 +5,7 @@ import os
 from tqdm import tqdm
 from collections import OrderedDict
 from typing import Dict, List, Tuple
-from utils import OpenAIModel
+from utils import OpenAIModel, HuggingFaceModel, LLMClass
 import argparse
 
 class LogicProgramGenerator:
@@ -16,8 +16,16 @@ class LogicProgramGenerator:
         self.split = args.split
         self.model_name = args.model_name
         self.save_path = args.save_path
+        self.framework_to_use = args.framework_to_use
+        if self.framework_to_use == "OpenAI":
+            self.llm_model = OpenAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens)
+        elif self.framework_to_use == "HuggingFace":
+            self.llm_model = HuggingFaceModel(model_id=self.model_name, max_new_tokens=args.max_new_tokens)
+        else:
+            self.llm_model = LLMClass()
 
-        self.openai_api = OpenAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens)
+        self.model_name=self.model_name.replace("/","-")
+
         self.prompt_creator = {'FOLIO': self.prompt_folio,
                                'ProntoQA': self.prompt_prontoqa,
                                'ProofWriter': self.prompt_proofwriter,
@@ -81,7 +89,7 @@ class LogicProgramGenerator:
             # create prompt
             try:
                 full_prompt = self.prompt_creator[self.dataset_name](example)
-                output = self.openai_api.generate(full_prompt)
+                output = self.llm_model.generate(full_prompt)
                 # print(full_prompt)
                 programs = [output]
 
@@ -115,7 +123,7 @@ class LogicProgramGenerator:
             # create prompt
             full_prompts = [self.prompt_creator[self.dataset_name](example) for example in chunk]
             try:
-                batch_outputs = self.openai_api.batch_generate(full_prompts)
+                batch_outputs = self.llm_model.batch_generate(full_prompts)
                 # create output
                 for sample, output in zip(chunk, batch_outputs):
                     programs = [output]
@@ -130,7 +138,7 @@ class LogicProgramGenerator:
                 # generate one by one if batch generation fails
                 for sample, full_prompt in zip(chunk, full_prompts):
                     try:
-                        output = self.openai_api.generate(full_prompt)
+                        output = self.llm_model.generate(full_prompt)
                         programs = [output]
                         output = {'id': sample['id'], 
                                 'context': sample['context'],
@@ -159,8 +167,9 @@ def parse_args():
     parser.add_argument('--dataset_name', type=str)
     parser.add_argument('--split', type=str, default='dev')
     parser.add_argument('--save_path', type=str, default='./outputs/logic_programs')
-    parser.add_argument('--api_key', type=str)
+    parser.add_argument('--api_key', type=str, default='KEY')
     parser.add_argument('--model_name', type=str, default='text-davinci-003')
+    parser.add_argument('--framework_to_use', type=str, default='HuggingFace')
     parser.add_argument('--stop_words', type=str, default='------')
     parser.add_argument('--max_new_tokens', type=int, default=1024)
     args = parser.parse_args()
