@@ -20,7 +20,7 @@ class LogicProgramGenerator:
         if self.framework_to_use == "OpenAI":
             self.llm_model = OpenAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens)
         elif self.framework_to_use == "HuggingFace":
-            self.llm_model = HuggingFaceModel(model_id=self.model_name, max_new_tokens=args.max_new_tokens)
+            self.llm_model = HuggingFaceModel(model_id=self.model_name, stop_words = args.stop_words, max_new_tokens=args.max_new_tokens, is_AWQ=args.is_AWQ)
         else:
             self.llm_model = LLMClass()
 
@@ -101,7 +101,8 @@ class LogicProgramGenerator:
                         'options': example['options'],
                         'raw_logic_programs': programs}
                 outputs.append(output)
-            except:
+            except Exception as e:
+                print(e)
                 print('Error in generating logic programs for example: ', example['id'])
 
         # save outputs        
@@ -147,7 +148,8 @@ class LogicProgramGenerator:
                                 'options': sample['options'],
                                 'raw_logic_programs': programs}
                         outputs.append(output)
-                    except:
+                    except Exception as e:
+                        print(e)
                         print('Error in generating logic programs for example: ', sample['id'])
 
         # remove examples with duplicate ids from the result
@@ -172,6 +174,7 @@ def parse_args():
     parser.add_argument('--framework_to_use', type=str, default='HuggingFace')
     parser.add_argument('--stop_words', type=str, default='------')
     parser.add_argument('--max_new_tokens', type=int, default=1024)
+    parser.add_argument('--is_AWQ', type=str, default="auto")
     args = parser.parse_args()
     return args
 

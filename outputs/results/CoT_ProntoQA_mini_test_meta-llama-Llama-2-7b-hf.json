@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ProntoQA_1",
+    "question": "Is the following statement true or false? Max is sour.",
+    "answer": "B",
+    "predicted_reasoning": "Max is a yumpus. Yumpuses are zumpuses. So Max is a zumpus. Each zumpus is an impus. So Max is an impus. Each impus is a dumpus. So Max is a dumpus. Every dumpus is a vumpus. So Max is a vumpus. Vumpuses are earthy. So Max is earthy.",
+    "predicted_answer": "B\n------",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_2",
+    "question": "Is the following statement true or false? Stella is bright.",
+    "answer": "A",
+    "predicted_reasoning": "Stella is a yumpus. Yumpuses are zumpuses. So Stella is a zumpus. Each zumpus is an impus. So Stella is an impus. Each impus is a dumpus. So Stella is a dumpus. Every dumpus is a vumpus. So Stella is a vumpus. Vumpuses are bright. So Stella is bright.\n\nThe correct option is",
+    "predicted_answer": "Stella is a yumpus. Yumpuses are zumpuses. So Stella is a zumpus. Each zumpus is an impus. So Stella is an impus. Each impus is a dumpus. So Stella is a dumpus. Every dumpus is a vumpus. So Stella is a vumpus. Vumpuses are bright. So Stella is bright.\n\nThe correct option is",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_3",
+    "question": "Is the following statement true or false? Wren is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "Wren is a tumpus. Tumpuses are brown. So Wren is brown. Each brown is a wumpus. Wumpuses are small. So Wren is small. Each small is a rompus. So Wren is a rompus. Each rompus is amenable. So Wren is amenable. Each amenable is a dumpus. So Wren is a dumpus. Every dumpus is not metall",
+    "predicted_answer": "Wren is a tumpus. Tumpuses are brown. So Wren is brown. Each brown is a wumpus. Wumpuses are small. So Wren is small. Each small is a rompus. So Wren is a rompus. Each rompus is amenable. So Wren is amenable. Each amenable is a dumpus. So Wren is a dumpus. Every dumpus is not metall",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_4",
+    "question": "Is the following statement true or false? Alex is not small.",
+    "answer": "B",
+    "predicted_reasoning": "Alex is a zumpus. Zumpuses are not hot. Zumpuses are numpuses. Numpuses are metallic. Numpuses are wumpuses. Every wumpus is not kind. Each wumpus is a dumpus. Each dumpus is not bright. Every dumpus is a jompus. Jompuses are small. Jompuses are vumpuses. Each vumpus is not shy",
+    "predicted_answer": "Alex is a zumpus. Zumpuses are not hot. Zumpuses are numpuses. Numpuses are metallic. Numpuses are wumpuses. Every wumpus is not kind. Each wumpus is a dumpus. Each dumpus is not bright. Every dumpus is a jompus. Jompuses are small. Jompuses are vumpuses. Each vumpus is not shy",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_5",
+    "question": "Is the following statement true or false? Alex is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "Alex is a numpus. Each numpus is a tumpus. So Alex is a tumpus. Each tumpus is a yumpus. So Alex is a yumpus. Every yumpus is earthy. So Alex is earthy. Each yumpus is a jompus. So Alex is a jompus. Every jompus is a wumpus. So Alex is a wumpus. W",
+    "predicted_answer": "Alex is a numpus. Each numpus is a tumpus. So Alex is a tumpus. Each tumpus is a yumpus. So Alex is a yumpus. Every yumpus is earthy. So Alex is earthy. Each yumpus is a jompus. So Alex is a jompus. Every jompus is a wumpus. So Alex is a wumpus. W",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_6",
+    "question": "Is the following statement true or false? Wren is dull.",
+    "answer": "A",
+    "predicted_reasoning": "Wren is a tumpus. Tumpuses are wumpuses. So Wren is a wumpus. Each wumpus is a rompus. So Wren is a rompus. Every rompus is a vumpus. So Wren is a vumpus. Vumpuses are jompuses. So Wren is a jompus. Jompuses are dull. So Wren is dull.",
+    "predicted_answer": "Wren is a tumpus. Tumpuses are wumpuses. So Wren is a wumpus. Each wumpus is a rompus. So Wren is a rompus. Every rompus is a vumpus. So Wren is a vumpus. Vumpuses are jompuses. So Wren is a jompus. Jompuses are dull. So Wren is dull.",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_7",
+    "question": "Is the following statement true or false? Stella is happy.",
+    "answer": "B",
+    "predicted_reasoning": "Stella is a wumpus. Wumpuses are zumpuses. So Stella is a zumpus. Each zumpus is an impus. So Stella is an impus. Each impus is a dumpus. So Stella is a dumpus. Every dumpus is a vumpus. So Stella is a vumpus. Vumpuses are happy. So Stella is happy.\n\nThe correct option is",
+    "predicted_answer": "Stella is a wumpus. Wumpuses are zumpuses. So Stella is a zumpus. Each zumpus is an impus. So Stella is an impus. Each impus is a dumpus. So Stella is a dumpus. Every dumpus is a vumpus. So Stella is a vumpus. Vumpuses are happy. So Stella is happy.\n\nThe correct option is",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_8",
+    "question": "Is the following statement true or false? Alex is hot.",
+    "answer": "B",
+    "predicted_reasoning": "Alex is a zumpus. Every zumpus is a jompus. So Alex is a jompus. Each jompus is a rompus. So Alex is a rompus. Rompuses are not kind. So Alex is not kind. Every rompus is a zumpus. So Alex is a zumpus. Each zumpus is an impus. So Alex is an impus. Each impus is a dumpus. So Alex",
+    "predicted_answer": "Alex is a zumpus. Every zumpus is a jompus. So Alex is a jompus. Each jompus is a rompus. So Alex is a rompus. Rompuses are not kind. So Alex is not kind. Every rompus is a zumpus. So Alex is a zumpus. Each zumpus is an impus. So Alex is an impus. Each impus is a dumpus. So Alex",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_9",
+    "question": "Is the following statement true or false? Wren is wooden.",
+    "answer": "A",
+    "predicted_reasoning": "Wren is a tumpus. Tumpuses are not wooden. So Wren is not wooden. Wren is a jompus. Each jompus is a zumpus. So Wren is a zumpus. Each zumpus is a yumpus. So Wren is a yumpus. Yumpuses are orange. So Wren is orange.",
+    "predicted_answer": "B\n------\nContext:\nEvery",
+    "flag": "CoT"
+  },
+  {
+    "id": "ProntoQA_10",
+    "question": "Is the following statement true or false? Fae is sweet.",
+    "answer": "B",
+    "predicted_reasoning": "Fae is a wumpus. Wumpuses are zumpuses. So Fae is a zumpus. Each zumpus is an impus. So Fae is an impus. Each impus is a jompus. So Fae is a jompus. Jompuses are small. So Fae is small. Jompuses are rompuses. So Fae is romp. Rompuses are not amenable",
+    "predicted_answer": "Fae is a wumpus. Wumpuses are zumpuses. So Fae is a zumpus. Each zumpus is an impus. So Fae is an impus. Each impus is a jompus. So Fae is a jompus. Jompuses are small. So Fae is small. Jompuses are rompuses. So Fae is romp. Rompuses are not amenable",
+    "flag": "CoT"
+  }
+]

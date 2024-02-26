@@ -92,7 +92,7 @@ def parse_args():
     parser.add_argument('--split', type=str, default='dev')
     parser.add_argument('--save_path', type=str, default='./outputs/logic_inference')
     parser.add_argument('--backup_strategy', type=str, default='random', choices=['random', 'LLM'])
-    parser.add_argument('--backup_LLM_result_path', type=str, default='../baselines/results')
+    parser.add_argument('--backup_LLM_result_path', type=str, default='./outputs/results')
     parser.add_argument('--model_name', type=str, default='text-davinci-003')
     parser.add_argument('--timeout', type=int, default=60)
     args = parser.parse_args()

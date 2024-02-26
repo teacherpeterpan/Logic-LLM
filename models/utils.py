@@ -82,13 +82,47 @@ class LLMClass:
 from transformers import pipeline
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import StoppingCriteria, StoppingCriteriaList
+from awq import AutoAWQForCausalLM
+
+class StoppingCriteriaToken(StoppingCriteria):
+
+    def __init__(self, stops = []):
+        super().__init__()
+        self.stops = stops
+
+    def __call__(self, input_ids: torch.LongTensor, scores: torch.FloatTensor):
+        stop_count = 0
+        for stop in self.stops:
+            if stop == int(input_ids[0][-1]):
+                return True
+                
+        return False
 
 class HuggingFaceModel(LLMClass):
-    def __init__(self, model_id, max_new_tokens) -> None:
+    def __init__(self, model_id, stop_words, max_new_tokens, is_AWQ) -> None:
         self.model_id = model_id
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
-        self.model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto")
-        self.pipe = pipeline("text-generation", model=self.model, tokenizer=self.tokenizer, max_new_tokens=max_new_tokens, batch_size=10, device_map="auto", do_sample=False, top_p = 1.0, return_full_text=False)
+        
+        if is_AWQ == "auto":
+            if "AWQ" in model_id:
+                is_AWQ = True
+            else:
+                is_AWQ = False
+        else:
+            is_AWQ = bool(is_AWQ)
+
+        if is_AWQ:
+            model = AutoAWQForCausalLM.from_quantized(model_id, fuse_layers=True, device_map = 'auto',
+                                          trust_remote_code=False, safetensors=True)
+            self.model = model.model
+        else:
+            self.model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto")
+
+        stop_token_ids = [self.tokenizer.convert_tokens_to_ids(stop_token) for stop_token in stop_words.split(" ")]
+        stopping_criteria = StoppingCriteriaList([StoppingCriteriaToken(stops=stop_token_ids)])
+
+        self.pipe = pipeline("text-generation", model=self.model, tokenizer=self.tokenizer, max_new_tokens=max_new_tokens, batch_size=10, device_map="auto", do_sample=False, top_p = 1.0, return_full_text=False, stopping_criteria = stopping_criteria)
         if self.pipe.tokenizer.pad_token_id is None:
             self.pipe.tokenizer.pad_token_id = self.pipe.model.config.eos_token_id
 
