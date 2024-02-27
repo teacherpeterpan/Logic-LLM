@@ -1,11 +1,17 @@
+"""Performs iterative self-refinement of logic programs.
+
+Loads logic programs from a previous round. For programs that resulted in errors, generates a prompt to correct the program using a language model. Executes the revised programs to check if errors are resolved. Saves the revised programs after each round.
+"""
 # input: logic program file
 # output: logic program file after one round of self-refinement
 
 import json
 import os
 from tqdm import tqdm
-from symbolic_solvers.z3_solver.sat_problem_solver import LSAT_Z3_Program
 from symbolic_solvers.fol_solver.prover9_solver import FOL_Prover9_Program
+from symbolic_solvers.pyke_solver.pyke_solver import Pyke_Program
+from symbolic_solvers.csp_solver.csp_solver import CSP_Program
+from symbolic_solvers.z3_solver.sat_problem_solver import LSAT_Z3_Program
 import argparse
 import random
 from backup_answer_generation import Backup_Answer_Generator
@@ -36,7 +42,7 @@ class SelfRefinementEngine:
         program_executor_map = {'AR-LSAT': LSAT_Z3_Program,
                                 'FOLIO': FOL_Prover9_Program}
         self.program_executor = program_executor_map[self.dataset_name]
-        self.backup_generator = Backup_Answer_Generator(self.dataset_name, self.backup_strategy, self.args.backup_LLM_result_path)
+        self.backup_generator = Backup_Answer_Generator(args.mode, self.dataset_name, args.split, args.model_name, self.backup_strategy, self.args.backup_LLM_result_path)
 
     def load_logic_programs(self):
         prefix = ""
@@ -107,7 +113,7 @@ class SelfRefinementEngine:
             elif status == 'parsing error':
                 # perform self-correction based on the error message
                 full_prompt = self.load_prompt(logic_program, 'Parsing Error')
-                revised_program = self.openai_api.generate(full_prompt).strip()
+                revised_program = self.llm_model.generate(full_prompt).strip()
                 programs = [revised_program]
                 output = {'id': example['id'], 
                         'context': example['context'],
@@ -142,12 +148,14 @@ def parse_args():
     parser.add_argument('--stop_words', type=str, default='------')
     parser.add_argument('--max_new_tokens', type=int, default=1024)
     parser.add_argument('--is_AWQ', type=str, default="auto")
+    parser.add_argument('--mode', type=str, default='CoT')
     args = parser.parse_args()
     return args
 
 if __name__ == "__main__":
     args = parse_args()
+    engine = SelfRefinementEngine(args, 1)
     for round in range(1, args.maximum_rounds+1):
         print(f"Round {round} self-refinement")
-        engine = SelfRefinementEngine(args, round)
         engine.single_round_self_refinement()
+        engine.current_round += 1

@@ -1,0 +1,132 @@
+[
+  {
+    "id": "ar_lsat_200010_3-G_1_1",
+    "context": "Of the eight students—George, Helen, Irving, Kyle, Lenore, Nina, Olivia, and Robert—in a seminar, exactly six will give individual oral reports during three consecutive days—Monday, Tuesday, and Wednesday. Exactly two reports will be given each day—one in the morning and one in the afternoon—according to the following conditions: Tuesday is the only day on which George can give a report. Neither Olivia nor Robert can give an afternoon report. If Nina gives a report, then on the next day Helen and Irving must both give reports, unless Nina's report is given on Wednesday.",
+    "question": "Which one of the following could be the schedule of the students' reports?",
+    "options": [
+      "A) Mon. morning: Helen; Mon. afternoon: Robert Tues. morning: Olivia; Tues. afternoon: Irving Wed. morning: Lenore; Wed. afternoon: Kyle",
+      "B) Mon. morning: Irving; Mon. afternoon: Olivia Tues. morning: Helen; Tues. afternoon: Kyle Wed. morning: Nina; Wed. afternoon: Lenore",
+      "C) Mon. morning: Lenore; Mon. afternoon: Helen Tues. morning: George; Tues. afternoon: Kyle Wed. morning: Robert; Wed. afternoon: Irving",
+      "D) Mon. morning: Nina; Mon. afternoon: Helen Tues. morning: Robert; Tues. afternoon: Irving Wed. morning: Olivia; Wed. afternoon: Lenore",
+      "E) Mon. morning: Olivia; Mon. afternoon: Nina Tues. morning: Irving; Tues. afternoon: Helen Wed. morning: Kyle; Wed. afternoon: George"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_2",
+    "context": "Of the eight students—George, Helen, Irving, Kyle, Lenore, Nina, Olivia, and Robert—in a seminar, exactly six will give individual oral reports during three consecutive days—Monday, Tuesday, and Wednesday. Exactly two reports will be given each day—one in the morning and one in the afternoon—according to the following conditions: Tuesday is the only day on which George can give a report. Neither Olivia nor Robert can give an afternoon report. If Nina gives a report, then on the next day Helen and Irving must both give reports, unless Nina's report is given on Wednesday.",
+    "question": "If Kyle and Lenore do not give reports, then the morning reports on Monday, Tuesday, and Wednesday, respectively, could be given by",
+    "options": [
+      "A) Helen, George, and Nina",
+      "B) Irving, Robert, and Helen",
+      "C) Nina, Helen, and Olivia",
+      "D) Olivia, Robert, and Irving",
+      "E) Robert, George, and Helen"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_3",
+    "context": "Of the eight students—George, Helen, Irving, Kyle, Lenore, Nina, Olivia, and Robert—in a seminar, exactly six will give individual oral reports during three consecutive days—Monday, Tuesday, and Wednesday. Exactly two reports will be given each day—one in the morning and one in the afternoon—according to the following conditions: Tuesday is the only day on which George can give a report. Neither Olivia nor Robert can give an afternoon report. If Nina gives a report, then on the next day Helen and Irving must both give reports, unless Nina's report is given on Wednesday.",
+    "question": "Which one of the following is a pair of students who, if they give reports on the same day as each other, must give reports on Wednesday?",
+    "options": [
+      "A) George and Lenore",
+      "B) Helen and Nina",
+      "C) Irving and Robert",
+      "D) Kyle and Nina",
+      "E) Olivia and Kyle"
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_4",
+    "context": "Of the eight students—George, Helen, Irving, Kyle, Lenore, Nina, Olivia, and Robert—in a seminar, exactly six will give individual oral reports during three consecutive days—Monday, Tuesday, and Wednesday. Exactly two reports will be given each day—one in the morning and one in the afternoon—according to the following conditions: Tuesday is the only day on which George can give a report. Neither Olivia nor Robert can give an afternoon report. If Nina gives a report, then on the next day Helen and Irving must both give reports, unless Nina's report is given on Wednesday.",
+    "question": "If George, Nina, and Robert give reports and they do so on different days from one another, which one of the following could be true?",
+    "options": [
+      "A) Helen gives a report on Wednesday.",
+      "B) Nina gives a report on Monday.",
+      "C) Nina gives a report on Tuesday.",
+      "D) Olivia gives a report on Monday.",
+      "E) Robert gives a report on Wednesday."
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_5",
+    "context": "Of the eight students—George, Helen, Irving, Kyle, Lenore, Nina, Olivia, and Robert—in a seminar, exactly six will give individual oral reports during three consecutive days—Monday, Tuesday, and Wednesday. Exactly two reports will be given each day—one in the morning and one in the afternoon—according to the following conditions: Tuesday is the only day on which George can give a report. Neither Olivia nor Robert can give an afternoon report. If Nina gives a report, then on the next day Helen and Irving must both give reports, unless Nina's report is given on Wednesday.",
+    "question": "If Kyle gives the afternoon report on Tuesday, and Helen gives the afternoon report on Wednesday, which one of the following could be the list of the students who give the morning reports on Monday, Tuesday, and Wednesday, respectively?",
+    "options": [
+      "A) Irving, Lenore, and Nina",
+      "B) Lenore, George, and Irving",
+      "C) Nina, Irving, and Lenore",
+      "D) Robert, George, and Irving",
+      "E) Robert, Irving, and Lenore"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_6",
+    "context": "Of the eight students—George, Helen, Irving, Kyle, Lenore, Nina, Olivia, and Robert—in a seminar, exactly six will give individual oral reports during three consecutive days—Monday, Tuesday, and Wednesday. Exactly two reports will be given each day—one in the morning and one in the afternoon—according to the following conditions: Tuesday is the only day on which George can give a report. Neither Olivia nor Robert can give an afternoon report. If Nina gives a report, then on the next day Helen and Irving must both give reports, unless Nina's report is given on Wednesday.",
+    "question": "If Helen, Kyle, and Lenore, not necessarily in that order, give the three morning reports, which one of the following must be true?",
+    "options": [
+      "A) Helen gives a report on Monday.",
+      "B) Irving gives a report on Monday.",
+      "C) Irving gives a report on Wednesday.",
+      "D) Kyle gives a report on Tuesday.",
+      "E) Kyle gives a report on Wednesday."
+    ],
+    "answer": "B"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_2_7",
+    "context": "The organizer of a reading club will select at least five and at most six works from a group of nine works. The group consists of three French novels, three Russian novels, two French plays, and one Russian play. The organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.",
+    "question": "Which one of the following could be the organizer's selection of works?",
+    "options": [
+      "A) one French novel, two Russian novels, one French play, one Russian play",
+      "B) two French novels, one Russian novel, two French plays, one Russian play",
+      "C) two French novels, two Russian novels, two French plays",
+      "D) three French novels, one Russian novel, two French plays",
+      "E) three French novels, two Russian novels, one Russian play"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_2_8",
+    "context": "The organizer of a reading club will select at least five and at most six works from a group of nine works. The group consists of three French novels, three Russian novels, two French plays, and one Russian play. The organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.",
+    "question": "Which one of the following could be true about the organizer's selection of works?",
+    "options": [
+      "A) No Russian novels are selected.",
+      "B) Exactly one French novel is selected.",
+      "C) All three plays are selected.",
+      "D) All three Russian novels are selected.",
+      "E) All five French works are selected."
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_2_9",
+    "context": "The organizer of a reading club will select at least five and at most six works from a group of nine works. The group consists of three French novels, three Russian novels, two French plays, and one Russian play. The organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.",
+    "question": "If the works selected include three French novels, which one of the following could be a complete and accurate list of the remaining works selected?",
+    "options": [
+      "A) one Russian novel",
+      "B) two French plays",
+      "C) one Russian novel, one Russian play",
+      "D) one Russian novel, two French plays",
+      "E) two Russian novels, one French play"
+    ],
+    "answer": "C"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_2_10",
+    "context": "The organizer of a reading club will select at least five and at most six works from a group of nine works. The group consists of three French novels, three Russian novels, two French plays, and one Russian play. The organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.",
+    "question": "The organizer must at least select",
+    "options": [
+      "A) one French novel and one French play",
+      "B) one French novel and one Russian play",
+      "C) one Russian novel and one French play",
+      "D) two French novels",
+      "E) two Russian novels"
+    ],
+    "answer": "D"
+  }
+]

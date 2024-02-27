@@ -114,13 +114,17 @@ def parse_args():
     parser.add_argument("--backup", type=str, default='random')
     parser.add_argument('--result_path', type=str, default='./outputs/logic_inference')
     parser.add_argument('--mode', type=str, default='')
+    parser.add_argument('--refiment', type=int, default=0)
     args = parser.parse_args()
     return args
 
 if __name__ == "__main__":
     args = parse_args()
     if args.mode == '':
-        result_file = os.path.join(args.result_path, f'{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}_backup-{args.backup}.json')
+        if args.refiment == 0:
+            result_file = os.path.join(args.result_path, f'{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}_backup-{args.backup}.json')
+        else:
+            result_file = os.path.join(args.result_path, f'self-refine-{args.refiment}_{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}_backup-{args.backup}.json')
     else:
         result_file = os.path.join(args.result_path, f'{args.mode}_{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}.json')
     # evaluate_QA(result_file)

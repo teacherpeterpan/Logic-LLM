@@ -3,12 +3,12 @@ import random
 import os
 
 class Backup_Answer_Generator:
-    def __init__(self, dataset_name, backup_strategy, backup_LLM_result_path) -> None:
+    def __init__(self, mode, dataset_name, split, model_name, backup_strategy, backup_LLM_result_path) -> None:
         self.dataset_name = dataset_name
         self.backup_strategy = backup_strategy
         self.backup_LLM_result_path = backup_LLM_result_path
         if self.backup_strategy == 'LLM':
-            with open(backup_LLM_result_path, 'r') as f:
+            with open(os.path.join(backup_LLM_result_path, "{}_{}_{}_{}.json".format(mode, dataset_name, split, model_name.replace("/","-"))), 'r') as f:
                 LLM_result = json.load(f)
             self.backup_results = {sample['id'] : sample['predicted_answer'] for sample in LLM_result}
 
