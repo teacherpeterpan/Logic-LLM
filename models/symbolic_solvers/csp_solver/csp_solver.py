@@ -113,26 +113,30 @@ class CSP_Program:
     
     def answer_mapping(self, answer):
         self.option_pattern = r'^\w+\)'
-        self.expression_pattern = r'\w+ == \d+'       
+        self.expression_pattern = r'\w+ == \d+'
 
-        variable_ans_map = defaultdict(set)
-        for result in answer:
-            for variable, value in result.items():
-                variable_ans_map[variable].add(value)
+        try:
 
-        for option_str in self.Query:
-            # Extract the option using regex
-            option_match = re.match(self.option_pattern, option_str)
-            option = option_match.group().replace(')', '')
-            # Extract the expression using regex
-            expression_match = re.search(self.expression_pattern, option_str)
-            expression_str = expression_match.group()
-            # Extract the variable and its value
-            variable, value = expression_str.split('==')
-            variable, value = variable.strip(), int(value.strip())
-            # Check if the variable is in the execution result
-            if len(variable_ans_map[variable]) == 1 and value in variable_ans_map[variable]:
-                return option
+            variable_ans_map = defaultdict(set)
+            for result in answer:
+                for variable, value in result.items():
+                    variable_ans_map[variable].add(value)
+
+            for option_str in self.Query:
+                # Extract the option using regex
+                option_match = re.match(self.option_pattern, option_str)
+                option = option_match.group().replace(')', '')
+                # Extract the expression using regex
+                expression_match = re.search(self.expression_pattern, option_str)
+                expression_str = expression_match.group()
+                # Extract the variable and its value
+                variable, value = expression_str.split('==')
+                variable, value = variable.strip(), int(value.strip())
+                # Check if the variable is in the execution result
+                if len(variable_ans_map[variable]) == 1 and value in variable_ans_map[variable]:
+                    return option
+        except Exception as e:
+            return None
 
         return None
     

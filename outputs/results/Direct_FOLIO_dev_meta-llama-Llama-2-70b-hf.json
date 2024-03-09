@@ -1,0 +1,1634 @@
+[
+  {
+    "id": "FOLIO_dev_0",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_1",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.",
+    "answer": "A",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_2",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_3",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has lunch in the company.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_4",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have lunch in the company.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_5",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If James is either a manager or in other countries,  then James either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_6",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is an animal.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_7",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one gets flu.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_8",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Symptons of Monkeypox include coughing.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_9",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Ocellated wild turkey.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_10",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Eastern wild turkey.",
+    "answer": "B",
+    "predicted_reasoning": "B\n------",
+    "predicted_answer": "B\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_11",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Joey is a wild turkey.",
+    "answer": "C",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_12",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is in the Top 10 list.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_13",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? FIFA 22 is made by a Japanese video game company.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_14",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is not in the Top 10 list.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_15",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All squares are shapes.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_16",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a turtle.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_17",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is not a turtle.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_18",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a turtle or cute.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_19",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is not both a turtle and a squirrel, then Rock is either cute or skittish.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_20",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is cute and still, then Rock is a turtle and skittish.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_21",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Karen will share \"Stranger Things\" to Lisa.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_22",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? \"Black Mirror\" is popular.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_23",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Karen will share \"Black Mirror\" to Lisa.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_24",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing has hosted both the 2008 Summer Olympics and a winter olympics.",
+    "answer": "A",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_25",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing is located in southern China.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_26",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing is the second largest Chinese city by urban population.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_27",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Marvin is an alien.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_28",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Marvin is neither a human nor from Mars.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_29",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Marvin is not from Mars, then Marvin is a human.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_30",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic is a Grand Slam champion.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_31",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic lives in a tax haven.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_32",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic does not live in a tax haven.",
+    "answer": "B",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_33",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Roderick strong leads a professional wrestling stable.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_34",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Roderick strong leads the Creed Brothers.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_35",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Imperium doesn't have a feud with a professional wrestling stable that includes Ivy Nile.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_36",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beethoven is a composer.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_37",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some orchestras premiered music pieces.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_38",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beethoven is not a conductor.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_39",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A design by Max is a mass product design.",
+    "answer": "C",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_40",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A design by Max is evocative and dreamy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_41",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A design by Max is either evocative or dreamy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_42",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is among the most active players in major tennis.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_43",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff has lost to Rafael Nadal.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_44",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is not a player who lost to Iga Świątek or one of the most active players in major tennis.",
+    "answer": "B",
+    "predicted_reasoning": "B\n------",
+    "predicted_answer": "B\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_45",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No pets are cats.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_46",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James's favorite season is summer.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_47",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James's favorite season is fall.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_48",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mia's favorite season is spring.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_49",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is printed text.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_50",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is a streaming service.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_51",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is not a streaming service.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_52",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Basque is a Romance language.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_53",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? German is a Romance language.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_54",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? French is an Indo-European language.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_55",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski is a soccer player.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_56",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski plays for Bayern Munchen.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_57",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski is a star.",
+    "answer": "C",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_58",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Butte and Pierre are in the same state.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_59",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Pierre and Bismarck are in the same state.",
+    "answer": "C",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_60",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Montana is home to the city of Missoula.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_61",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mike has an F1 visa.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_62",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mike has a J1 visa.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_63",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ted is a pet.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_64",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ted is a pet and a cow.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_65",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Ted is a cow, then Ted is not a pet.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_66",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A private Ivy League research university moved to New Haven.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_67",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yale University has the largest university endowment of any educational institution.",
+    "answer": "C",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_68",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Pierson College is a residential college at Yale.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_69",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Andrew Collins was the script editor for a series with the working title \"The Secret Dude Society\".",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_70",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No members of Pappy's have starred for a show piloting on BBC Two or BBC Three.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_71",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KO is a company stock.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_72",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KO is a company stock and a growth company’s stock.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_73",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If KO is a growth company’s stock or if its price is volatile, then KO is neither a company’s stock nor is its price volatile.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_74",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Joe's license plate begins with the number 34.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_75",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom's license plate is from Istanbul.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_76",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mary needs to earn money to help pay for her college tuition.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_77",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mary is not a picky eater and spends a lot of her time eating and catching up with friends in the campus dining halls.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_78",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mary either is not a picky eater or, if she is, then she spends a lot of her time eating and catching up with friends in the campus dining halls.",
+    "answer": "B",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_79",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are a product of Baked by Melissa.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_80",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are not a product of Baked by Melissa.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_81",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are a hotpot.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_82",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are neither a product of Baked by Melissa nor a bakery.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_83",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are cupcakes and a product of Baked by Melissa.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_84",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Subway provides take-out service and receives many negative reviews, then its rating is greater than 9 and it does not provide take-out service.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_85",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Subway provides take-out service and does not receive many negative reviews.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_86",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Subway does not provide take-out service.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_87",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Sir Digby’s nemesis loses.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_88",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Walden contains knowledge.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_89",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is smarter than before.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_90",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A person who is smarter has gained knowledge.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_91",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Machine translation is a language generation task.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_92",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Machine translation is a language understanding task.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_93",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom will rent an apartment in The Olive Garden.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_94",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is allowed to move in an apartment in The Olive Garden with Fluffy.",
+    "answer": "C",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_95",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The security deposit at the Olive Garden is either $2000 or more.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_96",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Koalas love to sleep.",
+    "answer": "C",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_97",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Koalas love to sleep and are quokka.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_98",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If a koala is a quokka, then the koala either loves to sleep or is very fluffy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_99",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is a CEO.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_100",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is kind or a CEO.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_101",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Harry is either both evil and ugly, or neither evil nor ugly, then Harry is neither kind nor a CEO.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_102",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke spends a lot of time hanging out and playing with his siblings.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_103",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke complains often about annoying siblings.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_104",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke is neither a twin nor triplet nor complains often about annoying siblings.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_105",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom can apply for financial aid from ETS to take the GRE test.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_106",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? It cost below US $300 to take the GRE test.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_107",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is no financial aid available for the GRE test.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_108",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter tidies his space consistently and enjoys the process of cleaning.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_109",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter is either a foodie who goes out frequently to find new food restaurants to try or belongs to a household with a high net income.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_110",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter is either a foodie who goes out frequently to find new food restaurants to try and belong to a household with a high net income or he is a foodie who goes out frequently to find new food restaurants to try nor belongs to a household with a high net income.",
+    "answer": "A",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_111",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some evergreens are not objects of worship.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_112",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Juan de Onate visited a mountain range in New Mexico.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_113",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Juan de Onate visited a mountain range in Texas.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_114",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Harding Pegmatite Mine is not located in a mountain range in New Mexico.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_115",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter is shorter than a man in Michael's class.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_116",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Windy is a great shooter.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_117",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter can block Windy's shooting.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_118",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Barutin is named after all islands in Antarctica.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_119",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is at least one cove in Antarctica named after a place in Bulgaria.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_120",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Barutin is not located in Antarctica.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_121",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some affection is positive.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_122",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Greyhound is an airline.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_123",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A Greyhound is a Boeing 707.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_124",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A Greyhound is not a Boeing 707.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_125",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a monkey.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_126",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock has wings.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_127",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock does not have wings.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_128",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John has a wedding that is well-attended.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_129",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John does not have a wedding that is well-attended.",
+    "answer": "A",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_130",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John has at least one child.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_131",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John has neither a wedding that is well-attended nor does he travel to Paris for his honeymoon.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_132",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Platypus are mammals with no teeth.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_133",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Platypus are reptiles.",
+    "answer": "C",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_134",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Humans are mammals.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_135",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Space sucks.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_136",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Space is a vampire.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_137",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If something is a household appliance, it sucks.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_138",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Supervised learning is used to train the state-of-the-art text summarization model.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_139",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Unsupervised learning is used to train the state-of-the-art text summarization model.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_140",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is loved by children.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_141",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is ugly or yellow.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_142",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is either yellow and ugly or neither yellow nor ugly.",
+    "answer": "A",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_143",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Heck cattle are artificially selected.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_144",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Aurochs are extinct.",
+    "answer": "C",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_145",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jerry is young.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_146",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jerry is not young.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_147",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rose is a human or a manager.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_148",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rose is a human or Jerry is a manager.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_149",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? It is not true that Rose is a student and Jerry is a human.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_150",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Neapolitan Chronicles is an English book.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_151",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry Potter was published by New Vessel Press.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_152",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Palace of Flies was translated from Italian.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_153",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Remy visits the office supply store regularly.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_154",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Remy has a fully stocked and impressive home office and also visits the office supply store regularly.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_155",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Remy either goes to bed late and wakes up every day after noon or visits the office supply store regularly, then Remy neither spends their free time tidying and organizing the spaces in their home nor has a fully stocked and impressive home office.",
+    "answer": "A",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_156",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Greeks are mortal.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_157",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has a part-time job offered by the university.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_158",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have a part-time job offered by the university.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_159",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James either takes the database course or has a part-time job offered by the university.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_160",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jack takes the database course.",
+    "answer": "C",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_161",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If George likes music and has access to a program, he will compose.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_162",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If George will not compose, George can not compose.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_163",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All birds land",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_164",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Breaking Bad is on Monday at 8 pm.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_165",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Breaking Bad is a TV show in which roses are given out on Monday at 8 pm.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_166",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If roses are given out during Breaking Bad, then it is on Monday at 8 pm.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_167",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Heinrich Schmidt was either German or Russian.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_168",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Nazi German politician was part of both the Prussian State Parliament and the Nazi Reichstag.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_169",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No politicans are part of the Nazi Reichstag.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_170",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Colorectal cancer is a severe cancer",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_171",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If colorectal cancer is a bile duct cancer or a Cholangiocarcinoma, then colorectal cancer is a bile duct cancer and a mild flu.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_172",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If colorectal cancer is not a mild flu and a Cholangiocarcinoma, then colorectal cancer is a bile duct cancer or a Cholangiocarcinoma.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_173",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor eats salads regularly.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_174",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor visits the gym at least once a day.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_175",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor neither grew up in a health-conscious childhood home nor does she visit the gym at least once a day.",
+    "answer": "A",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_176",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The world championships is a sporting event.",
+    "answer": "C",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_177",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The last Olympic games were not in Tokyo.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_178",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The United States won the most medals in the last Olympic games.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_179",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some humans are horses.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_180",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Susan flies from LGA airport.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_181",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John flies to LGA airport.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_182",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is a grumpy person.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_183",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is not a grumpy person and mean to animals.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_184",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Tom is not a grumpy person and mean to animals, then Tom is neither a grumpy person nor an Animal Lover.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_185",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dani Shapiro is a novel writer.",
+    "answer": "A",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_186",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Family Secrets is a novel.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_187",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dani Shapiro was born in Boston.",
+    "answer": "C",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_188",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yuri is an American.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_189",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yuri is not an American basketball player.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_190",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yuri is an American basketball player.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_191",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Yuri does not wear large shoes, then Yuri is an American basketball player.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_192",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Yuri is not an American basketball player, then Yuri is a basketball player.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_193",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All events are sad.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_194",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Steinhauer was not the winner of the 1992 du Maurier Classic.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_195",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Descampe is in the six-way tie in the leaderboard of the 1992 du Maurier Classic.",
+    "answer": "C",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_196",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi is terricolous.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_197",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi barks and is a dog.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_198",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi neither barks nor is a dog.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_199",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one playing for Nautico is Brazilian.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_200",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton Silva foes not play for a football club.",
+    "answer": "B",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_201",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton was not loaned out to a football club.",
+    "answer": "B",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_202",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton Silva played for Fluminense.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_203",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton Silva was loaned out to a football club.",
+    "answer": "C",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  }
+]

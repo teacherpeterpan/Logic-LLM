@@ -117,7 +117,7 @@ class HuggingFaceModel(LLMClass):
                                           trust_remote_code=False, safetensors=True)
             self.model = model.model
         else:
-            self.model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto")
+            self.model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
         stop_token_ids = [self.tokenizer.convert_tokens_to_ids(stop_token) for stop_token in stop_words.split(" ")]
         stopping_criteria = StoppingCriteriaList([StoppingCriteriaToken(stops=stop_token_ids)])

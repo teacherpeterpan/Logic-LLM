@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ProntoQA_1",
+    "question": "Is the following statement true or false? Max is sour.",
+    "answer": "B",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_2",
+    "question": "Is the following statement true or false? Stella is bright.",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_3",
+    "question": "Is the following statement true or false? Wren is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_4",
+    "question": "Is the following statement true or false? Alex is not small.",
+    "answer": "B",
+    "predicted_reasoning": "------\nContext",
+    "predicted_answer": "------\nContext",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_5",
+    "question": "Is the following statement true or false? Alex is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_6",
+    "question": "Is the following statement true or false? Wren is dull.",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_7",
+    "question": "Is the following statement true or false? Stella is happy.",
+    "answer": "B",
+    "predicted_reasoning": "------\nContext",
+    "predicted_answer": "------\nContext",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_8",
+    "question": "Is the following statement true or false? Alex is hot.",
+    "answer": "B",
+    "predicted_reasoning": "------\nContext",
+    "predicted_answer": "------\nContext",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_9",
+    "question": "Is the following statement true or false? Wren is wooden.",
+    "answer": "A",
+    "predicted_reasoning": "B\n------",
+    "predicted_answer": "B\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_10",
+    "question": "Is the following statement true or false? Fae is sweet.",
+    "answer": "B",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  }
+]

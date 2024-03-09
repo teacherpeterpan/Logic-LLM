@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ProofWriter_RelNeg-OWA-D5-136_Q1",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The bear visits the lion.",
+    "answer": "A",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_RelNeg-OWA-D5-99_Q17",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle does not chase the bear.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_RelNoneg-OWA-D5-295_Q20",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle sees the bear.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_AttNeg-OWA-D5-1040_Q9",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Gary is red.",
+    "answer": "A",
+    "predicted_reasoning": ". A",
+    "predicted_answer": ". A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_RelNeg-OWA-D5-19_Q18",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit is rough.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_AttNeg-OWA-D5-1213_Q11",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Bob is green.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_AttNeg-OWA-D5-527_Q9",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Erin is quiet.",
+    "answer": "A",
+    "predicted_reasoning": ". A",
+    "predicted_answer": ". A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_AttNoneg-OWA-D5-607_Q15",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not white.",
+    "answer": "C",
+    "predicted_reasoning": ". A",
+    "predicted_answer": ". A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_AttNoneg-OWA-D5-1382_Q2",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not big.",
+    "answer": "B",
+    "predicted_reasoning": ". A",
+    "predicted_answer": ". A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProofWriter_AttNoneg-OWA-D5-698_Q16",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Erin is cold.",
+    "answer": "C",
+    "predicted_reasoning": ". A",
+    "predicted_answer": ". A",
+    "flag": "Direct"
+  }
+]

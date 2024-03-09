@@ -18,19 +18,22 @@ from backup_answer_generation import Backup_Answer_Generator
 from utils import OpenAIModel, HuggingFaceModel, LLMClass
 
 class SelfRefinementEngine:
-    def __init__(self, args, current_round):
+    def __init__(self, args, current_round, llm_model = None):
         self.args = args
         self.split = args.split
         self.model_name = args.model_name
         self.dataset_name = args.dataset_name
         self.backup_strategy = args.backup_strategy
         self.framework_to_use = args.framework_to_use
-        if self.framework_to_use == "OpenAI":
-            self.llm_model = OpenAIModel(args.api_key, 'gpt-4', args.stop_words, args.max_new_tokens)
-        elif self.framework_to_use == "HuggingFace":
-            self.llm_model = HuggingFaceModel(model_id=self.model_name, stop_words = args.stop_words, max_new_tokens=args.max_new_tokens, is_AWQ=args.is_AWQ)
+        if llm_model is None:
+            if self.framework_to_use == "OpenAI":
+                self.llm_model = OpenAIModel(args.api_key, 'gpt-4', args.stop_words, args.max_new_tokens)
+            elif self.framework_to_use == "HuggingFace":
+                self.llm_model = HuggingFaceModel(model_id=self.model_name, stop_words = args.stop_words, max_new_tokens=args.max_new_tokens, is_AWQ=args.is_AWQ)
+            else:
+                self.llm_model = LLMClass()
         else:
-            self.llm_model = LLMClass()
+            self.llm_model = llm_model
 
         self.model_name=self.model_name.replace("/","-")
 
@@ -39,8 +42,11 @@ class SelfRefinementEngine:
         self.logic_programs = self.load_logic_programs()
         # self.reasoning_results = self.load_inference_results()
 
-        program_executor_map = {'AR-LSAT': LSAT_Z3_Program,
-                                'FOLIO': FOL_Prover9_Program}
+        program_executor_map = {'FOLIO': FOL_Prover9_Program, 
+                                'ProntoQA': Pyke_Program, 
+                                'ProofWriter': Pyke_Program,
+                                'LogicalDeduction': CSP_Program,
+                                'AR-LSAT': LSAT_Z3_Program}
         self.program_executor = program_executor_map[self.dataset_name]
         self.backup_generator = Backup_Answer_Generator(args.mode, self.dataset_name, args.split, args.model_name, self.backup_strategy, self.args.backup_LLM_result_path)
 
@@ -55,7 +61,7 @@ class SelfRefinementEngine:
     
     def load_prompt(self, program, error_message):
         program = program.strip()
-        error_message = error_message.strip()
+        error_message = str(error_message).strip()
         with open(f'./models/prompts/self-correct-{self.dataset_name}.txt', 'r') as f:
             prompt_template = f.read()
         full_prompt = prompt_template.replace('[[PROGRAM]]', program).replace('[[ERROR MESSAGE]]', error_message)
@@ -89,8 +95,10 @@ class SelfRefinementEngine:
         answer = program.answer_mapping(answer)
         return answer, 'success', error_message
     
-    def single_round_self_refinement(self):
+    def single_round_self_refinement(self, batch_size = 10):
         outputs = []
+        error_logic_programs = []
+        # separate into correct and incorrect logic programs
         for example in tqdm(self.logic_programs):
             logic_program = example['raw_logic_programs'][0].strip()
             answer, status, error_message = self.safe_execute_program(example['id'], logic_program)
@@ -98,32 +106,60 @@ class SelfRefinementEngine:
             if status == 'execution error':
                 if not error_message == 'No Output': # this is not execution error, but parsing error
                     # perform self-correction based on the error message
-                    full_prompt = self.load_prompt(logic_program, error_message)
-                    revised_program = self.llm_model.generate(full_prompt).strip()
-                    programs = [revised_program]
-                    output = {'id': example['id'], 
-                            'context': example['context'],
-                            'question': example['question'], 
-                            'answer': example['answer'],
-                            'options': example['options'],
-                            'raw_logic_programs': programs}
-                    outputs.append(output)
+                    error_logic_programs.append(example)
                 else:
                     outputs.append(example)
             elif status == 'parsing error':
                 # perform self-correction based on the error message
-                full_prompt = self.load_prompt(logic_program, 'Parsing Error')
-                revised_program = self.llm_model.generate(full_prompt).strip()
-                programs = [revised_program]
-                output = {'id': example['id'], 
-                        'context': example['context'],
-                        'question': example['question'], 
-                        'answer': example['answer'],
-                        'options': example['options'],
-                        'raw_logic_programs': programs}
-                outputs.append(output)
+                error_logic_programs.append(example)
             else:
                 outputs.append(example)
+
+        error_chunks = [error_logic_programs[i:i + batch_size] for i in range(0, len(error_logic_programs), batch_size)]
+        for chunk in tqdm(error_chunks):
+            full_prompts = []
+            error_logic_programs = []
+            for example in chunk:
+                logic_program = example['raw_logic_programs'][0].strip()
+                answer, status, error_message = self.safe_execute_program(example['id'], logic_program)
+                # perform self-correction based on the error message
+                if status == 'execution error':
+                    full_prompts.append(self.load_prompt(logic_program, error_message))
+                elif status == 'parsing error':
+                    full_prompts.append(self.load_prompt(logic_program, 'Parsing Error'))
+
+            try:
+                batch_outputs = self.llm_model.batch_generate(full_prompts)
+                # create output
+                for sample, output in zip(chunk, batch_outputs):
+                    programs = [output]
+                    output = {'id': sample['id'], 
+                            'context': sample['context'],
+                            'question': sample['question'], 
+                            'answer': sample['answer'],
+                            'options': sample['options'],
+                            'raw_logic_programs': programs}
+                    outputs.append(output)
+            except:
+                # generate one by one if batch generation fails
+                for sample, full_prompt in zip(chunk, full_prompts):
+                    try:
+                        output = self.llm_model.generate(full_prompt)
+                        programs = [output]
+                        output = {'id': sample['id'], 
+                                'context': sample['context'],
+                                'question': sample['question'], 
+                                'answer': sample['answer'],
+                                'options': sample['options'],
+                                'raw_logic_programs': programs}
+                        outputs.append(output)
+                    except Exception as e:
+                        print(e)
+                        print('Error in generating logic programs for example: ', sample['id'])
+
+        # remove examples with duplicate ids from the result
+        outputs = list({output['id']: output for output in outputs}.values())
+        print(f"Generated {len(outputs)} examples.")
 
         # save results
         if not os.path.exists('./outputs/logic_programs'):

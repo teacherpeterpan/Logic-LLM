@@ -1,0 +1,82 @@
+[
+  {
+    "id": "logical_deduction_0",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "The blue book is to the right of the yellow book. This means the blue book is not the second from the left. The white book is to the left of the yellow book. This means the white book is not the second from the left. The blue book is the second from the right. This means the blue book is also not the second from the left. The purple book is the second from the left. This directly answers the question, so option D) The purple book is the second from the left is true. The yellow book is the second from the left. This means the yellow book is also not the second from the left. So, the answer is: E) The yellow book is the second from the left.",
+    "predicted_answer": "E\n------",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_1",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": ".\nThe convertible is older than the sedan. This means the convertible is not the second-newest. The convertible is the second-newest. This means the convertible is the second-newest. The tractor is older than the limousine. This means the tractor is not the second-newest. The tractor is the second-newest. This directly answers the question, so option C) The tractor is the second-newest is true. The minivan is older than the sedan. This means the minivan is not the second-newest. The minivan is the second-newest. This directly answers the question, so option D) The minivan is the second-newest is true. The limousine is",
+    "predicted_answer": ".\nThe convertible is older than the sedan. This means the convertible is not the second-newest. The convertible is the second-newest. This means the convertible is the second-newest. The tractor is older than the limousine. This means the tractor is not the second-newest. The tractor is the second-newest. This directly answers the question, so option C) The tractor is the second-newest is true. The minivan is older than the sedan. This means the minivan is not the second-newest. The minivan is the second-newest. This directly answers the question, so option D) The minivan is the second-newest is true. The limousine is",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_2",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": ".\nThe tractor is newer than the motorcyle. This means the tractor is not the oldest. The motorcyle is newer than the sedan. This means the sedan is not the oldest. The limousine is the oldest. This directly answers the question, so option A) The station wagon is the oldest is true. The station wagon is the newest. This means the station wagon is not the oldest. So, the answer is: B) The sedan is the oldest.",
+    "predicted_answer": "B\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn an antique car show, there are five vehicles: a station",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_3",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": ".\nThe apples are less expensive than the peaches. This means the apples are more expensive than the peaches. The kiwis are the second-cheapest. This means the kiwis are less expensive than the peaches. The watermelons are more expensive than the peaches. This means the watermelons are less expensive than the kiwis. So, the answer is: E) The kiwis are the most expensive.",
+    "predicted_answer": "E\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells five fruits: watermelons, plums, apples, pe",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_4",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": ".\nThe cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the",
+    "predicted_answer": ".\nThe cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the cardinal is not the second from the left. The cardinal is to the right of the blue jay. This means the",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_5",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": ".\nThe convertible is the second-oldest. This means it is the second-oldest, so option A is correct. The sedan is newer than the station wagon. Since the sedan is the second-oldest, the station wagon must be among the three newest cars, so it cannot be the second-oldest. So, option C is incorrect. The bus is the second-newest. The bus is the second-oldest. So, option D is incorrect. The limousine is the newest. The limousine is the second-oldest. So, option E is incorrect. Therefore, the answer is: A) The convertible is the second-oldest.",
+    "predicted_answer": "A\n------\nContext:",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_6",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": ".\nThe robin is to the left of the quail. This means the robin is not the third from the left. The falcon is the third from the left. This directly answers the question, so option B) The robin is the third from the left is true. The crow is to the left of the falcon. This means the crow is not the third from the left. So, the answer is: B) The robin is the third from the left.",
+    "predicted_answer": "B\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a branch, there are five birds: a crow, a robin, a qu",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_7",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": ".\nThe cardinal is the leftmost. This means it is the second from the left. So, option A is correct. The robin is to the right of the raven. This means the robin is not the second from the left. The raven is to the right of the blue jay. This means the raven is not the second from the left. The blue jay is the third from the left. This means the blue jay is not the second from the left. So, the answer is: A) The cardinal is the second from the left.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_8",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": ".\nThe owl is the second from the right. This means owl is not the rightmost. The robin is the second from the left. This means robin is not the rightmost. The robin is to the right of the blue jay. This means neither robin nor blue jay is the rightmost. The hummingbird is to the right of the hawk. This means neither hummingbird nor hawk is the rightmost. So, the answer is: E) The hummingbird is the rightmost.",
+    "predicted_answer": "E\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a branch",
+    "flag": "CoT"
+  },
+  {
+    "id": "logical_deduction_9",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "The purple book is to the left of the black book. This means the purple book is not the second from the right. The red book is to the right of the brown book. This means the red book is not the second from the right. The orange book is the second from the left. This means the orange book is the second from the right. The black book is the third from the left. This means the black book is not the second from the right. So, the answer is: E) The black book is the second from the right.",
+    "predicted_answer": "E\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a",
+    "flag": "CoT"
+  }
+]

@@ -7,7 +7,7 @@ from utils import OpenAIModel, HuggingFaceModel, LLMClass
 import argparse
 
 class Model_Baseline:
-    def __init__(self, args):
+    def __init__(self, args, llm_model=None):
         self.args = args
         self.data_path = args.data_path
         self.dataset_name = args.dataset_name
@@ -17,12 +17,15 @@ class Model_Baseline:
         self.demonstration_path = args.demonstration_path
         self.mode = args.mode
         self.framework_to_use = args.framework_to_use
-        if self.framework_to_use == "OpenAI":
-            self.llm_model = OpenAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens)
-        elif self.framework_to_use == "HuggingFace":
-            self.llm_model = HuggingFaceModel(model_id=self.model_name, stop_words = args.stop_words, max_new_tokens=args.max_new_tokens, is_AWQ=args.is_AWQ)
+        if llm_model is None:
+            if self.framework_to_use == "OpenAI":
+                self.llm_model = OpenAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens)
+            elif self.framework_to_use == "HuggingFace":
+                self.llm_model = HuggingFaceModel(model_id=self.model_name, stop_words = args.stop_words, max_new_tokens=args.max_new_tokens, is_AWQ=args.is_AWQ)
+            else:
+                self.llm_model = LLMClass()
         else:
-            self.llm_model = LLMClass()
+            self.llm_model = llm_model
 
         self.model_name=self.model_name.replace("/","-")
 

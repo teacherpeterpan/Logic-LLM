@@ -80,10 +80,6 @@ def evaluate_QA(QA_results):
                     answer_str = answer_str.split(indicator)[1].strip()
                     prediction = get_choice(answer_str)
                     break
-
-        # if prediction is None:
-        #     print(answer_str)
-        # print(f"prediction: {prediction} \t gold_answers: {gold_answer} \t match: {prediction == gold_answer}")
         
         em_score = 1.0 if prediction == gold_answer else 0.0
         total_em += em_score
@@ -93,7 +89,6 @@ def evaluate_QA(QA_results):
         avg_em = total_em / count
     else:
         avg_em = 0
-    # print(f"Accuracy: {avg_em}")
     return avg_em
 
 def full_evaluation(result_file):
@@ -127,5 +122,6 @@ if __name__ == "__main__":
             result_file = os.path.join(args.result_path, f'self-refine-{args.refiment}_{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}_backup-{args.backup}.json')
     else:
         result_file = os.path.join(args.result_path, f'{args.mode}_{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}.json')
-    # evaluate_QA(result_file)
+    
+    print(f'Evaluating {result_file}')
     full_evaluation(result_file)

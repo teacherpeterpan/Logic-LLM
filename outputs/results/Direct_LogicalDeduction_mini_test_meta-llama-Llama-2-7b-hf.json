@@ -1,0 +1,82 @@
+[
+  {
+    "id": "logical_deduction_0",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_1",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_2",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_3",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_4",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_5",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_6",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_7",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_8",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_9",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  }
+]

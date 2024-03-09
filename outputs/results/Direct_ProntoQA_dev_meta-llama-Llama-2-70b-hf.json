@@ -1,0 +1,4002 @@
+[
+  {
+    "id": "ProntoQA_1",
+    "question": "Is the following statement true or false? Max is sour.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_2",
+    "question": "Is the following statement true or false? Stella is bright.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_3",
+    "question": "Is the following statement true or false? Wren is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_4",
+    "question": "Is the following statement true or false? Alex is not small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_5",
+    "question": "Is the following statement true or false? Alex is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_6",
+    "question": "Is the following statement true or false? Wren is dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_7",
+    "question": "Is the following statement true or false? Stella is happy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_8",
+    "question": "Is the following statement true or false? Alex is hot.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_9",
+    "question": "Is the following statement true or false? Wren is wooden.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_10",
+    "question": "Is the following statement true or false? Fae is sweet.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_11",
+    "question": "Is the following statement true or false? Sam is not fruity.",
+    "answer": "B",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_12",
+    "question": "Is the following statement true or false? Fae is not floral.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_13",
+    "question": "Is the following statement true or false? Max is dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_14",
+    "question": "Is the following statement true or false? Fae is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_15",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_16",
+    "question": "Is the following statement true or false? Sally is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_17",
+    "question": "Is the following statement true or false? Fae is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_18",
+    "question": "Is the following statement true or false? Sam is fruity.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_19",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_20",
+    "question": "Is the following statement true or false? Stella is sour.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_21",
+    "question": "Is the following statement true or false? Max is orange.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_22",
+    "question": "Is the following statement true or false? Wren is not feisty.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_23",
+    "question": "Is the following statement true or false? Sally is bitter.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_24",
+    "question": "Is the following statement true or false? Alex is amenable.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_25",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_26",
+    "question": "Is the following statement true or false? Rex is large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_27",
+    "question": "Is the following statement true or false? Fae is not aggressive.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_28",
+    "question": "Is the following statement true or false? Alex is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_29",
+    "question": "Is the following statement true or false? Max is bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_30",
+    "question": "Is the following statement true or false? Fae is temperate.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_31",
+    "question": "Is the following statement true or false? Wren is not angry.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_32",
+    "question": "Is the following statement true or false? Sally is not wooden.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_33",
+    "question": "Is the following statement true or false? Stella is not bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_34",
+    "question": "Is the following statement true or false? Sam is shy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_35",
+    "question": "Is the following statement true or false? Fae is orange.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_36",
+    "question": "Is the following statement true or false? Sally is shy.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_37",
+    "question": "Is the following statement true or false? Wren is sweet.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_38",
+    "question": "Is the following statement true or false? Polly is not happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_39",
+    "question": "Is the following statement true or false? Stella is not hot.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_40",
+    "question": "Is the following statement true or false? Sally is amenable.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_41",
+    "question": "Is the following statement true or false? Max is not hot.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_42",
+    "question": "Is the following statement true or false? Wren is not orange.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_43",
+    "question": "Is the following statement true or false? Polly is angry.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_44",
+    "question": "Is the following statement true or false? Rex is not spicy.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_45",
+    "question": "Is the following statement true or false? Fae is wooden.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_46",
+    "question": "Is the following statement true or false? Sally is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_47",
+    "question": "Is the following statement true or false? Max is not cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_48",
+    "question": "Is the following statement true or false? Sam is not fruity.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_49",
+    "question": "Is the following statement true or false? Wren is liquid.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_50",
+    "question": "Is the following statement true or false? Fae is not blue.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_51",
+    "question": "Is the following statement true or false? Max is not cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_52",
+    "question": "Is the following statement true or false? Polly is blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_53",
+    "question": "Is the following statement true or false? Fae is dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_54",
+    "question": "Is the following statement true or false? Stella is not red.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_55",
+    "question": "Is the following statement true or false? Rex is mean.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_56",
+    "question": "Is the following statement true or false? Sam is not liquid.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_57",
+    "question": "Is the following statement true or false? Alex is not feisty.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_58",
+    "question": "Is the following statement true or false? Fae is not fruity.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_59",
+    "question": "Is the following statement true or false? Max is not nervous.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_60",
+    "question": "Is the following statement true or false? Sam is mean.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_61",
+    "question": "Is the following statement true or false? Max is not nervous.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_62",
+    "question": "Is the following statement true or false? Wren is not transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_63",
+    "question": "Is the following statement true or false? Rex is brown.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_64",
+    "question": "Is the following statement true or false? Sam is not temperate.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_65",
+    "question": "Is the following statement true or false? Max is angry.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_66",
+    "question": "Is the following statement true or false? Sam is not sweet.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_67",
+    "question": "Is the following statement true or false? Sam is orange.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_68",
+    "question": "Is the following statement true or false? Wren is spicy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_69",
+    "question": "Is the following statement true or false? Wren is not cold.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_70",
+    "question": "Is the following statement true or false? Rex is not transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_71",
+    "question": "Is the following statement true or false? Sally is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_72",
+    "question": "Is the following statement true or false? Sam is fruity.",
+    "answer": "A",
+    "predicted_reasoning": "B\n------",
+    "predicted_answer": "B\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_73",
+    "question": "Is the following statement true or false? Wren is not earthy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_74",
+    "question": "Is the following statement true or false? Sam is not fruity.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_75",
+    "question": "Is the following statement true or false? Polly is fruity.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_76",
+    "question": "Is the following statement true or false? Sally is spicy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_77",
+    "question": "Is the following statement true or false? Sam is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_78",
+    "question": "Is the following statement true or false? Fae is small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_79",
+    "question": "Is the following statement true or false? Stella is blue.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_80",
+    "question": "Is the following statement true or false? Sally is blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_81",
+    "question": "Is the following statement true or false? Sam is dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_82",
+    "question": "Is the following statement true or false? Rex is not happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_83",
+    "question": "Is the following statement true or false? Wren is transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_84",
+    "question": "Is the following statement true or false? Rex is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_85",
+    "question": "Is the following statement true or false? Sam is not transparent.",
+    "answer": "B",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_86",
+    "question": "Is the following statement true or false? Stella is not shy.",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_87",
+    "question": "Is the following statement true or false? Alex is not sour.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_88",
+    "question": "Is the following statement true or false? Wren is liquid.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_89",
+    "question": "Is the following statement true or false? Max is not brown.",
+    "answer": "B",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_90",
+    "question": "Is the following statement true or false? Max is metallic.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_91",
+    "question": "Is the following statement true or false? Wren is not small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_92",
+    "question": "Is the following statement true or false? Sally is metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_93",
+    "question": "Is the following statement true or false? Polly is not luminous.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_94",
+    "question": "Is the following statement true or false? Max is angry.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_95",
+    "question": "Is the following statement true or false? Stella is feisty.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_96",
+    "question": "Is the following statement true or false? Fae is bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_97",
+    "question": "Is the following statement true or false? Polly is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_98",
+    "question": "Is the following statement true or false? Rex is not angry.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_99",
+    "question": "Is the following statement true or false? Sam is not earthy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_100",
+    "question": "Is the following statement true or false? Alex is blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_101",
+    "question": "Is the following statement true or false? Sam is not shy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_102",
+    "question": "Is the following statement true or false? Rex is not spicy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_103",
+    "question": "Is the following statement true or false? Sally is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_104",
+    "question": "Is the following statement true or false? Stella is red.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_105",
+    "question": "Is the following statement true or false? Alex is not brown.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_106",
+    "question": "Is the following statement true or false? Max is angry.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_107",
+    "question": "Is the following statement true or false? Sally is not bitter.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_108",
+    "question": "Is the following statement true or false? Wren is not hot.",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_109",
+    "question": "Is the following statement true or false? Sally is large.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_110",
+    "question": "Is the following statement true or false? Sally is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_111",
+    "question": "Is the following statement true or false? Sally is amenable.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_112",
+    "question": "Is the following statement true or false? Max is not brown.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_113",
+    "question": "Is the following statement true or false? Rex is not wooden.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_114",
+    "question": "Is the following statement true or false? Polly is sweet.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_115",
+    "question": "Is the following statement true or false? Alex is wooden.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_116",
+    "question": "Is the following statement true or false? Sally is not hot.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_117",
+    "question": "Is the following statement true or false? Alex is angry.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_118",
+    "question": "Is the following statement true or false? Sam is not sweet.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_119",
+    "question": "Is the following statement true or false? Max is shy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_120",
+    "question": "Is the following statement true or false? Stella is not fruity.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_121",
+    "question": "Is the following statement true or false? Max is not mean.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_122",
+    "question": "Is the following statement true or false? Fae is transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_123",
+    "question": "Is the following statement true or false? Polly is aggressive.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_124",
+    "question": "Is the following statement true or false? Sam is not cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_125",
+    "question": "Is the following statement true or false? Sally is not feisty.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_126",
+    "question": "Is the following statement true or false? Stella is not floral.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_127",
+    "question": "Is the following statement true or false? Max is nervous.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_128",
+    "question": "Is the following statement true or false? Sam is temperate.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_129",
+    "question": "Is the following statement true or false? Wren is not sweet.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_130",
+    "question": "Is the following statement true or false? Polly is not opaque.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_131",
+    "question": "Is the following statement true or false? Polly is dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_132",
+    "question": "Is the following statement true or false? Polly is not blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_133",
+    "question": "Is the following statement true or false? Wren is not bitter.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_134",
+    "question": "Is the following statement true or false? Stella is temperate.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_135",
+    "question": "Is the following statement true or false? Alex is not blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_136",
+    "question": "Is the following statement true or false? Sally is not sour.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_137",
+    "question": "Is the following statement true or false? Rex is not liquid.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_138",
+    "question": "Is the following statement true or false? Sally is red.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_139",
+    "question": "Is the following statement true or false? Sam is not small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_140",
+    "question": "Is the following statement true or false? Stella is sour.",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_141",
+    "question": "Is the following statement true or false? Alex is bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_142",
+    "question": "Is the following statement true or false? Stella is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_143",
+    "question": "Is the following statement true or false? Max is transparent.",
+    "answer": "B",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_144",
+    "question": "Is the following statement true or false? Wren is not large.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_145",
+    "question": "Is the following statement true or false? Stella is luminous.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_146",
+    "question": "Is the following statement true or false? Fae is not bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_147",
+    "question": "Is the following statement true or false? Polly is not kind.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_148",
+    "question": "Is the following statement true or false? Fae is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_149",
+    "question": "Is the following statement true or false? Stella is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_150",
+    "question": "Is the following statement true or false? Alex is small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_151",
+    "question": "Is the following statement true or false? Sally is shy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_152",
+    "question": "Is the following statement true or false? Wren is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_153",
+    "question": "Is the following statement true or false? Sally is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_154",
+    "question": "Is the following statement true or false? Sam is not brown.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_155",
+    "question": "Is the following statement true or false? Sam is not large.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_156",
+    "question": "Is the following statement true or false? Wren is not small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_157",
+    "question": "Is the following statement true or false? Polly is not happy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_158",
+    "question": "Is the following statement true or false? Sam is not spicy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_159",
+    "question": "Is the following statement true or false? Alex is not earthy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_160",
+    "question": "Is the following statement true or false? Wren is not nervous.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_161",
+    "question": "Is the following statement true or false? Max is red.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_162",
+    "question": "Is the following statement true or false? Wren is not mean.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_163",
+    "question": "Is the following statement true or false? Stella is metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_164",
+    "question": "Is the following statement true or false? Stella is not sweet.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_165",
+    "question": "Is the following statement true or false? Fae is not feisty.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_166",
+    "question": "Is the following statement true or false? Polly is not sour.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_167",
+    "question": "Is the following statement true or false? Stella is not bright.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_168",
+    "question": "Is the following statement true or false? Wren is floral.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_169",
+    "question": "Is the following statement true or false? Sam is fruity.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_170",
+    "question": "Is the following statement true or false? Max is not brown.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_171",
+    "question": "Is the following statement true or false? Polly is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_172",
+    "question": "Is the following statement true or false? Rex is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_173",
+    "question": "Is the following statement true or false? Sally is not cold.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_174",
+    "question": "Is the following statement true or false? Polly is kind.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_175",
+    "question": "Is the following statement true or false? Stella is nervous.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_176",
+    "question": "Is the following statement true or false? Sally is not spicy.",
+    "answer": "A",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_177",
+    "question": "Is the following statement true or false? Rex is bright.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_178",
+    "question": "Is the following statement true or false? Polly is metallic.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_179",
+    "question": "Is the following statement true or false? Wren is not opaque.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_180",
+    "question": "Is the following statement true or false? Max is not luminous.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_181",
+    "question": "Is the following statement true or false? Rex is not kind.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_182",
+    "question": "Is the following statement true or false? Sam is large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_183",
+    "question": "Is the following statement true or false? Fae is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_184",
+    "question": "Is the following statement true or false? Sam is not angry.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_185",
+    "question": "Is the following statement true or false? Polly is not happy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_186",
+    "question": "Is the following statement true or false? Sally is fruity.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_187",
+    "question": "Is the following statement true or false? Sam is bitter.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_188",
+    "question": "Is the following statement true or false? Stella is not cold.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_189",
+    "question": "Is the following statement true or false? Wren is dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_190",
+    "question": "Is the following statement true or false? Max is nervous.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_191",
+    "question": "Is the following statement true or false? Fae is happy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_192",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_193",
+    "question": "Is the following statement true or false? Wren is not red.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_194",
+    "question": "Is the following statement true or false? Max is not earthy.",
+    "answer": "B",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_195",
+    "question": "Is the following statement true or false? Fae is not spicy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_196",
+    "question": "Is the following statement true or false? Fae is not feisty.",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_197",
+    "question": "Is the following statement true or false? Alex is kind.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_198",
+    "question": "Is the following statement true or false? Wren is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_199",
+    "question": "Is the following statement true or false? Alex is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_200",
+    "question": "Is the following statement true or false? Rex is not transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_201",
+    "question": "Is the following statement true or false? Sally is not wooden.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_202",
+    "question": "Is the following statement true or false? Wren is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_203",
+    "question": "Is the following statement true or false? Alex is shy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_204",
+    "question": "Is the following statement true or false? Sam is not feisty.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_205",
+    "question": "Is the following statement true or false? Stella is fruity.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_206",
+    "question": "Is the following statement true or false? Polly is fruity.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_207",
+    "question": "Is the following statement true or false? Sally is not floral.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_208",
+    "question": "Is the following statement true or false? Max is not orange.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_209",
+    "question": "Is the following statement true or false? Polly is earthy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_210",
+    "question": "Is the following statement true or false? Fae is not hot.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_211",
+    "question": "Is the following statement true or false? Alex is not earthy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_212",
+    "question": "Is the following statement true or false? Stella is not temperate.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_213",
+    "question": "Is the following statement true or false? Rex is not wooden.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_214",
+    "question": "Is the following statement true or false? Sally is nervous.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_215",
+    "question": "Is the following statement true or false? Max is not earthy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_216",
+    "question": "Is the following statement true or false? Max is aggressive.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_217",
+    "question": "Is the following statement true or false? Sally is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_218",
+    "question": "Is the following statement true or false? Fae is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_219",
+    "question": "Is the following statement true or false? Wren is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_220",
+    "question": "Is the following statement true or false? Stella is not luminous.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_221",
+    "question": "Is the following statement true or false? Stella is fruity.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_222",
+    "question": "Is the following statement true or false? Stella is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_223",
+    "question": "Is the following statement true or false? Polly is not luminous.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_224",
+    "question": "Is the following statement true or false? Sally is cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_225",
+    "question": "Is the following statement true or false? Sam is large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_226",
+    "question": "Is the following statement true or false? Stella is metallic.",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_227",
+    "question": "Is the following statement true or false? Sam is not nervous.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_228",
+    "question": "Is the following statement true or false? Alex is not transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_229",
+    "question": "Is the following statement true or false? Alex is not cold.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_230",
+    "question": "Is the following statement true or false? Rex is kind.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_231",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "B\n------",
+    "predicted_answer": "B\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_232",
+    "question": "Is the following statement true or false? Max is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_233",
+    "question": "Is the following statement true or false? Rex is not large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_234",
+    "question": "Is the following statement true or false? Stella is not earthy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_235",
+    "question": "Is the following statement true or false? Stella is not happy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_236",
+    "question": "Is the following statement true or false? Fae is orange.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_237",
+    "question": "Is the following statement true or false? Sally is cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_238",
+    "question": "Is the following statement true or false? Polly is small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_239",
+    "question": "Is the following statement true or false? Alex is not spicy.",
+    "answer": "B",
+    "predicted_reasoning": "Question: Is",
+    "predicted_answer": "Question: Is",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_240",
+    "question": "Is the following statement true or false? Alex is spicy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_241",
+    "question": "Is the following statement true or false? Sally is not orange.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_242",
+    "question": "Is the following statement true or false? Wren is not blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_243",
+    "question": "Is the following statement true or false? Max is feisty.",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_244",
+    "question": "Is the following statement true or false? Wren is not transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_245",
+    "question": "Is the following statement true or false? Rex is large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_246",
+    "question": "Is the following statement true or false? Sam is not red.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_247",
+    "question": "Is the following statement true or false? Sam is brown.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_248",
+    "question": "Is the following statement true or false? Polly is sour.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_249",
+    "question": "Is the following statement true or false? Stella is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_250",
+    "question": "Is the following statement true or false? Stella is wooden.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_251",
+    "question": "Is the following statement true or false? Sam is kind.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_252",
+    "question": "Is the following statement true or false? Alex is blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_253",
+    "question": "Is the following statement true or false? Fae is not large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_254",
+    "question": "Is the following statement true or false? Max is bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_255",
+    "question": "Is the following statement true or false? Max is not bitter.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_256",
+    "question": "Is the following statement true or false? Sam is not small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_257",
+    "question": "Is the following statement true or false? Max is kind.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_258",
+    "question": "Is the following statement true or false? Wren is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_259",
+    "question": "Is the following statement true or false? Sally is sweet.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_260",
+    "question": "Is the following statement true or false? Max is not wooden.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_261",
+    "question": "Is the following statement true or false? Alex is not fruity.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_262",
+    "question": "Is the following statement true or false? Sam is cold.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_263",
+    "question": "Is the following statement true or false? Sally is floral.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_264",
+    "question": "Is the following statement true or false? Max is not bright.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_265",
+    "question": "Is the following statement true or false? Sally is not fruity.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_266",
+    "question": "Is the following statement true or false? Rex is temperate.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_267",
+    "question": "Is the following statement true or false? Polly is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_268",
+    "question": "Is the following statement true or false? Alex is not cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_269",
+    "question": "Is the following statement true or false? Max is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_270",
+    "question": "Is the following statement true or false? Wren is not bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_271",
+    "question": "Is the following statement true or false? Sally is not small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_272",
+    "question": "Is the following statement true or false? Alex is cold.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_273",
+    "question": "Is the following statement true or false? Alex is luminous.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_274",
+    "question": "Is the following statement true or false? Sam is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_275",
+    "question": "Is the following statement true or false? Max is not aggressive.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_276",
+    "question": "Is the following statement true or false? Sally is not nervous.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_277",
+    "question": "Is the following statement true or false? Rex is not temperate.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_278",
+    "question": "Is the following statement true or false? Sally is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_279",
+    "question": "Is the following statement true or false? Wren is not feisty.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_280",
+    "question": "Is the following statement true or false? Alex is sweet.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_281",
+    "question": "Is the following statement true or false? Stella is luminous.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_282",
+    "question": "Is the following statement true or false? Stella is luminous.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_283",
+    "question": "Is the following statement true or false? Polly is large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_284",
+    "question": "Is the following statement true or false? Rex is happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_285",
+    "question": "Is the following statement true or false? Stella is cold.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_286",
+    "question": "Is the following statement true or false? Max is floral.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_287",
+    "question": "Is the following statement true or false? Rex is bright.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_288",
+    "question": "Is the following statement true or false? Fae is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_289",
+    "question": "Is the following statement true or false? Polly is amenable.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_290",
+    "question": "Is the following statement true or false? Rex is sweet.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_291",
+    "question": "Is the following statement true or false? Stella is not luminous.",
+    "answer": "B",
+    "predicted_reasoning": "B\n------",
+    "predicted_answer": "B\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_292",
+    "question": "Is the following statement true or false? Fae is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_293",
+    "question": "Is the following statement true or false? Sally is not luminous.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_294",
+    "question": "Is the following statement true or false? Polly is luminous.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_295",
+    "question": "Is the following statement true or false? Sally is liquid.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_296",
+    "question": "Is the following statement true or false? Wren is small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_297",
+    "question": "Is the following statement true or false? Sam is sour.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_298",
+    "question": "Is the following statement true or false? Sally is not happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_299",
+    "question": "Is the following statement true or false? Polly is cold.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_300",
+    "question": "Is the following statement true or false? Sam is temperate.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_301",
+    "question": "Is the following statement true or false? Max is small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_302",
+    "question": "Is the following statement true or false? Alex is not large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_303",
+    "question": "Is the following statement true or false? Alex is cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_304",
+    "question": "Is the following statement true or false? Polly is not amenable.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_305",
+    "question": "Is the following statement true or false? Alex is earthy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_306",
+    "question": "Is the following statement true or false? Max is aggressive.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_307",
+    "question": "Is the following statement true or false? Stella is not hot.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_308",
+    "question": "Is the following statement true or false? Alex is not orange.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_309",
+    "question": "Is the following statement true or false? Wren is not large.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_310",
+    "question": "Is the following statement true or false? Sam is liquid.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_311",
+    "question": "Is the following statement true or false? Polly is not small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_312",
+    "question": "Is the following statement true or false? Max is not aggressive.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_313",
+    "question": "Is the following statement true or false? Stella is temperate.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_314",
+    "question": "Is the following statement true or false? Sally is not opaque.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_315",
+    "question": "Is the following statement true or false? Fae is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_316",
+    "question": "Is the following statement true or false? Alex is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_317",
+    "question": "Is the following statement true or false? Stella is not red.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_318",
+    "question": "Is the following statement true or false? Max is spicy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_319",
+    "question": "Is the following statement true or false? Wren is not temperate.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_320",
+    "question": "Is the following statement true or false? Sam is not shy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_321",
+    "question": "Is the following statement true or false? Sally is not temperate.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_322",
+    "question": "Is the following statement true or false? Alex is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_323",
+    "question": "Is the following statement true or false? Wren is not amenable.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_324",
+    "question": "Is the following statement true or false? Alex is not red.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_325",
+    "question": "Is the following statement true or false? Wren is not wooden.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_326",
+    "question": "Is the following statement true or false? Alex is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_327",
+    "question": "Is the following statement true or false? Rex is not happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_328",
+    "question": "Is the following statement true or false? Wren is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_329",
+    "question": "Is the following statement true or false? Polly is not bitter.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_330",
+    "question": "Is the following statement true or false? Rex is not earthy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_331",
+    "question": "Is the following statement true or false? Sam is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_332",
+    "question": "Is the following statement true or false? Max is not kind.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_333",
+    "question": "Is the following statement true or false? Stella is not temperate.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_334",
+    "question": "Is the following statement true or false? Sally is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_335",
+    "question": "Is the following statement true or false? Polly is not large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_336",
+    "question": "Is the following statement true or false? Max is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_337",
+    "question": "Is the following statement true or false? Polly is spicy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_338",
+    "question": "Is the following statement true or false? Stella is not fruity.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_339",
+    "question": "Is the following statement true or false? Max is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_340",
+    "question": "Is the following statement true or false? Wren is feisty.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_341",
+    "question": "Is the following statement true or false? Polly is not temperate.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_342",
+    "question": "Is the following statement true or false? Polly is temperate.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_343",
+    "question": "Is the following statement true or false? Polly is not sour.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_344",
+    "question": "Is the following statement true or false? Stella is temperate.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_345",
+    "question": "Is the following statement true or false? Rex is not small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_346",
+    "question": "Is the following statement true or false? Sam is not bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_347",
+    "question": "Is the following statement true or false? Sally is not earthy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_348",
+    "question": "Is the following statement true or false? Fae is luminous.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_349",
+    "question": "Is the following statement true or false? Alex is not mean.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_350",
+    "question": "Is the following statement true or false? Alex is not sour.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_351",
+    "question": "Is the following statement true or false? Stella is not fruity.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_352",
+    "question": "Is the following statement true or false? Wren is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_353",
+    "question": "Is the following statement true or false? Wren is not hot.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_354",
+    "question": "Is the following statement true or false? Fae is not bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_355",
+    "question": "Is the following statement true or false? Rex is not brown.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_356",
+    "question": "Is the following statement true or false? Rex is kind.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_357",
+    "question": "Is the following statement true or false? Stella is blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_358",
+    "question": "Is the following statement true or false? Max is wooden.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_359",
+    "question": "Is the following statement true or false? Max is wooden.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_360",
+    "question": "Is the following statement true or false? Sally is temperate.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_361",
+    "question": "Is the following statement true or false? Rex is transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_362",
+    "question": "Is the following statement true or false? Sally is not blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_363",
+    "question": "Is the following statement true or false? Polly is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_364",
+    "question": "Is the following statement true or false? Stella is not kind.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_365",
+    "question": "Is the following statement true or false? Sally is not transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_366",
+    "question": "Is the following statement true or false? Polly is floral.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_367",
+    "question": "Is the following statement true or false? Polly is hot.",
+    "answer": "B",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_368",
+    "question": "Is the following statement true or false? Fae is not blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_369",
+    "question": "Is the following statement true or false? Rex is brown.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_370",
+    "question": "Is the following statement true or false? Max is not earthy.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_371",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_372",
+    "question": "Is the following statement true or false? Rex is kind.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_373",
+    "question": "Is the following statement true or false? Sam is dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_374",
+    "question": "Is the following statement true or false? Fae is aggressive.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_375",
+    "question": "Is the following statement true or false? Fae is metallic.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_376",
+    "question": "Is the following statement true or false? Wren is transparent.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_377",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_378",
+    "question": "Is the following statement true or false? Max is transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_379",
+    "question": "Is the following statement true or false? Wren is not sour.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_380",
+    "question": "Is the following statement true or false? Polly is not happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_381",
+    "question": "Is the following statement true or false? Sally is feisty.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_382",
+    "question": "Is the following statement true or false? Polly is not temperate.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_383",
+    "question": "Is the following statement true or false? Sam is brown.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_384",
+    "question": "Is the following statement true or false? Fae is not kind.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_385",
+    "question": "Is the following statement true or false? Wren is fruity.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_386",
+    "question": "Is the following statement true or false? Wren is floral.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_387",
+    "question": "Is the following statement true or false? Polly is red.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_388",
+    "question": "Is the following statement true or false? Rex is not luminous.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_389",
+    "question": "Is the following statement true or false? Sally is not cold.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_390",
+    "question": "Is the following statement true or false? Max is fruity.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_391",
+    "question": "Is the following statement true or false? Stella is brown.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_392",
+    "question": "Is the following statement true or false? Stella is blue.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_393",
+    "question": "Is the following statement true or false? Fae is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_394",
+    "question": "Is the following statement true or false? Fae is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_395",
+    "question": "Is the following statement true or false? Wren is brown.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_396",
+    "question": "Is the following statement true or false? Sally is happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_397",
+    "question": "Is the following statement true or false? Stella is fruity.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_398",
+    "question": "Is the following statement true or false? Wren is opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_399",
+    "question": "Is the following statement true or false? Polly is not opaque.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_400",
+    "question": "Is the following statement true or false? Wren is not happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_401",
+    "question": "Is the following statement true or false? Sally is not liquid.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_402",
+    "question": "Is the following statement true or false? Stella is not angry.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_403",
+    "question": "Is the following statement true or false? Alex is wooden.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_404",
+    "question": "Is the following statement true or false? Fae is not happy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_405",
+    "question": "Is the following statement true or false? Wren is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_406",
+    "question": "Is the following statement true or false? Sally is cold.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_407",
+    "question": "Is the following statement true or false? Max is not happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_408",
+    "question": "Is the following statement true or false? Sally is mean.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_409",
+    "question": "Is the following statement true or false? Stella is cold.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_410",
+    "question": "Is the following statement true or false? Sam is not sweet.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_411",
+    "question": "Is the following statement true or false? Stella is bright.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_412",
+    "question": "Is the following statement true or false? Max is happy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_413",
+    "question": "Is the following statement true or false? Rex is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_414",
+    "question": "Is the following statement true or false? Sally is not dull.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_415",
+    "question": "Is the following statement true or false? Alex is red.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_416",
+    "question": "Is the following statement true or false? Polly is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_417",
+    "question": "Is the following statement true or false? Polly is not metallic.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_418",
+    "question": "Is the following statement true or false? Alex is not red.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_419",
+    "question": "Is the following statement true or false? Wren is not small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_420",
+    "question": "Is the following statement true or false? Rex is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_421",
+    "question": "Is the following statement true or false? Alex is nervous.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_422",
+    "question": "Is the following statement true or false? Fae is not happy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_423",
+    "question": "Is the following statement true or false? Wren is not transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_424",
+    "question": "Is the following statement true or false? Polly is not mean.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_425",
+    "question": "Is the following statement true or false? Wren is not opaque.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_426",
+    "question": "Is the following statement true or false? Wren is floral.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_427",
+    "question": "Is the following statement true or false? Alex is small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_428",
+    "question": "Is the following statement true or false? Rex is not feisty.",
+    "answer": "A",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_429",
+    "question": "Is the following statement true or false? Wren is not shy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_430",
+    "question": "Is the following statement true or false? Wren is not shy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_431",
+    "question": "Is the following statement true or false? Rex is large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_432",
+    "question": "Is the following statement true or false? Sally is not red.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_433",
+    "question": "Is the following statement true or false? Wren is not hot.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_434",
+    "question": "Is the following statement true or false? Max is small.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_435",
+    "question": "Is the following statement true or false? Rex is not opaque.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_436",
+    "question": "Is the following statement true or false? Max is floral.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_437",
+    "question": "Is the following statement true or false? Fae is earthy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_438",
+    "question": "Is the following statement true or false? Sam is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_439",
+    "question": "Is the following statement true or false? Sally is not orange.",
+    "answer": "A",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_440",
+    "question": "Is the following statement true or false? Stella is cold.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_441",
+    "question": "Is the following statement true or false? Fae is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_442",
+    "question": "Is the following statement true or false? Alex is not large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_443",
+    "question": "Is the following statement true or false? Max is not metallic.",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_444",
+    "question": "Is the following statement true or false? Alex is not large.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_445",
+    "question": "Is the following statement true or false? Stella is sour.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_446",
+    "question": "Is the following statement true or false? Alex is transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_447",
+    "question": "Is the following statement true or false? Sally is mean.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_448",
+    "question": "Is the following statement true or false? Wren is not red.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_449",
+    "question": "Is the following statement true or false? Max is metallic.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_450",
+    "question": "Is the following statement true or false? Stella is not transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_451",
+    "question": "Is the following statement true or false? Wren is angry.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_452",
+    "question": "Is the following statement true or false? Max is red.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_453",
+    "question": "Is the following statement true or false? Wren is not brown.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_454",
+    "question": "Is the following statement true or false? Sally is floral.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_455",
+    "question": "Is the following statement true or false? Polly is feisty.",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_456",
+    "question": "Is the following statement true or false? Fae is not earthy.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_457",
+    "question": "Is the following statement true or false? Stella is not large.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_458",
+    "question": "Is the following statement true or false? Rex is not transparent.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_459",
+    "question": "Is the following statement true or false? Max is earthy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_460",
+    "question": "Is the following statement true or false? Sam is not liquid.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_461",
+    "question": "Is the following statement true or false? Rex is opaque.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_462",
+    "question": "Is the following statement true or false? Sally is not opaque.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_463",
+    "question": "Is the following statement true or false? Stella is brown.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_464",
+    "question": "Is the following statement true or false? Alex is cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_465",
+    "question": "Is the following statement true or false? Rex is not sour.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_466",
+    "question": "Is the following statement true or false? Max is angry.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_467",
+    "question": "Is the following statement true or false? Alex is not blue.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_468",
+    "question": "Is the following statement true or false? Polly is not kind.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_469",
+    "question": "Is the following statement true or false? Polly is not mean.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_470",
+    "question": "Is the following statement true or false? Alex is not small.",
+    "answer": "B",
+    "predicted_reasoning": "Question:",
+    "predicted_answer": "Question:",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_471",
+    "question": "Is the following statement true or false? Sam is bright.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_472",
+    "question": "Is the following statement true or false? Wren is not sour.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_473",
+    "question": "Is the following statement true or false? Max is not liquid.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_474",
+    "question": "Is the following statement true or false? Sally is mean.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_475",
+    "question": "Is the following statement true or false? Polly is not bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_476",
+    "question": "Is the following statement true or false? Wren is amenable.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_477",
+    "question": "Is the following statement true or false? Fae is not bright.",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_478",
+    "question": "Is the following statement true or false? Polly is small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_479",
+    "question": "Is the following statement true or false? Sally is not bitter.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_480",
+    "question": "Is the following statement true or false? Stella is not dull.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_481",
+    "question": "Is the following statement true or false? Polly is happy.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_482",
+    "question": "Is the following statement true or false? Rex is temperate.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_483",
+    "question": "Is the following statement true or false? Sally is not red.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_484",
+    "question": "Is the following statement true or false? Fae is not orange.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_485",
+    "question": "Is the following statement true or false? Stella is not luminous.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_486",
+    "question": "Is the following statement true or false? Sam is opaque.",
+    "answer": "A",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_487",
+    "question": "Is the following statement true or false? Rex is bright.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_488",
+    "question": "Is the following statement true or false? Alex is hot.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_489",
+    "question": "Is the following statement true or false? Rex is cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_490",
+    "question": "Is the following statement true or false? Max is bright.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_491",
+    "question": "Is the following statement true or false? Stella is cold.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_492",
+    "question": "Is the following statement true or false? Rex is not orange.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_493",
+    "question": "Is the following statement true or false? Alex is not angry.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_494",
+    "question": "Is the following statement true or false? Rex is not fruity.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_495",
+    "question": "Is the following statement true or false? Sam is orange.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_496",
+    "question": "Is the following statement true or false? Alex is not aggressive.",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_497",
+    "question": "Is the following statement true or false? Stella is not small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_498",
+    "question": "Is the following statement true or false? Rex is not sweet.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_499",
+    "question": "Is the following statement true or false? Fae is not small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "ProntoQA_500",
+    "question": "Is the following statement true or false? Polly is not small.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  }
+]

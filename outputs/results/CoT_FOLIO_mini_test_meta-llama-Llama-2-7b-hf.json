@@ -1,0 +1,82 @@
+[
+  {
+    "id": "FOLIO_dev_0",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
+    "answer": "C",
+    "predicted_reasoning": "If people perform in school talent shows often, then they attend and are very engaged with school events. All people who are inactive and disinterested members of their community chaperone high school dances. Therefore, Bonnie is not inactive and disinterested member of her community. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Therefore, Bonnie is a young child or teenager who wishes to further her academic career and educational opportunities. All people who are students who attend the school are either both attend and are very engaged with school events or are inactive and disinterested members of their community. Therefore, Bonnie is a student who attends the school.",
+    "predicted_answer": "A\n------",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_1",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.",
+    "answer": "A",
+    "predicted_reasoning": "If Bonnie is a student who attends the school, then she is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities. If Bonnie is a student who attends the school, then she is a young child or teenager who wishes to further her academic career and educational opportunities. If Bonnie is a student who attends the school, then she is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities. If",
+    "predicted_answer": "If Bonnie is a student who attends the school, then she is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities. If Bonnie is a student who attends the school, then she is a young child or teenager who wishes to further her academic career and educational opportunities. If Bonnie is a student who attends the school, then she is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities. If",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_2",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.",
+    "answer": "B",
+    "predicted_reasoning": "If Bonnie is a young child or teenager who wishes to further her academic career and educational opportunities, then she is a student who attends the school. If Bonnie is a student who attends the school, then she is not an inactive and disinterested member of the community. If Bonnie is an inactive and disinterested member of the community, then she is not a student who attends the school. All people who are inactive and disinterested members of the community chaperone high school dances. Therefore, Bonnie is not a student who attends the school. If Bonnie is a student who attends the school, then she is either both attends and is very engaged with school events and is a student who attends the school, or she is",
+    "predicted_answer": "If Bonnie is a young child or teenager who wishes to further her academic career and educational opportunities, then she is a student who attends the school. If Bonnie is a student who attends the school, then she is not an inactive and disinterested member of the community. If Bonnie is an inactive and disinterested member of the community, then she is not a student who attends the school. All people who are inactive and disinterested members of the community chaperone high school dances. Therefore, Bonnie is not a student who attends the school. If Bonnie is a student who attends the school, then she is either both attends and is very engaged with school events and is a student who attends the school, or she is",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_3",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has lunch in the company.",
+    "answer": "C",
+    "predicted_reasoning": ".\nIf an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. Therefore, James is not a manager. If James is not a manager, then he/she is working remotely from home. Therefore, James has lunch at home. If James has lunch at home, then he/she is working remotely from home. Therefore, James is in other countries. If James is in other countries, then he/she is not in the company today. Therefore, James does not appear in the company today.",
+    "predicted_answer": "C\n------\nContext:\nAll employees who schedule a meeting with their customers will appear in",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_4",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have lunch in the company.",
+    "answer": "C",
+    "predicted_reasoning": ".\nIf an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. Therefore, James is not a manager. If James is not a manager, then he/she is working remotely from home. Therefore, James has lunch at home. If James has lunch at home, then he/she is working remotely from home. Therefore, James is in other countries. If James is in other countries, then he/she is not in the company. Therefore, James does not have lunch in the company.",
+    "predicted_answer": "C\n------\nContext:\nAll employees who schedule a meeting with their customers will appear in",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_5",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If James is either a manager or in other countries,  then James either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.",
+    "answer": "A",
+    "predicted_reasoning": "If James is either a manager or in other countries, then James is in other countries. If James is in other countries, then James is working remotely from home. If James is working remotely from home, then James has lunch at home. If James has lunch at home, then James is not a manager. If James is not a manager, then James appears in the company today. Therefore, James appears in the company today.",
+    "predicted_answer": "A\n------\nContext:\nAll employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_6",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is an animal.",
+    "answer": "A",
+    "predicted_reasoning": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Therefore, there is an animal.",
+    "predicted_answer": "A\n------\nContext:\nThe Blake McFall Company Building is a commercial warehouse listed on the National Register of Historic Places. The Blake McFall Company Building was added to the National Register of Historic Places in 1990. The Emmet Building is a five-story building in Portland, Oregon. The Emmet Building was built in 1915. The Emmet Building is another name for the Blake McFall Company Building. John works at the Em",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_7",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one gets flu.",
+    "answer": "C",
+    "predicted_reasoning": "People feel tired when they get a glu. Therefore, people feel tired when they get a flu. No one gets flu. Therefore, no one feels tired when they get a flu.",
+    "predicted_answer": "C\n------\nContext:\nThe Blake McFall Company Building is a commercial warehouse listed on the National Register of Historic Places. The Blake McFall Company Building was added to the National Register of Historic Places in 1990. The Emmet Building is a five-story building in Portland, Oregon. The Emmet Building was built in 1915. The Emmet Building is another name for the Blake McFall Company Building. John works at the Emmet Building.\n\nQuestion: Based on the above information, is",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_8",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Symptons of Monkeypox include coughing.",
+    "answer": "C",
+    "predicted_reasoning": "Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu. Therefore, people do not feel tired when they get a cough. Therefore, symptons of Monkeypox do not include coughing.",
+    "predicted_answer": "C\n------\nContext:\nThe Blake McFall Company Building is a commercial warehouse listed on the National Register of Historic Places. The Blake McFall Company Building was added to the National Register of Historic Places in 1990. The Emmet Building is a five-story building in Portland, Oregon. The Emmet Building was built in 1915. The Emmet Building is another name for",
+    "flag": "CoT"
+  },
+  {
+    "id": "FOLIO_dev_9",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Ocellated wild turkey.",
+    "answer": "A",
+    "predicted_reasoning": ".\nTom is a wild turkey. Therefore, Tom is not an Ocellated wild turkey. Tom is not an Osceola wild turkey. Therefore, Tom is not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is not an Eastern wild turkey. Therefore, Tom is not an Ocellated wild turkey.",
+    "predicted_answer": "C\n------\nContext:\nThe Blake McFall Company Building is a commercial warehouse listed on the National Register of Historic Places. The Blake McFall Company Building was added to the National Register of Historic Places in 1990. The Emmet Building is a five-story building in Portland, Oregon. The",
+    "flag": "CoT"
+  }
+]
