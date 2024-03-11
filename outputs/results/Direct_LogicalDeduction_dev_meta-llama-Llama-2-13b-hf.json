@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "logical_deduction_0",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "D\n------",
+    "predicted_answer": "D\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_1",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_2",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_3",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_4",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_5",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_6",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_7",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_8",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_9",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_10",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "B\n------",
+    "predicted_answer": "B\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_11",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_12",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_13",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_14",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_15",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_16",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_17",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_18",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_19",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_20",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_21",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_22",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_23",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_24",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_25",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_26",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_27",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_28",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_29",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there are five golfers: Ana, Eve, Ada, Dan, and Rob. Ana finished above Ada. Dan finished above Rob. Eve finished above Dan. Ada finished above Rob.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) Ana finished above Dan.\nB) Eve finished above Dan.\nC) Ada finished above Dan.\nD) Rob finished above Dan.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there are five golfers: Ana, Eve, Ada, Dan, and Rob. Ana finished above Ada. Dan finished above Rob. Eve finished above Dan. Ada finished above Rob",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_30",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_31",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_32",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_33",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_34",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_35",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "C\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a shelf, there are five books: a white book, an orange book, a yellow book, a blue book, and a red book. The yellow book is to the left of the white book. The red book is to the right of the blue book. The yellow book is to the right of the orange book. The blue book is to the right of the white book.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The white book is the second from the left.\nB) The orange book is the second from the left.\nC) The yellow book is the second from the left.\nD) The blue book is the second from the left.\nE) The red book is the second from the left.",
+    "predicted_answer": "B\n------\nContext:\nThe following paragraphs each describe a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_36",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_37",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_38",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_39",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_40",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "D\n------",
+    "predicted_answer": "D\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_41",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_42",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_43",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_44",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_45",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_46",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_47",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_48",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_49",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_50",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_51",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_52",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_53",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_54",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_55",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_56",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells five fruits: mangoes, kiwis, watermelons, oranges, and apples. The oranges are the cheapest. The kiwis are less expensive than the mangoes. The watermelons are more expensive than the apples. The watermelons are less expensive than the kiwis.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The mangoes are the second-cheapest.\nB) The kiwis are the second-cheapest.\nC) The watermelons are the second-cheapest.\nD) The oranges are the second-cheapest.\nE) The apples are the second-cheapest.",
+    "predicted_answer": "E\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_57",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_58",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_59",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_60",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_61",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a shelf, there are five books: a gray book, a red book, a purple book, a blue book, and a black book. The red book is to the right of the gray book. The black book is to the left of the blue book. The blue book is to the left of the gray book. The purple book is the second from the right.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The gray book is the second from the right.\nB) The red book is the second from the right.\nC) The purple book is the second from the right.\nD) The blue book is the second from the right.\nE) The black book is the second from the right.",
+    "predicted_answer": "C\n------\nContext:\nThe following",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_62",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_63",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_64",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "B\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a branch, there are five birds: a blue jay, a cardinal, a hawk, a hummingbird, and a quail. The quail is to the left of the blue jay. The cardinal is the third from the left. The quail is the second from the left. The blue jay is to the left of the hummingbird.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The blue jay is the third from the left.\nB) The cardinal is the third from the left.\nC) The hawk is the third from the left.\nD) The hummingbird is the third from the left.\nE) The quail is the third from the left.",
+    "predicted_answer": "B\n------\nContext:\nThe following",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_65",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_66",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_67",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "D\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a classroom, there are five students: a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the left of the girl. The boy is to the right of the girl. The boy is to the right of the girl.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the third from the left.\nB) The girl is the third from the left.\nC) The boy is the third from the right.\nD) The girl is the third from the right.\nE) The boy is the second from the right.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a classroom, there are five students: a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the left of the girl. The boy is to the right of the girl. The boy is to the right of the girl.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_68",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_69",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_70",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_71",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_72",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there are five golfers: Ana, Eve, Ada, Dan, and Rob. Ana finished above Ada. Dan finished below Rob. Eve finished below Ada. Rob finished below Joe.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) Ana finished above Dan.\nB) Eve finished above Dan.\nC) Ada finished above Dan.\nD) Dan finished above Dan.\nE) Rob finished above Dan.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_73",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_74",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_75",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_76",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_77",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_78",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_79",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "D\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a classroom, there are five students: a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the left of the girl. The boy is to the right of the girl. The boy is to the right of the girl.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the second from the left.\nB) The girl is the second from the left.\nC) The boy is the second from the left.\nD) The girl is the second from the left.\nE) The boy is the second from the left.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a classroom, there are five students: a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the left of the girl. The boy is to the right of the girl. The boy is to the right of the girl.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_80",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_81",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_82",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_83",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_84",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_85",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_86",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_87",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells five fruits: loquats, pears, watermelons, kiwis, and plums. The loquats are the third-most expensive. The loquats are more expensive than the watermelons. The plums are less expensive than the watermelons. The kiwis are more expensive than the pears.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The loquats are the second-most expensive.\nB) The pears are the second-most expensive.\nC) The watermelons are the second-most expensive.\nD) The kiwis are the second-most expensive.\nE) The plums are the second-most expensive.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells five fruits: loquats, pears, watermelons, kiwis, and plums. The loquats are the third-most expensive. The loquats are more expensive than the watermelons. The plums are less expensive than the watermelons. The kiwis are more expensive than the pears.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The loquats are the second-most expensive.\nB) The pears are the second-most expensive.\nC) The watermelons are the second-most expensive.\nD) The kiwis are the second-most expensive.\nE) The plums are the second-most expensive.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_88",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells five fruits: mangoes, cantaloupes, plums, oranges, and watermelons. The oranges are more expensive than the watermelons. The watermelons are the second-cheapest. The plums are less expensive than the cantaloupes. The plums are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The mangoes are the second-most expensive.\nB) The cantaloupes are the second-most expensive.\nC) The plums are the second-most expensive.\nD) The oranges are the second-most expensive.\nE) The watermelons are the second-most expensive.",
+    "predicted_answer": "C\n------\nContext:\nThe following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells five fruits: mangoes, cantaloupes, plums, oranges, and watermelons. The oranges are more expensive than the watermelons. The watermelons are the second-cheapest. The plums are less expensive than the cantaloupes. The plums are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The mangoes are the second-most expensive.\nB) The cantaloupes are the second-most expensive.\nC) The plums are the second-most expensive.\nD) The oranges are the second-most expensive.\nE) The watermelons are the second-most expensive.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_89",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_90",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "E\n------",
+    "predicted_answer": "E\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_91",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_92",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_93",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_94",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_95",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_96",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_97",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_98",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_99",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_100",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_101",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_102",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_103",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: plums, kiwis, cantaloupes, pears, watermelons, apples, and loquats. The watermelons are more expensive than the cantaloupes. The apples are less expensive than the cantaloupes. The watermelons are the second-most expensive. The loquats are less expensive than the kiwis. The apples are more expensive than the loquats. The loquats are the third-cheapest. The plums are the cheapest.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The plums are the third-most expensive.\nB) The kiwis are the third-most expensive.\nC) The cantaloupes are the third-most expensive.\nD) The pears are the third-most expensive.\nE) The watermelons are the third-most expensive.\nF) The apples are the third-most expensive.\nG) The loquats are the third-most expensive.",
+    "predicted_answer": "C\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: plums, kiwis, cantaloupes, pears, watermelons, apples, and loquats. The watermelons are more expensive than the cantaloupes. The apples are less expensive than the cantaloupes. The watermelons are the second-most expensive. The loquats are less expensive than the kiwis. The apples are more expensive than the loquats. The loquats are the third-cheapest. The plums are the cheapest.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The plums are the third-most expensive.\nB) The kiwis are the third-",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_104",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_105",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_106",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_107",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_108",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_109",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_110",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_111",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_112",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_113",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_114",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is the second from the left. The boy is the rightmost. The girl is to the right of the boy. The boy is to the right of the girl. The girl is to the left of the boy. The boy is to the left of the girl.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the second from the right.\nB) The girl is the second from the right.\nC) The boy is the second from the right.\nD) The girl is the second from the right.\nE) The boy is the second from the right.\nF) The girl is the second from the right.\nG) The boy is the second from the right.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is the second from the left. The boy is the rightmost. The girl is to the right of the boy. The boy is to the right of the girl. The girl is to the",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_115",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_116",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_117",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_118",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_119",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_120",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_121",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_122",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "D\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is the second from the left. The boy is the third from the left. The boy is to the right of the girl. The girl is to the right of the boy. The boy is the rightmost. The girl is to the left of the boy. The boy is the second from the right.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the third from the right.\nB) The girl is the third from the right.\nC) The boy is the third from the right.\nD) The girl is the third from the right.\nE) The boy is the third from the right.\nF) The girl is the third from the right.\nG) The boy is the third from the right.",
+    "predicted_answer": "E\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is the second from the left.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_123",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_124",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_125",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_126",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_127",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_128",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_129",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_130",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_131",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_132",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_133",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_134",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there are seven golfers: a golfer, a golfer, a golfer, a golfer, a golfer, a golfer, and a golfer. The golfer is the third-best. The golfer is the second-best. The golfer is the best. The golfer is the fourth-best. The golfer is the fifth-best. The golfer is the third-best. The golfer is the fourth-best.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The golfer is the best.\nB) The golfer is the second-best.\nC) The golfer is the third-best.\nD) The golfer is the fourth-best.\nE) The golfer is the fifth-best.\nF) The golfer is the sixth-best.\nG) The golfer is the seventh-best.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there are seven golfers: a golfer, a golfer, a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_135",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_136",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_137",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_138",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_139",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_140",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_141",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_142",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_143",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_144",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_145",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_146",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_147",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_148",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the right of the girl. The boy is to the left of the girl. The girl is to the right of the boy. The boy is to the left of the girl. The girl is to the right of the boy.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the second from the left.\nB) The girl is the second from the left.\nC) The boy is the second from the left.\nD) The girl is the second from the left.\nE) The boy is the second from the left.\nF) The girl is the second from the left.\nG) The boy is the second from the left.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the right of the girl. The boy is to the",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_149",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_150",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_151",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_152",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_153",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_154",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_155",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_156",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, oranges, mangoes, cantaloupes, kiwis, pears, and peaches. The pears are the second-cheapest. The peaches are more expensive than the cantaloupes. The peaches are less expensive than the mangoes. The cantaloupes are more expensive than the kiwis. The oranges are the fourth-most expensive. The watermelons are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The watermelons are the fourth-most expensive.\nB) The oranges are the fourth-most expensive.\nC) The mangoes are the fourth-most expensive.\nD) The cantaloupes are the fourth-most expensive.\nE) The kiwis are the fourth-most expensive.\nF) The pears are the fourth-most expensive.\nG) The peaches are the fourth-most expensive.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, oranges, mangoes, cantaloupes, kiwis, pears, and peaches. The pears are the second-cheapest. The peaches are more expensive than the cantaloupes. The peaches are less expensive than the mangoes. The cantaloupes are more expensive than the kiwis. The oranges are the fourth-most expensive. The watermelons are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The watermelons are the fourth-most expensive.\nB) The oranges are the fourth-most expensive.\nC) The mangoes are the fourth-most expensive.\nD) The cantaloupes are the fourth-most expensive.\nE) The kiwis are the fourth-most expensive.\nF) The p",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_157",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_158",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_159",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_160",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_161",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: kiwis, cantaloupes, oranges, loquats, pears, watermelons, and peaches. The loquats are less expensive than the peaches. The pears are the third-cheapest. The oranges are less expensive than the cantaloupes. The loquats are more expensive than the watermelons. The peaches are less expensive than the oranges. The kiwis are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The kiwis are the third-most expensive.\nB) The cantaloupes are the third-most expensive.\nC) The oranges are the third-most expensive.\nD) The loquats are the third-most expensive.\nE) The pears are the third-most expensive.\nF) The watermelons are the third-most expensive.\nG) The peaches are the third-most expensive.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: kiwis, cantaloupes, oranges, loquats, pears, watermelons, and peaches. The loquats are less expensive than the peaches. The pears are the third-cheapest. The oranges are less expensive than the cantaloupes. The loquats are more expensive than the watermelons. The peaches are less expensive than the oranges. The kiwis are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The kiwis are the third-most expensive.\nB) The cantaloupes are the third-most expensive.\nC) The oranges are the third-most expensive.\nD) The loquats are the third-most expensive.\nE) The pears are the third-most expensive.\nF) The watermel",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_162",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_163",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_164",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_165",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_166",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_167",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_168",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_169",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_170",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_171",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_172",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_173",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_174",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: loquats, cantaloupes, watermelons, apples, oranges, pears, and mangoes. The oranges are the second-cheapest. The apples are less expensive than the pears. The mangoes are more expensive than the cantaloupes. The mangoes are the third-cheapest. The watermelons are the second-most expensive. The loquats are the third-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The loquats are the third-most expensive.\nB) The cantaloupes are the third-most expensive.\nC) The watermelons are the third-most expensive.\nD) The apples are the third-most expensive.\nE) The oranges are the third-most expensive.\nF) The pears are the third-most expensive.\nG) The mangoes are the third-most expensive.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: loquats, cantaloupes, watermelons, apples, oranges, pears, and mangoes. The oranges are the second-cheapest. The apples are less expensive than the pears. The mangoes are more expensive than the cantaloupes. The mangoes are the third-cheapest. The watermelons are the second-most expensive. The loquats are the third-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The loquats are the third-most expensive.\nB) The cantaloupes are the third-most expensive.\nC) The watermelons are the third-most expensive.\nD) The apples are the third-most expensive.\nE) The oranges are the third-most expensive.\nF) The pears are the third-most expensive.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_175",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_176",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_177",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_178",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_179",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_180",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_181",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_182",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_183",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_184",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_185",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: plums, kiwis, cantaloupes, pears, watermelons, apples, and loquats. The watermelons are more expensive than the cantaloupes. The apples are less expensive than the cantaloupes. The watermelons are the second-most expensive. The loquats are less expensive than the kiwis. The apples are more expensive than the loquats. The loquats are the third-cheapest. The plums are the cheapest.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The plums are the fourth-most expensive.\nB) The kiwis are the fourth-most expensive.\nC) The cantaloupes are the fourth-most expensive.\nD) The pears are the fourth-most expensive.\nE) The watermelons are the fourth-most expensive.\nF) The apples are the fourth-most expensive.\nG) The loquats are the fourth-most expensive.",
+    "predicted_answer": "B\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: plums, kiwis, cantaloupes, pears, watermelons, apples, and loquats. The watermelons are more expensive than the cantaloupes. The apples are less expensive than the cantaloupes. The watermelons are the second-most expensive. The loquats are less expensive than the kiwis. The apples are more expensive than the loquats. The loquats are the third-cheapest. The plums are the cheapest.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The plums are the fourth-most expensive.\nB) The kiwis are the fourth-",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_186",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_187",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_188",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_189",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_190",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_191",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the right of the girl. The boy is to the left of the girl. The girl is to the right of the boy. The boy is to the right of the girl. The girl is to the left of the boy.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the third from the left.\nB) The girl is the third from the left.\nC) The boy is the third from the left.\nD) The girl is the third from the left.\nE) The boy is the third from the left.\nF) The girl is the third from the left.\nG) The boy is the third from the left.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the right of the girl. The boy is to the",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_192",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_193",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_194",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_195",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_196",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_197",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_198",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_199",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_200",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_201",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_202",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_203",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_204",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_205",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is the second from the left. The boy is the third from the left. The boy is to the right of the girl. The girl is to the right of the boy. The boy is the rightmost. The girl is to the left of the boy. The boy is the second from the right.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the second from the right.\nB) The girl is the second from the right.\nC) The boy is the second from the right.\nD) The girl is the second from the right.\nE) The boy is the second from the right.\nF) The girl is the second from the right.\nG) The boy is the second from the right.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is the second from the left.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_206",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_207",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_208",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_209",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_210",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_211",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_212",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_213",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_214",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_215",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there are seven golfers: Ana, Eve, Ada, Dan, Rob, Amy, and Joe. Dan finished third. Ana finished above Ada. Amy finished last. Dan finished below Rob. Eve finished below Ada. Rob finished below Joe.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) Ana finished third.\nB) Eve finished third.\nC) Ada finished third.\nD) Dan finished third.\nE) Rob finished third.\nF) Amy finished third.\nG) Joe finished third.",
+    "predicted_answer": "D\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_216",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, mangoes, kiwis, pears, cantaloupes, oranges, and peaches. The oranges are more expensive than the peaches. The cantaloupes are the fourth-most expensive. The pears are less expensive than the cantaloupes. The peaches are the second-most expensive. The mangoes are the cheapest. The kiwis are the third-cheapest.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The watermelons are the second-cheapest.\nB) The mangoes are the second-cheapest.\nC) The kiwis are the second-cheapest.\nD) The pears are the second-cheapest.\nE) The cantaloupes are the second-cheapest.\nF) The oranges are the second-cheapest.\nG) The peaches are the second-cheapest.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, mangoes, kiwis, pears, cantaloupes, oranges, and peaches. The oranges are more expensive than the peaches. The cantaloupes are the fourth-most expensive. The pears are less expensive than the cantaloupes. The peaches are the second-most expensive. The mangoes are the cheapest. The kiwis are the third-cheapest.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The watermelons are the second-cheapest.\nB) The mangoes are the second-cheapest.\nC) The kiwis are the second-cheapest.\nD) The pears are the second-cheapest.\nE) The cantaloupes are the second-cheapest.\nF) The oranges are the second-cheapest.\nG) The peaches are the second-cheapest",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_217",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_218",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_219",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_220",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_221",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_222",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_223",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_224",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_225",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the left of the girl. The boy is to the right of the girl. The girl is to the right of the boy. The boy is to the left of the girl. The girl is to the right of the boy.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the third from the left.\nB) The girl is the third from the left.\nC) The boy is the third from the right.\nD) The girl is the third from the right.\nE) The boy is the third from the right.\nF) The girl is the third from the right.\nG) The boy is the third from the right.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the left of the girl. The boy is to the",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_226",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the right of the girl. The boy is to the left of the girl. The girl is to the right of the boy. The boy is to the left of the girl. The girl is to the right of the boy.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the third from the left.\nB) The girl is the third from the left.\nC) The boy is the third from the left.\nD) The girl is the third from the left.\nE) The boy is the third from the left.\nF) The girl is the third from the left.\nG) The boy is the third from the left.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the right of the girl. The boy is to the",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_227",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the right of the girl. The boy is to the left of the girl. The girl is to the right of the boy. The boy is to the left of the girl. The girl is to the right of the boy.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The boy is the third from the left.\nB) The girl is the third from the left.\nC) The boy is the third from the right.\nD) The girl is the third from the right.\nE) The boy is the second from the left.\nF) The girl is the second from the left.\nG) The boy is the second from the right.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a school, there are seven students: a boy, a girl, a boy, a girl, a boy, a girl, and a boy. The girl is to the left of the boy. The boy is to the right of the girl. The boy is to the",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_228",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_229",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_230",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_231",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_232",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_233",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_234",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_235",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_236",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_237",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_238",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_239",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_240",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_241",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "C\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a shelf, there are three books: a gray book, a purple book, and a red book. The purple book is to the left of the red book. The gray book is to the left of the purple book.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The gray book is the second from the left.\nB) The purple book is the second from the left.\nC) The red book is the second from the left.",
+    "predicted_answer": "C\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a shelf, there are three books: a gray book, a purple book, and a red book. The purple book is to the left of the red book. The gray book is to the left of the purple book.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The gray book is the second from the left.\nB) The purple book is the second from the left.\nC) The red book is the",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_242",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_243",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_244",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_245",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_246",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_247",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_248",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_249",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_250",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_251",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_252",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_253",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells three fruits: cantaloupes, watermelons, and mangoes. The mangoes are the cheapest. The cantaloupes are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The cantaloupes are the second-most expensive.\nB) The watermelons are the second-most expensive.\nC) The mangoes are the second-most expensive.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells three fruits: cantaloupes, watermelons, and mangoes. The mangoes are the cheapest. The cantaloupes are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The cantaloupes are the second-most expensive.\nB) The watermelons are the second-most expensive.\nC) The mangoes are the second-most expensive.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_254",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_255",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_256",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_257",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_258",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_259",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_260",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_261",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_262",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_263",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_264",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_265",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_266",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_267",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_268",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_269",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_270",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_271",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_272",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_273",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_274",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_275",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_276",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_277",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_278",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there are three golfers: Ana, Eve, and Ada. Ana finished above Ada. Eve finished above Ada.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) Ana finished above Eve.\nB) Eve finished above Ana.\nC) Ada finished above Eve.",
+    "predicted_answer": "C\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there are three golfers: Ana, Eve, and Ada. Ana finished above Ada. Eve finished above Ada.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) Ana finished above Eve.\nB) Eve finished above Ana.\nC) Ada finished",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_279",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a branch, there are three birds: a blue jay, a cardinal, and a quail. The cardinal is to the right of the quail. The quail is to the right of the blue jay.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The blue jay is the second from the right.\nB) The cardinal is the second from the right.\nC) The quail is the second from the right.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_280",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_281",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells three fruits: mangoes, watermelons, and kiwis. The watermelons are less expensive than the kiwis. The kiwis are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The mangoes are the second-most expensive.\nB) The watermelons are the second-most expensive.\nC) The kiwis are the second-most expensive.",
+    "predicted_answer": "C\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells three fruits: mangoes, watermelons, and kiwis. The watermelons are less expensive than the kiwis. The kiwis are the second-most expensive.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The mangoes are the second-most expensive.\nB) The watermelons are the second-most expensive.\nC",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_282",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_283",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_284",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_285",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_286",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_287",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_288",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_289",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_290",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_291",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_292",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_293",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "C\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a shelf, there are three books: an orange book, a white book, and a purple book. The orange book is to the left of the white book. The purple book is the rightmost.\n\nQuestion: Which of the following is true?\n\nOptions:\nA) The orange book is the second from the right.\nB) The white book is the second from the right.\nC) The purple book is the second from the right.",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each describe a set of three objects arranged in a fixed order",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_294",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_295",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_296",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_297",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_298",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_299",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "$}}%",
+    "predicted_answer": "$}}%",
+    "flag": "Direct"
+  }
+]
