@@ -1,3 +1,9 @@
+"""Logic inference engine to execute logic programs.
+
+Loads logic programs from a dataset, executes them using different logic solvers, 
+and generates outputs with execution results. Handles errors during parsing and 
+execution using backup strategies. Saves outputs to file after inference.
+"""
 import json
 import os
 from tqdm import tqdm

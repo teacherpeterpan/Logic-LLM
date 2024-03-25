@@ -1,3 +1,18 @@
+"""
+Utility functions for working with large language models.
+
+Includes functions for generating text from models like GPT-3, handling OpenAI API requests, and timing out long-running requests.
+
+The main classes are:
+
+- HuggingFaceModel: Generates text using a HuggingFace model.
+- OpenAIModel: Generates text using an OpenAI model. 
+- LLMClass: Abstract base class for LLM models.
+- Timeout: Context manager for timing out functions.
+
+The OpenAIModel and HuggingFaceModel classes handle generating text with different underlying models.
+The Timeout context manager allows limiting execution time.
+"""
 import backoff  # for exponential backoff
 import openai
 import os

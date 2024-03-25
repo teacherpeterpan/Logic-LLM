@@ -1,3 +1,9 @@
+"""Generates reasoning graphs for a dataset using the baseline LLM model.
+
+Loads the dataset and in-context examples. Creates prompts by filling the in-context example with the dataset sample's context, question, and options. Generates the reasoning graph using the LLM. Extracts the predicted answer. Saves the outputs as JSON containing the predicted reasoning graph and answer.
+
+Can generate sequentially or in batches. Batch generation may fail, in which case it falls back to sequential generation.
+"""
 import json
 import os
 from tqdm import tqdm

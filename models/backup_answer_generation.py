@@ -1,3 +1,8 @@
+"""
+Backup_Answer_Generator class to generate backup answers for evaluation.
+
+Supports random backup answers or using backup LLM predictions. Backup answers are generated on a per-sample basis.
+"""
 import json
 import random
 import os

@@ -1,3 +1,9 @@
+"""
+Generates logic programs from a dataset of problems and questions by prompting an LLM.
+
+Loads a dataset, creates prompts for each example, generates programs with an LLM, 
+and saves the outputs. Includes batch generation for efficiency.
+"""
 # generate facts and rules based on the problem description
 
 import json

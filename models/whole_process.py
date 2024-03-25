@@ -1,3 +1,8 @@
+"""
+Main entry point for running the full logic reasoning pipeline.
+
+Parses arguments, initializes models, runs baseline reasoning, generates logic programs, runs logic inference, performs self-refinement, and evaluates results.
+"""
 import os
 import time
 from utils import OpenAIModel, HuggingFaceModel, LLMClass
@@ -16,14 +21,14 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', type=str, default='./data')
     parser.add_argument('--dataset_name', type=str, default="AR-LSAT")
-    parser.add_argument('--split', type=str, default='dev')
+    parser.add_argument('--split', type=str, default='dev') 
     parser.add_argument('--save_path', type=str, default='./outputs/logic_inference')
     parser.add_argument('--demonstration_path', type=str, default='./models/prompts')
     parser.add_argument('--backup_strategy', type=str, default='LLM', choices=['random', 'LLM'])
     parser.add_argument('--backup_LLM_result_path', type=str, default='./outputs/results')
-    parser.add_argument('--model_name', type=str, default='text-davinci-003')
+    parser.add_argument('--model_name', type=str, default='llama-2-7b')
     parser.add_argument('--framework_to_use', type=str, default='HuggingFace')
-    parser.add_argument('--timeout', type=int, default=60)
+    parser.add_argument('--timeout', type=int, default=60) 
     parser.add_argument('--api_key', type=str, default='KEY')
     parser.add_argument('--stop_words', type=str, default='------')
     parser.add_argument('--max_new_tokens', type=int, default=1024)
@@ -36,6 +41,7 @@ def parse_args():
     parser.add_argument('--result_path', type=str, default='./outputs/logic_inference')
     args, unknown = parser.parse_known_args()
     return args
+
 
 if __name__ == "__main__":
 
