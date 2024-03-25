@@ -1,0 +1,82 @@
+[
+  {
+    "id": "FOLIO_dev_0",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_1",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.",
+    "answer": "A",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_2",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_3",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has lunch in the company.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_4",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have lunch in the company.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_5",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If James is either a manager or in other countries,  then James either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_6",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is an animal.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_7",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one gets flu.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_8",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Symptons of Monkeypox include coughing.",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "FOLIO_dev_9",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Ocellated wild turkey.",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  }
+]

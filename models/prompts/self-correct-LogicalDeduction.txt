@@ -1,0 +1,7 @@
+Task: Given the initial program and the error message, debug the following logic program.
+------
+>>> Initial Program:
+[[PROGRAM]]
+>>> Error Message:
+[[ERROR MESSAGE]]
+>>> Corrected Program:

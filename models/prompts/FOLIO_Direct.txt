@@ -1,0 +1,35 @@
+Given a problem statement as contexts, the task is to answer a logical reasoning question. 
+------
+Context:
+All people who regularly drink coffee are dependent on caffeine. People either regularly drink coffee or joke about being addicted to caffeine. No one who jokes about being addicted to caffeine is unaware that caffeine is a drug. Rina is either a student and unaware that caffeine is a drug, or neither a student nor unaware that caffeine is a drug. If Rina is not a person dependent on caffeine and a student, then Rina is either a person dependent on caffeine and a student, or neither a person dependent on caffeine nor a student.
+
+Question: Based on the above information, is the following statement true, false, or uncertain? Rina is a person who jokes about being addicted to caffeine or unaware that caffeine is a drug.
+
+Options:
+A) True
+B) False
+C) Uncertain
+
+The correct option is: A
+------
+Context:
+William Dickinson was a British politician who sat in the House of Commons William Dickinson attended Westminster school for high school and then the University of Edinburgh. The University of Edinburgh is a university located in the United Kingdom. William Dickinson supported the Portland Whigs. People who supported the Portland Whigs did not get a seat in the Parliament.
+
+Question: Based on the above information, is the following statement true, false, or uncertain? William Dickinson went to schools located in the United Kingdom for both high school and university.
+
+Options:
+A) True
+B) False
+C) Uncertain
+
+The correct option is: C
+------
+Context:
+[[CONTEXT]]
+
+Question: [[QUESTION]]
+
+Options:
+[[OPTIONS]]
+
+The correct option is:

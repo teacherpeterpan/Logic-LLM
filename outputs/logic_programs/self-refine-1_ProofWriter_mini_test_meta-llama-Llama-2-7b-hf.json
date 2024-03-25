@@ -1,0 +1,142 @@
+[
+  {
+    "id": "ProofWriter_RelNeg-OWA-D5-136_Q1",
+    "context": "The bear does not chase the lion. The bear visits the lion. The bear visits the tiger. The lion chases the bear. The lion chases the tiger. The lion visits the bear. The rabbit chases the tiger. The rabbit is big. The rabbit is not green. The rabbit is young. The rabbit visits the tiger. The tiger chases the rabbit. The tiger is rough. The tiger visits the bear. If something chases the bear and it sees the rabbit then the bear does not visit the rabbit. If something chases the lion then the lion is rough. If the rabbit chases the tiger and the tiger visits the rabbit then the rabbit is not big. If something chases the lion then the lion does not visit the tiger. If something chases the rabbit and it chases the tiger then the rabbit chases the bear. If something is young and it does not see the rabbit then it sees the bear. If something visits the lion then it is young. If the tiger visits the bear and the bear is big then the tiger visits the lion. Young things are big.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The bear visits the lion.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nChase($x, y, bool) ::: Does x chase y?\nVisit($x, y, bool) ::: Does x visit y?\nBig($x, bool) ::: Is x big?\nGreen($x, bool) ::: Is x green?\nRough($x, bool) ::: Is x rough?\nYoung($x, bool) ::: Is x young?\nFacts:\nChase(Bear, Lion, True) ::: The bear does not chase the lion.\nVisit(Bear, Lion, True) ::: The bear visits the lion.\nVisit(Bear, Tiger, True) ::: The bear visits the tiger.\nChase(Lion, Bear, True) ::: The lion chases the bear.\nChase(Lion, Tiger, True) ::: The lion chases the tiger.\nVisit(Lion, Bear, True) ::: The lion visits the bear.\nChase(Rabbit, Tiger, True) ::: The rabbit chases the tiger.\nBig(Rabbit, True) ::: The rabbit is big.\nGreen(Rabbit, True) ::: The rabbit is not green.\nYoung(Rabbit, True) ::: The rabbit is young.\nVisit(Rabbit, Tiger, True) ::: The rabbit visits the tiger.\nChase(Tiger, Rabbit, True) ::: The tiger chases the rabbit.\nVisit(Tiger, Bear, True) ::: The tiger visits the bear.\nRough(Tiger, True) ::: The tiger is rough.\nVisit(Bear, Rabbit, True) ::: The bear visits the rabbit.\nChase(Rabbit, Tiger, True) ::: The rabbit chases the tiger.\nChase(Rabbit, Bear, True) ::: The rabbit chases the bear.\nYoung(x, True) >>> Big(x, True) ::: Young things are big.\nQuery:\nVisit(Bear, Lion, True) ::: The bear visits the lion.\n------"
+    ]
+  },
+  {
+    "id": "ProofWriter_RelNeg-OWA-D5-99_Q17",
+    "context": "The bald eagle is cold. The bald eagle sees the bear. The bear is big. The bear is not cold. The bear is green. The bear likes the cat. The cat chases the mouse. The cat is big. The cat is young. The cat likes the bald eagle. The mouse likes the cat. If something chases the cat and it likes the bald eagle then the bald eagle is not green. If something sees the cat then it does not chase the mouse. If something is cold then it sees the cat. If something likes the cat and it chases the bald eagle then it is not young. If something likes the bald eagle and the bald eagle does not chase the mouse then the mouse is big. If the cat chases the bear then the cat likes the mouse. If something chases the mouse and it is not green then it chases the bear. If the mouse is big then the mouse chases the bald eagle. If something is young and it likes the mouse then it chases the bald eagle.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle does not chase the bear.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nCold($x, bool) ::: Is x cold?\nSees($x, y, bool) ::: Does x see y?\nBig($x, bool) ::: Is x big?\nGreen($x, bool) ::: Is x green?\nLikes($x, y, bool) ::: Does x like y?\nChases($x, y, bool) ::: Does x chase y?\nYoung($x, bool) ::: Is x young?\nFacts:\nCold(TheBaldEagle, True) ::: The bald eagle is cold.\nSees(TheBaldEagle, TheBear, True) ::: The bald eagle sees the bear.\nBig(TheBear, True) ::: The bear is big.\nGreen(TheBear, False) ::: The bear is not cold.\nLikes(TheBear, TheCat, True) ::: The bear likes the cat.\nChases(TheCat, TheBear, True) ::: The cat chases the bear.\nYoung(TheCat, True) ::: The cat is young.\nLikes(TheBaldEagle, TheCat, True) ::: The cat likes the bald eagle.\nChases(TheMouse, TheCat, True) ::: The mouse chases the cat.\nBig(TheMouse, True) ::: The mouse is big.\nLikes(TheBaldEagle, TheMouse, True) ::: The mouse likes the bald eagle.\nChases(TheBear, TheMouse, True) ::: The bear chases the mouse.\nYoung(TheMouse, True) ::: The mouse is young.\nRules:\nIf something chases the cat and it likes the bald eagle then the bald eagle is not green.\nIf something sees the cat then it does not chase the mouse.\nIf something is cold then it sees the cat.\nIf something likes the cat and it chases the bald eagle then it is not young.\nIf something likes the bald eagle and the bald eagle does not chase the mouse then the mouse is big.\nIf the cat chases the bear then the cat likes the mouse.\nIf something chases the mouse"
+    ]
+  },
+  {
+    "id": "ProofWriter_RelNoneg-OWA-D5-295_Q20",
+    "context": "The bald eagle needs the lion. The bald eagle needs the mouse. The bear likes the bald eagle. The bear needs the lion. The bear sees the bald eagle. The lion is blue. The mouse sees the bear. If something sees the lion then it likes the bald eagle. If something likes the bear then it likes the bald eagle. If something needs the bear and the bear is blue then the bear is round. If something likes the mouse then the mouse sees the bear. If something likes the mouse and the mouse is nice then it likes the bear. If something needs the lion and it likes the bald eagle then it likes the mouse. If something likes the bear and it likes the mouse then the mouse needs the bear. If something needs the bear then it likes the bear. If something likes the bald eagle then it needs the bear.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle sees the bear.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nBaldEagle($x, bool) ::: Is x bald eagle?\nLion($x, bool) ::: Is x lion?\nMouse($x, bool) ::: Is x mouse?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nSees($x, y, bool) ::: Does x see y?\nBlue($x, bool) ::: Is x blue?\nRound($x, bool) ::: Is x round?\nNice($x, bool) ::: Is x nice?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x, y, bool) ::: Does x like y?\nNeeds($x, y, bool) ::: Does x need y?\nLikes($x"
+    ]
+  },
+  {
+    "id": "ProofWriter_AttNeg-OWA-D5-1040_Q9",
+    "context": "Bob is cold. Bob is not nice. Bob is not quiet. Charlie is blue. Charlie is round. Gary is rough. Harry is cold. Rough things are blue. Red, quiet things are blue. All rough, blue things are nice. If something is quiet and round then it is not nice. If Harry is red then Harry is rough. If something is nice then it is round. If something is round then it is red. Red things are not quiet.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Gary is red.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nCold($x, bool) ::: Is x cold?\nNice($x, bool) ::: Is x nice?\nQuite($x, bool) ::: Is x quiet?\nBlue($x, bool) ::: Is x blue?\nRound($x, bool) ::: Is x round?\nRough($x, bool) ::: Is x rough?\nRed($x, bool) ::: Is x red?\nFacts:\nCold(Bob, True) ::: Bob is cold.\nNice(Charlie, True) ::: Charlie is nice.\nRound(Charlie, True) ::: Charlie is round.\nRough(Gary, True) ::: Gary is rough.\nBlue(Gary, True) ::: Gary is blue.\nRed(Harry, True) ::: Harry is red.\nRough(Harry, True) ::: Harry is rough.\nRough(Harry, True) >>> Blue($x, True) ::: Rough things are blue.\nRed($x, True) >>> Blue($x, True) ::: Red, quiet things are blue.\nAll(Rough, Blue) >>> Nice($x, True) ::: All rough, blue things are nice.\nNice(Charlie, True) >>> Round($x, True) ::: Nice things are round.\nRound(Charlie, True) >>> Red($x, True) ::: If something is nice then it is round.\nRed($x, True) >>> Quite($x, True) ::: If something is red then it is quiet.\nRed($x, True) >>> Rough($x, True) ::: If Harry is red then Harry is rough.\nRed($x, True) >>> Blue($x, True) ::: Red things are not quiet.\nRound(Charlie, True) >>> Quite($x, True) ::: If something is round then it is quiet.\nRound(Charlie, True) >>> Rough($x, True) ::: If something is round then it is rough.\nRound(Charlie, True) >>> Red($x, True) ::: If something is round then it is red.\nRound(Charlie, True) >>> Blue($x, True) ::: If"
+    ]
+  },
+  {
+    "id": "ProofWriter_RelNeg-OWA-D5-19_Q18",
+    "context": "The bear needs the cow. The cow needs the rabbit. The cow sees the bear. The cow visits the lion. The lion is nice. The lion is red. The lion does not see the cow. The lion visits the cow. The rabbit sees the cow. The rabbit visits the cow. If something needs the cow and the cow visits the rabbit then it visits the cow. If the lion needs the bear then the bear sees the cow. If the lion sees the bear and the bear is rough then the bear does not see the cow. If something visits the lion then the lion visits the bear. If something visits the bear then it needs the bear. If something visits the bear then the bear needs the cow. If something sees the cow then it visits the bear.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit is rough.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nNeeds($x, y, bool) ::: Does x need y?\nVisits($x, y, bool) ::: Does x visit y?\nSee($x, y, bool) ::: Does x see y?\nNice($x, bool) ::: Is x nice?\nRed($x, bool) ::: Is x red?\nVisits($x, y, bool) && Needs($x, y, bool) >>> Visits($x, y, True) ::: If something needs the cow and the cow visits the rabbit then it visits the cow.\nSee($x, y, bool) && Visits($x, y, bool) >>> Visits($x, y, True) ::: If the lion sees the bear and the bear is rough then the bear does not see the cow.\nSee($x, y, bool) && Visits($x, y, bool) >>> Visits($x, y, True) ::: If something sees the cow then it visits the bear.\nSee($x, y, bool) && Visits($x, y, bool) >>> Visits($x, y, True) ::: If something sees the cow then it visits the bear.\nSee($x, y, bool) && Visits($x, y, bool) >>> Visits($x, y, True) ::: If something sees the cow then it visits the bear.\nSee($x, y, bool) && Visits($x, y, bool) >>> Visits($x, y, True) ::: If something sees the cow then it visits the bear.\nSee($x, y, bool) && Visits($x, y, bool) >>> Visits($x, y, True) ::: If something sees the cow then it visits the bear.\nSee($x, y, bool) && Visits($x, y, bool) >>> Visits($x, y, True) ::: If something sees the cow then it visits the bear.\nSee($x, y, bool) && Visits($x, y, bool) >>> Visits($x, y, True) ::: If something sees the cow then it visits the bear.\nSee($x, y, bool) && Visits($x, y, bool"
+    ]
+  },
+  {
+    "id": "ProofWriter_AttNeg-OWA-D5-1213_Q11",
+    "context": "Anne is white. Bob is round. Erin is green. Erin is red. Erin is not round. Erin is white. Harry is young. All red, round people are quiet. If someone is young then they are white. Round people are young. If someone is round and smart then they are not red. All white people are red. Quiet people are green. If someone is red and not white then they are not green.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Bob is green.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nWhite($x, bool) ::: Is x white?\nRound($x, bool) ::: Is x round?\nRed($x, bool) ::: Is x red?\nGreen($x, bool) ::: Is x green?\nQuiet($x, bool) ::: Is x quiet?\nYoung($x, bool) ::: Is x young?\nFacts:\nWhite(Anne, True) ::: Anne is white.\nRound(Bob, True) ::: Bob is round.\nGreen(Erin, True) ::: Erin is green.\nRed(Erin, True) ::: Erin is red.\nRound(Erin, True) ::: Erin is round.\nWhite(Erin, True) ::: Erin is white.\nYoung(Harry, True) ::: Harry is young.\nRound(Harry, True) ::: Harry is round.\nRed(Harry, True) ::: Harry is red.\nQuiet(Harry, True) ::: Harry is quiet.\nGreen(Harry, True) ::: Harry is green.\nRules:\nRound($x, True) >>> Young($x, True) ::: Round people are young.\nRed($x, True) >>> White($x, True) ::: All red people are white.\nQuiet($x, True) >>> Green($x, True) ::: Quiet people are green.\nRound($x, True) && Young($x, True) >>> Quiet($x, True) ::: Round, young people are quiet.\nRed($x, True) && White($x, True) >>> Quiet($x, True) ::: All red people are quiet.\nRound($x, True) && Quiet($x, True) >>> Green($x, True) ::: Round, quiet people are green.\nRound($x, True) && Quiet($x, True) && Young($x, True) >>> Red($x, True) ::: Round, quiet, young people are red.\nRound($x, True) && Quiet($x, True) && Young($x, True) && White($x, True) >>> Red($x, True) ::: Round, quiet, young"
+    ]
+  },
+  {
+    "id": "ProofWriter_AttNeg-OWA-D5-527_Q9",
+    "context": "Bob is quiet. Charlie is blue. Charlie is cold. Charlie is nice. Dave is blue. Dave is cold. Erin is blue. If something is blue and cold then it is big. Round, nice things are big. All nice, quiet things are furry. If Bob is round then Bob is furry. If Bob is furry and Bob is nice then Bob is big. If something is big and blue then it is quiet. If something is blue then it is nice. All nice things are cold.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Erin is quiet.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nQuiet($x, bool) ::: Is x quiet?\nBlue($x, bool) ::: Is x blue?\nCold($x, bool) ::: Is x cold?\nNice($x, bool) ::: Is x nice?\nBig($x, bool) ::: Is x big?\nRound($x, bool) ::: Is x round?\nFurry($x, bool) ::: Is x furry?\nFacts:\nQuiet(Bob, True) ::: Bob is quiet.\nBlue(Charlie, True) ::: Charlie is blue.\nCold(Charlie, True) ::: Charlie is cold.\nNice(Charlie, True) ::: Charlie is nice.\nBlue(Dave, True) ::: Dave is blue.\nCold(Dave, True) ::: Dave is cold.\nBlue(Erin, True) ::: Erin is blue.\nIf(something, bool) ::: If something is blue and cold then it is big.\nRound(Bob, True) ::: Bob is round.\nFurry(Bob, True) ::: Bob is furry.\nNice(Bob, True) && Furry(Bob, True) >>> Big(Bob, True) ::: If Bob is round and Bob is nice then Bob is big.\nBlue(Bob, True) ::: Bob is blue.\nBlue(Bob, True) >>> Nice(Bob, True) ::: If something is blue then it is nice.\nCold(Bob, True) ::: Bob is cold.\nBlue(Bob, True) >>> Cold(Bob, True) ::: If something is blue then it is cold.\nNice(Bob, True) ::: Bob is nice.\nAll(nice, cold) ::: All nice things are cold.\nQuery:\nNice(Erin, True) ::: Erin is nice.\n------\nTask:\nGiven the initial program and the error message, debug the following logic program.\n------\n>>> Initial Program:\n.\nPredicates:\nQuiet($x, bool) ::: Is x quiet?\nBlue($x, bool) ::: Is x blue?\nCold($x, bool) ::: Is x cold?\nN"
+    ]
+  },
+  {
+    "id": "ProofWriter_AttNoneg-OWA-D5-607_Q15",
+    "context": "Dave is big. Erin is big. Erin is furry. Erin is green. Erin is white. Gary is green. Harry is round. All big, furry things are white. If something is round then it is furry. If something is smart and furry then it is round. If something is white and smart then it is big. All white things are smart. If something is furry then it is white. All green things are round.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not white.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nBig($x, bool) ::: Is x big?\nFurry($x, bool) ::: Is x furry?\nGreen($x, bool) ::: Is x green?\nRound($x, bool) ::: Is x round?\nWhite($x, bool) ::: Is x white?\nSmart($x, bool) ::: Is x smart?\nFacts:\nBig(Dave, True) ::: Dave is big.\nFurry(Erin, True) ::: Erin is furry.\nGreen(Erin, True) ::: Erin is green.\nFurry(Gary, True) ::: Gary is green.\nRound(Harry, True) ::: Harry is round.\nAllBig(x, True) >>> White(x, True) ::: All big, furry things are white.\nRound(x, True) >>> Furry(x, True) ::: If something is round then it is furry.\nSmart(x, True) && Furry(x, True) >>> Round(x, True) ::: If something is smart and furry then it is round.\nWhite(x, True) && Big(x, True) >>> Round(x, True) ::: If something is white and big then it is round.\nWhite(x, True) >>> AllWhite(x, True) ::: All white things are smart.\nFurry(x, True) ::: If something is furry then it is white.\nGreen(x, True) >>> Round(x, True) ::: All green things are round.\nQuery:\nWhite(Dave, True) ::: Dave is white.\n------\nSolution:\nThe following program is correct.\n------\n>>> Corrected Program:\n.\nPredicates:\nBig($x, bool) ::: Is x big?\nFurry($x, bool) ::: Is x furry?\nGreen($x, bool) ::: Is x green?\nRound($x, bool) ::: Is x round?\nWhite($x, bool) ::: Is x white?\nSmart($x, bool) ::: Is x smart?\nFacts:\nBig(Dave, True) ::: Dave"
+    ]
+  },
+  {
+    "id": "ProofWriter_AttNoneg-OWA-D5-1382_Q2",
+    "context": "Bob is big. Bob is cold. Bob is kind. Bob is round. Bob is smart. Dave is cold. Erin is big. Erin is green. Fiona is big. Fiona is smart. Big, green things are round. If something is cold and blue then it is smart. Smart, round things are kind. Round, big things are cold. Cold things are blue.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not big.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nBig($x, bool) ::: Is x big?\nCold($x, bool) ::: Is x cold?\nKind($x, bool) ::: Is x kind?\nRound($x, bool) ::: Is x round?\nSmart($x, bool) ::: Is x smart?\nBlue($x, bool) ::: Is x blue?\nFacts:\nBig(Bob, True) ::: Bob is big.\nCold(Bob, True) ::: Bob is cold.\nKind(Bob, True) ::: Bob is kind.\nRound(Bob, True) ::: Bob is round.\nSmart(Bob, True) ::: Bob is smart.\nCold(Dave, True) ::: Dave is cold.\nBig(Erin, True) ::: Erin is big.\nSmart(Erin, True) ::: Erin is smart.\nBig(Fiona, True) ::: Fiona is big.\nSmart(Fiona, True) ::: Fiona is smart.\nRound(Fiona, True) ::: Fiona is round.\nBlue(Fiona, True) ::: Fiona is blue.\nRules:\nBig($x, True) >>> Round($x, True) ::: Big, green things are round.\nCold($x, True) && Blue($x, True) >>> Smart($x, True) ::: If something is cold and blue then it is smart.\nRound($x, True) && Big($x, True) >>> Kind($x, True) ::: Round, big things are kind.\nCold($x, True) && Blue($x, True) >>> Smart($x, True) ::: If something is cold and blue then it is smart.\nRound($x, True) && Big($x, True) >>> Cold($x, True) ::: Round, big things are cold.\nCold($x, True) && Blue($x, True) >>> Smart($x, True) ::: If something is cold and blue then it is smart.\n------\nTask: Given the initial program and the error message, debug the following logic program.\n------\n>>> Initial Program:\n.\nPredicates:\nBig($x, bool)"
+    ]
+  },
+  {
+    "id": "ProofWriter_AttNoneg-OWA-D5-698_Q16",
+    "context": "Bob is big. Bob is red. Bob is smart. Erin is quiet. Fiona is big. Fiona is blue. Fiona is cold. Fiona is smart. Gary is red. Gary is smart. If Bob is quiet then Bob is cold. If someone is red then they are quiet. If someone is red and quiet then they are cold. All kind people are big. If someone is red and blue then they are kind. All cold, quiet people are blue. Cold, big people are kind. If Erin is big then Erin is cold. If someone is cold and blue then they are smart.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Erin is cold.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Unknown"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nBig($x, bool) ::: Is x big?\nRed($x, bool) ::: Is x red?\nSmart($x, bool) ::: Is x smart?\nQuiet($x, bool) ::: Is x quiet?\nBlue($x, bool) ::: Is x blue?\nCold($x, bool) ::: Is x cold?\nKind($x, bool) ::: Is x kind?\nFacts:\nBig(Bob, True) ::: Bob is big.\nRed(Bob, True) ::: Bob is red.\nSmart(Bob, True) ::: Bob is smart.\nQuiet(Erin, True) ::: Erin is quiet.\nBlue(Fiona, True) ::: Fiona is blue.\nCold(Fiona, True) ::: Fiona is cold.\nSmart(Fiona, True) ::: Fiona is smart.\nRed(Gary, True) ::: Gary is red.\nSmart(Gary, True) ::: Gary is smart.\nQuiet(Gary, True) ::: If Bob is quiet then Bob is cold.\nRed(x, True) >>> Quiet(x, True) ::: If someone is red then they are quiet.\nRed(x, True) && Quiet(x, True) >>> Cold(x, True) ::: If someone is red and quiet then they are cold.\nBig(x, True) >>> Kind(x, True) ::: All kind people are big.\nRed(x, True) && Blue(x, True) >>> Kind(x, True) ::: All cold, blue people are kind.\nRed(x, True) && Cold(x, True) >>> Kind(x, True) ::: All cold, big people are kind.\nBig(Bob, True) && Quiet(Erin, True) >>> Cold(Erin, True) ::: If Erin is big then Erin is cold.\nCold(x, True) && Blue(x, True) >>> Smart(x, True) ::: Cold, blue people are smart.\nCold(x, True) && Big(x, True) >>> Smart(x, True) ::: Cold, big people are smart."
+    ]
+  }
+]

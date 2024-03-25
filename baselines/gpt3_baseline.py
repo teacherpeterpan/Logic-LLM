@@ -3,7 +3,7 @@ import os
 from tqdm import tqdm
 from collections import OrderedDict
 from typing import Dict, List, Tuple
-from utils import OpenAIModel
+from models.utils import OpenAIModel
 import argparse
 
 class GPT3_Reasoning_Graph_Baseline:

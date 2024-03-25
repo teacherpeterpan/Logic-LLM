@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ar_lsat_200010_3-G_1_1",
+    "question": "Which one of the following could be the schedule of the students' reports?",
+    "answer": "C",
+    "predicted_reasoning": "The only day on which George can give a report is Tuesday, so he cannot give a report on Monday. Nina's report can be given on any day, so she can give a report on Monday or Wednesday. If Nina gives a report on Monday, then Helen and Irving must both give reports on Tuesday. If Nina gives a report on Wednesday, then Helen and Irving must both give reports on Tuesday. Therefore, the final answer is E.",
+    "predicted_answer": "E\n------",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_2",
+    "question": "If Kyle and Lenore do not give reports, then the morning reports on Monday, Tuesday, and Wednesday, respectively, could be given by",
+    "answer": "D",
+    "predicted_reasoning": "The only day on which George can give a report is Tuesday, so he cannot give a report on Monday. If Nina gives a report, then on the next day Helen and Irving must both give reports, unless Nina's report is given on Wednesday. Therefore, the final answer is E.",
+    "predicted_answer": "E\n------\nContext:\nThe following table shows the number of students in a class who are taking a particular course.\n\nCourse | Number of Students\n---|---\nEnglish |",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_3",
+    "question": "Which one of the following is a pair of students who, if they give reports on the same day as each other, must give reports on Wednesday?",
+    "answer": "B",
+    "predicted_reasoning": "George can give a report on Tuesday, so we rule out option A. Nina can give a report on Tuesday, so we rule out option B. Irving can give a report on Tuesday, so we rule out option C. Kyle can give a report on Tuesday, so we rule out option D. Therefore, the final answer is E.",
+    "predicted_answer": "E\n------\nContext:\nThe following table shows the number of students in a class who are taking a particular course.\n\nC",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_4",
+    "question": "If George, Nina, and Robert give reports and they do so on different days from one another, which one of the following could be true?",
+    "answer": "A",
+    "predicted_reasoning": "George can give a report on Tuesday or Wednesday, so we rule out option A. Nina can give a report on Monday or Tuesday, so we rule out option C. Olivia can give a report on Monday or Wednesday, so we rule out option D. Therefore, the final answer is E.",
+    "predicted_answer": "E\n------\nContext:\nThe following table shows the number of students in a class who are taking a particular course.\n\nCourse | Number of Students\n---|---",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_5",
+    "question": "If Kyle gives the afternoon report on Tuesday, and Helen gives the afternoon report on Wednesday, which one of the following could be the list of the students who give the morning reports on Monday, Tuesday, and Wednesday, respectively?",
+    "answer": "D",
+    "predicted_reasoning": "The only day on which George can give a report is Tuesday, so he cannot give a report on Monday. The only day on which Nina can give a report is Wednesday, so she cannot give a report on Monday. The only day on which Helen can give a report is Tuesday, so she cannot give a report on Monday. The only day on which Irving can give a report is Wednesday, so he cannot give a report on Monday. The only day on which Robert can give a report is Tuesday, so he",
+    "predicted_answer": "The only day on which George can give a report is Tuesday, so he cannot give a report on Monday. The only day on which Nina can give a report is Wednesday, so she cannot give a report on Monday. The only day on which Helen can give a report is Tuesday, so she cannot give a report on Monday. The only day on which Irving can give a report is Wednesday, so he cannot give a report on Monday. The only day on which Robert can give a report is Tuesday, so he",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_1_6",
+    "question": "If Helen, Kyle, and Lenore, not necessarily in that order, give the three morning reports, which one of the following must be true?",
+    "answer": "B",
+    "predicted_reasoning": "The only day on which George can give a report is Tuesday, so he cannot give a report on Monday. Therefore, the final answer is A.",
+    "predicted_answer": "A\n------\nContext:\nThe following table shows the number of students in a class who are taking a particular course.\n\nCourse | Number of Students\n---|---\nEnglish | 10\nMathematics | 15\nHistory | 12\nScience | 18\n\nQuestion: Which one of the following is true",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_2_7",
+    "question": "Which one of the following could be the organizer's selection of works?",
+    "answer": "C",
+    "predicted_reasoning": ",\nThe organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.\n\nThe organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian",
+    "predicted_answer": ",\nThe organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.\n\nThe organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_2_8",
+    "question": "Which one of the following could be true about the organizer's selection of works?",
+    "answer": "A",
+    "predicted_reasoning": ",\nThe organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.\n\nThe organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian",
+    "predicted_answer": ",\nThe organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.\n\nThe organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_2_9",
+    "question": "If the works selected include three French novels, which one of the following could be a complete and accurate list of the remaining works selected?",
+    "answer": "C",
+    "predicted_reasoning": ",\nThe organizer selects at least five and at most six works. The organizer selects at least three but no more than four novels. The organizer selects at least as many French novels as Russian novels. The organizer selects both French plays. Therefore, the final answer is C.",
+    "predicted_answer": "C\n------\nContext:\nA group of five people\\u2014A, B, C, D, and E\\u2014will be assigned to one of three teams. The teams will be",
+    "flag": "CoT"
+  },
+  {
+    "id": "ar_lsat_200010_3-G_2_10",
+    "question": "The organizer must at least select",
+    "answer": "D",
+    "predicted_reasoning": ",\nThe organizer must select at least five works, so we rule out option A. The organizer must select at most six works, so we rule out option B. The organizer must select at least three novels, so we rule out option C. The organizer must select at least as many French novels as Russian novels, so we rule out option D. Therefore, the final answer is E.",
+    "predicted_answer": "E\n------\nContext:\nA group of 10 people is to be seated at a circular table",
+    "flag": "CoT"
+  }
+]

@@ -1,0 +1,43 @@
+Given a problem statement as contexts, the task is to answer a logical reasoning question. 
+------
+Context:
+The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there were seven golfers: Ana, Eve, Ada, Dan, Rob, Amy, and Joe. Dan finished third. Ana finished above Ada. Amy finished last. Dan finished below Rob. Eve finished below Ada. Rob finished below Joe.
+
+Question: Which of the following is true?
+
+Options:
+A) Ana finished third.
+B) Eve finished third.
+C) Ada finished third.
+D) Dan finished third.
+E) Rob finished third.
+F) Amy finished third.
+G) Joe finished third.
+
+The correct option is: D
+------
+Context:
+The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn an antique car show, there are seven vehicles: a bus, a motorcyle, a hatchback, a station wagon, a minivan, a truck, and a limousine. The station wagon is the fourth-newest. The motorcyle is newer than the truck. The station wagon is older than the hatchback. The minivan is newer than the hatchback. The bus is newer than the minivan. The truck is newer than the limousine.
+
+Question: Which of the following is true?
+
+Options:
+A) The bus is the third-oldest.
+B) The motorcyle is the third-oldest.
+C) The hatchback is the third-oldest.
+D) The station wagon is the third-oldest.
+E) The minivan is the third-oldest.
+F) The truck is the third-oldest.
+G) The limousine is the third-oldest.
+
+The correct option is: B
+------
+Context:
+[[CONTEXT]]
+
+Question: [[QUESTION]]
+
+Options:
+[[OPTIONS]]
+
+The correct option is:

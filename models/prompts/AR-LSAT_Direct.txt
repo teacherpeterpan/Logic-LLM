@@ -1,0 +1,39 @@
+Given a problem statement as contexts, the task is to answer a logical reasoning question. 
+------
+Context:
+During a single week, from Monday through Friday, tours will be conducted of a company's three divisions\u2014Operations, Production, and Sales. Exactly five tours will be conducted that week, one each day. The schedule of tours for the week must conform to the following restrictions: Each division is toured at least once. The Operations division is not toured on Monday. The Production division is not toured on Wednesday. The Sales division is toured on two consecutive days, and on no other days. If the Operations division is toured on Thursday, then the Production division is toured on Friday.
+
+Question: Which one of the following CANNOT be true of the week's tour schedule?
+
+Options: 
+A) The division that is toured on Monday is also toured on Tuesday.
+B) The division that is toured on Monday is also toured on Friday.
+C) The division that is toured on Tuesday is also toured on Thursday.
+D) The division that is toured on Wednesday is also toured on Friday.
+E) The division that is toured on Thursday is also toured on Friday.
+
+The correct option is: C
+------
+Context:
+Each of seven candidates for the position of judge\u2014Hamadi, Jefferson, Kurtz, Li, McDonnell, Ortiz, and Perkins\u2014will be appointed to an open position on one of two courts\u2014the appellate court or the trial court. There are three open positions on the appellate court and six open positions on the trial court, but not all of them will be filled at this time. The judicial appointments will conform to the following conditions: Li must be appointed to the appellate court. Kurtz must be appointed to the trial court. Hamadi cannot be appointed to the same court as Perkins.
+
+Question: Which one of the following is an acceptable set of appointments of candidates to courts?
+
+Options:
+A) appellate: Hamadi, Ortiz trial: Jefferson, Kurtz, Li, McDonnell, Perkins
+B) appellate: Hamadi, Li, Perkins trial: Jefferson, Kurtz, McDonnell, Ortiz
+C) appellate: Kurtz, Li, Perkins trial: Hamadi, Jefferson, McDonnell, Ortiz
+D) appellate: Li, McDonnell, Ortiz trial: Hamadi, Jefferson, Kurtz, Perkins
+E) appellate: Li, Perkins trial: Hamadi, Jefferson, Kurtz, McDonnell, Ortiz
+
+The correct option is: E
+------
+Context:
+[[CONTEXT]]
+
+Question: [[QUESTION]]
+
+Options:
+[[OPTIONS]]
+
+The correct option is:

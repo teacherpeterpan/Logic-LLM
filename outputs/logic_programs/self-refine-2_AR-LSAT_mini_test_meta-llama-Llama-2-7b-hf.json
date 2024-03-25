@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ar_lsat_200010_3-G_2_10",
+    "context": "The organizer of a reading club will select at least five and at most six works from a group of nine works. The group consists of three French novels, three Russian novels, two French plays, and one Russian play. The organizer's selection of works must conform to the following requirements: No more than four French works are selected. At least three but no more than four novels are selected. At least as many French novels as Russian novels are selected. If both French plays are selected, then the Russian play is not selected.",
+    "question": "The organizer must at least select",
+    "answer": "D",
+    "options": [
+      "A) one French novel and one French play",
+      "B) one French novel and one Russian play",
+      "C) one Russian novel and one French play",
+      "D) two French novels",
+      "E) two Russian novels"
+    ],
+    "raw_logic_programs": [
+      "# Declarations\nworks = EnumSort([French_novel, French_play, Russian_novel, Russian_play])\nnovels = EnumSort([French_novel, Russian_novel])\nplays = EnumSort([French_play, Russian_play])\n\n# Constraints\nForAll([w:works], And(1 <= Count([n:novels], w == n), Count([n:novels], w == n) <= 4)) ::: No more than four French works are selected\nForAll([w:works], And(1 <= Count([n:novels], w == n), Count([n:novels], w == n) <= 4)) ::: No more than four novels are selected\nForAll([w:works], And(1 <= Count([n:novels], w == n), Count([n:novels], w == n) <= 4)) ::: At least as many French novels as Russian novels are selected\nForAll([w:works], And(1 <= Count([n:novels], w == n), Count([n:novels], w == n) <= 4)) ::: If both French plays are selected, then the Russian play is not selected\n\n# Options\nQuestion ::: The organizer must at least select\nis_valid(Exists([w:works], And(w == French_novel, w == French_play))) ::: (A)\nis_valid(Exists([w:works], And(w == French_novel, w == Russian_play))) ::: (B)\nis_valid(Exists([w:works], And(w == Russian_novel, w == French_play))) ::: (C)\nis_valid(Exists([w:works], And(w == Russian_novel, w == Russian_play))) ::: (D)\nis_valid(Exists([w:works], And(w == French_novel, w == French_novel))) ::: (E)\n------"
+    ]
+  }
+]

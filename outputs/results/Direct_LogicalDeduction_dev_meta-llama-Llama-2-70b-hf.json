@@ -1,0 +1,2402 @@
+[
+  {
+    "id": "logical_deduction_0",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_1",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_2",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_3",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_4",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "the cardinal is",
+    "predicted_answer": "the cardinal is",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_5",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_6",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "the third from",
+    "predicted_answer": "the third from",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_7",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_8",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_9",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_10",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "B\n------",
+    "predicted_answer": "B\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_11",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_12",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "E\n------",
+    "predicted_answer": "E\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_13",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "the plums",
+    "predicted_answer": "the plums",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_14",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_15",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the correct option",
+    "predicted_answer": "the correct option",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_16",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_17",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_18",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_19",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_20",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_21",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_22",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_23",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_24",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_25",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_26",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_27",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_28",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_29",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_30",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the watermelons are the cheapest.\n------",
+    "predicted_answer": "the watermelons are the cheapest.\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_31",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraphs each",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraphs each",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_32",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs each describe",
+    "predicted_answer": "------\nContext:\nThe following paragraphs each describe",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_33",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "a\n------\nContext:\nThe following paragraphs each",
+    "predicted_answer": "a\n------\nContext:\nThe following paragraphs each",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_34",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the cardinal is the second from the right.\n------",
+    "predicted_answer": "the cardinal is the second from the right.\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_35",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "D\n------\nContext:\nThe following paragraphs each",
+    "predicted_answer": "D\n------\nContext:\nThe following paragraphs each",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_36",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs each describe",
+    "predicted_answer": "------\nContext:\nThe following paragraphs each describe",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_37",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs each describe",
+    "predicted_answer": "------\nContext:\nThe following paragraphs each describe",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_38",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs each describe",
+    "predicted_answer": "------\nContext:\nThe following paragraphs each describe",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_39",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs each describe",
+    "predicted_answer": "------\nContext:\nThe following paragraphs each describe",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_40",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "E\n------",
+    "predicted_answer": "E\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_41",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_42",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_43",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the cardinal is",
+    "predicted_answer": "the cardinal is",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_44",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_45",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "the cardinal is",
+    "predicted_answer": "the cardinal is",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_46",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_47",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_48",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_49",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_50",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_51",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_52",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_53",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_54",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_55",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_56",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_57",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_58",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_59",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "the cant",
+    "predicted_answer": "the cant",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_60",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_61",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_62",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_63",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_64",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_65",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_66",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_67",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_68",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_69",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_70",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "a\n------",
+    "predicted_answer": "a\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_71",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_72",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "E\n------",
+    "predicted_answer": "E\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_73",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the second from",
+    "predicted_answer": "the second from",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_74",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_75",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_76",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_77",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_78",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_79",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_80",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_81",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_82",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_83",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_84",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_85",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_86",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_87",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "D",
+    "predicted_answer": "D",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_88",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_89",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_90",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_91",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_92",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the white book",
+    "predicted_answer": "the white book",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_93",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_94",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_95",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_96",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_97",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_98",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "D\n------",
+    "predicted_answer": "D\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_99",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_100",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_101",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_102",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_103",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "E",
+    "predicted_answer": "E",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_104",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_105",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_106",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_107",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_108",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_109",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_110",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_111",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_112",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_113",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_114",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_115",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_116",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_117",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_118",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_119",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_120",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_121",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_122",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "D",
+    "predicted_answer": "D",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_123",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_124",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_125",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_126",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_127",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_128",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_129",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_130",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_131",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_132",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_133",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "the cardinal",
+    "predicted_answer": "the cardinal",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_134",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "G",
+    "predicted_answer": "G",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_135",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_136",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_137",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_138",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "the cardinal",
+    "predicted_answer": "the cardinal",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_139",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_140",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_141",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_142",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_143",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_144",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_145",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_146",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_147",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_148",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_149",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_150",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_151",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_152",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_153",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_154",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_155",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_156",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "B",
+    "predicted_answer": "B",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_157",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_158",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_159",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_160",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_161",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "E\n------",
+    "predicted_answer": "E\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_162",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_163",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_164",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_165",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_166",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_167",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_168",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_169",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_170",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_171",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_172",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_173",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_174",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_175",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_176",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "",
+    "predicted_answer": "",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_177",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_178",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_179",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_180",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_181",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_182",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_183",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_184",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_185",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "D",
+    "predicted_answer": "D",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_186",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_187",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_188",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_189",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_190",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_191",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_192",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_193",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_194",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_195",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_196",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_197",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_198",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_199",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_200",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_201",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_202",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_203",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_204",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_205",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "F",
+    "predicted_answer": "F",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_206",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_207",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_208",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_209",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_210",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_211",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_212",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "predicted_reasoning": "a",
+    "predicted_answer": "a",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_213",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_214",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_215",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_216",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_217",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_218",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_219",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_220",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "a\n------",
+    "predicted_answer": "a\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_221",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_222",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_223",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_224",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_225",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "E\n------",
+    "predicted_answer": "E\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_226",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_227",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_228",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_229",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "a\n------",
+    "predicted_answer": "a\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_230",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C\n------",
+    "predicted_answer": "C\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_231",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_232",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "predicted_reasoning": "a\n------",
+    "predicted_answer": "a\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_233",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the cardinal is",
+    "predicted_answer": "the cardinal is",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_234",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_235",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_236",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_237",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_238",
+    "question": "Which of the following is true?",
+    "answer": "F",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_239",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_240",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_241",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_242",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the answer",
+    "predicted_answer": "the answer",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_243",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the gray",
+    "predicted_answer": "the gray",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_244",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_245",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the answer",
+    "predicted_answer": "the answer",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_246",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the cardinal",
+    "predicted_answer": "the cardinal",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_247",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_248",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_249",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_250",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the white book is the rightmost.\n------",
+    "predicted_answer": "the white book is the rightmost.\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_251",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs",
+    "predicted_answer": "------\nContext:\nThe following paragraphs",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_252",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the bus is the newest.\n------",
+    "predicted_answer": "the bus is the newest.\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_253",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------\nContext:\nThe following paragraph",
+    "predicted_answer": "A\n------\nContext:\nThe following paragraph",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_254",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs",
+    "predicted_answer": "------\nContext:\nThe following paragraphs",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_255",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs",
+    "predicted_answer": "------\nContext:\nThe following paragraphs",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_256",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs",
+    "predicted_answer": "------\nContext:\nThe following paragraphs",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_257",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs",
+    "predicted_answer": "------\nContext:\nThe following paragraphs",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_258",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------\nContext:\nThe following paragraphs",
+    "predicted_answer": "------\nContext:\nThe following paragraphs",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_259",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the cardinal is the leftmost.\n------",
+    "predicted_answer": "the cardinal is the leftmost.\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_260",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------",
+    "predicted_answer": "A\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_261",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_262",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_263",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_264",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_265",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the second from",
+    "predicted_answer": "the second from",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_266",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_267",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the kiw",
+    "predicted_answer": "the kiw",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_268",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the mango",
+    "predicted_answer": "the mango",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_269",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_270",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the crow is the rightmost.\n------",
+    "predicted_answer": "the crow is the rightmost.\n------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_271",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraph",
+    "predicted_answer": "------\nContext:\nThe following paragraph",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_272",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------\nContext:\nThe following paragraph",
+    "predicted_answer": "------\nContext:\nThe following paragraph",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_273",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------\nContext:\nThe following paragraph",
+    "predicted_answer": "------\nContext:\nThe following paragraph",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_274",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the peaches are the cheapest.",
+    "predicted_answer": "the peaches are the cheapest.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_275",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the blue jay is the leftmost.",
+    "predicted_answer": "the blue jay is the leftmost.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_276",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the purple book is the leftmost.",
+    "predicted_answer": "the purple book is the leftmost.",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_277",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------\nContext:\nThe following paragraph",
+    "predicted_answer": "------\nContext:\nThe following paragraph",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_278",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A\n------\nContext:\nThe following",
+    "predicted_answer": "A\n------\nContext:\nThe following",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_279",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "A\n------\nContext:\nThe following",
+    "predicted_answer": "A\n------\nContext:\nThe following",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_280",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_281",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "C",
+    "predicted_answer": "C",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_282",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the qu",
+    "predicted_answer": "the qu",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_283",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the answer",
+    "predicted_answer": "the answer",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_284",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_285",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "the answer",
+    "predicted_answer": "the answer",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_286",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the cardinal",
+    "predicted_answer": "the cardinal",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_287",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the gray",
+    "predicted_answer": "the gray",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_288",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_289",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_290",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_291",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the blue",
+    "predicted_answer": "the blue",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_292",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_293",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "A",
+    "predicted_answer": "A",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_294",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the ra",
+    "predicted_answer": "the ra",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_295",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the ha",
+    "predicted_answer": "the ha",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_296",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_297",
+    "question": "Which of the following is true?",
+    "answer": "B",
+    "predicted_reasoning": "------",
+    "predicted_answer": "------",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_298",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "predicted_reasoning": "the white",
+    "predicted_answer": "the white",
+    "flag": "Direct"
+  },
+  {
+    "id": "logical_deduction_299",
+    "question": "Which of the following is true?",
+    "answer": "C",
+    "predicted_reasoning": "the gray",
+    "predicted_answer": "the gray",
+    "flag": "Direct"
+  }
+]

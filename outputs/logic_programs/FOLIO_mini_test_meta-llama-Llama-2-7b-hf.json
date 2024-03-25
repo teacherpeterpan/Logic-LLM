@@ -1,0 +1,142 @@
+[
+  {
+    "id": "FOLIO_dev_0",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nPerform(x, y) ::: x performs in y.\nAttend(x, y) ::: x attends y.\nEngaged(x, y) ::: x is very engaged with y.\nChaperone(x, y) ::: x chaperones y.\nStudent(x) ::: x is a student.\nPremises:\n∀x (Perform(x, school) → Attend(x, school)) ::: If people perform in school talent shows often, then they attend and are very engaged with school events.\n∀x (Attend(x, school) ⊕ Engaged(x, school)) ::: People either attend and are very engaged with school events or are inactive and disinterested members of their community.\n∀x (Chaperone(x, highSchoolDance) → ¬Student(x)) ::: All people who are inactive and disinterested members of their community chaperone high school dances.\n∀x (Student(x) ∧ Attend(x, school)) ::: All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school.\nBonnie ⊕ Student(bonnie) ::: Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.\nConclusion:\nPerform(bonnie, school) ::: Bonnie performs in school talent shows often.\n------"
+    ]
+  },
+  {
+    "id": "FOLIO_dev_1",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nPerform(x, y) ::: x performs in y.\nAttend(x, y) ::: x attends y.\nEngaged(x, y) ::: x is very engaged with y.\nChaperone(x, y) ::: x chaperones y.\nStudent(x) ::: x is a student who attends the school.\nInactive(x) ::: x is an inactive and disinterested member of the community.\nPremises:\n∀x (Perform(x, schoolTalentShow) → Attend(x, schoolTalentShow)) ::: If people perform in school talent shows often, then they attend and are very engaged with school events.\n∀x (Attend(x, schoolTalentShow) → Engaged(x, schoolTalentShow)) ::: People either perform in school talent shows often or are inactive and disinterested members of their community.\n∀x (Chaperone(x, highSchoolDance) → Not(Student(x))) ::: All people who are inactive and disinterested members of their community chaperone high school dances.\n∀x (Student(x) → Attend(x, school)) ::: All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school.\nBonnie ∨ (Student(bonnie) ∧ Attend(bonnie, school)) ∨ (Inactive(bonnie) ∧ Chaperone(bonnie, highSchoolDance"
+    ]
+  },
+  {
+    "id": "FOLIO_dev_2",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nPerform(x, y) ::: x performs in y.\nAttend(x, y) ::: x attends y.\nVeryEngaged(x, y) ::: x is very engaged with y.\nChaperone(x, y) ::: x chaperones y.\nStudent(x) ::: x is a student who attends the school.\nInactive(x) ::: x is an inactive and disinterested member of the community.\nPremises:\n∀x (Perform(x, schoolTalentShow) → Attend(x, schoolTalentShow)) ::: If people perform in school talent shows often, then they attend and are very engaged with school events.\n∀x (Attend(x, schoolTalentShow) → ¬Inactive(x)) ::: People either perform in school talent shows often or are inactive and disinterested members of their community.\n∀x (Chaperone(x, highSchoolDance) → ¬Student(x)) ::: All people who are inactive and disinterested members of their community chaperone high school dances.\n∀x (Student(x) → Attend(x, school)) ::: All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school.\n∀x (Attend(x, school) → ¬Inactive(x)) ::: All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_3",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has lunch in the company.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nAppear(x) ::: x appears in the company today.\nLunch(x) ::: x has lunch in the company.\nWorkRemotely(x) ::: x works remotely from home.\nManager(x) ::: x is a manager.\nPremises:\n∀x (Appear(x) → Lunch(x)) ::: All employees who schedule a meeting with their customers will appear in the company today.\n∀x (Lunch(x) → WorkRemotely(x)) ::: Everyone who has lunch in the company schedules meetings with their customers.\n∀x (WorkRemotely(x) → Manager(x)) ::: Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home.\n∀x (WorkRemotely(x) → Not(Appear(x))) ::: All employees who are in other countries work remotely from home.\n∀x (Appear(x) ⊕ Manager(x)) ::: No managers work remotely from home.\nJames(x) ⊕ Appear(x) ::: James is either a manager and appears in the company today or neither a manager nor appears in the company today.\nConclusion:\nLunch(james) ::: James has lunch in the company.\n------\nProblem:\nAll employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company"
+    ]
+  },
+  {
+    "id": "FOLIO_dev_4",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have lunch in the company.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nAppear(x) ::: x appears in the company today.\nLunch(x) ::: x has lunch in the company.\nWorkRemotely(x) ::: x works remotely from home.\nManager(x) ::: x is a manager.\nPremises:\n∀x (Appear(x) → Lunch(x)) ::: All employees who schedule a meeting with their customers will appear in the company today.\n∀x (Lunch(x) → WorkRemotely(x)) ::: Everyone who has lunch in the company schedules meetings with their customers.\n∀x (WorkRemotely(x) → ¬Manager(x)) ::: Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home.\n∀x (WorkRemotely(x) → ¬Manager(x)) ::: All employees who are in other countries work remotely from home.\n∀x (Appear(x) ⊕ WorkRemotely(x)) ::: No managers work remotely from home.\n(Manager(james) ∧ Appear(james)) ⊕ ¬(Manager(james) ∨ Appear(james)) ::: James is either a manager and appears in the company today or neither a manager nor appears in the company today.\nConclusion:\nLunch(james) ⊕ WorkRemotely(james) ::: James does not have l"
+    ]
+  },
+  {
+    "id": "FOLIO_dev_5",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If James is either a manager or in other countries,  then James either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nAppear(x) ::: x appears in the company today.\nLunch(x) ::: x has lunch in the company.\nWork(x) ::: x works in the company.\nRemote(x) ::: x works remotely from home.\nManager(x) ::: x is a manager.\nPremises:\n∀x (Appear(x) → Lunch(x)) ::: All employees who schedule a meeting with their customers will appear in the company today.\n∀x (Lunch(x) → Work(x)) ::: Everyone who has lunch in the company schedules meetings with their customers.\n∀x (Work(x) → Remote(x)) ::: Employees will either have lunch in the company or have lunch at home.\n∀x (Remote(x) → Manager(x)) ::: All employees who are in other countries work remotely from home.\n∀x (Appear(x) ⊕ Remote(x)) ::: No managers work remotely from home.\n(Appear(james) ∧ Remote(james)) ⊕ ¬(Appear(james) ∨ Remote(james)) ::: James is either a manager and appears in the company today or neither a manager nor appears in the company today.\nConclusion:\nRemote(james) ⊕ Lunch(james) ::: If James is either a manager or in other countries,  then James either has lunch at home and works remotely from home, or neither has"
+    ]
+  },
+  {
+    "id": "FOLIO_dev_6",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is an animal.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nMonkeypox(x) ::: x has monkeypox.\nGlu(x) ::: x feels tired.\nAnimal(x) ::: x is an animal.\nMammal(x) ::: x is a mammal.\nSymptom(x) ::: x has a symptom.\nPremises:\nMonkeypox(x) ∧ Animal(x) ∧ Mammal(x) ::: Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals.\n∀x (Animal(x) → Mammal(x)) ::: All animals are mammals.\n∀x (Mammal(x) → Symptom(x)) ::: All mammals have a symptom.\nConclusion:\nThere is an animal.\n------\nProblem:\nThe following is a list of the 100 most popular baby names for boys in the United States in 2019.\nQuestion:\nBased on the above information, is the following statement true, false, or uncertain? There is a boy whose name is not in the list.\n###\nPredicates:\nBoy(x) ::: x is a boy.\nName(x) ::: x has a name.\nPopular(x) ::: x is popular.\nPremises:\n∀x (Boy(x) → Name(x)) ::: All boys have"
+    ]
+  },
+  {
+    "id": "FOLIO_dev_7",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one gets flu.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nGlu(x) ::: x is a glu.\nFever(x) ::: x has a fever.\nHeadache(x) ::: x has a headache.\nMusclePain(x) ::: x has muscle pain.\nTired(x) ::: x is tired.\nPremises:\n∀x (Glu(x) → Fever(x)) ::: People feel tired when they get a glu.\n∀x (Glu(x) → Headache(x)) ::: People feel tired when they get a glu.\n∀x (Glu(x) → MusclePain(x)) ::: People feel tired when they get a glu.\n∀x (Glu(x) → Tired(x)) ::: People feel tired when they get a glu.\nConclusion:\nNo one gets flu.\n------\nProblem:\nThe following is a list of the 100 most common surnames in the United States.\n1. Smith\n2. Johnson\n3. Williams\n4. Brown\n5. Jones\n6. Miller\n7. Davis\n8. Anderson\n9. Martin\n10. Taylor\n11. Hill\n12. Garcia\n13. Rodriguez\n14. Hernandez\n15. Martinez\n16. Walker\n17. Hernandez\n18. Martinez\n19. Rodriguez\n20. Garcia\n21. Williams\n22. Johnson\n23. Davis"
+    ]
+  },
+  {
+    "id": "FOLIO_dev_8",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Symptons of Monkeypox include coughing.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      ".\nPredicates:\nMonkeypox(x) ::: x has monkeypox.\nGlu(x) ::: x has a glu.\nTired(x) ::: x feels tired.\nFever(x) ::: x has a fever.\nMusclePain(x) ::: x has muscle pain.\nHeadache(x) ::: x has a headache.\nPremises:\nMonkeypox(x) ∧ Glu(x) ∧ Tired(x) ∧ Fever(x) ∧ MusclePain(x) ∧ Headache(x) ::: Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on.\nConclusion:\nGlu(x) ∧ Tired(x) ::: People feel tired when they get a glu.\n------\nProblem:\nThe following is a list of the 100 most common surnames in the United States.\n1. Smith\n2. Johnson\n3. Williams\n4. Brown\n5. Jones\n6. Miller\n7. Davis\n8. Anderson\n9. Garcia\n10. Martinez\n11. Rodriguez\n12. Hernandez\n13. Walker\n14. Hill\n15. Taylor\n16. White\n17. Martinez\n18. Johnson\n19. Williams\n20. Davis\n21. Rodriguez\n22. Garcia\n23. Hernandez"
+    ]
+  },
+  {
+    "id": "FOLIO_dev_9",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s wild turkey, Merriam’s wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Ocellated wild turkey.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nWildTurkey(x) ::: x is a wild turkey.\nEastern(x) ::: x is an Eastern wild turkey.\nOsceola(x) ::: x is an Osceola wild turkey.\nGoulds(x) ::: x is a Gould's wild turkey.\nMerriams(x) ::: x is a Merriam's wild turkey.\nRioGrande(x) ::: x is a Rio Grande wild turkey.\nOcellated(x) ::: x is an Ocellated wild turkey.\nPremises:\n∀x (WildTurkey(x) → ¬Eastern(x) ∨ ¬Osceola(x) ∨ ¬Goulds(x) ∨ ¬Merriams(x) ∨ ¬RioGrande(x)) ::: There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s wild turkey, Merriam’s wild turkey, Rio Grande wild turkey, and Ocellated wild turkey.\n∀x (WildTurkey(x) → ¬Eastern(x) ∨ ¬Osceola(x) ∨ ¬Goulds(x) ∨ ¬Merriams(x) ∨ ¬RioGrande(x)) ::: There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s"
+    ]
+  }
+]

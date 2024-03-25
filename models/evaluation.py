@@ -80,17 +80,15 @@ def evaluate_QA(QA_results):
                     answer_str = answer_str.split(indicator)[1].strip()
                     prediction = get_choice(answer_str)
                     break
-
-        # if prediction is None:
-        #     print(answer_str)
-        # print(f"prediction: {prediction} \t gold_answers: {gold_answer} \t match: {prediction == gold_answer}")
         
         em_score = 1.0 if prediction == gold_answer else 0.0
         total_em += em_score
         count += 1
     
-    avg_em = total_em / count
-    # print(f"Accuracy: {avg_em}")
+    if count!=0:
+        avg_em = total_em / count
+    else:
+        avg_em = 0
     return avg_em
 
 def full_evaluation(result_file):
@@ -109,12 +107,21 @@ def parse_args():
     parser.add_argument("--model_name", type=str, default='text-davinci-003')
     parser.add_argument("--split", type=str, default='dev')
     parser.add_argument("--backup", type=str, default='random')
+    parser.add_argument('--result_path', type=str, default='./outputs/logic_inference')
+    parser.add_argument('--mode', type=str, default='')
+    parser.add_argument('--refiment', type=int, default=0)
     args = parser.parse_args()
     return args
 
 if __name__ == "__main__":
     args = parse_args()
-    result_path = f'./outputs/logic_inference'
-    result_file = os.path.join(result_path, f'{args.dataset_name}_{args.split}_{args.model_name}_backup-{args.backup}.json')
-    # evaluate_QA(result_file)
+    if args.mode == '':
+        if args.refiment == 0:
+            result_file = os.path.join(args.result_path, f'{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}_backup-{args.backup}.json')
+        else:
+            result_file = os.path.join(args.result_path, f'self-refine-{args.refiment}_{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}_backup-{args.backup}.json')
+    else:
+        result_file = os.path.join(args.result_path, f'{args.mode}_{args.dataset_name}_{args.split}_{args.model_name.replace("/","-")}.json')
+    
+    print(f'Evaluating {result_file}')
     full_evaluation(result_file)

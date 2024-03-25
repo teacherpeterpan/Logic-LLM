@@ -1,3 +1,9 @@
+"""Logic inference engine to execute logic programs.
+
+Loads logic programs from a dataset, executes them using different logic solvers, 
+and generates outputs with execution results. Handles errors during parsing and 
+execution using backup strategies. Saves outputs to file after inference.
+"""
 import json
 import os
 from tqdm import tqdm
@@ -15,8 +21,10 @@ class LogicInferenceEngine:
         self.dataset_name = args.dataset_name
         self.split = args.split
         self.model_name = args.model_name
+        self.model_name=self.model_name.replace("/","-")
         self.save_path = args.save_path
         self.backup_strategy = args.backup_strategy
+        self.refiment = args.refiment
 
         self.dataset = self.load_logic_programs()
         program_executor_map = {'FOLIO': FOL_Prover9_Program, 
@@ -25,11 +33,15 @@ class LogicInferenceEngine:
                                 'LogicalDeduction': CSP_Program,
                                 'AR-LSAT': LSAT_Z3_Program}
         self.program_executor = program_executor_map[self.dataset_name]
-        self.backup_generator = Backup_Answer_Generator(self.dataset_name, self.backup_strategy, self.args.backup_LLM_result_path)
+        self.backup_generator = Backup_Answer_Generator(args.mode, self.dataset_name, args.split, args.model_name, self.backup_strategy, self.args.backup_LLM_result_path)
 
     def load_logic_programs(self):
-        with open(os.path.join('./outputs/logic_programs', f'{self.dataset_name}_{self.split}_{self.model_name}.json')) as f:
-            dataset = json.load(f)
+        if self.refiment == 0:
+            with open(os.path.join('./outputs/logic_programs', f'{self.dataset_name}_{self.split}_{self.model_name}.json')) as f:
+                dataset = json.load(f)
+        else:
+            with open(os.path.join('./outputs/logic_programs', f'self-refine-{self.refiment}_{self.dataset_name}_{self.split}_{self.model_name}.json')) as f:
+                dataset = json.load(f)
         print(f"Loaded {len(dataset)} examples from {self.split} split.")
         return dataset
     
@@ -37,8 +49,12 @@ class LogicInferenceEngine:
         if not os.path.exists(self.save_path):
             os.makedirs(self.save_path)
         
-        with open(os.path.join(self.save_path, f'{self.dataset_name}_{self.split}_{self.model_name}_backup-{self.backup_strategy}.json'), 'w') as f:
-            json.dump(outputs, f, indent=2, ensure_ascii=False)
+        if self.refiment == 0:
+            with open(os.path.join(self.save_path, f'{self.dataset_name}_{self.split}_{self.model_name}_backup-{self.backup_strategy}.json'), 'w') as f:
+                json.dump(outputs, f, indent=2, ensure_ascii=False)
+        else:
+            with open(os.path.join(self.save_path, f'self-refine-{self.refiment}_{self.dataset_name}_{self.split}_{self.model_name}_backup-{self.backup_strategy}.json'), 'w') as f:
+                json.dump(outputs, f, indent=2, ensure_ascii=False)
 
     def safe_execute_program(self, id, logic_program):
         program = self.program_executor(logic_program, self.dataset_name)
@@ -91,9 +107,11 @@ def parse_args():
     parser.add_argument('--split', type=str, default='dev')
     parser.add_argument('--save_path', type=str, default='./outputs/logic_inference')
     parser.add_argument('--backup_strategy', type=str, default='random', choices=['random', 'LLM'])
-    parser.add_argument('--backup_LLM_result_path', type=str, default='../baselines/results')
+    parser.add_argument('--backup_LLM_result_path', type=str, default='./outputs/results')
     parser.add_argument('--model_name', type=str, default='text-davinci-003')
     parser.add_argument('--timeout', type=int, default=60)
+    parser.add_argument('--mode', type=str, default='CoT')
+    parser.add_argument('--refiment', type=int, default=0)
     args = parser.parse_args()
     return args
 
